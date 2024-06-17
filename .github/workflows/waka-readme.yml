@@ -20,14 +20,14 @@ jobs:
           SHOW_SHORT_INFO: "False"
           SYMBOL_VERSION: "1"
           SHOW_LOC_CHART: "False"
-          SHOW_TOTAL_CODE_TIME: "False"
+          SHOW_TOTAL_CODE_TIME: "True"
           SHOW_UPDATED_DATE: "True"
-          PDATED_DATE_FORMAT: "%Y.%m.%d %H:%M:%S"
-          SHOW_TIMEZONE: "False" ### cannot collect data (why?)
-          SHOW_EDITORS: "False" ### cannot collect data (why?)
-          SHOW_PROJECTS: "True" ### cannot collect data (why?)
-          SHOW_LANGUAGE: "False" ### cannot collect data (why?)
-          SHOW_OS: "False" ### cannot collect data (why?)
+          PDATED_DATE_FORMAT: "%Y.%m.%d %H:%M"
+          SHOW_TIMEZONE: "False" 
+          SHOW_EDITORS: "True" 
+          SHOW_PROJECTS: "True" 
+          SHOW_LANGUAGE: "True" 
+          SHOW_OS: "False" 
           ### commit
           COMMIT_BY_ME: "True"
          

@@ -282,4 +282,6 @@ name 属性为文本区规定名称。
 
 域标题：使用<legend>。所谓的域标题就是给创建的域设置个标题。
 
-## 
+## 参考文章
+
+[《HTML常用标签详解》](https://blog.csdn.net/weixin_44621343/article/details/114378212)
