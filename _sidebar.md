@@ -26,13 +26,16 @@
     - [个人网站搭建](Blogs\Mixed\个人网站搭建.md)
     - [结构体及其指针在树中的应用](Blogs\Mixed\结构体及其指针在树中的应用.md)
     - [手把手教你用PWM实现呼吸灯(标准库)](Blogs\Mixed\手把手教你用PWM实现呼吸灯(标准库).md)
+  - Custom Site
+    - [My Notes Structure](Blogs\CustomSite\MyNotesStructure.md)
+    - [My Custom Component](Blogs\CustomSite\MyCustomComponent.md)
 - 📖 **Notes**
   - Math
     - [Linear Algebra 1](Notes\Math\Linear%20Algebra%201%20notes.md)
     - [Linear Algebra 2](Notes\Math\Linear%20Algebra%202%20notes.md)
   - Phisics
-    - [Mechanics]()
-    - [Thermodynamics]()
+    - [Mechanics](Notes\Phisics\Mecanics%20notes.md)
+    - [Thermodynamics](Notes\Phisics\Thermodynamics%20notes.md)
 
 - 📝 **Projects**
   - [MuMeStar (Mutiple Menu Star for OLED)](Projects\MuMeStar%20(Mutiple%20Menu%20Star%20for%20OLED)%20详解.md)
