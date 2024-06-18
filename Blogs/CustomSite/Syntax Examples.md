@@ -14,24 +14,25 @@
 
 经过多次、多地区实验，下面是两种可行的方法：
 
-1. 选用[腾讯云](https://console.cloud.tencent.com/) + [COSBrowser](https://cloud.tencent.com/document/product/436/11366) 作为图片图床/视频图床/网盘，收费但不多，优点在于稳定、合规、风险低。参考文章：https://blog.csdn.net/qq_31967569/article/details/121015954 和
+1. 选用[腾讯云](https://console.cloud.tencent.com/) + [COSBrowser](https://cloud.tencent.com/document/product/436/11366) 作为图片图床/视频图床/网盘，收费，但优点在于稳定、合规、风险低。参考文章：https://blog.csdn.net/qq_31967569/article/details/121015954 和
 https://blog.csdn.net/be_Newcode/article/details/137838137
 
-2. 选用 [GitHub](https://github.com/YiDingg) + [PicGo](https://github.com/Molunerfinn/PicGo)(或 [MDTC](http://tc.yangln.cn/help/index.html) )  作为图片图床/视频图床(非网盘)，免费，但缺点是访问不稳定、不符GitHub初衷，有风险。
+1. 选用 [GitHub](https://github.com/YiDingg) + [PicGo](https://github.com/Molunerfinn/PicGo)(或 [MDTC](http://tc.yangln.cn/help/index.html) )  作为图片图床/视频图床(非网盘)，免费，但缺点是访问不稳定、不符GitHub初衷，有风险。
 
 <div class='center'>
 
-|图床|图片|gif|mp4|备注<div style="width: 100pt"></div>|<div style="width: 60pt">手机端</div>|<div style="width: 60pt">电脑无加速</div>|<div style="width: 60pt">电脑有加速</div>|
+|图床|图片|gif|mp4|备注<div style="width: 80pt"></div>|<div style="width: 60pt">手机端</div>|<div style="width: 60pt">电脑无加速</div>|<div style="width: 60pt">电脑有加速</div>|
 |:-:|:-:|:-:|:-:|:---:|:---:|:---:|:---:|
-|GitHub(gcore)|<img src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" width=20%/>|<img src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" width=20%/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|可能访问慢/无法访问|X|图+gif+mp4<br>(需使用加速域名)|图+gif+mp4<br>(需使用加速域名)|
-|Gitee|<img src="https://gitee.com/dy130810/images_house/raw/master/pic/20240617/003340305-1.jpg" width=20%/>|X|X|Gitee官方ban了图床功能|X|X||
-|SM.MS|<img src="https://s2.loli.net/2024/06/17/Ulgc6YqmEniyGkW.jpg" width=20%/>|<img src="https://s2.loli.net/2024/06/17/Wi7sHTGz4EXAK81.gif" width=20%/>|X|MDTC: 已上传过的图片，再次上传得到空url<br>PicGo: 已上传过的图片，再次上传得到原url|图+gif|图+gif||
-|MJJ图床|<img src="https://i3.mjj.rip/2024/06/17/5005f59ed1748c5d98bdcc9eab0bf9d0.jpeg" width=20%/>|<img src="https://i3.mjj.rip/2024/06/17/e0c48742a32f64b5c6482a23283396de.gif" width=20%/>|X|手动上传|图+gif|图+gif<br>||
-|路过图床|<img src="https://s21.ax1x.com/2024/06/17/pkwjVN6.jpg" width=20%/>|X|X|手动上传|图|图||
-|阿里云||||付费||||
-|腾讯云|<img src="https://imagebank-1327312267.cos.ap-beijing.myqcloud.com/ImageBank%2F202406170948582.jpg" width=20%/> |<img src="https://imagebank-1327312267.cos.ap-beijing.myqcloud.com/ImageBank/202406170951418.gif" width=20%/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://imagebank-1327312267.cos.ap-beijing.myqcloud.com/ImageBank/202406170955031.mp4" type="video/mp4"></video>|付费(比阿里云便宜)||图+gif+mp4||
+|GitHub(gcore)|V|V|V|可能访问慢/无法访问|图+gif+mp4<br>(需使用加速域名)|图+gif+mp4<br>(需使用加速域名)|图+gif+mp4<br>(需使用加速域名)|
+|Gitee|-|-|-|Gitee官方ban了图床功能|-|-|-|
+|SM.MS|V|V|-|MDTC: 已上传过的图片，再次上传得到空url<br>PicGo: 已上传过的图片，再次上传得到原url|图+gif|图+gif|图+gif|
+|MJJ图床|V|V|-|手动上传|图+gif|图+gif|图+gif|
+|路过图床|V|-|-|手动上传|图|图|图|
+|阿里云|V|V|V|付费|图+gif+mp4|图+gif+mp4|图+gif+mp4|
+|腾讯云|V|V|V|付费|图+gif+mp4|图+gif+mp4|图+gif+mp4|
+
 </div>
-<img src="" width=10%/>
+
 
 <font color=red>小技巧：</font>
 访问GitHub图床的原视频链接为 https://github.com/YiDingg/VideoBank_0/PicGo/202406170041812.mp4, 一般访问极慢/无法访问，将其替换为 https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4 ，可以提高成功访问概率和访问速度。图片也是类似的。
@@ -52,11 +53,9 @@ GitHub加速域名测试：
 |unpkg.com(仅限npm包)||||
 </div>
 
+## Web开发
 
-
-## MD与HTML
-
-Web开放详见：
+Web开发详见：
 https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web
 
 ### 图片大小

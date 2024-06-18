@@ -52,7 +52,16 @@
 
 <body>
     <!-- 定义加载时候的动作 -->
-    <div id="app">加载中...</div>
+    <div id="app">
+        <div class="wrapper">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+        </div>
+    </div>
     <!-- Gitalk评论 -->
     <!-- <div id="gitalk-container"></div> -->
     <script>
@@ -368,6 +377,7 @@
         .text {
             background: linear-gradient(to right, red 0%, purple 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             }
       </style>
