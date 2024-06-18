@@ -1,7 +1,7 @@
 # 语法示例
 
 ## Basic Components
- 
+
 ### Insert Pictures
 
 <div class='center'>
@@ -20,7 +20,8 @@
 <img src="https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" width=10%/>
 <img src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" width=10%/>
 ```
-<!-- 
+
+
 ### 网页按钮
 
 直接跳转：<a href = "https://www.writebug.com/git/DY130810/Notes/raw/commit/77732e15298f9d2390549ae3a26fd23e5e795d6f/Linear%20Algebra%202/notes/Linear%20Algebra%202%20notes.pdf" ><input type = "button"> a标签，嵌套input </input></a>

@@ -72,6 +72,10 @@ body {
 img {
   max-width: 100%;
 }
+/* 控制body里的图片宽度不要太大 */
+body img {
+  max-width:800px;
+}
 a[disabled] {
   cursor: not-allowed;
   opacity: 0.6;

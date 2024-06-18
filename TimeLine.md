@@ -12,6 +12,7 @@
 
 ## Time Line of the Site
 
+<div style='margin-left:18%'>
 <ul class="timeline-list">
 <!-- The Top 1 -->
 <li class="timeline-item">
@@ -19,21 +20,21 @@
     <div class="timeline-item_node"></div>
     <div class="timeline-item_wrapper">
         <div class="timeline-item_timestamp">July 2024</div>
-        <div class="timeline-item_content">
+        <div class="timeline-item_content"><br><!-- 每块顶部单独留一些空间 -->
             <div class="tbox">
-                <div class="tbox-title">
-                    <span class="index">1、</span>
-                    <span class="text">施工计划A区1-4层混凝土，完成30%。</span>
-                </div>
-                <div class="tbox-content">
+                <div class='outerBox'>
+                    <div class="dateBox"><div>
+                        <tl-title>时间</tl-title>
+                        <ul>事件的详细内容事件的详细内容事件的详细内容事件的详细内容事件的详细内容</ul>
+                    </div></div>
                 </div>
             </div>
             <div class="tbox">
-                <div class="tbox-title">
-                    <span class="index">2、</span>
-                    <span class="text">施工计划A区1-4层混凝土，完成30%。</span>
-                </div>
-                <div class="tbox-content">
+                <div class='outerBox'>
+                    <div class="dateBox"><div>
+                        <tl-title>时间</tl-title>
+                        <ul>事件的详细内容事件的详细内容事件的详细内容事件的详细内容事件的详细内容</ul>
+                    </div></div>
                 </div>
             </div>
         </div>
@@ -44,30 +45,61 @@
     <div class="timeline-item_tail"></div>
     <div class="timeline-item_node"></div>
     <div class="timeline-item_wrapper">
-        <div class="timeline-item_timestamp">June 2024</div>
-        <div class="timeline-item_content">
-            <!--  -->
+        <div class="timeline-item_timestamp">July 2024</div>
+        <div class="timeline-item_content"><br><!-- 每块顶部单独留一些空间 -->
             <div class="tbox">
-                <div class="tbox-title"><span class="index">1、施工计划A区1-4层混凝土，完成30%。</span></div>
-                <div class="tbox-content">
-                  你好
+                <div class='outerBox'>
+                    <div class="dateBox"><div>
+                        <tl-title>时间</tl-title>
+                        <ul>事件的详细内容事件的详细内容事件的详细内容事件的详细内容事件的详细内容</ul>
+                    </div></div>
                 </div>
             </div>
-            <!--  -->
             <div class="tbox">
-                <div class="tbox-title"><span class="index">2、施工计划A区1-4层混凝土，完成30%。</span>
-                <span class="text">施工计划A区1-4层混凝土，完成30%。</span></div>
-                <div class="tbox-content">
-                你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
-                <image src='https://i3.mjj.rip/2024/06/17/5005f59ed1748c5d98bdcc9eab0bf9d0.jpeg' style='width:10px'></image>你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
+                <div class='outerBox'>
+                    <div class="dateBox"><div>
+                        <tl-title>时间</tl-title>
+                        <ul>事件的详细内容事件的详细内容事件的详细内容事件的详细内容事件的详细内容</ul>
+                    </div></div>
                 </div>
             </div>
-            <!--  -->
         </div>
     </div>
 </li>
-<!-- Another Part -->
+<!-- The Bottom Part -->
+<li class="timeline-item">
+    <div class="timeline-item_tail"></div>
+     <div class="timeline-item_tail_add" style='top:10px'></div>
+    <div class="timeline-item_node"></div>
+    <div class="timeline-item_wrapper">
+        <div class="timeline-item_timestamp">July 2024</div>
+        <div class="timeline-item_content"><br><!-- 每块顶部单独留一些空间 -->
+            <div class="tbox">
+                <div class='outerBox'>
+                    <div class="dateBox"><div>
+                        <tl-title>时间</tl-title>
+                        <ul>事件的详细内容事件的详细内容事件的详细内容事件的详细内容事件的详细内容</ul>
+                    </div></div>
+                </div>
+            </div>
+            <div class="tbox">
+                <div class='outerBox'>
+                    <div class="dateBox"><div>
+                        <tl-title> The site's birthday!</tl-title>
+                        <ul>
+Our site comes his first birthday on June 14, 2024. A long journey can be covered only by taking one step at a time.
+Everything is possible from this day! 
+                        </ul></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="timeline-item_node"></div>
+    <div class="timeline-item_wrapper">
+    <div class="timeline-item_timestamp">July 14, 2024</div>
+</li>
 </ul>
+</div>
 
 <style>
 .timeline-list{
@@ -86,6 +118,13 @@
     position: absolute;
     left: 5px;
     height: 100%;
+    border-left: 2px solid rgb(228,231,237);
+}
+
+.timeline-item_tail_add{
+    position: absolute;
+    left: 5px;
+    height: 285px;
     border-left: 2px solid rgb(228,231,237);
 }
 
@@ -125,7 +164,8 @@
 }
 .tbox{
     padding:10px;
-    
+    height:94px;
+    margin-left: -27px;
 }
 .tbox-content{
     background:rgb(238, 255, 255);
