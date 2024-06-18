@@ -2,20 +2,105 @@
 
 ## HTML常用标签
 
-### 基本标签
+### Head常用标签
+
+网页相关：
 
 <!-- tabs:start -->
-#### **基本标签1**
-`<!DOCTYPE>`：必须在 HTML 文档的第一行。用来指示浏览器页面使用哪个 HTML 版本编译指令。  
-`<html>`：此元素可告知浏览器其自身是一个 HTML 文档。  
-`<head>`：用于定义文档的头部，它是所有头部元素的容器。  
-`<body>`：body 元素包含文档的所有内容（如文本、超链接、图像、表格和列表）
-标题标签 `<h1>`-`<h6>`：标明文章、作品等内容的简短语句。  
-段落标签 `<p>`：占据至少一行，在网页中描述具有一个相对完整的内容。  
+#### **`<script>`**
 
-#### **基本标签2**
-斜体标签 `<em>`：<em>斜体</em>  
+```html
+<!--style: 定义内部样式表. 内部用来书写css代码-->
+<style>
+    h1 {
+        color: greenyellow;
+    }
+</style>
+
+<!--script: 内部用来书写js代码-->
+<script>
+    alert(123)
+</script>
+<!--script: 还可以引入外部js文件-->
+<script src="myjs.js"></script>
+
+```
+
+#### **`<link>`**
+
+```html
+<!--link: 引入外部css文件 或 网站图标-->
+<link rel="stylesheet" href="mycss.css">
+```
+
+#### **`<meta>`**
+
+```html
+meta标签必须写在头部head标签之内，而description的meta标签务必要写在keywords的meta标签之后，像下面这样的顺序写：
+1.关键字：description要用简短的文字描述网站或网页的主要内容，有利于各大搜索引擎的抓取收录你的网站或网页。
+2.页面描述：当你设置了description网站描述文字，才会显示在搜索引擎的结果页中，而每个网页的description也是同样的道理，简短又准确的网页描述文字，可以帮助用户在搜索引擎中更方便的找到你的网站和网页！
+
+<!-- 指定文档的编码类型(需要知道) -->
+<meta http-equiv="content-Type" charset=UTF8">
+                                             
+<!-- 2秒后跳转到对应的网址，注意引号(了解) -->
+<meta http-equiv="refresh" content="2;URL=https://www.baidu.com">
+
+<!-- 3秒后刷新 -->
+<meta http-equiv="refresh" content="3">   
+                                      
+<!-- 告诉IE以最高级模式渲染文档(了解) -->
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+
+<!--关键字：有助于搜索引擎SEO优化，再怎么优化也抵不过竞价排名-->
+<meta name="keywords" content="meta总结,html meta,meta属性,meta跳转">
+
+<!--页面描述-->
+<meta name="description" content="给你骨质唱疏通">
+```
+
+
+<!-- tabs:end -->
+
+### Body常用标签
+<!-- tabs:start -->
+
+#### **基本标签(块级标签和内联标签)**
+```html
+<!--b Bold 粗体（文本）-->
+<b>加粗</b>
+
+<!--i Italic /ɪˈtælɪk/ 斜体（文本）-->
+<i>斜体</i>
+
+<!--u Underlined 下划线（文本）-->
+<u>下划线</u>
+
+<!--s Strikethrough  /straɪk/	删除线-->
+<s>删除</s>
+
+<p>段落标签</p>
+
+<!--h1~h6 Header 1 to Header 6 标题1到标题6-->
+<h1>标题1</h1>
+<h2>标题2</h2>
+<h3>标题3</h3>
+<h4>标题4</h4>
+<h5>标题5</h5>
+<h6>标题6</h6>
+
+<!--br Break 换行-->
+<br>
+
+<!--hr Horizontal Rule  /ˌhɒrɪˈzɒntl/ 水平线，分割线-->
+<hr>
+
+<!--br Break 修改文字大小，颜色-->
+<font color="red" size="10px">我是菜鸟</font>
+
+引用斜体标签 `<em>`：<em>斜体</em>  
 粗体标签`<strong>`：<strong>粗体</strong>  
+下划线`<ins>`：<ins>下划线</ins>  
 大于号 `&gt;`：&gt;  
 小于号`&lt;`：&lt;  
 引号`&quot;`：&quot;  
@@ -24,30 +109,17 @@
 水平线 `<hr/>` 或 `<hr>`
 换行标签 `<br/>` 或 `<br>`  
 注释 `<!--注释内容-->`  
-<!-- tabs:end -->
 
-### 常用标签
+后面几个是HTML新加入的：strong == b, ins == u, em == i, del == s。新的标签是有语义的，而老的只是单纯的添加样式（这是CSS干的事）
+strong的语义：定义重要性强调的文字
+ins的语义（inserted）：定义插入的文字
+em的语义（emphasized）：定义强调的文字
+del的语义（deleted）：定义被删除的文字
 
-网页相关：
-
-<!-- tabs:start -->
-#### **`<script>`**
-
-#### **`<link>`**
-
-#### **`<meta>`**
-`<meta name='' http-equiv='' content=''>`  
-http-equiv：
-
-```html
-<!--2秒后跳转到对应的网址-->
-<meta http-equiv="refresh" content="2;URL=https://www.baidu.com">
 ```
 
-<!-- tabs:end -->
 
-内容相关：
-<!-- tabs:start -->
+
 #### **`<image>`**
 `src='{path}'`：`{path}`可以为相对路径、根路径'/'、同级路径'./'、上级路径'../'、绝对路径等<br>
 `width={wid}`：`{wid}`可以为10%(不推荐)、400px(像素，推荐)等  
