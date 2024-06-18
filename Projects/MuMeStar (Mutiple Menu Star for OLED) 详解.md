@@ -71,7 +71,7 @@
 | 3. 新增两个节点函数 | 在 "菜单节点函数" 处定义你的函数。第一个节点函数在进入 Brightness 时调用（记为 Func_Brightness_enter ） ，第二个（记为 Func_Brightness_set）在进入 Brightness 后，有其他按键按下时调用。这两个函数共同实现了我们需要的功能：显示亮度调节页面，next 增大亮度，previous 减小亮度，同时在屏幕上显示当前亮度值，enter 或 return 确定更改。 | ![3217884c3b8e31e66a62667e336278a4.png](https://i3.mjj.rip/2024/06/15/3217884c3b8e31e66a62667e336278a4.png)![a838c119b804e8e9319eee7a4caae8b2.png](https://i3.mjj.rip/2024/06/15/a838c119b804e8e9319eee7a4caae8b2.png) |
 | 4. 进行函数的编写与指针替换 | 注意：两个函数都应为 void func(void) 型，利用全局变量 KEY_num 传递键值。 编写完毕后，将  Func_Brightness_enter 替换到 Settings 数组的函数指针处，将 Func_Brightness_set 替换到 Brightness 定义的函数指针处。  | ![c00f347eefc4bc9081c03520391e3136.png](https://i3.mjj.rip/2024/06/15/c00f347eefc4bc9081c03520391e3136.png)![997df42cd00c5352d6454c09bb17ce28.png](https://i3.mjj.rip/2024/06/15/997df42cd00c5352d6454c09bb17ce28.png) |
 |5. 在 Multimenu.h 中声明函数| 在 "自定义菜单节点函数声明" 处进行声明，注意不要忘了分号|![ac1c3c06b73533dbd75830a42eb16a68.png](https://i3.mjj.rip/2024/06/15/ac1c3c06b73533dbd75830a42eb16a68.png)|
-|6. 编译并烧录 | 可以看到，成功实现屏幕亮度自由调节 |![image](https://raw.githubusercontent.com/YiDingg/ImageBank_0/main/20240616/174844060.jpg)|
+|6. 编译并烧录 | 可以看到，成功实现屏幕亮度自由调节 |![image](https://gcore.jsdelivr.net/gh/YiDingg/ImageBank_0/20240616/174844060.jpg)|
 
 </div>
 
@@ -102,7 +102,7 @@
 | 3. 新增两个节点函数 | 在 "菜单节点函数" 处定义你的函数。第一个节点函数在进入 Smile 时调用（记为 Func_Smile_enter ） ，第二个（记为 Func_Smile_run）在进入 Smile 后，有其他按键按下时调用。这两个函数共同实现了我们需要的功能：enter函数进行初始化，循环调用run函数。一个示例功能是：next 笑脸右移，previous 笑脸左移，enter 笑脸反色， return 退出。 |![5ceb8d1b2b828a31647f7dd5fa06819f.png](https://i3.mjj.rip/2024/06/15/5ceb8d1b2b828a31647f7dd5fa06819f.png)|
 | 4. 进行函数的编写并替换指针 | 注意：两个函数都应为 void func(void) 型，利用全局变量 KEY_num 实现键值传递。 编写完毕后，将  Func_Smile_enter 替换到 Hello 数组下的的smile节点函数指针处，将 Func_Smile_run 替换到 Smile 定义的函数指针处。  |![192ec1ca442b1786fcb4f6e0c216b9f6.png](https://i3.mjj.rip/2024/06/15/192ec1ca442b1786fcb4f6e0c216b9f6.png) |
 |5. 在 Multimenu.h 中声明函数| 在 "自定义菜单节点函数声明" 处进行声明，注意不要忘了分号| ![15e63c7ced1df8b7ad26fcd79d5f258e.png](https://i3.mjj.rip/2024/06/15/15e63c7ced1df8b7ad26fcd79d5f258e.png) |
-|6. 编译并烧录 | 可以看到，成功实现笑脸眼睛循环转动，且横向位置可调、循环可随时暂停 |![image](https://raw.githubusercontent.com/YiDingg/ImageBank_0/main/20240616/171923032.gif)|
+|6. 编译并烧录 | 可以看到，成功实现笑脸眼睛循环转动，且横向位置可调、循环可随时暂停 |<video controls="false"  muted="muted" id="video1" name="media" style="width:300px"><source src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|
 
 ## 四、原理详解
 

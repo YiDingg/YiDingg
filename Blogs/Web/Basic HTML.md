@@ -1,5 +1,13 @@
 # Basic HTML
 
+>[!TIP]
+Awesome site for learning web development:   
+https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web (中文)  
+https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web (English)  <br><br>
+Editing and preview HTML+CSS+JS online:  
+https://codepen.io/madzadev/pen/zYdOVPV
+
+
 ## HTML常用标签
 
 ### Head常用标签

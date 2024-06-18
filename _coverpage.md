@@ -1,18 +1,10 @@
 <!-- _coverpage.md -->
 
-# Yi Ding's Website
+<img src="https://i3.mjj.rip/2024/06/18/4433c230cab064d3a99335a31064353e.jpeg" style="width:400px"/>
 
+# ⭐Yi Ding's Website⭐
 
-> majoring in Electronic Engineering  
+Welcome to my website! 
 
-> sharing notes and thoughts here
-<details>
-<summary>reach me</summary>
-
-- [x] [My GitHub](https://github.com/YiDingg)
-- [x] 
-
-</details>
-
-
-[Enter the Website](/README.md)
+[Git Hub](https://github.com/YiDingg)
+[Get Started](/README.md)

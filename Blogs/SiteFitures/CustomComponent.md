@@ -1,7 +1,8 @@
-# My Custom Component (自定义组件)
+# Custom Component (自定义组件)
 
-## 按钮
-### 1. 悬停变色
+## From HTML and CSS
+
+### Button
 
 focus属性会影响其它组件，因此注释掉了动画，可作静态按钮使用
 
@@ -13,8 +14,6 @@ focus属性会影响其它组件，因此注释掉了动画，可作静态按钮
 
 可通过onclick属性设置点击跳转/新开链接。
 
-### 2. 悬停显示文件大小
-
 <div class="button_2" data-tooltip="Size: 20Mb">
 <div class="button_2-wrapper">
   <div class="text">Click to View or Download</font></div>
@@ -24,13 +23,11 @@ focus属性会影响其它组件，因此注释掉了动画，可作静态按钮
   </div>
 </div>
 
-### 3. 悬停展开图片
-
+<br>
 <div class='button_3'>
 <span>PLAY NOW</span>
 </div>
-
-### 4. 刷新按钮
+<br>
 
 <button type="button_4" class="button_4" >
   <svg
@@ -52,9 +49,7 @@ focus属性会影响其它组件，因此注释掉了动画，可作静态按钮
   Refresh
 </button>
 
-## Ohther
-
-### 1. Awesome Input Container 
+### Input Container 
 
 <div class="input__container">
   <div class="shadow__input"></div>
@@ -66,7 +61,7 @@ focus属性会影响其它组件，因此注释掉了动画，可作静态按钮
   <input type="text" name="text" class="input__search" placeholder="What do you want to search?">
 </div>
 
-### 2. Loading Animation
+### Loading
 
 <div class="wrapper">
     <div class="circle"></div>
@@ -76,11 +71,12 @@ focus属性会影响其它组件，因此注释掉了动画，可作静态按钮
     <div class="shadow"></div>
     <div class="shadow"></div>
 </div>
-
-### 2. Loading Cricle
-
+<br><br>
 <div class="spinner"></div>
 
-## 参考文章
+## From Plugins
+
+## Reference
 
 [《有趣儿的组件（HTML/CSS）》](https://blog.csdn.net/qq_47945825/article/details/136108998)
+[《前端常用的CSS代码块》](https://blog.csdn.net/weixin_46102749/article/details/106947535)

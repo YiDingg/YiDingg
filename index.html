@@ -9,16 +9,18 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
    <meta name="description" content="">
 
-    <!-- 自定义CSS -->
-    <link rel="stylesheet" href="styles.css">
-    <!-- 网页首标题 -->
-    <title>Yi Ding's Website</title>
+    <!-- 引入CSS文件 -->
+    <link rel="stylesheet" href="css/ComponentStyles.css">
+    <link rel="stylesheet" href="css/vue.css">
+
     <!-- 设置浏览器图标 -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <!-- docsify主题(vue,bubble,dark,pure) -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"/>
 
+    <!-- 网页首标题 -->
+    <title>Yi Ding's Website</title>
+
+    <!-- docsify主题(vue,bubble,dark,pure) -->
     <!-- docsify-thmeable主题(与原docsify主题只能选一个,defaults,simple，simple-dark) -->
 <!--     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-defaults.css">
    <link rel="stylesheet" media="(prefers-color-scheme: light)" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
@@ -35,10 +37,16 @@
    <style>
         .center 
         {
-        width: auto;
-        display: table;
-        margin-left: auto;
-        margin-right: auto;
+            width: auto;
+            display: table;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .center-screen{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     </style>
 
@@ -53,13 +61,15 @@
 <body>
     <!-- 定义加载时候的动作 -->
     <div id="app">
-        <div class="wrapper">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="shadow"></div>
-            <div class="shadow"></div>
-            <div class="shadow"></div>
+        <div class="center-screen">
+            <div class="wrapper">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="shadow"></div>
+                <div class="shadow"></div>
+                <div class="shadow"></div>
+            </div>
         </div>
     </div>
     <!-- Gitalk评论 -->
@@ -87,14 +97,13 @@
             loadNavbar: false,
             // 封面支持，默认加载的是项目根目录下的_coverpage.md文件
             coverpage: true,
+            onlyCover: true,
             // 小屏设备下合并导航栏到侧边栏
             mergeNavbar: true,
             // 在滚动到指定的锚点时，距离页面顶部有一定空间
             topMargin: 90,     
             // 自定义notfound页面   
             notFoundPage: 'my404.md',    
-            // 只在访问主页时加载封面      
-            onlyCover: false,   
             // 超链接、左右侧边栏的选中颜色
             themeColor: '#3F51B5', 
             // 侧边栏网页Logo(logo和name只能设置一个)        
@@ -305,10 +314,10 @@
                     });
                 }], */
         }
-    
+
     </script>
     <!-- docsify的js依赖 -->
-    <script src="//gcore.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+    <script src="js\docsify.min.js"></script>
     <!-- emoji表情支持 -->
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
     <!-- 图片缩放/点击可放大查看 -->
@@ -324,7 +333,7 @@
       <!-- 侧边栏目录折叠 (https://www.npmjs.com/package/docsify-sidebar-collapse)-->
     <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" /> <!-- 主题(arrow) -->
-    <!-- 代码高亮 -->
+    <!-- 代码块高亮 -->
     <script src="//cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-c.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-cpp.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-bash.js"></script>
@@ -381,7 +390,7 @@
             -webkit-text-fill-color: transparent;
             }
       </style>
-      
+
     <!-- alerts提示 -->
     <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
     <!-- 页面最近修改时间 -->
@@ -487,7 +496,6 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-termynal/custom.css">
     <script src="//cdn.jsdelivr.net/npm/docsify-termynal/termynal.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify-termynal/custom.js"></script> -->
-    
 </body>
 
 </html>
