@@ -12,7 +12,7 @@
 
 ## Time Line of the Site
 
-<div style='margin-left:18%'>
+<div class='center'>
 <ul class="timeline-list">
 <!-- The Top 1 -->
 <li class="timeline-item">
@@ -20,7 +20,7 @@
     <div class="timeline-item_node"></div>
     <div class="timeline-item_wrapper">
         <div class="timeline-item_timestamp">July 2024</div>
-        <div class="timeline-item_content"><br><!-- 每块顶部单独留一些空间 -->
+        <div class="timeline-item_content"><br><br><!-- 每块顶部单独留一些空间 -->
             <div class="tbox">
                 <div class='outerBox'>
                     <div class="dateBox"><div>
@@ -28,44 +28,28 @@
                         <ul>事件的详细内容事件的详细内容事件的详细内容事件的详细内容事件的详细内容</ul>
                     </div></div>
                 </div>
-            </div>
-            <div class="tbox">
-                <div class='outerBox'>
-                    <div class="dateBox"><div>
-                        <tl-title>时间</tl-title>
-                        <ul>事件的详细内容事件的详细内容事件的详细内容事件的详细内容事件的详细内容</ul>
-                    </div></div>
-                </div>
+        </div>
+        <div class="tbox">
+            <div class='outerBox'>
+                <div class="dateLeftBox"><div>
+                    <tl-title>时间</tl-title>
+                    <ul>事件的详细内容事件的详细内容事件的详细内容事件的详细内容事件的详细内容</ul>
+                </div></div>
             </div>
         </div>
+        <div class="tbox">
+                <div class='outerBox'>
+                    <div class="dateBox"><div>
+                        <tl-title>时间</tl-title>
+                        <ul>事件的详细内容事件的详细内容事件的详细内容事件的详细内容事件的详细内容</ul>
+                    </div></div>
+                </div>
+        </div>
+    </div>
     </div>
 </li>
 <!-- Another Part -->
-<li class="timeline-item">
-    <div class="timeline-item_tail"></div>
-    <div class="timeline-item_node"></div>
-    <div class="timeline-item_wrapper">
-        <div class="timeline-item_timestamp">July 2024</div>
-        <div class="timeline-item_content"><br><!-- 每块顶部单独留一些空间 -->
-            <div class="tbox">
-                <div class='outerBox'>
-                    <div class="dateBox"><div>
-                        <tl-title>时间</tl-title>
-                        <ul>事件的详细内容事件的详细内容事件的详细内容事件的详细内容事件的详细内容</ul>
-                    </div></div>
-                </div>
-            </div>
-            <div class="tbox">
-                <div class='outerBox'>
-                    <div class="dateBox"><div>
-                        <tl-title>时间</tl-title>
-                        <ul>事件的详细内容事件的详细内容事件的详细内容事件的详细内容事件的详细内容</ul>
-                    </div></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</li>
+
 <!-- The Bottom Part -->
 <li class="timeline-item">
     <div class="timeline-item_tail"></div>
@@ -73,12 +57,14 @@
     <div class="timeline-item_node"></div>
     <div class="timeline-item_wrapper">
         <div class="timeline-item_timestamp">July 2024</div>
-        <div class="timeline-item_content"><br><!-- 每块顶部单独留一些空间 -->
+        <div class="timeline-item_content"><br><br><!-- 每块顶部单独留一些空间 -->
             <div class="tbox">
                 <div class='outerBox'>
-                    <div class="dateBox"><div>
-                        <tl-title>时间</tl-title>
-                        <ul>事件的详细内容事件的详细内容事件的详细内容事件的详细内容事件的详细内容</ul>
+                    <div class="dateLeftBox"><div>
+                        <tl-title>Basic Structure of Site</tl-title>
+                        <ul>
+We have bulit the basic sturcture of site and added some basic components.  
+                        </ul>
                     </div></div>
                 </div>
             </div>
@@ -87,7 +73,7 @@
                     <div class="dateBox"><div>
                         <tl-title> The site's birthday!</tl-title>
                         <ul>
-Our site comes his first birthday on June 14, 2024. A long journey can be covered only by taking one step at a time.
+Our site comes its first birthday on June 14, 2024. A long journey can be covered only by taking one step at a time.
 Everything is possible from this day! 
                         </ul></div></div>
                 </div>
@@ -112,7 +98,6 @@ Everything is possible from this day!
 }
 .timeline-item{
     position: relative;
-    padding-bottom: 20px;
 }
 .timeline-item_tail{
     position: absolute;
@@ -124,7 +109,7 @@ Everything is possible from this day!
 .timeline-item_tail_add{
     position: absolute;
     left: 5px;
-    height: 285px;
+    height: 240px;
     border-left: 2px solid rgb(228,231,237);
 }
 
@@ -139,7 +124,7 @@ Everything is possible from this day!
     width: 15px;
     height: 15px;
     background: #fff;
-    border:3px solid #2395FF
+    border:3px solid rgb(38, 59, 246)
 }
 .timeline-item_wrapper{
     position: relative;
@@ -149,10 +134,10 @@ Everything is possible from this day!
 .timeline-item_timestamp{
     margin-bottom: 8px;
     padding-top: 0px;
-    color: #242424;
+    color: rgb(38, 59, 246);
     line-height: 1;
     font-weight: 700;
-    font-size: 13px;      
+    font-size: 16px;      
 }
 .delclass{
     color: #0379FB;
@@ -166,6 +151,7 @@ Everything is possible from this day!
     padding:10px;
     height:94px;
     margin-left: -27px;
+    margin-top: -40px
 }
 .tbox-content{
     background:rgb(238, 255, 255);
