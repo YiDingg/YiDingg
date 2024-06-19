@@ -72,10 +72,7 @@ body {
 img {
   max-width: 100%;
 }
-/* 控制body里的图片宽度不要太大 */
-body img {
-  max-width:800px;
-}
+
 a[disabled] {
   cursor: not-allowed;
   opacity: 0.6;
@@ -361,6 +358,7 @@ body.sticky .sidebar-toggle {
   border: 1px solid #ddd;
   padding: 6px 13px;
 }
+
 .markdown-section tr {
   border-top: 1px solid #ccc;
 }
@@ -423,6 +421,7 @@ body.close .content {
     display: none;
   }
 }
+
 @media screen and (max-width: 768px) {
   .github-corner,
   .sidebar-toggle,
@@ -483,6 +482,7 @@ body.close .content {
     animation: octocat-wave 560ms ease-in-out;
   }
 }
+
 @keyframes octocat-wave {
   0%, 100% {
     transform: rotate(0);
@@ -870,3 +870,117 @@ code .token {
   position: relative;
   left: auto;
 }
+
+/* ---------------------------------------------- */
+
+/* 自定义居中类 */
+.center{
+  /* 普通居中 */
+    width: auto;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin:0 auto;
+    text-align: center;
+}
+.center-screen{
+  /* 全屏居中 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 自定义img,object标签 */
+article img, article object {
+  /* article全局img */
+  max-width:750px;            /* 图片宽度不要太大 */
+  max-width:100%;
+}
+.markdown-section td img {
+  /* 控制表格中的图片 */
+  width: auto;
+  max-width:95%;
+}
+.border {
+  /* 添加黑边框 */
+  border: #000 solid 1px;
+}
+
+/* 自定义左侧导航栏 */
+.sidebar {
+  /* 调整sidebar宽度 */
+  width: 300px;
+  max-width: 65%;
+}
+.sidebar-toggle {
+  /* 调整sidebar的小方框 */
+  padding: 15px;
+}
+/*                                                              ！！这条不起作用，待修改  */
+/* @media screen and (max-width: 581px) {                          
+  .sidebar-toggle {
+    padding: 60px;
+  }
+} */
+.sidebar-toggle span {
+  /* 调整sidebar三横的大小 */
+  margin-left: 3px;
+  margin-bottom: 5px;
+  width: 25px;
+  height: 4px;
+}
+/* 调整不同设备字体大小 */
+@media (max-width: 580px) {
+  /* 屏幕 <=480px 时使用 */
+  .markdown-section h1 {
+    font-size: 2.0rem;
+    margin: 0 0 1rem;
+  }
+  .markdown-section h2 {
+    font-size: 1.7rem;
+    margin: 45px 0 0.8rem;
+  }
+  .markdown-section h3 {
+    font-size: 1.5rem;
+    margin: 40px 0 0.6rem;
+  }
+  .markdown-section h4 {
+    font-size: 1.3rem;
+  }
+  .markdown-section h5 {
+    font-size: 1.1rem;
+  }
+  .markdown-section h6 {
+    color: #777;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 400px) {
+  /* 屏幕 <=400px 时使用 */
+  .markdown-section h1 {
+    font-size: 1.8rem;
+    margin: 0 0 1rem;
+  }
+  .markdown-section h2 {
+    font-size: 1.5rem;
+    margin: 45px 0 0.8rem;
+  }
+  .markdown-section h3 {
+    font-size: 1.2rem;
+    margin: 40px 0 0.6rem;
+  }
+  .markdown-section h4 {
+    font-size: 1.1rem;
+  }
+  .markdown-section h5 {
+    font-size: 1rem;
+  }
+  .markdown-section h6 {
+    color: #777;
+    font-size: 1rem;
+  }
+}
+
+
+
