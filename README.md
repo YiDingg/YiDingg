@@ -4,7 +4,6 @@
   • <a href="https://github.com/YiDingg">My GitHub</a>
 </p>
 
-
 About Me:
 - 🔭 I’m currently studying at [UCAS](https://www.ucas.ac.cn/) (University of Chinese Academy of Sciences)
 - 🌱 I’m currently learning ...
@@ -27,7 +26,6 @@ My Technology Stack:
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-401.8%20thousand%20lines%20of%20code-blue)
 
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
-
 
 **I'm an Early 🐤** 
 

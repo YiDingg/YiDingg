@@ -61,17 +61,14 @@
 
 
 
-### 插入视频(不行)
+### 插入视频
 
 我们希望直接插入博客中国内外均可正常显示的视频，免费方法目前没有找到（2024.6.17更新：已找到，详见图床测试），直接使用GitHub作为视频图床也似乎行不通（国内访问慢或无法访问）。最后选择了国内阿里云（付费，大容量选这个），或SMMS（免费5G，单文件最大5MB）。显然，后者似乎难以满足视频图床的要求（很多视频不止5MB）
 
-国内外方法：
 
 - 付费方法（视频访问快）：用GitHub+PicGo+Vercel实现，详见 [【使用Github+Vercel搭建图床并通过自定义域名进行加速你的视频或者图片】](https://www.bilibili.com/video/BV1TH4y1P7f5?vd_source=cc1a55267bfd4977e53958893f16a4a9)
 
 - （尝试失败，目前没有找到免费方法）免费方法（视频访问慢/不能访问）：GitHub+PicGo+JsDelivr，详见[《GitHub+PicGo+JsDelivr 打造高效免费图床详细教程》](https://www.youyuanvip.com/382.html)和[《PicGo图床超强外挂，必须是它！》](https://www.bilibili.com/video/BV1Cs4y1C7yF?vd_source=cc1a55267bfd4977e53958893f16a4a9)
-
-国内方法
 
 - 阿里云OSS+PicGo(或MDTC)
 
@@ -96,8 +93,10 @@ src: 要播放视频的url
 
 ![image-20240617130405983](https://imagebank-1327312267.cos.ap-beijing.myqcloud.com/ImageBank/202406171304029.png)
 
+GitHub+gcore：
+
 <div class='center'>
-<video controls="false"  muted="muted" id="video1" name="media" style="width:400px"><source src="https://imagebank-1327312267.cos.ap-beijing.myqcloud.com/ImageBank/202406171300578.mp4" type="video/mp4"></video>
+<video controls="false"  muted="muted" id="video1" name="media" style="width:400px"><source src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>
 </div>
 
 ### 视频转GIF后插入
