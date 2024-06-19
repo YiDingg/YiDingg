@@ -1,206 +1,87 @@
 # Time Line
 
 ## To Do List
-- [ ] 
+- [ ] Customize to improve the components: search box, sidebar, toc
+  - https://www.bilibili.com/video/BV183411q7uu
+  - https://www.bilibili.com/video/BV1uL41157hj
+  - https://www.bilibili.com/video/BV1Lq4y137o7
+- [ ] Add marquee into cover page 
+  - https://www.bilibili.com/video/BV1Nb421B7SS
+- [ ] Add follow-through into cover page
+  - https://www.bilibili.com/video/BV1Dy4y177Dg
 - [ ] Reorganize the content arrangement
-- [ ] Customize plugins
+- [ ] Add awesome components
+  - https://www.bilibili.com/video/BV1uS4y1f7EL
 
-* [x] 2024.6.18 Customize components and themes  
-* [x] 2024.6.17 Add plugins
-* [x] 2024.6.16 Decide the structure and mport blogs and   
-* [x] 2024.6.14 Bulit the website and add basic components
 
 ## Time Line of the Site
 
 <div class='center'>
 <ul class="timeline-list">
-<!-- The Top 1 -->
 <li class="timeline-item">
     <div class="timeline-item_tail"></div>
-    <div class="timeline-item_node"></div>
+    <div class="timeline-item_tail_add" style='top:10px'></div>
     <div class="timeline-item_wrapper">
-        <div class="timeline-item_timestamp">July 2024</div>
-        <div class="timeline-item_content"><br><br><!-- 每块顶部单独留一些空间 -->
-            <div class="tbox">
-                <div class='outerBox'>
-                    <div class="dateBox"><div>
-                        <tl-title>时间</tl-title>
-                        <ul>事件的详细内容事件的详细内容事件的详细内容事件的详细内容事件的详细内容</ul>
-                    </div></div>
-                </div>
-        </div>
-        <div class="tbox">
-            <div class='outerBox'>
-                <div class="dateLeftBox"><div>
-                    <tl-title>时间</tl-title>
-                    <ul>事件的详细内容事件的详细内容事件的详细内容事件的详细内容事件的详细内容</ul>
-                </div></div>
-            </div>
-        </div>
-        <div class="tbox">
-                <div class='outerBox'>
-                    <div class="dateBox"><div>
-                        <tl-title>时间</tl-title>
-                        <ul>事件的详细内容事件的详细内容事件的详细内容事件的详细内容事件的详细内容</ul>
-                    </div></div>
-                </div>
-        </div>
-    </div>
-    </div>
-</li>
-<!-- Another Part -->
 
-<!-- The Bottom Part -->
-<li class="timeline-item">
-    <div class="timeline-item_tail"></div>
-     <div class="timeline-item_tail_add" style='top:10px'></div>
-    <div class="timeline-item_node"></div>
-    <div class="timeline-item_wrapper">
-        <div class="timeline-item_timestamp">July 2024</div>
-        <div class="timeline-item_content"><br><br><!-- 每块顶部单独留一些空间 -->
-            <div class="tbox">
-                <div class='outerBox'>
-                    <div class="dateLeftBox"><div>
-                        <tl-title>Basic Structure of Site</tl-title>
-                        <ul>
-We have bulit the basic sturcture of site and added some basic components.  
-                        </ul>
-                    </div></div>
-                </div>
-            </div>
-            <div class="tbox">
-                <div class='outerBox'>
-                    <div class="dateBox"><div>
-                        <tl-title> The site's birthday!</tl-title>
-                        <ul>
-Our site comes its first birthday on June 14, 2024. A long journey can be covered only by taking one step at a time.
+<!--  -->
+<!-------------- Add Time Block Below -------------->
+<!-- -------------------------------------------- -->
+<div class="timeline-item_node"></div>
+<div class="timeline-item_timestamp">July 1, 2024</div>
+<div class="timeline-item_content"><br><br><!-- 每块顶部单独留一些空间 -->
+<!------------------------------------>
+<div class="tbox"><div class='outerBox'><div class="dateLeftBox"><div>
+<tl-title> Import Blogs, Notes and Projects </tl-title><ul>
+We imported the previous blogs, projects and some of the notes. 
+We would be updating and maintaining the website currently.
+</ul></div></div></div></div>
+<!------------------------------------>
+<div class="tbox"><div class='outerBox'><div class="dateBox"><div>
+<tl-title>Better Themes and More Feartures</tl-title>
+<ul>
+The site theme was improved. Some plugins were added for new awesome features, such as plantuml, updated time, embedded pdf, comment system, etc.
+</ul></div></div></div></div>
+<!------------------------------------>
+<div class="tbox"><div class='outerBox'><div class="dateLeftBox"><div>
+<tl-title>Basic Structure of Site</tl-title>
+<ul>
+We have bulit the basic sturcture of site and added some basic components,
+such as sidebar, toc, search box, etc.
+</ul></div></div></div></div>
+<!------------------------------------>
+<div class="tbox"><div class='outerBox'><div class="dateBox"><div>
+<tl-title> The Site's Birthday!</tl-title><ul>
+Our site celebrates its first birthday on June 14, 2024. 
+A long journey can be covered only by taking one step at a time.
 Everything is possible from this day! 
-                        </ul></div></div>
-                </div>
-            </div>
-        </div>
-    </div>
+</ul></div></div></div></div>
+<!------------------------------------>
+</div>
+<!-- --------------------------------------------- -->
+<!-------------- Add Time Bolock Above -------------->
+<!--  -->
+<!--  -->
+<!-------------- Add Time Node Below -------------->
     <div class="timeline-item_node"></div>
-    <div class="timeline-item_wrapper">
-    <div class="timeline-item_timestamp">July 14, 2024</div>
+    <div class="timeline-item_timestamp">June 14, 2024</div>
+<!-------------- Add Time Node Above -------------->
+    </div>
 </li>
 </ul>
 </div>
 
-<style>
-.timeline-list{
-    margin: 0;
-    font-size: 14px;
-    list-style: none;  
-}
-.timeline-item:last-child .timeline-item_tail {
-    display: none;
-}
-.timeline-item{
-    position: relative;
-}
-.timeline-item_tail{
-    position: absolute;
-    left: 5px;
-    height: 100%;
-    border-left: 2px solid rgb(228,231,237);
-}
+<!-- Use the code here if you need to add one time block -->
 
-.timeline-item_tail_add{
-    position: absolute;
-    left: 5px;
-    height: 240px;
-    border-left: 2px solid rgb(228,231,237);
-}
-
-.timeline-item_node{
-    position: absolute;
-    background-color: #e4e7ed;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    left: -2px;
-    width: 15px;
-    height: 15px;
-    background: #fff;
-    border:3px solid rgb(38, 59, 246)
-}
-.timeline-item_wrapper{
-    position: relative;
-    padding-left: 20px;
-    top: 0px;
-}
-.timeline-item_timestamp{
-    margin-bottom: 8px;
-    padding-top: 0px;
-    color: rgb(38, 59, 246);
-    line-height: 1;
-    font-weight: 700;
-    font-size: 16px;      
-}
-.delclass{
-    color: #0379FB;
-    font-weight: normal;
-    cursor: pointer;
-}
-.delclass:hover{
-    color: #2395FF;
-}
-.tbox{
-    padding:10px;
-    height:94px;
-    margin-left: -27px;
-    margin-top: -40px
-}
-.tbox-content{
-    background:rgb(238, 255, 255);
-    padding: 15px;
-    width: auto;
-    height: auto;
-}
-.pannel{
-    border-radius: 4px;
-    border: 1px solid #ebeef5;
-    background-color: #fff;
-    overflow: hidden;
-    color: #303133;
-    transition: .3s;
-   
-}
-.pannel-header{
-    padding: 20px;
-}
-.pannel-body{
-    padding: 20px;
-}
-.pannel.shadow{
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
-}
-.config{
-    background:rgba(252,252,252,1);
-    padding: 20px;
-    margin-bottom: 15px;
-    position: relative;  
-}
-.delItem{
-    position: absolute;
-    font-size: 17px;
-    color: #333;
-    top: -8px;
-    right: -5px;
-    cursor: pointer;
-}
-.config-content{
-    margin-top: 15px;
-}
-.imgLabel{
-    width: 80px;
-    color: #999;
-}
-.imgList{
-    margin-left: 80px;
-    padding: 10px;
-    background: rgba(246,246,246,1);
-}
-</style>
+<!-------------- Add Time Block Below -------------->
+<!---- 
+<div class="timeline-item_node"></div>
+<div class="timeline-item_timestamp">July 1, 2024</div>
+<div class="timeline-item_content"><br><br>
+<div class="tbox"><div class='outerBox'><div class="dateLeftBox"><div>
+<tl-title>Basic Structure of Site</tl-title>
+<ul>
+We have bulit the basic sturcture of site and added some basic components, such as sidebar, toc, search box, etc.
+</ul></div></div></div></div>
+</div>
+---->
+<!-------------- Add Time Bolock Above -------------->

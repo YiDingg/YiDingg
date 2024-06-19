@@ -482,7 +482,6 @@
 /* ----------- 自定义时间轴      -------------- */
 /*                                             */
 
-
 .outerBox:after {
 /* 竖线末尾文字样式 */
 /*   content: "未完待续"; */
@@ -513,9 +512,6 @@
   animation: showIn ease;
 }
 
-
-
-
 @-webkit-keyframes showIn {
   /* 球球、竖线、左右的模块的动画 */
   0%,
@@ -532,7 +528,7 @@
 .outerBox .dateLeftBox:hover {
   /* 触摸事件后球球的样式 */
   border: 1px solid rgb(0, 0, 0);
-  background: rgb(0, 0, 0);
+  background: rgb(61,51,243);
   box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.4);
 }
 
@@ -567,14 +563,6 @@
 .outerBox .dateLeftBox div:hover {
   /* 触摸事件后的高度 */
   height: 90px;
-}
-
-.outerBox .dateBox div p,
-.outerBox .dateLeftBox div p {
-  /* 左右事件的字体样式 */
-  color: rgb(84, 84, 85);
-  font-weight: bold;
-  text-align: center;
 }
 
 .outerBox .dateBox:before,
@@ -616,9 +604,9 @@
   font-size: 13px;
 }
 
-
 .outerBox .dateBox div tl-title,
 .outerBox .dateLeftBox div tl-title{
+  /* 左右事件的标题样式 */
 /*     list-style: none; */
   width: 250px;
   padding: 5px;
@@ -628,12 +616,62 @@
   font-weight: bold;
 }
 
-.outerBox .dateBox div a,
-.outerBox .dateLeftBox div a {
-  /* 左右事件的字体样式 */
-  color: rgb(84, 84, 85);
-  font-weight: bold;
-  text-align: center;
+.timeline-list{
+  margin: 0;
+  font-size: 14px;
+  list-style: none;  
+}
+.timeline-item:last-child .timeline-item_tail {
+  display: none;
+}
+.timeline-item{
+  position: relative;
+}
+.timeline-item_tail{
+  position: absolute;
+  left: 5px;
+  height: 100%;
+  border-left: 2px solid rgb(228,231,237);
+}
+
+.timeline-item_tail_add{
+  position: absolute;
+  left: 5px;
+  height: 100%;
+  border-left: 2px solid rgb(228,231,237);
+}
+
+.timeline-item_node{
+  position: absolute;
+  background-color: #e4e7ed;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: -2px;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border:3px solid rgb(38, 59, 246)
+}
+.timeline-item_wrapper{
+  position: relative;
+  padding-left: 20px;
+  top: 0px;
+}
+.timeline-item_timestamp{
+  margin-bottom: 8px;
+  padding-top: 0px;
+  color: rgb(38, 59, 246);
+  line-height: 1;
+  font-weight: 700;
+  font-size: 16px;      
+}
+.tbox{
+  padding:10px;
+  height:94px;
+  margin-left: -27px;
+  margin-top: -40px
 }
 /*                                             */
 /* ----------- 自定义时间轴      -------------- */

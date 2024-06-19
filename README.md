@@ -5,29 +5,28 @@
 </p>
 
 
-about me:
+About Me:
 - 🔭 I’m currently studying at [UCAS](https://www.ucas.ac.cn/) (University of Chinese Academy of Sciences)
-- 💬 Ask me about Electronic Enginearing
 - 🌱 I’m currently learning ...
 - 🤔 I’m looking for help with ...
 - 📫 How to reach me: dingyi233@mails.ucas.ac.cn
 - ⚡ Fun fact: ...
 
-My technology stack:
+My Technology Stack:
 - Latex
 - Markdown
 - Git
 - Matlab
 - C Programming
-- MCU(STM32)
+- MCU (STM32)
 - PCB Design
-
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
 ![Code Time](http://img.shields.io/badge/Code%20Time-36%20hrs%2024%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-399.7%20thousand%20lines%20of%20code-blue)
+
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 **I'm a Night 🦉** 
 
