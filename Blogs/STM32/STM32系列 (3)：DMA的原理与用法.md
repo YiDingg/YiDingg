@@ -6,7 +6,7 @@
 >系列汇总详见地址：[📕STM32系列汇总](Blogs\STM32\STM32系列汇总.md)
 
 ## 一、DMA原理及特性
-对于STM32F103x系列，官方对其DMA的说明在 [STM32F10x 参考手册(中文版).pdf](/static/uploads/2024/5/30/764d9b9b210b4c052c24837bf24e0398.pdf) 中的Page.142~Page.154。下面是部分截图：
+对于STM32F103x系列，官方对其DMA的说明在 [STM32F10x 参考手册(中文版).pdf](https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/764d9b9b210b4c052c24837bf24e0398.pdf) 中的Page.142~Page.154。下面是部分截图：
 <img src="https://i3.mjj.rip/2024/06/15/b2a0ac80f34a53b991b5c7b17600d42d.png" alt="b2a0ac80f34a53b991b5c7b17600d42d.png" border="0">
 特别地，我们也要注意DMA的Circular模式、MemtoMem模式:
 <img src="https://i3.mjj.rip/2024/06/15/3c7f18ded2c3bc3a512523ffa38abe22.png" alt="3c7f18ded2c3bc3a512523ffa38abe22.png" border="0">

@@ -28,15 +28,15 @@
 
 
 ## 二、相关资料
-下表是本系列的相关资料（点击展开），可跳转至仓库下载：[STM32系列相关资料](https://www.writebug.com/code/5d9c82dc-1c03-11ef-a772-0242c0a81018/src/branch/main/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/%E6%89%8B%E5%86%8C+%E6%95%99%E6%9D%90/#) 
+下表是本系列的相关资料（点击即可下载），也可跳转至仓库下载：[STM32系列相关资料](https://www.writebug.com/code/5d9c82dc-1c03-11ef-a772-0242c0a81018/src/branch/main/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/%E6%89%8B%E5%86%8C+%E6%95%99%E6%9D%90/#) 
 
-- Cortex-M3权威指南 (中文版).pdf
-- STM32 MCU 选型手册 201603.pdf
-- STM32 HAL库实战指南_F103系列_野火.pdf
-- STM32F10x 参考手册(中文版)_V10.pdf
-- STM32F103x 数据手册(中文版).pdf
-- STM32F10x UserManual_V15.pdf
-- STM32F10x DataSheet.pdf
+- [Cortex-M3权威指南 (中文版).pdf](https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/0ced3785cf7e8f692d69f3b97f6440d6.pdf)
+- [STM32 MCU 选型手册 201603.pdf](https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/b93a6aa958995d58aa34ce672f69fc72.pdf) 
+- [STM32 HAL库实战指南_F103系列_野火.pdf](https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/f4e86666248e8fae067ab704050b8ca2.pdf)
+- [STM32F10x 参考手册(中文版)_V10.pdf](https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/764d9b9b210b4c052c24837bf24e0398.pdf)
+- [STM32F103x 数据手册(中文版).pdf](https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/9a0a3230c6dc689b500dbae901b2510f.pdf)
+- [STM32F10x UserManual_V15.pdf](https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/9d624b9b3c4e4ec9e6ce8d8eb1fe20c5.pdf)
+- [STM32F10x DataSheet.pdf](https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/8b9c433508928ad2fa34db52837ce145.PDF)
 
 相关网站：
 - [江协科技官方网站](https://jiangxiekeji.com/)
