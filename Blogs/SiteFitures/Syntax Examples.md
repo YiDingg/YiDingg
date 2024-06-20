@@ -218,49 +218,6 @@ GitHub+gcore：
 >[!TIP]docsify的相关插件多以 `docsify-插件名字` 为格式，在GitHub搜索相关repo即可。
 
 
-## 图床测试
-
-经过多次、多地区实验，下面是两种可行的方法：
-
-1. 选用[腾讯云](https://console.cloud.tencent.com/) + [COSBrowser](https://cloud.tencent.com/document/product/436/11366) 作为图片图床/视频图床/网盘，收费，但优点在于稳定、合规、风险低。参考文章：https://blog.csdn.net/qq_31967569/article/details/121015954 和
-https://blog.csdn.net/be_Newcode/article/details/137838137
-
-1. 选用 [GitHub](https://github.com/YiDingg) + [PicGo](https://github.com/Molunerfinn/PicGo)(或 [MDTC](http://tc.yangln.cn/help/index.html) )  作为图片图床/视频图床(非网盘)，免费，但缺点是访问不稳定、不符GitHub初衷，有风险。
-
-<div class='center'>
-
-|图床|图片|gif|mp4|备注<div style="width: 80pt"></div>|<div style="width: 60pt">手机端</div>|<div style="width: 60pt">电脑无加速</div>|<div style="width: 60pt">电脑有加速</div>|
-|:-:|:-:|:-:|:-:|:---:|:---:|:---:|:---:|
-|GitHub(gcore)|V|V|V|可能访问慢/无法访问|图+gif+mp4<br>(需使用加速域名)|图+gif+mp4<br>(需使用加速域名)|图+gif+mp4<br>(需使用加速域名)|
-|Gitee|-|-|-|Gitee官方ban了图床功能|-|-|-|
-|SM.MS|V|V|-|MDTC: 已上传过的图片，再次上传得到空url<br>PicGo: 已上传过的图片，再次上传得到原url|图+gif|图+gif|图+gif|
-|MJJ图床|V|V|-|手动上传|图+gif|图+gif|图+gif|
-|路过图床|V|-|-|手动上传|图|图|图|
-|阿里云|V|V|V|付费|图+gif+mp4|图+gif+mp4|图+gif+mp4|
-|腾讯云|V|V|V|付费|图+gif+mp4|图+gif+mp4|图+gif+mp4|
-
-</div>
-
-
-<font color=red>小技巧：</font>
-访问GitHub图床的原视频链接为 https://github.com/YiDingg/VideoBank_0/PicGo/202406170041812.mp4, 一般访问极慢/无法访问，将其替换为 https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4 ，可以提高成功访问概率和访问速度。图片也是类似的。
-
-GitHub仓库的访问可以使用加速器，也可以修改域名/代理，后者详见：https://blog.csdn.net/aligadorr/article/details/131274735
-
-GitHub加速域名测试：
-<div class='center'>
-
-|域名<div width=10px></div>|图片|gif|mp4|
-|:-:|:-:|:-:|:-:|
-|gcore.jsdelivr.net|<img src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:20px"/>|<img src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" style="width:20px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|
-|cdn.jsdelivr.net|<img src="https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:20px"/>|<img src="https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" style="width:20px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|6|
-|fastly.jsdelivr.net|<img src="https://fastly.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:20px"/>|<img src="https://fastly.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" style="width:20px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://fastly.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|
-|testingcf.jsdelivr.net|<img src="https://testingcf.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:20px"/>|<img src="https://testingcf.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" style="width:20px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://testingcf.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|
-|code.webcache.cn|<img src="https://code.webcache.cn/gh/YiDingg/VideoBank_0@latest/PicGo/202406171018025.jpg" style="width:20px"/>|<img src="https://code-dev.webcache.cn/gh/YiDingg/VideoBank_0@main/PicGo/202406171019604.gif" style="width:20px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://code-dev.webcache.cn/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|
-|cdn.staticaly.com|<img src="https://cdn.staticaly.com/gh/YiDingg/VideoBank_0@main/PicGo/202406171018025.jpg" style="width:20px"/>|<img src="https://cdn.staticaly.com/gh/YiDingg/VideoBank_0@main/PicGo/202406171019604.gif" style="width:20px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://cdn.staticaly.com/gh/YiDingg/VideoBank_0@main/PicGo/202406170046093.mp4" type="video/mp4"></video>|
-|unpkg.com(仅限npm包)||||
-</div>
-
 
 ## 外接插件
 
@@ -524,14 +481,11 @@ iframe:
 ```
 ````
 
-插件+WB:
 
-<iframe src="https://www.writebug.com/git/DY130810/GitHub_YiDingg_pdf/raw/branch/main/Linear%20Algebra%202%20notes.pdf" width="800px" height="500px" frameborder="0" scrolling="no"></iframe>
-
-插件+本地:
-
-<iframe src="pdf\GitHub_YiDingg_pdf\Linear Algebra 2 notes.pdf" width="800px" height="300px" frameborder="0" scrolling="no"></iframe>
-
+插件+WB：
+```pdf
+https://www.writebug.com/git/DY130810/GitHub_YiDingg_pdf/raw/branch/main/Linear%20Algebra%202%20notes.pdf
+```
 
 ### 嵌入docsify
 

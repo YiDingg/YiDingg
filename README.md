@@ -25,6 +25,8 @@ My Technology Stack:
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-402.2%20thousand%20lines%20of%20code-blue)
 
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
+
 <!--START_SECTION:waka-->
 
 **I'm an Early 🐤** 

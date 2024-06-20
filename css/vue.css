@@ -929,6 +929,7 @@ article img, article object {
   margin-bottom: 5px;
   width: 25px;
   height: 4px;
+  cursor: pointer;
 }
 /* 调整不同设备字体大小 */
 @media (max-width: 580px) {

@@ -15,7 +15,8 @@
 - [ ] Add awesome components
   - https://www.bilibili.com/video/BV1uS4y1f7EL
 - [ ] Optimize timeline for mobile phones.
-- [ ] 
+- [ ] Optimize pdf preview for mobile phones.
+- https://blog.csdn.net/weixin_43239880/article/details/139457321
 
 ## Time Line of the Site
 

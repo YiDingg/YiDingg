@@ -28,8 +28,8 @@
   - Site Features
     - [Syntax Examples](Blogs\SiteFitures\Syntax%20Examples.md)
     - [Custom Component](Blogs\SiteFitures\CustomComponent.md)
+    - [Data Host](Blogs\SiteFitures\DataHost.md)
     - [My Notes Structure](Blogs\SiteFitures\MyNotesStructure.md)
-    - [Image Host](Blogs\SiteFitures\ImageHost.md)
     - [个人网站搭建](Blogs\SiteFitures\个人网站搭建.md)
 
 - 📖 **Notes**
