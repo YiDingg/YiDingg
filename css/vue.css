@@ -877,6 +877,7 @@ code .token {
 .center{
   /* 普通居中 */
     width: auto;
+    max-width: 100%;
     display: table;
     margin-left: auto;
     margin-right: auto;
@@ -900,7 +901,7 @@ article img, article object {
 .markdown-section td img {
   /* 控制表格中的图片 */
   width: auto;
-  max-width:95%;
+  max-width:90%;
 }
 .border {
   /* 添加黑边框 */

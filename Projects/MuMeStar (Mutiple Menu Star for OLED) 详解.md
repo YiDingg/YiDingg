@@ -1,3 +1,4 @@
+# MuMeStar (Mutiple Menu Star for OLED)
 
 ## 一、项目说明
 
@@ -10,7 +11,7 @@
 | 相关链接 |
 | :------: |
 | 源码下载(GitHub)：[MuMeStar](https://github.com/YiDingg/MuMeStar)  |
-|代码移植方法、详细扩展教程：[MuMeStar (Mutiple Menu Star for OLED) 详解](https://yidingg.github.io/YiDingg/#/Projects/MuMeStar%20(Mutiple%20Menu%20Star%20for%20OLED)%20%E8%AF%A6%E8%A7%A3) |
+|代码移植方法、详细扩展教程：[MuMeStar (Mutiple Menu Star for OLED)](https://yidingg.github.io/YiDingg/#/Projects/MuMeStar%20(Mutiple%20Menu%20Star%20for%20OLED)%20%E8%AF%A6%E8%A7%A3) |
 </div>
 
 由于个人时间、精力和水平有限，项目难免存在不足，望读者不吝指正。
@@ -39,10 +40,11 @@
 |4. 配置四个GPIO外部中断作为按键| 外部中断模式（记得打开中断），根据具体硬件环境选择下降沿触发+内部上拉或者上升沿触发+内部下拉，四个按键分别对应 Previous, Enter, Next, Return  |[![pkwVZRA.png](https://s21.ax1x.com/2024/06/15/pkwVZRA.png)](https://imgse.com/i/pkwVZRA)[![pkwVnMt.png](https://s21.ax1x.com/2024/06/15/pkwVnMt.png)](https://imgse.com/i/pkwVnMt)|
 |5. 配置状态灯GPIO口| 配置一个PP Output 模式GPIO口作为状态灯（在程序中，任意按键按下会使状态灯电平翻转） |[![pkwVKqf.png](https://s21.ax1x.com/2024/06/15/pkwVKqf.png)](https://imgse.com/i/pkwVKqf)  |
 |6. 生成代码并编译 | 保存并生成代码，在Keil中编译一次 | 无 |
-|7. 添加项目文件| 将下载好的六个文件（MutiMenu.c，MutiMenu.h，Mutimenu_Data.h，OLEDSD.c，OLEDSD.h，OLEDSD_Font.h）复制到项目目录下的inc文件夹（.h文件放这里）和src文件夹（.c文件放这里）|![9f5cece7d5316f9dd2a9abeae19e24b0.png](https://i3.mjj.rip/2024/06/15/9f5cece7d5316f9dd2a9abeae19e24b0.png)![5e5603f2d25c22a7d13911be6169156a.png](https://i3.mjj.rip/2024/06/15/5e5603f2d25c22a7d13911be6169156a.png) |
-|8. 修改main.c| 在main.c中 #include "MutiMenu.h"，并在while(1)循环中使用函数 Menu_Handler() | ![9b5a30d0cd85a5dd83d91e35efa68478.png](https://i3.mjj.rip/2024/06/15/9b5a30d0cd85a5dd83d91e35efa68478.png)![e60a496447f9bd057350b14344d1b257.png](https://i3.mjj.rip/2024/06/15/e60a496447f9bd057350b14344d1b257.png) |
-|9. 移植完成| 菜单移植完成，编译并下载，连接好硬件部分，可以看到菜单正常显示 | ![aa86fddb5f505dcbb7a4ad56b8b33659.png](https://i3.mjj.rip/2024/06/15/aa86fddb5f505dcbb7a4ad56b8b33659.png) |
+|7. 添加项目文件| 将下载好的六个文件（MutiMenu.c，MutiMenu.h，Mutimenu_Data.h，OLEDSD.c，OLEDSD.h，OLEDSD_Font.h）复制到项目目录下的inc文件夹（.h文件放这里）和src文件夹（.c文件放这里）|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21.png" alt="MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21-02-11-33.png"> |
+|8. 修改main.c| 在main.c中 #include "MutiMenu.h"，并在while(1)循环中使用函数 Menu_Handler() |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21-02-11-38.png"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21-02-11-42.png">|
+|9. 移植完成| 菜单移植完成，编译并下载，连接好硬件部分，可以看到菜单正常显示 |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21-02-11-51.png">|
 </div>
+
 
 
 ## 三、自由扩展菜单

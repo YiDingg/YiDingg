@@ -52,8 +52,11 @@ HAL_StatusTypeDef HAL_I2C_Master_Seq_Receive_DMA(I2C_HandleTypeDef *hi2c, uint16
 ## 三、DMA辅助SPI
 
 ### 实例：SPI_DMA控制OLED
-!!#ff0000 注意：!!
-对OLED而言，单片机向OLED发送的数据分为两种，一种是命令字节，用于调整屏幕各项设置，另一种是显存字节，用于调整OLED的硬件显存。在使用IIC与OLED通信时，无法通过硬件区分上述两种字节（仅有VCC, GND, SCL, SDA四个接口，而OLED的SPI通信利用DC引脚区分两种字节），因此需要通过软件将不同类型的字节写入到从机寄存器的不同位置。换句话说，通过IIC驱动OLED时，必须使用HAL_I2C_Mem_Write()函数而不是HAL_I2C_Master_Transmit()函数，因为后者无法区分命令字节和显存字节。一般地，我们会将命令字节写到寄存器的0x00地址处，将显存数据写到寄存器的0x40地址处。
+
+!> **注意：**
+对OLED而言，单片机向OLED发送的数据分为两种，一种是命令字节(Command)，用于调整屏幕各项设置，另一种是数据字节(Data)，用于调整OLED的硬件显存。
+
+在使用IIC与OLED通信时，无法通过硬件区分上述两种字节（仅有VCC, GND, SCL, SDA四个接口，而OLED的SPI通信利用DC引脚区分两种字节），因此需要通过软件将不同类型的字节写入到从机寄存器的不同位置。换句话说，通过IIC驱动OLED时，必须使用HAL_I2C_Mem_Write()函数而不是HAL_I2C_Master_Transmit()函数，因为后者无法区分命令字节和显存字节。一般地，我们会将命令字节写到寄存器的0x00地址处，将显存数据写到寄存器的0x40地址处。
 
 ### 实例：SPI_DMA读写Flash
 ## 知识补充

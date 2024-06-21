@@ -5,7 +5,7 @@ When building your own blog site, it is crucial to select an appropriate image h
 <b>
 
 Conclusion: 
-- upload <font color='red'>img to Aliyun</font> by PicGo or VS-PicGo, <font color='red'>gif to TouTiao</font> manually by PanLuo Uploading, <font color='red'> video, pdf and other types to WB</font> manually (backup to local). 
+- upload <font color='red'>img to Aliyun</font> by PicGo or VS-PicGo, <s><font color='red'>gif to TouTiao</font> manually by PanLuo Uploading,</s> <font color='red'>gif, video, pdf and other file types to WB</font> manually (backup to local). 
 - Use [Oplimize LLA](https://imagecompressor.com)(70 quality recommanded) or [TinyPNG](https://tinypng.com/) to compress the image and gif.
 - Use [Video To Edit](https://www.video2edit.com) to compress the video.
 - Use [I Love PDF](https://www.ilovepdf.com/) to compress the pdf.
@@ -55,7 +55,7 @@ Though you can use GitHub's repo for free, we do not recommand GitHub as a host 
 
 ## Reasons
 
-For image hosts, we have tested lots of image hosts or platforms where you can upload pictures, including 腾讯云, 阿里云, GitHub, Gitee, MJJ.TODAY, 路过图床, 简单图床. Here are the details:
+For image hosts, we have tested lots of image hosts or platforms where you can upload pictures, including Tencent Cloud(腾讯云), Aliyun(阿里云), GitHub, Gitee, MJJ.TODAY, ImgSE(路过图床), Easy Image(简单图床), etc. Here is part of the results:
 
 <div class='center'>
 
@@ -64,7 +64,7 @@ For image hosts, we have tested lots of image hosts or platforms where you can u
 | GitHub | Free, automaltical, but not advised  | Maximum 800MB for each  |
 | Gitee  | Banned completely | Gitee official had banned this completely|
 | WB | Free (for 2G), but completely manual   | No plugins or extensions support this new code hoster |
-| MJJ.TODAY | Free, but manual | 10MB maximum for each img |
+| MJJ.TODAY | Free, but manual and not stable enough | 10MB maximum for each img |
 |ImgSE(路过图床)| Free, but manual | 10 images limited per hour, 100 per day |
 |Tencent Cloud(腾讯云)| Charged, automaltical, fast  |  |
 |Aliyun(阿里云)|Charged, automaltical, fast| on sale these days |
@@ -83,6 +83,8 @@ For image hosts, we have tested lots of image hosts or platforms where you can u
 |PanLuo(盘络上传)|  | |
 |Hellohao|Free or ¥198, manually| practical and various functions, such as automatic compression |
 </div>
+
+Go to [GitHub Test](Blogs\SiteFeatures\DataHost?id=github-test) and [Free Image Host Test](Blogs\SiteFeatures\DataHost?id=free-image-host-test) for details.
 
 ## Contrast
 
@@ -134,15 +136,37 @@ Here are the test results of image hosts.
 
 <div class='center'>
 
-|domain<div width=10px></div>|img|gif|mp4|
+|domain|img|gif|mp4|
 |:-:|:-:|:-:|:-:|
-|gcore.jsdelivr.net|<img src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:20px"/>|<img src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" style="width:20px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|
-|cdn.jsdelivr.net|<img src="https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:20px"/>|<img src="https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" style="width:20px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|6|
-|fastly.jsdelivr.net|<img src="https://fastly.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:20px"/>|<img src="https://fastly.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" style="width:20px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://fastly.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|
-|testingcf.jsdelivr.net|<img src="https://testingcf.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:20px"/>|<img src="https://testingcf.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" style="width:20px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://testingcf.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|
-|code.webcache.cn|<img src="https://code.webcache.cn/gh/YiDingg/VideoBank_0@latest/PicGo/202406171018025.jpg" style="width:20px"/>|<img src="https://code-dev.webcache.cn/gh/YiDingg/VideoBank_0@main/PicGo/202406171019604.gif" style="width:20px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://code-dev.webcache.cn/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|
-|cdn.staticaly.com|<img src="https://cdn.staticaly.com/gh/YiDingg/VideoBank_0@main/PicGo/202406171018025.jpg" style="width:20px"/>|<img src="https://cdn.staticaly.com/gh/YiDingg/VideoBank_0@main/PicGo/202406171019604.gif" style="width:20px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://cdn.staticaly.com/gh/YiDingg/VideoBank_0@main/PicGo/202406170046093.mp4" type="video/mp4"></video>|
+|gcore.jsdelivr.net|<img src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:40px"/>|<img src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" style="width:40px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|
+|cdn.jsdelivr.net|<img src="https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:40px"/>|<img src="https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" style="width:40px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|6|
+|fastly.jsdelivr.net|<img src="https://fastly.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:40px"/>|<img src="https://fastly.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" style="width:40px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://fastly.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|
+|testingcf.jsdelivr.net|<img src="https://testingcf.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:40px"/>|<img src="https://testingcf.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" style="width:40px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://testingcf.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|
+|code.webcache.cn|<img src="https://code.webcache.cn/gh/YiDingg/VideoBank_0@latest/PicGo/202406171018025.jpg" style="width:40px"/>|<img src="https://code-dev.webcache.cn/gh/YiDingg/VideoBank_0@main/PicGo/202406171019604.gif" style="width:40px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://code-dev.webcache.cn/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|
+|cdn.staticaly.com|<img src="https://cdn.staticaly.com/gh/YiDingg/VideoBank_0@main/PicGo/202406171018025.jpg" style="width:40px"/>|<img src="https://cdn.staticaly.com/gh/YiDingg/VideoBank_0@main/PicGo/202406171019604.gif" style="width:40px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://cdn.staticaly.com/gh/YiDingg/VideoBank_0@main/PicGo/202406170046093.mp4" type="video/mp4"></video>|
 |unpkg.com(仅限npm包)||||
+</div>
+
+
+### Free Image Host Test
+
+
+<div class='center'>
+
+|Host|note|img|gif|mp4|pdf|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|[131213](https://img.131213.xyz/) | 5 MB maximum for each file<br>no space limit<br>no log in | <img src="https://img1.131213.xyz/file/676369b7e97e5d8f9aa58.jpg" style="width:40px"/> | <img src="https://img1.131213.xyz/file/ac37606e27b921f10486b.gif" style="width:60px"/> |<video controls="false"  muted="muted" id="video1" name="media" style="width:150px"><source src="https://img1.131213.xyz/file/8b327e6fbd8745e3685b8.mp4" type="video/mp4"></video>|-|
+| [Ming](https://images.mingming.dev/) |5 MB maximum for each file<br>no space limit<br>no log in| <img src="https://images.mingming.dev/file/214a340799a67002b8474.jpg" style="width:40px"/>   | <img src="https://images.mingming.dev/file/ea0685ad77470045728e3.gif" style="width:60px"/> | <video controls="false"  muted="muted" id="video1" name="media" style="width:150px"><source src="https://images.mingming.dev/file/636eaee3fbf10a724f1ed.mp4" type="video/mp4"></video> |
+| [PicoS](https://demo.pico.rocks/)| unlimited<br>need deployment  | <img src="https://demo.pico.rocks/-WWJRZxQsrH" style="width:40px"/> | <img src="https://demo.pico.rocks/-b9PyXd4iF5" style="width:60px"/> |<video controls="false"  muted="muted" id="video1" name="media" style="width:150px"><source src="https://demo.pico.rocks/-H5VXiB8Jhm" type="video/mp4"></video>||
+| [SuBed](https://www.superbed.cn/)| Free or Premium  | <img src="https://pic.imgdb.cn/item/66751485d9c307b7e9839790.jpg" style="width:40px"/> | <img src="https://pic.imgdb.cn/item/6675148dd9c307b7e983a381.gif" style="width:60px"/> |-|
+| [ImgURL](https://imgurl.org)| Free or Premium<br>5 MB limited | <img src="https://s3.bmp.ovh/imgs/2024/06/21/1e1162a4c840792d.jpg" style="width:40px"/> | <img src="https://s3.bmp.ovh/imgs/2024/06/21/0773b23f4b6f2575.gif" style="width:60px"/> |-|
+| [SM.MS](https://smms.app/)<br> started at 2014| Free or Premium<br>5 MB limited<br>a bit slow for free | <img src="https://s2.loli.net/2024/06/21/stFCLwufBjDaAEU.jpg" style="width:40px"/> | <img src="https://s2.loli.net/2024/06/21/jRptZe3bck2uLoi.gif" style="width:60px"/> |-|
+| [ImgSE](https://imgse.com/)<br> started at 2011| Free or Premium<br>10 MB limited<br>a bit slow for free | <img src="https://s21.ax1x.com/2024/06/21/pkDwiUf.jpg" style="width:40px"/> |-|-|
+| [MJJ](https://mjj.today/)<br> started at 2022| 10 MB limited<br> not stable enough| <img src="https://i3.mjj.rip/2024/06/21/70bcd8ac81e0749d588b9d6b57836296.jpeg" style="width:40px"/> |<img src="https://i3.mjj.rip/2024/06/21/8daf83afdd7fdc2a7b9459d9b632c5b8.gif" style="width:60px"/>|-|
+| [Post](https://postimg.cc/)| Free or Premium<br>12 MB limited |<img src="https://i.postimg.cc/kg033yyS/image.jpg" style="width:60px"/>| <img src="https://i.postimg.cc/qvhV5F20/charlie.gif" style="width:40px"/>|-|
+| [JiKe](https://jiketuchuang.com/)| Free <br>unlimited file size  |<img src="https://pic7.58cdn.com.cn/nowater/webim/big/n_v290745a54ae754db6be3e5d9c00d6b5f4.jpg" style="width:60px"/>| 16MB img<br><img src="https://pic4.58cdn.com.cn/nowater/webim/big/n_v2a46e87345cd54f58a37b5ec4d7599188.jpg" style="width:40px"/>|-|
+| [Ink](https://img.ink/)| Free <br>12 MB limited  |<img src="https://pic2.ziyuan.wang/user/1308102491/2024/06/头像_67607bebe8207.jpg" style="width:60px"/>|<img src="https://pic2.ziyuan.wang/user/1308102491/2024/06/charlie_037b88453cdf8.gif" style="width:40px"/>|-|
+
 </div>
 
 ### PDF Test

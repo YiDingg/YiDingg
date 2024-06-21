@@ -22,15 +22,14 @@
     - [VScode-Latex 中反向搜索失灵的解决方案](Blogs/FixProblem/VScode-Latex中反向搜索失灵的解决方案.md)
     - [新版 Keil_MDK 中无 Compiler_V5 的解决方案](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
   - Mixed
-    - [Test](Blogs\Mixed\Test.md)
     - [结构体及其指针在树中的应用](Blogs\Mixed\结构体及其指针在树中的应用.md)
     - [手把手教你用PWM实现呼吸灯(标准库)](Blogs\Mixed\手把手教你用PWM实现呼吸灯(标准库).md)
   - Site Features
-    - [Syntax Examples](Blogs\SiteFitures\Syntax%20Examples.md)
-    - [Custom Component](Blogs\SiteFitures\CustomComponent.md)
-    - [Data Host](Blogs\SiteFitures\DataHost.md)
-    - [My Notes Structure](Blogs\SiteFitures\MyNotesStructure.md)
-    - [个人网站搭建](Blogs\SiteFitures\个人网站搭建.md)
+    - [Syntax Examples](Blogs\SiteFeatures\Syntax%20Examples.md)
+    - [Custom Component](Blogs\SiteFeatures\CustomComponent.md)
+    - [Data Host](Blogs\SiteFeatures\DataHost.md)
+    - [My Notes Structure](Blogs\SiteFeatures\MyNotesStructure.md)
+    - [个人网站搭建](Blogs\SiteFeatures\个人网站搭建.md)
 
 - 📖 **Notes**
   - Math
@@ -45,4 +44,7 @@
   - [MuMeStar (Mutiple Menu Star for OLED)](Projects\MuMeStar%20(Mutiple%20Menu%20Star%20for%20OLED)%20详解.md)
   - [MinSyBo (Minimum System Board of STM32)](Projects\MinSyBo%20(Minimum%20System%20Board%20of%20STM32)%20详解.md)
 
-- [📃**Time Line**](TimeLine.md)
+- [📃 **Time Line**](TimeLine.md)
+
+- [❔ **Test**](Test.md)
+<!-- 🔗 -->

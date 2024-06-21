@@ -1,6 +1,6 @@
 # Time Line
 
-## To Do List
+## Development Plan
 
 <!-- The top one is the first one to be completed -->
 - [ ] Customize to improve the components: search box, sidebar, toc
@@ -33,6 +33,12 @@
 <div class="timeline-item_node"></div>
 <div class="timeline-item_timestamp">July 1, 2024</div>
 <div class="timeline-item_content"><br><br><!-- 每块顶部单独留一些空间 -->
+<!------------------------------------>
+<div class="tbox"><div class='outerBox'><div class="dateBox"><div>
+<tl-title>More Stable Data Source</tl-title>
+<ul>
+We optimized our database, such as image host, video repository. You could now browse  most of the contents freely on mobile phone and PC.
+</ul></div></div></div></div>
 <!------------------------------------>
 <div class="tbox"><div class='outerBox'><div class="dateLeftBox"><div>
 <tl-title> Import Blogs, Notes and Projects </tl-title><ul>
