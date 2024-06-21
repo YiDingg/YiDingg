@@ -31,9 +31,6 @@ https://www.writebug.com/git/DY130810/Notes/raw/commit/77732e15298f9d2390549ae3a
 ```
 
 
-
-
-
 ## Host Advice
  
 <div class='center'>
@@ -154,9 +151,9 @@ Here are the test results of image hosts.
 
 <div class='center'>
 
-|Host|note|img|gif|mp4|pdf|
-|:-:|:-:|:-:|:-:|:-:|:-:|
-|[131213](https://img.131213.xyz/) | 5 MB maximum for each file<br>no space limit<br>no log in | <img src="https://img1.131213.xyz/file/676369b7e97e5d8f9aa58.jpg" style="width:40px"/> | <img src="https://img1.131213.xyz/file/ac37606e27b921f10486b.gif" style="width:60px"/> |<video controls="false"  muted="muted" id="video1" name="media" style="width:150px"><source src="https://img1.131213.xyz/file/8b327e6fbd8745e3685b8.mp4" type="video/mp4"></video>|-|
+|Host|note|img|gif|mp4|
+|:-:|:-:|:-:|:-:|:-:|
+|[131213](https://img.131213.xyz/) | 5 MB maximum for each file<br>no space limit<br>no log in | <img src="https://img1.131213.xyz/file/676369b7e97e5d8f9aa58.jpg" style="width:40px"/> | <img src="https://img1.131213.xyz/file/ac37606e27b921f10486b.gif" style="width:60px"/> |<video controls="false"  muted="muted" id="video1" name="media" style="width:150px"><source src="https://img1.131213.xyz/file/8b327e6fbd8745e3685b8.mp4" type="video/mp4"></video>|
 | [Ming](https://images.mingming.dev/) |5 MB maximum for each file<br>no space limit<br>no log in| <img src="https://images.mingming.dev/file/214a340799a67002b8474.jpg" style="width:40px"/>   | <img src="https://images.mingming.dev/file/ea0685ad77470045728e3.gif" style="width:60px"/> | <video controls="false"  muted="muted" id="video1" name="media" style="width:150px"><source src="https://images.mingming.dev/file/636eaee3fbf10a724f1ed.mp4" type="video/mp4"></video> |
 | [PicoS](https://demo.pico.rocks/)| unlimited<br>need deployment  | <img src="https://demo.pico.rocks/-WWJRZxQsrH" style="width:40px"/> | <img src="https://demo.pico.rocks/-b9PyXd4iF5" style="width:60px"/> |<video controls="false"  muted="muted" id="video1" name="media" style="width:150px"><source src="https://demo.pico.rocks/-H5VXiB8Jhm" type="video/mp4"></video>||
 | [SuBed](https://www.superbed.cn/)| Free or Premium  | <img src="https://pic.imgdb.cn/item/66751485d9c307b7e9839790.jpg" style="width:40px"/> | <img src="https://pic.imgdb.cn/item/6675148dd9c307b7e983a381.gif" style="width:60px"/> |-|
@@ -167,6 +164,7 @@ Here are the test results of image hosts.
 | [Post](https://postimg.cc/)| Free or Premium<br>12 MB limited |<img src="https://i.postimg.cc/kg033yyS/image.jpg" style="width:60px"/>| <img src="https://i.postimg.cc/qvhV5F20/charlie.gif" style="width:40px"/>|-|
 | [JiKe](https://jiketuchuang.com/)| Free <br>unlimited file size  |<img src="https://pic7.58cdn.com.cn/nowater/webim/big/n_v290745a54ae754db6be3e5d9c00d6b5f4.jpg" style="width:60px"/>| 16MB img<br><img src="https://pic4.58cdn.com.cn/nowater/webim/big/n_v2a46e87345cd54f58a37b5ec4d7599188.jpg" style="width:40px"/>|-|
 | [Ink](https://img.ink/)| Free <br>12 MB limited  |<img src="https://pic2.ziyuan.wang/user/1308102491/2024/06/头像_67607bebe8207.jpg" style="width:60px"/>|<img src="https://pic2.ziyuan.wang/user/1308102491/2024/06/charlie_037b88453cdf8.gif" style="width:40px"/>|-|
+| [Zeruns](https://tc.zeruns.tech/)| Free <br>15 MB limited  |<img src="https://tc2.zeruns.tech/2024/06/21/d8547cc26a8e892ba0f2f42a43512392.jpeg" style="width:60px"/>|<img src="https://tc2.zeruns.tech/2024/06/21/test.gif" style="width:40px"/>|-|
 
 </div>
 
