@@ -9,6 +9,7 @@ Conclusion:
 - Use [Oplimize LLA](https://imagecompressor.com)(70 quality recommanded) or [TinyPNG](https://tinypng.com/) to compress the image and gif.
 - Use [Video To Edit](https://www.video2edit.com) to compress the video.
 - Use [I Love PDF](https://www.ilovepdf.com/) to compress the pdf.
+- Use [Short](https://d.igdu.xyz/) to create a short link for your file.
 - Use [Screen to GIF]() to convert video into gif if you need.
 </b>
 
@@ -19,7 +20,7 @@ Results Show:
 |Type|display|
 |:-:|:-:|
 |img|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/_coverpage-2024-06-20.jpeg" alt="_coverpage-2024-06-20" style="width:200px">|
-|gif|<img src="https://www.writebug.com/api/v3/document/file/download/?id=f6a8def6-2f9c-11ef-9e9a-0242c0a8c018&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTkyMjE5NDksImFjY291bnQiOnsiaWQiOiJjMzM5ODBhYy1mYjAzLTExZWUtYmNmMC0wMjQyYzBhODEwMTkiLCJyb2xlIjpudWxsLCJ1c2VybmFtZSI6IkRZMTMwODEwIiwiZW1haWwiOiJkaW5neWkyMzNAbWFpbHMudWNhcy5hYy5jbiIsInBob25lIjoiMTY2MDg4MzIwMDYiLCJhdmF0YXIiOiIvc3RhdGljL3VwbG9hZHMvMjAyNC80LzE1L2YxYjVjNmYyODVlZjFkYzVmMmFjMzMxN2NkYzdhODI1LmpwZyIsInB1dF9vbl9oYXQiOm51bGwsInNpZ25hdHVyZSI6Ilx1NzUzNVx1NWI1MFx1NGZlMVx1NjA2Zlx1NWRlNVx1N2EwYlx1NjcyY1x1NzlkMVx1NzUxZlx1NGUwMFx1Njc5YSIsImdlbmRlciI6bnVsbCwic2Nob29sIjpudWxsLCJiaXJ0aGRheSI6bnVsbCwibWFqb3IiOm51bGwsImVudHJhbmNlIjpudWxsLCJlZHVjYXRpb24iOm51bGwsImRpc2FibGVkX2xvZ2luIjpmYWxzZSwiYXV0aF9zdGF0ZSI6IjEwIiwiYWNjZXNzX3Rva2VuIjoiMDFmYWMzMGFiZmNlMTBjZTc1ZDc0NjJlNjZjMDI5OTM1Y2M3MGMyMSIsIm9ubGluZSI6ZmFsc2UsImRldmljZSI6MCwiZ3JvdXBfcHVibGljIjp0cnVlLCJmYXZfcHVibGljIjp0cnVlLCJhbnN3ZXJfcHVibGljIjp0cnVlLCJoaXN0b3J5X3B1YmxpYyI6dHJ1ZSwiZm9sbG93X3B1YmxpYyI6dHJ1ZSwiYWN0aXZpdHlfcHVibGljIjp0cnVlLCJpc19mcmVlemUiOm51bGwsImlzX2Zha2V1c2VyIjpudWxsLCJkZWxldGUiOm51bGwsImdpdF91c2VyX2lkIjoxMTIzNTAsInRoZW1lIjpudWxsLCJsYW5nIjpudWxsLCJmaXJzdExvZ2luIjpmYWxzZSwiZG9tYWluIjoiSmdiY05LcXdzSSIsImxvZ28iOiIvc3RhdGljL3VwbG9hZHMvMjAyNC80LzE1LzAzMWRhYmQ2YmQ5ZWI5Mjg2ZmM0NDliMmNmMGI0YTZkLmpwZyJ9fQ.QkYhunrUjXZrK3ZcByF6sIKsy9Kvp3n99MZyIrC1PQk" alt="toutiaoBed-normal" title="toutiaoBed-normal" style="width:200px">|
+|gif|<img src="https://d.igdu.xyz/ZoIG" alt="toutiaoBed-normal" title="toutiaoBed-normal" style="width:200px">|
 |video|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://www.writebug.com/git/DY130810/WB.VideoBank/raw/branch/main/video.mp4" type="video/mp4"></video>|
 |pdf|below|
 
