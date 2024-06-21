@@ -5,7 +5,7 @@ When building your own blog site, it is crucial to select an appropriate image h
 <b>
 
 Conclusion: 
-- upload <font color='red'>img to Aliyun</font> by PicGo or VS-PicGo, <s><font color='red'>gif to TouTiao</font> manually by PanLuo Uploading,</s> <font color='red'>gif, video, pdf and other types to WB</font> manually (backup to local). 
+- Upload <font color='red'>img to Aliyun</font> by PicGo or VS-PicGo, <s>gif to TouTiao manually by PanLuo Uploading,</s> <font color='red'>gif, video, pdf and other types to WB</font> manually (backup to local). 
 - Use [Oplimize LLA](https://imagecompressor.com)(70 quality recommanded) or [TinyPNG](https://tinypng.com/) to compress the image and gif.
 - Use [Video To Edit](https://www.video2edit.com) to compress the video.
 - Use [I Love PDF](https://www.ilovepdf.com/) to compress the pdf.
