@@ -30,8 +30,8 @@ printf() 函数的输出格式为 `printf("%[symbol][minwidth][.accuracy][length
 <div class='center'>
 
 |Parameter|Details|Example|
-|:-:|:-:|:-:|
-| [symbol] | one of the symbols { '-', '+', ' ', '#', '0'}, here are the details: <br>'-': left align, space ' ' will be added if the output length shorter than [minwidth]<br>'+'(defults): right align, space ' ' will be added if the output length shorter than [minwidth]<br>' ': <br>'#': <br>'0': |  |
+|:-:|:-|:-:|
+| [symbol] | one of the symbols { '-', '+', ' ', '#', '0'}, here are the details: <br>`-`: left align, space ' ' will be added if the output length shorter than [minwidth]<br>`+`(defults): right align, space ' ' will be added if the output length shorter than [minwidth]<br>` `: <br>`#`: <br>`0`: |  |
 | [minwidth] |  |  |
 | [.accuracy] |  |  |
 | [length] |  |  |

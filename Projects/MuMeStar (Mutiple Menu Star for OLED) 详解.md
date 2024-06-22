@@ -93,8 +93,6 @@
 |6. 编译并烧录 | 可以看到，成功实现 Sayhello 功能 | ![1c71a0c981deafb0c3ec037ef567563a.jpeg](https://i3.mjj.rip/2024/06/15/1c71a0c981deafb0c3ec037ef567563a.jpeg) |
 
 ### 4. 添加 Loop 菜单
-注：Loop 型菜单的循环由主程序中的总循环提供，也即 main.c 中的 while(1) 循环。因此，在编写下文的 Loop_run 型函数时，只需假设
-
 目标：在某个 Parent 型菜单下，添加一个 Loop 型菜单。下面以添加在 "Hello" 下的 "Smile" 选项为例。
 
 | 步骤 | 详解 | 图片 |

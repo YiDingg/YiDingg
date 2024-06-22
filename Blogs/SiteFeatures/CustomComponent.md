@@ -64,9 +64,9 @@ focus属性会影响其它组件，因此注释掉了动画，可作静态按钮
 ### Loading
 
 <div class="wrapper">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
+    <div class="circle-load"></div>
+    <div class="circle-load"></div>
+    <div class="circle-load"></div>
     <div class="shadow"></div>
     <div class="shadow"></div>
     <div class="shadow"></div>

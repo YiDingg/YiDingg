@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="css/vue.css">
     <link rel="stylesheet" href="css/test.css"><!-- 测试文件 -->
     
-    
 
     <!-- 设置浏览器图标 -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -42,16 +41,20 @@
     <link rel="icon" type="image/png" sizes="16x16" href="static/icon/favicon-16x16.png">
     <link rel="manifest" href="static/icon/site.webmanifest">
     
-</head>
+    <!-- docsify-gifcontrol -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-gifcontrol/dist/docsify-gifcontrol.css">
+     <!-- docsify-top-banner-plugin -->
+<!--      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-top-banner-plugin@latest/dist/style.css"/> -->
 
+</head>
 <body>
     <!-- 定义加载时候的动作 -->
     <div id="app">
         <div class="center-screen">
             <div class="wrapper">
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
+                <div class="circle-load"></div>
+                <div class="circle-load"></div>
+                <div class="circle-load"></div>
                 <div class="shadow"></div>
                 <div class="shadow"></div>
                 <div class="shadow"></div>
@@ -114,9 +117,9 @@
                     '/zh-cn/': '搜索',
                     '/': 'Type to search'
                 },
-                noData: '找不到结果',
-                depth: 4,
-                hideOtherSidebarContent: false,
+                noData: 'no results',
+                depth: 5,
+                hideOtherSidebarContent: true,
                 namespace: 'Docsify-Guide',
             },
 
@@ -299,6 +302,25 @@
                         showRandomAnnouncement('announce-right', 10000)
                     });
                 }], */
+
+            /* docsify-footer-enh  */
+            footer: {
+                copy: '<span>Copyright &copy; 2024 YiDing. All rights reserved.</span>',
+                auth: ' ',
+                pre: '<hr/>',
+                style: 'text-align: right;',
+                class: 'className',
+                },
+                
+            /* docsify-remote-markdown */
+            remoteMarkdown: {
+                tag: 'remoteMarkdownUrl',
+            },
+/*             topBanner: {
+                content:'Welcome!',
+                position:'fixed',
+                zIndex:-1
+            }, */
         }
 
     </script>
@@ -426,7 +448,7 @@
     <!-- html demo预览+代码库块复制(demo预不行?) -->
 <!--     <link rel="stylesheet" href="./css/html preview/index.min.css">
     <script src="//cdn.jsdelivr.net/npm/docsify-demo@latest/dist/index.min.js"></script> -->
-    <!-- 中英文间自动加空格插件 -->
+    <!-- 中文/英文/数字间自动加空格插件 -->
     <script src="//cdn.jsdelivr.net/npm/docsify-pangu/lib/pangu.min.js"></script>
     <!-- md远程导入插件(不行) -->
 <!--     <script src="//cdn. jsdelivr.net/npm/docsify-remote-markdown/dist/docsify-remote-markdown.min.js"></script> -->
@@ -467,9 +489,6 @@
     <script src="//cdn.jsdelivr.net/npm/docsify-chat/lib/docsify-chat.min.js"></script>
     <!-- docsify-progress 阅读进度条(冲突) -->
 <!--     <script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script> -->
-    <!-- docsify-gifcontrol 插件(太慢) -->
-<!--     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-gifcontrol/dist/docsify-gifcontrol.css">
-    <script src="//unpkg.com/docsify-gifcontrol/dist/docsify-gifcontrol.js"></script> -->
     <!-- docsify-terminal-block 插件 -->
     <script src="https://cdn.jsdelivr.net/npm/docsify-terminal-block@1.0.3"></script>
     <!-- docsify-accordion 手风琴 -->
@@ -482,7 +501,20 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-termynal/custom.css">
     <script src="//cdn.jsdelivr.net/npm/docsify-termynal/termynal.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify-termynal/custom.js"></script> -->
-
+    <!-- docsify-gifcontrol -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-gifcontrol/dist/docsify-gifcontrol.js"></script>
+    <!-- docsify-example-panels -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/docsify-example-panels"></script> -->
+    <!-- docsify-footer-enh  -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
+    <!-- docsify-remote-markdown -->
+    <script src="//unpkg.com/docsify-remote-markdown/dist/docsify-remote-markdown.min.js"></script>
+    <!-- docsify-top-banner-plugin -->
+<!--     <script src="https://cdn.jsdelivr.net/npm/docsify-top-banner-plugin@latest/dist/index.js"></script> -->
+    <!-- docsify-sidebar-footer -->
+<!--     <script src="https://cdn.jsdelivr.net/npm/@markbattistella/docsify-sidebarfooter@latest"></script> -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet"/>
+<script src="//unpkg.com/docsify-material-icons/dist/docsify-material-icons.min.js"></script>
 </body>
 
 </html>

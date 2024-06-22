@@ -649,7 +649,7 @@ body {
   font-weight: 600;
 }
 .markdown-section h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin: 0 0 1rem;
 }
 .markdown-section h2 {
@@ -893,10 +893,26 @@ code .token {
 }
 
 /* 自定义img,object标签 */
-article img, article object {
-  /* article全局img */
-  max-width:750px;            /* 图片宽度不要太大 */
-  max-width:100%;
+@media (max-width: 5000px) {
+  /* 屏幕 [1000,5000] 时使用 */
+  article img, article object {
+    /* article全局img */
+    max-width:800px;/* 图片宽度不要太大 */
+  }
+}
+@media (max-width: 1000px) {
+  /* 屏幕 [500,1000] 时使用 */
+  article img, article object {
+    /* article全局img */
+    max-width:750px;/* 图片宽度不要太大 */
+  }
+}
+@media (max-width: 500px) {
+  /* 屏幕 [0,400px] 时使用 */
+  article img, article object {
+    /* article全局img */
+    max-width: 90%;/* 图片宽度不要太大 */
+  }
 }
 .markdown-section td img {
   /* 控制表格中的图片 */
@@ -906,6 +922,12 @@ article img, article object {
 .border {
   /* 添加黑边框 */
   border: #000 solid 1px;
+}
+
+/* 自定义video标签 */
+article video {
+  width: 90%;
+  max-width:750px;/* 宽度不要太大 */
 }
 
 /* 自定义左侧导航栏 */
@@ -918,7 +940,7 @@ article img, article object {
   /* 调整sidebar的小方框 */
   padding: 15px;
 }
-/*                                                              ！！这条不起作用，待修改  */
+/*                                                              !!!这条不起作用，待修改!!!  */
 /* @media screen and (max-width: 581px) {                          
   .sidebar-toggle {
     padding: 60px;
@@ -934,9 +956,9 @@ article img, article object {
 }
 /* 调整不同设备字体大小 */
 @media (max-width: 580px) {
-  /* 屏幕 <=480px 时使用 */
+  /* 屏幕 [400,580] 时使用 */
   .markdown-section h1 {
-    font-size: 2.0rem;
+    font-size: 2.1rem;
     margin: 0 0 1rem;
   }
   .markdown-section h2 {
@@ -959,7 +981,7 @@ article img, article object {
   }
 }
 @media (max-width: 400px) {
-  /* 屏幕 <=400px 时使用 */
+  /* 屏幕 [0,400] 时使用 */
   .markdown-section h1 {
     font-size: 1.8rem;
     margin: 0 0 1rem;
@@ -984,5 +1006,94 @@ article img, article object {
   }
 }
 
+/* 自定义文章ul列表 */
+article ul{
+  margin-top: 0;
+}
 
 
+/* 自定义details手风琴 */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+details {
+  background-color: rgb(255, 235, 235);
+  margin: auto;
+  margin-top: 6px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 80%;
+  max-width:700px;
+}
+details:hover{
+  color: #000;
+  background-color: rgb(255, 224, 224);
+}
+summary {
+  cursor: pointer;
+}
+details img {
+  width: 100%;
+}
+
+/* 自定义代码块 */
+.markdown-section pre {
+  /* 代码块样式 */
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  box-shadow: 0 5px 6px 0px rgb(0 0 0 / 40%);
+  padding-top: 30px;
+  padding-bottom: 7px;
+  font-family: monospace, 'PingFang SC', 'Microsoft YaHei';
+  
+}
+.markdown-section pre::before {
+  /* 设置三个圈圈 */
+  background: #fc625d;
+  border-radius: 50%;
+  box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+  content: ' ';
+  height: 12px;
+  left: 12px;
+  margin-top: -20px;
+  position: absolute;
+  width: 12px;
+}
+.markdown-section pre > code {
+  /* 调整间距 */
+  padding: 0;
+}
+
+/* Tips样式修改 */
+.markdown-section p.tip {
+  padding: 6px 24px 6px 26px;
+  margin: 12px;
+  margin-left: 6px;
+}
+
+/* h1,h2,h3等标题 */
+h1 {
+  text-align: center;
+  text-shadow: 2px 2px 5px gray;
+}
+h1 .anchor span{
+  color: rgba(0, 0, 0, 0.9);
+}
+h2 .anchor span{
+  color: rgb(0, 0, 255, 0.75);
+}
+h3 .anchor span{
+  color: rgb(0, 0, 255, 0.6);
+}
+h2::before {
+  content: "& ";
+  color: rgb(0, 0, 255, 0.75);
+}
+
+/* copyright */
+footer {
+  padding-bottom: 25px;
+}
+
+/* 解决docsify-chat插件与img设置冲突 */
+.chat-panel .main-area .chat-message .avatar img {
+  max-width: 100%;
+}

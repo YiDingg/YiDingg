@@ -11,13 +11,14 @@
     - [STM32系列 (1)：Keil Debug 功能使用](Blogs/STM32/STM32系列%20(1)：Keil%20Debug%20功能使用.md)
     - [STM32系列 (2)：定时器详解](Blogs\STM32\STM32系列%20(2)：定时器详解.md)
     - [STM32系列 (3)：DMA的原理与用法](Blogs/STM32/STM32系列%20(3)：DMA的原理与用法.md)
-    - [STM32系列 ()：实用技巧汇总](Blogs/STM32/STM32系列%20(14)：实用技巧汇总.md)
+    - [STM32系列 (4)：实用技巧汇总](Blogs/STM32/STM32系列%20(4)：实用技巧汇总.md)
   - Git
     - [Git 教程与提交规范](Blogs/Git/Git教程与提交规范.md)
     - [Git 命令速查](Blogs\Git\Git命令速查.md)
     - [Git 生成 ChangeLog](Blogs\Git\Git生成ChangeLog.md)
   - Web
     - [Basic HTML](Blogs\Web\Basic%20HTML.md)
+    - [Basic CSS](Blogs\Web\Basic%20CSS.md)
   - Fix Problem
     - [VScode-Latex 中反向搜索失灵的解决方案](Blogs/FixProblem/VScode-Latex中反向搜索失灵的解决方案.md)
     - [新版 Keil_MDK 中无 Compiler_V5 的解决方案](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
@@ -27,7 +28,7 @@
   - Site Features
     - [Syntax Examples](Blogs\SiteFeatures\Syntax%20Examples.md)
     - [Custom Component](Blogs\SiteFeatures\CustomComponent.md)
-    - [Data Host](Blogs\SiteFeatures\DataHost.md)
+    - [Image/Data Host](Blogs\SiteFeatures\DataHost.md)
     - [My Notes Structure](Blogs\SiteFeatures\MyNotesStructure.md)
     - [个人网站搭建](Blogs\SiteFeatures\个人网站搭建.md)
 

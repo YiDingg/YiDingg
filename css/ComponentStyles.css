@@ -322,7 +322,7 @@
   z-index: 1;
 }
 
-.circle {
+.circle-load {
   width: 20px;
   height: 20px;
   position: absolute;
@@ -352,12 +352,12 @@
   }
 }
 
-.circle:nth-child(2) {
+.circle-load:nth-child(2) {
   left: 45%;
   animation-delay: .2s;
 }
 
-.circle:nth-child(3) {
+.circle-load:nth-child(3) {
   left: auto;
   right: 15%;
   animation-delay: .3s;

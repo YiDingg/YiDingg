@@ -5,18 +5,26 @@
 
 >系列汇总详见地址：[📕STM32系列汇总](Blogs\STM32\STM32系列汇总.md)
 
-## 一、DMA原理及特性
+## DMA原理
 对于STM32F103x系列，官方对其DMA的说明在 [STM32F10x 参考手册(中文版).pdf](https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/764d9b9b210b4c052c24837bf24e0398.pdf) 中的Page.142~Page.154。下面是部分截图：
+<div class='center'>
 <img src="https://i3.mjj.rip/2024/06/15/b2a0ac80f34a53b991b5c7b17600d42d.png" alt="b2a0ac80f34a53b991b5c7b17600d42d.png" border="0">
-特别地，我们也要注意DMA的Circular模式、MemtoMem模式:
-<img src="https://i3.mjj.rip/2024/06/15/3c7f18ded2c3bc3a512523ffa38abe22.png" alt="3c7f18ded2c3bc3a512523ffa38abe22.png" border="0">
+</div>
 
-## 二、DMA辅助IIC
-### 原理：
-要利用DMA辅助IIC发送数据，需要在常规IIC通信的基础上，添加一个 DMA (IIC_TX)，并!!#ff0000 打开 IIC event interrupt!!，如图：
+
+特别地，我们也要注意DMA的Circular模式、MemtoMem模式:
+<div class='center'>
+<img src="https://i3.mjj.rip/2024/06/15/3c7f18ded2c3bc3a512523ffa38abe22.png" alt="3c7f18ded2c3bc3a512523ffa38abe22.png" border="0">
+</div>
+
+## DMA辅助IIC
+### 原理
+要利用DMA辅助IIC发送数据，需要在常规IIC通信的基础上，添加一个 DMA (IIC_TX)，并**打开 IIC event interrupt**，如图：
+<div class='center'>
 <img src="https://i3.mjj.rip/2024/06/15/c8b1503331de1c4341df9bd02c6b7209.png" alt="c8b1503331de1c4341df9bd02c6b7209.png" border="0">
 <img src="https://i3.mjj.rip/2024/06/15/26564de6caaef7bee2dc162f923d23ca.png" alt="26564de6caaef7bee2dc162f923d23ca.png" border="0">
 <img src="https://i3.mjj.rip/2024/06/15/372357cd7430c57df0476aa17eb05f54.png" alt="372357cd7430c57df0476aa17eb05f54.png" border="0">
+</div>
 
 即可使用HAL库中 IIC (DMA模式) 对应的六个函数：
 ```c
@@ -47,18 +55,18 @@ HAL_StatusTypeDef HAL_I2C_Master_Seq_Receive_DMA(I2C_HandleTypeDef *hi2c, uint16
 |无| HAL_I2C_Master_Seq_Receive_DMA() | 主机用连续模式接收从机发来的数据（接收一次数据完毕后，立刻开启下一次接收） |
 </div>
 
-### 实例：IIC_DMA控制OLED
+### 实例
 
-## 三、DMA辅助SPI
+## DMA辅助SPI
 
-### 实例：SPI_DMA控制OLED
+### 实例
 
 !> **注意：**
 对OLED而言，单片机向OLED发送的数据分为两种，一种是命令字节(Command)，用于调整屏幕各项设置，另一种是数据字节(Data)，用于调整OLED的硬件显存。
 
 在使用IIC与OLED通信时，无法通过硬件区分上述两种字节（仅有VCC, GND, SCL, SDA四个接口，而OLED的SPI通信利用DC引脚区分两种字节），因此需要通过软件将不同类型的字节写入到从机寄存器的不同位置。换句话说，通过IIC驱动OLED时，必须使用HAL_I2C_Mem_Write()函数而不是HAL_I2C_Master_Transmit()函数，因为后者无法区分命令字节和显存字节。一般地，我们会将命令字节写到寄存器的0x00地址处，将显存数据写到寄存器的0x40地址处。
 
-### 实例：SPI_DMA读写Flash
+### 实例
 ## 知识补充
 
 

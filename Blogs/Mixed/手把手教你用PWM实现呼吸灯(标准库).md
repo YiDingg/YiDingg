@@ -116,10 +116,14 @@ int main(void){
 ```
 上面的例子中，我们只启用了TIM3的两个通道(Channel3, Channel4)，分别对应B0、B1口。在面包板上，将LED正极与单片机VCC口连接，负极分别于B0、B1口连，编译并烧录程序。
 可以看到，B0口LED（左）亮度低，B1口LED（右）亮度高，见下图：
+
 ![b94c0963099d2a90895c99f20c827e3e.jpeg](https://i3.mjj.rip/2024/06/16/b94c0963099d2a90895c99f20c827e3e.jpeg)
+
 将两个通道的有效占空比互换（即调换两者的比较值CRR，语句即为TIM3_Configuration函数中的 "TIM_OCInitStructure.TIM_Pulse = 90" 和 "TIM_OCInitStructure.TIM_Pulse = 5"，把90和5互换 ），重新编译、烧录。
 可以看到，B0口LED（左）亮度高，B1口LED（右）亮度低，见下图：
+
 ![43e43c526c552a40d1934cece8826e00.jpeg](https://i3.mjj.rip/2024/06/16/43e43c526c552a40d1934cece8826e00.jpeg)
+
 这是符合我们预期的，因为在外面的例子中，计数值<=比较值时，输出有效电平（被设置为了低电平），此时LED发光。因此比较值越大，LED发光时间占比越大，对应亮度越高。
 
 ### 2. PWM一键输出函数

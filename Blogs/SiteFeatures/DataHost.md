@@ -5,12 +5,14 @@ When building your own blog site, it is crucial to select an appropriate image h
 <b>
 
 Conclusion: 
-- Upload <font color='red'>img to Aliyun</font> by PicGo or VS-PicGo, <s>gif to TouTiao manually by PanLuo Uploading,</s> <font color='red'>gif, video, pdf and other types to WB</font> manually (backup to local). 
+- Upload <font color='red'>img to Aliyun</font> by VS-PicGo, <s>gif to TouTiao manually by PanLuo Uploading,</s> <font color='red'>gif, video, pdf and other types to WB</font> manually (backup to local). 
 - Use [Oplimize LLA](https://imagecompressor.com)(70 quality recommanded) or [TinyPNG](https://tinypng.com/) to compress the image and gif.
 - Use [Video To Edit](https://www.video2edit.com) to compress the video.
-- Use [I Love PDF](https://www.ilovepdf.com/) to compress the pdf.
-- Use [Short](https://d.igdu.xyz/) to create a short link for your file.
+- Use [I Love PDF](https://www.ilovepdf.com/) to compress pdf.
+- Use [YouCompress](https://www.youcompress.com/) to compress mp3.
 - Use [Screen to GIF]() to convert video into gif if you need.
+- Use [Short](https://d.igdu.xyz/) to create a short link for your file.
+
 </b>
 
 Results Show:
@@ -75,10 +77,10 @@ For image hosts, we have tested lots of image hosts or platforms where you can u
 
 |Tools| Property | Note |
 |:-:|:-:|:-:|
-|[MDTC](http://tc.yangln.cn/help/index.html)|||
-|[PicGo](https://github.com/Molunerfinn/PicGo)|  ||
-|VS-PicGo|  ||
-|PanLuo(盘络上传)|  | |
+|[MDTC](http://tc.yangln.cn/help/index.html)|Free<br> automatically upload||
+|[PicGo](https://github.com/Molunerfinn/PicGo)| Free<br> automatically upload ||
+|VS-PicGo| Free<br> upload by shortcut key <br>automatically rename to local path | |
+|PanLuo(盘络上传)| Free<br> upload by dropping| |
 |Hellohao|Free or ¥198, manually| practical and various functions, such as automatic compression |
 </div>
 
