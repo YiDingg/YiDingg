@@ -532,9 +532,10 @@ https://mui.com/material-ui/material-icons/
 <i class="material-icons-two-tone">check_circle</i>
 <i style="color: red" class="material-icons">face</i>
 <i class="material-icons md-18">delete</i> 
-<i class="material-icons md-light md-36 md-light">face</i>
-<i class="material-icons md-light md-36 md-light">abc</i>
-<i class="material-icons md-light md-36 md-light">ac_unit</i>
+<i class="material-icons-two-tone md-18">delete</i> 
+<i class="material-icons-sharp md-light md-36 md-light">delete</i>
+<i class="material-icons-outlined md-light md-36 md-light">delete</i>
+<i class="material-icons-outlined md-light md-36 md-light" style='font-size:36px'>delete</i>
 <i class="material-icons md-light md-36 md-light">access_time</i>
 
 <div class='center'>
@@ -543,8 +544,13 @@ https://mui.com/material-ui/material-icons/
 
 
 ```html
-<i class="material-icons md-light md-36 md-light">abc</i>
-<i class="material-icons md-light md-36 md-light">ac_unit</i>
+<i class="material-icons-two-tone">check_circle</i>
+<i style="color: red" class="material-icons">face</i>
+<i class="material-icons md-18">delete</i> 
+<i class="material-icons-two-tone md-18">delete</i> 
+<i class="material-icons-sharp md-light md-36 md-light">delete</i>
+<i class="material-icons-outlined md-light md-36 md-light">delete</i>
 <i class="material-icons md-light md-36 md-light">access_time</i>
 ```
 
+### Hello

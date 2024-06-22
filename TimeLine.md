@@ -34,6 +34,12 @@
 <div class="timeline-item_timestamp">July 1, 2024</div>
 <div class="timeline-item_content"><br><br><!-- 每块顶部单独留一些空间 -->
 <!------------------------------------>
+<div class="tbox"><div class='outerBox'><div class="dateLeftBox"><div>
+<tl-title>More Feartures</tl-title>
+<ul>
+
+</ul></div></div></div></div>
+<!------------------------------------>
 <div class="tbox"><div class='outerBox'><div class="dateBox"><div>
 <tl-title>More Stable Data Source</tl-title>
 <ul>
@@ -49,7 +55,7 @@ We would be updating and maintaining the website currently.
 <div class="tbox"><div class='outerBox'><div class="dateBox"><div>
 <tl-title>Better Themes and More Feartures</tl-title>
 <ul>
-The site's theme was improved. Some plugins were added for new awesome features, such as plantuml, updated time, embedded pdf, comment system, etc.
+The site's theme was improved. Plugins were added for new awesome features, such as plantuml, updated time, comment system, etc.
 </ul></div></div></div></div>
 <!------------------------------------>
 <div class="tbox"><div class='outerBox'><div class="dateLeftBox"><div>
@@ -60,10 +66,9 @@ such as sidebar, toc, search box, etc.
 </ul></div></div></div></div>
 <!------------------------------------>
 <div class="tbox"><div class='outerBox'><div class="dateBox"><div>
-<tl-title> The Site's Birthday!</tl-title><ul>
+<tl-title><i class="material-icons-outlined md-light md-36 md-light" style='font-size:14px;'>celebration</i> The Site's Birthday!</tl-title><ul>
 Our site celebrates its first birthday on June 14, 2024. 
-A long journey can be covered only by taking one step at a time.
-Everything is possible from this day! 
+We do not kown what will be like in the future, but nothing is imposiible! 
 </ul></div></div></div></div>
 <!------------------------------------>
 </div>

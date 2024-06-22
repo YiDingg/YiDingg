@@ -28,45 +28,9 @@ This is a page only for test.
 </div>
 
 <div class="g-container">
-  <div class="word">iPhone</div>
-  <div class="word">13</div>
-  <div class="word">Pro</div>
+  <div class="word">Hello World!</div>
   <div class="word">强得很！</div>
 </div>
-
-
-<template>
-  <div>
-    <vue-code-highlight language="javascript">
-      modifyUserGroup(data) {
-        return fetch({
-          url: "/mth-finance-capital-service/api/v1/userGroup/bcUsergroupUpdate",
-          method: "POST +++++++++++++++",
-          data
-        });
-      },
-    </vue-code-highlight>
-  </div>
-</template>
-
-
-<script>
-import "vue-code-highlight/themes/prism-tomorrow.css" // 直接引入即可
-import "vue-code-highlight/themes/window.css"; // 同上
-import { component as VueCodeHighlight } from 'vue-code-highlight'  // 引入
-export default {
-  components:{ VueCodeHighlight }, // 在模板里也要引入
-  data(){
-    return {
- 
-    }
-  }
-}
-</script>
-
-
-
-
 
 
 
@@ -134,6 +98,3 @@ to {
 }
 
 </style>
-
-
-<style></style>

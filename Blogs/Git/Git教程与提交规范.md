@@ -352,7 +352,7 @@ to be continued ...
 
 ```
 feat(*): add ADC function
-revert(*): feat(*): add ADC function - <commit_hash>
+revert(*): "feat(*): add ADC function" - <commit_hash>
 ```
 
 ## 三、其它

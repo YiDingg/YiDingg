@@ -332,7 +332,6 @@
   transform-origin: 50%;
   animation: circle7124 .5s alternate infinite ease;
 }
-
 @keyframes circle7124 {
   0% {
     top: 60px;
@@ -351,18 +350,15 @@
     top: 0%;
   }
 }
-
 .circle-load:nth-child(2) {
   left: 45%;
   animation-delay: .2s;
 }
-
 .circle-load:nth-child(3) {
   left: auto;
   right: 15%;
   animation-delay: .3s;
 }
-
 .shadow {
   width: 20px;
   height: 4px;
@@ -376,7 +372,6 @@
   filter: blur(1px);
   animation: shadow046 .5s alternate infinite ease;
 }
-
 @keyframes shadow046 {
   0% {
     transform: scaleX(1.5);
@@ -392,12 +387,10 @@
     opacity: .4;
   }
 }
-
 .shadow:nth-child(4) {
   left: 45%;
   animation-delay: .2s
 }
-
 .shadow:nth-child(5) {
   left: auto;
   right: 15%;
@@ -405,21 +398,18 @@
 }
 
 /* Loading animation 2 */
-
 .spinner {
   position: relative;
   width: 60px;
   height: 60px;
   border-radius: 50%;
  }
- 
  .spinner::before,
  .spinner:after {
   content: "";
   position: absolute;
   border-radius: inherit;
  }
- 
  .spinner:before {
   width: 100%;
   height: 100%;
@@ -454,26 +444,26 @@
 /* ----------- 自定义Mac风代码块 -------------- */
 /*                                             */
 /* 设置整体 */
-  .fences {
-      background-color: #f8f8f8;
-      border-radius: 5px;
-      box-shadow: 0 10px 30px 0 rgb(0 0 0 / 40%);
-      padding-top: 30px;
-      font-family: monospace, 'PingFang SC', 'Microsoft YaHei';
-  }
+.fences {
+    background-color: #f8f8f8; /* 设置背景颜色 */
+    border-radius: 5px; /* 设置边框圆角 */
+    box-shadow: 0 10px 30px 0 rgb(0 0 0 / 40%); /* 设置阴影效果 */
+    padding-top: 30px; /* 设置顶部内边距 */
+    font-family: monospace, 'PingFang SC', 'Microsoft YaHei'; /* 设置字体 */
+}
     
 /* 设置三个圈圈 */
-  .fences::before {
-      background: #fc625d;
-      border-radius: 50%;
-      box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-      content: ' ';
-      height: 12px;
-      left: 12px;
-      margin-top: -20px;
-      position: absolute;
-      width: 12px;
-  }
+.fences::before {
+    background: #fc625d; /* 设置第一个圈的颜色 */
+    border-radius: 50%; /* 设置圆角 */
+    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b; /* 设置其他两个圈的颜色和位置 */
+    content: ' '; /* 设置内容为空 */
+    height: 12px; /* 设置高度 */
+    left: 12px; /* 设置左边距 */
+    margin-top: -20px; /* 设置上边距 */
+    position: absolute; /* 设置定位方式 */
+    width: 12px; /* 设置宽度 */
+}
 /*                                             */
 /* ------------------------------------------- */
 

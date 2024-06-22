@@ -1,3 +1,13 @@
+:root {
+  --main-color:#34495e;
+  --h1-color: rgba(0, 0, 0, 0.9);
+  --h2-color: rgb(110, 0, 200);
+  --h3-color: rgba(110, 0, 200, 0.8);
+  --h4-color: rgba(110, 0, 200, 0.6);
+  --h5-color: rgba(110, 0, 200, 0.4);
+}
+
+
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Sans+Pro:300,400,600");
 * {
   -webkit-font-smoothing: antialiased;
@@ -62,9 +72,9 @@ body {
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  color: #34495e;
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
-  font-size: 15px;
+  color: var(--main-color);
+  font-family: 'Helvetica Neue','Source Sans Pro', sans-serif;
+  font-size: 0.8rem;
   letter-spacing: 0;
   margin: 0;
   overflow-x: hidden;
@@ -208,7 +218,7 @@ main.hidden {
   transition: all 0.3s;
 }
 .anchor span {
-  color: #34495e;
+  color: var(--main-color);
 }
 .anchor:hover {
   text-decoration: underline;
@@ -227,7 +237,7 @@ main.hidden {
 }
 .sidebar > h1 {
   margin: 0 auto 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 300;
   text-align: center;
 }
@@ -319,8 +329,9 @@ body.sticky .sidebar-toggle {
 }
 .markdown-section {
   margin: 0 auto;
-  max-width: 80%;
-  padding: 30px 15px 40px 15px;
+  width: 900px;
+  max-width: 85%;
+  padding: 0px 15px 40px 15px;
   position: relative;
 }
 .markdown-section > * {
@@ -394,7 +405,7 @@ body.sticky .sidebar-toggle {
   background-color: #F9F2F4;
 }
 .markdown-section p.tip em {
-  color: #34495e;
+  color: var(--main-color);
 }
 .markdown-section p.warn {
   background: rgba(66,185,131,0.1);
@@ -704,7 +715,7 @@ body {
 .markdown-section code,
 .markdown-section pre,
 .markdown-section output::after {
-  font-family: 'Roboto Mono', Monaco, courier, monospace;
+  font-family: 'Roboto Mono', 'Consolas', 'Monaco', monospace;
 }
 .markdown-section code,
 .markdown-section pre {
@@ -934,11 +945,18 @@ article video {
 .sidebar {
   /* 调整sidebar宽度 */
   width: 300px;
-  max-width: 65%;
+  max-width: 60%;
+  padding: 15px;
 }
 .sidebar-toggle {
   /* 调整sidebar的小方框 */
-  padding: 15px;
+  padding-left: 12px;
+  padding-bottom: 12px;
+}
+.sidebar ul li.active > a {
+  border-right: none;
+  border-left: rgb(71,79,179) solid 5px;
+  padding-left: 5px;
 }
 /*                                                              !!!这条不起作用，待修改!!!  */
 /* @media screen and (max-width: 581px) {                          
@@ -955,8 +973,39 @@ article video {
   cursor: pointer;
 }
 /* 调整不同设备字体大小 */
+@media (max-width: 5000px) {
+  /* 屏幕 [580,5000] 时使用 */
+  body {
+    font-size: 0.85rem;
+  }
+  .markdown-section h1 {
+    font-size: 2.0rem;
+    margin: 0 0 1rem;
+  }
+  .markdown-section h2 {
+    font-size: 1.5rem;
+    margin: 45px 0 0.8rem;
+  }
+  .markdown-section h3 {
+    font-size: 1.3rem;
+    margin: 40px 0 0.6rem;
+  }
+  .markdown-section h4 {
+    font-size: 1.1rem;
+  }
+  .markdown-section h5 {
+    font-size: 1.0rem;
+  }
+  .markdown-section h6 {
+    color: #777;
+    font-size: 1rem;
+  }
+}
 @media (max-width: 580px) {
   /* 屏幕 [400,580] 时使用 */
+  body {
+    font-size: 0.80rem;
+  }
   .markdown-section h1 {
     font-size: 2.1rem;
     margin: 0 0 1rem;
@@ -982,6 +1031,9 @@ article video {
 }
 @media (max-width: 400px) {
   /* 屏幕 [0,400] 时使用 */
+  body {
+    font-size: 0.80rem;
+  }
   .markdown-section h1 {
     font-size: 1.8rem;
     margin: 0 0 1rem;
@@ -1069,7 +1121,7 @@ details img {
   margin-left: 6px;
 }
 
-/* h1,h2,h3等标题 */
+/* h1,h2,h3标题样式 */
 h1 {
   text-align: center;
   text-shadow: 2px 2px 5px gray;
@@ -1078,14 +1130,14 @@ h1 .anchor span{
   color: rgba(0, 0, 0, 0.9);
 }
 h2 .anchor span{
-  color: rgb(0, 0, 255, 0.75);
+  color: var(--h2-color);
 }
 h3 .anchor span{
-  color: rgb(0, 0, 255, 0.6);
+  color: var(--h3-color);
 }
 h2::before {
   content: "& ";
-  color: rgb(0, 0, 255, 0.75);
+  color: var(--h2-color);
 }
 
 /* copyright */
@@ -1096,4 +1148,31 @@ footer {
 /* 解决docsify-chat插件与img设置冲突 */
 .chat-panel .main-area .chat-message .avatar img {
   max-width: 100%;
+}
+
+/* 右侧Toc样式修改 */
+@media (max-width: 5000px) {
+  /* 屏幕 [768,5000] 时使用 */
+  .page_toc p.title{
+    width: auto;
+    text-align: center;
+    text-shadow: 2px 2px 5px gray;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+}
+@media (max-width: 768px) {
+  /* 屏幕 [0,768] 时使用 */
+  .page_toc p.title{
+    text-align: left;
+  }
+}
+.page_toc ul li a span{
+  color: var(--h2-color);
+  font-weight: 600;
+}
+.page_toc ul li ul li a span{
+  color: var(--h3-color);
+  font-weight: 300;
 }
