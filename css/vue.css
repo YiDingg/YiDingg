@@ -1170,7 +1170,7 @@ footer {
 }
 .page_toc ul li a span{
   color: var(--h2-color);
-  font-weight: 600;
+  font-weight: 550;
 }
 .page_toc ul li ul li a span{
   color: var(--h3-color);

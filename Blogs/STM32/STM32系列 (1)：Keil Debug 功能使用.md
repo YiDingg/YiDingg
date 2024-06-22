@@ -94,17 +94,17 @@ Keil仿真逻辑分析仪不仅可以查看引脚电平，还能查看全局变�
 
 | 步骤 |详细 | 图片 | 
 | ------ | :------: |:------: |
-| 1. CubeMX配置引脚 | 配置GPIO_C13引脚为Output PP 模式 | 无 |
+  | 1. CubeMX配置引脚 | 配置GPIO_C13引脚为Output PP 模式 | 无 |
 | 2.  打开仿真 | 在刚打开仿真时，程序自动运行到 main() 函数开头并停止，此时我们的变量 Count 还未初始化，需要初始化后才能添加到 Logic Analyzer 中，因此我们在 "uint16_t Count;" 语句后设置断点，并点击 Run(F5)，使程序运行到我们的断点处停止。 | [![pkdjlLR.png](https://s21.ax1x.com/2024/06/15/pkdjlLR.png)](https://imgse.com/i/pkdjlLR)|
-| 3. 打开 Logic Analyzer 添加引脚，然后右键设置显示方式| 在逻辑分析仪中添加引脚PC13，下面几种输入等价： | [![pkdj3e1.png](https://s21.ax1x.com/2024/06/15/pkdj3e1.png)](https://imgse.com/i/pkdj3e1)[![pkdj8dx.png](https://s21.ax1x.com/2024/06/15/pkdj8dx.png)](https://imgse.com/i/pkdj8dx)[![pkdjGo6.png](https://s21.ax1x.com/2024/06/15/pkdjGo6.png)](https://imgse.com/i/pkdjGo6)|
-| 4. 添加变量，设置显示方式 | 在程序中找到变量Count，右键并添加到 Logic Analyzer ，然后右键调整显示方式为Analog+Adaptive。如果报错添加失败，关闭仿真再打开，重新配置即可。 |![d35692acbe4130ae7b88177d972db1ab.png](https://i3.mjj.rip/2024/06/15/d35692acbe4130ae7b88177d972db1ab.png)|
-| 5. 运行并观察 | 可以看到，电平翻转间隔（延时）为 0.1012s=101.2ms 正常，变量自增也正常  |![2876ecc475fb0fcb47167b9c54e685c7.png](https://i3.mjj.rip/2024/06/15/2876ecc475fb0fcb47167b9c54e685c7.png)![2e6fcfdb4967f5953c6374fb925da75b.png](https://i3.mjj.rip/2024/06/15/2e6fcfdb4967f5953c6374fb925da75b.png)|
+ | 3. 打开 Logic Analyzer 添加引脚，然后右键设置显示方式| 在逻辑分析仪中添加引脚PC13，下面几种输入等价： | [![pkdj3e1.png](https://s21.ax1x.com/2024/06/15/pkdj3e1.png)](https://imgse.com/i/pkdj3e1)[![pkdj8dx.png](https://s21.ax1x.com/2024/06/15/pkdj8dx.png)](https://imgse.com/i/pkdj8dx)[![pkdjGo6.png](https://s21.ax1x.com/2024/06/15/pkdjGo6.png)](https://imgse.com/i/pkdjGo6)|
+ | 4. 添加变量，设置显示方式 | 在程序中找到变量Count，右键并添加到 Logic Analyzer ，然后右键调整显示方式为Analog+Adaptive。如果报错添加失败，关闭仿真再打开，重新配置即可。 |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (1)：Keil Debug 功能使用--2024-06-23-00-28-43.png"/>|
+ | 5. 运行并观察 | 可以看到，电平翻转间隔（延时）为 0.1012s=101.2ms 正常，变量自增也正常  |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (1)：Keil Debug 功能使用--2024-06-23-00-28-47.png"/><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (1)：Keil Debug 功能使用--2024-06-23-00-28-50.png"/>|
 </div>
 
 !!#ff0000 注意：在打开仿真之前，如果程序被修改，需要重新编译再打开仿真。!!这是因此仿真使用到了编译产生的相关文件，仅保存程序未重新编译时，仿真仍使用之前编译得到的文件。另外，程序里定义Count变量时，之所以使用static关键字，是因为非全局变量（如某函数中创建的变量）无法添加到逻辑分析仪，详见上面官方对其功能范围的说明。
 
 特别地，图中问号点击可以跳转至官方帮助文档：
-<img src="https://i3.mjj.rip/2024/06/15/08f37e34717f8929d079ecf13b899209.png" alt="08f37e34717f8929d079ecf13b899209.png" border="0">
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (1)：Keil Debug 功能使用--2024-06-23-00-28-55.png"/>
 
 ## 四、仿真外部按键
 

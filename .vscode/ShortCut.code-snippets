@@ -22,8 +22,8 @@
 			"",
 			"| $1 |  |  |",
 			"|:-:|:-:|:-:|",
-			"|   |   |   |",
-			"|   |   |   |",
+			" |   |   |   |",
+			" |   |   |   |",
 			"</div>",
 		],
 		"description": "create an annotation for C function"

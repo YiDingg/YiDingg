@@ -34,15 +34,15 @@
 
 | 步骤 |详细 | 图片 |
 | :------: | :------: | :-:|
-| 1. 新建工程并配置基本参数 | 在 CubeMX 中新建一个工程，依次配置：RCC为外部高速时钟，SYS为 SD Debug，调整项目路径、名称，代码生成设置等 | 无 |
-| 2.若为IIC通信，配置IIC接口 | 打开一个IIC接口（图中是I2C2，I2C模式），添加IIC对应的DMA（IIC_TX），并打开 I2C event interrupt 中断（可自由设置IIC通讯速率，I2C error interrput 也建议打开 ） | ![59152f7cd5543de7bf71b3630d46adfe.png](https://i3.mjj.rip/2024/06/15/59152f7cd5543de7bf71b3630d46adfe.png)![c001256c725502f159e869bc8c102031.png](https://i3.mjj.rip/2024/06/15/c001256c725502f159e869bc8c102031.png)![0257197e7c05fd4745bf13c7443f6789.png](https://i3.mjj.rip/2024/06/15/0257197e7c05fd4745bf13c7443f6789.png) |
-|3. 若为SPI通信，配置SPI接口|打开一个SPI接口（图中是SPI1，Transmit Only Master模式），添加SPI对应的DMA（SPI_TX），并打开 SPI global interrupt 中断（可自由设置SPI通信速率）；然后配置三个GPIO口（PP Output模式，分别连接OLED的CS, DC, RES接口）| [![pkwEhCj.png](https://s21.ax1x.com/2024/06/15/pkwEhCj.png)](https://imgse.com/i/pkwEhCj)[![pkwE48s.png](https://s21.ax1x.com/2024/06/15/pkwE48s.png)](https://imgse.com/i/pkwE48s)![a168ae6cd1448a70c28fb838a5975e67.png](https://i3.mjj.rip/2024/06/15/a168ae6cd1448a70c28fb838a5975e67.png) |
-|4. 配置四个GPIO外部中断作为按键| 外部中断模式（记得打开中断），根据具体硬件环境选择下降沿触发+内部上拉或者上升沿触发+内部下拉，四个按键分别对应 Previous, Enter, Next, Return  |[![pkwVZRA.png](https://s21.ax1x.com/2024/06/15/pkwVZRA.png)](https://imgse.com/i/pkwVZRA)[![pkwVnMt.png](https://s21.ax1x.com/2024/06/15/pkwVnMt.png)](https://imgse.com/i/pkwVnMt)|
-|5. 配置状态灯GPIO口| 配置一个PP Output 模式GPIO口作为状态灯（在程序中，任意按键按下会使状态灯电平翻转） |[![pkwVKqf.png](https://s21.ax1x.com/2024/06/15/pkwVKqf.png)](https://imgse.com/i/pkwVKqf)  |
-|6. 生成代码并编译 | 保存并生成代码，在Keil中编译一次 | 无 |
-|7. 添加项目文件| 将下载好的六个文件（MutiMenu.c，MutiMenu.h，Mutimenu_Data.h，OLEDSD.c，OLEDSD.h，OLEDSD_Font.h）复制到项目目录下的inc文件夹（.h文件放这里）和src文件夹（.c文件放这里）|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21.png" alt="MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21-02-11-33.png"> |
-|8. 修改main.c| 在main.c中 #include "MutiMenu.h"，并在while(1)循环中使用函数 Menu_Handler() |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21-02-11-38.png"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21-02-11-42.png">|
-|9. 移植完成| 菜单移植完成，编译并下载，连接好硬件部分，可以看到菜单正常显示 |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21-02-11-51.png">|
+ | 1. 新建工程并配置基本参数 | 在 CubeMX 中新建一个工程，依次配置：RCC为外部高速时钟，SYS为 SD Debug，调整项目路径、名称，代码生成设置等 | 无 |
+ | 2.若为IIC通信，配置IIC接口 | 打开一个IIC接口（图中是I2C2，I2C模式），添加IIC对应的DMA（IIC_TX），并打开 I2C event interrupt 中断（可自由设置IIC通讯速率，I2C error interrput 也建议打开 ） | <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-17-44.png"/><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-18-16.png"/><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-18-19.png"/> |
+ |3. 若为SPI通信，配置SPI接口|打开一个SPI接口（图中是SPI1，Transmit Only Master模式），添加SPI对应的DMA（SPI_TX），并打开 SPI global interrupt 中断（可自由设置SPI通信速率）；然后配置三个GPIO口（PP Output模式，分别连接OLED的CS, DC, RES接口）|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-18-50.png"/><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-18-54.png"/>  |
+ |4. 配置四个GPIO外部中断作为按键| 外部中断模式（记得打开中断），根据具体硬件环境选择下降沿触发+内部上拉或者上升沿触发+内部下拉，四个按键分别对应 Previous, Enter, Next, Return  |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-18-58.png"/><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-19-01.png"/>|
+ |5. 配置状态灯GPIO口| 配置一个PP Output 模式GPIO口作为状态灯（在程序中，任意按键按下会使状态灯电平翻转） |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-19-07.png"/>|
+ |6. 生成代码并编译 | 保存并生成代码，在Keil中编译一次 | - |
+ |7. 添加项目文件| 将下载好的六个文件（MutiMenu.c，MutiMenu.h，Mutimenu_Data.h，OLEDSD.c，OLEDSD.h，OLEDSD_Font.h）复制到项目目录下的inc文件夹（.h文件放这里）和src文件夹（.c文件放这里）|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21.png" alt="MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21-02-11-33.png"> |
+ |8. 修改main.c| 在main.c中 #include "MutiMenu.h"，并在while(1)循环中使用函数 Menu_Handler() |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21-02-11-38.png"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21-02-11-42.png">|
+ |9. 移植完成| 菜单移植完成，编译并下载，连接好硬件部分，可以看到菜单正常显示 |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21-02-11-51.png">|
 </div>
 
 
@@ -55,9 +55,9 @@
 
 | 步骤 | 详解 | 图片 |
 | :------: | :------: | :------: |
-| 1. 声明新菜单  | 在 Multimenu.c 的 "菜单栏定义" 中声明需要添加的 Parent 型菜单，Parent 型菜单数组大小即为子菜单数目。这里我们仅在其下添加一个 "Dinosaur" 选项，因此 Parent 型菜单数组大小为1。另外，建议数组名字根据级别依次往下连接，避免混淆位置，这里以将 Game 选项放在了 Main 下。 |![abcdef4bf24ff91c1659ba0847e28f9e.png](https://i3.mjj.rip/2024/06/15/abcdef4bf24ff91c1659ba0847e28f9e.png) |
-| 2. 定义新菜单并添加结构体 | 在 main.c 中的 Main 菜单下加入 Game 菜单（!!#ff0000 子节点函数填写 Draw_Menu!!），并在 "Menu_1" 下方添加 Game 菜单的定义，Menu_1 表示其为一级菜单（Main为0级），然后!!#ff0000 修改Main菜单数组大小!!（在宏定义处修改） | ![51540e3356494fab57ca63d4e1500189.png](https://i3.mjj.rip/2024/06/15/51540e3356494fab57ca63d4e1500189.png)![4cb635503e02cb66d316ca4967678cef.png](https://i3.mjj.rip/2024/06/15/4cb635503e02cb66d316ca4967678cef.png) |
-|3. 编译并下载 | 可以看到，成功实现菜单的添加 | 无 |
+ | 1. 声明新菜单  | 在 Multimenu.c 的 "菜单栏定义" 中声明需要添加的 Parent 型菜单，Parent 型菜单数组大小即为子菜单数目。这里我们仅在其下添加一个 "Dinosaur" 选项，因此 Parent 型菜单数组大小为1。另外，建议数组名字根据级别依次往下连接，避免混淆位置，这里以将 Game 选项放在了 Main 下。 |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-19-42.png"/>|
+ | 2. 定义新菜单并添加结构体 | 在 main.c 中的 Main 菜单下加入 Game 菜单（!!#ff0000 子节点函数填写 Draw_Menu!!），并在 "Menu_1" 下方添加 Game 菜单的定义，Menu_1 表示其为一级菜单（Main为0级），然后!!#ff0000 修改Main菜单数组大小!!（在宏定义处修改） | <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-19-46.png"/><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-19-49.png"/> |
+ |3. 编译并下载 | 可以看到，成功实现菜单的添加 | 无 |
 </div>
 
 ### 2. 添加 Data 菜单
@@ -68,12 +68,12 @@
 
 | 步骤 | 详解 | 图片 |
 | :------: | :------: | :------: |
-| 1. 声明新菜单  | 在 Multimenu.c 的 "菜单栏定义" 中声明需要添加的 Data 型菜单，Data 型菜单数组大小需为1。另外，建议数组名字根据级别依次往下连接，避免混淆位置；这里以将 Brightness 选项放在了 Main 的 Settings 下。 |![8b076a242236fea2c00af6ad1bbe0b26.png](https://i3.mjj.rip/2024/06/15/8b076a242236fea2c00af6ad1bbe0b26.png) |
-| 2. 定义新菜单并添加结构体 | 在 Multimenu.c"菜单栏定义" 的 " Menu_2 " 中定义刚刚声明的菜单（即数组），Menu_2 表示其为二级菜单（Main为0级）；并在其父级菜单（这里是 Settings，位于 " Menu_1 " ）中添加结构体，添加结构体时!!#ff0000 勿忘修改数组大小，然后修改 Main_Settings 中的子节点数目！!! | ![bd046261874829df54efb5a0f854a335.png](https://i3.mjj.rip/2024/06/15/bd046261874829df54efb5a0f854a335.png)![2b99af22650b84f2f6c48d73921edc8b.png](https://i3.mjj.rip/2024/06/15/2b99af22650b84f2f6c48d73921edc8b.png)![ffa567ccd3405ab3f498d90b84229d64.png](https://i3.mjj.rip/2024/06/15/ffa567ccd3405ab3f498d90b84229d64.png) |
-| 3. 新增两个节点函数 | 在 "菜单节点函数" 处定义你的函数。第一个节点函数在进入 Brightness 时调用（记为 Func_Brightness_enter ） ，第二个（记为 Func_Brightness_set）在进入 Brightness 后，有其他按键按下时调用。这两个函数共同实现了我们需要的功能：显示亮度调节页面，next 增大亮度，previous 减小亮度，同时在屏幕上显示当前亮度值，enter 或 return 确定更改。 | ![3217884c3b8e31e66a62667e336278a4.png](https://i3.mjj.rip/2024/06/15/3217884c3b8e31e66a62667e336278a4.png)![a838c119b804e8e9319eee7a4caae8b2.png](https://i3.mjj.rip/2024/06/15/a838c119b804e8e9319eee7a4caae8b2.png) |
-| 4. 进行函数的编写与指针替换 | 注意：两个函数都应为 void func(void) 型，利用全局变量 KEY_num 传递键值。 编写完毕后，将  Func_Brightness_enter 替换到 Settings 数组的函数指针处，将 Func_Brightness_set 替换到 Brightness 定义的函数指针处。  | ![c00f347eefc4bc9081c03520391e3136.png](https://i3.mjj.rip/2024/06/15/c00f347eefc4bc9081c03520391e3136.png)![997df42cd00c5352d6454c09bb17ce28.png](https://i3.mjj.rip/2024/06/15/997df42cd00c5352d6454c09bb17ce28.png) |
-|5. 在 Multimenu.h 中声明函数| 在 "自定义菜单节点函数声明" 处进行声明，注意不要忘了分号|![ac1c3c06b73533dbd75830a42eb16a68.png](https://i3.mjj.rip/2024/06/15/ac1c3c06b73533dbd75830a42eb16a68.png)|
-|6. 编译并烧录 | 可以看到，成功实现屏幕亮度自由调节 |![image](https://gcore.jsdelivr.net/gh/YiDingg/ImageBank_0/20240616/174844060.jpg)|
+ | 1. 声明新菜单  | 在 Multimenu.c 的 "菜单栏定义" 中声明需要添加的 Data 型菜单，Data 型菜单数组大小需为1。另外，建议数组名字根据级别依次往下连接，避免混淆位置；这里以将 Brightness 选项放在了 Main 的 Settings 下。 |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-20-00.png"/>|
+ | 2. 定义新菜单并添加结构体 | 在 Multimenu.c"菜单栏定义" 的 " Menu_2 " 中定义刚刚声明的菜单（即数组），Menu_2 表示其为二级菜单（Main为0级）；并在其父级菜单（这里是 Settings，位于 " Menu_1 " ）中添加结构体，添加结构体时!!#ff0000 勿忘修改数组大小，然后修改 Main_Settings 中的子节点数目！!! | <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-20-04.png"/><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-20-08.png"/><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-20-11.png"/> |
+ | 3. 新增两个节点函数 | 在 "菜单节点函数" 处定义你的函数。第一个节点函数在进入 Brightness 时调用（记为 Func_Brightness_enter ） ，第二个（记为 Func_Brightness_set）在进入 Brightness 后，有其他按键按下时调用。这两个函数共同实现了我们需要的功能：显示亮度调节页面，next 增大亮度，previous 减小亮度，同时在屏幕上显示当前亮度值，enter 或 return 确定更改。 |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-20-19.png"/> |
+ | 4. 进行函数的编写与指针替换 | 注意：两个函数都应为 void func(void) 型，利用全局变量 KEY_num 传递键值。 编写完毕后，将  Func_Brightness_enter 替换到 Settings 数组的函数指针处，将 Func_Brightness_set 替换到 Brightness 定义的函数指针处。  |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-20-28.png"/><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-20-31.png"/>|
+ |5. 在 Multimenu.h 中声明函数| 在 "自定义菜单节点函数声明" 处进行声明，注意不要忘了分号|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-20-45.png"/>|
+ |6. 编译并烧录 | 可以看到，成功实现屏幕亮度自由调节 |<video controls="false"  muted="muted" id="video1" name="media" style="width:300px"><source src="https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/13/19916860e374f57a105a3622b3939622.mp4" type="video/mp4"></video>|
 
 </div>
 
@@ -85,24 +85,24 @@
 
 | 步骤 | 详解 | 图片 |
 | :------: | :------: | :------: |
-| 1. 声明新菜单  | 在 Multimenu.c 的 "菜单栏定义" 中声明需要添加的 Once 型菜单，Once 型菜单数组大小需为1。另外，建议数组名字根据级别依次往下连接，避免混淆位置。 |![1b30609af06e684df3bb8dae9ed77a5e.png](https://i3.mjj.rip/2024/06/15/1b30609af06e684df3bb8dae9ed77a5e.png) |
-| 2. 定义新菜单并添加结构体 | 在 Multimenu.c "菜单栏定义" 的 " Menu_2 " 中定义刚刚声明的菜单（即数组），节点函数可以先填 {NULL, 0, Invalid_Operation} 中的任一个以避免报错 ，注释写的 Menu_2 表示其为二级菜单（Main为0级）；并在其父级菜单（这里是 Hello，位于 " Menu_1 " ）中添加结构体，添加结构体时勿忘修改数组大小。结构体示意图见 "4.2 添加 Data 型菜单" |![39c1d19ccc23177eb2d6777658c9ebd1.png](https://i3.mjj.rip/2024/06/15/39c1d19ccc23177eb2d6777658c9ebd1.png) |
-| 3. 新增一个节点函数 | 在 "菜单节点函数" 处定义你的函数。函数在 enter 此菜单时调用，我们编写函数以在屏幕上显示 "Hello world!" | ![35d2cdf2481f3284b57dbe46813f7b99.png](https://i3.mjj.rip/2024/06/15/35d2cdf2481f3284b57dbe46813f7b99.png) |
-| 4. 进行函数的编写与指针替换 | 注意：函数应为 void func(void) 型。 编写完毕后，将其替换到父菜单数组的对应结构体中  |![4077d13095628731040956285059b15f.png](https://i3.mjj.rip/2024/06/15/4077d13095628731040956285059b15f.png) |
-|5. 在 Multimenu.h 中声明函数| 在 "自定义菜单节点函数声明" 处进行声明，注意不要忘了分号|![0d1b0ad15dea38421eac0ca1f302c31c.png](https://i3.mjj.rip/2024/06/15/0d1b0ad15dea38421eac0ca1f302c31c.png)|
-|6. 编译并烧录 | 可以看到，成功实现 Sayhello 功能 | ![1c71a0c981deafb0c3ec037ef567563a.jpeg](https://i3.mjj.rip/2024/06/15/1c71a0c981deafb0c3ec037ef567563a.jpeg) |
+ | 1. 声明新菜单  | 在 Multimenu.c 的 "菜单栏定义" 中声明需要添加的 Once 型菜单，Once 型菜单数组大小需为1。另外，建议数组名字根据级别依次往下连接，避免混淆位置。 |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-24-50.png"/>|
+ | 2. 定义新菜单并添加结构体 | 在 Multimenu.c "菜单栏定义" 的 " Menu_2 " 中定义刚刚声明的菜单（即数组），节点函数可以先填 {NULL, 0, Invalid_Operation} 中的任一个以避免报错 ，注释写的 Menu_2 表示其为二级菜单（Main为0级）；并在其父级菜单（这里是 Hello，位于 " Menu_1 " ）中添加结构体，添加结构体时勿忘修改数组大小。结构体示意图见 "4.2 添加 Data 型菜单" | <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-24-55.png"/>|
+ | 3. 新增一个节点函数 | 在 "菜单节点函数" 处定义你的函数。函数在 enter 此菜单时调用，我们编写函数以在屏幕上显示 "Hello world!" |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-24-58.png"/> |
+ | 4. 进行函数的编写与指针替换 | 注意：函数应为 void func(void) 型。 编写完毕后，将其替换到父菜单数组的对应结构体中  |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-25-08.png"/> |
+ |5. 在 Multimenu.h 中声明函数| 在 "自定义菜单节点函数声明" 处进行声明，注意不要忘了分号|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-25-12.png"/>|
+ |6. 编译并烧录 | 可以看到，成功实现 Sayhello 功能 |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-25-16.png"/> |
 
 ### 4. 添加 Loop 菜单
 目标：在某个 Parent 型菜单下，添加一个 Loop 型菜单。下面以添加在 "Hello" 下的 "Smile" 选项为例。
 
 | 步骤 | 详解 | 图片 |
 | :------: | :------: | :------: |
-| 1. 声明新菜单  | 在 Multimenu.c 的 "菜单栏定义" 中声明需要添加的 Loop 型菜单，Loop 型菜单数组大小需为1。另外，建议数组名字根据级别依次往下连接，避免混淆位置；这里以将Smile 放在了 Main 的 Hello 下。 |![4009d06ec51e9dd627a7c51acb2a3fed.png](https://i3.mjj.rip/2024/06/15/4009d06ec51e9dd627a7c51acb2a3fed.png)|
-| 2. 定义新菜单并添加结构体 | 在 Multimenu.c"菜单栏定义" 的 " Menu_2 " 中定义刚刚声明的菜单（即数组），Menu_2 表示其为二级菜单（Main为0级）；并在其父级菜单（这里是 Hello，位于 " Menu_1 " ）中添加结构体，添加结构体时勿忘修改数组大小  |![4eccb7b01beec0899a30a0776cac27db.png](https://i3.mjj.rip/2024/06/15/4eccb7b01beec0899a30a0776cac27db.png)|
-| 3. 新增两个节点函数 | 在 "菜单节点函数" 处定义你的函数。第一个节点函数在进入 Smile 时调用（记为 Func_Smile_enter ） ，第二个（记为 Func_Smile_run）在进入 Smile 后，有其他按键按下时调用。这两个函数共同实现了我们需要的功能：enter函数进行初始化，循环调用run函数。一个示例功能是：next 笑脸右移，previous 笑脸左移，enter 笑脸反色， return 退出。 |![5ceb8d1b2b828a31647f7dd5fa06819f.png](https://i3.mjj.rip/2024/06/15/5ceb8d1b2b828a31647f7dd5fa06819f.png)|
-| 4. 进行函数的编写并替换指针 | 注意：两个函数都应为 void func(void) 型，利用全局变量 KEY_num 实现键值传递。 编写完毕后，将  Func_Smile_enter 替换到 Hello 数组下的的smile节点函数指针处，将 Func_Smile_run 替换到 Smile 定义的函数指针处。  |![192ec1ca442b1786fcb4f6e0c216b9f6.png](https://i3.mjj.rip/2024/06/15/192ec1ca442b1786fcb4f6e0c216b9f6.png) |
-|5. 在 Multimenu.h 中声明函数| 在 "自定义菜单节点函数声明" 处进行声明，注意不要忘了分号| ![15e63c7ced1df8b7ad26fcd79d5f258e.png](https://i3.mjj.rip/2024/06/15/15e63c7ced1df8b7ad26fcd79d5f258e.png) |
-|6. 编译并烧录 | 可以看到，成功实现笑脸眼睛循环转动，且横向位置可调、循环可随时暂停 |<video controls="false"  muted="muted" id="video1" name="media" style="width:300px"><source src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|
+ | 1. 声明新菜单  | 在 Multimenu.c 的 "菜单栏定义" 中声明需要添加的 Loop 型菜单，Loop 型菜单数组大小需为1。另外，建议数组名字根据级别依次往下连接，避免混淆位置；这里以将Smile 放在了 Main 的 Hello 下。 |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-25-22.png"/>|
+ | 2. 定义新菜单并添加结构体 | 在 Multimenu.c"菜单栏定义" 的 " Menu_2 " 中定义刚刚声明的菜单（即数组），Menu_2 表示其为二级菜单（Main为0级）；并在其父级菜单（这里是 Hello，位于 " Menu_1 " ）中添加结构体，添加结构体时勿忘修改数组大小  |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-25-25.png"/>|
+ | 3. 新增两个节点函数 | 在 "菜单节点函数" 处定义你的函数。第一个节点函数在进入 Smile 时调用（记为 Func_Smile_enter ） ，第二个（记为 Func_Smile_run）在进入 Smile 后，有其他按键按下时调用。这两个函数共同实现了我们需要的功能：enter函数进行初始化，循环调用run函数。一个示例功能是：next 笑脸右移，previous 笑脸左移，enter 笑脸反色， return 退出。 |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-25-30.png"/>|
+ | 4. 进行函数的编写并替换指针 | 注意：两个函数都应为 void func(void) 型，利用全局变量 KEY_num 实现键值传递。 编写完毕后，将  Func_Smile_enter 替换到 Hello 数组下的的smile节点函数指针处，将 Func_Smile_run 替换到 Smile 定义的函数指针处。  |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-25-35.png"/>|
+ |5. 在 Multimenu.h 中声明函数| 在 "自定义菜单节点函数声明" 处进行声明，注意不要忘了分号| <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-25-38.png"/>|
+ |6. 编译并烧录 | 可以看到，成功实现笑脸眼睛循环转动，且横向位置可调、循环可随时暂停 |<video controls="false"  muted="muted" id="video1" name="media" style="width:300px"><source src="https://www.writebug.com/static/uploads/2024/5/13/694fac4c38008c055e88d17a4e448a3b.mp4" type="video/mp4"></video>|
 
 ## 四、原理详解
 

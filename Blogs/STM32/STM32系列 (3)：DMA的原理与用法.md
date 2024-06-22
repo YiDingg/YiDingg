@@ -8,22 +8,22 @@
 ## DMA原理
 对于STM32F103x系列，官方对其DMA的说明在 [STM32F10x 参考手册(中文版).pdf](https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/764d9b9b210b4c052c24837bf24e0398.pdf) 中的Page.142~Page.154。下面是部分截图：
 <div class='center'>
-<img src="https://i3.mjj.rip/2024/06/15/b2a0ac80f34a53b991b5c7b17600d42d.png" alt="b2a0ac80f34a53b991b5c7b17600d42d.png" border="0">
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (3)：DMA的原理与用法--2024-06-23-00-30-08.png"/>
 </div>
 
 
 特别地，我们也要注意DMA的Circular模式、MemtoMem模式:
 <div class='center'>
-<img src="https://i3.mjj.rip/2024/06/15/3c7f18ded2c3bc3a512523ffa38abe22.png" alt="3c7f18ded2c3bc3a512523ffa38abe22.png" border="0">
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (3)：DMA的原理与用法--2024-06-23-00-30-12.png"/>
 </div>
 
 ## DMA辅助IIC
 ### 原理
 要利用DMA辅助IIC发送数据，需要在常规IIC通信的基础上，添加一个 DMA (IIC_TX)，并**打开 IIC event interrupt**，如图：
 <div class='center'>
-<img src="https://i3.mjj.rip/2024/06/15/c8b1503331de1c4341df9bd02c6b7209.png" alt="c8b1503331de1c4341df9bd02c6b7209.png" border="0">
-<img src="https://i3.mjj.rip/2024/06/15/26564de6caaef7bee2dc162f923d23ca.png" alt="26564de6caaef7bee2dc162f923d23ca.png" border="0">
-<img src="https://i3.mjj.rip/2024/06/15/372357cd7430c57df0476aa17eb05f54.png" alt="372357cd7430c57df0476aa17eb05f54.png" border="0">
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (3)：DMA的原理与用法--2024-06-23-00-30-17.png"/>
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (3)：DMA的原理与用法--2024-06-23-00-30-21.png"/>
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (3)：DMA的原理与用法--2024-06-23-00-30-28.png"/>
 </div>
 
 即可使用HAL库中 IIC (DMA模式) 对应的六个函数：
