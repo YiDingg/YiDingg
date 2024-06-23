@@ -5,12 +5,13 @@
 ### Music
 
 <div class='center'>
-<audio id='Music-1' controls="controls" >
+<audio id='Music-1' controls>
 	<source src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Syntax Examples--2024-06-22-01-24-43.mp3" type="audio/mpeg">
+	Your browser does not support the audio element.
 </audio>
 </div>
 
-<iframe id='Music-2' frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=52 src="//music.163.com/outchain/player?type=2&id=488249475&auto=0&height=32"></iframe>
+<iframe id='Music-2' frameborder="no" marginwidth="0" marginheight="0" width=280 height=52 src="//music.163.com/outchain/player?type=2&id=488249475&auto=0&height=32"></iframe>
 
 <script>
 myVid=document.getElementById("Music-1");
@@ -22,7 +23,7 @@ myVid.volume=0.15;
 	<source src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Syntax Examples--2024-06-22-01-24-43.mp3" type="audio/mpeg">
 </audio>
 
-<iframe id='Music-2' frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=52 src="//music.163.com/outchain/player?type=2&id=488249475&auto=0&height=32"></iframe>
+<iframe id='Music-2' frameborder="no" marginwidth="0" marginheight="0" width=280 height=52 src="//music.163.com/outchain/player?type=2&id=488249475&auto=0&height=32"></iframe>
 
 <script>
 myVid=document.getElementById("Music-1");

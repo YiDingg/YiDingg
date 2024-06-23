@@ -10,9 +10,9 @@
     margin: 0 25px;
 }
 .nav {
-    width: var(--toc-width, 200px);
-/*   align-self: flex-start;
-flex: 0 0 auto; */
+    width: var(--toc-width, 150px);
+/*     align-self: flex-start;
+    flex: 0 0 auto; */
 }
 aside.nav.nothing {
     width: 0;
@@ -61,7 +61,7 @@ aside.nav.nothing {
     width: 100%;
 }
 .page_toc a:before {
-    content: "- ";
+    content: "· ";
 }
 .nav {
     margin: 0 auto;
