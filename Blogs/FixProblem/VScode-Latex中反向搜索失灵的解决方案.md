@@ -13,10 +13,10 @@
 
 |步骤 | 图片 |
 | ------ | ------ |
-|1.   在扩展页面找到 Latex Workshop，点击右下角齿轮  | ![33cd6ec92499e93db1dfdb7d235dda9f.png](https://i3.mjj.rip/2024/06/16/33cd6ec92499e93db1dfdb7d235dda9f.png)|
-| 2. 选择 “安装另一个版本” |![bb3e23d3e28cd91045989217c6f77c17.png](https://i3.mjj.rip/2024/06/16/bb3e23d3e28cd91045989217c6f77c17.png)|
-| 3. 选择版本 9.19.2| ![4570abbc3d9583975b90c99409b2dcd6.png](https://i3.mjj.rip/2024/06/16/4570abbc3d9583975b90c99409b2dcd6.png) |
-| 4. 下载完成后，点击 “restart” 重启插件，重新打开.tex文件及其PDF预览 |（无图片） |
+ |1.   在扩展页面找到 Latex Workshop，点击右下角齿轮  |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/VScode-Latex中反向搜索失灵的解决方案--2024-06-23-23-09-05.png"/></div> |
+ | 2. 选择 “安装另一个版本” |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/VScode-Latex中反向搜索失灵的解决方案--2024-06-23-23-09-14.png"/></div>|
+ | 3. 选择版本 9.19.2| <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/VScode-Latex中反向搜索失灵的解决方案--2024-06-23-23-09-17.png"/></div> |
+ | 4. 下载完成后，点击 “restart” 重启插件，重新打开.tex文件及其PDF预览 |- |
 </div>
 
 即可完成版本回退，反向搜索功能恢复正常。

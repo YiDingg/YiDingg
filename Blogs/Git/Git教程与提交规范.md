@@ -22,14 +22,14 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 <summary>pwd</summary>
 
 `pwd` (print work directory)：显示当前目录所在地址
-<img src="https://i3.mjj.rip/2024/06/15/9c8807848fa932eaa4bd76b900760af1.png" alt="9c8807848fa932eaa4bd76b900760af1.png" border="0">
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-53-50.png"/>
 </details>
 
 <details>
 <summary>ls</summary>
 
 `ls` (list files)：显示当前目录下的所有文件
-![c1dbf864516b76153f271dde2cb4f9d9.png](https://i3.mjj.rip/2024/06/15/c1dbf864516b76153f271dde2cb4f9d9.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-53-58.png"/>
 </details>
 
 <details>
@@ -37,12 +37,12 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 
 `cd` (change directory)：切换目录
 后接 ".." 是返回上一级，后接文件名是进入下一级
-![eef5625f83ea6706446c15bc0dc6c61b.png](https://i3.mjj.rip/2024/06/15/eef5625f83ea6706446c15bc0dc6c61b.png)
+
 </details>
 
 
 ### 1. Git使用演示
-为了更好的演示效果，我们在桌面新建一个文件夹 Git_Test，在其中新建 test.tex 文件，并以此进行演示。![image](https://raw.githubusercontent.com/YiDingg/ImageBank_0/main/20240616/013533662.png)
+为了更好的演示效果，我们在桌面新建一个文件夹 Git_Test，在其中新建 test.tex 文件，并以此进行演示。<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-16.png"/>
 
 下面的步骤，既可以在 Windosw PowerShell 中进行，也可以在 Git Bash 中进行，步骤完全相同，这里以 Git Bash 为例。
 
@@ -53,46 +53,47 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 `git config --global --list` ：查看用户信息<br> 
 `git config --global user.name "name"` ：修改用户名 <br>
 `git config --global user.email "email"` ：修改邮箱
-![e86758955601f2d426745cf18829aae3.png](https://i3.mjj.rip/2024/06/16/e86758955601f2d426745cf18829aae3.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-25.png"/>
 </details>
 
 <details>
 <summary> 2. 初始化本地git仓库  </summary>  
 
 `git init` ：初始化本地仓库<br>会进行初始化，并在当前目录创建.git文件夹（用于保存版本记录和变化）
-![830b00ef782b5e1de88f2a1e87f5f2c1.png](https://i3.mjj.rip/2024/06/16/830b00ef782b5e1de88f2a1e87f5f2c1.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-32.png"/>
 </details>
 
 <details>
 <summary>  3. 添加文件到Git  </summary>  
 
 `git add test.txt` ：添加一个文件<br>`git add .` ：添加当前目录所有文件
-![70417319f88043f1c9e2c25474d792cf.png](https://i3.mjj.rip/2024/06/16/70417319f88043f1c9e2c25474d792cf.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-38.png"/>
 </details>
 
 <details>
 <summary> 4. 查看文件状态  </summary>  
 
 `git status` ：查看（当前目录）文件更改情况（分为stage区和workspace区）
-![bb54b1da693887a95e22b167a7e37067.png](https://i3.mjj.rip/2024/06/16/bb54b1da693887a95e22b167a7e37067.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-43.png"/>
 </details>
 
 <details>
 <summary>  5. 提交更改（固定为版本） </summary>  
 
 `git commit -m "初始化，并添加了几个文件"` ：提交更改，引号内为此次提交的批注
-![634f86ae7358492dc686559f5cc30ec0.png](https://i3.mjj.rip/2024/06/16/634f86ae7358492dc686559f5cc30ec0.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-48.png"/>
 <br>注意：每次提交前都需要将待提交文件add到stage区，如下图。或者用`-a -m`参数一次性add到stage区并commit
-![f0af83862ab3167e0eea27cf6b7d0015.png](https://i3.mjj.rip/2024/06/16/f0af83862ab3167e0eea27cf6b7d0015.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-57.png"/>
+
 `git commit -a -m "一次性完成add和commit"`：一次性完成add和commit
-![340740828a290cef58be61500d450ecf.png](https://i3.mjj.rip/2024/06/16/340740828a290cef58be61500d450ecf.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-56-06.png"/>
 </details>
 
 <details>
 <summary>  6. 查看提交日志  </summary>  
 
 `git log`：查看提交日志<br>`git log --oneline`：简洁版日志，每行显示一次提交
-![1c09f6119d7a476e5c3ee63b267a31d5.png](https://i3.mjj.rip/2024/06/16/1c09f6119d7a476e5c3ee63b267a31d5.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-56-11.png"/>
 </details>
 
 
@@ -102,7 +103,7 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 `git reset --hard HEAD^`：重置为上个版本  
 `git reset --hard {commit_hash}`：重置为某个版本
 注意： --hard 回退模式会彻底删除之后的所有更改，无法撤销
-![037f0be69bc6c70344aea33b2ded1a32.png](https://i3.mjj.rip/2024/06/16/037f0be69bc6c70344aea33b2ded1a32.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-56-20.png"/>
 </details>
 
 
@@ -116,7 +117,7 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 
 注：创建分支时，会将当前分支（可以不是master）复制到新分支，后续的修改都是基于此版本。
 例如团队协作开放一个项目时，从V1.0到V1.1要新增三个功能，分别由三个人进行开发。这时就在master上的V1.0创建三个分支，三个人基于V1.0版本，分别开发完毕后再进行merge合并。
-![fb4512cdbe67b93ebccc2ee8cd467b66.png](https://i3.mjj.rip/2024/06/16/fb4512cdbe67b93ebccc2ee8cd467b66.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-59-20.png"/>
 </details>
 
 
@@ -126,7 +127,7 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 `git merge --no-ff {local_branch_name} -m "merge bra_1 into bra_2"`：将某个分支合并到当前分支，并附带提交备注  
 `git branch -vv`：查看所有分支状态  
 注：merge合并只是将某分支的更改合并到另一个分支，并不会删除原始分支，建议提交信息格式为 "merge branch V2.0 into branch main "。合并时可能会出现conflicts，手动解决后再次merge即可。
-![9ef6df7859f0881fe3bf4454fc832187.png](https://i3.mjj.rip/2024/06/16/9ef6df7859f0881fe3bf4454fc832187.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-59-26.png"/>
 </details>
 
 
@@ -134,13 +135,14 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 <summary>  10. 连接远程仓库（HTTPS方式） </summary>  
 
 首先创建一个仓库，填写相关信息和初始化信息，并复制仓库连接：  
-![3a552400ce4cd01ebd3994007cb07eb7.png](https://i3.mjj.rip/2024/06/16/3a552400ce4cd01ebd3994007cb07eb7.png)
-![e2aacf4dbc3a9eb2db69d8ba314b965f.png](https://i3.mjj.rip/2024/06/16/e2aacf4dbc3a9eb2db69d8ba314b965f.png)
-![9349c32a3ca0565e126e6ce303982d3a.png](https://i3.mjj.rip/2024/06/16/9349c32a3ca0565e126e6ce303982d3a.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-59-31.png"/>
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-59-38.png"/>
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-59-49.png"/>
+
 `git remote add origin {remote-url}`：将远程仓库链接到本地并命名为 origin（注意，Git Bash 默认中键黏贴）  
 `git remote -v`：查看已链接的仓库信息  
 `git branch -m main`：重命名当前分支为 "main"  
-![9fa421ee93a18284457b4ba5a4f4fe8d.png](https://i3.mjj.rip/2024/06/16/9fa421ee93a18284457b4ba5a4f4fe8d.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-00-00.png"/>
 </details>
 
 
@@ -148,13 +150,13 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 <summary> 11. 上传更改到远程仓库  </summary>  
 确保现在你处于main分支，然后：
 `git push -u origin main`：将当前分支推送到远程仓库 origin 的 main 分支，-u 表示建立分支关联（下次位于main分支时仅需 git push 即可将本地main分支推送到origin的main分支）
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-00-07.png"/>
 
-![634bb46fe2fb23385e87b07ebd931fa4.png](https://i3.mjj.rip/2024/06/16/634bb46fe2fb23385e87b07ebd931fa4.png)
 
 如果出现SSL证书无法验证，确保此远程仓库是可信的，然后 `git config --global http.sslVerify false`（全局禁用SSL证书验证）并再次提交。
-![93c2d95b25a14e5bad2c716a22ce017e.png](https://i3.mjj.rip/2024/06/16/93c2d95b25a14e5bad2c716a22ce017e.png)
-![839ad43e730e9eacf4d5a2244f2fb402.png](https://i3.mjj.rip/2024/06/16/839ad43e730e9eacf4d5a2244f2fb402.png)
-![23edb166058a20eca784d27e6fde6e55.png](https://i3.mjj.rip/2024/06/16/23edb166058a20eca784d27e6fde6e55.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-00-17.png"/>
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-00-25.png"/>
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-00-32.png"/>
 </details>
 
 
@@ -169,8 +171,9 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 `git branch -vv`：查看本地分支（-vv指详细信息）  
 `git branch -r`：查看远程链接分支    
 `git remote -v`：查看链接信息    
-![27464ed6dc0c55820f198a43d9414859.png](https://i3.mjj.rip/2024/06/16/27464ed6dc0c55820f198a43d9414859.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-09.png"/><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-14.png"/>
 当然，也可以一次性查看本地、远程分支：  
+
 `git branch -a -vv`：查看所有分支（-vv指详细信息)  
 注：git clone 命令完成克隆时，会自动将本地链接到远程仓库  
 </details>
@@ -181,7 +184,7 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 
 将远程仓库克隆到本地时，其默认名为origin，可以对其进行修改。  
 `git remote rename origin {remote_name}`
-![c7c9199057ff13bb6685b5c1d5e85d04.png](https://i3.mjj.rip/2024/06/16/c7c9199057ff13bb6685b5c1d5e85d04.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-25.png"/>
 </details>
 
 
@@ -198,11 +201,13 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 `git branch -b {branch_name}`：新建本地分支
 修改分支并commit后：  
 `git push {remote_name} {remote_branch_name}`：将本地分支推送到远程
-![f50fe25a1ecccd0f0d2fb3b0ffa1acc0.png](https://i3.mjj.rip/2024/06/16/f50fe25a1ecccd0f0d2fb3b0ffa1acc0.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-40.png"/>
+
 `git branch -d {branch_name}`：删除本地分支
-![be591cbf6148ca7270c1f8bbc08dc19a.png](https://i3.mjj.rip/2024/06/16/be591cbf6148ca7270c1f8bbc08dc19a.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-48.png"/>
+
 `git push {remote_name} --delete {remote_branch_name}`：删除远程分支
-![2e69e94042ab9c57d5ba3b7e16fc8754.png](https://i3.mjj.rip/2024/06/16/2e69e94042ab9c57d5ba3b7e16fc8754.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-56.png"/>
 </details>
 
 
@@ -217,13 +222,13 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 
 ### 3. Git 管理本地老项目
 现在我们需要为一个老项目搭建 Git 管理，下面是它之前所有的发行版本：
-![3cfab8b0e981936a7823e66bc8793347.png](https://i3.mjj.rip/2024/06/16/3cfab8b0e981936a7823e66bc8793347.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-04.png"/>
 
 Git 搭建步骤如下：
 <details>
 <summary> 1. 创建远程项目库 </summary>  
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-09.png"/>
 
-![85e933e77ff6873c2de4a2a97d5e08ed.png](https://i3.mjj.rip/2024/06/16/85e933e77ff6873c2de4a2a97d5e08ed.png)
 
 </details>
 
@@ -253,8 +258,8 @@ ssh: connect to host github.com port 22: Connection refused
 fatal: Could not read from remote repository.
 ```
 这是由于防火墙拒绝SSH请求导致的，参考上面的官方文档[Using SSH over the HTTPS port](https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port)即可轻松解决。
-![0a9aed762f3ebe5bb838a41f0d2814d7.png](https://i3.mjj.rip/2024/06/16/0a9aed762f3ebe5bb838a41f0d2814d7.png)
-![36c8ea780a28439391a7c742ad62542f.png](https://i3.mjj.rip/2024/06/16/36c8ea780a28439391a7c742ad62542f.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-25.png"/>
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-33.png"/>
 </details>
 
 <details>
@@ -282,9 +287,11 @@ fatal: Could not read from remote repository.
 <details>
 <summary> 5. 检查是否导入成功 </summary>  
 全部版本导入完毕后，在Github的Tag处可直接下载对应版本，这样就完成了老项目库的 Git 搭建。
-![56e0ccc73eb50ef01cc5e57c394630d0.png](https://i3.mjj.rip/2024/06/16/56e0ccc73eb50ef01cc5e57c394630d0.png)
-![b7075b90fb2c12019f2aaf813c0a9a4b.png](https://i3.mjj.rip/2024/06/16/b7075b90fb2c12019f2aaf813c0a9a4b.png)
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-39.png"/>
+<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-42.png"/>
 </details>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-42.png"/></div>
 
 ### 4. 参与他人项目
 to be continued ...
@@ -386,14 +393,14 @@ Git下载及命令行环境配置步骤如下：
 
 | 步骤|详细| 图片 |
 | :-: | :-: |:-: |
-| 1. 进入 [Git官网](https://git-scm.com/) 进行下载：  |依次点击：Downloads --> Windows --> 64-bit Git for Windows Setup  |   ![d9681ff93ee1418344576a65d60ef2f3.png](https://i3.mjj.rip/2024/06/16/d9681ff93ee1418344576a65d60ef2f3.png)   |
-| 2. 安装Git |       选择合适的安装路径!!#ff0000 （不要有中文字符）!!       |![d60a16b9466018c94992a7993d74da34.png](https://i3.mjj.rip/2024/06/16/d60a16b9466018c94992a7993d74da34.png) |
-| 3. 检查是否安装成功 | 在桌面右键，点击 Open Git Bash here，输入 `git version` 并回车，正常显示版本信息则表示安装成功 |   ![6aa83a1b35295236bb88728c2b1baf6e.png](https://i3.mjj.rip/2024/06/16/6aa83a1b35295236bb88728c2b1baf6e.png)![7d47e7eca634be2dc6ce2fcbcf42e132.png](https://i3.mjj.rip/2024/06/16/7d47e7eca634be2dc6ce2fcbcf42e132.png)  |
+| 1. 进入 [Git官网](https://git-scm.com/) 进行下载：  |依次点击：Downloads --> Windows --> 64-bit Git for Windows Setup  |      |
+| 2. 安装Git |       选择合适的安装路径!!#ff0000 （不要有中文字符）!!       | |
+| 3. 检查是否安装成功 | 在桌面右键，点击 Open Git Bash here，输入 `git version` 并回车，正常显示版本信息则表示安装成功 |     |
 </div>
 
 ### 3. Github 无法连接
 推荐下载 [Watt Toolkit (原名steam++) -- Github网络加速器](https://steampp.net/)，可完全免费加速 Github、steam 等平台。我个人使用的就是这个（没收广告费）。
-![430090ad617d540c5bf3236e890fd3c5.png](https://i3.mjj.rip/2024/06/16/430090ad617d540c5bf3236e890fd3c5.png)
+
 
 ## 参考文章
 [【git / github 保姆级教程入门，工作和协作必备技术】](https://www.bilibili.com/video/BV1s3411g7PS)  

@@ -6,14 +6,23 @@
 
 注：本文主控芯片为STM32F103C8T6，基于STM32标准库函数，示例代码适用大部分STM32F1系列芯片。若主控芯片不同，可以查阅参考手册、数据手册，依据具体区别进行必要的修改。
 
+下面是实物效果：
+
+<div class='center'>
+    <video controls="controls"  muted="muted" id="video-example" style="width:900px;max-width:80%" loop='0'><source src="https://www.writebug.com/static/uploads/2024/5/10/6bccf8b5481df50e2b76af2a953769b4.mp4" type="video/mp4"></video>
+</div>
+<div class='center'>
+    <video controls="controls"  muted="muted" id="video-example" style="width:900px;max-width:80%" loop='0'><source src="https://www.writebug.com/static/uploads/2024/5/10/2bdae9d10df0e3a3b62db4501f7efd6d.mp4" type="video/mp4"></video>
+</div>
+
 ---
 
 ## 一、呼吸灯原理
 >通过调整PWM信号占空比来控制LED灯的亮度，进而实现人眼中亮度的"连续"变化。
 >考虑到部分单片机高电平驱动能力弱，我们以LED阳极接VCC（电源正极）、阴极接IO口（接收PWM信号）为例（建议自行串联限流电阻）。
 
-"占空比"一般指一个时钟周期内高电平所占的时间比例，为了方便，我们定义 "有效占空比" 为LED发光所占时间比例，在这里即为低电平时间比例（LED为低电平点亮）。下图给出了有效占空比为50%的示意图。
-![49327017cd30cff8b5712ac368027c08.png](https://i3.mjj.rip/2024/06/16/49327017cd30cff8b5712ac368027c08.png)
+"占空比"一般指一个时钟周期内高电平所占的时间比例，为了方便，我们定义 "有效占空比" 为LED发光所占时间比例，在这里即为低电平时间比例（LED为低电平点亮）。下图给出了有效占空比为50%的示意图
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/手把手教你用PWM实现呼吸灯(标准库)--2024-06-23-23-19-40.png"/></div>
 也就是说，实际上，LED灯一直处于闪烁状态，只是当闪烁频率较高时（不低于60Hz），人眼一般无法观察到闪烁现象，只是认为LED灯的亮度发生了变化，当频率达到90Hz时，绝大部分人完全没有闪烁感。特别地，当有效占空比为0%时，LED亮度最低（完全熄灭），当有效占空比为100%时，LED亮度最高。
 
 ---
@@ -31,9 +40,8 @@
 2. 需要使用GPIO口来输出PWM信号，而GPOI受APB2管理，因此需要利用APB2下的函数配置GPIO口；
 3. TIM3作为普通定时器，可同时输出4路PWM信号（分别从4个IO口输出），每一路PWM信号频率相同，但占空比可以不同，需要对每一路进行配置。
 
-> 在STM32F103C8系列中，TIM3对应四个PWM通道默认为: Channel_1 -- A6, Channel_2 -- A7, Channel_3 -- B0, Channel_4 -- B1，"A6"表示GPIO_A的6号引脚。可通过"部分映射"或"重映射"更改通道所对应的IO口，此部分可根据需求自行设置，这里使用默认IO口。下图是数据手册中TIM3端口的对应关系表
-
-![0c32cc6e15cdcec0ed97052c79b77326.png](https://i3.mjj.rip/2024/06/16/0c32cc6e15cdcec0ed97052c79b77326.png)
+> 在STM32F103C8系列中，TIM3对应四个PWM通道默认为: Channel_1 -- A6, Channel_2 -- A7, Channel_3 -- B0, Channel_4 -- B1，"A6"表示GPIO_A的6号引脚。可通过"部分映射"或"重映射"更改通道所对应的IO口，此部分可根据需求自行设置，这里使用默认IO口。下图是数据手册中TIM3端口的对应关系表：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/手把手教你用PWM实现呼吸灯(标准库)--2024-06-23-23-19-53.png"/></div>
 
 在代码中，我们先对GPIO和TIM3初始化，再对TIM3进行详细配置。并且先不进行具体频率、占空比计算，只给一个可行的初始值。
 下面是初始化的代码（配有注释）：
@@ -116,13 +124,13 @@ int main(void){
 ```
 上面的例子中，我们只启用了TIM3的两个通道(Channel3, Channel4)，分别对应B0、B1口。在面包板上，将LED正极与单片机VCC口连接，负极分别于B0、B1口连，编译并烧录程序。
 可以看到，B0口LED（左）亮度低，B1口LED（右）亮度高，见下图：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/手把手教你用PWM实现呼吸灯(标准库)--2024-06-23-23-20-06.png"/></div>
 
-![b94c0963099d2a90895c99f20c827e3e.jpeg](https://i3.mjj.rip/2024/06/16/b94c0963099d2a90895c99f20c827e3e.jpeg)
 
 将两个通道的有效占空比互换（即调换两者的比较值CRR，语句即为TIM3_Configuration函数中的 "TIM_OCInitStructure.TIM_Pulse = 90" 和 "TIM_OCInitStructure.TIM_Pulse = 5"，把90和5互换 ），重新编译、烧录。
 可以看到，B0口LED（左）亮度高，B1口LED（右）亮度低，见下图：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/手把手教你用PWM实现呼吸灯(标准库)--2024-06-23-23-20-11.png"/></div>
 
-![43e43c526c552a40d1934cece8826e00.jpeg](https://i3.mjj.rip/2024/06/16/43e43c526c552a40d1934cece8826e00.jpeg)
 
 这是符合我们预期的，因为在外面的例子中，计数值<=比较值时，输出有效电平（被设置为了低电平），此时LED发光。因此比较值越大，LED发光时间占比越大，对应亮度越高。
 
@@ -251,12 +259,12 @@ int main(void)
 /* 这里把上面封装好的函数搬下来（一共三个） */
 ```
 将四个LED共阳极接到电源VCC，阴极分别接到四个端口，设置所需的函数参数。这里选择了开启全部通道，PWM频率100Hz，全部都为低电平有效，且占空比为 {0,30,60,100}，效果如下：
-![c79d6d33e2e31976f0724b878b4ac039.jpeg](https://i3.mjj.rip/2024/06/16/c79d6d33e2e31976f0724b878b4ac039.jpeg)
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/手把手教你用PWM实现呼吸灯(标准库)--2024-06-23-23-20-19.png"/></div>
 将占空比改为 {100,10,50,0}，效果如下（为了便于分辨亮度差异，四个LED都使用了相同颜色）：
-![3225c6494e40a239ef0859b38adee63b.jpeg](https://i3.mjj.rip/2024/06/16/3225c6494e40a239ef0859b38adee63b.jpeg)
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/手把手教你用PWM实现呼吸灯(标准库)--2024-06-23-23-20-21.png"/></div>
 可以看到，现象完全符合我们的预期（有效占空比为0的灯看起来没有完全熄灭，是受到旁边LED的光照影响，实际上是完全熄灭的。）
 我们将四个通道有效占空比设为{0,0,0,0}，可以看到LED完全熄灭：
-![1265737a2fdcfe286df85524dc4c5189.jpeg](https://i3.mjj.rip/2024/06/16/1265737a2fdcfe286df85524dc4c5189.jpeg)
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/手把手教你用PWM实现呼吸灯(标准库)--2024-06-23-23-20-24.png"/></div>
 
 ### 3. 呼吸灯控制
 
