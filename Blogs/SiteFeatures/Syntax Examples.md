@@ -11,11 +11,11 @@
 </audio>
 </div>
 
-<script>
+<!-- <script>
 myVid=document.getElementById("Music-1");
 myVid.volume=0.15;
 </script> 
-
+ -->
 <iframe id='Music-2' frameborder="no" marginwidth="0" marginheight="0" width=280 height=52 src="//music.163.com/outchain/player?type=2&id=488249475&auto=0&height=32"></iframe>
 
 
