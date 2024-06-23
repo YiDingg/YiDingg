@@ -4,18 +4,18 @@
 
 ### Music
 
-<div class='center' >
-<audio id='Music-1' controls autoplay>
+<div class='center'>
+<audio id='Music-1' controls style="max-width:100%">
 	<source src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Syntax Examples--2024-06-22-01-24-43.mp3" type="audio/mpeg">
 	Your browser does not support the audio element.
 </audio>
 </div>
 
-<!-- <script>
+<script>
 myVid=document.getElementById("Music-1");
 myVid.volume=0.15;
 </script> 
- -->
+
 <iframe id='Music-2' frameborder="no" marginwidth="0" marginheight="0" width=280 height=52 src="//music.163.com/outchain/player?type=2&id=488249475&auto=0&height=32"></iframe>
 
 
@@ -374,16 +374,7 @@ Markdown syntax:
 ```
 ````
 
-### Markdown-embed
 
-https://github.com/JerryC8080/docsify-remote-markdown
-
-
-```html
-<div style='border:#000 solid 1px; width:100%;'>
-[remoteMarkdownUrl](https://raw.githubusercontent.com/YiDingg/OLEDSD/d93810cd247ef8cc883205b9d545d941eb7785a8/README.md)
-</div>
-```
 
 
 ### PDF-embed

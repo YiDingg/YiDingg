@@ -1200,9 +1200,9 @@ footer {
 
 
 
-body main section article audio {
+/* body main section article audio {
   transform: translateX(0px);
 }
 body.close main section article audio {
   transform: translateX(100px);
-}
+} */
