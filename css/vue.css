@@ -1199,3 +1199,11 @@ footer {
 
 
 
+
+body main section article audio {
+  transform: translateX(100px);
+}
+
+body.close main section article audio {
+  transform: translateX(0px);
+}
