@@ -6,11 +6,11 @@
 
 focus属性会影响其它组件，因此注释掉了动画，可作静态按钮使用
 
-<div class='button_1' onclick="window.open('pdf/GitHub_YiDingg_pdf/Linear Algebra 2 notes.pdf')">this is a button 按钮</div>
+<div class='button_1' onclick="window.open('')">this is a button 按钮</div>
 
-<a class='button_1' onclick="window.open('pdf/GitHub_YiDingg_pdf/Linear Algebra 2 notes.pdf')">this is a button 按钮</a>
+<a class='button_1' onclick="window.open('')">this is a button 按钮</a>
 
-<p class='button_1' onclick="window.open('pdf/GitHub_YiDingg_pdf/Linear Algebra 2 notes.pdf')">this is a button 按钮</p>
+<p class='button_1' onclick="window.open('')">this is a button 按钮</p>
 
 可通过onclick属性设置点击跳转/新开链接。
 
