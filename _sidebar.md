@@ -34,10 +34,12 @@
 
 - 📖 **Notes**
   - Math
+    - [Calculus 1](Notes\Math\Calculus%201%20Notes.md)
     - [Linear Algebra 1](Notes\Math\Linear%20Algebra%201%20notes.md)
     - [Linear Algebra 2](Notes\Math\Linear%20Algebra%202%20notes.md)
   - Phisics
     - [Mechanics](Notes\Phisics\Mecanics%20notes.md)
+    - [Electromegnetism](Notes\Phisics\Electromegnetism%20Notes.md)
     - [Thermodynamics](Notes\Phisics\Thermodynamics%20notes.md)
 
 
