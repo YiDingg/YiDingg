@@ -6,7 +6,7 @@
 
 <div class='center'>
 <audio id='Music-1' controls style="max-width:100%">
-	<source src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Syntax Examples--2024-06-22-01-24-43.mp3" type="audio/mpeg">
+	<source src="https://d.igdu.xyz/YKux" type="audio/mpeg">
 	Your browser does not support the audio element.
 </audio>
 </div>

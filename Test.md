@@ -1,6 +1,6 @@
 # Test
 
-!> **<font color="red">Attention:</font>**<br>
+!> **<span style='color:red'>Attention:</span>**<br>
 This is a page only for test.
 ---
 

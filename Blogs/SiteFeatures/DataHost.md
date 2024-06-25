@@ -5,13 +5,17 @@ When building your own blog site, it is crucial to select an appropriate image h
 <b>
 
 Conclusion: 
-- Upload <font color='red'>img to Aliyun</font> by VS-PicGo, <s>gif to TouTiao manually by PanLuo Uploading,</s> <font color='red'>gif, video, pdf and other types to WB</font> manually (backup to local). 
+- <span style="color:red">img and small gif to Aliyun</span> by VS-PicGo
+-  <!-- <s>gif to TouTiao manually by PanLuo Uploading,</s> --> <span style="color:red">gif, video, audio, pdf and other files to WB Cloud</span> manually.
+
+Tools:
+- Use<!--  [C1N](https://www.c1n.cn/) or --> [Short](https://d.igdu.xyz/) to create a short link for your file.
+- Use [SINA](https://www.sina.lt/restore.html) to restore the short link.
 - Use [Oplimize LLA](https://imagecompressor.com)(70 quality recommanded) or [TinyPNG](https://tinypng.com/) to compress the image and gif.
 - Use [Video To Edit](https://www.video2edit.com) to compress the video.
-- Use [I Love PDF](https://www.ilovepdf.com/) to compress pdf.
 - Use [YouCompress](https://www.youcompress.com/) to compress mp3.
+- Use [I Love PDF](https://www.ilovepdf.com/) to compress pdf.
 - Use [Screen to GIF]() to convert video into gif if you need.
-- Use [Short](https://d.igdu.xyz/) to create a short link for your file.
 
 </b>
 
@@ -21,10 +25,10 @@ Results Show:
 
 |Type|display|
 |:-:|:-:|
-|img|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/_coverpage-2024-06-20.jpeg" alt="_coverpage-2024-06-20" style="width:200px">|
-|gif|<img src="https://d.igdu.xyz/ZoIG" alt="toutiaoBed-normal" title="toutiaoBed-normal" style="width:200px">|
-|video|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://www.writebug.com/git/DY130810/WB.VideoBank/raw/branch/main/video.mp4" type="video/mp4"></video>|
-|pdf|below|
+ |img|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/_coverpage-2024-06-20.jpeg" alt="_coverpage-2024-06-20" style="width:200px">|
+ |gif|<img src="https://d.igdu.xyz/ZoIG" alt="toutiaoBed-normal" title="toutiaoBed-normal" style="width:200px">|
+ |video|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://www.writebug.com/git/DY130810/WB.VideoBank/raw/branch/main/video.mp4" type="video/mp4"></video>|
+ |pdf|below|
 
 </div>
 
@@ -39,10 +43,9 @@ https://www.writebug.com/git/DY130810/Notes/raw/commit/77732e15298f9d2390549ae3a
 
 |Type| Host | Note |
 |:-:|:-:|:-:|
-| image (png, jpg, ...) | GitHub,SM.MS for free<br>Aliyun, Tencent Cloud for premium |  |
-| gif | TouTiao | Free and no space limit |
-| vedio (mp4, avi, webm ...)  | GitHub | Maximum 800MB for each repo, manually upload  |
-| pdf | WB(backup to local) | 2G for free |
+| image(png, jpg, ...), small gif | GitHub, SM.MS for free<br>Aliyun, Tencent Cloud for premium | you can choose to pay for stability |
+| gif, video(mp4, avi, webm, ...), audio  | GitHub, WB | GitHub: Maximum 800MB for each repo, manually upload  |
+| pdf | GitHub, WB | |
 </div>
 
 We may change to use ... if :
@@ -50,7 +53,7 @@ We may change to use ... if :
 - Github + MDTC: The plugin to change url automatically is found
 
 
-!> **Attention:**
+!> **<span style='color:red'>Attention:</span>**<br>
 Though you can use GitHub's repo for free, we do not recommand GitHub as a host because it does not fit GitHub's original intention. GitHub will manually review your repo that reaches 1G, and your repo <font color='red'>(even account)</font> might be banned if they find that you are using the repo as an image host or data bank.
 
 ## Reasons

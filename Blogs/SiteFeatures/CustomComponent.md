@@ -92,14 +92,9 @@ focus属性会影响其它组件，因此注释掉了动画，可作静态按钮
 
 
 
-
-### Web DashBoard
-: 
-
-
 ## Reference
 
-[《有趣儿的组件（HTML/CSS）》](https://blog.csdn.net/qq_47945825/article/details/136108998)
-[《前端常用的CSS代码块》](https://blog.csdn.net/weixin_46102749/article/details/106947535)
-[《不需要 JavaScript，仅用 CSS 实现时间轴动画效果》](https://blog.csdn.net/Shids_/article/details/123792840)
-[《css 时间轴样式》](https://blog.csdn.net/q1ngqingsky/article/details/125526154)
+[《有趣儿的组件（HTML/CSS）》](https://blog.csdn.net/qq_47945825/article/details/136108998)  
+[《前端常用的CSS代码块》](https://blog.csdn.net/weixin_46102749/article/details/106947535)  
+[《不需要 JavaScript，仅用 CSS 实现时间轴动画效果》](https://blog.csdn.net/Shids_/article/details/123792840)  
+[《css 时间轴样式》](https://blog.csdn.net/q1ngqingsky/article/details/125526154)  
