@@ -9,7 +9,7 @@ Conclusion:
 -  <!-- <s>gif to TouTiao manually by PanLuo Uploading,</s> --> <span style="color:red">gif, video, audio, pdf and other files to WB Cloud</span> manually.
 
 Tools:
-- Use<!--  [C1N](https://www.c1n.cn/) or --> [Short](https://d.igdu.xyz/) to create a short link for your file.
+- Use<!--  [C1N](https://www.c1n.cn/) or --> [Short](https://d.igdu.xyz/) or [C1N](https://www.c1n.cn/) to create a short link for your file.
 - Use [SINA](https://www.sina.lt/restore.html) to restore the short link.
 - Use [Oplimize LLA](https://imagecompressor.com)(70 quality recommanded) or [TinyPNG](https://tinypng.com/) to compress the image and gif.
 - Use [Video To Edit](https://www.video2edit.com) to compress the video.
