@@ -21,7 +21,7 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-80%20hrs%2011%20mins-blue)
+![Code Time in Total](http://img.shields.io/badge/Code%20Time-80%20hrs%2011%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-405.2%20thousand%20lines%20of%20code-blue)
 
@@ -75,7 +75,7 @@ CSS                      1 repo              ████████░░░�
 ```
 
 
-
+<figure><embed src="https://wakatime.com/share/@YiDingg/2d1d8acd-7e73-476d-b35e-48bd273c0952.svg"></embed></figure>
 
  Last Updated on 25/06/2024 18:37:18 UTC
 <!--END_SECTION:waka-->

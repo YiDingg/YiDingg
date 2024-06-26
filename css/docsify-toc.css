@@ -1,25 +1,29 @@
-/* docsify-toc plugin styles                    */
+/*   docsify-toc plugin styles (right sidebar)   */
 /* --------------------------------------------- */
 .content {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
 }
+
 .markdown-section {
-/*   flex: 1 1 0%; */
+    /*   flex: 1 1 0%; */
     margin: 0 25px;
 }
+
 .nav {
     width: var(--toc-width, 150px);
-/*     align-self: flex-start;
+    /*     align-self: flex-start;
     flex: 0 0 auto; */
 }
+
 aside.nav.nothing {
     width: 0;
 }
 
 .page_toc {
-    position: fixed;;
+    position: fixed;
+    ;
     border-left-style: solid;
     border-left-width: 1px;
     border-left-color: rgba(0, 0, 0, 0.07);
@@ -31,60 +35,75 @@ aside.nav.nothing {
     max-height: 98%;
     -webkit-scrollbars-style: none;
 }
+
 /* hover颜色样式待修改 */
 .page_toc::-webkit-scrollbar {
-    width: 10px; /* Width of the scrollbar */
+    width: 10px;
+    /* Width of the scrollbar */
 }
+
 .page_toc::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Color of the track */
+    background: #f1f1f1;
+    /* Color of the track */
 }
-  
+
 .page_toc::-webkit-scrollbar-thumb {
-    background: #cacaca; /* Color of the scrollbar thumb */
-    border-radius: 5px; /* Rounded corners for the thumb */
+    background: #cacaca;
+    /* Color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Rounded corners for the thumb */
 }
 
 .page_toc::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Color of the scrollbar thumb on hover */
+    background: #555;
+    /* Color of the scrollbar thumb on hover */
 }
 
 @media screen and (max-width: 1300px) {
-/* Change Toc's position */
-.page_toc {
-    position: relative;
-    left: 0;
-    top: -20px;
-    padding: 10px 0;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    font-size: 1.0em;
-    width: 100%;
+
+    /* Change Toc's position */
+    .page_toc {
+        position: relative;
+        left: 0;
+        top: -20px;
+        padding: 10px 0;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        font-size: 1.0em;
+        width: 100%;
+    }
+
+    .page_toc a:before {
+        content: "· ";
+    }
+
+    .nav {
+        margin: 0 auto;
+        width: 800px;
+    }
+
+    .page_toc p.title {
+        font-weight: 300;
+        font-size: 1.8em;
+    }
+
+    .content {
+        display: block;
+    }
+
+    .markdown-section {
+        margin: 0 auto;
+    }
 }
-.page_toc a:before {
-    content: "· ";
-}
-.nav {
-    margin: 0 auto;
-    width: 800px;
-}
-.page_toc p.title {
-    font-weight: 300;
-    font-size: 1.8em;
-}
-.content {
-    display: block;
-}
-.markdown-section {
-    margin: 0 auto;
-}
-}
+
 @media screen and (max-width: 768px) {
     .page_toc {
         margin-top: 0px;
         width: 100%;
     }
 }
-.page_toc a > * {
+
+.page_toc a>* {
     pointer-events: none;
 }
 
@@ -104,8 +123,9 @@ aside.nav.nothing {
     font-weight: 600;
     font-size: 1.2em;
 }
+
 .page_toc .anchor:hover:after {
-content: "";
+    content: "";
 }
 
 .page_toc ul {
@@ -121,7 +141,7 @@ content: "";
 .page_toc ul a:hover span {
     color: var(--text-color-tertiary, #42b983);
     border-bottom: none !important;
-    text-decoration:none !important;
+    text-decoration: none !important;
 }
 
 .page_toc ul a {
@@ -130,6 +150,7 @@ content: "";
     font-weight: 300;
     line-height: 1.6em;
 }
+
 .page_toc .active {
     border-left: 5px solid;
     color: var(--theme-color, #42b983);
