@@ -1,12 +1,12 @@
 <h2 align="center"> Hello!👋(●'◡'●) I'm Yi Ding.</h2>
 <p align="center">
-  • <a href="https://yidingg.github.io/YiDingg/#/">My Personal Website</a><br>
+  • <a href="https://yidingg.github.io/YiDingg">My Personal Website</a><br>
   • <a href="https://github.com/YiDingg">My GitHub</a>
 </p>
 
 About Me:
-- 🔭 I’m currently studying at [UCAS](https://www.ucas.ac.cn/) (University of Chinese Academy of Sciences)
-- 🤔 I’m looking for help with ...
+- 🔭 I'm currently studying at [UCAS](https://www.ucas.ac.cn/) (University of Chinese Academy of Sciences)
+- 🤔 I'm looking for help with ...
 - 📫 How to reach me: dingyi233@mails.ucas.ac.cn
 - ⚡ Fun fact: ...
 

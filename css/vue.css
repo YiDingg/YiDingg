@@ -743,8 +743,10 @@ body {
 .markdown-section code {
   border-radius: 2px;
   color: #ff2f63;
+  background-color: rgb(240, 240, 240);
+  border: #000 solid 1px;
   margin: 0 2px;
-  padding: 3px 5px;
+  padding: 0px 3px;
   white-space: pre-wrap;
 }
 .markdown-section > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) code {
@@ -1104,34 +1106,6 @@ summary {
 }
 details img {
   width: 100%;
-}
-
-/* 自定义代码块 */
-.markdown-section pre {
-  /* 代码块样式 */
-  background-color: #f8f8f8;
-  border-radius: 5px;
-  box-shadow: 0 5px 6px 0px rgb(0 0 0 / 40%);
-  padding-top: 30px;
-  padding-bottom: 7px;
-  font-family: monospace, 'PingFang SC', 'Microsoft YaHei';
-  
-}
-.markdown-section pre::before {
-  /* 设置三个圈圈 */
-  background: #fc625d;
-  border-radius: 50%;
-  box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-  content: ' ';
-  height: 12px;
-  left: 12px;
-  margin-top: -20px;
-  position: absolute;
-  width: 12px;
-}
-.markdown-section pre > code {
-  /* 调整间距 */
-  padding: 0;
 }
 
 /* Tips样式修改 */

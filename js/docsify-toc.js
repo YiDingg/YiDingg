@@ -85,7 +85,6 @@ var defaultOptions = {
   
     return currentWrapper;
   };
-  
   var buildTOC = function(options) {
     var ret = document.createElement('ul');
     var wrapper = ret;
