@@ -15,7 +15,6 @@
     <video controls="controls"  muted="muted" id="video-example" style="width:900px;max-width:80%" loop='0'><source src="https://www.writebug.com/static/uploads/2024/5/10/2bdae9d10df0e3a3b62db4501f7efd6d.mp4" type="video/mp4"></video>
 </div>
 
----
 
 ## 一、呼吸灯原理
 >通过调整PWM信号占空比来控制LED灯的亮度，进而实现人眼中亮度的"连续"变化。
@@ -25,7 +24,6 @@
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/手把手教你用PWM实现呼吸灯(标准库)--2024-06-23-23-19-40.png"/></div>
 也就是说，实际上，LED灯一直处于闪烁状态，只是当闪烁频率较高时（不低于60Hz），人眼一般无法观察到闪烁现象，只是认为LED灯的亮度发生了变化，当频率达到90Hz时，绝大部分人完全没有闪烁感。特别地，当有效占空比为0%时，LED亮度最低（完全熄灭），当有效占空比为100%时，LED亮度最高。
 
----
 
 ## 二、代码实现
 
@@ -357,7 +355,6 @@ int main(void)
 }
 ```
 
----
 
 ## 总结
 

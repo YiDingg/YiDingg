@@ -15,21 +15,7 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"Table": {
-		"prefix": "table",
-		"body": [
-			"<div class='center'>",
-			"",
-			"| $1 |  |  |",
-			"|:-:|:-:|:-:|",
-			" |   |   |   |",
-			" |   |   |   |",
-			"</div>",
-		],
-		"description": "create an annotation for C function"
-	}
 }
-
 /* 
 <div class='center'>
 

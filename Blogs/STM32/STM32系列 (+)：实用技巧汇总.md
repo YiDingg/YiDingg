@@ -1,4 +1,6 @@
-# STM32系列 (4)：实用技巧汇总
+# STM32系列 (+)：实用技巧汇总
+
+> `+` 符号表明此章节为补充章节，独立于主干内容之外。
 
 ## 前言
 
@@ -43,10 +45,10 @@ strlen()：字符串长度
 
 <div class='center'> 
 
-| 操作 | 前 | 后 | OLED帧率 |
-| :------: | :------: | :------: |:------: |
- | 二重循环 |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (4)：实用技巧汇总--2024-06-23-00-31-16.png"/>|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (4)：实用技巧汇总--2024-06-23-00-31-23.png"/>|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (4)：实用技巧汇总--2024-06-23-00-31-28.png"/>|
- |memset() | <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (4)：实用技巧汇总--2024-06-23-00-31-31.png"/>|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (4)：实用技巧汇总--2024-06-23-00-31-35.png"/>|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (4)：实用技巧汇总--2024-06-23-00-31-39.png"/>|
+|   操作   |                                                             前                                                             |                                                             后                                                             |                                                          OLED帧率                                                          |
+| :------: | :------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |
+ | 二重循环 | <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (4)：实用技巧汇总--2024-06-23-00-31-16.png"/> | <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (4)：实用技巧汇总--2024-06-23-00-31-23.png"/> | <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (4)：实用技巧汇总--2024-06-23-00-31-28.png"/> |
+ | memset() | <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (4)：实用技巧汇总--2024-06-23-00-31-31.png"/> | <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (4)：实用技巧汇总--2024-06-23-00-31-35.png"/> | <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (4)：实用技巧汇总--2024-06-23-00-31-39.png"/> |
 </div>
 
 

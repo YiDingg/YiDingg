@@ -2,11 +2,16 @@
 
 ## Mixed
 
+### Chart and Graph
+
+- [Matlab]()
+- [SCIlab](https://www.scilab.org/)
+
 ### Reference
 
 - [Quick Reference(English)](https://cheatsheets.zip/)
 - [Quick Reference(中文)](http://ref.laoleng.vip/)
-- [Zeal](https://www.jianshu.com/p/598f18ca6963)
+- [Zeal](https://zealdocs.org): [Zeal离线文档下载速度慢解决方案](https://www.jianshu.com/p/598f18ca6963)
 
 
 ### Code to Flowchart

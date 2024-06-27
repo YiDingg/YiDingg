@@ -83,11 +83,10 @@ focus属性会影响其它组件，因此注释掉了动画，可作静态按钮
 
 | Plugin | Note | <div style='width:150px'>Demo</div> |
 | :-----: | :---------: | :---------: |
-|[Emact](https://emaction.cool/) | GitHub styled emoji reaction |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/CustomComponent-2024-06-21-12-53-54.png"/>|
-| [Counter](https://counterscale.dev/) | Web tracker and dashBoard |  <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/CustomComponent-2024-06-21-12-52-52.png"/>  |
+ |[Emact](https://emaction.cool/) | GitHub styled emoji reaction |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/CustomComponent-2024-06-21-12-53-54.png"/>|
+ | [Counter](https://counterscale.dev/) | Web tracker and dashBoard |  <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/CustomComponent-2024-06-21-12-52-52.png"/>  |
 |  |  |  |
-|  |  |  |
-|  |  |  |
+
 </div>
 
 

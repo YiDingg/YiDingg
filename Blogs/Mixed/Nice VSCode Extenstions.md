@@ -1,6 +1,5 @@
 # Nice VSCode Extenstions
 
---- 
 
 ## Mixed
 
@@ -43,7 +42,6 @@ CodeSnap allows you to take beautiful screenshots of your code in VS Code.
 
 This extension provides you with a set of icons for your files and folders, making it easier to identify them.
 
---- 
 
 ## Web Development
 
@@ -78,3 +76,14 @@ This extension allows you to peek at the definition of a CSS class or ID by hove
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Nice VSCode Extenstions--2024-06-27-00-37-28.png"/></div>
 
 Quokka.js is a developer productivity tool for rapid JavaScript / TypeScript prototyping. Runtime values are updated and displayed in your IDE next to your code, as you type.
+
+
+
+## Writting
+
+### Word Count CJK:
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Nice VSCode Extenstions--2024-06-28-01-11-03.png"/></div>
+
+
+### Latex

@@ -37,9 +37,9 @@ myVid.volume=0.15;
 
 <div class='center'>
 
-|1|2|
-|:-:|:-:|
-|<img src='https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg' style="width:40px"/>|<img src="https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style='width:10%'/>|
+|1|   2 |
+| :-: | :-: |
+ | <img src='https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg' style="width:40px"/> | <img src="https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style='width:10%'/> |
 </div>
 
 ```html
@@ -75,9 +75,9 @@ Converting video to gif with high quality might cause a size surge.
 
 <div class='center'>
 
-| Self | Self | Blank(new window) |
-|:-:|:-:|:-:|
- | <a href="https://www.writebug.com/git/DY130810/Notes/raw/commit/77732e15298f9d2390549ae3a26fd23e5e795d6f/Linear%20Algebra%202/notes/Linear%20Algebra%202%20notes.pdf"><button class="docsify-tabs__tab--active" data-tab="my tab">'a' and 'button'</button></a>  | <button onclick="window.location.href='pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf'" type="button">'button' and 'window.location.href'</button>|<button onclick="window.open('pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf')" type="button">'button' and 'window.open()'</button>|
+|Self|Self| Blank(new window) |
+| :-: | :-: |:-: |
+ | <a href="https://www.writebug.com/git/DY130810/Notes/raw/commit/77732e15298f9d2390549ae3a26fd23e5e795d6f/Linear%20Algebra%202/notes/Linear%20Algebra%202%20notes.pdf"><button class="docsify-tabs__tab--active" data-tab="my tab">'a' and 'button'</button></a> | <button onclick="window.location.href='pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf'" type="button">'button' and 'window.location.href'</button> | <button onclick="window.open('pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf')" type="button">'button' and 'window.open()'</button> |
 
  
 </div>
@@ -103,9 +103,9 @@ Converting video to gif with high quality might cause a size surge.
 <span style="font-family:黑体; font-size:12px; color:black;">Table 1: Example</span>
 
 | Example | Example | Example |
-|:-:|:-:|:-:|
-| Example  | Example  |  Example |
-| Example  | Example  |  Example |
+| :-----: | :-----: | :-----: |
+ | Example | Example | Example |
+ | Example | Example | Example |
 </div>
 
 
@@ -114,10 +114,10 @@ Converting video to gif with high quality might cause a size surge.
 <div class='center'>
 <span style="font-family:黑体; font-size:12px; color:black;">Table 1: Example</span>
 
-|  |  |  |
-|:-:|:-:|:-:|
-|   |   |   |
-|   |   |   |
+|       |       |       |
+| :---: | :---: | :---: |
+ |       |       |       |
+ |       |       |       |
 </div>
 ```
 
@@ -125,20 +125,18 @@ Converting video to gif with high quality might cause a size surge.
 ### Accordion
 
 <details>
-<summary>Self-assessment (Click to expand)</summary>
+<summary>Part 1 (Click to expand)</summary>
 
 - Abc
 - Abc
-
 </details>
 
 ```html
 <details>
-<summary>Self-assessment (Click to expand)</summary>
+<summary>Part 1 (Click to expand)</summary>
 
 - Abc
 - Abc
-
 </details>
 ```
 
@@ -169,7 +167,7 @@ https://docsify.js.org
 !> **<span style='color:red'>Attention:</span>**<br>
 Converting video to gif with high quality might cause a size surge. 
 
-?> **<span style='color:green'>Attention:</span>**<br>
+?> **<span style='color:green'>Tip:</span>**<br>
 Converting video to gif with high quality might cause a size surge. 
 
 ### Katex
@@ -384,18 +382,18 @@ https://github.com/lazypanda10117/docsify-pdf-embed
 
 <!-- <div class='center'>
 
-|方法|引用src|移动端|PC端|
-| :-: | :-: | :-: | :-: |
-| docsify-pdf-embed-plugin | 本地相对路径 | X | V |
-| docsify-pdf-embed-plugin | GitHub | X | X |
-| docsify-pdf-embed-plugin | Gittee | X | X |
-| docsify-pdf-embed-plugin | WB | X | V |
-| docsify-pdf-embed-plugin | 腾讯云 | 能下载但不显示 | 能下载但不显示 |
-| iframe | 本地相对路径 | X | V |
-| iframe | GitHub | X | X |
-| iframe | Gittee | X | X |
-| iframe | WB | X | V |
-| iframe | 腾讯云 | 能下载但不显示 | 能下载但不显示 |
+|           方法           |   引用src    |     移动端     |      PC端      |
+| :----------------------: | :----------: | :------------: | :------------: |
+| docsify-pdf-embed-plugin | 本地相对路径 |       X        |       V        |
+| docsify-pdf-embed-plugin |    GitHub    |       X        |       X        |
+| docsify-pdf-embed-plugin |    Gittee    |       X        |       X        |
+| docsify-pdf-embed-plugin |      WB      |       X        |       V        |
+| docsify-pdf-embed-plugin |    腾讯云    | 能下载但不显示 | 能下载但不显示 |
+|          iframe          | 本地相对路径 |       X        |       V        |
+|          iframe          |    GitHub    |       X        |       X        |
+|          iframe          |    Gittee    |       X        |       X        |
+|          iframe          |      WB      |       X        |       V        |
+|          iframe          |    腾讯云    | 能下载但不显示 | 能下载但不显示 |
 </div> -->
 
 [Demo](http://localhost:3000/#/Notes\Math\Linear%20Algebra%201%20notes)
