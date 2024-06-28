@@ -18,7 +18,7 @@
   - Optics
     - [光学笔记汇总](Blogs\Optics\光学笔记汇总.md)
     - [光学笔记 (1)：hhh](Blogs\Optics\光学笔记%20(1)：hhh.md)
-  - C
+  - C Programming
     - [C语言系列汇总](Blogs/C/C语言系列汇总.md)
     - [C语言系列 (1)：内存与关键字](Blogs/C/C语言系列%20(1)：内存与关键字.md)
     - [C语言系列 (2)：printf() 函数详解](Blogs/C/C语言系列%20(2)：printf()%20函数详解.md)
@@ -39,7 +39,7 @@
     - [VScode-Latex 中反向搜索失灵的解决方案](Blogs/FixProblem/VScode-Latex中反向搜索失灵的解决方案.md)
     - [新版 Keil_MDK 中无 Compiler_V5 的解决方案](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
 
-- 📖 **Notes**
+- 📖 **PDF Notes**
   - Math
     - [Calculus 1](Notes\Math\Calculus%201%20Notes.md)
     - [Linear Algebra 1](Notes\Math\Linear%20Algebra%201%20notes.md)
@@ -56,6 +56,8 @@
 
 - [<span style="color:rgb(54,65,73);">📃 **Time Line**</span>](TimeLine.md)
 
-- [<span style="color:rgb(54,65,73);">📰 **To Be Read**</span>](ToBeRead.md)
+- [<span style="color:rgb(54,65,73);">📰 **To Be Dealing With**</span>](ToBeDealingWith.md)
 - [<span style="color:rgb(54,65,73);">❔ **Test**</span>](Test.md)
+
+
 <!-- 🔗 -->
