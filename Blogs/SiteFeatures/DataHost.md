@@ -26,7 +26,7 @@ Results Show:
 |Type|display|
 |:-:|:-:|
  |img|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/_coverpage-2024-06-20.jpeg" alt="_coverpage-2024-06-20" style="width:200px">|
- |gif|<img src="https://d.igdu.xyz/ZoIG" alt="toutiaoBed-normal" title="toutiaoBed-normal" style="width:200px">|
+ |gif|<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/DataHost--2024-06-28-20-16-40.gif"/></div>|
  |video|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://www.writebug.com/git/DY130810/WB.VideoBank/raw/branch/main/video.mp4" type="video/mp4"></video>|
  |pdf|below|
 
@@ -172,6 +172,21 @@ Here are the test results of image hosts.
  | [Zeruns](https://tc.zeruns.tech/)| Free <br>15 MB limited  |<img src="https://tc2.zeruns.tech/2024/06/21/d8547cc26a8e892ba0f2f42a43512392.jpeg" style="width:60px"/>|<img src="https://tc2.zeruns.tech/2024/06/21/test.gif" style="width:40px"/>|-|
 
 </div>
+
+### Cloud Storage Test
+
+<div class='center'>
+
+| Cloud Disk | Company| Details(for free) |
+|:-:|:-:|:-:|
+ | AlibabaCloud  | 阿里云  |  100GB, File access times, |
+ | TencentCloud  | 腾讯  |   |
+ | 123Cloud  | -  | 2T, unlimited speed, not share photos and videos, download without logging in  |
+ | mCloud  | 移动  | 10G(free 2T for 3 months), unlimited speed, 4G file size limited, limited file access times(5000)  |
+ | Cloud189  |  天翼 | 60G, unlimited speed, 2G uploading limited per day, 2G file size limited  |
+
+</div>
+
 
 ### PDF Test
 

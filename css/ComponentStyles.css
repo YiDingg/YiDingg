@@ -1,7 +1,7 @@
 /* button_1: 鼠标悬停时有变色动画 */
 .button_1 {
   padding: 10px 20px;
-  text-transform: uppercase; 
+  text-transform: uppercase;
   border-radius: 8px;
   font-size: 17px;
   font-weight: 500;
@@ -53,7 +53,7 @@
   background-color: var(--tooltip-color);
   font-size: 0.9rem;
   color: #111;
-  border-radius: .25em;
+  border-radius: 0.25em;
   line-height: var(--tooltip-height);
   bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
   left: calc(50% - var(--tooltip-width) / 2);
@@ -61,7 +61,7 @@
 
 .button_2::after {
   position: absolute;
-  content: '';
+  content: "";
   width: 0;
   height: 0;
   border: 10px solid transparent;
@@ -70,7 +70,8 @@
   bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
 }
 
-.button_2::after,.button_2::before {
+.button_2::after,
+.button_2::before {
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s;
@@ -82,7 +83,10 @@
   justify-content: center;
 }
 
-.button_2-wrapper,.text,.icon{  /* .icon定义与组件'?>'冲突，将position由absulote改为了static */
+.button_2-wrapper,
+.text,
+.icon {
+  /* .icon定义与组件'?>'冲突，将position由absulote改为了static */
   overflow: hidden;
   position: static;
   width: 100%;
@@ -92,10 +96,11 @@
 }
 
 .text {
-  top: 0
+  top: 0;
 }
 
-.text,.icon {
+.text,
+.icon {
   transition: top 0.5s;
 }
 
@@ -105,7 +110,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-} 
+}
 
 .icon svg {
   width: 24px;
@@ -124,7 +129,8 @@
   top: 0;
 }
 
-.button_2:hover:before,.button_2:hover:after {
+.button_2:hover:before,
+.button_2:hover:after {
   opacity: 1;
   visibility: visible;
 }
@@ -146,17 +152,19 @@
   height: 73px;
   padding: 0;
   z-index: 2;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='868' width='2500' viewBox='0 0 726 252.17'%3E%3Cpath d='M483.92 0S481.38 24.71 466 40.11c-11.74 11.74-24.09 12.66-40.26 15.07-9.42 1.41-29.7 3.77-34.81-.79-2.37-2.11-3-21-3.22-27.62-.21-6.92-1.36-16.52-2.82-18-.75 3.06-2.49 11.53-3.09 13.61S378.49 34.3 378 36a85.13 85.13 0 0 0-30.09 0c-.46-1.67-3.17-11.48-3.77-13.56s-2.34-10.55-3.09-13.61c-1.45 1.45-2.61 11.05-2.82 18-.21 6.67-.84 25.51-3.22 27.62-5.11 4.56-25.38 2.2-34.8.79-16.16-2.47-28.51-3.39-40.21-15.13C244.57 24.71 242 0 242 0H0s69.52 22.74 97.52 68.59c16.56 27.11 14.14 58.49 9.92 74.73C170 140 221.46 140 273 158.57c69.23 24.93 83.2 76.19 90 93.6 6.77-17.41 20.75-68.67 90-93.6 51.54-18.56 103-18.59 165.56-15.25-4.21-16.24-6.63-47.62 9.93-74.73C656.43 22.74 726 0 726 0z'/%3E%3C/svg%3E") no-repeat 50% 50%;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='868' width='2500' viewBox='0 0 726 252.17'%3E%3Cpath d='M483.92 0S481.38 24.71 466 40.11c-11.74 11.74-24.09 12.66-40.26 15.07-9.42 1.41-29.7 3.77-34.81-.79-2.37-2.11-3-21-3.22-27.62-.21-6.92-1.36-16.52-2.82-18-.75 3.06-2.49 11.53-3.09 13.61S378.49 34.3 378 36a85.13 85.13 0 0 0-30.09 0c-.46-1.67-3.17-11.48-3.77-13.56s-2.34-10.55-3.09-13.61c-1.45 1.45-2.61 11.05-2.82 18-.21 6.67-.84 25.51-3.22 27.62-5.11 4.56-25.38 2.2-34.8.79-16.16-2.47-28.51-3.39-40.21-15.13C244.57 24.71 242 0 242 0H0s69.52 22.74 97.52 68.59c16.56 27.11 14.14 58.49 9.92 74.73C170 140 221.46 140 273 158.57c69.23 24.93 83.2 76.19 90 93.6 6.77-17.41 20.75-68.67 90-93.6 51.54-18.56 103-18.59 165.56-15.25-4.21-16.24-6.63-47.62 9.93-74.73C656.43 22.74 726 0 726 0z'/%3E%3C/svg%3E") no-repeat 50% 50%;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='868' width='2500' viewBox='0 0 726 252.17'%3E%3Cpath d='M483.92 0S481.38 24.71 466 40.11c-11.74 11.74-24.09 12.66-40.26 15.07-9.42 1.41-29.7 3.77-34.81-.79-2.37-2.11-3-21-3.22-27.62-.21-6.92-1.36-16.52-2.82-18-.75 3.06-2.49 11.53-3.09 13.61S378.49 34.3 378 36a85.13 85.13 0 0 0-30.09 0c-.46-1.67-3.17-11.48-3.77-13.56s-2.34-10.55-3.09-13.61c-1.45 1.45-2.61 11.05-2.82 18-.21 6.67-.84 25.51-3.22 27.62-5.11 4.56-25.38 2.2-34.8.79-16.16-2.47-28.51-3.39-40.21-15.13C244.57 24.71 242 0 242 0H0s69.52 22.74 97.52 68.59c16.56 27.11 14.14 58.49 9.92 74.73C170 140 221.46 140 273 158.57c69.23 24.93 83.2 76.19 90 93.6 6.77-17.41 20.75-68.67 90-93.6 51.54-18.56 103-18.59 165.56-15.25-4.21-16.24-6.63-47.62 9.93-74.73C656.43 22.74 726 0 726 0z'/%3E%3C/svg%3E")
+    no-repeat 50% 50%;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='868' width='2500' viewBox='0 0 726 252.17'%3E%3Cpath d='M483.92 0S481.38 24.71 466 40.11c-11.74 11.74-24.09 12.66-40.26 15.07-9.42 1.41-29.7 3.77-34.81-.79-2.37-2.11-3-21-3.22-27.62-.21-6.92-1.36-16.52-2.82-18-.75 3.06-2.49 11.53-3.09 13.61S378.49 34.3 378 36a85.13 85.13 0 0 0-30.09 0c-.46-1.67-3.17-11.48-3.77-13.56s-2.34-10.55-3.09-13.61c-1.45 1.45-2.61 11.05-2.82 18-.21 6.67-.84 25.51-3.22 27.62-5.11 4.56-25.38 2.2-34.8.79-16.16-2.47-28.51-3.39-40.21-15.13C244.57 24.71 242 0 242 0H0s69.52 22.74 97.52 68.59c16.56 27.11 14.14 58.49 9.92 74.73C170 140 221.46 140 273 158.57c69.23 24.93 83.2 76.19 90 93.6 6.77-17.41 20.75-68.67 90-93.6 51.54-18.56 103-18.59 165.56-15.25-4.21-16.24-6.63-47.62 9.93-74.73C656.43 22.74 726 0 726 0z'/%3E%3C/svg%3E")
+    no-repeat 50% 50%;
   -webkit-mask-size: 100%;
   mask-size: 100%;
   cursor: pointer;
   background-color: transparent;
-  transform: translateY(8px)
+  transform: translateY(8px);
 }
 
 .button_3:after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
@@ -178,7 +186,7 @@
   top: 39%;
   letter-spacing: 3px;
   text-align: center;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   color: black;
   transition: all 2s ease;
 }
@@ -188,7 +196,7 @@
 }
 
 .button_3:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 100%;
@@ -264,7 +272,7 @@
   max-width: 300px;
   transition: transform 400ms;
   transform-style: preserve-3d;
- /*  transform: rotateX(15deg) rotateY(-20deg); */  /* 旋转角度 */
+  /*  transform: rotateX(15deg) rotateY(-20deg); */ /* 旋转角度 */
   perspective: 500px;
 }
 
@@ -279,13 +287,17 @@
   filter: blur(30px);
   border-radius: 20px;
   background-color: #999cff;
-  background-image: radial-gradient(at 85% 51%, hsla(60,60%,61%,1) 0px, transparent 50%),
-    radial-gradient(at 74% 68%, hsla(235,69%,77%,1) 0px, transparent 50%),
-    radial-gradient(at 64% 79%, hsla(284,72%,73%,1) 0px, transparent 50%),
-    radial-gradient(at 75% 16%, hsla(283,60%,72%,1) 0px, transparent 50%),
-    radial-gradient(at 90% 65%, hsla(153,70%,64%,1) 0px, transparent 50%),
-    radial-gradient(at 91% 83%, hsla(283,74%,69%,1) 0px, transparent 50%),
-    radial-gradient(at 72% 91%, hsla(213,75%,75%,1) 0px, transparent 50%);
+  background-image: radial-gradient(
+      at 85% 51%,
+      hsla(60, 60%, 61%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 74% 68%, hsla(235, 69%, 77%, 1) 0px, transparent 50%),
+    radial-gradient(at 64% 79%, hsla(284, 72%, 73%, 1) 0px, transparent 50%),
+    radial-gradient(at 75% 16%, hsla(283, 60%, 72%, 1) 0px, transparent 50%),
+    radial-gradient(at 90% 65%, hsla(153, 70%, 64%, 1) 0px, transparent 50%),
+    radial-gradient(at 91% 83%, hsla(283, 74%, 69%, 1) 0px, transparent 50%),
+    radial-gradient(at 72% 91%, hsla(213, 75%, 75%, 1) 0px, transparent 50%);
 }
 
 .input__button__shadow {
@@ -330,7 +342,7 @@
   background-color: #696868;
   left: 15%;
   transform-origin: 50%;
-  animation: circle7124 .5s alternate infinite ease;
+  animation: circle7124 0.5s alternate infinite ease;
 }
 @keyframes circle7124 {
   0% {
@@ -352,25 +364,25 @@
 }
 .circle-load:nth-child(2) {
   left: 45%;
-  animation-delay: .2s;
+  animation-delay: 0.2s;
 }
 .circle-load:nth-child(3) {
   left: auto;
   right: 15%;
-  animation-delay: .3s;
+  animation-delay: 0.3s;
 }
 .shadow {
   width: 20px;
   height: 4px;
   border-radius: 50%;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0, 0, 0, 0.9);
   position: absolute;
   top: 62px;
   transform-origin: 50%;
   z-index: -1;
   left: 15%;
   filter: blur(1px);
-  animation: shadow046 .5s alternate infinite ease;
+  animation: shadow046 0.5s alternate infinite ease;
 }
 @keyframes shadow046 {
   0% {
@@ -379,22 +391,22 @@
 
   40% {
     transform: scaleX(1);
-    opacity: .7;
+    opacity: 0.7;
   }
 
   100% {
-    transform: scaleX(.2);
-    opacity: .4;
+    transform: scaleX(0.2);
+    opacity: 0.4;
   }
 }
 .shadow:nth-child(4) {
   left: 45%;
-  animation-delay: .2s
+  animation-delay: 0.2s;
 }
 .shadow:nth-child(5) {
   left: auto;
   right: 15%;
-  animation-delay: .3s;
+  animation-delay: 0.3s;
 }
 
 /* Loading animation 2 */
@@ -403,37 +415,37 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
- }
- .spinner::before,
- .spinner:after {
+}
+.spinner::before,
+.spinner:after {
   content: "";
   position: absolute;
   border-radius: inherit;
- }
- .spinner:before {
+}
+.spinner:before {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(0deg, #ff00cc 0%, #333399 100%);
-  animation: spin8932 .5s infinite linear;
- }
- 
- .spinner:after {
+  animation: spin8932 0.5s infinite linear;
+}
+
+.spinner:after {
   width: 85%;
   height: 85%;
   background-color: rgb(255, 255, 255);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
- }
- 
- @keyframes spin8932 {
-  to {
-   transform: rotate(360deg);
-  }
- }
+}
 
- /* ==高亮== */
- .highl {
+@keyframes spin8932 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==高亮== */
+.highl {
   background: #fdefee;
   color: #e95f59;
   font-size: 18px;
@@ -450,8 +462,7 @@
   box-shadow: 0 5px 6px 0px rgb(0 0 0 / 40%);
   padding-top: 30px;
   padding-bottom: 7px;
-  font-family: monospace, 'PingFang SC', 'Microsoft YaHei';
-  
+  font-family: monospace, "PingFang SC", "Microsoft YaHei";
 }
 .markdown-section pre code {
   /* 防止与inline code样式冲突 */
@@ -463,7 +474,7 @@
   background: #fc625d;
   border-radius: 50%;
   box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-  content: ' ';
+  content: " ";
   height: 12px;
   left: 12px;
   margin-top: -20px;
@@ -477,14 +488,12 @@
 /*                                             */
 /* ------------------------------------------- */
 
-
-
 /* ----------- 自定义时间轴      -------------- */
 /*                                             */
 
 .outerBox:after {
-/* 竖线末尾文字样式 */
-/*   content: "未完待续"; */
+  /* 竖线末尾文字样式 */
+  /*   content: "未完待续"; */
   width: 300px;
   color: rgb(84, 84, 85);
   position: absolute;
@@ -528,12 +537,12 @@
 .outerBox .dateLeftBox:hover {
   /* 触摸事件后球球的样式 */
   border: 1px solid rgb(0, 0, 0);
-  background: rgb(61,51,243);
+  background: rgb(61, 51, 243);
   box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.4);
 }
 
 .outerBox .dateLeftBox div,
-.outerBox .dateBox div{
+.outerBox .dateBox div {
   /* 左右边事件的样式 */
   left: 30px;
   margin-top: -16px;
@@ -547,7 +556,7 @@
   z-index: 2;
   overflow: hidden;
   cursor: pointer;
-/*   -webkit-animation: showIn 2s ease;
+  /*   -webkit-animation: showIn 2s ease;
   animation: showIn 2s ease; */
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -598,50 +607,50 @@
   line-height: normal;
   margin-top: 2px;
   width: 300px;
-  padding: 3px;
+  padding: 1px 1px 0px 3px;
   border-top: 2px solid rgb(84, 84, 85);
   color: rgb(84, 84, 85);
   font-size: 13px;
 }
 
 .outerBox .dateBox div tl-title,
-.outerBox .dateLeftBox div tl-title{
+.outerBox .dateLeftBox div tl-title {
   /* 左右事件的标题样式 */
-/*     list-style: none; */
+  /*     list-style: none; */
   width: 250px;
   padding: 5px;
-/*     border-top: 10px solid rgb(84, 84, 85); */
+  /*     border-top: 10px solid rgb(84, 84, 85); */
   color: rgb(25, 25, 25);
   font-size: 14px;
   font-weight: bold;
 }
 
-.timeline-list{
+.timeline-list {
   margin: 0;
   font-size: 14px;
-  list-style: none;  
+  list-style: none;
 }
 .timeline-item:last-child .timeline-item_tail {
   display: none;
 }
-.timeline-item{
+.timeline-item {
   position: relative;
 }
-.timeline-item_tail{
+.timeline-item_tail {
   position: absolute;
   left: 5px;
   height: 100%;
-  border-left: 2px solid rgb(228,231,237);
+  border-left: 2px solid rgb(228, 231, 237);
 }
 
-.timeline-item_tail_add{
+.timeline-item_tail_add {
   position: absolute;
   left: 5px;
   height: 100%;
-  border-left: 2px solid rgb(228,231,237);
+  border-left: 2px solid rgb(228, 231, 237);
 }
 
-.timeline-item_node{
+.timeline-item_node {
   position: absolute;
   background-color: #e4e7ed;
   border-radius: 50%;
@@ -652,26 +661,26 @@
   width: 15px;
   height: 15px;
   background: #fff;
-  border:3px solid rgb(38, 59, 246)
+  border: 3px solid rgb(38, 59, 246);
 }
-.timeline-item_wrapper{
+.timeline-item_wrapper {
   position: relative;
   padding-left: 20px;
   top: 0px;
 }
-.timeline-item_timestamp{
+.timeline-item_timestamp {
   margin-bottom: 8px;
   padding-top: 0px;
   color: rgb(38, 59, 246);
   line-height: 1;
   font-weight: 700;
-  font-size: 16px;      
+  font-size: 16px;
 }
-.tbox{
-  padding:10px;
-  height:94px;
+.tbox {
+  padding: 10px;
+  height: 94px;
   margin-left: -27px;
-  margin-top: -40px
+  margin-top: -40px;
 }
 /*                                             */
 /* ----------- 自定义时间轴      -------------- */
@@ -680,6 +689,3 @@
 /*                                             */
 /*                                             */
 /* ----------- 自定义Mac风代码块 -------------- */
-
-
-

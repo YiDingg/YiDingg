@@ -41,6 +41,7 @@
 
 - 📖 **PDF Notes**
   - Math
+
     - [Calculus 1](Notes\Math\Calculus%201%20Notes.md)
     - [Linear Algebra 1](Notes\Math\Linear%20Algebra%201%20notes.md)
     - [Linear Algebra 2](Notes\Math\Linear%20Algebra%202%20notes.md)

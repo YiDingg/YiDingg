@@ -13,10 +13,12 @@
   - https://www.bilibili.com/video/BV1Nb421B7SS
 - [ ] Add background following cursor on cover page
   - https://www.bilibili.com/video/BV1Dy4y177Dg
-<!-- - [ ] Add awesome components
-  - https://www.bilibili.com/video/BV1uS4y1f7EL -->
 - [ ] Optimize pdf preview for mobile phones.
 - https://blog.csdn.net/weixin_43239880/article/details/139457321
+
+<!-- 下面这段注释不能夹在tasklist中，否则会使下面的timline嵌入到list中，导致样式错乱 -->
+<!-- - [ ] Add awesome components
+  - https://www.bilibili.com/video/BV1uS4y1f7EL -->
 
 ## Time Line of the Site
 
@@ -42,7 +44,7 @@ More awesome features were added to the site, you can go to <a href="Blogs\SiteF
 <div class="tbox"><div class='outerBox'><div class="dateBox"><div>
 <tl-title>More Stable Data Source</tl-title>
 <ul>
-We optimized our database, such as image host, video repository. You could now browse  most of the contents freely on mobile phone and PC.
+We optimized our database, such as image host, pdf and other files host. You could now browse  most of the contents freely.
 </ul></div></div></div></div>
 <!------------------------------------>
 <div class="tbox"><div class='outerBox'><div class="dateLeftBox"><div>
@@ -63,7 +65,7 @@ such as sidebar, toc, search box, etc.
 </ul></div></div></div></div>
 <!------------------------------------>
 <div class="tbox"><div class='outerBox'><div class="dateBox"><div>
-<tl-title><i class="material-icons-outlined md-light md-36 md-light" style='font-size:14px;'>celebration</i> The Site's Birthday!</tl-title><ul>
+<tl-title><i class="material-icons-outlined md-light md-36 md-light" style='font-size:14px;color:red'>celebration</i> The Site's Birthday!</tl-title><ul>
 Our site celebrates its first birthday on June 14, 2024. 
 We do not kown what will be like in the future, but nothing is imposiible! 
 </ul></div></div></div></div>
