@@ -27,13 +27,13 @@ Results Show:
 |:-:|:-:|
  |img|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/_coverpage-2024-06-20.jpeg" alt="_coverpage-2024-06-20" style="width:200px">|
  |gif|<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/DataHost--2024-06-28-20-16-40.gif"/></div>|
- |video|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://www.writebug.com/git/DY130810/WB.VideoBank/raw/branch/main/video.mp4" type="video/mp4"></video>|
+ |video|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://www.writebug.com/git/YiDingg/WB.VideoBank/raw/branch/main/video.mp4" type="video/mp4"></video>|
  |pdf|below|
 
 </div>
 
 ```pdf
-https://www.writebug.com/git/DY130810/Notes/raw/commit/77732e15298f9d2390549ae3a26fd23e5e795d6f/Linear%20Algebra%202/notes/Linear%20Algebra%202%20notes.pdf
+https://www.writebug.com/git/YiDingg/Notes/raw/commit/77732e15298f9d2390549ae3a26fd23e5e795d6f/Linear%20Algebra%202/notes/Linear%20Algebra%202%20notes.pdf
 ```
 
 
@@ -203,7 +203,7 @@ pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf
 <td><div class='pdftest'>
 
 ```pdf
-https://www.writebug.com/git/DY130810/GitHub_YiDingg_pdf/raw/branch/main/Linear%20Algebra%202%20notes.pdf
+https://www.writebug.com/git/YiDingg/GitHub_YiDingg_pdf/raw/branch/main/Linear%20Algebra%202%20notes.pdf
 ```
 </div></td>
 
