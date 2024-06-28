@@ -6,7 +6,8 @@ When building your own blog site, it is crucial to select an appropriate image h
 
 Conclusion: 
 - <span style="color:red">img and small gif to Aliyun</span> by VS-PicGo
--  <!-- <s>gif to TouTiao manually by PanLuo Uploading,</s> --> <span style="color:red">gif, video, audio, pdf and other files to WB Cloud</span> manually.
+- <span style="color:red">gif, video, audio to WB.Cloud</span> manually, <span style="color:red">pdf and other files to WB.Static</span> manually.
+- <s>gif to TouTiao manually by PanLuo Uploading, gif, video, audio, pdf and other files to WB.Cloud manually.</s>
 
 Tools:
 - Use<!--  [C1N](https://www.c1n.cn/) or --> [Short](https://d.igdu.xyz/) or [C1N](https://www.c1n.cn/) to create a short link for your file.
@@ -26,15 +27,13 @@ Results Show:
 |Type|display|
 |:-:|:-:|
  |img|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/_coverpage-2024-06-20.jpeg" alt="_coverpage-2024-06-20" style="width:200px">|
- |gif|<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/DataHost--2024-06-28-20-16-40.gif"/></div>|
- |video|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://www.writebug.com/git/YiDingg/WB.VideoBank/raw/branch/main/video.mp4" type="video/mp4"></video>|
+ |gif|<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/DataHost--2024-06-29-00-36-46.gif"/></div>|
+ |video|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://d.igdu.xyz/mJmX" type="video/mp4"></video>|
  |pdf|below|
+<!-- 视频的另一地址：https://www.writebug.com/git/YiDingg/WB.VideoBank/raw/branch/main/video.mp4 -->
 
 </div>
 
-```pdf
-https://www.writebug.com/git/YiDingg/Notes/raw/commit/77732e15298f9d2390549ae3a26fd23e5e795d6f/Linear%20Algebra%202/notes/Linear%20Algebra%202%20notes.pdf
-```
 
 
 ## Host Advice
@@ -135,6 +134,83 @@ Here are the test results of image hosts.
 </div>
 
 
+### PDF Test
+
+<!--无边框-->
+<div class='center'><table><tr>
+<th>local site<br>(use'/')</th><th>WB.Git</th><th>WB.Cloud</th><th>WB.Static</th><th>GitHub(gcore)</th><th>GitHub(cdn)</th><th>GitHub(testingcf)</th>
+<tr><td><div class='pdftest'>
+
+```pdf
+pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf
+```
+</div></td>
+
+
+<td><div class='pdftest'>
+
+```pdf
+https://www.writebug.com/git/YiDingg/GitHub_YiDingg_pdf/raw/branch/main/Linear%20Algebra%202%20notes.pdf
+```
+</div></td>
+
+
+<td><div class='pdftest'>
+
+```pdf
+https://d.igdu.xyz/KMo7
+```
+</div></td>
+
+
+<td><div class='pdftest'>
+
+```pdf
+https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/b93a6aa958995d58aa34ce672f69fc72.pdf
+```
+</div></td>
+
+
+<td><div class='pdftest'>
+
+```pdf
+https:https://gcore.jsdelivr.net/gh/YiDingg/YiDingg/pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf
+```
+</div></td>
+
+
+<td><div class='pdftest'>
+
+```pdf
+https:https://cdn.jsdelivr.net/gh/YiDingg/YiDingg/pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf
+```
+</div></td>
+
+
+<td><div class='pdftest'>
+
+```pdf
+https:https://testingcf.jsdelivr.net/gh/YiDingg/YiDingg/pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf
+```
+</div></td>
+</tr></table></div>
+
+<style>
+ .pdftest{
+    width: 50px;
+    height: 200px;
+    border: #000 solid 
+}
+</style>
+
+iframe + WB.Git: 
+
+<iframe :src="https://www.writebug.com/git/YiDingg/GitHub_YiDingg_pdf/raw/branch/main/Linear%20Algebra%202%20notes.pdf" frame></iframe>
+
+iframe + WB.Cloud: 
+
+<iframe :src="https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/b93a6aa958995d58aa34ce672f69fc72.pdf" frame></iframe>
+
 ### GitHub Test
 
 <div class='center'>
@@ -188,53 +264,3 @@ Here are the test results of image hosts.
 </div>
 
 
-### PDF Test
-
-<!--无边框-->
-<div class='center'><table><tr>
-<th>local site<br>(use'/')</th><th>WB</th><th>gcore</th><th>cdn</th><th>testingcf</th>
-<tr><td><div class='pdftest'>
-
-```pdf
-pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf
-```
-</div></td>
-
-<td><div class='pdftest'>
-
-```pdf
-https://www.writebug.com/git/YiDingg/GitHub_YiDingg_pdf/raw/branch/main/Linear%20Algebra%202%20notes.pdf
-```
-</div></td>
-
-<td><div class='pdftest'>
-
-```pdf
-https:https://gcore.jsdelivr.net/gh/YiDingg/YiDingg/pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf
-```
-</div></td>
-
-<td><div class='pdftest'>
-
-```pdf
-https:https://cdn.jsdelivr.net/gh/YiDingg/YiDingg/pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf
-```
-</div></td>
-
-<td><div class='pdftest'>
-
-```pdf
-https:https://testingcf.jsdelivr.net/gh/YiDingg/YiDingg/pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf
-```
-</div></td>
-</tr></table></div>
-
-
-
-<style>
- .pdftest{
-    width: 50px;
-    height: 200px;
-    border: #000 solid 
-}
-</style>

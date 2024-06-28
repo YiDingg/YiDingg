@@ -1252,16 +1252,16 @@ code .token {
 
 @media screen and (min-width: 901px) and (max-width: 1200px) {
   .markdown-section {
-    font-size: 1rem;
+    font-size: 0.85rem;
     max-width: 90%;
   }
 
   .markdown-section h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .markdown-section h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .markdown-section h3 {

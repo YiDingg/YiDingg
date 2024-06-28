@@ -28,7 +28,7 @@
 
 
 ## 二、相关资料
-下表是本系列的相关资料（点击即可下载），也可跳转至仓库下载：[STM32系列相关资料](https://www.writebug.com/code/5d9c82dc-1c03-11ef-a772-0242c0a81018/src/branch/main/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/%E6%89%8B%E5%86%8C+%E6%95%99%E6%9D%90/#) 
+下表是本系列的相关资料（点击即可下载），也可跳转至文档库下载：[STM32系列相关资料](https://www.writebug.com/group/DY's_Personal_Space/document/cb4b92aa-3567-11ef-b10a-0242c0a84014) 
 
 - [Cortex-M3权威指南 (中文版).pdf](https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/0ced3785cf7e8f692d69f3b97f6440d6.pdf)
 - [STM32 MCU 选型手册 201603.pdf](https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/b93a6aa958995d58aa34ce672f69fc72.pdf) 

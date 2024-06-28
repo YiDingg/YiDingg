@@ -10,9 +10,9 @@
     - [手把手教你用PWM实现呼吸灯(标准库)](Blogs\Mixed\手把手教你用PWM实现呼吸灯(标准库).md)
   - Site Features
     - [Syntax Examples](Blogs\SiteFeatures\Syntax%20Examples.md)
-    - [Custom Component](Blogs\SiteFeatures\CustomComponent.md)
-    - [Image/Data Host](Blogs\SiteFeatures\DataHost.md)
-    - [My Notes Structure](Blogs\SiteFeatures\MyNotesStructure.md)
+    - [Custom Component](Blogs\SiteFeatures\Custom%20Component.md)
+    - [Data Host](Blogs\SiteFeatures\Data%20Host.md)
+    - [My Notes Structure](Blogs\SiteFeatures\My%20Notes%20Structure.md)
     - [个人网站搭建](Blogs\SiteFeatures\个人网站搭建.md)
 
   - Optics
@@ -53,6 +53,7 @@
 
 - 📝 **Projects**
   - [MuMeStar (Mutiple Menu Star for OLED)](Projects\MuMeStar%20(Mutiple%20Menu%20Star%20for%20OLED)%20详解.md)
+  - [OLEDSD (OLED Software Driver)](Projects\OLEDSD%20(OLED%20Software%20Driver).md)
   - [MinSyBo (Minimum System Board of STM32)](Projects\MinSyBo%20(Minimum%20System%20Board%20of%20STM32)%20详解.md)
 
 - [<span style="color:rgb(54,65,73);">📃 **Time Line**</span>](TimeLine.md)

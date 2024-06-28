@@ -6,3 +6,4 @@ Some notes that need numerous formula to derive the conclusions are taken by Lat
 The rest will be written on Notability, displayed in PDF format. 
 
 By the way, I am trying to write notes in English  as a practice.
+
