@@ -1,4 +1,4 @@
-# Awesome Tool and Resources
+# Awesome Tools and Resources
 
 ## Mixed
 

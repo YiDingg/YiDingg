@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- html settings -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
-    <meta name="description" content="">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover"
+    />
+    <meta name="description" content="" />
 
     <!-- 引入CSS文件 -->
-    <link rel="stylesheet" href="css/vue.css">
-    <link rel="stylesheet" href="css/docsify-toc.css">
-    <link rel="stylesheet" href="css/ComponentStyles.css">
-    <!-- <link rel="stylesheet" href="css/test.css"> --><!-- 测试文件 -->
-
+    <link rel="stylesheet" href="css/vue.css" />
+    <link rel="stylesheet" href="css/docsify-toc.css" />
+    <link rel="stylesheet" href="css/ComponentStyles.css" />
+    <!-- <link rel="stylesheet" href="css/test.css"> -->
+    <!-- 测试文件 -->
 
     <!-- 设置浏览器图标 -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -37,103 +38,118 @@
     </style> -->
 
     <!-- 网站小图标 -->
-    <link rel="apple-touch-icon" sizes="180x180" href="static/icon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="static/icon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/icon/favicon-16x16.png">
-    <link rel="manifest" href="static/icon/site.webmanifest">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="static/icon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="static/icon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="static/icon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="static/icon/site.webmanifest" />
 
     <!-- docsify-gifcontrol -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-gifcontrol/dist/docsify-gifcontrol.css">
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify-gifcontrol/dist/docsify-gifcontrol.css"
+    />
     <!-- docsify-top-banner-plugin -->
     <!--      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-top-banner-plugin@latest/dist/style.css"/> -->
+  </head>
 
-</head>
-
-<body>
+  <body>
     <!-- 定义加载时候的动作 -->
     <div id="app">
-        <div class="center-screen">
-            <div class="wrapper">
-                <div class="circle-load"></div>
-                <div class="circle-load"></div>
-                <div class="circle-load"></div>
-                <div class="shadow"></div>
-                <div class="shadow"></div>
-                <div class="shadow"></div>
-            </div>
+      <div class="center-screen">
+        <div class="wrapper">
+          <div class="circle-load"></div>
+          <div class="circle-load"></div>
+          <div class="circle-load"></div>
+          <div class="shadow"></div>
+          <div class="shadow"></div>
+          <div class="shadow"></div>
         </div>
+      </div>
     </div>
     <!-- Gitalk评论 -->
     <!-- <div id="gitalk-container"></div> -->
     <script>
-        window.$docsify = {
+      window.$docsify = {
+        /* docsify设置 */
+        // 网站左侧边栏名称
+        name: "<font style='color:black;font-size:14pt;' face='华文彩云'>⭐Yi Ding's Website⭐</font>",
+        // 仓库地址，点击右上角的Github章鱼猫头像会跳转到此地址（感觉占地方不美观，所以不要了）
+        /* repo: 'https://github.com/YiDingg', */
+        // 侧边栏支持，默认加载的是项目根目录下的_sidebar.md文件
+        loadSidebar: true,
+        // 左侧边栏最大支持渲染的标题层级
+        maxLevel: 1, // 这里设置为0是为了防止与侧边栏折叠插件产生冲突(但好像仍然冲突?-->已解决)
+        // 自定义侧边栏后默认不会再生成目录，设置生成目录的最大层级
+        subMaxLevel: 0,
+        // 左侧边栏自动展开深度
+        sidebarDisplayLevel: 1,
+        alias: {
+          "/.*/_sidebar.md": "/_sidebar.md",
+        },
+        // 导航栏, _navbar.md文件, 手机端导航栏会收缩到侧边栏形成冲突, 因此不开启
+        loadNavbar: false,
+        // 封面支持，默认加载的是项目根目录下的_coverpage.md文件
+        coverpage: true,
+        onlyCover: true,
+        // 小屏设备下合并导航栏到侧边栏
+        mergeNavbar: true,
+        // 在滚动到指定的锚点时，距离页面顶部有一定空间
+        topMargin: 90,
+        // 自定义notfound页面
+        notFoundPage: "my404.md",
+        // 超链接、左右侧边栏的选中颜色
+        themeColor: "#3F51B5",
+        // 侧边栏网页Logo(logo和name只能设置一个)
+        /* logo: "static\\assets\\ProfilePhoto.jpg  width=30%", */
+        // 切换页面后自动跳转到页面顶部。
+        auto2top: true,
 
-            /* docsify设置 */
-            // 网站左侧边栏名称
-            name: "<font style='color:black;font-size:14pt;' face='华文彩云'>⭐Yi Ding's Website⭐</font>",
-            // 仓库地址，点击右上角的Github章鱼猫头像会跳转到此地址（感觉占地方不美观，所以不要了）
-            /* repo: 'https://github.com/YiDingg', */
-            // 侧边栏支持，默认加载的是项目根目录下的_sidebar.md文件
-            loadSidebar: true,
-            // 左侧边栏最大支持渲染的标题层级
-            maxLevel: 1,    // 这里设置为0是为了防止与侧边栏折叠插件产生冲突(但好像仍然冲突?)
-            // 自定义侧边栏后默认不会再生成目录，设置生成目录的最大层级
-            subMaxLevel: 0,
-            // 左侧边栏自动展开深度
-            sidebarDisplayLevel: 0,
-            alias: {
-                '/.*/_sidebar.md': '/_sidebar.md',
-            },
-            // 导航栏, _navbar.md文件, 手机端导航栏会收缩到侧边栏形成冲突, 因此不开启
-            loadNavbar: false,
-            // 封面支持，默认加载的是项目根目录下的_coverpage.md文件
-            coverpage: true,
-            onlyCover: true,
-            // 小屏设备下合并导航栏到侧边栏
-            mergeNavbar: true,
-            // 在滚动到指定的锚点时，距离页面顶部有一定空间
-            topMargin: 90,
-            // 自定义notfound页面   
-            notFoundPage: 'my404.md',
-            // 超链接、左右侧边栏的选中颜色
-            themeColor: '#3F51B5',
-            // 侧边栏网页Logo(logo和name只能设置一个)        
-            /* logo: "static\\assets\\ProfilePhoto.jpg  width=30%", */
-            // 切换页面后自动跳转到页面顶部。 
-            auto2top: true,
+        /* 代码块复制 */
+        copyCode: {
+          buttonText: "copy to clipboard",
+          errorText: "Error",
+          successText: "Copied",
+        },
 
-            /* 代码块复制 */
-            copyCode: {
-                buttonText: 'copy to clipboard',
-                errorText: 'Error',
-                successText: 'Copied',
-            },
+        /* 搜索 */
+        search: {
+          maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+          paths: "auto", // 注意：仅适用于 paths: 'auto' 模式
+          placeholder: "搜索",
+          // 支持本地化
+          placeholder: {
+            "/zh-cn/": "搜索",
+            "/": "Type to search",
+          },
+          noData: "no results",
+          depth: 5,
+          hideOtherSidebarContent: true,
+          namespace: "Docsify-Guide",
+        },
 
-            /* 搜索 */
-            search: {
-                maxAge: 86400000,// 过期时间，单位毫秒，默认一天
-                paths: 'auto',// 注意：仅适用于 paths: 'auto' 模式
-                placeholder: '搜索',
-                // 支持本地化
-                placeholder: {
-                    '/zh-cn/': '搜索',
-                    '/': 'Type to search'
-                },
-                noData: 'no results',
-                depth: 5,
-                hideOtherSidebarContent: true,
-                namespace: 'Docsify-Guide',
-            },
+        /* 页面右侧 TOC */
+        toc: {
+          scope: ".markdown-section",
+          headings: "h2, h3, h4, h5, h6",
+          title: "Toc",
+        },
 
-            /* 页面右侧 TOC */
-            toc: {
-                scope: '.markdown-section',
-                headings: "h2, h3, h4, h5, h6",
-                title: "Toc"
-            },
-
-            /* 字数统计 */
-            /*             count: {
+        /* 字数统计 */
+        /*             count: {
                             countable:  true,
                             position:   "bottom",
                             margin:     "100px",
@@ -148,48 +164,48 @@
                             isExpected: true,
                         }, */
 
-            /* tab选项卡 */
-            tabs: {
-                persist: true,          //defult
-                sync: true,             //defult
-                theme: 'classic',       //defult
-                tabComments: true,      //defult
-                tabHeadings: true,      //defult
-            },
+        /* tab选项卡 */
+        tabs: {
+          persist: true, //defult
+          sync: true, //defult
+          theme: "classic", //defult
+          tabComments: true, //defult
+          tabHeadings: true, //defult
+        },
 
-            /* alerts提示 */
-            // note tip warning attention https://github.com/fzankl/docsify-plugin-flexible-alerts
-            'flexible-alerts': {
-                style: 'callout'
-            },
+        /* alerts提示 */
+        // note tip warning attention https://github.com/fzankl/docsify-plugin-flexible-alerts
+        "flexible-alerts": {
+          style: "callout",
+        },
 
-            /* 页面最近修改时间 */
-            timeUpdater: {
-                text: "<div align='right' width='100%' style='color:gray;font-size:12px;margin-top:50px;'> Last updated time: {docsify-updated}</div>",
-                formatUpdated: "  {YYYY}.{MM}.{DD} {HH}:{mm}",
-            },
+        /* 页面最近修改时间 */
+        timeUpdater: {
+          text: "<div align='right' width='100%' style='color:gray;font-size:12px;margin-top:50px;'> Last updated time: {docsify-updated}</div>",
+          formatUpdated: "  {YYYY}.{MM}.{DD} {HH}:{mm}",
+        },
 
-            /* 回到顶部 */
-            docsifyBackTop: {
-                size: 32,               // 组件大小，默认值32   
-                bottom: 15,             // 组件底部偏移距离，默认值15
-                right: 15,              // 数值，组件右侧偏移距离，默认值15。
-                logo: 'top',            // logo:字符串或svg矢量图代码，默认为svg代码图标。
-                bgColor: '#42b983'      // 背景颜色，#fff、pink等，logo为svg图标时，不填。
-            },
+        /* 回到顶部 */
+        docsifyBackTop: {
+          size: 32, // 组件大小，默认值32
+          bottom: 15, // 组件底部偏移距离，默认值15
+          right: 15, // 数值，组件右侧偏移距离，默认值15。
+          logo: "top", // logo:字符串或svg矢量图代码，默认为svg代码图标。
+          bgColor: "#42b983", // 背景颜色，#fff、pink等，logo为svg图标时，不填。
+        },
 
-            /* plantuml画图集成 */
-            plantuml: {
-                skin: 'default'
-            },
+        /* plantuml画图集成 */
+        plantuml: {
+          skin: "default",
+        },
 
-            /* md远程导入插件 */
-            remoteMarkdown: {
-                tag: 'rmd',
-            },
+        /* md远程导入插件 */
+        remoteMarkdown: {
+          tag: "rmd",
+        },
 
-            /* Gitalk评论 */
-            /*             gitalk: {
+        /* Gitalk评论 */
+        /*             gitalk: {
                             clientID: 'Ov23litwsqgUWqHQTZKn',
                             clientSecret:'32a84fada209ab08d4fe93b5b793de57c0703fb4',
                             repo:'Comment',  //存放评论的仓库
@@ -197,33 +213,33 @@
                             admin:['YiDingg'],
                         } */
 
-            /* Giscus评论系统 */
-            giscus: {
-                repo: "YiDingg/Comment",
-                repoId: "R_kgDOMJOx-A",
-                category: "Announcements",
-                categoryId: "DIC_kwDOMJOx-M4CgFdB",
-                mapping: "url",
-                strict: "1",
-                reactionsEnabled: "1",
-                emitMetadata: "0",
-                inputPosition: "top",
-                theme: "light",
-                lang: "zh-CN",
-                loading: "lazy",
-            },
+        /* Giscus评论系统 */
+        giscus: {
+          repo: "YiDingg/Comment",
+          repoId: "R_kgDOMJOx-A",
+          category: "Announcements",
+          categoryId: "DIC_kwDOMJOx-M4CgFdB",
+          mapping: "url",
+          strict: "1",
+          reactionsEnabled: "1",
+          emitMetadata: "0",
+          inputPosition: "top",
+          theme: "light",
+          lang: "zh-CN",
+          loading: "lazy",
+        },
 
-            /* 不蒜子显示网站访问量 */
-            busuanzi: true,
+        /* 不蒜子显示网站访问量 */
+        busuanzi: true,
 
-            /* 代码块折叠 */
-            hideCode: {
-                scroll: true, // Enable scrolling
-                height: 250 // Max height
-            },
+        /* 代码块折叠 */
+        hideCode: {
+          scroll: true, // Enable scrolling
+          height: 250, // Max height
+        },
 
-            /* 幻灯片 */
-            /*             pagination: {
+        /* 幻灯片 */
+        /*             pagination: {
                             previousText: '上一章节',
                             // or
                             nextText: {
@@ -234,8 +250,8 @@
                             crossChapterText: true,
                         }, */
 
-            /* docsify-share 插件(待设置) */
-            /*             share: {
+        /* docsify-share 插件(待设置) */
+        /*             share: {
                             reddit: true,
                             linkedin: true,
                             facebook: true,
@@ -249,8 +265,8 @@
                             title: "GitHub",
                         }, */
 
-            /* docsify-corner插件(暂时没有很好的corner图，先不启用) */
-            /*             repo:'true',
+        /* docsify-corner插件(暂时没有很好的corner图，先不启用) */
+        /*             repo:'true',
                         corner: {
                             url: "https://github.com/YiDingg",
                             // you can set the image link here  
@@ -259,40 +275,44 @@
                             width: 50,
                         }, */
 
-            /* docsify-chat插件 */
-            chat: {
-                // chat panel title
-                title: 'Chatting Records',
-                // set avatar url
-                users: [
-                    { nickname: 'DY', avatar: '' },
-                    { nickname: 'DDY', avatar: '' },
-                    { nickname: 'Yi Ding', avatar: 'https://raw.githubusercontent.com/YiDingg/ImageBank_0/main/20240616/192418942.png' },
-                ],
-                myself: 'Yi Ding',
-                os: 'mac',
-                animation: 100,
+        /* docsify-chat插件 */
+        chat: {
+          // chat panel title
+          title: "Chatting Records",
+          // set avatar url
+          users: [
+            { nickname: "DY", avatar: "" },
+            { nickname: "DDY", avatar: "" },
+            {
+              nickname: "Yi Ding",
+              avatar:
+                "https://raw.githubusercontent.com/YiDingg/ImageBank_0/main/20240616/192418942.png",
             },
+          ],
+          myself: "Yi Ding",
+          os: "mac",
+          animation: 100,
+        },
 
-            /* docsify-progress阅读进度条(冲突) */
-            /*             progress: {
+        /* docsify-progress阅读进度条(冲突) */
+        /*             progress: {
                             position: "top",
                             color: "var(--theme-color,#42b983)",
                             height: "10px",
                         } */
 
-            /* docsify-beian 备案 */
-            beian: {
-                ICP: " ",
-                NISMSP: {
-                    number: " ",
-                    url: " ",
-                    id: "  "
-                },
-            },
+        /* docsify-beian 备案 */
+        beian: {
+          ICP: " ",
+          NISMSP: {
+            number: " ",
+            url: " ",
+            id: "  ",
+          },
+        },
 
-            /* docsify-term 代码动画插件 */
-            /*             plugins: [
+        /* docsify-term 代码动画插件 */
+        /*             plugins: [
                             function (hook, vm) {
                                 //termynal.js
                                 hook.beforeEach(function(content){
@@ -305,26 +325,25 @@
                                 });
                             }], */
 
-            /* docsify-footer-enh  */
-            footer: {
-                copy: '<span>Copyright &copy; 2024 Yi Ding. All rights reserved.</span>',
-                auth: ' ',
-                pre: '<hr/>',
-                style: 'text-align: right;',
-                class: 'className',
-            },
+        /* docsify-footer-enh  */
+        footer: {
+          copy: "<span>Copyright &copy; 2024 Yi Ding. All rights reserved.</span>",
+          auth: " ",
+          pre: "<hr/>",
+          style: "text-align: right;",
+          class: "className",
+        },
 
-            /* docsify-remote-markdown */
-            remoteMarkdown: {
-                tag: 'remoteMarkdownUrl',
-            },
-            /*             topBanner: {
+        /* docsify-remote-markdown */
+        remoteMarkdown: {
+          tag: "remoteMarkdownUrl",
+        },
+        /*             topBanner: {
                             content:'Welcome!',
                             position:'fixed',
                             zIndex:-1
                         }, */
-        }
-
+      };
     </script>
     <!-- docsify的js依赖 -->
     <script src="js\docsify.min.js"></script>
@@ -342,7 +361,10 @@
     <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
     <!-- 侧边栏目录折叠 (https://www.npmjs.com/package/docsify-sidebar-collapse)-->
     <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css"
+    />
     <!-- 主题(arrow) -->
     <!-- 代码块高亮 -->
     <script src="//cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-c.min.js"></script>
@@ -354,59 +376,62 @@
     <script src="//unpkg.com/prismjs/components/prism-c.js"></script>
     <script src="//unpkg.com/prismjs@1.23.0/components.js"></script>
     <!--访问统计-->
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script
+      async
+      src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
     <!-- tab选项卡 -->
     <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
     <!-- tab选项卡自定义css(text类冲突，需修改名字) -->
     <style>
-        .tab-badge {
-            position: absolute;
-            top: 0;
-            right: 0;
-            transform: translate(35%, -45%);
-            padding: 0.25em 0.35em;
-            border-radius: 3px;
-            background: red;
-            color: white;
-            font-family: sans-serif;
-            font-size: 11px;
-            font-weight: bold;
-        }
+      .tab-badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(35%, -45%);
+        padding: 0.25em 0.35em;
+        border-radius: 3px;
+        background: red;
+        color: white;
+        font-family: sans-serif;
+        font-size: 11px;
+        font-weight: bold;
+      }
 
-        .docsify-tabs__tab--active[data-tab='active state'] {
-            box-shadow: none;
-            background: #5452ea88;
-            color: white;
-        }
+      .docsify-tabs__tab--active[data-tab="active state"] {
+        box-shadow: none;
+        background: #5452ea88;
+        color: white;
+      }
 
-        .docsify-tabs__tab--active[data-tab='wow!'] {
-            box-shadow: none;
-            background: #5452ea88;
-            color: white;
-        }
+      .docsify-tabs__tab--active[data-tab="wow!"] {
+        box-shadow: none;
+        background: #5452ea88;
+        color: white;
+      }
 
-        .docsify-tabs__content[data-tab-content='active state'] {
-            background-image: linear-gradient(0deg, #abaad1 0%, #5452ea88 100%);
-        }
+      .docsify-tabs__content[data-tab-content="active state"] {
+        background-image: linear-gradient(0deg, #abaad1 0%, #5452ea88 100%);
+      }
 
-        .docsify-tabs__content[data-tab-content='active state'] p strong {
-            color: white;
-        }
+      .docsify-tabs__content[data-tab-content="active state"] p strong {
+        color: white;
+      }
 
-        .docsify-tabs__content[data-tab-content='wow!'] {
-            background-image: linear-gradient(0deg, #abaad1 0%, #5452ea88 100%);
-        }
+      .docsify-tabs__content[data-tab-content="wow!"] {
+        background-image: linear-gradient(0deg, #abaad1 0%, #5452ea88 100%);
+      }
 
-        .docsify-tabs__content[data-tab-content='wow!'] p strong {
-            color: white;
-        }
+      .docsify-tabs__content[data-tab-content="wow!"] p strong {
+        color: white;
+      }
 
-        .text {
-            background: linear-gradient(to right, red 0%, purple 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+      .text {
+        background: linear-gradient(to right, red 0%, purple 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     </style>
 
     <!-- alerts提示 -->
@@ -419,17 +444,17 @@
     <script src="https://cdn.jsdelivr.net/gh/sumsung524/docsify-backTop/dist/docsify-backTop.min.js"></script>
     <!-- 访问统计(需要百度统计获取ID) -->
     <script>
-        var _hmt = _hmt || [];
-        (function () {
-            var host = window.location.host;
-            if (host.startsWith("localhost") || host.startsWith("10.204.57.207")) {
-                return; // 127.0.0.1
-            }   // 过滤本地访问
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?2ea53b153d591779d6f27a1290a5b823";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
+      var _hmt = _hmt || [];
+      (function () {
+        var host = window.location.host;
+        if (host.startsWith("localhost") || host.startsWith("10.204.57.207")) {
+          return; // 127.0.0.1
+        } // 过滤本地访问
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?2ea53b153d591779d6f27a1290a5b823";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
     </script>
     <!-- plantuml画图集成 -->
     <script src="//unpkg.com/docsify-plantuml/dist/docsify-plantuml.min.js"></script>
@@ -470,13 +495,19 @@
     <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-gitalk@1.0.0/dist/docsify-gitalk.min.js"></script> -->
     <!-- Giscus评论系统 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-giscus@1.0.2/dist/giscus.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/docsify-giscus@1.0.2/dist/giscus.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/docsify-giscus@1.0.2/dist/docsify-giscus.min.js"></script>
     <!-- 不蒜子显示网站访问量 -->
     <script src="https://cdn.jsdelivr.net/npm/docsify-busuanzi@1.0.1/dist/docsify-busuanzi.min.js"></script>
     <!-- latex公式支持 -->
     <script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/marked@3"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
     <!-- 代码块折叠 -->
@@ -485,10 +516,22 @@
     <!--     <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
     <script src="//unpkg.com/docsify-slides/dist/docsify-slides.min.js"></script> -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/docsify-example-panels"></script> -->
-    <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/fontawesome.css" />
-    <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/brands.css" />
-    <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/regular.css" />
-    <link rel="stylesheet" href="//unpkg.com/@fortawesome/fontawesome-free/css/solid.css" />
+    <link
+      rel="stylesheet"
+      href="//unpkg.com/@fortawesome/fontawesome-free/css/fontawesome.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//unpkg.com/@fortawesome/fontawesome-free/css/brands.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//unpkg.com/@fortawesome/fontawesome-free/css/regular.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//unpkg.com/@fortawesome/fontawesome-free/css/solid.css"
+    />
     <script src="//unpkg.com/docsify-fontawesome/dist/docsify-fontawesome.min.js"></script>
     <!-- docsify-share 插件(待设置) -->
     <!-- <script src="//unpkg.com/docsify-share/build/index.min.js"></script> -->
@@ -501,7 +544,10 @@
     <!-- docsify-terminal-block 插件 -->
     <script src="https://cdn.jsdelivr.net/npm/docsify-terminal-block@1.0.3"></script>
     <!-- docsify-accordion 手风琴 -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-accordion/src/style.css">
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify-accordion/src/style.css"
+    />
     <script src="//cdn.jsdelivr.net/npm/docsify-accordion/src/index.js"></script>
     <!-- docsify-beian 备案插件 -->
     <script src="https://cdn.jsdelivr.net/npm/docsify-beian@latest/dist/beian.min.js"></script>
@@ -523,10 +569,9 @@
     <!-- docsify-sidebar-footer -->
     <!--     <script src="https://cdn.jsdelivr.net/npm/@markbattistella/docsify-sidebarfooter@latest"></script> -->
     <link
-        href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
     <script src="//unpkg.com/docsify-material-icons/dist/docsify-material-icons.min.js"></script>
-</body>
-
-
+  </body>
 </html>

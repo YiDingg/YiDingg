@@ -21,6 +21,11 @@ This extension allows you to colorize the matching brackets in your code, making
 
 This extension formats your code automatically when you save the file. It helps you keep your code clean and organized.
 
+### Prettier :
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Nice VSCode Extenstions--2024-06-28-01-58-39.png"/></div>
+
+This extension formats your code according to the rules defined in a `.prettierrc` file. It helps you keep your code clean and organized. Refer to https://prettier.io/docs/en/ignore#ignoring-files-prettierignore for more information on how to ignore files.
 
 
 ### Dictionary :

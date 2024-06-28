@@ -142,14 +142,14 @@ Converting video to gif with high quality might cause a size surge.
 
 ### To do list
 
-* [ ] hi
-* [ ] hi
+- [ ] hi
+- [ ] hi
 - [x] hi
 - [x] hi
 
 ```html
-* [ ] hi
-* [ ] hi
+- [ ] hi
+- [ ] hi
 - [x] hi
 - [x] hi
 ```
@@ -484,11 +484,10 @@ https://github.com/isaozler/docsify-accordion
 
 Introduction text for the FAQ page.
 
-+ Question 1? +
++ Question 1 +
 
   Answer 1
-
-+ Question 2? +
++ Question 2 +
 
   Answer 2
 

@@ -2,6 +2,19 @@
 
 
 - 📓 **Blogs**
+  - Mixed
+    - [Awesome Tools and Resources](Blogs\Mixed\Awesome%20Tools%20and%20Resources.md)
+    - [Nice VSCode Extensions](Blogs\Mixed\Nice%20VSCode%20Extenstions.md)
+    - [嘉立创免费下单教程](Blogs\Mixed\嘉立创免费下单教程.md)
+    - [结构体及其指针在树中的应用](Blogs\Mixed\结构体及其指针在树中的应用.md)
+    - [手把手教你用PWM实现呼吸灯(标准库)](Blogs\Mixed\手把手教你用PWM实现呼吸灯(标准库).md)
+  - Site Features
+    - [Syntax Examples](Blogs\SiteFeatures\Syntax%20Examples.md)
+    - [Custom Component](Blogs\SiteFeatures\CustomComponent.md)
+    - [Image/Data Host](Blogs\SiteFeatures\DataHost.md)
+    - [My Notes Structure](Blogs\SiteFeatures\MyNotesStructure.md)
+    - [个人网站搭建](Blogs\SiteFeatures\个人网站搭建.md)
+
   - Optics
     - [光学笔记汇总](Blogs\Optics\光学笔记汇总.md)
     - [光学笔记 (1)：hhh](Blogs\Optics\光学笔记%20(1)：hhh.md)
@@ -25,17 +38,6 @@
   - Fix Problem
     - [VScode-Latex 中反向搜索失灵的解决方案](Blogs/FixProblem/VScode-Latex中反向搜索失灵的解决方案.md)
     - [新版 Keil_MDK 中无 Compiler_V5 的解决方案](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
-  - Mixed
-    - [Awesome Tool and Resources](Blogs\Mixed\Awesome%20Tool%20and%20Resources.md)
-    - [Nice VSCode Extensions](Blogs\Mixed\Nice%20VSCode%20Extenstions.md)
-    - [结构体及其指针在树中的应用](Blogs\Mixed\结构体及其指针在树中的应用.md)
-    - [手把手教你用PWM实现呼吸灯(标准库)](Blogs\Mixed\手把手教你用PWM实现呼吸灯(标准库).md)
-  - Site Features
-    - [Syntax Examples](Blogs\SiteFeatures\Syntax%20Examples.md)
-    - [Custom Component](Blogs\SiteFeatures\CustomComponent.md)
-    - [Image/Data Host](Blogs\SiteFeatures\DataHost.md)
-    - [My Notes Structure](Blogs\SiteFeatures\MyNotesStructure.md)
-    - [个人网站搭建](Blogs\SiteFeatures\个人网站搭建.md)
 
 - 📖 **Notes**
   - Math
@@ -54,5 +56,6 @@
 
 - [<span style="color:rgb(54,65,73);">📃 **Time Line**</span>](TimeLine.md)
 
+- [<span style="color:rgb(54,65,73);">📰 **To Be Read**</span>](ToBeRead.md)
 - [<span style="color:rgb(54,65,73);">❔ **Test**</span>](Test.md)
 <!-- 🔗 -->
