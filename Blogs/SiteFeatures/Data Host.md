@@ -207,7 +207,7 @@ iframe + WB.Git:
 
 <iframe :src="https://www.writebug.com/git/YiDingg/GitHub_YiDingg_pdf/raw/branch/main/Linear%20Algebra%202%20notes.pdf" frame></iframe>
 
-iframe + WB.Cloud: 
+iframe + WB.Static: 
 
 <iframe :src="https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/b93a6aa958995d58aa34ce672f69fc72.pdf" frame></iframe>
 

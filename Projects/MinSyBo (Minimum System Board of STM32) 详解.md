@@ -21,7 +21,7 @@
 | 正面 | 背面 |
 | :------: | :------: |
  |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MinSyBo (Minimum System Board of STM32) 详解-2024-06-21-02-12-35.png">|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MinSyBo (Minimum System Board of STM32) 详解-2024-06-21-02-12-40.png"> |
- |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MinSyBo (Minimum System Board of STM32) 详解-2024-06-21-02-12-45.png"> |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MinSyBo (Minimum System Board of STM32) 详解-2024-06-21-02-12-50.png">|
+ |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MinSyBo (Minimum System Board of STM32) 详解--2024-06-29-13-04-51.png"/></div> |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MinSyBo (Minimum System Board of STM32) 详解--2024-06-29-13-04-59.png"/></div>|
 </div>
 由于个人时间、精力和水平有限，项目难免存在不足，望读者不吝指正。
 

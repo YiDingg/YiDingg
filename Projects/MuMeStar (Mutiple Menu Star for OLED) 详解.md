@@ -42,7 +42,7 @@
  |6. 生成代码并编译 | 保存并生成代码，在Keil中编译一次 | - |
  |7. 添加项目文件| 将下载好的六个文件（MutiMenu.c，MutiMenu.h，Mutimenu_Data.h，OLEDSD.c，OLEDSD.h，OLEDSD_Font.h）复制到项目目录下的inc文件夹（.h文件放这里）和src文件夹（.c文件放这里）|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21.png" alt="MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21-02-11-33.png"> |
  |8. 修改main.c| 在main.c中 #include "MutiMenu.h"，并在while(1)循环中使用函数 Menu_Handler() |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21-02-11-38.png"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21-02-11-42.png">|
- |9. 移植完成| 菜单移植完成，编译并下载，连接好硬件部分，可以看到菜单正常显示 |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解-2024-06-21-02-11-51.png">|
+ |9. 移植完成| 菜单移植完成，编译并下载，连接好硬件部分，可以看到菜单正常显示 |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-29-13-06-11.png"/></div>|
 </div>
 
 
@@ -90,7 +90,7 @@
  | 3. 新增一个节点函数 | 在 "菜单节点函数" 处定义你的函数。函数在 enter 此菜单时调用，我们编写函数以在屏幕上显示 "Hello world!" |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-24-58.png"/> |
  | 4. 进行函数的编写与指针替换 | 注意：函数应为 void func(void) 型。 编写完毕后，将其替换到父菜单数组的对应结构体中  |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-25-08.png"/> |
  |5. 在 Multimenu.h 中声明函数| 在 "自定义菜单节点函数声明" 处进行声明，注意不要忘了分号|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-25-12.png"/>|
- |6. 编译并烧录 | 可以看到，成功实现 Sayhello 功能 |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-25-16.png"/> |
+ |6. 编译并烧录 | 可以看到，成功实现 Sayhello 功能 |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-06-29-13-48-08_MuMeStar (Mutiple Menu Star for OLED) 详解_.jpg"/></div> |
 
 ### 4. 添加 Loop 菜单
 目标：在某个 Parent 型菜单下，添加一个 Loop 型菜单。下面以添加在 "Hello" 下的 "Smile" 选项为例。

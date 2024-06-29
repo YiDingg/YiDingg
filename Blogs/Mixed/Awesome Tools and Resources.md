@@ -2,7 +2,15 @@
 
 ## Mixed
 
-### Chart and Graph
+- [中文技术文档写作规范](https://github.com/ruanyf/document-style-guide)
+
+### Programming
+
+- [Free Programming Books](https://ebookfoundation.github.io/free-programming-books-search/?&sect=books&file=free-programming-books-zh.md)
+- [Runoob (菜鸟网站)](https://www.runoob.com/): numerous programming tutorials and reference materials are provided, and lots of awesome tools are available.
+- [Regular Expressions (正则表达式)](https://www.jyshare.com/front-end/854/)
+
+### Calculation and Graph
 
 - [Matlab]()
 - [SCIlab](https://www.scilab.org/)

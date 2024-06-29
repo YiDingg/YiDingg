@@ -103,7 +103,7 @@ const uint8_t /*_img_name_*/_Data[] = {
 
 至此完成图片取模，使用 OLED_ShowPicture() 函数即可显示图片，示例效果如下：
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/OLEDSD (OLED Software Driver)--2024-06-29-00-27-29.jpg"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/OLEDSD (OLED Software Driver)--2024-06-29-13-07-25.jpg"/></div>
 
 ## 新版驱动(兼容IIC+SPI)
 

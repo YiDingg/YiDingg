@@ -9,9 +9,9 @@
     - [结构体及其指针在树中的应用](Blogs\Mixed\结构体及其指针在树中的应用.md)
     - [手把手教你用PWM实现呼吸灯(标准库)](Blogs\Mixed\手把手教你用PWM实现呼吸灯(标准库).md)
   - Site Features
+    - [Data Host](Blogs\SiteFeatures\Data%20Host.md)
     - [Syntax Examples](Blogs\SiteFeatures\Syntax%20Examples.md)
     - [Custom Component](Blogs\SiteFeatures\Custom%20Component.md)
-    - [Data Host](Blogs\SiteFeatures\Data%20Host.md)
     - [My Notes Structure](Blogs\SiteFeatures\My%20Notes%20Structure.md)
     - [个人网站搭建](Blogs\SiteFeatures\个人网站搭建.md)
 
@@ -22,6 +22,8 @@
     - [C语言系列汇总](Blogs/C/C语言系列汇总.md)
     - [C语言系列 (1)：内存与关键字](Blogs/C/C语言系列%20(1)：内存与关键字.md)
     - [C语言系列 (2)：printf() 函数详解](Blogs/C/C语言系列%20(2)：printf()%20函数详解.md)
+  - Cpp
+    - [Cpp系列汇总](Blogs\Cpp\Cpp系列汇总.md)
   - STM32
     - [STM32系列汇总](Blogs/STM32/STM32系列汇总.md)
     - [STM32系列 (1)：Keil Debug 功能使用](Blogs/STM32/STM32系列%20(1)：Keil%20Debug%20功能使用.md)
@@ -32,9 +34,10 @@
     - [Git 教程与提交规范](Blogs/Git/Git教程与提交规范.md)
     - [Git 命令速查](Blogs\Git\Git命令速查.md)
     - [Git 生成 ChangeLog](Blogs\Git\Git生成ChangeLog.md)
-  - Web
-    - [Basic HTML](Blogs\Web\Basic%20HTML.md)
-    - [Basic CSS](Blogs\Web\Basic%20CSS.md)
+  - Front End
+    - [Summary of Front End Series](Blogs\FrontEnd\Summary%20of%20Front%20End%20Series.md)
+    - [Basic HTML](Blogs\FrontEnd\Basic%20HTML.md)
+    - [Basic CSS](Blogs\FrontEnd\Basic%20CSS.md)
   - Fix Problem
     - [VScode-Latex 中反向搜索失灵的解决方案](Blogs/FixProblem/VScode-Latex中反向搜索失灵的解决方案.md)
     - [新版 Keil_MDK 中无 Compiler_V5 的解决方案](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
