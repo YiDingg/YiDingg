@@ -1,8 +1,6 @@
 # C语言系列汇总
 
-## 学习路线
 
-以网道 [C语言](https://wangdoc.com/clang/) 为主要学习路线/资料，以菜鸟网站 [C语言](https://www.runoob.com/cprogramming/c-tutorial.html) 作为辅助学习资料。
 
 ## C语言系列目录
 
@@ -27,11 +25,6 @@
 ## 相关资料
 
 
-相关网站：
-
-- [菜鸟网站（编程语言在线学习网站）](https://www.runoob.com/)
-- [LeetCode](https://leetcode.cn/)	
-- [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)
 
 
 ## 其它：

@@ -19,11 +19,14 @@
     - [光学笔记汇总](Blogs\Optics\光学笔记汇总.md)
     - [光学笔记 (1)：hhh](Blogs\Optics\光学笔记%20(1)：hhh.md)
   - C Programming
+    - [C语言笔记汇总](Blogs/C/C语言笔记汇总.md)
+    - [C语言笔记 (1)：基本知识](Blogs\C\C语言笔记%20(1)：基本知识.md)
+    - [C语言笔记 (2)：内存与关键字](Blogs\C\C语言笔记%20(2)：内存与关键字.md)
     - [C语言系列汇总](Blogs/C/C语言系列汇总.md)
     - [C语言系列 (1)：内存与关键字](Blogs/C/C语言系列%20(1)：内存与关键字.md)
     - [C语言系列 (2)：printf() 函数详解](Blogs/C/C语言系列%20(2)：printf()%20函数详解.md)
   - Cpp
-    - [Cpp系列汇总](Blogs\Cpp\Cpp系列汇总.md)
+    - [Cpp笔记汇总](Blogs\Cpp\Cpp笔记汇总.md)
   - STM32
     - [STM32系列汇总](Blogs/STM32/STM32系列汇总.md)
     - [STM32系列 (1)：Keil Debug 功能使用](Blogs/STM32/STM32系列%20(1)：Keil%20Debug%20功能使用.md)

@@ -823,13 +823,13 @@ body {
 
 .markdown-section figure,
 .markdown-section p {
-  margin: 1.2em 0;
+  margin: 0.8em 0;
 }
 
 .markdown-section p,
 .markdown-section ul,
 .markdown-section ol {
-  line-height: 1.6rem;
+  line-height: 1.4rem;
   word-spacing: 0.05rem;
 }
 
@@ -1220,7 +1220,7 @@ code .token {
 @media screen and (min-width: 401px) and (max-width: 900px) {
   .markdown-section {
     font-size: 0.85rem;
-    max-width: 95%;
+    max-width: 85%;
   }
 
   .markdown-section h1 {
@@ -1253,7 +1253,7 @@ code .token {
 @media screen and (min-width: 901px) and (max-width: 1200px) {
   .markdown-section {
     font-size: 0.85rem;
-    max-width: 90%;
+    max-width: 75%;
   }
 
   .markdown-section h1 {

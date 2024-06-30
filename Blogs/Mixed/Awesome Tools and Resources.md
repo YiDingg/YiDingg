@@ -3,12 +3,14 @@
 ## Mixed
 
 - [中文技术文档写作规范](https://github.com/ruanyf/document-style-guide)
+- [ATTRIBUTION-SHAREALIKE 4.0 INTERNATIONAL(署名共享协议4.0国际版)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ### Programming
 
 - [Free Programming Books](https://ebookfoundation.github.io/free-programming-books-search/?&sect=books&file=free-programming-books-zh.md)
 - [Runoob (菜鸟网站)](https://www.runoob.com/): numerous programming tutorials and reference materials are provided, and lots of awesome tools are available.
 - [Regular Expressions (正则表达式)](https://www.jyshare.com/front-end/854/)
+- [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)
 
 ### Calculation and Graph
 
@@ -36,6 +38,7 @@
 
 ## Web Development
 
+- [HTML & CSS](https://internetingishard.netlify.app/html-and-css/)
 - [W3Schools(English)](https://www.w3schools.com): world's largest web developer site. You can learn HTML, CSS, JavaScript, SQL, PHP, Python here, also find reference materials, tutorials, and examples.
 - [W3Schools(中文)](https://www.w3school.com.cn): 中文版的 w3schools，包含 HTML、CSS、JavaScript、SQL、PHP、Python 等教程，以及参考和示例。
 - [Mozilla(English)](https://developer.mozilla.org): Mozilla's official website for learning web development. 
