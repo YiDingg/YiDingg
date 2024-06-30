@@ -1,6 +1,6 @@
 # MuMeStar (Mutiple Menu Star for OLED)
 
-## 一、项目说明
+## 项目说明
 
 这是一个OLED多级菜单项目，（以下简称 “菜单” ），菜单基于多叉树结构，底层逻辑自洽，移植简单，可无限扩展。相关代码全部开源，持续更新。
 
@@ -23,7 +23,7 @@
 	- 单片机型号：STM32F103VCT6
 	- OLED型号：0.96寸128x64屏幕，SSD1306控制芯片，SPI通信协议，7管脚。
 
-## 二、移植方法
+## 移植方法
 
 **注：**
 
@@ -47,7 +47,7 @@
 
 
 
-## 三、自由扩展菜单
+## 如何自由扩展菜单
 ### 1. 添加 Parent 菜单
 目标：在某个 Parent 型菜单下，添加一个 Parent 型菜单。下面以添加 "游戏" 选项为例。
 
@@ -104,7 +104,7 @@
  |5. 在 Multimenu.h 中声明函数| 在 "自定义菜单节点函数声明" 处进行声明，注意不要忘了分号| <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-25-38.png"/>|
  |6. 编译并烧录 | 可以看到，成功实现笑脸眼睛循环转动，且横向位置可调、循环可随时暂停 |<video controls="false"  muted="muted" id="video1" name="media" style="width:300px"><source src="https://www.writebug.com/static/uploads/2024/5/13/694fac4c38008c055e88d17a4e448a3b.mp4" type="video/mp4"></video>|
 
-## 四、原理详解
+## 原理详解
 
 ### 1. 底层数据结构
 > 此部分需要结构体、结构体指针、函数指针、结构体递归、多叉树、状态机等知识基础。

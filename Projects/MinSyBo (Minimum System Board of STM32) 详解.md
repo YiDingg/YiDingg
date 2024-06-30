@@ -1,6 +1,6 @@
 # MinSyBo (Minimum System Board of STM32) 
 
-## 一、项目说明
+## 项目说明
 
 这是一个STM32F103C8T6最小系统板，（以下简称 “系统板” ），原理图和PCB使用立创EDA(专业版)进行设计，相关文件全部开源。
 
@@ -25,7 +25,7 @@
 </div>
 由于个人时间、精力和水平有限，项目难免存在不足，望读者不吝指正。
 
-## 二、原理图设计
+## 原理图设计
 
 ### 1. 主控芯片：
 主控芯片选用STM32F103C8T6，需要参考其数据手册设计相关的电源、烧录、复位、晶振、复位、启动等模块。
@@ -138,7 +138,7 @@ BOOT Modes：
 效果：
 <img src="https://www.writebug.com/static/uploads/2024/5/18/90cda8860606b5a71e535f6056c6a048.png"/>
 
-## 三、PCB设计
+## PCB设计
 
 在原理图中 Ctrl+A 全选，点击上方菜单栏 "设计"--"转换原理图到PCB"。对某一模块进行摆放时，在原理图中选中此模块相关器件，Shift+X 可快速跳转到 PCB 并选中相关器件，Ctrl+Shift+X 可将原理图中的器件布局传递到 PCB 。下面是一些常用快捷键的汇总：
 
@@ -170,7 +170,7 @@ BOOT Modes：
 建议电源线尽量宽，可以为标准对应关系的3~5倍，SMT32F103C8T6最大电流150mA，对应线宽小于0.15mm，这里选择3.3V线宽为15mil=0.381mm，5V线宽为20mil=0.508mm，如图：<div class='center' ><img src="https://www.writebug.com/static/uploads/2024/5/17/bf844da9dcb56c2ce16d5c0c617562d5.png 	" style="height: 600px"/></div>
 
 当仅剩地线GND未连接时，进行铺铜，将地线连接完毕，并检查有无错误：<div class='center' ><img src="https://www.writebug.com/static/uploads/2024/5/17/e70921650b64c5e8aab6e0ba795edd1c.png" style="height: 600px"/></div>
-## 四、物料表与焊接
+## 物料表与焊接图
 BOM表（简略）：
 - 主控芯片：
 	- STM32F103C8T6（或STM32F103CBT6，LQFP48封装）：1个

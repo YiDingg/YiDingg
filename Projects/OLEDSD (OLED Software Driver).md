@@ -1399,7 +1399,7 @@ const uint8_t example_image[] = {
 
 ```
 ---
-## 四、其它开源资料
+## 其它开源资料
 代码库中提供了多种版本的OLED驱动，占用内存较小的同时足以满足绝大多数OLED屏幕功能需求。除此之外，网上还有许多与OLED相关的优秀开源项目，下面列出了其中一部分：
 - [多级菜单快速移植框架](https://www.bilibili.com/video/BV1vT421X7vi) 
 - [OLED丝滑多级菜单UI](https://www.bilibili.com/video/BV1si4y1i7hh) 

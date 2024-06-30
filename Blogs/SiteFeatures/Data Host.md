@@ -6,7 +6,8 @@ When building your own blog site, it is crucial to select an appropriate image h
 
 Conclusion: 
 - <span style="color:red">img and small gif to Aliyun</span> by VS-PicGo
-- <span style="color:red">gif, video, audio to WB.Cloud</span> manually, <span style="color:red">pdf and other files to WB.Static</span> manually.
+- <span style="color:red">gif, video, audio to WB.Cloud</span> manually, <span style="color:red">pdf and other files to WB.Static</span> manually. (Or create a filefolder on WB.Cloud and provide the link)
+- <s>gif, video, audio, pdf and other files to WB.Cloud manually.</s>
 - <s>gif to TouTiao manually by PanLuo Uploading, gif, video, audio, pdf and other files to WB.Cloud manually.</s>
 
 Tools:
