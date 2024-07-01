@@ -6,9 +6,9 @@ Font: [0,400], [401,600], [600,1200], [1200,infty]
 
 :root {
   --fontsize-main: 0.95rem; /* -0.05rem */
-  --fontsize-h1: 1.9rem; /* -0.15rem */
-  --fontsize-h2: 1.6rem; /* -0.1rem */
-  --fontsize-h3: 1.4rem; /* -0.1rem */
+  --fontsize-h1: 2rem; /* -0.15rem */
+  --fontsize-h2: 1.8rem; /* -0.1rem */
+  --fontsize-h3: 1.6rem; /* -0.1rem */
   --fontsize-h4: 1.2rem; /* -0.05rem */
   --fontsize-h5: 1.1rem; /* -0.05rem */
   --fontsize-h6: 1rem; /* -0.05rem */
@@ -117,12 +117,12 @@ Font: [0,400], [401,600], [600,1200], [1200,infty]
   margin: 0 0 1rem 0;
 }
 .markdown-section h2 {
-  margin: 1.2rem 0 0.8rem 0;
+  margin: 1.5rem 0 0.8rem 0;
   padding-top: 0.45rem;
   border-top: rgba(128, 128, 128, 0.15) solid 3px;
 }
 .markdown-section h3 {
-  margin: 1rem 0 0.4rem 0;
+  margin: 1.3rem 0 0.4rem 0;
 }
 .markdown-section h4 {
   margin: 0.7rem 0 0.2rem 0;

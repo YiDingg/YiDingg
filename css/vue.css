@@ -772,11 +772,12 @@ body {
 }
 
 /* markdown content found on pages */
+
+/* .markdown-section strong, */
 .markdown-section h1,
 .markdown-section h2,
 .markdown-section h3,
-.markdown-section h4,
-.markdown-section strong {
+.markdown-section h4 {
   color: #312c50;
   font-weight: 600;
   font-family: "Microsoft JhengHei", "YouYuan", "Microsoft YaHei";
@@ -876,9 +877,9 @@ body {
 
 .markdown-section code {
   border-radius: 2px;
-  color: #ff2f63;
-  background-color: rgb(240, 240, 240);
-  border: #000 solid 1px;
+  color: #ff2f63e4;
+  background-color: rgb(244, 244, 244);
+  border: rgb(210, 210, 210) solid 1px;
   margin: 0 2px;
   padding: 0px 3px;
   white-space: pre-wrap;
