@@ -268,22 +268,26 @@ article ul {
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 details {
   background-color: rgb(255, 235, 235);
+  /*   border: rgba(0, 0, 0, 0) solid 1px; */
   margin: auto;
-  margin-top: 6px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   padding: 5px;
   border-radius: 5px;
   width: 80%;
   max-width: 700px;
 }
-details:hover {
-  color: #000;
-  background-color: rgb(255, 224, 224);
-}
-summary {
+/* details:hover {
+    background-color: rgb(255, 245, 245);
+  border: rgba(133, 133, 133, 0) solid 1px;
+} */
+details summary {
   cursor: pointer;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
 }
 details img {
-  width: 100%;
+  width: 97%;
 }
 
 /* Tips样式修改 */

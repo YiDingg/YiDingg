@@ -1,20 +1,18 @@
-<h2 align="center"> Hello!👋(●'◡'●) I'm Yi Ding.</h2>
-<p align="center">
+<h2 style="text-align:center;"> Hello!👋(●'◡'●) I'm Yi Ding.</h2>
+<div style="text-align:center;">
   • <a href="https://yidingg.github.io/YiDingg">My Personal Website</a><br>
   • <a href="https://github.com/YiDingg">My GitHub</a>
-</p>
+</div>
 
 About Me:
-- 🔭 I'm currently studying at [UCAS](https://www.ucas.ac.cn/) (University of Chinese Academy of Sciences)
-- 🤔 I'm looking for help with ...
+- 🔭 I'm currently studying EE (Electronic Engineering) at [UCAS](https://www.ucas.ac.cn/)
 - 📫 How to reach me: dingyi233@mails.ucas.ac.cn
-- ⚡ Fun fact: ...
+- ⚡ Fun fact: I used to be a semi-professional soccer player as a national level two athlete.
 
 My Technology Stack:
 - Latex
-- Markdown
 - Matlab
-- C Programming
+- C
 - MCU (STM32, C51)
 - PCB Design
 

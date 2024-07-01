@@ -457,6 +457,7 @@
 /*                                             */
 .markdown-section pre {
   /* 代码块样式 */
+  line-height: 1rem;
   background-color: #f8f8f8;
   border-radius: 5px;
   box-shadow: 0 5px 6px 0px rgb(0 0 0 / 40%);
@@ -466,6 +467,7 @@
 }
 .markdown-section pre code {
   /* 防止与inline code样式冲突 */
+  padding: 0;
   border: none;
   background-color: #f8f8f8;
 }
@@ -481,10 +483,7 @@
   position: absolute;
   width: 12px;
 }
-.markdown-section pre > code {
-  /* 调整间距 */
-  padding: 0;
-}
+
 /*                                             */
 /* ------------------------------------------- */
 

@@ -227,8 +227,8 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 Git 搭建步骤如下：
 <details>
 <summary> 1. 创建远程项目库 </summary>  
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-09.png"/>
 
+<div class='center'><img src='https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-09.png'/></div>
 
 </details>
 
