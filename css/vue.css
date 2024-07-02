@@ -433,10 +433,10 @@ body.sticky .sidebar-toggle {
     color: #000;
 }
 
-.markdown-section td {
+/* .markdown-section td {
     border: 1px solid #acacac;
     padding: 6px 13px;
-}
+} 转MyStyle.css*/
 
 .markdown-section tr {
     border-top: 1px solid #ccc;

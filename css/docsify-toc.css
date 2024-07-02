@@ -99,6 +99,7 @@ aside.nav.nothing {
     .page_toc {
         margin-top: 0px;
         width: 100%;
+        max-height: 400px;
     }
 }
 
@@ -110,7 +111,7 @@ aside.nav.nothing {
     background-color: #f8f8f8;
     border-radius: 2px;
     color: #e96900;
-    font-family: "Roboto Mono", Monaco, courier, monospace;
+    font-family: "Roboto Mono", "Monaco", courier, monospace;
     font-size: 0.8rem;
     margin: 0 2px;
     padding: 3px 5px;

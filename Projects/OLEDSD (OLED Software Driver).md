@@ -67,10 +67,10 @@ Keil 中打开 project，下载代码源文件后，直接复制到工程文件�
 下面给出添加中文字符到字库的教程：
 我们以添加 "32x32，宋体，无加粗/斜体/下划线" 为例：
 
-<div class='center'>
+<div class='center'><div style='text-align:left'>
 
-| 步骤 | 图片 |
-| :-:| :-: |
+ |<div class='center'>步骤</div>| <div class='center'>图片</div> |
+ |-| - |
  | 1.  打开取模软件 PCtoLCD2002，点击齿轮 "设置"，取模软件下载地址：[百度网盘](https://pan.baidu.com/s/1DX2pmPN01FKTvX6exyz3IA?pwd=1479) ，提取码1479 |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/OLEDSD (OLED Software Driver)--2024-06-29-00-22-00.png"/></div>|
  | 2. 参照右图设置红框内的选项 |<div class='center'><img src='https://www.writebug.com/static/uploads/2024/4/29/db9e36b251c9f61ef9d7f12d8e4d83d4.png'/></div> |
  | 3. 对于NxN像素的字符，依据公式 `Y = N*( N/8 + ((N%8)?1:0) )` 确定单个字符所占字节数（"/" 表示整除，"%"表示取余，例如N=12时Y=24 ）。这里 N = 32，因此 Y = 128。   | - |
@@ -78,7 +78,7 @@ Keil 中打开 project，下载代码源文件后，直接复制到工程文件�
  | 5. 点击 "确定"，回到主界面调整字宽、字高、字体、是否斜体/粗体 |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/OLEDSD (OLED Software Driver)--2024-06-29-00-22-49.png"/></div>|
  |6. 输入需要转换的字，点击 "生成字模"，得到两段内容|<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/OLEDSD (OLED Software Driver)--2024-06-29-00-22-55.png"/></div><div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/OLEDSD (OLED Software Driver)--2024-06-29-00-23-03.png"/></div>|
  |7. 将两段内容复制到 OLED_font.h 相应数组中，其中第一段内容是方便我们查找字符的索引，将之置于注释环境|<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/OLEDSD (OLED Software Driver)--2024-06-29-00-23-06.png"/></div>|
-</div>
+</div></div>
 
 至此完成中文字符的添加，调用 OLED_ShowChinese() 函数即可显示。
 
@@ -91,15 +91,14 @@ const uint8_t /*_img_name_*/_Data[] = {
 /*_img_data_*/};const Image /*_img_name_*/_Img = {/*_w_*/, /*_h_*/, /*_img_name_*/Data};
 ```
 
-<div class='center'>
+<div class='center'><div style='text-align:left;'>
 
-| 步骤 | 图片 |
-| ------ | ------ |
+ |<div class='center'>步骤</div>| <div class='center'>图片</div> |
+ | - | - |
  | 1. 在 "生成模版" 一栏，将上面的代码复制进去 |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/OLEDSD (OLED Software Driver)--2024-06-29-00-25-29.png"/></div> |
  | 2. 选择图片，进行相关设置。需注意图片名称即为数组名（勿含中文字符），取模方式选择 "列行式"，其它可自行设置 | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/OLEDSD (OLED Software Driver)--2024-06-29-00-25-35.png"/></div> |
  | 3. 复制生成的代码，黏贴到 OLED_font.h 中（建议新建 OLED_Image.h 文件专门用于存放图片） |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/OLEDSD (OLED Software Driver)--2024-06-29-00-25-42.png"/></div>|
-
-</div>
+</div></div>
 
 至此完成图片取模，使用 OLED_ShowPicture() 函数即可显示图片，示例效果如下：
 

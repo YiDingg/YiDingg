@@ -3,8 +3,10 @@
 
 - 📓 **Blogs**
   - Mixed
+    - [Writing Standards of Easy-read Technical Document](Blogs\Mixed\Writing%20Standards%20of%20Easy-read%20Technical%20Document.md)
     - [Awesome Tools and Resources](Blogs\Mixed\Awesome%20Tools%20and%20Resources.md)
     - [Nice VSCode Extensions](Blogs\Mixed\Nice%20VSCode%20Extenstions.md)
+    - [个人网站搭建](Blogs\Mixed\个人网站搭建.md)
     - [嘉立创免费下单教程](Blogs\Mixed\嘉立创免费下单教程.md)
     - [结构体及其指针在树中的应用](Blogs\Mixed\结构体及其指针在树中的应用.md)
     - [手把手教你用PWM实现呼吸灯(标准库)](Blogs\Mixed\手把手教你用PWM实现呼吸灯(标准库).md)
@@ -13,7 +15,6 @@
     - [Syntax Examples](Blogs\SiteFeatures\Syntax%20Examples.md)
     - [Custom Component](Blogs\SiteFeatures\Custom%20Component.md)
     - [My Notes Structure](Blogs\SiteFeatures\My%20Notes%20Structure.md)
-    - [个人网站搭建](Blogs\SiteFeatures\个人网站搭建.md)
 
   - Optics
     - [光学笔记汇总](Blogs\Optics\光学笔记汇总.md)

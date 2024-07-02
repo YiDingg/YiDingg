@@ -28,8 +28,6 @@ Font: [0,400], [401,600], [600,1200], [1200,infty]
     width: auto;
     max-width: 100%;
     display: table;
-    margin-left: auto;
-    margin-right: auto;
     margin: 0 auto;
     text-align: center;
 }
@@ -119,6 +117,119 @@ span.script * {
     cursor: pointer;
 }
 
+/* 自定义右侧边栏ul列表 */
+article ul {
+    margin-top: 0;
+}
+
+/* 自定义details手风琴 */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+details {
+    background-color: rgb(255, 235, 235);
+    /*   border: rgba(0, 0, 0, 0) solid 1px; */
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 700px;
+}
+/* details:hover {
+    background-color: rgb(255, 245, 245);
+    border: rgba(133, 133, 133, 0) solid 1px;
+} */
+details summary {
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+details img {
+    width: 97%;
+}
+
+/* Tips样式修改 */
+.markdown-section p.tip {
+    padding: 6px 24px 6px 26px;
+    margin: 12px;
+    margin-left: 6px;
+}
+
+/* h1,h2,h3标题样式 */
+h1 {
+    text-align: center;
+}
+h1 .anchor span {
+    color: var(--color-h1);
+}
+h2 .anchor span {
+    color: var(--color-h2);
+}
+h3 .anchor span {
+    color: var(--color-h3);
+}
+h4 .anchor span {
+    color: var(--color-h4);
+}
+h2::before {
+    content: "& ";
+    color: var(--color-h2);
+}
+
+/* copyright */
+footer {
+    padding-bottom: 25px;
+}
+
+/* 解决docsify-chat插件与img设置冲突 */
+.chat-panel .main-area .chat-message .avatar img {
+    max-width: 100%;
+}
+
+/* 右侧Toc样式修改 */
+@media screen and (min-width: 769px) {
+    .page_toc p.title {
+        width: auto;
+        text-align: center;
+        text-shadow: 2px 2px 5px gray;
+        color: rgba(0, 0, 0, 0.9);
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* 屏幕 [0,768] 时使用 */
+    .page_toc p.title {
+        text-align: left;
+    }
+}
+
+.page_toc ul li a span {
+    color: var(--color-h2);
+    font-weight: 550;
+}
+.page_toc ul li ul li a span {
+    color: var(--color-h3);
+    font-weight: 300;
+}
+
+/* body main section article audio {
+    transform: translateX(0px);
+}
+body.close main section article audio {
+    transform: translateX(100px);
+} */
+
+/* ---------------------------------------- */
+/* ---------------------------------------- */
+/* ---------------------------------------- */
+/* ---------------------------------------- */
+/* -------下面是需要进行屏幕适配的参数------- */
+/* ---------------------------------------- */
+/* ---------------------------------------- */
+/* ---------------------------------------- */
+
 /* 先设置总体，再对不同屏幕fontsize适配 */
 .markdown-section {
     max-width: 95%;
@@ -148,8 +259,20 @@ span.script * {
 .nav {
     width: 100%;
 }
+aside.nav:empty {
+    /* 无内容时取消占位 */
+    width: 0;
+    overflow: hidden;
+}
 
-/* 适配fontsize和右侧navbar */
+/* 设置表格最小单元格样式 */
+.markdown-section td {
+    /* 覆盖vue.css原有样式 */
+    border: 1px solid #acacac;
+    padding: 6px 3px; /* 第一个是上下，第二个是左右 */
+}
+
+/* 适配fontsize，右侧navbar，表格最小单元格样式 */
 @media screen and (max-width: 400px) {
     .nav {
         width: 100%;
@@ -265,104 +388,3 @@ span.script * {
         font-size: var(--fontsize-h6);
     }
 }
-
-/* 自定义文章ul列表 */
-article ul {
-    margin-top: 0;
-}
-
-/* 自定义details手风琴 */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-details {
-    background-color: rgb(255, 235, 235);
-    /*   border: rgba(0, 0, 0, 0) solid 1px; */
-    margin: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 5px;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 700px;
-}
-/* details:hover {
-    background-color: rgb(255, 245, 245);
-  border: rgba(133, 133, 133, 0) solid 1px;
-} */
-details summary {
-    cursor: pointer;
-    color: rgb(0, 0, 0);
-    font-weight: 500;
-}
-details img {
-    width: 97%;
-}
-
-/* Tips样式修改 */
-.markdown-section p.tip {
-    padding: 6px 24px 6px 26px;
-    margin: 12px;
-    margin-left: 6px;
-}
-
-/* h1,h2,h3标题样式 */
-h1 {
-    text-align: center;
-}
-h1 .anchor span {
-    color: var(--color-h1);
-}
-h2 .anchor span {
-    color: var(--color-h2);
-}
-h3 .anchor span {
-    color: var(--color-h3);
-}
-h2::before {
-    content: "& ";
-    color: var(--color-h2);
-}
-
-/* copyright */
-footer {
-    padding-bottom: 25px;
-}
-
-/* 解决docsify-chat插件与img设置冲突 */
-.chat-panel .main-area .chat-message .avatar img {
-    max-width: 100%;
-}
-
-/* 右侧Toc样式修改 */
-@media screen and (min-width: 769px) {
-    .page_toc p.title {
-        width: auto;
-        text-align: center;
-        text-shadow: 2px 2px 5px gray;
-        color: rgba(0, 0, 0, 0.9);
-        font-size: 1.5rem;
-        font-weight: 500;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    /* 屏幕 [0,768] 时使用 */
-    .page_toc p.title {
-        text-align: left;
-    }
-}
-
-.page_toc ul li a span {
-    color: var(--color-h2);
-    font-weight: 550;
-}
-.page_toc ul li ul li a span {
-    color: var(--color-h3);
-    font-weight: 300;
-}
-
-/* body main section article audio {
-  transform: translateX(0px);
-}
-body.close main section article audio {
-  transform: translateX(100px);
-} */
