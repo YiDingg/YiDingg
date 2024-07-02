@@ -4,6 +4,8 @@
 
 - [中文技术文档写作规范](https://github.com/ruanyf/document-style-guide)
 - [ATTRIBUTION-SHAREALIKE 4.0 INTERNATIONAL(署名共享协议4.0国际版)](https://creativecommons.org/licenses/by-sa/4.0/)
+- [Wally Mouse (摇摇鼠)](https://yys.tanpok.com/)
+
 
 ### Programming
 
@@ -11,6 +13,9 @@
 - [Runoob (菜鸟网站)](https://www.runoob.com/): numerous programming tutorials and reference materials are provided, and lots of awesome tools are available.
 - [Regular Expressions (正则表达式)](https://www.jyshare.com/front-end/854/)
 - [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)
+- [Hello算法](https://www.hello-algo.com/chapter_hello_algo/): learn algorithms and data structures online, completely free.
+- [代码小抄](https://www.rdonly.com/archives/7502): 
+- [华中科技大学开源镜像站](https://mirrors.hust.edu.cn/)
 
 ### Calculation and Graph
 

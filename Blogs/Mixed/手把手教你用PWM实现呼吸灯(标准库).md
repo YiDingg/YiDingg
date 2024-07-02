@@ -122,12 +122,12 @@ int main(void){
 ```
 上面的例子中，我们只启用了TIM3的两个通道(Channel3, Channel4)，分别对应B0、B1口。在面包板上，将LED正极与单片机VCC口连接，负极分别于B0、B1口连，编译并烧录程序。
 可以看到，B0口LED（左）亮度低，B1口LED（右）亮度高，见下图：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/手把手教你用PWM实现呼吸灯(标准库)--2024-06-23-23-20-06.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-02-10-00-13_手把手教你用PWM实现呼吸灯(标准库)_.png"/></div>
 
 
 将两个通道的有效占空比互换（即调换两者的比较值CRR，语句即为TIM3_Configuration函数中的 "TIM_OCInitStructure.TIM_Pulse = 90" 和 "TIM_OCInitStructure.TIM_Pulse = 5"，把90和5互换 ），重新编译、烧录。
 可以看到，B0口LED（左）亮度高，B1口LED（右）亮度低，见下图：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/手把手教你用PWM实现呼吸灯(标准库)--2024-06-23-23-20-11.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-02-09-59-59_手把手教你用PWM实现呼吸灯(标准库)_.png"/></div>
 
 
 这是符合我们预期的，因为在外面的例子中，计数值<=比较值时，输出有效电平（被设置为了低电平），此时LED发光。因此比较值越大，LED发光时间占比越大，对应亮度越高。
@@ -257,12 +257,13 @@ int main(void)
 /* 这里把上面封装好的函数搬下来（一共三个） */
 ```
 将四个LED共阳极接到电源VCC，阴极分别接到四个端口，设置所需的函数参数。这里选择了开启全部通道，PWM频率100Hz，全部都为低电平有效，且占空比为 {0,30,60,100}，效果如下：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/手把手教你用PWM实现呼吸灯(标准库)--2024-06-23-23-20-19.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-02-09-58-26_手把手教你用PWM实现呼吸灯(标准库)_.png"/></div>
 将占空比改为 {100,10,50,0}，效果如下（为了便于分辨亮度差异，四个LED都使用了相同颜色）：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/手把手教你用PWM实现呼吸灯(标准库)--2024-06-23-23-20-21.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-02-09-59-02_手把手教你用PWM实现呼吸灯(标准库)_.png"/></div>
 可以看到，现象完全符合我们的预期（有效占空比为0的灯看起来没有完全熄灭，是受到旁边LED的光照影响，实际上是完全熄灭的。）
 我们将四个通道有效占空比设为{0,0,0,0}，可以看到LED完全熄灭：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/手把手教你用PWM实现呼吸灯(标准库)--2024-06-23-23-20-24.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-02-10-02-36_手把手教你用PWM实现呼吸灯(标准库)_.png"/></div>
 
 ### 3. 呼吸灯控制
 

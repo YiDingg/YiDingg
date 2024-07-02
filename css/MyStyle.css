@@ -5,92 +5,102 @@ Font: [0,400], [401,600], [600,1200], [1200,infty]
 */
 
 :root {
-  --fontsize-main: 0.95rem; /* -0.05rem */
-  --fontsize-h1: 2rem; /* -0.15rem */
-  --fontsize-h2: 1.8rem; /* -0.1rem */
-  --fontsize-h3: 1.6rem; /* -0.1rem */
-  --fontsize-h4: 1.2rem; /* -0.05rem */
-  --fontsize-h5: 1.1rem; /* -0.05rem */
-  --fontsize-h6: 1rem; /* -0.05rem */
+    --fontsize-main: 0.9rem; /* -0.05rem */
+    --fontsize-h1: 2rem; /* -0.15rem */
+    --fontsize-h2: 1.8rem; /* -0.1rem */
+    --fontsize-h3: 1.6rem; /* -0.1rem */
+    --fontsize-h4: 1.2rem; /* -0.05rem */
+    --fontsize-h5: 1.1rem; /* -0.05rem */
+    --fontsize-h6: 1rem; /* -0.05rem */
 
-  --mobile-width: 768px;
+    --mobile-width: 768px;
 
-  --color-h1: rgba(0, 0, 0, 0.9);
-  --color-h2: rgb(110, 0, 200);
-  --color-h3: rgba(110, 0, 200, 0.8);
-  --color-h4: rgba(110, 0, 200, 0.6);
-  --color-h5: rgba(110, 0, 200, 0.4);
+    --color-h1: rgba(0, 0, 0, 0.9);
+    --color-h2: rgb(110, 0, 200);
+    --color-h3: rgba(110, 0, 200, 0.8);
+    --color-h4: rgba(110, 0, 200, 0.6);
+    --color-h5: rgba(110, 0, 200, 0.4);
 }
 
 /* 自定义居中类 */
 .center {
-  /* 普通居中 */
-  width: auto;
-  max-width: 100%;
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
-  margin: 0 auto;
-  text-align: center;
+    /* 普通居中 */
+    width: auto;
+    max-width: 100%;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 自定义script */
+span.script {
+    font-size: calc(var(--fontsize-main) * 0.6);
+    color: rgb(190, 190, 190);
+}
+span.script * {
+    font-size: calc(var(--fontsize-main) * 0.6);
+    color: rgb(190, 190, 190);
 }
 
 .center-screen {
-  /* 全屏居中 */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    /* 全屏居中 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* 不同屏幕video,img,object适配 */
 @media screen and (max-width: 500px) {
-  article img,
-  article video,
-  article object {
-    max-width: 90%;
-  }
+    article img,
+    article video,
+    article object {
+        max-width: 90%;
+    }
 }
 
 @media screen and (min-width: 501px) and (max-width: 1000px) {
-  article img,
-  article video,
-  article object {
-    max-width: 80%;
-  }
+    article img,
+    article video,
+    article object {
+        max-width: 80%;
+    }
 }
 
 @media screen and (min-width: 1000px) {
-  article img,
-  article video,
-  article object {
-    max-width: 850px;
-  }
+    article img,
+    article video,
+    article object {
+        max-width: 850px;
+    }
 }
 
 .markdown-section td img {
-  /* 控制表格中的图片 */
-  width: auto;
-  max-width: 90%;
+    /* 控制表格中的图片 */
+    width: auto;
+    max-width: 90%;
 }
 
 /* 自定义左侧导航栏 */
 .sidebar {
-  /* 调整sidebar宽度 */
-  width: 300px;
-  max-width: 60%;
-  padding: 15px;
+    /* 调整sidebar宽度 */
+    width: 300px;
+    max-width: 60%;
+    padding: 15px;
 }
 
 .sidebar-toggle {
-  /* 调整sidebar的小方框 */
-  padding-left: 12px;
-  padding-bottom: 12px;
+    /* 调整sidebar的小方框 */
+    padding-left: 12px;
+    padding-bottom: 12px;
 }
 
 .sidebar ul li.active > a {
-  border-right: none;
-  border-left: rgb(71, 79, 179) solid 5px;
-  padding-left: 5px;
+    border-right: none;
+    border-left: rgb(71, 79, 179) solid 5px;
+    padding-left: 5px;
 }
 
 /*                                                              !!!这条不起作用，待修改!!!  */
@@ -101,256 +111,253 @@ Font: [0,400], [401,600], [600,1200], [1200,infty]
 } */
 
 .sidebar-toggle span {
-  /* 调整sidebar三横的大小 */
-  margin-left: 3px;
-  margin-bottom: 5px;
-  width: 25px;
-  height: 4px;
-  cursor: pointer;
+    /* 调整sidebar三横的大小 */
+    margin-left: 3px;
+    margin-bottom: 5px;
+    width: 25px;
+    height: 4px;
+    cursor: pointer;
 }
 
 /* 先设置总体，再对不同屏幕fontsize适配 */
 .markdown-section {
-  max-width: 95%;
+    max-width: 95%;
 }
 .markdown-section h1 {
-  margin: 0 0 1rem 0;
+    margin: 0 0 1rem 0;
 }
 .markdown-section h2 {
-  margin: 1.5rem 0 0.8rem 0;
-  padding-top: 0.45rem;
-  border-top: rgba(128, 128, 128, 0.15) solid 3px;
+    margin: 1.5rem 0 0.8rem 0;
+    padding-top: 0.45rem;
+    border-top: rgba(128, 128, 128, 0.15) solid 3px;
 }
 .markdown-section h3 {
-  margin: 1.3rem 0 0.4rem 0;
+    margin: 1.3rem 0 0.4rem 0;
 }
 .markdown-section h4 {
-  margin: 0.7rem 0 0.2rem 0;
+    margin: 0.7rem 0 0.2rem 0;
 }
 .markdown-section h5 {
-  margin: 0;
+    margin: 0;
 }
 .markdown-section h6 {
-  margin: 0;
+    margin: 0;
 }
 
+/* 右侧边栏设置(本文件中的某个设置覆盖了docsify-toc.css，不能交换css引入顺序) */
+.nav {
+    width: 100%;
+}
+
+/* 适配fontsize和右侧navbar */
 @media screen and (max-width: 400px) {
-  .markdown-section {
-    font-size: calc(var(--fontsize-main) - 0.15rem);
-    max-width: 95%;
-  }
-
-  .markdown-section h1 {
-    font-size: calc(var(--fontsize-h1) - 0.45rem);
-  }
-
-  .markdown-section h2 {
-    font-size: calc(var(--fontsize-h2) - 0.3rem);
-  }
-
-  .markdown-section h3 {
-    font-size: calc(var(--fontsize-h3) - 0.3rem);
-  }
-
-  .markdown-section h4 {
-    font-size: calc(var(--fontsize-h4) - 0.15rem);
-  }
-
-  .markdown-section h5 {
-    font-size: calc(var(--fontsize-h5) - 0.15rem);
-  }
-
-  .markdown-section h6 {
-    font-size: calc(var(--fontsize-h6) - 0.15rem);
-  }
+    .nav {
+        width: 100%;
+    }
+    .markdown-section {
+        font-size: calc(var(--fontsize-main) - 0.15rem);
+        max-width: 95%;
+    }
+    .markdown-section h1 {
+        font-size: calc(var(--fontsize-h1) - 0.45rem);
+    }
+    .markdown-section h2 {
+        font-size: calc(var(--fontsize-h2) - 0.3rem);
+    }
+    .markdown-section h3 {
+        font-size: calc(var(--fontsize-h3) - 0.3rem);
+    }
+    .markdown-section h4 {
+        font-size: calc(var(--fontsize-h4) - 0.15rem);
+    }
+    .markdown-section h5 {
+        font-size: calc(var(--fontsize-h5) - 0.15rem);
+    }
+    .markdown-section h6 {
+        font-size: calc(var(--fontsize-h6) - 0.15rem);
+    }
 }
 
 @media screen and (min-width: 401px) and (max-width: 900px) {
-  /* 这是VC中侧边栏宽度所在区间 */
-  .markdown-section {
-    font-size: calc(var(--fontsize-main) - 0.1rem);
-    max-width: 85%;
-  }
+    /* 这是VC中侧边栏宽度所在区间 */
+    .nav {
+        width: 220px;
+    }
+    .markdown-section {
+        font-size: calc(var(--fontsize-main) - 0.1rem);
+        max-width: 85%;
+    }
+    .markdown-section h1 {
+        font-size: calc(var(--fontsize-h1) - 0.3rem);
+    }
+    .markdown-section h2 {
+        font-size: calc(var(--fontsize-h2) - 0.2rem);
+    }
+    .markdown-section h3 {
+        font-size: calc(var(--fontsize-h3) - 0.2rem);
+    }
+    .markdown-section h4 {
+        font-size: calc(var(--fontsize-h4) - 0.1rem);
+    }
 
-  .markdown-section h1 {
-    font-size: calc(var(--fontsize-h1) - 0.3rem);
-  }
-
-  .markdown-section h2 {
-    font-size: calc(var(--fontsize-h2) - 0.2rem);
-  }
-
-  .markdown-section h3 {
-    font-size: calc(var(--fontsize-h3) - 0.2rem);
-  }
-
-  .markdown-section h4 {
-    font-size: calc(var(--fontsize-h4) - 0.1rem);
-  }
-
-  .markdown-section h5 {
-    font-size: calc(var(--fontsize-h5) - 0.1rem);
-  }
-
-  .markdown-section h6 {
-    font-size: calc(var(--fontsize-h6) - 0.1rem);
-  }
+    .markdown-section h5 {
+        font-size: calc(var(--fontsize-h5) - 0.1rem);
+    }
+    .markdown-section h6 {
+        font-size: calc(var(--fontsize-h6) - 0.1rem);
+    }
 }
 
 @media screen and (min-width: 901px) and (max-width: 1200px) {
-  .markdown-section {
-    font-size: calc(var(--fontsize-main) - 0.05rem);
-    max-width: 75%;
-  }
-
-  .markdown-section h1 {
-    font-size: calc(var(--fontsize-h1) - 0.15rem);
-  }
-
-  .markdown-section h2 {
-    font-size: calc(var(--fontsize-h2) - 0.1rem);
-  }
-
-  .markdown-section h3 {
-    font-size: calc(var(--fontsize-h3) - 0.1rem);
-  }
-
-  .markdown-section h4 {
-    font-size: calc(var(--fontsize-h4) - 0.05rem);
-  }
-
-  .markdown-section h5 {
-    font-size: calc(var(--fontsize-h5) - 0.05rem);
-  }
-
-  .markdown-section h6 {
-    font-size: calc(var(--fontsize-h6) - 0.05rem);
-  }
+    .nav {
+        width: 250px;
+    }
+    .markdown-section {
+        font-size: calc(var(--fontsize-main) - 0.05rem);
+        width: 80%;
+    }
+    .markdown-section h1 {
+        font-size: calc(var(--fontsize-h1) - 0.15rem);
+    }
+    .markdown-section h2 {
+        font-size: calc(var(--fontsize-h2) - 0.1rem);
+    }
+    .markdown-section h3 {
+        font-size: calc(var(--fontsize-h3) - 0.1rem);
+    }
+    .markdown-section h4 {
+        font-size: calc(var(--fontsize-h4) - 0.05rem);
+    }
+    .markdown-section h5 {
+        font-size: calc(var(--fontsize-h5) - 0.05rem);
+    }
+    .markdown-section h6 {
+        font-size: calc(var(--fontsize-h6) - 0.05rem);
+    }
 }
 
 @media screen and (min-width: 1201px) {
-  .markdown-section {
-    font-size: var(--fontsize-main);
-    max-width: 83%;
-  }
-
-  .markdown-section h1 {
-    font-size: var(--fontsize-h1);
-  }
-
-  .markdown-section h2 {
-    font-size: var(--fontsize-h2);
-  }
-
-  .markdown-section h3 {
-    font-size: var(--fontsize-h3);
-  }
-
-  .markdown-section h4 {
-    font-size: var(--fontsize-h4);
-  }
-
-  .markdown-section h5 {
-    font-size: var(--fontsize-h5);
-  }
-
-  .markdown-section h6 {
-    font-size: var(--fontsize-h6);
-  }
+    .nav {
+        width: 300px;
+    }
+    .markdown-section {
+        font-size: var(--fontsize-main);
+        width: 75%;
+        max-width: 900px;
+        margin: auto;
+    }
+    .markdown-section h1 {
+        font-size: var(--fontsize-h1);
+    }
+    .markdown-section h2 {
+        font-size: var(--fontsize-h2);
+    }
+    .markdown-section h3 {
+        font-size: var(--fontsize-h3);
+    }
+    .markdown-section h4 {
+        font-size: var(--fontsize-h4);
+    }
+    .markdown-section h5 {
+        font-size: var(--fontsize-h5);
+    }
+    .markdown-section h6 {
+        font-size: var(--fontsize-h6);
+    }
 }
 
 /* 自定义文章ul列表 */
 article ul {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 /* 自定义details手风琴 */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 details {
-  background-color: rgb(255, 235, 235);
-  /*   border: rgba(0, 0, 0, 0) solid 1px; */
-  margin: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 5px;
-  border-radius: 5px;
-  width: 80%;
-  max-width: 700px;
+    background-color: rgb(255, 235, 235);
+    /*   border: rgba(0, 0, 0, 0) solid 1px; */
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 700px;
 }
 /* details:hover {
     background-color: rgb(255, 245, 245);
   border: rgba(133, 133, 133, 0) solid 1px;
 } */
 details summary {
-  cursor: pointer;
-  color: rgb(0, 0, 0);
-  font-weight: 500;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
 }
 details img {
-  width: 97%;
+    width: 97%;
 }
 
 /* Tips样式修改 */
 .markdown-section p.tip {
-  padding: 6px 24px 6px 26px;
-  margin: 12px;
-  margin-left: 6px;
+    padding: 6px 24px 6px 26px;
+    margin: 12px;
+    margin-left: 6px;
 }
 
 /* h1,h2,h3标题样式 */
 h1 {
-  text-align: center;
+    text-align: center;
 }
 h1 .anchor span {
-  color: var(--color-h1);
+    color: var(--color-h1);
 }
 h2 .anchor span {
-  color: var(--color-h2);
+    color: var(--color-h2);
 }
 h3 .anchor span {
-  color: var(--color-h3);
+    color: var(--color-h3);
 }
 h2::before {
-  content: "& ";
-  color: var(--color-h2);
+    content: "& ";
+    color: var(--color-h2);
 }
 
 /* copyright */
 footer {
-  padding-bottom: 25px;
+    padding-bottom: 25px;
 }
 
 /* 解决docsify-chat插件与img设置冲突 */
 .chat-panel .main-area .chat-message .avatar img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 /* 右侧Toc样式修改 */
 @media screen and (min-width: 769px) {
-  .page_toc p.title {
-    width: auto;
-    text-align: center;
-    text-shadow: 2px 2px 5px gray;
-    color: rgba(0, 0, 0, 0.9);
-    font-size: 1.5rem;
-    font-weight: 500;
-  }
+    .page_toc p.title {
+        width: auto;
+        text-align: center;
+        text-shadow: 2px 2px 5px gray;
+        color: rgba(0, 0, 0, 0.9);
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
 }
 
 @media screen and (max-width: 768px) {
-  /* 屏幕 [0,768] 时使用 */
-  .page_toc p.title {
-    text-align: left;
-  }
+    /* 屏幕 [0,768] 时使用 */
+    .page_toc p.title {
+        text-align: left;
+    }
 }
 
 .page_toc ul li a span {
-  color: var(--color-h2);
-  font-weight: 550;
+    color: var(--color-h2);
+    font-weight: 550;
 }
 .page_toc ul li ul li a span {
-  color: var(--color-h3);
-  font-weight: 300;
+    color: var(--color-h3);
+    font-weight: 300;
 }
 
 /* body main section article audio {

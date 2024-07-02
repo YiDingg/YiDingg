@@ -42,7 +42,8 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 
 
 ### 1. Git使用演示
-为了更好的演示效果，我们在桌面新建一个文件夹 Git_Test，在其中新建 test.tex 文件，并以此进行演示。<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-16.png"/>
+为了更好的演示效果，我们在桌面新建一个文件夹 Git_Test，在其中新建 test.tex 文件，并以此进行演示。
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-02-10-07-39_Git教程与提交规范_.png"/></div>
 
 下面的步骤，既可以在 Windosw PowerShell 中进行，也可以在 Git Bash 中进行，步骤完全相同，这里以 Git Bash 为例。
 

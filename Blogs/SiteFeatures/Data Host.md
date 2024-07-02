@@ -2,24 +2,22 @@
 
 When building your own blog site, it is crucial to select an appropriate image host (image bank, image bed) or data host. Here are our suggestions and reasons.
 
-<b>
-
-Conclusion: 
+**Conclusion:**
 - <span style="color:red">img and small gif to Aliyun</span> by VS-PicGo
 - <span style="color:red">gif, video, audio to WB.Cloud</span> manually, <span style="color:red">pdf and other files to WB.Static</span> manually. (Or create a filefolder on WB.Cloud and provide the link)
 - <s>gif, video, audio, pdf and other files to WB.Cloud manually.</s>
 - <s>gif to TouTiao manually by PanLuo Uploading, gif, video, audio, pdf and other files to WB.Cloud manually.</s>
 
-Tools:
-- Use<!--  [C1N](https://www.c1n.cn/) or --> [Short](https://d.igdu.xyz/) or [C1N](https://www.c1n.cn/) to create a short link for your file.
-- Use [SINA](https://www.sina.lt/restore.html) to restore the short link.
-- Use [Oplimize LLA](https://imagecompressor.com)(70 quality recommanded) or [TinyPNG](https://tinypng.com/) to compress the image and gif.
+**Tools:**
+- Use [Tiomg](https://tiomg.org/compress-image)(img) and [Docsmall](https://docsmall.com/gif-compress)(gif) <span class='script'>or [Oplimize LLA](https://imagecompressor.com) or [TinyPNG](https://tinypng.com/) or [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
 - Use [Video To Edit](https://www.video2edit.com) to compress the video.
 - Use [YouCompress](https://www.youcompress.com/) to compress mp3.
 - Use [I Love PDF](https://www.ilovepdf.com/) to compress pdf.
+- Use<!--   [C1N](https://www.c1n.cn/) or --> [Short](https://d.igdu.xyz/)<span class='script'> or [C1N](https://www.c1n.cn/)</span> to create a short link for your file.
+- Use [SINA](https://www.sina.lt/restore.html) to restore the short link.
 - Use [Screen to GIF]() to convert video into gif if you need.
 
-</b>
+
 
 Results Show:
 
@@ -27,14 +25,17 @@ Results Show:
 
 |Type|display|
 |:-:|:-:|
- |img|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/_coverpage-2024-06-20.jpeg" alt="_coverpage-2024-06-20" style="width:200px">|
- |gif|<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/DataHost--2024-06-29-00-36-46.gif"/></div>|
+ |img|<div class="center" style="width:150px" ><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-02-13-46-06_Data Host_.png"/></div>|
+ |gif|<div class="center" style="width:150px"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-02-10-07-12_Data Host_.gif"/></div>|
  |video|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://d.igdu.xyz/mJmX" type="video/mp4"></video>|
  |pdf|below|
 <!-- 视频的另一地址：https://www.writebug.com/git/YiDingg/WB.VideoBank/raw/branch/main/video.mp4 -->
 
 </div>
 
+```pdf
+https://www.writebug.com/git/YiDingg/GitHub_YiDingg_pdf/raw/branch/main/Linear%20Algebra%202%20notes.pdf
+```
 
 
 ## Host Advice
@@ -54,7 +55,7 @@ We may change to use ... if :
 
 
 !> **<span style='color:red'>Attention:</span>**<br>
-Though you can use GitHub's repo for free, we do not recommand GitHub as a host because it does not fit GitHub's original intention. GitHub will manually review your repo that reaches 1G, and your repo <font color='red'>(even account)</font> might be banned if they find that you are using the repo as an image host or data bank.
+Though you can use GitHub's repo for free, we do not recommand GitHub as a host because it does not fit GitHub's original intention. GitHub will manually review your repo that reaches 1G, and your repo <span color='red'>(even account)</span> might be banned if they find that you are using the repo as an image host or data bank.
 
 ## Reasons
 
@@ -141,6 +142,7 @@ Here are the test results of image hosts.
 <div class='center'><table><tr>
 <th>local site<br>(use'/')</th><th>WB.Git</th><th>WB.Cloud</th><th>WB.Static</th><th>GitHub(gcore)</th><th>GitHub(cdn)</th><th>GitHub(testingcf)</th>
 <tr><td><div class='pdftest'>
+<!-- local site -->
 
 ```pdf
 pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf
@@ -149,6 +151,7 @@ pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf
 
 
 <td><div class='pdftest'>
+<!-- WB.Git -->
 
 ```pdf
 https://www.writebug.com/git/YiDingg/GitHub_YiDingg_pdf/raw/branch/main/Linear%20Algebra%202%20notes.pdf
@@ -157,6 +160,7 @@ https://www.writebug.com/git/YiDingg/GitHub_YiDingg_pdf/raw/branch/main/Linear%2
 
 
 <td><div class='pdftest'>
+<!-- WB.Cloud -->
 
 ```pdf
 https://d.igdu.xyz/KMo7
@@ -165,14 +169,16 @@ https://d.igdu.xyz/KMo7
 
 
 <td><div class='pdftest'>
+<!-- WB.Static -->
 
 ```pdf
-https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/b93a6aa958995d58aa34ce672f69fc72.pdf
+https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/7/2/ec78b3b3115617fa5fa35916c2dbbadf.pdf
 ```
 </div></td>
 
 
 <td><div class='pdftest'>
+<!-- GitHub(gcore) -->
 
 ```pdf
 https:https://gcore.jsdelivr.net/gh/YiDingg/YiDingg/pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf
@@ -181,6 +187,7 @@ https:https://gcore.jsdelivr.net/gh/YiDingg/YiDingg/pdf/GitHub_YiDingg_pdf/Linea
 
 
 <td><div class='pdftest'>
+<!-- GitHub(cdn) -->
 
 ```pdf
 https:https://cdn.jsdelivr.net/gh/YiDingg/YiDingg/pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf
@@ -189,6 +196,7 @@ https:https://cdn.jsdelivr.net/gh/YiDingg/YiDingg/pdf/GitHub_YiDingg_pdf/Linear%
 
 
 <td><div class='pdftest'>
+<!-- GitHub(testingcf) -->
 
 ```pdf
 https:https://testingcf.jsdelivr.net/gh/YiDingg/YiDingg/pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf
