@@ -9,7 +9,7 @@ When building your own blog site, it is crucial to select an appropriate image h
 - <s>gif to TouTiao manually by PanLuo Uploading, gif, video, audio, pdf and other files to WB.Cloud manually.</s>
 
 **Tools:**
-- Use [Tiomg](https://tiomg.org/compress-image)(img) and [Docsmall](https://docsmall.com/gif-compress)(gif) <span class='script'>or [Oplimize LLA](https://imagecompressor.com) or [TinyPNG](https://tinypng.com/) or [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
+- Use [Resize](https://bulkresizephotos.com/zh?preset=true&type=filesize&filesize=100000)(img) and [Docsmall](https://docsmall.com/gif-compress)(gif) <span class='script'>or [Tiomg](https://tiomg.org/compress-image) or [Oplimize LLA](https://imagecompressor.com) or [TinyPNG](https://tinypng.com/) or [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
 - Use [Video To Edit](https://www.video2edit.com) to compress the video.
 - Use [YouCompress](https://www.youcompress.com/) to compress mp3.
 - Use [I Love PDF](https://www.ilovepdf.com/) to compress pdf.

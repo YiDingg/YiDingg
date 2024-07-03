@@ -1,3 +1,5 @@
+/* 此文件需在vue.css和docsify-toc.css之后引入 */
+
 /* 
 屏幕宽度分级: 
 TOC: [0,768], [769,infty]
@@ -15,6 +17,7 @@ Font: [0,400], [401,600], [600,1200], [1200,infty]
 
     --mobile-width: 768px;
 
+    --themecolor: #474f13;
     --color-h1: rgba(0, 0, 0, 0.9);
     --color-h2: rgb(110, 0, 200);
     --color-h3: rgba(110, 0, 200, 0.8);
@@ -71,7 +74,8 @@ span.script * {
     article img,
     article video,
     article object {
-        max-width: 850px;
+        /* max-width: 750px;  */ /* 850可能会超出中间区域 */
+        max-width: 85%;
     }
 }
 
@@ -81,26 +85,6 @@ span.script * {
     max-width: 90%;
 }
 
-/* 自定义左侧导航栏 */
-.sidebar {
-    /* 调整sidebar宽度 */
-    width: 300px;
-    max-width: 60%;
-    padding: 15px;
-}
-
-.sidebar-toggle {
-    /* 调整sidebar的小方框 */
-    padding-left: 12px;
-    padding-bottom: 12px;
-}
-
-.sidebar ul li.active > a {
-    border-right: none;
-    border-left: rgb(71, 79, 179) solid 5px;
-    padding-left: 5px;
-}
-
 /*                                                              !!!这条不起作用，待修改!!!  */
 /* @media screen and (max-width: 581px) {                          
   .sidebar-toggle {
@@ -108,24 +92,10 @@ span.script * {
   }
 } */
 
-.sidebar-toggle span {
-    /* 调整sidebar三横的大小 */
-    margin-left: 3px;
-    margin-bottom: 5px;
-    width: 25px;
-    height: 4px;
-    cursor: pointer;
-}
-
-/* 自定义右侧边栏ul列表 */
-article ul {
-    margin-top: 0;
-}
-
 /* 自定义details手风琴 */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 details {
-    background-color: rgb(255, 235, 235);
+    background-color: rgba(255, 235, 235, 0.55);
     /*   border: rgba(0, 0, 0, 0) solid 1px; */
     margin: auto;
     margin-top: 5px;
@@ -197,14 +167,12 @@ footer {
         font-weight: 500;
     }
 }
-
 @media screen and (max-width: 768px) {
     /* 屏幕 [0,768] 时使用 */
     .page_toc p.title {
         text-align: left;
     }
 }
-
 .page_toc ul li a span {
     color: var(--color-h2);
     font-weight: 550;
@@ -308,7 +276,7 @@ aside.nav:empty {
     }
     .markdown-section {
         font-size: calc(var(--fontsize-main) - 0.1rem);
-        max-width: 85%;
+        max-width: 90%;
     }
     .markdown-section h1 {
         font-size: calc(var(--fontsize-h1) - 0.3rem);
@@ -365,8 +333,8 @@ aside.nav:empty {
     }
     .markdown-section {
         font-size: var(--fontsize-main);
-        width: 75%;
-        max-width: 900px;
+        width: 50%;
+        max-width: 800px;
         margin: auto;
     }
     .markdown-section h1 {

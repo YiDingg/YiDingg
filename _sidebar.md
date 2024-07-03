@@ -1,9 +1,8 @@
-- [<span style="color:rgb(54,65,73);">🏠 **Home Page**</span>](/README.md)
+- [🏠 **Home Page**](/README.md)
 
 
 - 📓 **Blogs**
   - Mixed
-    - [Writing Standards of Easy-read Technical Document](Blogs\Mixed\Writing%20Standards%20of%20Easy-read%20Technical%20Document.md)
     - [Awesome Tools and Resources](Blogs\Mixed\Awesome%20Tools%20and%20Resources.md)
     - [Nice VSCode Extensions](Blogs\Mixed\Nice%20VSCode%20Extenstions.md)
     - [个人网站搭建](Blogs\Mixed\个人网站搭建.md)
@@ -28,7 +27,7 @@
     - [C语言系列 (1)：内存与关键字](Blogs/C/C语言系列%20(1)：内存与关键字.md)
     - [C语言系列 (2)：printf() 函数详解](Blogs/C/C语言系列%20(2)：printf()%20函数详解.md)
   - Cpp
-    - [Cpp笔记汇总](Blogs\Cpp\Cpp笔记汇总.md)
+    - [Cpp笔记大纲](Blogs\Cpp\Cpp笔记大纲.md)
   - STM32
     - [STM32系列汇总](Blogs/STM32/STM32系列汇总.md)
     - [STM32系列 (1)：Keil Debug 功能使用](Blogs/STM32/STM32系列%20(1)：Keil%20Debug%20功能使用.md)
@@ -47,6 +46,8 @@
     - [VScode-Latex 中反向搜索失灵的解决方案](Blogs/FixProblem/VScode-Latex中反向搜索失灵的解决方案.md)
     - [新版 Keil_MDK 中无 Compiler_V5 的解决方案](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
 
+
+
 - 📖 **PDF Notes**
   - Math
 
@@ -59,15 +60,29 @@
     - [Thermodynamics](Notes\Phisics\Thermodynamics%20notes.md)
 
 
+
+- 🎓 **English Learning**
+  - Grammar
+
+    - [Outline of Grammar Learning](EnglishLearning\Grammar\OutlineOfGrammar.md)
+
+
+
+
 - 📝 **Projects**
+  - WSETD
+
+    - [Summary of WSETD](Projects\WSETD\Summary%20of%20WSETD.md)
+    - [WSETD (1)](Projects\WSETD\WSETD%20(1).md)
   - [MuMeStar (Mutiple Menu Star for OLED)](Projects\MuMeStar%20(Mutiple%20Menu%20Star%20for%20OLED)%20详解.md)
   - [OLEDSD (OLED Software Driver)](Projects\OLEDSD%20(OLED%20Software%20Driver).md)
   - [MinSyBo (Minimum System Board of STM32)](Projects\MinSyBo%20(Minimum%20System%20Board%20of%20STM32)%20详解.md)
 
-- [<span style="color:rgb(54,65,73);">📃 **Time Line**</span>](TimeLine.md)
 
-- [<span style="color:rgb(54,65,73);">📰 **To Be Dealing With**</span>](ToBeDealingWith.md)
-- [<span style="color:rgb(54,65,73);">❔ **Test**</span>](Test.md)
+
+- [📃 **Time Line**](TimeLine.md)
+- [📰 **To Be Dealing With**](ToBeDealingWith.md)
+- [❔ **Test**](Test.md)
 
 
 <!-- 🔗 -->

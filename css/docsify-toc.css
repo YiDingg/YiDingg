@@ -36,24 +36,21 @@ aside.nav.nothing {
     -webkit-scrollbars-style: none;
 }
 
-/* hover颜色样式待修改 */
+/* 滑动条样式修改 */
 .page_toc::-webkit-scrollbar {
     width: 10px;
     /* Width of the scrollbar */
 }
-
 .page_toc::-webkit-scrollbar-track {
     background: #f1f1f1;
     /* Color of the track */
 }
-
 .page_toc::-webkit-scrollbar-thumb {
     background: #cacaca;
     /* Color of the scrollbar thumb */
     border-radius: 5px;
     /* Rounded corners for the thumb */
 }
-
 .page_toc::-webkit-scrollbar-thumb:hover {
     background: #555;
     /* Color of the scrollbar thumb on hover */

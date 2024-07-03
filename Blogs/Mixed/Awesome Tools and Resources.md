@@ -1,11 +1,19 @@
 # Awesome Tools and Resources
 
+## Pinned
+- [Z-Library](https://singlelogin.rs): Refer to the mirror site https://www.kdocs.cn/l/cq7kDog4zkuR if you can not access to the official link https://singlelogin.rs
+
+
 ## Mixed
 
 - [中文技术文档写作规范](https://github.com/ruanyf/document-style-guide)
 - [ATTRIBUTION-SHAREALIKE 4.0 INTERNATIONAL(署名共享协议4.0国际版)](https://creativecommons.org/licenses/by-sa/4.0/)
 - [Wally Mouse (摇摇鼠)](https://yys.tanpok.com/)
 
+## Screen Record Tools
+
+- [几款好用的截图工具](https://blog.csdn.net/lehe99/article/details/126151606)
+- [几款屏幕录制工具](https://www.cnblogs.com/leftshine/p/ScreenRecord.html)
 
 ### Programming
 
@@ -36,9 +44,6 @@
 - [Cxx2Flow](https://github.com/Enter-tainer/cxx2flow): turn your C/C++ code into flowchart
 - [PyFlowchart](https://github.com/cdfmlr/pyflowchart): translate Python source code into flowcharts.
 - [Debug 996](https://debug996.com/draw/draw.html)(paid): generate a flowcharts of your code and display them on the website.
-
-
-
 
 
 ## Web Development
