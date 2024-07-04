@@ -1,8 +1,8 @@
-# Outline of WSETD 
+# Outline of WSETD
 
 ## Introduction
 
-WSETD (Writing Standards of Easy-read Technical Document) is a set of writing standards for easy-read technical documents. It is aimed at technical writers who write technical documents for all kinds of audience. The standards are designed to improve the readability, clarity, and consistency of technical documents, and to ensure that the documents are easy to understand and follow. The standards are intended to be used as a guideline for technical writers, but they can also be used as a reference for other writers who write technical documents.
+WSETD, standing for *Writing Standards of Easy-read Technical Document*, is a set of writing standards for easy-read technical documents. It is aimed at technical writers who write technical documents for all kinds of audience. The standards are designed to improve the readability, clarity, and consistency of technical documents, and to ensure that the documents are easy to understand and follow. The standards are intended to be used as a guideline for technical writers, but they can also be used as a reference for other writers who write technical documents.
 
 ## Contents
 

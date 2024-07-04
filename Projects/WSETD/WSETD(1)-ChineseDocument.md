@@ -1,5 +1,7 @@
 # WSETD (1): 中文文档
 
+>WSETD，全称 *Writing Standards of Easy-read Technical Document*。
+
 ## 文件命名
 
 （1）文档的文件名不得含有空格  

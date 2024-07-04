@@ -173,35 +173,6 @@ footer {
 /*                                             */
 /* --------------- 杂七杂八 ------------------ */
 
-/* ----------- 自定义右侧Toc样式 -------------- */
-/*                                             */
-@media screen and (min-width: 769px) {
-    .page_toc p.title {
-        width: auto;
-        text-align: center;
-        text-shadow: 2px 2px 5px gray;
-        color: rgba(0, 0, 0, 0.9);
-        font-size: 1.5rem;
-        font-weight: 500;
-    }
-}
-@media screen and (max-width: 768px) {
-    /* 屏幕 [0,768] 时使用 */
-    .page_toc p.title {
-        text-align: left;
-    }
-}
-.page_toc ul li a span {
-    color: var(--color-h2);
-    font-weight: 550;
-}
-.page_toc ul li ul li a span {
-    color: var(--color-h3);
-    font-weight: 300;
-}
-/*                                             */
-/* ----------- 自定义右侧Toc样式 -------------- */
-
 /* ------- 自定义img,video,audio标签 ---------- */
 /*                                             */
 .markdown-section td video,

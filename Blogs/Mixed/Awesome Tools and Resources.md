@@ -3,7 +3,6 @@
 ## Pinned
 - [Z-Library](https://singlelogin.rs): Refer to the mirror site https://www.kdocs.cn/l/cq7kDog4zkuR if you can not access to the official link https://singlelogin.rs
 
-
 ## Mixed
 
 - [中文技术文档写作规范](https://github.com/ruanyf/document-style-guide)
