@@ -1,4 +1,8 @@
-- [🏠 **Home Page**](/README.md)
+- [🏠 **Home Page**](HomePage.md)
+- [📃 **Time Line**](TimeLine.md)
+- [📰 **To Be Dealing With**](ToBeDealingWith.md)
+- [❔ **Test**](Test.md)
+- [👋 **About**](README.md)
 
 
 - 📓 **Blogs**
@@ -70,20 +74,16 @@
 
 
 - 📝 **Projects**
+  - [MuMeStar (Mutiple Menu Star for OLED)](Projects\MuMeStar%20(Mutiple%20Menu%20Star%20for%20OLED)%20详解.md)
+  - [OLEDSD (OLED Software Driver)](Projects\OLEDSD%20(OLED%20Software%20Driver).md)
+  - [MinSyBo (Minimum System Board of STM32)](Projects\MinSyBo%20(Minimum%20System%20Board%20of%20STM32)%20详解.md)
   - WSETD
 
     - [Outline of WSETD](Projects\WSETD\OutlineOfWSETD.md)
     - [WSETD (1): Chinese Document](Projects\WSETD\WSETD(1)-ChineseDocument.md)
     - [WSETD (2): Englsih Document](Projects\WSETD\WSETD(2)-EnglishDocument.md)
-  - [MuMeStar (Mutiple Menu Star for OLED)](Projects\MuMeStar%20(Mutiple%20Menu%20Star%20for%20OLED)%20详解.md)
-  - [OLEDSD (OLED Software Driver)](Projects\OLEDSD%20(OLED%20Software%20Driver).md)
-  - [MinSyBo (Minimum System Board of STM32)](Projects\MinSyBo%20(Minimum%20System%20Board%20of%20STM32)%20详解.md)
 
 
-
-- [📃 **Time Line**](TimeLine.md)
-- [📰 **To Be Dealing With**](ToBeDealingWith.md)
-- [❔ **Test**](Test.md)
 
 
 <!-- 🔗 -->
