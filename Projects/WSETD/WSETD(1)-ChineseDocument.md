@@ -8,14 +8,18 @@
 （2）文件名必须使用半角字符，不得使用全角字符（这意味着文件名不能包含中文）。  
 （3）为了醒目，某些说明文件的文件名，可以全部使用大写字母。比如`README.md`、`LICENSE.md`  
 （4）文件命名采用“大骆驼拼写法”（UpperCamelCase），即每个单词的首字母大写，其余字母小写。  
-  
-例如：一英文文档标题为 "How to Learn English"，或中文文档标题为“如何学习英语”，则应将文件命名为`HowToLearnEnglish.md`。
 
-（5）当英文文档标题过长时，应采用单词缩写，并将标题中首字母未大写的单词省略。
+例如：一英文文档标题为 "How to Learn English"，或中文文档标题为“如何学习英语”，则应将文件命名为`HowToLearnEnglish.md`。  
+
+（5）不允许存在仅大小写不同的文件名  
+例如：在整个文档 / 工程中，不能同时存在名为`Hello.md`和`hello.md`的文件，应对其中一个进行重命名。
+
+
+（6）当英文文档标题过长时，应采用单词缩写，并将标题中首字母未大写的单词省略。
 
 例如：标题为`Writing Standards of Easy-read Technical Document`的文档，应省略"of"后取缩写，命名为`WSETD.md`。
 
-（6）特别地，当文档内容过多时，应作为一个系列，分为多篇进行撰写。文件应采用`SeriesName(num)-Title`的命名方式，并增加本系列大纲（Outline），大纲结构详见 [其它-系列大纲](Projects\WSETD\WSETD(1)-ChineseDocument.md?id=系列大纲)
+（7）特别地，当文档内容过多时，应作为一个系列，分为多篇进行撰写。文件应采用`SeriesName(num)-Title`的命名方式，并增加本系列大纲（Outline），大纲结构详见 [其它-系列大纲](Projects\WSETD\WSETD(1)-ChineseDocument.md?id=系列大纲)
 
 例如：将标题“易读性技术文档写作规范”翻译为*Writing Standards of Easy-read Technical Document*，并取 WSETD 为英文标题的缩写，最终得到：
 

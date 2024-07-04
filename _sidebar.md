@@ -1,4 +1,4 @@
-- [🏠 **Home Page**](HomePage.md)
+- [🏠 **Home Page**](HOMEPAGE.md)
 - [📃 **Time Line**](TimeLine.md)
 - [📰 **To Be Dealing With**](ToBeDealingWith.md)
 - [❔ **Test**](Test.md)
