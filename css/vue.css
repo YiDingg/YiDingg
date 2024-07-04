@@ -82,7 +82,7 @@ body {
     height: 100%;
 }
 
-body {
+/* body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     color: var(--main-color);
@@ -91,7 +91,7 @@ body {
     letter-spacing: 0;
     margin: 0;
     overflow-x: hidden;
-}
+} 被Mystyle覆盖*/
 
 img {
     max-width: 100%;
@@ -500,9 +500,9 @@ section.cover blockquote > p > a:hover {
     color: var(--theme-color, #42b983);
 }
 
-body {
+/* body {
     background-color: #fff;
-}
+} 被Mystle覆盖*/
 
 /* markdown content found on pages */
 

@@ -12,8 +12,8 @@ When building your own blog site, it is crucial to select an appropriate image h
 
 **Tools:**
 - Use [Resize](https://bulkresizephotos.com/zh?preset=true&type=filesize&filesize=100000)(img) and [Docsmall](https://docsmall.com/gif-compress)(gif) <span class='script'>or [Tiomg](https://tiomg.org/compress-image) or [Oplimize LLA](https://imagecompressor.com) or [TinyPNG](https://tinypng.com/) or [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
-- Use [Video To Edit](https://www.video2edit.com) to compress the video.
-- Use [YouCompress](https://www.youcompress.com/) to compress mp3.
+- Use [FreeCompress](https://freecompress.com/) <span class='script'>or [Video To Edit](https://www.video2edit.com) or [FCO](https://compress-video.file-converter-online.com/#google_vignette)</span> to compress the video.
+- Use [YouCompress](https://www.youcompress.com/) to compress the audio.
 - Use [I Love PDF](https://www.ilovepdf.com/) to compress pdf.
 - Use<!--   [C1N](https://www.c1n.cn/) or --> [Short](https://d.igdu.xyz/)<span class='script'> or [C1N](https://www.c1n.cn/)</span> to create a short link for your file.
 - Use [SINA](https://www.sina.lt/restore.html) to restore the short link.

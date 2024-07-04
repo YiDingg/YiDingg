@@ -23,12 +23,20 @@
 	- 单片机型号：STM32F103VCT6
 	- OLED型号：0.96寸128x64屏幕，SSD1306控制芯片，SPI通信协议，7管脚。
 
+## 演示视频
+
+<video class='center' controls="false"  muted="muted" id="video1" name="media"><source src="https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/7/4/abd306f26cbfca441b3494317798eb0f.mp4" type="video/mp4"></video>
+
 ## 移植方法
 
 **注：**
 
--   菜单默认添加了小恐龙游戏，如果需要节省内存空间，只需在 Mutimenu.h 中取消小恐龙游戏的宏定义。
--   
+-   菜单默认添加了小恐龙游戏，如果需要节省空间，只需在 Mutimenu.h 中取消小恐龙游戏的宏定义。
+
+| 步骤 |详细 | 图片 |
+| :------: | :------: | :-:|
+ | 1. 新建工程并配置基本参数 | 在 CubeMX 中新建一个工程，依次配置：RCC为外部高速时钟，SYS为 SD Debug，调整项目路径、名称，代码生成设置等 | 无 |
+ | 2.若为IIC通信，配置IIC接口 | 打开一个IIC接口（图中是I2C2，I2C模式），添加IIC对应的DMA（IIC_TX），并打开 I2C event interrupt 中断（可自由设置IIC通讯速率，I2C error interrput 也建议打开 ） | <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-17-44.png"/><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-18-16.png"/><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MuMeStar (Mutiple Menu Star for OLED) 详解--2024-06-23-00-18-19.png"/> |
 
 <div class='center'>
 

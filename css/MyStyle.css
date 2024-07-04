@@ -25,106 +25,21 @@ Font: [0,400], [401,600], [600,1200], [1200,infty]
     --color-h5: rgba(110, 0, 200, 0.4);
 }
 
-/* 自定义居中类 */
-.center {
-    /* 普通居中 */
-    width: auto;
-    max-width: 100%;
-    display: table;
-    margin: 0 auto;
-    text-align: center;
+/* ------------- 全局基本配置 ---------------- */
+/*                                             */
+body {
+    /* body类 */
+    height: 100%;
+    background-color: #fff;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: var(--main-color);
+    font-family: "Helvetica Neue", "Source Sans Pro", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0;
+    margin: 0;
+    overflow-x: hidden;
 }
-
-/* 自定义script */
-span.script {
-    font-size: calc(var(--fontsize-main) * 0.6);
-    color: rgb(190, 190, 190);
-}
-span.script * {
-    font-size: calc(var(--fontsize-main) * 0.6);
-    color: rgb(190, 190, 190);
-}
-
-.center-screen {
-    /* 全屏居中 */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* 不同屏幕video,img,object适配 */
-@media screen and (max-width: 500px) {
-    article img,
-    article video,
-    article object {
-        max-width: 90%;
-    }
-}
-
-@media screen and (min-width: 501px) and (max-width: 1000px) {
-    article img,
-    article video,
-    article object {
-        max-width: 80%;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    article img,
-    article video,
-    article object {
-        /* max-width: 750px;  */ /* 850可能会超出中间区域 */
-        max-width: 85%;
-    }
-}
-
-.markdown-section td img {
-    /* 控制表格中的图片 */
-    width: auto;
-    max-width: 90%;
-}
-
-/*                                                              !!!这条不起作用，待修改!!!  */
-/* @media screen and (max-width: 581px) {                          
-  .sidebar-toggle {
-    padding: 60px;
-  }
-} */
-
-/* 自定义details手风琴 */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-details {
-    background-color: rgba(255, 235, 235, 0.55);
-    /*   border: rgba(0, 0, 0, 0) solid 1px; */
-    margin: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 5px;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 700px;
-}
-/* details:hover {
-    background-color: rgb(255, 245, 245);
-    border: rgba(133, 133, 133, 0) solid 1px;
-} */
-details summary {
-    cursor: pointer;
-    color: rgb(0, 0, 0);
-    font-weight: 500;
-}
-details img {
-    width: 97%;
-}
-
-/* Tips样式修改 */
-.markdown-section p.tip {
-    padding: 6px 24px 6px 26px;
-    margin: 12px;
-    margin-left: 6px;
-}
-
 /* h1,h2,h3标题样式 */
 h1 {
     text-align: center;
@@ -145,18 +60,121 @@ h2::before {
     content: "& ";
     color: var(--color-h2);
 }
+/*                                             */
+/* ------------- 全局基本配置 ---------------- */
 
-/* copyright */
+/* ------------- 自定义details ---------------- */
+/*                                             */
+/* cyrillic-ext */
+/* @font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw0aXpsog.woff2)
+        format("woff2");
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+        U+FE2E-FE2F;
+} */
+/* cyrillic */
+/* @font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw9aXpsog.woff2)
+        format("woff2");
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+} */
+/* vietnamese */
+/* @font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw2aXpsog.woff2)
+        format("woff2");
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+        U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323,
+        U+0329, U+1EA0-1EF9, U+20AB;
+} */
+/* latin-ext */
+/* @font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aXpsog.woff2)
+        format("woff2");
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
+        U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+} */
+/* latin */
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXo.woff2)
+        format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+        U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122,
+        U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+details {
+    background-color: rgba(255, 235, 235, 0.55);
+    /*   border: rgba(0, 0, 0, 0) solid 1px; */
+    font-family: "Montserrat";
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 700px;
+}
+/* details:hover {
+    background-color: rgb(255, 245, 245);
+    border: rgba(133, 133, 133, 0) solid 1px;
+} */
+details summary {
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+details img {
+    width: 97%;
+}
+/*                                             */
+/* ------------- 自定义details ---------------- */
+
+/* --------------- 杂七杂八 ------------------ */
+/*                                             */
+.markdown-section p.tip {
+    /* Tips样式修改 */
+    padding: 6px 24px 6px 26px;
+    margin: 12px;
+    margin-left: 6px;
+}
 footer {
+    /* copyright */
     padding-bottom: 25px;
 }
-
-/* 解决docsify-chat插件与img设置冲突 */
 .chat-panel .main-area .chat-message .avatar img {
+    /* 解决docsify-chat插件与img设置冲突 */
     max-width: 100%;
 }
+.markdown-section td {
+    /* 设置表格最小单元格样式 */
+    /* 覆盖vue.css原有样式 */
+    border: 1px solid #acacac;
+    padding: 6px 3px; /* 第一个是上下，第二个是左右 */
+}
+/*                                             */
+/* --------------- 杂七杂八 ------------------ */
 
-/* 右侧Toc样式修改 */
+/* ----------- 自定义右侧Toc样式 -------------- */
+/*                                             */
 @media screen and (min-width: 769px) {
     .page_toc p.title {
         width: auto;
@@ -181,13 +199,83 @@ footer {
     color: var(--color-h3);
     font-weight: 300;
 }
+/*                                             */
+/* ----------- 自定义右侧Toc样式 -------------- */
 
-/* body main section article audio {
-    transform: translateX(0px);
+/* ------- 自定义img,video,audio标签 ---------- */
+/*                                             */
+.markdown-section td video,
+.markdown-section td img {
+    /* 控制表格中的img,video */
+    min-width: 90%;
+    max-width: 98%;
+    display: table; /* table样式显示 */
+    margin: 0 auto; /* 使图片居中 */
+    /* margin: 0 auto; 无效*/
+    /* text-align: center; 无效*/
 }
-body.close main section article audio {
-    transform: translateX(100px);
-} */
+/* 不同屏幕全局video,img,object适配 */
+@media screen and (max-width: 500px) {
+    article img,
+    article video,
+    article object {
+        min-width: 70%;
+        max-width: 90%;
+    }
+}
+@media screen and (min-width: 501px) and (max-width: 1000px) {
+    article img,
+    article video,
+    article object {
+        min-width: 70%;
+        max-width: 85%;
+    }
+}
+@media screen and (min-width: 1000px) {
+    article img,
+    article video,
+    article object {
+        /* max-width: 750px;  */ /* 850可能会超出中间区域 */
+        min-width: 70%;
+        max-width: 80%;
+    }
+}
+/*                                             */
+/* ------- 自定义img,video,audio标签 ---------- */
+
+/* --- 自定义script,center,center-screen ------ */
+/*                                             */
+span.script {
+    font-size: calc(var(--fontsize-main) * 0.5);
+    color: rgb(195, 195, 195);
+}
+span.script * {
+    font-size: calc(var(--fontsize-main) * 0.5);
+    color: rgb(195, 195, 195);
+}
+.center {
+    /* 普通居中 */
+    /* width: auto; */
+    /* max-width: 100%; */
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+}
+.center-screen {
+    /* 全屏居中 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*                                             */
+/* --- 自定义script,center,center-screen ------ */
+
+/* ------------- 自定义script ---------------- */
+/*                                             */
+
+/*                                             */
+/* ------------- 自定义script ---------------- */
 
 /* ---------------------------------------- */
 /* ---------------------------------------- */
@@ -198,7 +286,8 @@ body.close main section article audio {
 /* ---------------------------------------- */
 /* ---------------------------------------- */
 
-/* 先设置总体，再对不同屏幕fontsize适配 */
+/* ---- 先设置总体，再对不同屏幕fontsize适配 ---- */
+/*                                             */
 .markdown-section {
     max-width: 95%;
 }
@@ -208,7 +297,7 @@ body.close main section article audio {
 .markdown-section h2 {
     margin: 1.5rem 0 0.8rem 0;
     padding-top: 0.45rem;
-    border-top: rgba(128, 128, 128, 0.15) solid 3px;
+    border-top: rgba(128, 128, 128, 0.15) solid 1px;
 }
 .markdown-section h3 {
     margin: 1.3rem 0 0.4rem 0;
@@ -222,7 +311,6 @@ body.close main section article audio {
 .markdown-section h6 {
     margin: 0;
 }
-
 /* 右侧边栏设置(本文件中的某个设置覆盖了docsify-toc.css，不能交换css引入顺序) */
 .nav {
     width: 100%;
@@ -232,14 +320,11 @@ aside.nav:empty {
     width: 0;
     overflow: hidden;
 }
+/*                                             */
+/* ---- 先设置总体，再对不同屏幕fontsize适配 ---- */
 
-/* 设置表格最小单元格样式 */
-.markdown-section td {
-    /* 覆盖vue.css原有样式 */
-    border: 1px solid #acacac;
-    padding: 6px 3px; /* 第一个是上下，第二个是左右 */
-}
-
+/* --------------- 不同屏幕适配 --------------- */
+/*                                             */
 /* 适配fontsize，右侧navbar，表格最小单元格样式 */
 @media screen and (max-width: 400px) {
     .nav {
@@ -356,3 +441,5 @@ aside.nav:empty {
         font-size: var(--fontsize-h6);
     }
 }
+/*                                             */
+/* --------------- 不同屏幕适配 --------------- */

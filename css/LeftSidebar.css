@@ -45,6 +45,7 @@
     list-style: none;
 }
 .sidebar ul li a {
+    /* a 为页面跳转链接 */
     border-bottom: none;
     display: block;
 }
@@ -238,20 +239,22 @@ body.close .content {
     color: #364149;
 }
 .sidebar li {
-    margin: 6px 0 6px 0;
+    margin: 3px 0 3px 0;
 }
 .sidebar ul > li.folder.level-1 p {
-    /* 一级 */
+    /* 一级文件夹 */
     color: rgb(20, 20, 20);
+    font-size: calc(var(--fontsize-main) + 0.05rem);
 }
 .sidebar ul li.folder.level-2 p {
-    /* 二级 */
+    /* 二级文件夹 */
     color: rgba(20, 20, 20, 0.7);
+    font-size: calc(var(--fontsize-main) - 0.05rem); /* 减号两边必须有空格 */
 }
 .sidebar ul li a {
-    /* 在folder中的指向页面的a标签链接（可能二级可能三级） */
+    /* 在folder中的指向页面的a标签链接 */
     color: #003cff86;
-    font-size: 14px;
+    font-size: calc(var(--fontsize-main) - 0.2rem); /* 减号两边必须有空格 */
     font-weight: normal;
     overflow: hidden;
     text-decoration: none;
@@ -288,7 +291,7 @@ body.close .content {
 }
 .sidebar p,
 .sidebar a {
-    line-height: 16px;
+    line-height: 18px;
 }
 .sidebar ul li.active > a {
     border-right: none;

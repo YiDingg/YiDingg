@@ -46,13 +46,16 @@
 使用最广的型号是AMS1117-3.3(LDO)，如果需要更便宜且合适的LDO，推荐LR6206B-U33(LDO)，XC6206P332MR(LDO)，HXY6206I-3.3(LDO)，也可在立创商城中自行选择。
 
 下面是它们的对比图：
-<img src="https://www.writebug.com/static/uploads/2024/5/15/cd13162f205c3497e4c4e4c1b0219770.png"/>
+
+<div class='center'><img src='https://www.writebug.com/static/uploads/2024/5/15/cd13162f205c3497e4c4e4c1b0219770.png' alt='img'/></div>
 
 考虑到STM32F103C8T6最大负载电流为150mA，这里使用XC6206P332MR(LCD, 3.3V~8V to 3.3V, MAX 300mA)，并参考数据手册中的典型应用进行稳压电路设计：
-<img src="https://www.writebug.com/static/uploads/2024/5/15/c9d7f4fb14cb94e65dac4d7398894089.png"/>
+<div class='center'><img src='https://www.writebug.com/static/uploads/2024/5/15/c9d7f4fb14cb94e65dac4d7398894089.png' alt='img'/></div>
 
 对于电源滤波电路，参考芯片数据手册：
-<img src="https://www.writebug.com/static/uploads/2024/5/16/69473cecc72e51a9605ca0fc3760beb6.png"/>
+
+<div class='center'><img src='https://www.writebug.com/static/uploads/2024/5/16/69473cecc72e51a9605ca0fc3760beb6.png' alt='img'/></div>
+
 
 
 对于状态灯，考虑到其功率不宜较大，可以选用正向压降和工作电流尽量小的LED。例如 XL-1608SURC-06（红），XL-1608UGC-04（绿）两种作为分别作为电源指示灯、状态指示灯。下面根据其数据手册中的具体参数进行设计：
