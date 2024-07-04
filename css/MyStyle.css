@@ -219,7 +219,6 @@ footer {
     article img,
     article video,
     article object {
-        min-width: 70%;
         max-width: 90%;
     }
 }
@@ -227,7 +226,6 @@ footer {
     article img,
     article video,
     article object {
-        min-width: 70%;
         max-width: 85%;
     }
 }
@@ -236,7 +234,6 @@ footer {
     article video,
     article object {
         /* max-width: 750px;  */ /* 850可能会超出中间区域 */
-        min-width: 70%;
         max-width: 80%;
     }
 }
