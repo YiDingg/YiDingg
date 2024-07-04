@@ -8,5 +8,5 @@
 
 ⭐ Welcome to my website! ⭐
 
-[Git Hub](https://github.com/YiDingg)
-[Get Started](/README.md)
+[GitHub](https://github.com/YiDingg)
+[Get Started](/HOMEPAGE.md)
