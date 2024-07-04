@@ -460,7 +460,7 @@
 }
 .markdown-section pre {
     /* 代码块样式 */
-    line-height: 1rem;
+    line-height: 1.1rem;
     background-color: var(--color-codeblock);
     border-radius: 5px;
     box-shadow: 0 5px 6px 0px rgb(0 0 0 / 40%);
