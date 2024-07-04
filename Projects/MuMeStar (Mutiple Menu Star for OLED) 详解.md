@@ -25,6 +25,8 @@
 
 ## 演示视频
 
+>下面为 V1.2.0 版本的非正式演示视频，最新版本（V1.2.2）已支持动画效果和更多功能，新版本正式演示视频等有时间再录制。
+
 <video class='center' controls="false"  muted="muted" id="video1" name="media"><source src="https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/7/4/abd306f26cbfca441b3494317798eb0f.mp4" type="video/mp4"></video>
 
 ## 移植方法
