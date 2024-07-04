@@ -91,7 +91,7 @@ aside.nav.nothing {
     .page_toc {
         margin-top: 0px;
         width: 100%;
-        max-height: 400px;
+        max-height: 300px;
     }
 }
 .page_toc a > * {
@@ -146,6 +146,11 @@ aside.nav.nothing {
 
 /* ----------- 自定义右侧Toc样式 -------------- */
 /*                                             */
+aside.nav:empty {
+    /* 无内容时取消占位 */
+    width: 0;
+    overflow: hidden;
+}
 @media screen and (min-width: 769px) {
     .page_toc p.title {
         width: auto;

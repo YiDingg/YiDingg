@@ -921,7 +921,7 @@ void OLED_Init(void)
 ```
 4. OLED_font.h
 
-``` 
+``` c
 #ifndef __OLEDFONT_H
 #define __OLEDFONT_H
 const unsigned char asc2_0806[][6] =
@@ -1357,7 +1357,7 @@ const unsigned char Chinese_32[][128]={
 
 5. OLED_image.h
 
-``` 
+``` c
 #include "stdint.h"
 #ifndef __BMP_H
 #define __BMP_H
@@ -1412,10 +1412,10 @@ const uint8_t example_image[] = {
 
 驱动库的建立和完善参考了多方资料，在此表示感谢，并附在此处以供查阅。
 
-[https://www.bilibili.com/video/BV1Px4y1Z7jU](https://www.bilibili.com/video/BV1Px4y1Z7jU) 
-[https://blog.csdn.net/murmur66/article/details/135782895](https://blog.csdn.net/murmur66/article/details/135782895) 
-[https://www.bilibili.com/video/BV1Xw411371j](https://www.bilibili.com/video/BV1Xw411371j) 
-[https://blog.csdn.net/qq_45396672/article/details/117253441](https://blog.csdn.net/qq_45396672/article/details/117253441) 
-[https://blog.csdn.net/bshysy1314/article/details/128497903](https://blog.csdn.net/bshysy1314/article/details/128497903) 
-[https://blog.csdn.net/weixin_45065888/article/details/118225993](https://blog.csdn.net/weixin_45065888/article/details/118225993) 
-[https://blog.csdn.net/qq_27575841/article/details/106651891](https://blog.csdn.net/qq_27575841/article/details/106651891) 
+- [https://www.bilibili.com/video/BV1Px4y1Z7jU](https://www.bilibili.com/video/BV1Px4y1Z7jU) 
+- [https://blog.csdn.net/murmur66/article/details/135782895](https://blog.csdn.net/murmur66/article/details/135782895) 
+- [https://www.bilibili.com/video/BV1Xw411371j](https://www.bilibili.com/video/BV1Xw411371j) 
+- [https://blog.csdn.net/qq_45396672/article/details/117253441](https://blog.csdn.net/qq_45396672/article/details/117253441) 
+- [https://blog.csdn.net/bshysy1314/article/details/128497903](https://blog.csdn.net/bshysy1314/article/details/128497903) 
+- [https://blog.csdn.net/weixin_45065888/article/details/118225993](https://blog.csdn.net/weixin_45065888/article/details/118225993) 
+- [https://blog.csdn.net/qq_27575841/article/details/106651891](https://blog.csdn.net/qq_27575841/article/details/106651891) 
