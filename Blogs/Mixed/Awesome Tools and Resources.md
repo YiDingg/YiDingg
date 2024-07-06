@@ -3,12 +3,27 @@
 ## Pinned
 - [Z-Library](https://singlelogin.rs): Refer to the mirror site [mirror](https://www.kdocs.cn/l/cq7kDog4zkuR) if you can not access to the official link https://singlelogin.rs
 
+
 ## Else
 
 ### Mixed
 
+- [csdn文章浏览/资源下载](https://www.niupizhiyuan.com/download.html) <span class='script'>or [知乎](https://www.zhihu.com/question/34442235/answer/3552846202?utm_campaign=shareopn&utm_medium=social&utm_psn=1792927195892690944&utm_source=wechat_session)</span>
 - [Wally Mouse (摇摇鼠)](https://yys.tanpok.com/)
 - [Adobe 系列软件破解器](https://kirigaya.cn/blog/article?seq=245)
+- [华中科技大学开源镜像站](https://mirrors.hust.edu.cn/)
+
+### Research Paper
+
+- [Sci Hub](https://zhuanlan.zhihu.com/p/680268287?utm_campaign=shareopn&utm_medium=social&utm_psn=1792920948971814914&utm_source=wechat_session)
+- [Research Gate](https://zhuanlan.zhihu.com/p/57881735?utm_campaign=shareopn&utm_medium=social&utm_psn=1792921277671010305&utm_source=wechat_session)
+- [PaperYY](https://www.paperyy.cn/NoLoginPost.aspx) (plagiarism checker)
+- [Check Bao](http://www.checkbao.cn/) (plagiarism checker)
+
+### Document
+
+- [中文技术文档写作规范](https://github.com/ruanyf/document-style-guide)
+- [ATTRIBUTION-SHAREALIKE 4.0 INTERNATIONAL(署名共享协议4.0国际版)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ### List
 
@@ -22,12 +37,8 @@
 
 ### Writing
 
+- [Latex Templates](https://www.latexstudio.net/index/lists/index/type/2.html)
 - [蛙蛙工具](https://www.iamwawa.cn/fuhao.html): a convenient online tool site
-
-### Document
-
-- [中文技术文档写作规范](https://github.com/ruanyf/document-style-guide)
-- [ATTRIBUTION-SHAREALIKE 4.0 INTERNATIONAL(署名共享协议4.0国际版)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ### Programming
 
@@ -37,7 +48,7 @@
 - [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)
 - [Hello算法](https://www.hello-algo.com/chapter_hello_algo/): learn algorithms and data structures online, completely free.
 - [代码小抄](https://www.rdonly.com/archives/7502): 
-- [华中科技大学开源镜像站](https://mirrors.hust.edu.cn/)
+- [洛谷](https://www.luogu.com.cn/training/list) (C/C++ programming training)
 
 ### Programming Reference
 
@@ -46,10 +57,12 @@
 - [Zeal](https://zealdocs.org): [Zeal离线文档下载速度慢解决方案](https://www.jianshu.com/p/598f18ca6963)
 
 
+
 ### Calculation and Graph
 
 - [Matlab]()
 - [SCIlab](https://www.scilab.org/)
+- [Litmaps](https://app.litmaps.com/)
 
 ### Code to Flowchart
 - [Visustin](https://blog.csdn.net/qq_29183811/article/details/106170648)
