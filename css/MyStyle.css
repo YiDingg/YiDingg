@@ -64,7 +64,7 @@ h2::before {
 .markdown-section a {
     /* a: anchor */
     color: var(--theme-color, #42b983);
-    /* font-weight: 550; */
+    font-weight: 550;
 }
 .markdown-section p {
     /* p: paragraph */
