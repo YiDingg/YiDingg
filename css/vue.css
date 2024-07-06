@@ -515,11 +515,11 @@ section.cover blockquote > p > a:hover {
     font-weight: 600;
     font-family: "Microsoft YaHei", "Microsoft JhengHei", "YouYuan";
 }
-.markdown-section a {
+/* .markdown-section a {
     color: #42b983;
     color: var(--theme-color, #42b983);
     font-weight: 600;
-}
+} */
 .markdown-section h1 {
     font-size: 2.2rem;
     margin: 0 0 1rem;
@@ -558,25 +558,12 @@ section.cover blockquote > p > a:hover {
     padding-left: 1.5rem;
 }
 
-.markdown-section blockquote {
-    border-left: 4px solid #42b983;
-    border-left: 4px solid var(--theme-color, #42b983);
-    color: #858585;
-    margin: 2em 0;
-    padding-left: 20px;
-}
-
-.markdown-section blockquote p {
-    font-weight: 600;
-    margin-left: 0;
-}
-
 .markdown-section iframe {
     margin: 1em 0;
 }
 
-.markdown-section em {
+/* .markdown-section em {
     color: #7f8c8d;
-}
+} 已覆盖*/
 
 /* ---------------------------------------------- */

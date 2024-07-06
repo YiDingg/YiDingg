@@ -2,7 +2,7 @@
 
 ## 学习路线
 
-以 [网道.C语言](https://wangdoc.com/clang/) 为主要学习路线/资料，以 [菜鸟.C语言](https://www.runoob.com/cprogramming/c-tutorial.html) 作为辅助资料。
+以 [网道: C语言](https://wangdoc.com/clang/) 为主要学习路线/资料，以 [菜鸟: C语言](https://www.runoob.com/cprogramming/c-tutorial.html) 作为辅助资料。
 
 ## 笔记目录
 
@@ -33,4 +33,4 @@
 
 主要参考在此一并列出，后文不再提及。
 
-- [网道.C语言](https://wangdoc.com/clang/)(使用[ATTRIBUTION-SHAREALIKE 4.0 INTERNATIONAL](https://creativecommons.org/licenses/by-sa/4.0/))
+- [网道: C语言](https://wangdoc.com/clang/)(使用[ATTRIBUTION-SHAREALIKE 4.0 INTERNATIONAL](https://creativecommons.org/licenses/by-sa/4.0/))

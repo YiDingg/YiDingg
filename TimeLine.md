@@ -14,8 +14,8 @@
 - [ ] Add background following cursor on cover page
   - https://www.bilibili.com/video/BV1Dy4y177Dg
 - [ ] Optimize pdf preview for mobile phones.
-- https://blog.csdn.net/weixin_43239880/article/details/139457321
-
+<!-- - https://blog.csdn.net/weixin_43239880/article/details/139457321 -->
+- [ ] Add a browsing progress bar at the top of the page.
 <!-- 下面这段注释不能夹在tasklist中，否则会使下面的timline嵌入到list中，导致样式错乱 -->
 <!-- - [ ] Add awesome components
   - https://www.bilibili.com/video/BV1uS4y1f7EL -->

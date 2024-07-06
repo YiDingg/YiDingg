@@ -1,18 +1,33 @@
 # Awesome Tools and Resources
 
 ## Pinned
-- [Z-Library](https://singlelogin.rs): Refer to the mirror site https://www.kdocs.cn/l/cq7kDog4zkuR if you can not access to the official link https://singlelogin.rs
+- [Z-Library](https://singlelogin.rs): Refer to the mirror site [mirror](https://www.kdocs.cn/l/cq7kDog4zkuR) if you can not access to the official link https://singlelogin.rs
 
-## Mixed
+## Else
 
-- [中文技术文档写作规范](https://github.com/ruanyf/document-style-guide)
-- [ATTRIBUTION-SHAREALIKE 4.0 INTERNATIONAL(署名共享协议4.0国际版)](https://creativecommons.org/licenses/by-sa/4.0/)
+### Mixed
+
 - [Wally Mouse (摇摇鼠)](https://yys.tanpok.com/)
+- [Adobe 系列软件破解器](https://kirigaya.cn/blog/article?seq=245)
 
-## Screen Record Tools
+### List
+
+- [中文独立博客列表](https://github.com/timqian/chinese-independent-blogs)
+- [中国独立开发者项目列表](https://github.com/1c7/chinese-independent-developer)
+
+### Screen Record Tools
 
 - [几款好用的截图工具](https://blog.csdn.net/lehe99/article/details/126151606)
 - [几款屏幕录制工具](https://www.cnblogs.com/leftshine/p/ScreenRecord.html)
+
+### Writing
+
+- [蛙蛙工具](https://www.iamwawa.cn/fuhao.html): a convenient online tool site
+
+### Document
+
+- [中文技术文档写作规范](https://github.com/ruanyf/document-style-guide)
+- [ATTRIBUTION-SHAREALIKE 4.0 INTERNATIONAL(署名共享协议4.0国际版)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ### Programming
 
@@ -24,17 +39,17 @@
 - [代码小抄](https://www.rdonly.com/archives/7502): 
 - [华中科技大学开源镜像站](https://mirrors.hust.edu.cn/)
 
-### Calculation and Graph
-
-- [Matlab]()
-- [SCIlab](https://www.scilab.org/)
-
-### Reference
+### Programming Reference
 
 - [Quick Reference(English)](https://cheatsheets.zip/)
 - [Quick Reference(中文)](http://ref.laoleng.vip/)
 - [Zeal](https://zealdocs.org): [Zeal离线文档下载速度慢解决方案](https://www.jianshu.com/p/598f18ca6963)
 
+
+### Calculation and Graph
+
+- [Matlab]()
+- [SCIlab](https://www.scilab.org/)
 
 ### Code to Flowchart
 - [Visustin](https://blog.csdn.net/qq_29183811/article/details/106170648)
@@ -45,7 +60,7 @@
 - [Debug 996](https://debug996.com/draw/draw.html)(paid): generate a flowcharts of your code and display them on the website.
 
 
-## Web Development
+### Web Development
 
 - [HTML & CSS](https://internetingishard.netlify.app/html-and-css/)
 - [W3Schools(English)](https://www.w3schools.com): world's largest web developer site. You can learn HTML, CSS, JavaScript, SQL, PHP, Python here, also find reference materials, tutorials, and examples.
@@ -59,15 +74,14 @@
 - [CSS Inspiration](https://csscoco.com/inspiration)
 
 
-
-## C/C++
+### C/C++
 
 - [RUNOOB](https://www.runoob.com/): 菜鸟网站（编程语言在线学习网站）
 - [LeetCode](https://leetcode.cn/): 
 - [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/): 
 
 
-## MCU
+### MCU
 
 
 - [江协科技官方](https://jiangxiekeji.com/): 超多资料+教程，主要在 "图书/视频" 和 "资料中心"
@@ -80,4 +94,5 @@
 ### Simulator
 - [CirCuitjs](http://scratch.trtos.com/circuitjs.html)
 
-## Python
+### Python
+

@@ -57,6 +57,7 @@
   - Math
 
     - [Calculus 1](Notes\Math\Calculus%201%20Notes.md)
+    - [Calculus 2](Notes\Math\Calculus2Notes.md)
     - [Linear Algebra 1](Notes\Math\Linear%20Algebra%201%20notes.md)
     - [Linear Algebra 2](Notes\Math\Linear%20Algebra%202%20notes.md)
   - Phisics
@@ -67,10 +68,11 @@
 
 
 - 🎓 **English Learning**
+  - Preparation
+    - [IELTS](EnglishLearning\Preparation\IELTS.md)
   - Grammar
 
     - [Outline of Grammar Learning](EnglishLearning\Grammar\OutlineOfGrammar.md)
-
 
 
 

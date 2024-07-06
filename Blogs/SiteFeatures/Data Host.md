@@ -4,14 +4,15 @@ When building your own blog site, it is crucial to select an appropriate image h
 
 **Conclusion:**
 - <span style="color:red">img and small gif to Aliyun</span> by VS-PicGo
-- <span style="color:red">gif, video, audio to WB.Cloud</span> manually, <span style="color:red">pdf and other files to WB.Static</span> manually. (Or create a filefolder on WB.Cloud and provide the link)
+- upload <span style="color:red">gif, video, audio pdf and other files to WB.Static</span> manually. <span style="color:red">
 - upload the files to 123 NetDisk or Baidu NetDisk to share them.
+- <s>gif, video, audio to WB.Cloud manually, pdf and other files to WB.Static manually. (Or create a filefolder on WB.Cloud and provide the link)</s>
 - <s>gif, video, audio, pdf and other files to WB.Cloud manually.</s>
 - <s>gif to TouTiao manually by PanLuo Uploading, gif, video, audio, pdf and other files to WB.Cloud manually.</s>
 
 
 **Tools:**
-- Use [Resize](https://bulkresizephotos.com/zh?preset=true&type=filesize&filesize=100000)(img) and [Docsmall](https://docsmall.com/gif-compress)(gif) <span class='script'>or [Tiomg](https://tiomg.org/compress-image) or [Oplimize LLA](https://imagecompressor.com) or [TinyPNG](https://tinypng.com/) or [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
+- Use [Resize](https://bulkresizephotos.com/zh?preset=true&type=filesize&filesize=80000)(img) and [Docsmall](https://docsmall.com/gif-compress)(gif) <span class='script'>or [Tiomg](https://tiomg.org/compress-image) or [Oplimize LLA](https://imagecompressor.com) or [TinyPNG](https://tinypng.com/) or [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
 - Use [FreeCompress](https://freecompress.com/) <span class='script'>or [Video To Edit](https://www.video2edit.com) or [FCO](https://compress-video.file-converter-online.com/#google_vignette)</span> to compress the video.
 - Use [YouCompress](https://www.youcompress.com/) to compress the audio.
 - Use [I Love PDF](https://www.ilovepdf.com/) to compress pdf.

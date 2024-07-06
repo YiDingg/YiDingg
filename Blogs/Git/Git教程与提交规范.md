@@ -223,7 +223,8 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 
 ### 3. Git 管理本地老项目
 现在我们需要为一个老项目搭建 Git 管理，下面是它之前所有的发行版本：
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-04.png"/>
+
+<div class='center'><img src='https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-04.png' alt='img'/></div>
 
 Git 搭建步骤如下：
 <details>
@@ -287,12 +288,14 @@ fatal: Could not read from remote repository.
 
 <details>
 <summary> 5. 检查是否导入成功 </summary>  
+
 全部版本导入完毕后，在Github的Tag处可直接下载对应版本，这样就完成了老项目库的 Git 搭建。
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-39.png"/>
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-42.png"/>
+<div class='center'><img src='https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-39.png' alt='img'/></div>
+<div class='center'><img src='https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-42.png' alt='img'/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-42.png"/></div>
 </details>
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-42.png"/></div>
+
 
 ### 4. 参与他人项目
 to be continued ...
