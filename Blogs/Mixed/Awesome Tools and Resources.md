@@ -8,6 +8,7 @@
 
 ### Mixed
 
+- [Listary](https://www.bilibili.com/video/BV1jL4y1V78P): an awesome tool for searching and managing your files/apps.
 - [csdn文章浏览/资源下载](https://www.niupizhiyuan.com/download.html) <span class='script'>or [知乎](https://www.zhihu.com/question/34442235/answer/3552846202?utm_campaign=shareopn&utm_medium=social&utm_psn=1792927195892690944&utm_source=wechat_session)</span>
 - [Wally Mouse (摇摇鼠)](https://yys.tanpok.com/)
 - [Adobe 系列软件破解器](https://kirigaya.cn/blog/article?seq=245)
@@ -96,12 +97,13 @@
 
 ### MCU
 
-
 - [江协科技官方](https://jiangxiekeji.com/): 超多资料+教程，主要在 "图书/视频" 和 "资料中心"
 - [野火官方](https://embedfire.com/boos-video/): 
 - [波特率动文档网站](https://docs.baud-dance.com/docs/stm32/intro): 例程，HAL定时器库函数速查
 - [波特率动串口助手](https://led.baud-dance.com/)
 - [Wokwi仿真官网](https://wokwi.com/)
+- [立创EDA-3D模型下载器-1](https://github.com/l0086020/LC_3D_Module_Download)
+- [立创EDA-3D模型下载器-2](https://github.com/seishinkouki/lceda_step_downloader)
 
 
 ### Simulator

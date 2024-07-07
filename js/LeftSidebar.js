@@ -1,3 +1,4 @@
+// 侧边栏目录折叠 (https://www.npmjs.com/package/docsify-sidebar-collapse)
 // 原代码地址：
 // https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js
 // 下面是被修改过的代码
