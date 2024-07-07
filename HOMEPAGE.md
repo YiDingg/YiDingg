@@ -50,7 +50,8 @@ Go to [About Me](README.md) for more information.
 Here are part of other excellent personal websites.
 
 
-- [Dexter Chua](https://dec41.user.srcf.net/)
+- [Dexter Chua](https://dec41.user.srcf.net/)[
+- [Zerun's Blog](https://blog.zeruns.tech/category/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/)
 - [科学空间](https://spaces.ac.cn/archives/1615)
 - [阮一峰的网络日志](https://www.ruanyifeng.com/blog/developer/)
 - [汇尘轩](https://kirigaya.cn/home)
