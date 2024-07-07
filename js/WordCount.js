@@ -1,13 +1,12 @@
 // https://www.npmjs.com/package/docsify-count
-// Go to index.html to configure the options.
 
 var defaultOptions = {
     countable: !0,
     position: "top",
-    margin: "0px",
+    margin: "10px",
     float: "right",
     fontsize: "0.9em",
-    color: "rgb(90,90,90)",
+    color: "rgb(170,170,170)",
     language: "english",
     isExpected: !0,
 };
@@ -23,21 +22,17 @@ function plugin(t, n) {
             "chinese" === defaultOptions.language &&
                 ((i = o + " 字"), (e = Math.ceil(o / 400) + " 分钟")),
                 n(
-                    `\n        ${
+                    `\n ${
                         "bottom" === defaultOptions.position ? t : ""
-                    }\n        <div style="margin-${
-                        defaultOptions.position ? "bottom" : "top"
-                    }: ${
-                        defaultOptions.margin
-                    };">\n            <span style="\n                  float: ${
+                    }\n <div style="margin-${
+                        "bottom" === defaultOptions.position ? "bottom" : "top"
+                    }: ${defaultOptions.margin};">\n <span style="\n float: ${
                         "right" === defaultOptions.float ? "right" : "left"
-                    };\n                  font-size: ${
-                        defaultOptions.fontsize
-                    };\n                  color:${
+                    };\n font-size: ${defaultOptions.fontsize};\n color:${
                         defaultOptions.color
-                    };">\n            ${i}\n            ${
+                    };">\n ${i}\n ${
                         defaultOptions.isExpected ? `&nbsp; | &nbsp;${e}` : ""
-                    }\n            </span>\n <div style="clear: both"></div>\n        </div>\n        ${
+                    }\n </span>\n <div style="clear: both"></div>\n </div>\n ${
                         "bottom" !== defaultOptions.position ? t : ""
                     }\n        `
                 );
