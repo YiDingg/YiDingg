@@ -25,7 +25,7 @@
                     n.afterEach(function (n, e) {
                         if (i()) {
                             (n +=
-                                '<div style="text-align:center;color:gray;">已有<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人访问 <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span></div>'),
+                                '<div style="text-align:center;color:gray;font-size:0.7rem;"><span class="busuanzi-value" id="busuanzi_value_site_uv"></span> people have visited the site, <span id="busuanzi_container_site_pv"> total site visits <span id="busuanzi_value_site_pv"></span></span></div>'),
                                 (function () {
                                     if (i()) {
                                         var n =
