@@ -58,4 +58,6 @@ Here are part of other excellent personal websites.
 - [陶小桃 Blog](https://www.52txr.cn/)
 - [中文独立博客列表](https://github.com/timqian/chinese-independent-blogs) (Collection) 
 
-<span id="busuanzi_container_site_uv"><span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span> visits for this article</span><br><span id="busuanzi_value_site_uv"></span> people have visited the site<br><span id="busuanzi_container_site_pv">total site visits times <span id="busuanzi_value_site_pv"></span></span>
+<span id="busuanzi_container_site_uv"><span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span> visits for this article</span><br><span id="busuanzi_value_site_uv"></span> people have visited the site<br><span id="busuanzi_container_site_pv">total site visits times <span id="busuanzi_value_site_pv"></span></span> 
+
+<div style="text-align:center;color:gray;">已有<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人访问 <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span></div>
