@@ -23,15 +23,14 @@ When building your own blog site, it is crucial to select an appropriate image h
 - Use [Screen to GIF]() to convert video into gif if you need.
 
 
-
 Results Show:
 
 <div class='center'>
 
 |Type|display|
 |:-:|:-:|
- |img|<div class="center" style="width:150px" ><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-02-13-46-06_Data Host_.png"/></div>|
- |gif|<div class="center" style="width:150px"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-02-10-07-12_Data Host_.gif"/></div>|
+ |img|<div class="center" style="width:150px" ><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-24-36_Data Host.jpg"/></div>|
+ |gif|<div class="center" style="width:150px"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-07-37_Data Host.gif"/></div>|
  |video|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://d.igdu.xyz/mJmX" type="video/mp4"></video>|
  |pdf|below|
 <!-- 视频的另一地址：https://www.writebug.com/git/YiDingg/WB.VideoBank/raw/branch/main/video.mp4 -->

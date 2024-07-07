@@ -76,6 +76,10 @@ h2::before {
     /* em: italic font*/
     color: #7f8c8d;
 }
+.markdown-section img {
+    /* em: italic font*/
+    max-height: 600px;
+}
 /*                                             */
 /* ------------- 全局基本配置 ---------------- */
 

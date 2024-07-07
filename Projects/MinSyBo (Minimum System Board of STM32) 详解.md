@@ -20,8 +20,8 @@
 
 | 正面 | 背面 |
 | :------: | :------: |
- |<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MinSyBo (Minimum System Board of STM32) 详解-2024-06-21-02-12-35.png">|<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MinSyBo (Minimum System Board of STM32) 详解-2024-06-21-02-12-40.png"> |
- |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MinSyBo (Minimum System Board of STM32) 详解--2024-06-29-13-04-51.png"/></div> |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/MinSyBo (Minimum System Board of STM32) 详解--2024-06-29-13-04-59.png"/></div>|
+ |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-30-00_MinSyBo (Minimum System Board of STM32) 详解.jpg"/></div>|<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-32-43_MinSyBo (Minimum System Board of STM32) 详解.jpg"/></div>|
+ |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-28-12_MinSyBo (Minimum System Board of STM32) 详解.jpg"/></div>|<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-30-21_MinSyBo (Minimum System Board of STM32) 详解.jpg"/></div>|
 </div>
 由于个人时间、精力和水平有限，项目难免存在不足，望读者不吝指正。
 
@@ -78,19 +78,27 @@
 使用USB-micro接口，选用CH340C芯片。
 
 对于CH340C，有一些需要注意的点，我们参考数据手册：
-<img src="https://www.writebug.com/static/uploads/2024/5/15/2ce24e9644364df72a18711849e702cf.png"/><img src="https://www.writebug.com/static/uploads/2024/5/15/49b1ab7e992bf24150acd23b75fd8161.png"/><img src="https://www.writebug.com/static/uploads/2024/5/15/46575fde01ced672ffc0ba9c65b39ffe.png"/><img src="https://www.writebug.com/static/uploads/2024/5/15/2f89c3a35c21a206bb205d8e02294dd3.png"/>
+<div class='center'><img src='https://www.writebug.com/static/uploads/2024/5/15/2ce24e9644364df72a18711849e702cf.png' alt='img'/></div>
+<div class='center'><img src='https://www.writebug.com/static/uploads/2024/5/15/49b1ab7e992bf24150acd23b75fd8161.png' alt='img'/></div>
+<div class='center'><img src='https://www.writebug.com/static/uploads/2024/5/15/46575fde01ced672ffc0ba9c65b39ffe.png' alt='img'/></div>
+<div class='center'><img src='https://www.writebug.com/static/uploads/2024/5/15/2f89c3a35c21a206bb205d8e02294dd3.png' alt='img'/></div>
+
 
 并且， 我们希望可以直接通过此USB-micro接口下载程序，因此将CH340C的 RXD 接到单片机的 PA9/USART1_TX，TXD 接到 PA10/USART1_RX
 
 ### 4. SWD下载模块
 
-不采用广为流传的接口顺序，将其改为与STLINK-V2接口顺序一致，并添加一个去耦电容。
+不采用广为流传的接口顺序，将其改为与STLINK-V2接口顺序一致，并添加一个去耦电容，如下图。
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-12-14-08_MinSyBo (Minimum System Board of STM32) 详解_.jpg"/></div>
 
 ### 5. 晶振模块
 > 晶振选型及相关电容电阻的计算可以参考文章：[切勿忽视晶振的选型设计](https://mp.weixin.qq.com/s?__biz=MzU2MTgyNTc2NA==&mid=2247484342&idx=1&sn=3bc4f307d19ecf78e07392d8fdb83258)，[STM32晶振的选择与计算](https://blog.csdn.net/weixin_45499326/article/details/133465510)
 
 外部高速晶振选用 RC08000619（8MHz），其负载电容值为20uF，为了计算外接的两个电容值，我们查阅晶振和单片机数据手册：
-<img src="https://www.writebug.com/static/uploads/2024/5/15/9580874a0f1b78acf26485594809612e.png"/><img src="https://www.writebug.com/static/uploads/2024/5/15/4786bfa425094a47d9a4fab87c968b5a.png"/><img src="https://www.writebug.com/static/uploads/2024/5/15/4786bfa425094a47d9a4fab87c968b5a.png"/>
+<div class='center'><img src='https://www.writebug.com/static/uploads/2024/5/15/9580874a0f1b78acf26485594809612e.png' alt='img'/></div>
+<div class='center'><img src='https://www.writebug.com/static/uploads/2024/5/15/4786bfa425094a47d9a4fab87c968b5a.png' alt='img'/></div>
+<div class='center'><img src='https://www.writebug.com/static/uploads/2024/5/15/4786bfa425094a47d9a4fab87c968b5a.png' alt='img'/></div>
 
 由负载电容计算公式：
 
@@ -100,17 +108,21 @@ $$
 
 其中$C_L$为负载电容（在MCU手册中典型值为30pF，我们选用的晶振负载电容 $\ge 4pF$即可，这里取 $C_L=20pF$），$C_{L1}$和$C_{L2}$即为上图中的两个电容（一般我们令它们相等），$C_{stray}$ 为PCB和MCU_Pin等带来的额外电容值（在F103C8T6的手册中推荐估计值为10pF，实际范围一般在0.1pF~7pF间，我们取 $C_{stray}=10pF$）。代入计算可得$C_{L1}=C_{L2}=20pF$。
 
-注意：严谨地说，由MCU手册，我们还需要在OSC_OUT口外另接一外部串联电阻$R_{EXT}$，如图：<img src="https://www.writebug.com/static/uploads/2024/5/17/821cbd8ee8281f949fad076bec749a08.png"/>
+注意：严谨地说，由MCU手册，我们还需要在OSC_OUT口外另接一外部串联电阻$R_{EXT}$，如图：
+<div class='center'><img src='https://www.writebug.com/static/uploads/2024/5/17/821cbd8ee8281f949fad076bec749a08.png' alt='img'/></div>
 
 它的值与等效串联电阻$R_S$有关（$R_S$常记为ESR，即 Equivalent Series Resistance，也称作谐振电阻）。$R_S$的值需要查阅晶振数据手册，$R_{EXT}$的计算我们不作展开，只说明其典型取值是$R_S$的2~6倍，这里可以取$R_{EXT} = 300\Omega $。
 但令一方面，考虑到晶振线为高频信号线，在PCB布线时我们一般要进行差分对等长调节，同时又要求晶振（包括滤波）离引脚尽可能的近。如果我们将电阻$R_{EXT}$串联进去，会为等长布线带来极大的困难。
 实际上，$R_{EXT}$的作用主要为限流（限制晶振信号振幅），在这里，即使不加串联电阻$R_{EXT}$，晶振也在正常工作范围内（振幅未超出正常范围）。综合考虑下来，我们不加电阻$R_{EXT}$，如图：
-<img src="https://www.writebug.com/static/uploads/2024/5/17/c2511db5dcbb669ce6ccd2362f2535e9.png"/>
+<div class='center'><img src='https://www.writebug.com/static/uploads/2024/5/17/c2511db5dcbb669ce6ccd2362f2535e9.png' alt='img'/></div>
+<img src=""/>
 
 对于外部低速晶振，我们选用 RNA32768117（32.768KHz），同样，为了计算负载电容值，我们查阅晶振的数据手册：
 
 查阅单片机数据手册：
-<img src="https://www.writebug.com/static/uploads/2024/5/15/25a67de572c57ef2ff0be42a0cbf7646.png"/><img src="https://www.writebug.com/static/uploads/2024/5/15/fcc627dd104be108115f2982d61baf01.png"/>
+<div class='center'><img src='https://www.writebug.com/static/uploads/2024/5/15/25a67de572c57ef2ff0be42a0cbf7646.png' alt='img'/></div>
+<div class='center'><img src='https://www.writebug.com/static/uploads/2024/5/15/fcc627dd104be108115f2982d61baf01.png' alt='img'/></div>
+
 注意：在STM32F103C8的数据手册中可以看到，此款单片机外部低速晶振的负载电容!!#ff0000 不宜超过7pF!!，且!!#ff0000 一定不要选用负载电容为12.5pF的晶振!!。
 
 类似地，我们令$C_{L1}=C_{L2}$，代入$C_{L}=6pF$（由晶振手册得到）和$C_{stray}=2pF$（MCU手册中给出的典型估计值为2pF至7pF），可以得到$C_{L1}=C_{L2}=8pF$
@@ -121,7 +133,7 @@ $$
 对于STM32F103C8T6，其NRST脚为低电平时执行复位，因此需要将此脚拉高，并用按键接地，使得按键按下时引脚被拉低。
 
 如图：
-<img src="https://www.writebug.com/static/uploads/2024/5/18/b2d047f41984dd801d17c3d753bd72d9.png"/>
+<div class='center'><img src='https://www.writebug.com/static/uploads/2024/5/18/b2d047f41984dd801d17c3d753bd72d9.png' alt='img'/></div>
 
 ### 7. 启动方式
 
@@ -139,7 +151,14 @@ BOOT Modes：
 </div>
 
 效果：
-<img src="https://www.writebug.com/static/uploads/2024/5/18/90cda8860606b5a71e535f6056c6a048.png"/>
+<div class='center'><img src='https://www.writebug.com/static/uploads/2024/5/18/90cda8860606b5a71e535f6056c6a048.png' alt='img'/></div>
+
+## 原理图效果
+
+原理图最终效果如下：
+<div class='center'><img src='https://www.writebug.com/static/uploads/2024/7/7/ff98ef1cff9a444fc67afbaf6facf26d.jpg' alt='img'/></div>
+
+
 
 ## PCB设计
 
@@ -162,17 +181,20 @@ BOOT Modes：
 </div>
 
 可以先隐藏飞线，先进行器件摆放、丝印修改：
-<div class='center' ><img src="https://www.writebug.com/static/uploads/2024/5/17/44ac40d46d32c44c90f7cb6b2760206a.png" style="height: 600px"/></div>
+<div class='center' ><img src="https://www.writebug.com/static/uploads/2024/5/17/44ac40d46d32c44c90f7cb6b2760206a.png" style="max-height: 600px"/></div>
 
 然后隐藏丝印，进行布线。布线时优先布局晶振线（晶振下层不要走任何其他导线）、信号线（同时注意调整差分对等长、滤波电容靠近引脚），然后布线其他部分，最后再考虑电源线和地线：
-<div class='center' ><img src="https://www.writebug.com/static/uploads/2024/5/17/1f35cfdc4afd15d2f8b3f0a11f07a66d.png" style="height: 600px"/></div>
+<div class='center' ><img src="https://www.writebug.com/static/uploads/2024/5/17/1f35cfdc4afd15d2f8b3f0a11f07a66d.png"/></div>
 
 将电源线连接完毕之后，在下图中，根据单片机最大电流，修改电源导线宽度（默认铜厚0.035mm，线宽10mil=）：
-<div class='center' ><img src="https://www.writebug.com/static/uploads/2024/5/17/d062b59ca1567d2436a121e9d778e7f2.png" style="height: 300px"/></div>
+<div class='center' ><img src="https://www.writebug.com/static/uploads/2024/5/17/d062b59ca1567d2436a121e9d778e7f2.png"/></div>
 
-建议电源线尽量宽，可以为标准对应关系的3~5倍，SMT32F103C8T6最大电流150mA，对应线宽小于0.15mm，这里选择3.3V线宽为15mil=0.381mm，5V线宽为20mil=0.508mm，如图：<div class='center' ><img src="https://www.writebug.com/static/uploads/2024/5/17/bf844da9dcb56c2ce16d5c0c617562d5.png 	" style="height: 600px"/></div>
+建议电源线尽量宽，可以为标准对应关系的3~5倍，SMT32F103C8T6最大电流150mA，对应线宽小于0.15mm，这里选择3.3V线宽为15mil=0.381mm，5V线宽为20mil=0.508mm，如图：
+<div class='center' ><img src="https://www.writebug.com/static/uploads/2024/5/17/bf844da9dcb56c2ce16d5c0c617562d5.png"/></div>
 
-当仅剩地线GND未连接时，进行铺铜，将地线连接完毕，并检查有无错误：<div class='center' ><img src="https://www.writebug.com/static/uploads/2024/5/17/e70921650b64c5e8aab6e0ba795edd1c.png" style="height: 600px"/></div>
+当仅剩地线GND未连接时，进行铺铜，将地线连接完毕，并检查有无错误：
+<div class='center' ><img src="https://www.writebug.com/static/uploads/2024/5/17/e70921650b64c5e8aab6e0ba795edd1c.png"/></div>
+
 ## 物料表与焊接图
 BOM表（简略）：
 - 主控芯片：
@@ -239,7 +261,7 @@ BOM表（简略）：
 </div>
 
 0.1uF电容位置图片：
-<div class='center'><img src="https://www.writebug.com/static/uploads/2024/5/30/d45257fe561033ab8863ad19be0ddd23.png" style="height: 600px"/></div>
+<div class='center'><img src="https://www.writebug.com/static/uploads/2024/5/30/d45257fe561033ab8863ad19be0ddd23.png" style="max-height: 600px"/></div>
 
 ## 参考文章
 

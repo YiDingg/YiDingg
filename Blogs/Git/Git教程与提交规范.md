@@ -42,8 +42,8 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 
 
 ### 1. Git使用演示
-为了更好的演示效果，我们在桌面新建一个文件夹 Git_Test，在其中新建 test.tex 文件，并以此进行演示。
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-02-10-07-39_Git教程与提交规范_.png"/></div>
+为了演示，我们在桌面新建一个文件夹 Git_Test，在其中新建 test.tex 文件。
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-29-21_Git教程与提交规范.jpg"/></div>
 
 下面的步骤，既可以在 Windosw PowerShell 中进行，也可以在 Git Bash 中进行，步骤完全相同，这里以 Git Bash 为例。
 
@@ -136,9 +136,10 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 <summary>  10. 连接远程仓库（HTTPS方式） </summary>  
 
 首先创建一个仓库，填写相关信息和初始化信息，并复制仓库连接：  
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-59-31.png"/>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-09-49_Git教程与提交规范.jpg"/></div>
+
 <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-59-38.png"/>
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-59-49.png"/>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-30-59_Git教程与提交规范.jpg"/></div>
 
 `git remote add origin {remote-url}`：将远程仓库链接到本地并命名为 origin（注意，Git Bash 默认中键黏贴）  
 `git remote -v`：查看已链接的仓库信息  
@@ -157,7 +158,7 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 如果出现SSL证书无法验证，确保此远程仓库是可信的，然后 `git config --global http.sslVerify false`（全局禁用SSL证书验证）并再次提交。
 <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-00-17.png"/>
 <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-00-25.png"/>
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-00-32.png"/>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-31-30_Git教程与提交规范.jpg"/></div>
 </details>
 
 
@@ -290,9 +291,10 @@ fatal: Could not read from remote repository.
 <summary> 5. 检查是否导入成功 </summary>  
 
 全部版本导入完毕后，在Github的Tag处可直接下载对应版本，这样就完成了老项目库的 Git 搭建。
-<div class='center'><img src='https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-39.png' alt='img'/></div>
-<div class='center'><img src='https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-42.png' alt='img'/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-42.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-12-07_Git教程与提交规范.jpg"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-26-53_Git教程与提交规范.jpg"/></div>
+
 </details>
 
 

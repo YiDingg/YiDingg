@@ -7,9 +7,7 @@
 
 ## DMA原理
 对于STM32F103x系列，官方对其DMA的说明在 [STM32F10x 参考手册(中文版).pdf](https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/764d9b9b210b4c052c24837bf24e0398.pdf) 中的Page.142~Page.154。下面是部分截图：
-<div class='center'>
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (3)：DMA的原理与用法--2024-06-23-00-30-08.png"/>
-</div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-33-21_STM32系列 (3)：DMA的原理与用法.jpg"/></div>
 
 
 特别地，我们也要注意DMA的Circular模式、MemtoMem模式:

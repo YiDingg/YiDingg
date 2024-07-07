@@ -29,7 +29,6 @@
 	- 单片机型号：STM32F103VCT6
 	- OLED型号：0.96寸128x64屏幕，SSD1306 / SSD1315 控制芯片，SPI通信协议，7管脚。
 
----
 ## 旧版驱动(IIC)
 
 "旧版" 是指 "OLEDSD V1.0.X" 和 "OLEDSD V1.1.X" 两个系列，它们都仅支持IIC通信，为分为HAL库和标准库两种。
@@ -95,9 +94,9 @@ const uint8_t /*_img_name_*/_Data[] = {
 
  |<div class='center'>步骤</div>| <div class='center'>图片</div> |
  | - | - |
- | 1. 在 "生成模版" 一栏，将上面的代码复制进去 |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/OLEDSD (OLED Software Driver)--2024-06-29-00-25-29.png"/></div> |
- | 2. 选择图片，进行相关设置。需注意图片名称即为数组名（勿含中文字符），取模方式选择 "列行式"，其它可自行设置 | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/OLEDSD (OLED Software Driver)--2024-06-29-00-25-35.png"/></div> |
- | 3. 复制生成的代码，黏贴到 OLED_font.h 中（建议新建 OLED_Image.h 文件专门用于存放图片） |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/OLEDSD (OLED Software Driver)--2024-06-29-00-25-42.png"/></div>|
+ | 1. 在 "生成模版" 一栏，将上面的代码复制进去 |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-25-52_OLEDSD (OLED Software Driver).jpg"/></div> |
+ | 2. 选择图片，进行相关设置。需注意图片名称即为数组名（勿含中文字符），取模方式选择 "列行式"，其它可自行设置 | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-25-23_OLEDSD (OLED Software Driver).jpg"/></div> |
+ | 3. 复制生成的代码，黏贴到 OLED_font.h 中（建议新建 OLED_Image.h 文件专门用于存放图片） |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-30-36_OLEDSD (OLED Software Driver).jpg"/></div>|
 </div></div>
 
 至此完成图片取模，使用 OLED_ShowPicture() 函数即可显示图片，示例效果如下：
