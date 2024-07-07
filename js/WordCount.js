@@ -4,7 +4,7 @@ var defaultOptions = {
     countable: !0,
     position: "top",
     margin: "10px",
-    float: "right",
+    float: "left",
     fontsize: "0.9em",
     color: "rgb(170,170,170)",
     language: "english",
