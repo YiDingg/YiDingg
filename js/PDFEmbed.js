@@ -1,3 +1,5 @@
+// https://cdn.jsdelivr.net/npm/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js
+
 const DEBUG = 0;
 const PDF_VIEWER_WIDTH = "100%";
 const PDF_VIEWER_HEIGHT = "50rem";

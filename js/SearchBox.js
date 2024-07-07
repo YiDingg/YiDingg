@@ -1,3 +1,5 @@
+// https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js
+
 !(function () {
     function u(e) {
         return e

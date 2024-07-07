@@ -1,3 +1,5 @@
+// https://cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js
+
 !(function () {
     function t(e) {
         return "IMG" === e.tagName;
