@@ -1,5 +1,7 @@
-// https://cdn.jsdelivr.net/npm/docsify-busuanzi@1.0.1/dist/docsify-busuanzi.min.js
-// http://ibruce.info/2015/04/04/busuanzi/
+// 插件：https://cdn.jsdelivr.net/npm/docsify-busuanzi@1.0.1/dist/docsify-busuanzi.min.js
+
+// 不蒜子原地址：http://ibruce.info/2015/04/04/busuanzi/
+// http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
 
 !(function (n, i) {
     "object" == typeof exports && "object" == typeof module
@@ -23,7 +25,7 @@
                     n.afterEach(function (n, e) {
                         if (i()) {
                             (n +=
-                                '<div style="text-align:center;color:gray;font-size:0.7rem;"><span id="busuanzi_container_site_uv"><span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span> visits for this article</span><br><span id="busuanzi_value_site_uv"></span> people have visited the site, <span id="busuanzi_container_site_pv">total site visits <span id="busuanzi_value_site_pv"></span></span></div>'),
+                                '<div style="text-align:center;color:gray;">已有<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人访问 <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span></div>'),
                                 (function () {
                                     if (i()) {
                                         var n =
