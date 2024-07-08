@@ -8,6 +8,7 @@
 
 - 📓 **Blogs**
   - Mixed
+    - [Build Your Personal Website](Blogs/Mixed/BuildYourSite.md)
     - [Awesome Tools and Resources](Blogs/Mixed/Awesome%20Tools%20and%20Resources.md)
     - [Nice VSCode Extensions](Blogs/Mixed/Nice%20VSCode%20Extenstions.md)
     - [Repository Slimming](Blogs/Mixed/RepoSlimming.md)
@@ -81,6 +82,7 @@
   - [MuMeStar (Mutiple Menu Star for OLED)](Projects/MuMeStar%20(Mutiple%20Menu%20Star%20for%20OLED)%20详解.md)
   - [OLEDSD (OLED Software Driver)](Projects/OLEDSD%20(OLED%20Software%20Driver).md)
   - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo%20(Minimum%20System%20Board%20of%20STM32)%20详解.md)
+  - [HDofDF (Humidity Detection of Diabetic Foot)](Projects/HDofDF.md)
   - WSETD
 
     - [Outline of WSETD](Projects/WSETD/OutlineOfWSETD.md)

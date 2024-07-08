@@ -10,6 +10,6 @@
 
 ## 其它资料
 
-- [C++ Primer, 5th Edition](https://zz.etocs.us.kg/book/2733889/20ad6c/c-primer-5th-edition.html)
+- [C++ Primer (5th Edition)](https://zz.etocs.us.kg/book/2733889/20ad6c/c-primer-5th-edition.html)
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-04-00-26-32_Cpp笔记大纲_.jpg"/></div>

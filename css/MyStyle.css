@@ -7,14 +7,14 @@ Font: [0,400], [401,600], [600,1200], [1200,infty]
 */
 
 :root {
-    --fontsize-main: 0.9rem; /* -0.05rem */
+    --fontsize-main: 0.95rem; /* -0.05rem */
     --fontsize-h1: 1.6rem; /* -0.15rem */
     --fontsize-h2: 1.4rem; /* -0.1rem */
     --fontsize-h3: 1.1rem; /* -0.05rem */
 
-    --fontsize-h4: 0.95rem; /* -0.05rem */
-    --fontsize-h5: 0.9rem; /* -0.05rem */
-    --fontsize-h6: 0.9rem; /* -0.05rem */
+    --fontsize-h4: 1rem; /* -0.05rem */
+    --fontsize-h5: 1rem; /* -0.05rem */
+    --fontsize-h6: 1rem; /* -0.05rem */
 
     --mobile-width: 768px;
 
@@ -35,7 +35,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     color: var(--main-color);
-    font-family: "Helvetica Neue", "Source Sans Pro", sans-serif;
+    font-family: "Segoe UI", "Times New Roman", "Verdana";
     font-size: 0.8rem;
     letter-spacing: 0;
     margin: 0;
@@ -49,17 +49,19 @@ h1 .anchor span {
     color: var(--color-h1);
 }
 h2 .anchor span {
-    color: var(--color-h2);
+    color: rgb(245, 230, 255);
+    background-color: rgb(110, 0, 200);
+    padding: 0.1rem 0.4rem;
 }
+/* h2::before {
+    content: "& ";
+    color: var(--color-h2);
+} */
 h3 .anchor span {
     color: var(--color-h3);
 }
 h4 .anchor span {
     color: var(--color-h4);
-}
-h2::before {
-    content: "& ";
-    color: var(--color-h2);
 }
 .markdown-section a {
     /* a: anchor */
@@ -436,11 +438,11 @@ code .token {
     border-radius: 50%;
     box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
     content: " ";
-    height: 12px;
-    left: 12px;
+    height: 10px;
+    left: 10px;
     margin-top: -20px;
     position: absolute;
-    width: 12px;
+    width: 10px;
 }
 /* 滑动条样式修改 */
 /* pre为纵向滑动条 */

@@ -84,15 +84,57 @@ Converting video to gif with high quality might cause a size surge.
 
 ### Font
 
-<span style='color:red; font-style:italic; font-family:Arial; font-size:16px; font-weight:bold;'>Arial</span>
-<span style="color:blue; font-family:华文彩云; font-style:italic; font-size:16px; font-weight:bold;">华文彩云</span>
-<p style="color:purple; font-family:华文彩云; font-style:italic; font-size:16px; font-weight:bold;">华文彩云</p>
+<p style='font-family:Arial; font-size:16px;'>字体 Arial</p>
+<p style='color:red; font-style:italic; font-family:Arial; font-size:16px; font-weight:bold;'>字体 Arial (italic, bold)</p>
 
+<p style="color:purple; font-family:华文彩云;font-size:16px;">华文彩云 HuaWenCaiYun</p>
+<p style="color:blue; font-family:华文彩云; font-style:italic; font-size:16px; font-weight:bold;">华文彩云 HuaWenCaiYun (italic, bold)</p>
+
+<span style="font-family:'Times New Roman';">
+Times New Roman
+</span>, 
+<span style="font-family:'Times New Roman';font-style:italic;font-weight:bold;">
+Times New Roman (italic, bold)
+</span>
+
+<p><span style="font-family:'Algerian';">
+Algerian
+</span>, 
+<span style="font-family:'Times New Roman';font-style:italic;font-weight:bold;">
+Algerian (italic, bold)
+</span></p>
+
+<p><span style="font-family:'幼圆';">
+幼圆 YouYuan
+</span>, 
+<span style="font-family:'Times New Roman';font-style:italic;font-weight:bold;">
+幼圆 YouYuan (italic, bold)
+</span></p>
+
+<p><span style="font-family:'Cascadia Code';">
+Cascadia Code
+</span>, 
+<span style="font-family:'Cascadia Code';font-style:italic;font-weight:bold;">
+Cascadia Code (italic, bold)
+</span></p>
+
+
+<p><span style="font-family:'Cooper Black';">
+Cooper Black
+</span>, 
+<span style="font-family:'Cooper Black';font-style:italic;font-weight:bold;">
+Cooper Black (italic, bold)
+</span></p>
+
+<p><span style="font-family:'Verdana';">
+Verdana
+</span>, 
+<span style="font-family:'Verdana';font-style:italic;font-weight:bold;">
+Verdana (italic, bold)
+</span></p>
 
 ```html
-<span style='color:red; font-style:italic; font-family:Arial; font-size:16px; font-weight:bold;'>Arial</span>
-<span style="color:blue; font-family:华文彩云; font-style:italic; font-size:16px; font-weight:bold;">华文彩云</span>
-<p style="color:purple; font-family:华文彩云; font-style:italic; font-size:16px; font-weight:bold;">华文彩云</p>
+<span style='font-style:italic;font-family:Arial;font-weight:bold;'>Arial</span>
 ```
 
 

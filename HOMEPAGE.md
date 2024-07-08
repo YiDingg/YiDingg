@@ -6,7 +6,7 @@
 
 This site is a collection of my notes, blogs and documents. It is maintained by myself, hosted on GitHub Pages. 
 
-Refer to [个人网站搭建](Blogs\Mixed\个人网站搭建.md) if you also want to build your own website.
+Refer to [Build Your Personal Website](Blogs/Mixed/BuildYourSite.md) if you also want to build your own website.
 
 ### Navgation Page
 
@@ -33,6 +33,7 @@ The blogs are following [*WSETD (Writing Standards of Easy-read Technical Docume
 - Use [SINA](https://www.sina.lt/restore.html) to restore the short link.
 - Use [Screen to GIF]() to convert video into gif if you need.
 - Use [Capitalize](https://capitalizemytitle.com/style/APA/) <span class='script'>or [Wawa](https://www.iamwawa.cn/daxiaoxie.html)</span> to capitalize your titles.
+- Use [Rewriter](https://capitalizemytitle.com/ai-title-rewriter/) to rewrite your title.
 
 **Data host:**
 - upload <span style="color:red">img and small gif to Aliyun</span> by VS-PicGo

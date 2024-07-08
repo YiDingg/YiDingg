@@ -5,19 +5,25 @@
 ## 文件命名
 
 （1）文档的文件名不得含有空格  
-（2）文件名必须使用半角字符，不得使用全角字符（这意味着文件名不能包含中文）。  
+（2）文件名必须使用半角字符，不得使用全角字符（这意味着<span style='color:red'>文件名不能包含中文</span>）。  
 （3）为了醒目，某些说明文件的文件名，可以全部使用大写字母。比如`README.md`、`LICENSE.md`  
 （4）文件命名采用“大骆驼拼写法”（UpperCamelCase），即每个单词的首字母大写，其余字母小写。  
 
-例如：一英文文档标题为 "How to Learn English"，或中文文档标题为“如何学习英语”，则应将文件命名为`HowToLearnEnglish.md`。  
+例如：一英文文档标题为 "Learn English"，或中文文档标题为“如何学习英语”，则应将文件命名为`LearnEnglish.md`。  
 
-（5）不允许存在仅大小写不同的文件名  
-例如：在整个文档 / 工程中，不能同时存在名为`Hello.md`和`hello.md`的文件，应对其中一个进行重命名。
+（5）禁止存在仅大小写不同的文件名  
+Window、Linux和Mac系统中的大小写敏感不同，Linux 系统是大小写敏感的，而 Windows 和 Mac 系统是大小写不敏感的。因此，为了提高文件可移植性，应避免存在仅大小写不同的文件名。例如：在整个文档 / 工程中，不能同时存在名为`Hello.md`和`hello.md`的文件，应对其中一个进行重命名。
 
+（6）当英文文档标题过长时，应采用缩写命名，缩写规则如下：
 
-（6）当英文文档标题过长时，应采用单词缩写，并将标题中首字母未大写的单词省略。
+标题大小写规范参考[英语标题中大小写的问题](https://zhuanlan.zhihu.com/p/38086502)。
 
-例如：标题为`Writing Standards of Easy-read Technical Document`的文档，应省略"of"后取缩写，命名为`WSETD.md`。
+- 标题中首字母大写的单词，至少保留其首字母。例如，`How to Learn English`中应保留`H`、`L`、`E`。
+- 标题中未大写的单词，若由三个或者三个以下字母构成，则保留完整单词（小写），否则取前三个字母。
+
+例如，`How to Learn English`中的`to`被完整保留，文件命名为`HowtoLearnEnglish.md`或`HtoLE.md`；标题`Skeletal Differences between Boys and Girls`中的`and`被完整保留，`between`被缩写为`bet`，文件最终命名为`SDbetBandG.md`。
+
+又例如，标题为`Writing Standards of Easy-read Technical Document`的文档，应省略
 
 （7）特别地，当文档内容过多时，应作为一个系列，分为多篇进行撰写。文件应采用`SeriesName(num)-Title`的命名方式，并增加本系列大纲（Outline），大纲结构详见 [其它-系列大纲](Projects\WSETD\WSETD(1)-ChineseDocument.md?id=系列大纲)
 
@@ -31,6 +37,19 @@ WSETD(3)-SpanishDocument.txt
 ...
 ```
 
+下面是一些命名示例：
+
+```markdown
+标题 --> 命名
+
+Hello World --> HelloWorld.md
+Learn English --> LearnEnglish.md
+License --> LICENSE.md
+Readme --> README.md
+How to Learn English --> HowtoLearnEnglish.md 或 HtoLE.md
+Writing Standards of Easy-read Technical Document --> WSofETD.md
+Skeletal Differences between Boys and Girls --> SDBbetBandG.md
+```
 
 ## 标题
 

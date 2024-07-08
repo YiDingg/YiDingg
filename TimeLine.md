@@ -31,9 +31,11 @@
 
 <!--  --> 
 <!-------------- Add Time Block Below -------------->
+
+
 <!-- -------------------------------------------- -->
 <div class="timeline-item_node"></div>
-<div class="timeline-item_timestamp">July 1, 2024</div>
+<div class="timeline-item_timestamp">August 1, 2024</div>
 <div class="timeline-item_content"><br><br><!-- 每块顶部单独留一些空间 -->
 <!------------------------------------>
 <div class="tbox"><div class='outerBox'><div class="dateLeftBox"><div>
@@ -41,11 +43,19 @@
 More awesome features were added to the site, you can go to <a href="Blogs\SiteFeatures\CustomComponent.md">Custom Component</a> and <a href="Blogs\SiteFeatures\Syntax Examples.md">Syntax Examples</a> for more details.
 </ul></div></div></div></div>
 <!------------------------------------>
+
 <div class="tbox"><div class='outerBox'><div class="dateBox"><div>
 <tl-title>More Stable Data Source</tl-title>
 <ul>
-We optimized our database, such as image host, pdf and other files host. You could now browse  most of the contents freely.
+We optimized our image host (Aliyun OSS), pdf and other files host (WB Static). You could now browse most of the contents freely and quickly.
 </ul></div></div></div></div>
+<!------------------------------------>
+
+
+<!------------------------------------>
+<div class="timeline-item_node"></div>
+<div class="timeline-item_timestamp">July 1, 2024</div>
+<div class="timeline-item_content"><br><br><!-- 每块顶部单独留一些空间 -->
 <!------------------------------------>
 <div class="tbox"><div class='outerBox'><div class="dateLeftBox"><div>
 <tl-title> Import Blogs, Notes and Projects </tl-title><ul>

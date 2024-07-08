@@ -5,7 +5,7 @@ Font: [0,400], [401,600], [600,1200], [1200,infty]
 */
 
 :root {
-    --main-color: #34495e;
+    --main-color: #303030;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Sans+Pro:300,400,600");

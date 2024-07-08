@@ -20,6 +20,7 @@ Public domain (公共领域)
 - [产品手册中文写作规范](https://www.taodocs.com/p-51273.html), by 华为
 - [写作规范和格式规范](http://guide.daocloud.io/dcs/%E5%86%99%E4%BD%9C%E8%A7%84%E8%8C%83%E5%92%8C%E6%A0%BC%E5%BC%8F%E8%A7%84%E8%8C%83-9153803.html), by DaoCloud
 - [技术写作技巧在日汉翻译中的应用](http://www.hitachi-tc.co.jp/company/thesis/thesis.pdf), by 刘方
+- [为什么文件名要小写](https://www.ruanyifeng.com/blog/2017/02/filename-should-be-lowercase.html)
 - [简体中文规范指南](https://www.lengoo.de/documents/styleguides/lengoo_styleguide_ZH.pdf), by lengoo
 - [文档风格指南](https://open.leancloud.cn/copywriting-style-guide.html), by LeanCloud
 - [豌豆荚文案风格指南](https://docs.google.com/document/d/1R8lMCPf6zCD5KEA8ekZ5knK77iw9J-vJ6vEopPemqZM/edit), by 豌豆荚
