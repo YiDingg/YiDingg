@@ -4,13 +4,28 @@
 
 ## Mixed
 
+### Key Promoter
+
+Key Promoter is an extension that helps you to learn shortcuts while you are working. 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-10-23-19-38_Nice VSCode Extenstions.jpg"/></div>
+
+
+### Jumpy
+
+Jumpy provides fast cursor movement, inspired by Atom's package of the same name.
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-10-23-12-32_Nice VSCode Extenstions.jpg"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-10-23-13-59_Nice VSCode Extenstions.jpg"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-10-23-14-48_Nice VSCode Extenstions.jpg"/></div>
+
+
 <!-- <input checked disabled type="checkbox"> -->
 
 ### GitLens
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-06-13-37-45_Nice VSCode Extenstions_.jpg"/></div>
 
-Supercharge Git and unlock untapped knowledge within your repository to better understand, write, and review code. Focus, collaborate, accelerate.
+Supercharge Git and unlock untapped knowledge within your repository to better understand, write, and review code. Focus, collaborate, accelerate. But attention it is not free.
 
 ### Git Graph
 

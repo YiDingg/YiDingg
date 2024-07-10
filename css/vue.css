@@ -324,7 +324,7 @@ main.hidden {
   background-color: #f8f8f8;
 } */
 
-.markdown-section p.tip {
+/* .markdown-section p.tip {
     background-color: #f8f8f8;
     border-bottom-right-radius: 2px;
     border-left: 4px solid #f66;
@@ -332,9 +332,9 @@ main.hidden {
     margin: 2em 0;
     padding: 12px 24px 12px 30px;
     position: relative;
-}
+} 被覆盖*/
 
-.markdown-section p.tip:before {
+/* .markdown-section p.tip:before {
     background-color: #f66;
     border-radius: 100%;
     color: #fff;
@@ -357,8 +357,7 @@ main.hidden {
 
 .markdown-section p.tip em {
     color: var(--main-color);
-}
-
+} 被覆盖*/
 .markdown-section p.warn {
     background: rgba(66, 185, 131, 0.1);
     border-radius: 2px;

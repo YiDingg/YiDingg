@@ -12,6 +12,7 @@
     - [Awesome Tools and Resources](Blogs/Mixed/Awesome%20Tools%20and%20Resources.md)
     - [Nice VSCode Extensions](Blogs/Mixed/Nice%20VSCode%20Extenstions.md)
     - [Repository Slimming](Blogs/Mixed/RepoSlimming.md)
+    - [Sentences](Blogs/Mixed/Sentences.md)
     - [个人网站搭建](Blogs/Mixed/个人网站搭建.md)
     - [嘉立创免费下单教程](Blogs/Mixed/嘉立创免费下单教程.md)
     - [结构体及其指针在树中的应用](Blogs/Mixed/结构体及其指针在树中的应用.md)
