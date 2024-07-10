@@ -25,20 +25,20 @@ By the way, I am trying to write notes in English as a practice.
 Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeatures\Data%20Host.md) for the reasons and more information.
 
 **Tools:**
-- Use [Resize](https://bulkresizephotos.com/zh?preset=true&type=filesize&filesize=80000) (img) and [Docsmall](https://docsmall.com/gif-compress) (gif) <span class='script'>or [Tiomg](https://tiomg.org/compress-image) or [Oplimize LLA](https://imagecompressor.com) or [TinyPNG](https://tinypng.com/) or [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
-- Use [FreeCompress](https://freecompress.com/) <span class='script'>or [Video To Edit](https://www.video2edit.com) or [FCO](https://compress-video.file-converter-online.com/#google_vignette)</span> to compress the video.
-- Use [YouCompress](https://www.youcompress.com/)<span class='script'>or [MP3Smaller](https://www.mp3smaller.com/)</span> to compress the audio.
-- Use [I Love PDF](https://www.ilovepdf.com/) <span class='script'> or [PDF24 Tolls](https://tools.pdf24.org/zh/compress-pdf) or [PDF IO](https://pdf.io/compress/)</span> to compress pdf.
-- Use<!--   [C1N](https://www.c1n.cn/) or --> [Short](https://d.igdu.xyz/)<span class='script'> or [C1N](https://www.c1n.cn/)</span> to create a short link for your file.
+- Use [Resize](https://bulkresizephotos.com/zh?preset=true&type=filesize&filesize=80000) (img) and [Docsmall](https://docsmall.com/gif-compress) (gif) <span class='tinyscript'>or [Tiomg](https://tiomg.org/compress-image) or [Oplimize LLA](https://imagecompressor.com) or [TinyPNG](https://tinypng.com/) or [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
+- Use [FreeCompress](https://freecompress.com/) <span class='tinyscript'>or [Video To Edit](https://www.video2edit.com) or [FCO](https://compress-video.file-converter-online.com/#google_vignette)</span> to compress the video.
+- Use [YouCompress](https://www.youcompress.com/)<span class='tinyscript'>or [MP3Smaller](https://www.mp3smaller.com/)</span> to compress the audio.
+- Use [I Love PDF](https://www.ilovepdf.com/) <span class='tinyscript'> or [PDF24 Tolls](https://tools.pdf24.org/zh/compress-pdf) or [PDF IO](https://pdf.io/compress/)</span> to compress pdf.
+- Use<!--   [C1N](https://www.c1n.cn/) or --> [Short](https://d.igdu.xyz/)<span class='tinyscript'> or [C1N](https://www.c1n.cn/)</span> to create a short link for your file.
 - Use [SINA](https://www.sina.lt/restore.html) to restore the short link.
 - Use [Screen to GIF]() to convert video into gif if you need.
-- Use [Capitalize](https://capitalizemytitle.com/style/APA/) <span class='script'>or [Wawa](https://www.iamwawa.cn/daxiaoxie.html)</span> to capitalize your titles.
+- Use [Capitalize](https://capitalizemytitle.com/style/APA/) <span class='tinyscript'>or [Wawa](https://www.iamwawa.cn/daxiaoxie.html)</span> to capitalize your titles.
 - Use [Rewriter](https://capitalizemytitle.com/ai-title-rewriter/) to rewrite your title.
 
 **Data host:**
-- upload <span style="color:red">img and small gif to Aliyun</span> by VS-PicGo
-- upload <span style="color:red">gif, video, audio pdf and other files to WB.Static</span> manually. <span style="color:red">
-- upload the files to 123 NetDisk or Baidu NetDisk to share them.
+- Upload <span style="color:red">img and small gif to Aliyun</span> by VS-PicGo
+- Upload <span style="color:red">gif, video, audio pdf and other files to WB.Static</span> or WB.Cloud manually. <span style="color:red">
+- Upload the files to 123 NetDisk or Baidu NetDisk to share them.
 
 
 ### About Me

@@ -10,7 +10,7 @@
 
 - [技术社区列表](https://www.zhihu.com/question/558619469/answer/3021358965)
 - [Listary](https://www.bilibili.com/video/BV1jL4y1V78P): an awesome tool for searching and managing your files/apps.
-- [csdn文章浏览/资源下载](https://www.niupizhiyuan.com/download.html) <span class='script'>or [知乎](https://www.zhihu.com/question/34442235/answer/3552846202?utm_campaign=shareopn&utm_medium=social&utm_psn=1792927195892690944&utm_source=wechat_session)</span>
+- [csdn文章浏览/资源下载](https://www.niupizhiyuan.com/download.html) <span class='tinyscript'>or [知乎](https://www.zhihu.com/question/34442235/answer/3552846202?utm_campaign=shareopn&utm_medium=social&utm_psn=1792927195892690944&utm_source=wechat_session)</span>
 - [Wally Mouse (摇摇鼠)](https://yys.tanpok.com/)
 - [Adobe 系列软件破解器](https://kirigaya.cn/blog/article?seq=245)
 - [华中科技大学开源镜像站](https://mirrors.hust.edu.cn/)

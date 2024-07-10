@@ -44,7 +44,7 @@ You can follow the link [CSDN](https://blog.csdn.net/liyou123456789/article/deta
 
 ## Copy Our Site
 
-As our site is completely free and open-source, you can simply fork it into your repo to have the same website or modify it to fit your thoughts. Go to [Exmaple: Home Page](https://yidingg.github.io/Website/#/HOMEPAGE) to copy the site, and go to [GitHub](https://github.com/YiDingg/Website) to fork our repo.
+As our site is completely free and open-source, you can simply fork it into your repo to have the same website or modify it to fit your thoughts. Go to [Exmaple: Home Page](https://yidingg.github.io/WebsiteExample/#/HOMEPAGE) to copy the site, and go to [GitHub](https://github.com/YiDingg/Website) to fork our repo.
 
 ## Go Deep 
 
