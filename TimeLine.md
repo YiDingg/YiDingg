@@ -2,6 +2,9 @@
 
 ## Development Plan
 
+<!-- To be added to the timeline -->
+<!-- Copy Our Site -->
+
 <!-- The top one is the first one to be completed -->
 - [ ] Customize to improve the components: search box, <s>sidebar, toc</s>
   - https://www.bilibili.com/video/BV183411q7uu
