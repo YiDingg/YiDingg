@@ -25,15 +25,13 @@ By the way, I am trying to write notes in English as a practice.
 Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeatures\Data%20Host.md) for the reasons and more information.
 
 **Tools:**
-- Use [Resize](https://bulkresizephotos.com/zh?preset=true&type=filesize&filesize=80000) (img) and [Docsmall](https://docsmall.com/gif-compress) (gif) <span class='tinyscript'>or [Tiomg](https://tiomg.org/compress-image) or [Oplimize LLA](https://imagecompressor.com) or [TinyPNG](https://tinypng.com/) or [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
-- Use [FreeCompress](https://freecompress.com/) <span class='tinyscript'>or [Video To Edit](https://www.video2edit.com) or [FCO](https://compress-video.file-converter-online.com/#google_vignette)</span> to compress the video.
-- Use [YouCompress](https://www.youcompress.com/)<span class='tinyscript'>or [MP3Smaller](https://www.mp3smaller.com/)</span> to compress the audio.
-- Use [I Love PDF](https://www.ilovepdf.com/) <span class='tinyscript'> or [PDF24 Tolls](https://tools.pdf24.org/zh/compress-pdf) or [PDF IO](https://pdf.io/compress/)</span> to compress pdf.
-- Use<!--   [C1N](https://www.c1n.cn/) or --> [Short](https://d.igdu.xyz/)<span class='tinyscript'> or [C1N](https://www.c1n.cn/)</span> to create a short link for your file.
-- Use [SINA](https://www.sina.lt/restore.html) to restore the short link.
-- Use [Screen to GIF]() to convert video into gif if you need.
-- Use [Capitalize](https://capitalizemytitle.com/style/APA/) <span class='tinyscript'>or [Wawa](https://www.iamwawa.cn/daxiaoxie.html)</span> to capitalize your titles.
-- Use [Rewriter](https://capitalizemytitle.com/ai-title-rewriter/) to rewrite your title.
+- Img, gif: use [Resize](https://bulkresizephotos.com/zh?preset=true&type=filesize&filesize=80000) (img) and [Docsmall](https://docsmall.com/gif-compress) (gif) <span class='tinyscript'>or [Tiomg](https://tiomg.org/compress-image) or [Oplimize LLA](https://imagecompressor.com) or [TinyPNG](https://tinypng.com/) or [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
+- Video: use [FreeCompress](https://freecompress.com/) <span class='tinyscript'>or [Video To Edit](https://www.video2edit.com) or [FCO](https://compress-video.file-converter-online.com/#google_vignette)</span> to compress the video.
+- Audio: use [YouCompress](https://www.youcompress.com/)<span class='tinyscript'>or [MP3Smaller](https://www.mp3smaller.com/)</span> to compress the audio.
+- PDF: use [I Love PDF](https://www.ilovepdf.com/) <span class='tinyscript'> or [PDF24 Tolls](https://tools.pdf24.org/zh/compress-pdf) or [PDF IO](https://pdf.io/compress/)</span> to compress pdf.
+- Link: use<!--   [C1N](https://www.c1n.cn/) or --> [Short](https://d.igdu.xyz/)<span class='tinyscript'> or [C1N](https://www.c1n.cn/)</span> to create a short link for your file, and use [SINA](https://www.sina.lt/restore.html) to restore the short link.
+- Git to video: use [Screen to GIF]() to convert video into gif if you need.
+- Title: use [Capitalize](https://capitalizemytitle.com/style/APA/) <span class='tinyscript'>or [Wawa](https://www.iamwawa.cn/daxiaoxie.html)</span> to capitalize your titles, and use [Rewriter](https://capitalizemytitle.com/ai-title-rewriter/) to rewrite your title.
 
 **Data host:**
 - Upload <span style="color:red">img and small gif to Aliyun</span> by VS-PicGo
