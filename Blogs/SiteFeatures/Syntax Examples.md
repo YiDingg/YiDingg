@@ -195,7 +195,7 @@ Verdana (italic, bold)
 
 ### docsify
 
-https://docsify.js.org
+https://docsify.js.org/#/helpers
 
 !> **<span style='color:red'>Attention:</span>**<br>
 Converting video to gif with high quality might cause a size surge. 

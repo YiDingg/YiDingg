@@ -30,7 +30,7 @@ Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeature
 - Img, gif: use [Resize](https://bulkresizephotos.com/zh?preset=true&type=filesize&filesize=80000) (img) and [Docsmall](https://docsmall.com/gif-compress) (gif) <span class='tinyscript'>or [i2img](https://www.i2img.com/image-compressor), [Tiomg](https://tiomg.org/compress-image), [Oplimize LLA](https://imagecompressor.com), [TinyPNG](https://tinypng.com/), [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
 - Video: use [FreeCompress](https://freecompress.com/) <span class='tinyscript'>or [Video To Edit](https://www.video2edit.com), [FCO](https://compress-video.file-converter-online.com/#google_vignette)</span> to compress the video.
 - Audio: use [YouCompress](https://www.youcompress.com/)<span class='tinyscript'>or [MP3Smaller](https://www.mp3smaller.com/)</span> to compress the audio.
-- PDF: use [I Love PDF](https://www.ilovepdf.com/) <span class='tinyscript'> or [i2pdf](https://www.i2pdf.com/compress-pdf), [PDF24 Tolls](https://tools.pdf24.org/zh/compress-pdf), [PDF IO](https://pdf.io/compress/)</span> to compress pdf.
+- PDF: use [PDF24 Tolls](https://tools.pdf24.org/zh/compress-pdf) <span class='tinyscript'> or [i2pdf](https://www.i2pdf.com/compress-pdf), [I Love PDF](https://www.ilovepdf.com/), [PDF IO](https://pdf.io/compress/)</span> to compress pdf.
 - Link: use [Short](https://d.igdu.xyz/)<span class='tinyscript'> or [C1N](https://www.c1n.cn/)</span> to create a short link for your file, and use [SINA](https://www.sina.lt/restore.html) to restore the short link.
 - Git to video: use [Screen to GIF]() to convert video into gif if you need.
 - Title: use [Capitalize](https://capitalizemytitle.com/style/APA/) <span class='tinyscript'>or [Wawa](https://www.iamwawa.cn/daxiaoxie.html)</span> to capitalize your titles, and use [Rewriter](https://capitalizemytitle.com/ai-title-rewriter/) to rewrite your title.
@@ -53,6 +53,7 @@ Here are part of other excellent personal websites.
 
 - [Dexter Chua](https://dec41.user.srcf.net/)
 - [Zerun's Blog](https://blog.zeruns.tech/category/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/)
+- [線代啟示錄](https://ccjou.wordpress.com/)
 - [科学空间](https://spaces.ac.cn/archives/1615)
 - [阮一峰的网络日志](https://www.ruanyifeng.com/blog/developer/)
 - [汇尘轩](https://kirigaya.cn/home)
