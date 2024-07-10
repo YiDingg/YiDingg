@@ -4,7 +4,7 @@
 
 ### Preface
 
-The reason is that I participate in a project called *The Intelligent Wound Humidity Monitoring System Construction Based on ... and Humidity Detection of Diabetic Foot*. The project's openning-report is at [Cross-project presentation](https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/7/8/b242ea15cd88951814177c6ad1ee2504.pptx). I was assigned the task of sensor data reading by hardware IIC.
+The reason is that I participate in a project called *The Intelligent Wound Humidity Monitoring System Construction Based on ... and Humidity Detection of Diabetic Foot*. The project's openning-report is at [Cross-project presentation](https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/7/8/b242ea15cd88951814177c6ad1ee2504.pptx). I was assigned the task of reading sensor data by hardware IIC.
 
 <!-- 起因是参与了一个项目，名为“基于糖尿病足溃疡创面湿度监测……的智能化创面湿度监测系统构建”，需要对糖足湿度进行检测，项目开题报告在 [交叉项目答辩](https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/7/8/b242ea15cd88951814177c6ad1ee2504.pptx)。我分配到的任务是硬件IIC读取传感器数据。 -->
 

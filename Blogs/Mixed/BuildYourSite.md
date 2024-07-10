@@ -40,8 +40,11 @@ By the way, we have to note that building a longtime, well-designed and constant
 
 To get started, we advise you to use GitHub Pages (host server) + docsify (static site generator). In this case, you can use the given domain name completely freely. You do not need to buy a domain name or a hosting server, and you do not have to register and filing you website domain.
 
-You can follow the link [CSDN](https://blog.csdn.net/liyou123456789/article/details/124504727) for a quick start.
+You can follow the link [CSDN](https://blog.csdn.net/liyou123456789/article/details/124504727) and [GitHub Pages Documentation](https://docs.github.com/en/pages/quickstart) for a quick start.
 
+## Copy Our Site
+
+As our site is completely free and open-source, you can simply fork it into your repo to have the same website or modify it to fit your thoughts. Go to [Exmaple: Home Page](https://yidingg.github.io/Website/#/HOMEPAGE) to copy the site, and go to [GitHub](https://github.com/YiDingg/Website) to fork our repo.
 
 ## Go Deep 
 
@@ -66,7 +69,7 @@ Here are the reference materials, hope it can be helpful for you.
 - [docsify-Document](https://docsify.js.org/#/)  
 - [docsify 中文文档](https://docsify.js.org/#/zh-cn/)  
 - [工具--docsify详解](https://blog.csdn.net/liyou123456789/article/details/124504727)  
-- [GitHub Pages documentation](https://docs.github.com/en/pages)  
+- [GitHub Pages Documentation](https://docs.github.com/en/pages)  
 - [GitHub-Readme-Stats项目介绍](https://blog.csdn.net/gobullin/article/details/120513191)  
 - [如何打造一个花里胡哨的Github个人主页？](https://blog.csdn.net/qq794492789/article/details/136871699)  
 - [GitHub: waka-readme-stats](https://github.com/anmol098/waka-readme-stats)  
