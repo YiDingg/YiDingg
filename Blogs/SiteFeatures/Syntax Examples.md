@@ -35,22 +35,15 @@ myVid.volume=0.15;
 
 ### Picture
 
-<div class='center'>
+<div class='center' style='width:250px'><img src='https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg' alt='img'/></div>
 
-|1|   2 |
-| :-: | :-: |
- | <img src='https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg' style="width:40px"/> | <img src="https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style='width:10%'/> |
-</div>
-
-```html
-<!-- Recommanded: -->
- <div class='center'><img src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:40px"/></div>
-
-<!-- Other: -->
-<img src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style='width:10%'/>
+``` html
+<div class='center' style='width:250px'><img src='https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg' alt='img'/></div>
+<div class='center' style='width:250px'><img src='https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg' alt='img'/></div>
 ```
+
 ### GIF
- <div class='center'><img src="https://d.igdu.xyz/ZoIG" style="width:300px"/></div>
+ <div class='center'><img src="https://gcore.jsdelivr.net/gh/YiDingg/ImageBank_0/20240617/003521693.gif" style="width:300px"/></div>
 
 - Convert video to gif online: [convertio](https://convertio.co/zh/)
 - Convert video to gif by app: [screentogif](https://www.screentogif.com/)
@@ -58,11 +51,9 @@ myVid.volume=0.15;
 !> **<span style='color:red'>Attention:</span>**<br>
 Converting video to gif with high quality might cause a size surge. 
 
-<!-- ![image](https://cdn.jsdelivr.net/gh/YiDingg/ImageBank_0/main/20240616/171923032.gif) -->
-
 ### Video
 
-<div class='center'><video controls="controls"  muted="muted" id="video-example" style="width:900px;max-width:80%" loop='0'><source src="https://d.igdu.xyz/qSTL" type="video/mp4"></video></div>
+<div class='center'><video controls="controls"  muted="muted" id="video-example" style="width:900px;max-width:80%" loop='0'><source src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video></div>
 
 
 ```html

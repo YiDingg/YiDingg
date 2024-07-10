@@ -20,7 +20,6 @@
     - [Data Host](Blogs/SiteFeatures/Data%20Host.md)
     - [Syntax Examples](Blogs/SiteFeatures/Syntax%20Examples.md)
     - [Custom Component](Blogs/SiteFeatures/Custom%20Component.md)
-    - [My Notes Structure](Blogs/SiteFeatures/My%20Notes%20Structure.md)
 
   - Optics
     - [光学笔记汇总](Blogs/Optics/光学笔记汇总.md)

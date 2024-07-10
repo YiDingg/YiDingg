@@ -22,7 +22,7 @@ By the way, I am trying to write notes in English as a practice.
 
 ### Create New Blog
 
-The blogs are following [*WSETD (Writing Standards of Easy-read Technical Document)*](Projects\WSETD\OutlineOfWSETD.md) and below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeatures\Data%20Host.md) for the reasons and more information.
+Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeatures\Data%20Host.md) for the reasons and more information.
 
 **Tools:**
 - Use [Resize](https://bulkresizephotos.com/zh?preset=true&type=filesize&filesize=80000) (img) and [Docsmall](https://docsmall.com/gif-compress) (gif) <span class='script'>or [Tiomg](https://tiomg.org/compress-image) or [Oplimize LLA](https://imagecompressor.com) or [TinyPNG](https://tinypng.com/) or [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.

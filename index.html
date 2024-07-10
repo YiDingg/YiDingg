@@ -319,6 +319,16 @@
                     class: "className",
                 },
 
+                /* docsify-auth 密码认证插件 (不知道能不能用) */
+                auth: {
+                    enable: false, // 是否开启
+                    use: "sha256",
+                    password:
+                        "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92", // md5密码
+                    title: "请输入密码以访问文档：", // 设置标题
+                    paths: ["^/"], // 需要密码认证的路径，支持正则表达式匹配
+                },
+
                 /* docsify-remote-markdown */
                 remoteMarkdown: {
                     tag: "remoteMarkdownUrl",
@@ -555,5 +565,8 @@
             rel="stylesheet"
         />
         <script src="//unpkg.com/docsify-material-icons/dist/docsify-material-icons.min.js"></script>
+        <!-- docsify-auth 密码认证插件 -->
+        <script src="https://cdn.jsdelivr.net/npm/js-sha256@0.9.0/build/sha256.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/docsify-auth@1.2.0/dist/docsify-auth.min.js"></script>
     </body>
 </html>
