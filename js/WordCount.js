@@ -24,7 +24,7 @@ function plugin(t, n) {
                 n(
                     `\n ${
                         "bottom" === defaultOptions.position ? t : ""
-                    }\n <div style="margin-bottom: 10px;">\n <span style="\n float: left;\n font-size: 0.75rem;\n color:rgb(170,170,170);">\n ${i}\n ${
+                    }\n <div style="margin-bottom: 10px;">\n <span style="\n float: left;\n font-size: 0.75rem;\n color:rgb(170,170,170);padding-top:15px">\n ${i}\n ${
                         defaultOptions.isExpected ? `&nbsp; | &nbsp;${e}` : ""
                     }\n </span>\n <div style="clear: both"></div>\n </div>\n ${
                         "bottom" !== defaultOptions.position ? t : ""

@@ -19,6 +19,8 @@ Font: [0,400], [401,600], [600,1200], [1200,infty]
     --mobile-width: 768px;
 
     --themecolor: #474f13;
+    --color-background: rgb(245, 245, 245);
+    --color--markdownsection: rgb(250, 250, 250);
     --color-h1: rgba(0, 0, 0, 0.9);
     --color-h2: rgb(110, 0, 200);
     --color-h3: rgba(110, 0, 200, 0.8);
@@ -31,7 +33,7 @@ Font: [0,400], [401,600], [600,1200], [1200,infty]
 body {
     /* body类 */
     height: 100%;
-    background-color: #fff;
+    background-color: var(--color-background, white);
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     color: var(--main-color);
@@ -40,6 +42,16 @@ body {
     letter-spacing: 0;
     margin: 0;
     overflow-x: hidden;
+}
+.content {
+    /* 包括.md和toc的content */
+    padding-top: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 300px;
+    transition: left 250ms ease;
 }
 /* h1,h2,h3标题样式 */
 h1 {
@@ -62,6 +74,9 @@ h3 .anchor span {
 }
 h4 .anchor span {
     color: var(--color-h4);
+}
+.markdown-section {
+    background-color: var(--color--markdownsection, white);
 }
 .markdown-section a {
     /* a: anchor */

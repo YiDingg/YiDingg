@@ -8,7 +8,7 @@
     bottom: 0;
     left: 0;
     transition: transform 250ms ease-out;
-    width: 300px;
+    width: 290px;
     z-index: 20;
 }
 .sidebar > h1 {
@@ -97,6 +97,7 @@
 body.sticky .sidebar,
 body.sticky .sidebar-toggle {
     position: fixed;
+    background-color: var(--color-background, #fff);
 }
 
 /* sidebar小屏适配 */

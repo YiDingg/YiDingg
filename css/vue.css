@@ -262,16 +262,6 @@ main.hidden {
     text-decoration: underline;
 }
 
-.content {
-    padding-top: 60px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 300px;
-    transition: left 250ms ease;
-}
-
 .markdown-section {
     margin: 0 auto;
     max-width: 100%;

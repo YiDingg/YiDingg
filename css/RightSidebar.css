@@ -23,12 +23,12 @@ aside.nav.nothing {
     position: fixed;
     border-left-style: solid;
     border-left-width: 1px;
-    border-left-color: rgba(0, 0, 0, 0.07);
+    border-left-color: rgba(0, 0, 0, 0.2);
     border-image-slice: 1;
     padding-left: 5px;
     padding-right: 10px;
     width: auto;
-    margin-top: -50px;
+    margin-top: 0px;
     overflow-y: auto;
     max-height: 98%;
     -webkit-scrollbars-style: none;
@@ -154,7 +154,7 @@ aside.nav:empty {
 @media screen and (min-width: 769px) {
     .page_toc p.title {
         width: auto;
-        text-align: center;
+        text-align: left;
         text-shadow: 2px 2px 5px gray;
         color: rgba(0, 0, 0, 0.9);
         font-size: 1.5rem;
