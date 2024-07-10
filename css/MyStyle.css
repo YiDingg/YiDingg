@@ -203,10 +203,18 @@ footer {
 /* --- 自定义script,center,center-screen ------ */
 /*                                             */
 span.script {
+    font-size: calc(var(--fontsize-main) * 0.7);
+    color: rgb(190, 190, 190);
+}
+span.script * {
+    font-size: calc(var(--fontsize-main) * 0.7);
+    color: rgb(190, 190, 190);
+}
+span.tinyscript {
     font-size: calc(var(--fontsize-main) * 0.5);
     color: rgb(195, 195, 195);
 }
-span.script * {
+span.tinyscript * {
     font-size: calc(var(--fontsize-main) * 0.5);
     color: rgb(195, 195, 195);
 }

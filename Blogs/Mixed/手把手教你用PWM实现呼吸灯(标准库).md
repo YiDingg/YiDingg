@@ -257,10 +257,15 @@ int main(void)
 
 /* 这里把上面封装好的函数搬下来（一共三个） */
 ```
+
 将四个LED共阳极接到电源VCC，阴极分别接到四个端口，设置所需的函数参数。这里选择了开启全部通道，PWM频率100Hz，全部都为低电平有效，且占空比为 {0,30,60,100}，效果如下：
+
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-03-54_手把手教你用PWM实现呼吸灯(标准库).jpg"/></div>
+
 将占空比改为 {100,10,50,0}，效果如下（为了便于分辨亮度差异，四个LED都使用了相同颜色）：
+
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-27-40_手把手教你用PWM实现呼吸灯(标准库).jpg"/></div>
+
 可以看到，现象完全符合我们的预期（有效占空比为0的灯看起来没有完全熄灭，是受到旁边LED的光照影响，实际上是完全熄灭的。）
 我们将四个通道有效占空比设为{0,0,0,0}，可以看到LED完全熄灭：
 
