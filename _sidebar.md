@@ -21,7 +21,7 @@
     - [Syntax Examples](Blogs/SiteFeatures/Syntax%20Examples.md)
     - [Custom Component](Blogs/SiteFeatures/Custom%20Component.md)
   - Awesome Tools and Resources
-    - [Brief View OF Awesome Tools and Resources](Blogs/ATandR/BVofATandR.md)
+    - [Brief View of ATandR](Blogs/ATandR/BVofATandR.md)
     - [ATandR(1): Markdown](Blogs/ATandR/ATandR(1)-Markdown.md)
   - Optics
     - [光学笔记汇总](Blogs/Optics/光学笔记汇总.md)
