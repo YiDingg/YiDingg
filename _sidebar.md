@@ -7,13 +7,12 @@
 
 
 - 📓 **Blogs**
-  - Mixed
+  - Mixed <!-- empty line is necessary to avoid the error -->
+
     - [Build Your Personal Website](Blogs/Mixed/BuildYourSite.md)
-    - [Awesome Tools and Resources](Blogs/Mixed/Awesome%20Tools%20and%20Resources.md)
     - [Nice VSCode Extensions](Blogs/Mixed/Nice%20VSCode%20Extenstions.md)
     - [Repository Slimming](Blogs/Mixed/RepoSlimming.md)
     - [Sentences](Blogs/Mixed/Sentences.md)
-    - [个人网站搭建](Blogs/Mixed/个人网站搭建.md)
     - [嘉立创免费下单教程](Blogs/Mixed/嘉立创免费下单教程.md)
     - [结构体及其指针在树中的应用](Blogs/Mixed/结构体及其指针在树中的应用.md)
     - [手把手教你用PWM实现呼吸灯(标准库)](Blogs/Mixed/手把手教你用PWM实现呼吸灯(标准库).md)
@@ -21,7 +20,9 @@
     - [Data Host](Blogs/SiteFeatures/Data%20Host.md)
     - [Syntax Examples](Blogs/SiteFeatures/Syntax%20Examples.md)
     - [Custom Component](Blogs/SiteFeatures/Custom%20Component.md)
-
+  - Awesome Tools and Resources
+    - [Brief View OF Awesome Tools and Resources](Blogs/ATandR/BVofATandR.md)
+    - [ATandR(1): Markdown](Blogs/ATandR/ATandR(1)-Markdown.md)
   - Optics
     - [光学笔记汇总](Blogs/Optics/光学笔记汇总.md)
     - [光学笔记 (1)：hhh](Blogs/Optics/光学笔记%20(1)：hhh.md)
