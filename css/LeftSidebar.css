@@ -224,6 +224,7 @@ body.close .content {
     transition: transform 0.15s;
 }
 .sidebar-nav ul:not(.app-sub-sidebar) > li.level-2:not(.file)::before {
+    /* folder's arrow */
     border-right: 1px solid #505d6b;
     border-bottom: 1px solid #505d6b;
 }
@@ -251,6 +252,7 @@ body.close .content {
     /* 二级文件夹 */
     color: rgba(20, 20, 20, 0.7);
     font-size: calc(var(--fontsize-main) - 0.05rem); /* 减号两边必须有空格 */
+    font-weight: 400;
 }
 .sidebar ul li a {
     /* 在folder中的指向页面的a标签链接 */

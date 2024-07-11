@@ -592,6 +592,10 @@ code .token {
     .nav {
         width: 100%;
     }
+    .content {
+        /* 此宽度下左侧Sidebar默认收起, content需回位 */
+        left: 0px;
+    }
     .markdown-section {
         font-size: calc(var(--fontsize-main) - 0.15rem);
         max-width: 95%;
@@ -620,6 +624,10 @@ code .token {
     /* 这是VC中侧边栏宽度所在区间 */
     .nav {
         width: 220px;
+    }
+    .content {
+        /* 此宽度下左侧Sidebar默认收起, content需回位 */
+        left: 0px;
     }
     .markdown-section {
         font-size: calc(var(--fontsize-main) - 0.1rem);
@@ -681,7 +689,7 @@ code .token {
     .markdown-section {
         font-size: calc(var(--fontsize-main) - 0.05rem);
         width: 50%;
-        max-width: 800px;
+        max-width: 770px;
         margin: auto;
     }
     .markdown-section h1 {
