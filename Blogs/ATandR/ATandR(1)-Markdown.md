@@ -1,5 +1,7 @@
 # ATandR(1): Markdown
 
+>originally published on 2024-07-10
+
 As I am writing most of my blogs in Markdown, I have tried several Markdown editors to see which one is the best. Eventually, I settled on VSCode. Yes, you heard me right. VScode, a code editor instead of a text editor. 
 
 As usual, We will give the conclusions first. In the later contents, I will tell you why, and explain some tips to make your writing experience more enjoyable.
@@ -8,12 +10,13 @@ As usual, We will give the conclusions first. In the later contents, I will tell
 
 We use VSCode as the Markdown editor. Here are the extensions you may need.
 
-Necessary extensions:
+Necessary VSCode extensions:
 - Markdown All in One: and the main extension.
 - VS-PicGo: upload the image to the cloud, rename it as you want and insert the link automatically.
 - Pangu-Markdown: let your content into a better format.
+- Img Paste: 
 
-Other extensions:
+Other VSCode extensions:
 - Markdown Preview Enhanced
 - PlantUML
 - Image preview
