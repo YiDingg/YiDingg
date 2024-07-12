@@ -5,6 +5,22 @@ Here is the brief view of awesome tools and resources and you can click them for
 ## Pinned
 - [Z-Library](https://singlelogin.rs): Refer to the mirror site [mirror](https://www.kdocs.cn/l/cq7kDog4zkuR) if you can not access to the official link https://singlelogin.rs
 
+## Markdown
+
+Go to [ATandR(1): Markdown](Blogs/ATandR/ATandR(1)-Markdown.md) for more details.
+
+Edit markdown in VSCode and use the following extensions:
+- Markdown All in One: and the main extension.
+- VS-PicGo: upload the image to the cloud, rename it as you want and insert the link automatically.
+- Pangu-Markdown: let your content into a better format
+- Img Paste:
+ 
+Optional:
+- Markdown Preview Enhanced
+- PlantUML
+- Image preview
+
+
 ## Research Paper
 
 - [Sci Hub](https://zhuanlan.zhihu.com/p/680268287?utm_campaign=shareopn&utm_medium=social&utm_psn=1792920948971814914&utm_source=wechat_session)
@@ -14,7 +30,11 @@ Here is the brief view of awesome tools and resources and you can click them for
 
 ## Else
 
+Here are the other tools and resources.
+
 ### Mixed
+- [Coding Interview University](https://github.com/jwasham/coding-interview-university/blob/main/translations/README-cn.md): This is my multi-month study plan for becoming a software engineer for a large company. If you are interested in being a software engineer, you can follow it's data sructures roadmap and find some knowledge extension on it.
+- [Markdown syntax of GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#GitHub-flavored-markdown)
 - [i2text](https://www.i2text.com/), [i2pdf](https://www.i2pdf.com/), [i2img](https://www.i2img.com/): efficient online file processing tools that are completely free.
 - [Listary](https://www.bilibili.com/video/BV1jL4y1V78P): an awesome tool for searching and managing your files/apps.
 - [csdn文章浏览/资源下载](https://www.niupizhiyuan.com/download.html) <span class='tinyscript'>or [知乎](https://www.zhihu.com/question/34442235/answer/3552846202?utm_campaign=shareopn&utm_medium=social&utm_psn=1792927195892690944&utm_source=wechat_session)</span>
@@ -107,3 +127,14 @@ Here is the brief view of awesome tools and resources and you can click them for
 
 ### Python
 
+<script>
+(window.$docsify = window.$docsify || {}),
+    (window.$docsify.formatUpdated = (
+        window.$docsify.timeUpdater || defaultDocsifyUpdatedOptions
+    ).formatUpdated),
+    (window.$docsify.timeUpdater = Object.assign(
+        defaultDocsifyUpdatedOptions,
+        window.$docsify.timeUpdater
+    )),
+    (window.$docsify.plugins = (window.$docsify.plugins || []).concat(plugin));
+</script>

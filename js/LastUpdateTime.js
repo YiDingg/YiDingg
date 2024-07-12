@@ -5,6 +5,7 @@ let defaultDocsifyUpdatedOptions = {
     formatUpdated: "{YYYY}/{MM}/{DD}",
     whereToPlace: "bottom",
 };
+
 function plugin(t, d) {
     let o = d.config.timeUpdater.text,
         i = String(d.config.timeUpdater.whereToPlace).toLowerCase();
@@ -12,6 +13,7 @@ function plugin(t, d) {
         return "top" !== i ? t + "\n\n" + o : o + "\n\n" + t;
     });
 }
+
 (window.$docsify = window.$docsify || {}),
     (window.$docsify.formatUpdated = (
         window.$docsify.timeUpdater || defaultDocsifyUpdatedOptions
