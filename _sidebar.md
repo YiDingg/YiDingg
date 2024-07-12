@@ -23,6 +23,7 @@
   - Awesome Tools and Resources
     - [Brief View of ATandR](Blogs/ATandR/BVofATandR.md)
     - [ATandR(1): Markdown](Blogs/ATandR/ATandR(1)-Markdown.md)
+    - [ATandR(2): Programming](Blogs/ATandR/ATandR(2)-Programming.md)
   - Optics
     - [光学笔记汇总](Blogs/Optics/光学笔记汇总.md)
     - [光学笔记 (1)：hhh](Blogs/Optics/光学笔记%20(1)：hhh.md)
