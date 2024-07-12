@@ -1,6 +1,6 @@
 # ATandR(1): Markdown
 
->originally published on 2024-07-10
+>Original published time: 2024-07-10
 
 As I am writing most of my blogs in Markdown, I have tried several Markdown editors to see which one is the best. Eventually, I settled on VSCode. Yes, you heard me right. VScode, a code editor instead of a text editor. 
 
@@ -22,9 +22,9 @@ Other VSCode extensions:
 - Image preview
 
 
-## Why VSCode
+## Details
 
-One of the reasons is that I'd like to edit all my files in one place, instead of openning several editors and shifting between them frequently. For example, I may need to edit `.md`, `.html`,`.css` and `.js` files at the same time. Another reason is that, it is comfortable to edit Markdown in VSCode as long as you configure the appropriate enviroment, such as font, color scheme and some awesome extensions. The last one is absolutely outstanding -- extensions, I highly recommend you pangu-plungin and VS-PicGo as I am so into to them.
+Why VSCode? One reason is that I'd like to edit all my files in one place, instead of openning several editors and shifting between them frequently. For example, I may need to edit `.md`, `.html`,`.css` and `.js` files at the same time. Another reason is that, it is comfortable to edit Markdown in VSCode as long as you configure the appropriate enviroment, such as font, color scheme and some awesome extensions. The last one is absolutely outstanding -- extensions, I highly recommend you pangu-plungin and VS-PicGo as I am so into to them.
 
 It is obvious that one excellent Markdown should meet:
 - Free: Limited-free is tolerable but completely free is better. 

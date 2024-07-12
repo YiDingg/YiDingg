@@ -20,6 +20,11 @@ Optional:
 - PlantUML
 - Image preview
 
+## Programming
+
+Go to [ATandR(2): Programming](Blogs/ATandR/ATandR(2)-Programming.md) for more details.
+
+
 
 ## Research Paper
 
@@ -33,6 +38,8 @@ Optional:
 Here are the other tools and resources.
 
 ### Mixed
+- [博客文章提取器](https://mark.cuckooing.cn/)
+- [Regular Expressions (正则表达式)](https://www.jyshare.com/front-end/854/)
 - [Coding Interview University](https://github.com/jwasham/coding-interview-university/blob/main/translations/README-cn.md): This is my multi-month study plan for becoming a software engineer for a large company. If you are interested in being a software engineer, you can follow it's data sructures roadmap and find some knowledge extension on it.
 - [Markdown syntax of GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#GitHub-flavored-markdown)
 - [i2text](https://www.i2text.com/), [i2pdf](https://www.i2pdf.com/), [i2img](https://www.i2img.com/): efficient online file processing tools that are completely free.
@@ -124,17 +131,3 @@ Here are the other tools and resources.
 
 ### Simulator
 - [CirCuitjs](http://scratch.trtos.com/circuitjs.html)
-
-### Python
-
-<script>
-(window.$docsify = window.$docsify || {}),
-    (window.$docsify.formatUpdated = (
-        window.$docsify.timeUpdater || defaultDocsifyUpdatedOptions
-    ).formatUpdated),
-    (window.$docsify.timeUpdater = Object.assign(
-        defaultDocsifyUpdatedOptions,
-        window.$docsify.timeUpdater
-    )),
-    (window.$docsify.plugins = (window.$docsify.plugins || []).concat(plugin));
-</script>
