@@ -8,7 +8,7 @@
     bottom: 0;
     left: 0;
     transition: transform 250ms ease-out;
-    width: 290px;
+    width: 280px;
     z-index: 20;
 }
 .sidebar > h1 {
@@ -75,7 +75,7 @@
     left: 0;
     text-align: center;
     transition: opacity 0.3s;
-    width: 284px;
+    width: 275px;
     z-index: 30;
     cursor: pointer;
 }
@@ -284,7 +284,6 @@ body.close .content {
 
 .sidebar {
     /* 调整sidebar宽度 */
-    width: 300px;
     max-width: 60%;
     padding: 15px;
 }

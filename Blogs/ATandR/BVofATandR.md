@@ -38,6 +38,7 @@ Go to [ATandR(2): Programming](Blogs/ATandR/ATandR(2)-Programming.md) for more d
 Here are the other tools and resources.
 
 ### Mixed
+
 - [博客文章提取器](https://mark.cuckooing.cn/)
 - [Regular Expressions (正则表达式)](https://www.jyshare.com/front-end/854/)
 - [Coding Interview University](https://github.com/jwasham/coding-interview-university/blob/main/translations/README-cn.md): This is my multi-month study plan for becoming a software engineer for a large company. If you are interested in being a software engineer, you can follow it's data sructures roadmap and find some knowledge extension on it.
@@ -63,6 +64,8 @@ Here are the other tools and resources.
 - [中国独立开发者项目列表](https://github.com/1c7/chinese-independent-developer)
 
 ### Screen Record Tools
+- [Captura](https://mathewsachin.github.io/blog/2023/04/09/captura-unmaintained.html): [Captura安装使用及ffmpeg下载配置](https://blog.csdn.net/qq_24452475/article/details/138141533?ops_request_misc=&request_id=&biz_id=102&utm_term=Captura%E5%BD%95%E5%B1%8F%E9%A2%9C%E8%89%B2&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~sobaiduweb~default-2-138141533.nonecase&spm=1018.2226.3001.4450)
+- [ScreenToGif](https://www.screentogif.com/)
 - [几款好用的截图工具](https://blog.csdn.net/lehe99/article/details/126151606)
 - [几款屏幕录制工具](https://www.cnblogs.com/leftshine/p/ScreenRecord.html)
 

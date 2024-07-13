@@ -74,6 +74,7 @@ Here are the reference materials, hope it can be helpful for you.
 - [如何打造一个花里胡哨的Github个人主页？](https://blog.csdn.net/qq794492789/article/details/136871699)  
 - [GitHub: waka-readme-stats](https://github.com/anmol098/waka-readme-stats)  
 - [GitHub: waka-readme](https://github.com/athul/waka-readme)  
+- [使用waka-readme-stats统计代码时长，并配置动态更新](https://blog.csdn.net/weixin_43233914/article/details/126087735)
 - [docsify-themeable](https://jhildenbiddle.github.io/docsify-themeable/#/customization)  
 - [搭建Docsify并自动生成目录访问markdown笔记](https://blog.csdn.net/qq_74177889/article/details/139595564)  
 - [使用 docsify 并定制以使它更强大](https://ld246.com/article/1553507125889)  

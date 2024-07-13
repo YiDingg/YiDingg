@@ -25,7 +25,7 @@
 
 ## Time Line of the Site
 
-<div class='center'>
+<div class='Timeline'>
 <ul class="timeline-list">
 <li class="timeline-item">
     <div class="timeline-item_tail"></div>
@@ -43,10 +43,9 @@
 <!------------------------------------>
 <div class="tbox"><div class='outerBox'><div class="dateLeftBox"><div>
 <tl-title>More Features</tl-title><ul>
-More awesome features were added to the site, you can go to <a href="Blogs\SiteFeatures\CustomComponent.md">Custom Component</a> and <a href="Blogs\SiteFeatures\Syntax Examples.md">Syntax Examples</a> for more details.
+More awesome features were added to the site, you can go to <a href="#/Blogs/SiteFeatures/Custom%20Component">Custom Component</a> and <a href="#/Blogs/SiteFeatures/Syntax Examples">Syntax Examples</a> for more details.
 </ul></div></div></div></div>
 <!------------------------------------>
-
 <div class="tbox"><div class='outerBox'><div class="dateBox"><div>
 <tl-title>More Stable Data Source</tl-title>
 <ul>
