@@ -18,11 +18,11 @@ the file.
 
 ## Notes
 
-<!-- The raw source url: <button onclick="window.open('https://www.writebug.com/git/YiDingg/WB.PDFBank/raw/branch/main/Notes/Calculus 1 Notes_nota_compressed.pdf')" type="button">click to view or download the file</button>
+The raw source url: <button onclick="window.open('https://www.writebug.com/static/uploads/2024/7/14/8233253642c6dd7a1371fad9e69e538a.pdf')" type="button">click to view or download the file</button>
 
 ```pdf
-https://www.writebug.com/git/YiDingg/WB.PDFBank/raw/branch/main/Notes/Calculus 1 Notes_nota_compressed.pdf
-``` -->
+https://www.writebug.com/static/uploads/2024/7/14/8233253642c6dd7a1371fad9e69e538a.pdf
+```
 
 
 
