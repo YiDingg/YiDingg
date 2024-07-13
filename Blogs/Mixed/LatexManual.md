@@ -1,10 +1,9 @@
 # Latex Manaul 
 
-This is a Latex manual to help use Latex effectively.
+This is a Latex manual to help use Latex practically and effectively.
 
-## Table
-
-Commonly used: 
+- Formula and Matrix: https://www.latexlive.com/home
+- Table: https://www.latex-tables.com/
 
 ## Reference 
 

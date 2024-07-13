@@ -9,10 +9,10 @@
 - 📓 **Blogs**
   - Mixed <!-- empty line is necessary to avoid the error -->
 
+    - [Sentences](Blogs/Mixed/Sentences.md)  
+    - [Repository Slimming](Blogs/Mixed/RepoSlimming.md)
     - [Build Your Personal Website](Blogs/Mixed/BuildYourSite.md)
     - [Nice VSCode Extensions](Blogs/Mixed/Nice%20VSCode%20Extenstions.md)
-    - [Repository Slimming](Blogs/Mixed/RepoSlimming.md)
-    - [Sentences](Blogs/Mixed/Sentences.md)
     - [嘉立创免费下单教程](Blogs/Mixed/嘉立创免费下单教程.md)
     - [结构体及其指针在树中的应用](Blogs/Mixed/结构体及其指针在树中的应用.md)
     - [手把手教你用PWM实现呼吸灯(标准库)](Blogs/Mixed/手把手教你用PWM实现呼吸灯(标准库).md)
@@ -20,10 +20,6 @@
     - [Data Host](Blogs/SiteFeatures/Data%20Host.md)
     - [Syntax Examples](Blogs/SiteFeatures/Syntax%20Examples.md)
     - [Custom Component](Blogs/SiteFeatures/Custom%20Component.md)
-  - Awesome Tools and Resources
-    - [Brief View of ATandR](Blogs/ATandR/BVofATandR.md)
-    - [ATandR(1): Markdown](Blogs/ATandR/ATandR(1)-Markdown.md)
-    - [ATandR(2): Programming](Blogs/ATandR/ATandR(2)-Programming.md)
   - Optics
     - [光学笔记汇总](Blogs/Optics/光学笔记汇总.md)
     - [光学笔记 (1)：hhh](Blogs/Optics/光学笔记%20(1)：hhh.md)
@@ -54,7 +50,11 @@
   - Fix Problem
     - [VScode-Latex 中反向搜索失灵的解决方案](Blogs/FixProblem/VScode-Latex中反向搜索失灵的解决方案.md)
     - [新版 Keil_MDK 中无 Compiler_V5 的解决方案](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
-
+  - Awesome Tools and Resources
+    - [Brief View of ATandR](Blogs/ATandR/BVofATandR.md)
+    - [ATandR(1): Markdown](Blogs/ATandR/ATandR(1)-Markdown.md)
+    - [ATandR(2): Programming](Blogs/ATandR/ATandR(2)-Programming.md)
+    - [ATandR(3): Drawing](Blogs/ATandR/ATandR(3)-Drawing.md)
 
 
 - 📖 **PDF Notes**

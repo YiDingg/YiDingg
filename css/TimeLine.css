@@ -13,7 +13,6 @@
     -webkit-animation: showIn 5.5s ease;
     animation: showIn 5.5s ease;
 }
-
 .outerBox .dateBox,
 .outerBox .dateLeftBox {
     /* 球球的样式 */
@@ -30,7 +29,6 @@
     -webkit-animation: showIn ease;
     animation: showIn ease;
 }
-
 @-webkit-keyframes showIn {
     /* 球球、竖线、左右的模块的动画 */
     0%,
@@ -42,7 +40,6 @@
         opacity: 1;
     }
 }
-
 .outerBox .dateBox:hover,
 .outerBox .dateLeftBox:hover {
     /* 触摸事件后球球的样式 */
@@ -50,7 +47,6 @@
     background: rgb(61, 51, 243);
     box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.4);
 }
-
 .outerBox .dateLeftBox div,
 .outerBox .dateBox div {
     /* 左右边事件的样式 */
@@ -137,6 +133,11 @@
     font-weight: bold;
 }
 
+.Timeline {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+}
 .timeline-list {
     margin: 0;
     font-size: 14px;

@@ -89,10 +89,10 @@ h4 .anchor span {
     line-height: 1.15rem;
     word-spacing: 0.05rem;
 }
-.markdown-section em {
-    /* em: italic font*/
+/* .markdown-section em {
+    em: italic font
     color: #7f8c8d;
-}
+} */
 .markdown-section img {
     /* em: italic font*/
     max-height: 600px;
@@ -291,6 +291,17 @@ span.tinyscript * {
 
 /*                                             */
 /* ------------ 自定义 WordList -------------- */
+
+/* ------------ 自定义 WordList -------------- */
+/*                                             */
+
+/*                                             */
+/* ------------ 自定义 WordList -------------- */
+
+/* ------------ 自定义 attention -------------- */
+/*                                             */
+/*                                             */
+/* ------------ 自定义 attention -------------- */
 
 /* ------------ 自定义 WordList -------------- */
 /*                                             */
@@ -669,7 +680,7 @@ code .token {
 
 @media screen and (min-width: 901px) and (max-width: 1200px) {
     .nav {
-        width: 250px;
+        width: 230px;
     }
     .markdown-section {
         font-size: calc(var(--fontsize-main) - 0.05rem);
@@ -697,12 +708,12 @@ code .token {
 
 @media screen and (min-width: 1201px) {
     .nav {
-        width: 300px;
+        width: 250px;
     }
     .markdown-section {
         font-size: calc(var(--fontsize-main) - 0.05rem);
-        width: 50%;
-        max-width: 770px;
+        width: 90%;
+        max-width: 900px;
         margin: auto;
     }
     .markdown-section h1 {
