@@ -60,10 +60,10 @@
 - 📖 **PDF Notes**
   - Math
 
-    - [Calculus 1](Notes/Math/Calculus%201%20Notes.md)
+    - [Calculus 1](Notes/Math/Calculus1Notes.md)
     - [Calculus 2](Notes/Math/Calculus2Notes.md)
-    - [Linear Algebra 1](Notes/Math/Linear%20Algebra%201%20notes.md)
-    - [Linear Algebra 2](Notes/Math/Linear%20Algebra%202%20notes.md)
+    - [Linear Algebra 1](Notes/Math/LinearAlgebra1Notes.md)
+    - [Linear Algebra 2](Notes/Math/LinearAlgebra2Notes.md)
   - Phisics
     - [Mechanics](Notes/Phisics/Mecanics%20notes.md)
     - [Electromegnetism](Notes/Phisics/Electromegnetism%20Notes.md)
