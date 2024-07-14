@@ -37,7 +37,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     color: var(--main-color);
-    font-family: "Segoe UI", "Times New Roman", "Verdana";
+    font-family: "Times New Roman", "Segoe UI", Verdana;
+    /* 如果字体的名称是一个单词的，不需要加引号，否则在ie6，7里面会失效，并且后面的样式也会不生效 */
     font-size: 0.8rem;
     letter-spacing: 0;
     margin: 0;
@@ -103,7 +104,7 @@ h4 .anchor span {
 /* ------------- 自定义details ---------------- */
 /*                                             */
 @font-face {
-    font-family: "Montserrat";
+    font-family: Montserrat;
     font-style: normal;
     font-weight: 400;
     font-display: swap;
@@ -116,7 +117,7 @@ h4 .anchor span {
 details {
     background-color: rgba(255, 235, 235, 0.55);
     /*   border: rgba(0, 0, 0, 0) solid 1px; */
-    font-family: "Montserrat";
+    font-family: Montserrat;
     margin: auto;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -160,7 +161,7 @@ details img {
     border-radius: 100%;
     color: #fff;
     content: "!";
-    font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+    font-family: Dosis, "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
     font-size: 14px;
     font-weight: bold;
     left: -12px;
@@ -321,7 +322,7 @@ details.WordList > summary > span.Word {
 .markdown-section code,
 .markdown-section pre,
 .markdown-section output::after {
-    font-family: "Roboto Mono", "Consolas", "Monaco", monospace;
+    font-family: "Roboto Mono", Consolas, Monaco, monospace;
 }
 
 .markdown-section code {

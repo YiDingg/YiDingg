@@ -75,11 +75,11 @@ Converting video to gif with high quality might cause a size surge.
 
 ### Font
 
-<p style='font-family:Arial; font-size:16px;'>字体 Arial</p>
-<p style='color:red; font-style:italic; font-family:Arial; font-size:16px; font-weight:bold;'>字体 Arial (italic, bold)</p>
+<span style='font-family:Arial; font-size:16px;'>字体 Arial</span>, 
+<span style='color:red; font-style:italic; font-family:Arial; font-size:16px; font-weight:bold;'>字体 Arial (italic, bold)</span>
 
-<p style="color:purple; font-family:华文彩云;font-size:16px;">华文彩云 HuaWenCaiYun</p>
-<p style="color:blue; font-family:华文彩云; font-style:italic; font-size:16px; font-weight:bold;">华文彩云 HuaWenCaiYun (italic, bold)</p>
+<span style="color:purple; font-family:华文彩云;font-size:16px;">华文彩云 HuaWenCaiYun</span>, 
+<span style="color:blue; font-family:华文彩云; font-style:italic; font-size:16px; font-weight:bold;">华文彩云 HuaWenCaiYun (italic, bold)</span>
 
 <span style="font-family:'Times New Roman';">
 Times New Roman
