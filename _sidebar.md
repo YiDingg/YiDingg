@@ -1,8 +1,8 @@
 - [🏠 **Home Page**](HOMEPAGE.md)
 - [👋 **About**](README.md)
 - [📃 **Time Line**](TimeLine.md)
-- [📰 **To Be Dealing With**](ToBeDealingWith.md)
-- [❔ **Test**](Test.md)
+<!-- - [📰 **To Be Dealing With**](ToBeDealingWith.md) -->
+
 
 
 
@@ -94,5 +94,5 @@
 
 
 
-
+- [❔ **Test**](Test.md)
 <!-- 🔗 -->

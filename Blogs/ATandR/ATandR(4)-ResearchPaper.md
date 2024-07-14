@@ -19,13 +19,17 @@ You access the official site https://www.zotero.org/ and it's documents for more
 https://www.zhihu.com/question/292293671, To be completed...
 
 ### Usage
+To be completed...
 
 ## Zotero Extensions
-
-### 
+To be completed...
 
 ###  Synchronization (云同步)
 
 WebDAV Synchronization: Koofr (10G for free)
 
 https://koofr.eu/blog/posts/koofr-with-zotero-via-webdav
+
+## Else 
+
+- [SCISPACE](https://www.zhihu.com/question/321671908/answer/3520018138?utm_campaign=shareopn&utm_medium=social&utm_psn=1795000531623735297&utm_source=wechat_session)
