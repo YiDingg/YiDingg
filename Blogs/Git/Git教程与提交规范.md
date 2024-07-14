@@ -22,14 +22,14 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 <summary>pwd</summary>
 
 `pwd` (print work directory)：显示当前目录所在地址
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-53-50.png"/>
+<div class='center'><img src='https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-53-50.png' alt='img'/></div>
 </details>
 
 <details>
 <summary>ls</summary>
 
 `ls` (list files)：显示当前目录下的所有文件
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-53-58.png"/>
+<div class='center'><img src='https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-53-58.png' alt='img'/></div>
 </details>
 
 <details>
@@ -54,47 +54,47 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 `git config --global --list` ：查看用户信息<br> 
 `git config --global user.name "name"` ：修改用户名 <br>
 `git config --global user.email "email"` ：修改邮箱
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-25.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-25.png"/></div>
 </details>
 
 <details>
 <summary> 2. 初始化本地git仓库  </summary>  
 
 `git init` ：初始化本地仓库<br>会进行初始化，并在当前目录创建.git文件夹（用于保存版本记录和变化）
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-32.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-32.png"/></div>
 </details>
 
 <details>
 <summary>  3. 添加文件到Git  </summary>  
 
 `git add test.txt` ：添加一个文件<br>`git add .` ：添加当前目录所有文件
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-38.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-38.png"/></div>
 </details>
 
 <details>
 <summary> 4. 查看文件状态  </summary>  
 
 `git status` ：查看（当前目录）文件更改情况（分为stage区和workspace区）
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-43.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-43.png"/></div>
 </details>
 
 <details>
 <summary>  5. 提交更改（固定为版本） </summary>  
 
 `git commit -m "初始化，并添加了几个文件"` ：提交更改，引号内为此次提交的批注
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-48.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-48.png"/></div>
 <br>注意：每次提交前都需要将待提交文件add到stage区，如下图。或者用`-a -m`参数一次性add到stage区并commit
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-57.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-55-57.png"/></div>
 
 `git commit -a -m "一次性完成add和commit"`：一次性完成add和commit
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-56-06.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-56-06.png"/></div>
 </details>
 
 <details>
 <summary>  6. 查看提交日志  </summary>  
 
 `git log`：查看提交日志<br>`git log --oneline`：简洁版日志，每行显示一次提交
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-56-11.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-56-11.png"/></div>
 </details>
 
 
@@ -104,7 +104,7 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 `git reset --hard HEAD^`：重置为上个版本  
 `git reset --hard {commit_hash}`：重置为某个版本
 注意： --hard 回退模式会彻底删除之后的所有更改，无法撤销
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-56-20.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-56-20.png"/></div>
 </details>
 
 
@@ -118,7 +118,7 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 
 注：创建分支时，会将当前分支（可以不是master）复制到新分支，后续的修改都是基于此版本。
 例如团队协作开放一个项目时，从V1.0到V1.1要新增三个功能，分别由三个人进行开发。这时就在master上的V1.0创建三个分支，三个人基于V1.0版本，分别开发完毕后再进行merge合并。
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-59-20.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-59-20.png"/></div>
 </details>
 
 
@@ -128,7 +128,7 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 `git merge --no-ff {local_branch_name} -m "merge bra_1 into bra_2"`：将某个分支合并到当前分支，并附带提交备注  
 `git branch -vv`：查看所有分支状态  
 注：merge合并只是将某分支的更改合并到另一个分支，并不会删除原始分支，建议提交信息格式为 "merge branch V2.0 into branch main "。合并时可能会出现conflicts，手动解决后再次merge即可。
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-59-26.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-59-26.png"/></div>
 </details>
 
 
@@ -138,13 +138,13 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 首先创建一个仓库，填写相关信息和初始化信息，并复制仓库连接：  
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-09-49_Git教程与提交规范.jpg"/></div>
 
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-59-38.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-22-59-38.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-30-59_Git教程与提交规范.jpg"/></div>
 
 `git remote add origin {remote-url}`：将远程仓库链接到本地并命名为 origin（注意，Git Bash 默认中键黏贴）  
 `git remote -v`：查看已链接的仓库信息  
 `git branch -m main`：重命名当前分支为 "main"  
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-00-00.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-00-00.png"/></div>
 </details>
 
 
@@ -152,12 +152,12 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 <summary> 11. 上传更改到远程仓库  </summary>  
 确保现在你处于main分支，然后：
 `git push -u origin main`：将当前分支推送到远程仓库 origin 的 main 分支，-u 表示建立分支关联（下次位于main分支时仅需 git push 即可将本地main分支推送到origin的main分支）
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-00-07.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-00-07.png"/></div>
 
 
 如果出现SSL证书无法验证，确保此远程仓库是可信的，然后 `git config --global http.sslVerify false`（全局禁用SSL证书验证）并再次提交。
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-00-17.png"/>
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-00-25.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-00-17.png"/></div>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-00-25.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-31-30_Git教程与提交规范.jpg"/></div>
 </details>
 
@@ -173,7 +173,8 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 `git branch -vv`：查看本地分支（-vv指详细信息）  
 `git branch -r`：查看远程链接分支    
 `git remote -v`：查看链接信息    
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-09.png"/><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-14.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-09.png"/></div>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-14.png"/></div>
 当然，也可以一次性查看本地、远程分支：  
 
 `git branch -a -vv`：查看所有分支（-vv指详细信息)  
@@ -186,7 +187,7 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 
 将远程仓库克隆到本地时，其默认名为origin，可以对其进行修改。  
 `git remote rename origin {remote_name}`
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-25.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-25.png"/></div>
 </details>
 
 
@@ -203,13 +204,13 @@ Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格
 `git branch -b {branch_name}`：新建本地分支
 修改分支并commit后：  
 `git push {remote_name} {remote_branch_name}`：将本地分支推送到远程
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-40.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-40.png"/></div>
 
 `git branch -d {branch_name}`：删除本地分支
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-48.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-48.png"/></div>
 
 `git push {remote_name} --delete {remote_branch_name}`：删除远程分支
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-56.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-01-56.png"/></div>
 </details>
 
 
@@ -261,8 +262,8 @@ ssh: connect to host github.com port 22: Connection refused
 fatal: Could not read from remote repository.
 ```
 这是由于防火墙拒绝SSH请求导致的，参考上面的官方文档[Using SSH over the HTTPS port](https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port)即可轻松解决。
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-25.png"/>
-<img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-33.png"/>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-25.png"/></div>
+<div class='center'><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Git教程与提交规范--2024-06-23-23-02-33.png"/></div>
 </details>
 
 <details>

@@ -28,6 +28,7 @@
     - [C语言笔记 (1)：开始之前](Blogs/C/C语言笔记%20(1)：开始之前.md)
     - [C语言笔记 (2)：内存与关键字](Blogs/C/C语言笔记%20(2)：内存与关键字.md)
     - [C语言笔记 (3)：数据类型](Blogs/C/C语言笔记%20(3)：数据类型.md)
+    - [C语言笔记 (4)：数组与字符串](Blogs/C/CSeriesNotes(4)-ArrayAndString.md)
     - [C语言系列汇总](Blogs/C/C语言系列汇总.md)
     - [C语言系列 (1)：内存与关键字](Blogs/C/C语言系列%20(1)：内存与关键字.md)
     - [C语言系列 (2)：printf() 函数详解](Blogs/C/C语言系列%20(2)：printf()%20函数详解.md)
@@ -38,6 +39,7 @@
     - [STM32系列 (1)：Keil Debug 功能使用](Blogs/STM32/STM32系列%20(1)：Keil%20Debug%20功能使用.md)
     - [STM32系列 (2)：定时器详解](Blogs/STM32/STM32系列%20(2)：定时器详解.md)
     - [STM32系列 (3)：DMA的原理与用法](Blogs/STM32/STM32系列%20(3)：DMA的原理与用法.md)
+    - [MCU系列 (4): WiFi (ESP8266)](Blogs/STM32/MCUSeries(4)-WiFi(ESP8266).md)
     - [STM32系列 (+)：实用技巧汇总](Blogs/STM32/STM32系列%20(+)：实用技巧汇总.md)
   - Git
     - [Git 教程与提交规范](Blogs/Git/Git教程与提交规范.md)
@@ -86,6 +88,7 @@
   - [OLEDSD (OLED Software Driver)](Projects/OLEDSD%20(OLED%20Software%20Driver).md)
   - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo%20(Minimum%20System%20Board%20of%20STM32)%20详解.md)
   - [HDofDF (Humidity Detection of Diabetic Foot)](Projects/HDofDF.md)
+  - [Mixed](Projects/Mixed.md)
   - WSETD
 
     - [Outline of WSETD](Projects/WSETD/OutlineOfWSETD.md)
