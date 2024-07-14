@@ -26,6 +26,10 @@ This is a page only for test.
 <span style="font-family:Montserrat;">								   Montserrat</span>, 
 <span style="font-family:Montserrat;font-style:italic;font-weight:bold;">Montserrat (italic, bold)</span>
 
+<span style="font-family:'Baskerville Old Face';">								   Baskerville Old Face</span>, 
+<span style="font-family:'Baskerville Old Face';font-style:italic;font-weight:bold;">Baskerville Old Face (italic, bold)</span>
+
+
 <span style="font-family:'lucida grande';">									lucida grande</span>, 
 <span style="font-family:'lucida grande';font-style:italic;font-weight:bold;">lucida grande (italic, bold)</span>
 
@@ -112,13 +116,7 @@ This is a page only for test.
 <span style="font-family:'';font-style:italic;font-weight:bold;"> (italic, bold)</span>
 
  -->
-<div class='center'>
 
-| PC | IPad  | Honor  |
-|:-:|:-:|:-:|
- |   |   |   |
- |   |   |   |
-</div>
 
 ### Short Link Test
 
@@ -130,7 +128,7 @@ This is a page only for test.
  |   |   |   |
 </div>
 
-### Else
+### Audio Test
 <div>
 <audio controls >
     <source src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/Syntax Examples--2024-06-22-01-24-43.mp3" type="audio/mpeg">

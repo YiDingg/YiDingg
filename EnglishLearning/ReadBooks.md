@@ -7,6 +7,10 @@
 
 ### Other Resources
 
+- [On Writing Well](https://www.writebug.com//static/uploads/2024/7/14/cb79dbf0cbd1d5c0e48b1cfd7455a238.pdf)
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-14-15-38-25_ReadBooks.jpg"/></div>
+
 - [Perfect English Grammar](https://zz.etocs.us.kg/book/2857818/028932/perfect-english-grammar.html)
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-03-23-40-31_OutlineOfGrammar_.jpg"/></div>
