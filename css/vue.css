@@ -4,10 +4,6 @@ TOC: [0,768], [769,infty]
 Font: [0,400], [401,600], [600,1200], [1200,infty]
 */
 
-:root {
-    --main-color: #303030;
-}
-
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Sans+Pro:300,400,600");
 
 * {
@@ -255,7 +251,7 @@ main.hidden {
 }
 
 .anchor span {
-    color: var(--main-color);
+    color: #303030;
 }
 
 .anchor:hover {

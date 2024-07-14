@@ -15,6 +15,9 @@ collect, organize, annotate, cite, and share research. It is available for Mac, 
 
 You access the official site https://www.zotero.org/ and it's documents for more details.
 
+https://www.bilibili.com/video/BV1p1421k7Gv  
+https://www.bilibili.com/video/BV16y411z7b2
+
 ### Get Started
 https://www.zhihu.com/question/292293671, To be completed...
 

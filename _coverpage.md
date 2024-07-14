@@ -12,7 +12,7 @@
     .clumsy {
          font-size: 0.9rem;
          color: rgba(70, 70, 70, 0.7);
-         font-family: 'Cascadia Code', 'Times New Roman';
+         font-family: 'Cascadia Code', "Cascadia Mono", Consolas, monospace, 'Times New Roman';
     }
 </style>
 
