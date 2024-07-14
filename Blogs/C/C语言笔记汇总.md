@@ -27,7 +27,7 @@
 
 文件资料：
 
-- 
+- [C Primer Plus (中文版).pdf](https://s.b1n.net/p4Mhc)
 
 ## Reference
 

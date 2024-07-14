@@ -238,7 +238,6 @@ body.close .content {
 
 /* sidebar样式修改 */
 .sidebar {
-    background-color: #fff;
     color: #364149;
 }
 .sidebar li {
@@ -248,6 +247,10 @@ body.close .content {
     /* 一级文件夹 */
     color: rgb(20, 20, 20);
     font-size: calc(var(--fontsize-main) + 0.05rem);
+}
+.sidebar ul > li.folder.level-1.open {
+    border: #000 solid 1px;
+    border-left: #000 solid 2px;
 }
 .sidebar ul li.folder.level-2 p {
     /* 二级文件夹 */

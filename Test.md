@@ -4,9 +4,13 @@
 This is a page only for test.
 ---
 
+### Img test
+
+https://oshwhub.com/dy130810/esp12-f_adapterboard/edit?from=workspace
+
+<div class='center'><img src='https://image.lceda.cn/oshwhub/ad9f88622cfa462b8958e7fc2ef3640d.png' alt='img'/></div>
+
 ### Font Test 
-
-
 
 <span >									 defult font</span>, 
 <span style="font-style:italic;font-weight:bold;">defult font (italic, bold)</span>
