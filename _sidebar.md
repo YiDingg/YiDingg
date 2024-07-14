@@ -23,7 +23,7 @@
   - Optics
     - [光学笔记汇总](Blogs/Optics/光学笔记汇总.md)
     - [光学笔记 (1)：hhh](Blogs/Optics/光学笔记%20(1)：hhh.md)
-  - C Programming
+  - C
     - [C语言笔记汇总](Blogs/C/C语言笔记汇总.md)
     - [C语言笔记 (1)：开始之前](Blogs/C/C语言笔记%20(1)：开始之前.md)
     - [C语言笔记 (2)：内存与关键字](Blogs/C/C语言笔记%20(2)：内存与关键字.md)

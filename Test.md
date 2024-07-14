@@ -8,83 +8,93 @@ This is a page only for test.
 
 
 
-<span >									 defult font, 字体测试</span>, 
-<span style="font-style:italic;font-weight:bold;">defult font, 字体测试 (italic, bold)</span>
+<span >									 defult font</span>, 
+<span style="font-style:italic;font-weight:bold;">defult font (italic, bold)</span>
 
-<span style='font-family:Arial;'>Arial, 字体测试</span>, 
-<span style='font-family:Arial;font-style:italic;font-weight:bold;'>Arial, 字体测试 (italic, bold)</span>
+<span style='font-family:Arial;'>Arial</span>, 
+<span style='font-family:Arial;font-style:italic;font-weight:bold;'>Arial (italic, bold)</span>
 
-<span style="font-family:'Times New Roman';">Times New Roman, 字体测试</span>, 
-<span style="font-family:'Times New Roman';font-style:italic;font-weight:bold;">Times New Roman, 字体测试 (italic, bold)</span>
+<span style="font-family:'Times New Roman';">Times New Roman</span>, 
+<span style="font-family:'Times New Roman';font-style:italic;font-weight:bold;">Times New Roman (italic, bold)</span>
 
-<span style="font-family:'Segoe UI';">									Segoe UI, 字体测试</span>, 
-<span style="font-family:'Segoe UI';font-style:italic;font-weight:bold;">Segoe UI, 字体测试 (italic, bold)</span>
+<span style="font-family:'Segoe UI';">									Segoe UI</span>, 
+<span style="font-family:'Segoe UI';font-style:italic;font-weight:bold;">Segoe UI (italic, bold)</span>
 
-<span style="font-family:Dosis;">									  Dosis, 字体测试</span>, 
-<span style="font-family:Dosis;font-style:italic;font-weight:bold;">Dosis, 字体测试 (italic, bold)</span>
+<span style="font-family:Dosis;">									  Dosis</span>, 
+<span style="font-family:Dosis;font-style:italic;font-weight:bold;">Dosis (italic, bold)</span>
 
-<span style="font-family:Montserrat;">								   Montserrat, 字体测试</span>, 
-<span style="font-family:Montserrat;font-style:italic;font-weight:bold;">Montserrat, 字体测试 (italic, bold)</span>
+<span style="font-family:Montserrat;">								   Montserrat</span>, 
+<span style="font-family:Montserrat;font-style:italic;font-weight:bold;">Montserrat (italic, bold)</span>
 
-<span style="font-family:'lucida grande';">									lucida grande, 字体测试</span>, 
-<span style="font-family:'lucida grande';font-style:italic;font-weight:bold;">lucida grande, 字体测试 (italic, bold)</span>
+<span style="font-family:'lucida grande';">									lucida grande</span>, 
+<span style="font-family:'lucida grande';font-style:italic;font-weight:bold;">lucida grande (italic, bold)</span>
 
-<span style="font-family:'lucida sans unicode';">									lucida sans unicode, 字体测试</span>, 
-<span style="font-family:'lucida sans unicode';font-style:italic;font-weight:bold;">lucida sans unicode, 字体测试 (italic, bold)</span>
+<span style="font-family:'lucida sans unicode';">									lucida sans unicode</span>, 
+<span style="font-family:'lucida sans unicode';font-style:italic;font-weight:bold;">lucida sans unicode (italic, bold)</span>
 
-<span style="font-family:lucida;">									lucida, 字体测试</span>, 
-<span style="font-family:lucida;font-style:italic;font-weight:bold;">lucida, 字体测试 (italic, bold)</span>
+<span style="font-family:lucida;">									lucida</span>, 
+<span style="font-family:lucida;font-style:italic;font-weight:bold;">lucida (italic, bold)</span>
 
-<span style="font-family:Verdana;">Verdana, 字体测试</span>, 
-<span style="font-family:Verdana;font-style:italic;font-weight:bold;">Verdana, 字体测试 (italic, bold)</span>
+<span style="font-family:Verdana;">Verdana</span>, 
+<span style="font-family:Verdana;font-style:italic;font-weight:bold;">Verdana (italic, bold)</span>
 
-<span style="font-family:helvetica;">									helvetica, 字体测试</span>, 
-<span style="font-family:helvetica;font-style:italic;font-weight:bold;">helvetica, 字体测试 (italic, bold)</span>
+<span style="font-family:helvetica;">									helvetica</span>, 
+<span style="font-family:helvetica;font-style:italic;font-weight:bold;">helvetica (italic, bold)</span>
 
-<span style="font-family:'Source Han Sans CN';">									Source Han Sans CN, 字体测试 </span>, 
-<span style="font-family:'Source Han Sans CN';font-style:italic;font-weight:bold;"> Source Han Sans CN, 字体测试 (italic, bold)</span>
+<span style="font-family:'Source Han Sans CN';">									Source Han Sans CN </span>, 
+<span style="font-family:'Source Han Sans CN';font-style:italic;font-weight:bold;"> Source Han Sans CN (italic, bold)</span>
 
-<span style="font-family:'Hiragino Sans GB';">									 Hiragino Sans GB, 字体测试</span>, 
-<span style="font-family:'Hiragino Sans GB';font-style:italic;font-weight:bold;">Hiragino Sans GB, 字体测试 (italic, bold)</span>
+<span style="font-family:'Hiragino Sans GB';">									 Hiragino Sans GB</span>, 
+<span style="font-family:'Hiragino Sans GB';font-style:italic;font-weight:bold;">Hiragino Sans GB (italic, bold)</span>
 
-<span style="font-family:'Microsoft YaHei';">									Microsoft YaHei, 字体测试 </span>, 
-<span style="font-family:'Microsoft YaHei';font-style:italic;font-weight:bold;">Microsoft YaHei, 字体测试 (italic, bold)</span>
+<span style="font-family:'Microsoft YaHei';">									Microsoft YaHei </span>, 
+<span style="font-family:'Microsoft YaHei';font-style:italic;font-weight:bold;">Microsoft YaHei (italic, bold)</span>
 
-<span style="font-family:'WenQuanYi Micro Hei';">									WenQuanYi Micro Hei, 字体测试 </span>, 
-<span style="font-family:'WenQuanYi Micro Hei';font-style:italic;font-weight:bold;">WenQuanYi Micro Hei, 字体测试 (italic, bold)</span>
+<span style="font-family:'WenQuanYi Micro Hei';">									WenQuanYi Micro Hei </span>, 
+<span style="font-family:'WenQuanYi Micro Hei';font-style:italic;font-weight:bold;">WenQuanYi Micro Hei (italic, bold)</span>
 
-<span style="font-family:sans-serif;">									sans-serif, 字体测试 </span>, 
-<span style="font-family:sans-serif;font-style:italic;font-weight:bold;"> sans-serif, 字体测试(italic, bold)</span>
+<span style="font-family:sans-serif;">									sans-serif </span>, 
+<span style="font-family:sans-serif;font-style:italic;font-weight:bold;"> sans-serif(italic, bold)</span>
 
-<span style="font-family:Algerian;">Algerian, 字体测试</span>, 
-<span style="font-family:Algerian;font-style:italic;font-weight:bold;">Algerian, 字体测试 (italic, bold)</span>
+<span style="font-family:Algerian;">Algerian</span>, 
+<span style="font-family:Algerian;font-style:italic;font-weight:bold;">Algerian (italic, bold)</span>
 
-<span style="font-family:'Cascadia Code';">Cascadia Code, 字体测试</span>, 
-<span style="font-family:'Cascadia Code';font-style:italic;font-weight:bold;">Cascadia Code, 字体测试 (italic, bold)</span>
+<span style="font-family:'Cascadia Code';">Cascadia Code</span>, 
+<span style="font-family:'Cascadia Code';font-style:italic;font-weight:bold;">Cascadia Code (italic, bold)</span>
 
-<span style="font-family:'Cascadia Mono';">									Cascadia Mono, 字体测试</span>, 
-<span style="font-family:'Cascadia Mono';font-style:italic;font-weight:bold;">Cascadia Mono, 字体测试 (italic, bold)</span>
+<span style="font-family:'Cascadia Mono';">									Cascadia Mono</span>, 
+<span style="font-family:'Cascadia Mono';font-style:italic;font-weight:bold;">Cascadia Mono (italic, bold)</span>
 
-<span style="font-family:Consolas;">									  Consolas, 字体测试</span>, 
-<span style="font-family:Consolas;font-style:italic;font-weight:bold;">Consolas, 字体测试 (italic, bold)</span>
+<span style="font-family:Consolas;">									  Consolas</span>, 
+<span style="font-family:Consolas;font-style:italic;font-weight:bold;">Consolas (italic, bold)</span>
 
-<span style="font-family:Monaco;">									  Monaco, 字体测试</span>, 
-<span style="font-family:Monaco;font-style:italic;font-weight:bold;">Monaco, 字体测试 (italic, bold)</span>
+<span style="font-family:Monaco;">									  Monaco</span>, 
+<span style="font-family:Monaco;font-style:italic;font-weight:bold;">Monaco (italic, bold)</span>
 
-<span style="font-family:monospace;">									 monospace, 字体测试</span>, 
-<span style="font-family:monospace;font-style:italic;font-weight:bold;">monospace, 字体测试 (italic, bold)</span>
+<span style="font-family:monospace;">									 monospace</span>, 
+<span style="font-family:monospace;font-style:italic;font-weight:bold;">monospace (italic, bold)</span>
 
-<span style="font-family:PingFang SC;">									PingFang SC, 字体测试</span>, 
-<span style="font-family:PingFang SC;font-style:italic;font-weight:bold;">PingFang SC, 字体测试 (italic, bold)</span>
+<span style="font-family:PingFang SC;">									PingFang SC</span>, 
+<span style="font-family:PingFang SC;font-style:italic;font-weight:bold;">PingFang SC (italic, bold)</span>
 
-<span style="font-family:'Cooper Black';">Cooper Black, 字体测试</span>, 
-<span style="font-family:'Cooper Black';font-style:italic;font-weight:bold;">Cooper Black, 字体测试 (italic, bold)</span>
+<span style="font-family:'Cooper Black';">Cooper Black</span>, 
+<span style="font-family:'Cooper Black';font-style:italic;font-weight:bold;">Cooper Black (italic, bold)</span>
 
-<span style="font-family:华文彩云;">HuaWenCaiYun, 字体测试</span>, 
-<span style="font-family:华文彩云; font-style:italic; font-weight:bold;">HuaWenCaiYun, 字体测试 (italic, bold)</span>
 
-<span style="font-family:'幼圆';">YouYuan, 字体测试</span>, 
-<span style="font-family:'幼圆';font-style:italic;font-weight:bold;">YouYuan, 字体测试 (italic, bold)</span>
+- 默认：<span>Font test, 字体测试， </span><span style="font-style:italic;font-weight:bold;">Font test, 字体测试 (italic, bold)</span>
+- 宋体：<span style="font-family:'宋体';">Font test, 字体测试， </span><span style="font-family:'宋体';font-style:italic;font-weight:bold;">Font test, 字体测试 (italic, bold)</span>
+- 华文宋体：<span style="font-family:'华文宋体';">Font test, 字体测试， </span><span style="font-family:'华文宋体';font-style:italic;font-weight:bold;">Font test, 字体测试 (italic, bold)</span>
+- 楷体：<span style="font-family:'楷体';">Font test, 字体测试， </span><span style="font-family:'楷体';font-style:italic;font-weight:bold;">Font test, 字体测试 (italic, bold)</span>
+- 华文楷体：<span style="font-family:'华文楷体';">Font test, 字体测试， </span><span style="font-family:'华文楷体';font-style:italic;font-weight:bold;">Font test, 字体测试 (italic, bold)</span>
+- 黑体：<span style="font-family:'黑体';">Font test, 字体测试， </span><span style="font-family:'黑体';font-style:italic;font-weight:bold;">Font test, 字体测试 (italic, bold)</span>
+- 等线：<span style="font-family:'等线';">Font test, 字体测试， </span><span style="font-family:'等线';font-style:italic;font-weight:bold;">Font test, 字体测试 (italic, bold)</span>
+- 华文彩云：<span style="font-family:华文彩云;">Font test, 字体测试，</span><span style="font-family:华文彩云; font-style:italic; font-weight:bold;">Font test, 字体测试 (italic, bold)</span>
+- 幼圆：<span style="font-family:'幼圆';">Font test, 字体测试， </span><span style="font-family:'幼圆';font-style:italic;font-weight:bold;">Font test, 字体测试 (italic, bold)</span>
+
+
+
+
+
 
 <!-- <span style="font-family:'';">									 </span>, 
 <span style="font-family:'';font-style:italic;font-weight:bold;"> (italic, bold)</span>

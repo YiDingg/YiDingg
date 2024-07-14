@@ -39,6 +39,8 @@ Here are the other tools and resources.
 
 ### Mixed
 
+- [TC Games](https://www.zhihu.com/question/424853439/answer/3473650709): a free screen projector
+- [SCRCPY](https://www.zhihu.com/question/520742551/answer/3068760311): an open-source and free screen projector.
 - [博客文章提取器](https://mark.cuckooing.cn/)
 - [Regular Expressions (正则表达式)](https://www.jyshare.com/front-end/854/)
 - [Coding Interview University](https://github.com/jwasham/coding-interview-university/blob/main/translations/README-cn.md): This is my multi-month study plan for becoming a software engineer for a large company. If you are interested in being a software engineer, you can follow it's data sructures roadmap and find some knowledge extension on it.

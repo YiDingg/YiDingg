@@ -20,6 +20,7 @@ aside.nav.nothing {
     width: 0;
 }
 .page_toc {
+    font-family: Arial;
     position: fixed;
     border-left-style: solid;
     border-left-width: 3px;
