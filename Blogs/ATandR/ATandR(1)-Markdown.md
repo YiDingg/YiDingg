@@ -1,6 +1,5 @@
 # ATandR(1): Markdown
 
->Original published time: 2024-07-10
 
 As I am writing most of my blogs in Markdown, I have tried several Markdown editors to see which one is the best. Eventually, I settled on VSCode. Yes, you heard me right. VScode, a code editor instead of a text editor. 
 

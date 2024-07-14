@@ -45,16 +45,12 @@ Geogebra is a powerful tool for creating and manipulating mathematical objects, 
 
 Use some tools to convert your code into flowcharts like below. This can be very helpful sometimes.
 - [Debug 996](https://debug996.com/draw/draw.html) (paid): generate a flowcharts of your code.
-- [Visustin](https://blog.csdn.net/qq_29183811/article/details/106170648) (paid)
+- [Visustin](https://blog.csdn.net/qq_29183811/article/details/106170648) (paid): convert 49 kinds of code into flowcharts.
 - [Cxx2Flow](https://github.com/Enter-tainer/cxx2flow): convert your C/C++ code into flowchart freely.
 - [PyFlowchart](https://github.com/cdfmlr/pyflowchart): translate Python source code into flowcharts freely.
 - <s>[Crystal REVS for C - Eval](https://blog.csdn.net/qq_29183811/article/details/106170648) </s>
 - <s>[AutoFlowchart](https://blog.csdn.net/m0_73770225/article/details/127944452) </s>
 
-By the way, you can use [Codemap](https://codemap.info/index.html) for reading your code better. It is a tool to assist in reading source code and analyzing project structure.
-
-<div class='center'><img src='https://pic3.zhimg.com/v2-0b8e9b7dab641cb72b0b02eb54f04a76_r.gif' alt='img'/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-13-17-28-16_ATandR(3)-Drawing.jpg"/></div>
 
 ### Debug 996
 
