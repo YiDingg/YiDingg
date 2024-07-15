@@ -38,7 +38,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     color: var(--color-text);
-    font-family: "Times New Roman", "Segoe UI", Verdana;
+    font-family: Arial, "Times New Roman", "Segoe UI", Verdana;
     /* 如果字体的名称是一个单词的，不需要加引号，否则在ie6，7里面会失效，并且后面的样式也会不生效 */
     font-size: 0.8rem;
     letter-spacing: 0;
@@ -395,7 +395,7 @@ details.WordList > summary > span.Word {
     font-weight: 600;
     height: 15px;
     line-height: 15px;
-    padding: 5px 10px 0;
+    padding: 0px 10px 0px;
     position: absolute;
     right: 0;
     text-align: right;
@@ -403,11 +403,15 @@ details.WordList > summary > span.Word {
 }
 .markdown-section pre::after,
 .markdown-section output::after {
-    content: attr(data-lang);
+    content: "lang: " attr(data-lang);
+    /* margin-right: 60px; */
+    margin-top: 5px;
+    margin-right: 140px; /* 防止与buttom位置冲突 */
+    /* border: #fff solid 1px; */
 }
 
-/* code highlight */
-.token.comment,
+/* code highlight（已被覆盖，见“自定义代码块高亮”） */
+/* .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
@@ -491,11 +495,11 @@ code .token {
     min-height: 1.5rem;
     position: relative;
     left: auto;
-}
+} */
 /*                                             */
 /* ------------- 自定义code风格 --------------- */
 
-/* ----------- 自定义Mac风代码块 -------------- */
+/* ------- 自定义Mac风代码块（浅色模式） -------- */
 /*                                             */
 :root {
     --color-codeblock: #f9f9f9;
@@ -570,7 +574,209 @@ code .token {
     /* Color of the scrollbar thumb on hover */
 }
 /*                                             */
-/* ------------------------------------------- */
+/* ------- 自定义Mac风代码块（浅色模式）  ------ */
+
+/* ------- 自定义Mac风代码块（深色模式） -------- */
+/*                                             */
+:root {
+    --color-codeblock: #222222;
+}
+.markdown-section pre {
+    /* 代码块样式 */
+    line-height: 1.1rem;
+    background-color: var(--color-codeblock);
+    border-radius: 5px;
+    box-shadow: 0 5px 6px 0px rgb(0 0 0 / 40%);
+    padding-top: 30px;
+    padding-bottom: 7px;
+    font-family: monospace, "PingFang SC", "Microsoft YaHei";
+}
+.markdown-section pre code {
+    /* 防止与inline code样式冲突 */
+    padding: 0;
+    border: none;
+    background-color: var(--color-codeblock);
+}
+.markdown-section pre::before {
+    /* 设置三个圈圈 */
+    background: #fc625d;
+    border-radius: 50%;
+    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+    content: " ";
+    height: 10px;
+    left: 10px;
+    margin-top: -20px;
+    position: absolute;
+    width: 10px;
+}
+/* 滑动条样式修改 */
+/* pre为纵向滑动条 */
+.markdown-section pre::-webkit-scrollbar {
+    width: 7px;
+    /*     margin-top: 20px; */
+    /* Width of the scrollbar */
+}
+.markdown-section pre::-webkit-scrollbar-track {
+    background: #4c4c4c;
+    /* Color of the track */
+}
+.markdown-section pre::-webkit-scrollbar-thumb {
+    background: #8a8a8a;
+    /* Color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Rounded corners for the thumb */
+}
+.markdown-section pre::-webkit-scrollbar-thumb:hover {
+    background: #dedede;
+    /* Color of the scrollbar thumb on hover */
+}
+/* code为横向滑动条 */
+.markdown-section pre > code::-webkit-scrollbar {
+    height: 4px;
+    /*     margin-top: 20px; */
+    /* Width of the scrollbar */
+}
+.markdown-section pre > code::-webkit-scrollbar-track {
+    background: #4c4c4c;
+    /* Color of the track */
+}
+.markdown-section pre > code::-webkit-scrollbar-thumb {
+    background: #8a8a8a;
+    /* Color of the scrollbar thumb */
+    border-radius: 5px;
+    /* Rounded corners for the thumb */
+}
+.markdown-section pre > code::-webkit-scrollbar-thumb:hover {
+    background: #dedede;
+    /* Color of the scrollbar thumb on hover */
+}
+/*                                             */
+/* ------- 自定义Mac风代码块（深色模式）  ------ */
+
+/* ----- 自定义全语言代码块高亮（深色模式） ------ */
+/*                                             */
+/* 下面是全语言参数 */
+.markdown-section pre code {
+    color: #a6d0ff;
+}
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #187f30;
+}
+.token.namespace {
+    opacity: 0.7;
+}
+.token.property {
+    color: #c08b30;
+}
+.token.string {
+    color: #c8845a;
+}
+.token.function {
+    color: #dcdc9f;
+}
+.token.tag,
+.token.attr-name {
+    color: #2973b7;
+}
+.token.entity,
+.token.url,
+.token.selector {
+    color: #6679cc;
+}
+.token.statement,
+.token.regex,
+.token.atrule {
+    color: #22a2c9;
+}
+.token.attr-value,
+.token.control,
+.token.directive,
+.token.unit {
+    color: #42b983;
+    color: var(--theme-color, #42b983);
+}
+.token.placeholder,
+.token.variable {
+    color: #3d8fd1;
+}
+.token.deleted {
+    text-decoration: line-through;
+}
+.token.inserted {
+    border-bottom: 1px dotted #202746;
+    text-decoration: none;
+}
+.token.italic {
+    font-style: italic;
+}
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+.token.important {
+    color: #c94922;
+}
+.token.entity {
+    cursor: help;
+}
+code .token {
+    -moz-osx-font-smoothing: initial;
+    -webkit-font-smoothing: initial;
+    min-height: 1.5rem;
+    position: relative;
+    left: auto;
+}
+/* 上面是全语言参数 */
+
+/* 下面是C语言 */
+.markdown-section pre code.lang-c {
+    color: #a6d0ff;
+}
+code.lang-c .token.operator {
+    color: #dddddd;
+}
+code.lang-c .token.punctuation {
+    color: #fbcd24;
+}
+code.lang-c .token.boolean,
+code.lang-c .token.number {
+    color: #a2c88c;
+}
+code.lang-c .token.class-name,
+code.lang-c .token.keyword {
+    color: #3e87d0;
+}
+code.lang-c .token.directive-hash {
+    color: #bf80bb;
+}
+/* code.lang-c .token.function {
+    color: #dcdc9f;
+} */
+/* 上面是C语言 */
+
+/* 下面是html */
+.markdown-section pre code.lang-html {
+    color: rgb(200, 200, 200);
+}
+code.lang-html .token.punctuation {
+    color: #999999be;
+}
+code.lang-html .token.selector {
+    color: #c5ae59;
+}
+code.lang-html .token.property {
+    color: #a6d0ff;
+}
+/* code.lang-html .token.function {
+    color: #dcdc9f;
+} */
+/* 上面是html */
+
+/*                                             */
+/* ----- 自定义全语言代码块高亮（深色模式）  ---- */
 
 /* ---------------------------------------- */
 /* ---------------------------------------- */

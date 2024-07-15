@@ -248,10 +248,10 @@ body.close .content {
     color: rgb(20, 20, 20);
     font-size: calc(var(--fontsize-main) + 0.05rem);
 }
-.sidebar ul > li.folder.level-1.open {
+/* .sidebar ul > li.folder.level-1.open {
     border: #000 solid 1px;
     border-left: #000 solid 2px;
-}
+} */
 .sidebar ul li.folder.level-2 p {
     /* 二级文件夹 */
     color: rgba(20, 20, 20, 0.7);
