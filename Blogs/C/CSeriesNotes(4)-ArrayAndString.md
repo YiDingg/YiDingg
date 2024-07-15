@@ -85,7 +85,49 @@ printf("%d\n", sizeof(s));  // 50
 
 <!-- details begin -->
 <details>
-<summary>2. strcpy()</summary>
+<summary>2. strcpy(), strncpy()</summary>
 
-原型：`void strcpy(char dest[], const char source[])`
+strcpy(): `char* strcpy( char* dest, const char* src );`  
+strncpy(): `char* strncpy( char* dest, const char* src, size_t count );`  
+示例：
+
+```c
+char str[10];
+strcpy(str, "abcd"); 
+
+char str1[10];
+char str2[10];
+strcpy(str1, strcpy(str2, "abcd"));
+
+```
+</details>
+<!-- details begin -->
+<details>
+<summary>3. strcat(), strncat()</summary>
+
+strcat(): `char* strcat(char* s1, const char* s2);`  
+strncat(): `char* strncat(const char* dest,const char* src,size_t n);`  
+一般写作：
+
+```c
+strncat(str1, str2, sizeof(str1) - strlen(str1) - 1); 
+/* -1 是为了留出最后的空字符 */
+```
+</details>
+<!-- details begin -->
+<details>
+<summary>4. strcmp(), strncmp()</summary>
+
+strcmp(): `int strcmp(const char* s1, const char* s2);`  
+strncmp(): `int strncmp( const char* lhs, const char* rhs, size_t count );`  
+依据字典序给出比较结果，return positive if $s_1 > s_2$。
+</details>
+<!-- details begin -->
+<details>
+<summary>5. sprintf(), snprintf()</summary>
+
+sprintf(): `int sprintf( char* buffer, const char* format, ... );`
+snprintf(): `int snprintf( char* buffer, size_t size, const char* format, ... );`
+
+用于将数据写入字符串，而不是输出到显示器，用法与`printf()`类似。返回值是写入变量的字符串实际长度（不计尾部空字符`\0`），如果遇到错误，返回负值。`snprintf()`控制写入变量的字符串不超过 n - 1 个字符，剩下一个位置写入空字符`\0`。
 </details>

@@ -4,23 +4,20 @@ Here are some mixed projects, which are not so complicated so that we won't have
 
 ## ESP12-F Adapter Board
 
-ESP12-F is a Wi-Fi module based on the ESP8266 chip, manufactured by Ai-Thinker (安信可). Here is the adapter borad for ESP-12 and you can refer to [立创开源硬件平台](https://oshwhub.com/dy130810/esp12-f_adapterboard) for more details.
+ESP12-F is a Wi-Fi module based on the ESP8266 chip, manufactured by Ai-Thinker (安信可). Here is the adapter borad for ESP-12. You can refer to [立创开源硬件平台](https://oshwhub.com/dy130810/esp12-f_adapterboard) for the schematic diagram and PCB layout.
 
 ### Display 
 
+Here is what it looks like:
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-14-22-51-16_Mixed.jpg"/></div>
 <div class='center'><img src='https://s.b1n.net/SxqPO' alt='img'/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-14-22-58-44_Mixed.jpg"/></div>
 
 
-
-
 ### BOM 
 
 Below is the BOM list for the Adapter Board.
-
-
 
 <div class='center'>
 
@@ -42,7 +39,7 @@ Below is the welding instructions.
 
 <div class='center'>
 
-| name | silkscreen logo (丝印) | 
+| Name | Designator (位号) | 
 | :-: |:-: | 
 | 0.1uF|  C11, C6 |
 | 1uF | C4, C5 |
