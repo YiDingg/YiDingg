@@ -29,9 +29,7 @@
     - [C语言笔记 (2)：内存与关键字](Blogs/C/C语言笔记%20(2)：内存与关键字.md)
     - [C语言笔记 (3)：数据类型](Blogs/C/C语言笔记%20(3)：数据类型.md)
     - [C语言笔记 (4)：数组与字符串](Blogs/C/CSeriesNotes(4)-ArrayAndString.md)
-    - [C语言系列汇总](Blogs/C/C语言系列汇总.md)
-    - [C语言系列 (1)：内存与关键字](Blogs/C/C语言系列%20(1)：内存与关键字.md)
-    - [C语言系列 (2)：printf() 函数详解](Blogs/C/C语言系列%20(2)：printf()%20函数详解.md)
+    - [C语言笔记 (5)：内存管理](Blogs/C/CSeriesNotes(5)-MemoryManagement.md)
   - Cpp
     - [Cpp笔记大纲](Blogs/Cpp/Cpp笔记大纲.md)
   - STM32

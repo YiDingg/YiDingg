@@ -5,7 +5,7 @@
 ### 简介
 
 - 仅在定义数组可以使用花括号，已定义的数组无法用花括号进行赋值。
-- C99之后可以指定初始化某个元素，例如下面的例子
+- C99之后可以指定初始化（designated initializer）某个元素，例如下面的例子
 
 ```c 
 int arr[100] = {1, [33]33, 99, 88, [99]5}; 
@@ -18,7 +18,7 @@ int arr[] = {2, [10]88};
 /* 效果: sizeof(arr)/sizeof(arr[0]) = 11, arr[0] = 2, arr[10] = 88 */
 ```
 
-注意，sizeof和sizeof(a) / sizeof(a[0])的数据类型都是size_t，在printf()里面的占位符，要用%zd或%zu。
+注意，`sizeof(a)`和`sizeof(a)/sizeof(a[0])`的数据类型都是`size_t`，在printf()里面的占位符，要用`%zd`或`%zu`。
 
 ### 变长数组
 

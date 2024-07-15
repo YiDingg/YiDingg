@@ -3,7 +3,8 @@
 ## Development Plan
 
 <!-- To be added to the timeline -->
-<!-- Copy Our Site -->
+<!-- you can Copy Our Site on -->
+<!-- code block style-->
 
 <!-- The top one is the first one to be completed -->
 - [ ] Customize to improve the components: search box, <s>sidebar, toc</s>
@@ -40,6 +41,17 @@
 <div class="timeline-item_node"></div>
 <div class="timeline-item_timestamp">August 1, 2024</div>
 <div class="timeline-item_content"><br><br><br><!-- 每块顶部单独留一些空间 -->
+<!------------------------------------>
+<div class="tbox"><div class='outerBox'><div class="dateBox"><div>
+<tl-title>Optimize Code Block</tl-title>
+<ul>
+We optimized the style of the code block, making it more beautiful and easier to read.
+</ul></div></div></div></div>
+<!------------------------------------>
+<div class="tbox"><div class='outerBox'><div class="dateLeftBox"><div>
+<tl-title>Copy Our Site</tl-title><ul>
+Our site is now available for you to copy so that you can easily have the same one. You can also customize it to fit your needs. Go to  <a href="#/Blogs/Mixed/BuildYourSite?id=copy-our-site">Build Your Site --> Copy Our Site</a> for more details.
+</ul></div></div></div></div>
 <!------------------------------------>
 <div class="tbox"><div class='outerBox'><div class="dateBox"><div>
 <tl-title>Better Img Viewing Experience</tl-title>
