@@ -39,6 +39,8 @@ Here are the other tools and resources.
 
 ### Mixed
 
+- [Circuit JS](https://www.eetree.cn/platform/3004): a free online circuit simulator.
+- [EETree](https://www.eetree.cn/): a website for electronics engineer.
 - [TC Games](https://www.zhihu.com/question/424853439/answer/3473650709): a free screen projector
 - [SCRCPY](https://www.zhihu.com/question/520742551/answer/3068760311): an open-source and free screen projector.
 - [博客文章提取器](https://mark.cuckooing.cn/)
