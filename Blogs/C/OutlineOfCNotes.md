@@ -1,4 +1,4 @@
-# C语言笔记汇总
+# Outline Of C Notes
 
 ## 学习路线
 

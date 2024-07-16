@@ -24,7 +24,7 @@
     - [光学笔记汇总](Blogs/Optics/光学笔记汇总.md)
     - [光学笔记 (1)：hhh](Blogs/Optics/光学笔记%20(1)：hhh.md)
   - C
-    - [C语言笔记汇总](Blogs/C/C语言笔记汇总.md)
+    - [C语言笔记汇总](Blogs/C/OutlineOfCNotes.md)
     - [C语言笔记 (1)：开始之前](Blogs/C/CNotes(1)-BeforeStarting.md)
     - [C语言笔记 (2)：关键字](Blogs/C/CNotes(2)-MemoryAndKeywords.md)
     - [C语言笔记 (3)：基本数据类型](Blogs/C/CNotes(3)-DataTypes.md)
