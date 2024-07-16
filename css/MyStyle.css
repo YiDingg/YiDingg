@@ -119,7 +119,7 @@ h4 .anchor span {
 details {
     background-color: rgba(255, 235, 235, 0.55);
     /*   border: rgba(0, 0, 0, 0) solid 1px; */
-    font-family: Montserrat;
+    font-family: inherit;
     margin: auto;
     margin-top: 5px;
     margin-bottom: 5px;

@@ -35,7 +35,7 @@ Here is an example format:
 ## Wordlist
 
 <details class='WordList'>
-<summary><span class='Word'> collaborative </span> adj.  /kəˈlæbərətɪv/ </summary>
+<summary><span class='Word'> collaborative </span>-- adj.  /kəˈlæbərətɪv/ </summary>
 
 **Definitions:**
 - [only before noun] (formal) involving, or done by, several people or groups of people working together
@@ -50,4 +50,26 @@ Here is an example format:
 - collaborator[劳经] 合作者；勾结者；通敌者
 - collaborationist通敌卖国者；协助者
 **Synonyms:** cooperative, synergic
+</details>
+
+<details class='WordList'>
+<summary><span class='Word'> plagiarism </span>-- n. /ˈpleɪdʒərɪzəm/ </summary>
+
+**Definitions:**
+- [U, C] (disapproving) an act of plagiarizing sth; sth that has been plagiarized 抄袭；剽窃；剽窃作品
+**Phrases:**
+- plagiarism checker
+- anti-plagiarism
+- ip plagiarism
+- plagiarism detection
+**Sentences:**
+- Now he's in real trouble. He's accused of plagiarism.
+- Academic plagiarism is seriously dealt with in the developed world.
+**Cognates:**
+- plagiarist 剽窃者，抄袭者；文抄公
+- plagiarizer 剽窃者
+- plagiarize 剽窃；抄袭
+- plagiarise 剽窃；抄袭
+**Synonyms:** 
+piracy, cribbing
 </details>

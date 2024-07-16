@@ -511,7 +511,7 @@ $|warning|npm run build
 warning|npm run build
 ```
 
-### Accordion
+### FAQ Accordion
 
 https://github.com/isaozler/docsify-accordion
 
