@@ -25,11 +25,12 @@
     - [光学笔记 (1)：hhh](Blogs/Optics/光学笔记%20(1)：hhh.md)
   - C
     - [C语言笔记汇总](Blogs/C/C语言笔记汇总.md)
-    - [C语言笔记 (1)：开始之前](Blogs/C/C语言笔记%20(1)：开始之前.md)
-    - [C语言笔记 (2)：内存与关键字](Blogs/C/C语言笔记%20(2)：内存与关键字.md)
-    - [C语言笔记 (3)：数据类型](Blogs/C/C语言笔记%20(3)：数据类型.md)
-    - [C语言笔记 (4)：数组与字符串](Blogs/C/CSeriesNotes(4)-ArrayAndString.md)
-    - [C语言笔记 (5)：内存管理](Blogs/C/CSeriesNotes(5)-MemoryManagement.md)
+    - [C语言笔记 (1)：开始之前](Blogs/C/CNotes(1)-BeforeStarting.md)
+    - [C语言笔记 (2)：关键字](Blogs/C/CNotes(2)-MemoryAndKeywords.md)
+    - [C语言笔记 (3)：基本数据类型](Blogs/C/CNotes(3)-DataTypes.md)
+    - [C语言笔记 (4)：数组与字符串](Blogs/C/CNotes(4)-ArrayAndString.md)
+    - [C语言笔记 (5)：内存管理](Blogs/C/CNotes(5)-MemoryManagement.md)
+    - [C语言笔记 (6)：特殊数据类型](Blogs/C/CNotes(6)-SpecialDataTypes.md)
   - Cpp
     - [Cpp笔记大纲](Blogs/Cpp/Cpp笔记大纲.md)
   - STM32
@@ -73,11 +74,9 @@
 
 - 🎓 **English Learning**
   - [Words](EnglishLearning/Words.md)
+  - [Read Books](EnglishLearning/ReadBooks.md)
   - Preparation
     - [IELTS](EnglishLearning/Preparation/IELTS.md)
-  - Grammar
-
-    - [Outline of Grammar Learning](EnglishLearning/Grammar/OutlineOfGrammar.md)
 
 
 

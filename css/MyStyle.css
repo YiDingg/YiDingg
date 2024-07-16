@@ -38,7 +38,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     color: var(--color-text);
-    font-family: Arial, "Times New Roman", "Segoe UI", Verdana;
+    font-family: "helvetica", "Monaco", "Consolas", "lucida sans unicode", Arial,
+        "Times New Roman", "Segoe UI", Verdana;
     /* 如果字体的名称是一个单词的，不需要加引号，否则在ie6，7里面会失效，并且后面的样式也会不生效 */
     font-size: 0.8rem;
     letter-spacing: 0;
@@ -663,7 +664,7 @@ code .token {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    color: #187f30;
+    color: #59933c;
 }
 .token.namespace {
     opacity: 0.7;
@@ -747,7 +748,7 @@ code.lang-c .token.number {
 }
 code.lang-c .token.class-name,
 code.lang-c .token.keyword {
-    color: #3e87d0;
+    color: #397ec3;
 }
 code.lang-c .token.directive-hash {
     color: #bf80bb;

@@ -1,0 +1,353 @@
+# C Notes(1): Before Starting
+
+## 环境配置
+
+### C语言版本
+
+C语言起始于K＆R C(1978年)，经历过ANSI(C89,C90), C95, C99, C11, C17 等多种版本的发展。目前的版本为C23 (2024.7.1)
+
+
+### 编译器
+    
+C 语言是一种编译型语言，源码都是文本文件，本身无法执行。必须通过编译器，生成二进制的可执行文件，才能执行。编译器将代码从文本翻译成二进制指令的过程，就称为编译阶段，又称为“编译时”（compile time），跟运行阶段（又称为“运行时”）相区分。
+
+目前，最常见的 C 语言编译器是自由软件基金会推出的 GCC 编译器，它可以免费使用。Linux 和 Mac 系统可以直接安装 GCC，Windows 系统可以安装 MinGW (GCC的Windows版本)。但是，也可以不用这么麻烦，网上有在线编译器，能够直接在网页上模拟运行 C 代码，查看结果，下面就是两个这样的工具。
+
+- [CodingGround](https://tutorialspoint.com/compile_c_online.php)
+- [OnlineGDB](https://onlinegdb.com/online_c_compiler)
+
+我这里已经下载并配置好了Visual Studio 2022，但考虑到更喜欢用VSCode，还是下载了MinGW。参考 [CSDN](https://blog.csdn.net/su272009/article/details/138245549) 进行下载安装，然后
+
+### GCC编译
+
+编译语法是`gcc [parameters] filename_1.c filename_2.c`，执行语法是`./{outputname}`。
+
+例如`gcc filename.c` + `./a.out`，又如`gcc -std=c99 -o hello filename_1.c filename_2.c` + `./hello`。
+
+- `-o`(Output): 指定编译产物文件名
+- `-std=`(Standard): 指定编译标准
+
+### C/C++环境配置
+
+对于仅编译一个 .c或 .cpp文件的情况，推荐插件 Code Runner。它支持运行 C, C++, Java, JavaScript, PHP, Python, Go, PowerShell 等多种语言。
+但是，考虑到之后的学习/使用，我们不如直接配置VSCode中的C/C++ 编译、debug环境，使得多个 .c和 .cpp文件可以同时被编译。
+
+我们有几种方案：
+
+1. 使用Code Runner插件，只运行当前文件
+2. 手动配置VSCode的.json文件，编译当前/多个文件
+3. 使用VCDode的CMake插件，编译当前/多个文件 (更方便)
+
+推荐第三种方案，参考[CSDN](https://blog.csdn.net/m0_50866704/article/details/137509106)即可。Cmake的详细教程可以参考 [爱编程的大丙](https://subingwen.cn/cmake/CMake-primer/?highlight=cmake)，这里不提。
+
+### 代码格式化配置
+
+在 settings.json文件中，添加以下内容：
+```json
+"[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+},
+/* 若根文件夹无 .clang-format 文件，则会自动使用以下配置 */
+"C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4, NamespaceIndentation: All, FixNamespaceComments: false, PointerAlignment: Left}"
+```
+
+若需要更详细的格式化，在项目根目录下创建`.clang-format`文件，并添加以下内容：
+```txt
+# 语言: None, Cpp, Java, JavaScript, ObjC, Proto, TableGen, TextProto
+Language: Cpp
+# BasedOnStyle:    LLVM
+
+# 访问说明符(public、private等)的偏移
+AccessModifierOffset: -4
+
+# 开括号(开圆括号、开尖括号、开方括号)后的对齐: Align, DontAlign, AlwaysBreak (总是在开括号后换行)
+AlignAfterOpenBracket: AlwaysBreak
+
+# 连续赋值时，对齐所有等号
+AlignConsecutiveAssignments: false
+
+# 连续声明时，对齐所有声明的变量名
+AlignConsecutiveDeclarations: false
+
+# 右对齐逃脱换行(使用反斜杠换行)的反斜杠
+AlignEscapedNewlines: Right
+
+# 水平对齐二元和三元表达式的操作数
+AlignOperands: true
+
+# 对齐连续的尾随的注释
+AlignTrailingComments: true
+
+# 不允许函数声明的所有参数在放在下一行
+AllowAllParametersOfDeclarationOnNextLine: false
+
+# 不允许短的块放在同一行
+AllowShortBlocksOnASingleLine: true
+
+# 允许短的case标签放在同一行
+AllowShortCaseLabelsOnASingleLine: true
+
+# 允许短的函数放在同一行: None, InlineOnly(定义在类中), Empty(空函数), Inline(定义在类中，空函数), All
+AllowShortFunctionsOnASingleLine: None
+
+# 允许短的if语句保持在同一行
+AllowShortIfStatementsOnASingleLine: true
+
+# 允许短的循环保持在同一行
+AllowShortLoopsOnASingleLine: true
+
+# 总是在返回类型后换行: None, All, TopLevel(顶级函数，不包括在类中的函数), 
+# AllDefinitions(所有的定义，不包括声明), TopLevelDefinitions(所有的顶级函数的定义)
+AlwaysBreakAfterReturnType: None
+
+# 总是在多行string字面量前换行
+AlwaysBreakBeforeMultilineStrings: false
+
+# 总是在template声明后换行
+AlwaysBreakTemplateDeclarations: true
+
+# false表示函数实参要么都在同一行，要么都各自一行
+BinPackArguments: true
+
+# false表示所有形参要么都在同一行，要么都各自一行
+BinPackParameters: true
+
+# 大括号换行，只有当BreakBeforeBraces设置为Custom时才有效
+BraceWrapping:
+  # class定义后面
+  AfterClass: false
+  # 控制语句后面
+  AfterControlStatement: false
+  # enum定义后面
+  AfterEnum: false
+  # 函数定义后面
+  AfterFunction: false
+  # 命名空间定义后面
+  AfterNamespace: false
+  # struct定义后面
+  AfterStruct: false
+  # union定义后面
+  AfterUnion: false
+  # extern之后
+  AfterExternBlock: false
+  # catch之前
+  BeforeCatch: false
+  # else之前
+  BeforeElse: false
+  # 缩进大括号
+  IndentBraces: false
+  # 分离空函数
+  SplitEmptyFunction: false
+  # 分离空语句
+  SplitEmptyRecord: false
+  # 分离空命名空间
+  SplitEmptyNamespace: false
+
+# 在二元运算符前换行: None(在操作符后换行), NonAssignment(在非赋值的操作符前换行), All(在操作符前换行)
+BreakBeforeBinaryOperators: NonAssignment
+
+# 在大括号前换行: Attach(始终将大括号附加到周围的上下文), Linux(除函数、命名空间和类定义，与Attach类似), 
+#   Mozilla(除枚举、函数、记录定义，与Attach类似), Stroustrup(除函数定义、catch、else，与Attach类似), 
+#   Allman(总是在大括号前换行), GNU(总是在大括号前换行，并对于控制语句的大括号增加额外的缩进), WebKit(在函数前换行), Custom
+#   注：这里认为语句块也属于函数
+BreakBeforeBraces: Custom
+
+# 在三元运算符前换行
+BreakBeforeTernaryOperators: false
+
+# 在构造函数的初始化列表的冒号后换行
+BreakConstructorInitializers: AfterColon
+
+#BreakInheritanceList: AfterColon
+
+BreakStringLiterals: false
+
+# 每行字符的限制，0表示没有限制
+ColumnLimit: 80
+
+CompactNamespaces: true
+
+# 构造函数的初始化列表要么都在同一行，要么都各自一行
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
+
+# 构造函数的初始化列表的缩进宽度
+ConstructorInitializerIndentWidth: 4
+
+# 延续的行的缩进宽度
+ContinuationIndentWidth: 4
+
+# 去除C++11的列表初始化的大括号{后和}前的空格
+Cpp11BracedListStyle: true
+
+# 继承最常用的指针和引用的对齐方式
+DerivePointerAlignment: false
+
+# 固定命名空间注释
+FixNamespaceComments: true
+
+# 缩进case标签
+IndentCaseLabels: false
+
+IndentPPDirectives: None
+
+# 缩进宽度
+IndentWidth: 4
+
+# 函数返回类型换行时，缩进函数声明或函数定义的函数名
+IndentWrappedFunctionNames: false
+
+# 保留在块开始处的空行
+KeepEmptyLinesAtTheStartOfBlocks: false
+
+# 连续空行的最大数量
+MaxEmptyLinesToKeep: 1
+
+# 命名空间的缩进: None, Inner(缩进嵌套的命名空间中的内容), All
+NamespaceIndentation: None
+
+# 指针和引用的对齐: Left, Right, Middle
+PointerAlignment: Left
+
+# 允许重新排版注释
+ReflowComments: true
+
+# 允许排序#include
+SortIncludes: false
+
+# 允许排序 using 声明
+SortUsingDeclarations: false
+
+# 在C风格类型转换后添加空格
+SpaceAfterCStyleCast: false
+
+# 在Template 关键字后面添加空格
+SpaceAfterTemplateKeyword: true
+
+# 在赋值运算符之前添加空格
+SpaceBeforeAssignmentOperators: true
+
+# SpaceBeforeCpp11BracedList: true
+
+# SpaceBeforeCtorInitializerColon: true
+
+# SpaceBeforeInheritanceColon: true
+
+# 开圆括号之前添加一个空格: Never, ControlStatements, Always
+SpaceBeforeParens: ControlStatements
+
+# SpaceBeforeRangeBasedForLoopColon: true
+
+# 在空的圆括号中添加空格
+SpaceInEmptyParentheses: false
+
+# 在尾随的评论前添加的空格数(只适用于//)
+SpacesBeforeTrailingComments: 1
+
+# 在尖括号的<后和>前添加空格
+SpacesInAngles: false
+
+# 在C风格类型转换的括号中添加空格
+SpacesInCStyleCastParentheses: false
+
+# 在容器(ObjC和JavaScript的数组和字典等)字面量中添加空格
+SpacesInContainerLiterals: true
+
+# 在圆括号的(后和)前添加空格
+SpacesInParentheses: false
+
+# 在方括号的[后和]前添加空格，lamda表达式和未指明大小的数组的声明不受影响
+SpacesInSquareBrackets: false
+
+# 标准: Cpp03, Cpp11, Auto
+Standard: Cpp11
+
+# tab宽度
+TabWidth: 4
+
+# 使用tab字符: Never, ForIndentation, ForContinuationAndIndentation, Always
+UseTab: Never
+```
+
+## 基础内容
+
+### 语句
+
+最基本的语句我们不再赘述，这里简要提几点。
+
+- 单个分号：`;`也是有效语句，称为“空语句”，虽然毫无作用。
+- 语句块：C 语言允许多个语句被一对大括号`{}`所包围，构成一个块(大括号的结尾不需要添加分号。)，也称为复合语句（compounded statement）。在语法上，语句块可以视为多个语句构成的复合语句。
+- 注释：语句内部可以插入注释，例如`int open(char* s /*file name*/, int mode);`，但不管哪一种注释，都不能放在双引号中。
+- 注释编译：会被替换成一个空格，所以`min/*space*/Value`会变成`min Value`，而不是`minValue`。
+- 赋值：赋值表达式有返回值(返回右值)，因此`x = y = z = 10;`是合法的多重赋值表达式。
+- 自增运算符位置：`++var`先加法再返回，`var++`先返回再加法。
+- 真伪：C 语言中，`0`表示伪，所有非零值表示真。
+- 关系运算符：`i < j < k`等价于`(i < j) < k`
+- 位运算符：`^` `&` `|` `<<` `>>`
+- 逗号运算符：返回最后一个表达式的值，作为整个语句的值，例如`int x = 1, 2, 3;`$\Longleftrightarrow$`int x = (1, 2, 3);`$\Longleftrightarrow$`int x = 3;`
+
+### Printf占位符
+
+`printf()`占位符：
+
+- `%a`：十六进制浮点数，字母输出为小写。
+- `%A`：十六进制浮点数，字母输出为大写。
+- `%c`：字符。
+- `%d`：十进制整数。
+- `%e`：使用科学计数法的浮点数，指数部分的`e`为小写。
+- `%E`：使用科学计数法的浮点数，指数部分的`E`为大写。
+- `%i`：整数，基本等同于`%d`。
+- `%f`：小数（包含`float`类型和`double`类型）。
+- `%g`：6个有效数字的浮点数。整数部分一旦超过6位，就会自动转为科学计数法，指数部分的`e`为小写。
+- `%G`：等同于`%g`，唯一的区别是指数部分的`E`为大写。
+- `%hd`：十进制 short int 类型。
+- `%ho`：八进制 short int 类型。
+- `%hx`：十六进制 short int 类型。
+- `%hu`：unsigned short int 类型。
+- `%ld`：十进制 long int 类型。
+- `%lo`：八进制 long int 类型。
+- `%lx`：十六进制 long int 类型。
+- `%lu`：unsigned long int 类型。
+- `%lld`：十进制 long long int 类型。
+- `%llo`：八进制 long long int 类型。
+- `%llx`：十六进制 long long int 类型。
+- `%llu`：unsigned long long int 类型。
+- `%Le`：科学计数法表示的 long double 类型浮点数。
+- `%Lf`：long double 类型浮点数。
+- `%n`：已输出的字符串数量。该占位符本身不输出，只将值存储在指定变量之中。
+- `%o`：八进制整数。
+- `%p`：指针。
+- `%s`：字符串。
+- `%u`：无符号整数（unsigned int）。
+- `%x`：十六进制整数。
+- `%zd`：`size_t`类型。
+- `%%`：输出一个百分号。
+
+### 运算符优先级
+
+运算符的优先级顺序较为复杂。下面是部分运算符的优先级顺序（按照优先级从高到低排列）。
+
+- 圆括号`()`
+- 一元运算符`++`、`--`、`!`、`~`
+- 乘法`*`，除法`/`
+- 加法`+`，减法`-`
+- 关系运算符`<`、`>`等
+- 赋值运算符`=`
+
+完全没有必要记住所有运算符的优先级，解决方法是多用圆括号，防止出现意料之外的情况，也有利于提高代码的可读性。
+
+一个需要辨析的例子是`*p++`与`(*p)++`，前者改变`p`的值，后者改变`*p`的值。
+
+
+### 流程控制
+
+C 语言的程序是顺序执行，即先执行前面的语句，再执行后面的语句。开发者如果想要控制程序执行的流程，就必须使用流程控制的语法结构，主要是条件执行和循环执行。
+
+>此部分略，详情可参考 [网道: C语言](https://wangdoc.com/clang/flow-control#dowhile-%E7%BB%93%E6%9E%84)
+
+
+
+
+
+
+
+
