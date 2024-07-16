@@ -1,4 +1,4 @@
-# C Series Notes(5): Memory Management (内存管理)
+# C Notes(5): Memory Management (内存管理)
 
 ## Before 
 
@@ -49,16 +49,57 @@ else {
 <details>
 <summary>2. free()</summary>
 
-`free()`释放已分配的内存，否则内存块一直被占用，直到程序结束。
+`free()`释放已分配的内存，否则内存块一直被占用，直到程序结束。一个很常见的错误是，在函数内部分配了内存，但是函数调用结束时，没有使用`free()`释放内存。
 
 ```c
 /* 原型 */
 void free(void* block);
 
-/* 一般用法 */
+/* 一个例子 */
 int* p = (int*) malloc(sizeof(int));
-
 *p = 12;
 free(p);
 ```
 </details>
+<!-- details begin -->
+<details>
+<summary>3. calloc()</summary>
+
+分配内存并初始化为0，用法与`malloc()`类似。
+
+```c
+/* 原型 */
+void* calloc( size_t num, size_t size );
+
+/* 一般用法 */
+int* p = (int*) calloc(sizeof(int) * 10);
+if (p == NULL) {
+  // 内存分配失败, dosomethinh
+}
+else {
+    // 内存分配成功, 使用 p 指针
+}
+```
+</details>
+<!-- details begin -->
+<details>
+<summary>4. realloc()</summary>
+
+放大或缩小已分配内存的大小，不对新增部分初始化。
+
+```c
+/* 原型 */
+void *realloc( void *ptr, size_t new_size );
+
+
+/* 一个例子 */
+int* b;
+
+b = malloc(sizeof(int) * 10);
+b = realloc(b, sizeof(int) * 2000); 
+```
+</details>
+
+### restrict 关键字
+
+声明指针变量时，`restrict`告诉编译器，该块内存区域有且仅有当前指针一种访问方式，其他指针不能读写该块内存，称为“restrict pointer”。

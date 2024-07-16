@@ -11,10 +11,14 @@
 | 📕笔记目录 |
 |:-|
  | [C语言笔记汇总](Blogs\C\C语言笔记汇总.md)  |
- | C语言笔记 (1)：  |
- | C语言笔记 (2)：  |
- | C语言笔记 (3)：  |
- | C语言笔记 (4)：  |
+ | [C语言笔记 (1)：开始之前](Blogs/C/CSeriesNotes(1)-BeforeStarting.md) |
+ | [C语言笔记 (2)：内存与关键字](Blogs/C/CSeriesNotes(2)-MemoryAndKeywords.md) |
+ | [C语言笔记 (3)：数据类型](Blogs/C/CSeriesNotes(3)-DataTypes.md) |
+ | [C语言笔记 (4)：数组与字符串](Blogs/C/CSeriesNotes(4)-ArrayAndString.md) |
+ | [C语言笔记 (5)：内存管理](Blogs/C/CSeriesNotes(5)-MemoryManagement.md) |
+ 
+ 
+ 
 
 </div>
 
