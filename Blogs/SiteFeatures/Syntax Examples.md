@@ -43,7 +43,7 @@ myVid.volume=0.15;
 ```
 
 ### GIF
- <div class='center'><img src="https://gcore.jsdelivr.net/gh/YiDingg/ImageBank_0/20240617/003521693.gif" style="width:300px"/></div>
+ <div class='center'><img src="https://gcore.jsdelivr.net/gh/YiDingg/ImageBank_0/003521693.gif" style="width:300px"/></div>
 
 - Convert video to gif online: [convertio](https://convertio.co/zh/)
 - Convert video to gif by app: [screentogif](https://www.screentogif.com/)

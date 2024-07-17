@@ -31,6 +31,7 @@
     - [C语言笔记 (4)：数组与字符串](Blogs/C/CNotes(4)-ArrayAndString.md)
     - [C语言笔记 (5)：内存管理](Blogs/C/CNotes(5)-MemoryManagement.md)
     - [C语言笔记 (6)：特殊数据类型](Blogs/C/CNotes(6)-SpecialDataTypes.md)
+    - [C语言笔记 (7)：预处理](Blogs/C/CNotes(7)-Preproccess.md)
   - Cpp
     - [Cpp笔记大纲](Blogs/Cpp/Cpp笔记大纲.md)
   - STM32

@@ -16,7 +16,7 @@ My Technology Stack:
 - Latex
 - Matlab
 - C
-- MCU (STM32, C51)
+- MCU
 - PCB Design
 
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
