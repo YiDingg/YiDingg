@@ -88,7 +88,6 @@
   - [HDofDF (Humidity Detection of Diabetic Foot)](Projects/HDofDF.md)
   - [Mixed](Projects/Mixed.md)
   - WSETD
-
     - [Outline of WSETD](Projects/WSETD/OutlineOfWSETD.md)
     - [WSETD (1): Chinese Document](Projects/WSETD/WSETD(1)-ChineseDocument.md)
     - [WSETD (2): Englsih Document](Projects/WSETD/WSETD(2)-EnglishDocument.md)
