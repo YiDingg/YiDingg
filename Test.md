@@ -4,7 +4,7 @@
 This is a page only for test.
 ---
 
-## Img test
+## Testing
 
 ### GH
 
@@ -19,20 +19,32 @@ https://github-production-user-asset-6210df.s3.amazonaws.com/149370435/349370613
  | img | <div class='center'><img src='https://github.com/user-attachments/assets/baa34160-ecd7-4c72-b990-43e8f6a951c7' alt='img'/></div>| ![d](https://github.com/user-attachments/assets/baa34160-ecd7-4c72-b990-43e8f6a951c7) |<div class='center'><img src='https://github-production-user-asset-6210df.s3.amazonaws.com/149370435/349369751-baa34160-ecd7-4c72-b990-43e8f6a951c7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240717%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240717T051956Z&X-Amz-Expires=300&X-Amz-Signature=6250d532427ec36f8dd6aa964ce2d96f37e927777eb3d93426bb675d9c4b6b56&X-Amz-SignedHeaders=host&actor_id=149370435&key_id=0&repo_id=826625551' alt='img'/></div> |![QQ_1721193567667](https://github-production-user-asset-6210df.s3.amazonaws.com/149370435/349369751-baa34160-ecd7-4c72-b990-43e8f6a951c7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240717%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240717T051956Z&X-Amz-Expires=300&X-Amz-Signature=6250d532427ec36f8dd6aa964ce2d96f37e927777eb3d93426bb675d9c4b6b56&X-Amz-SignedHeaders=host&actor_id=149370435&key_id=0&repo_id=826625551) |
  | gif |<div class='center'><img src='https://github.com/user-attachments/assets/e0a121b2-4f21-4836-adaf-214ccdfcf6e8' alt='img'/></div>  | ![test](https://github.com/user-attachments/assets/e0a121b2-4f21-4836-adaf-214ccdfcf6e8) | <img src='https://github-production-user-asset-6210df.s3.amazonaws.com/149370435/349370557-e0a121b2-4f21-4836-adaf-214ccdfcf6e8.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240717%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240717T052910Z&X-Amz-Expires=300&X-Amz-Signature=409ffd0bf9df3867d2171867512d2f8e1b91c35fa9ffcc9601a28af69c174763&X-Amz-SignedHeaders=host&actor_id=149370435&key_id=0&repo_id=826625551' alt='img'/> | ![d](https://github-production-user-asset-6210df.s3.amazonaws.com/149370435/349370557-e0a121b2-4f21-4836-adaf-214ccdfcf6e8.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240717%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240717T052910Z&X-Amz-Expires=300&X-Amz-Signature=409ffd0bf9df3867d2171867512d2f8e1b91c35fa9ffcc9601a28af69c174763&X-Amz-SignedHeaders=host&actor_id=149370435&key_id=0&repo_id=826625551) |
  | video | <video class='center' muted='muted'><source src='https://github.com/user-attachments/assets/9a0c0ba8-1bd0-47df-86db-1a9922aac5d5' type='video/mp4'></video> | ![d](https://github.com/user-attachments/assets/9a0c0ba8-1bd0-47df-86db-1a9922aac5d5) | <video class='center' muted='muted'><source src='https://github-production-user-asset-6210df.s3.amazonaws.com/149370435/349370613-9a0c0ba8-1bd0-47df-86db-1a9922aac5d5.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240717%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240717T053351Z&X-Amz-Expires=300&X-Amz-Signature=b110409676dbc4867ae8ceff24033e25a540e77de927f08a94f4c358c7c75c7f&X-Amz-SignedHeaders=host&actor_id=149370435&key_id=0&repo_id=826625551'></video> | ![d](https://github-production-user-asset-6210df.s3.amazonaws.com/149370435/349370613-9a0c0ba8-1bd0-47df-86db-1a9922aac5d5.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240717%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240717T053351Z&X-Amz-Expires=300&X-Amz-Signature=b110409676dbc4867ae8ceff24033e25a540e77de927f08a94f4c358c7c75c7f&X-Amz-SignedHeaders=host&actor_id=149370435&key_id=0&repo_id=826625551) |
- |  mp3  | X | X | X | X |
+ |  audio  | X | X | X | X |
 </div>
 
 video:
  <video class='center' muted='muted'><source src='https://github.com/user-attachments/assets/9a0c0ba8-1bd0-47df-86db-1a9922aac5d5' type='video/mp4'></video>
 
+pdf: 会直接唤起下载，无法预览（可用于资源提供）
 
+<!-- ```pdf
+https://github.com/user-attachments/files/16268297/LinearAlgebra2Notes.pdf
+```
+ -->
 ### osh
 
 https://oshwhub.com/dy130810/esp12-f_adapterboard/edit?from=workspace
 
 <div class='center'><img src='https://image.lceda.cn/oshwhub/ad9f88622cfa462b8958e7fc2ef3640d.png' alt='img'/></div>
 
-## Font Test 
+<div class='center'><img src='https://image.lceda.cn/oshwhub/1ca7d927b2e64d4c8cd7a81fb718bdac.gif' alt='img'/></div>
+
+video: X 
+audio: X
+
+## Tested
+
+### Font Test
 
 <span >									 defult font</span>, 
 <span style="font-style:italic;font-weight:bold;">defult font (italic, bold)</span>
