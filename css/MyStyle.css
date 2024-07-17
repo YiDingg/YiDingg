@@ -38,8 +38,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     color: var(--color-text);
-    font-family: "helvetica", "Monaco", "Consolas", "lucida sans unicode", Arial,
-        "Times New Roman", "Segoe UI", Verdana;
+    font-family: "Segoe UI", Arial, helvetica, Verdana, "Times New Roman";
+    /* "Monaco", "Consolas", "lucida sans unicode", */
     /* 如果字体的名称是一个单词的，不需要加引号，否则在ie6，7里面会失效，并且后面的样式也会不生效 */
     font-size: 0.8rem;
     letter-spacing: 0;
