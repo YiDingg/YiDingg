@@ -102,10 +102,10 @@ scanf("%[^xxx]xxx",str);        // 匹配字符串直到空白符，然后跳过
 
 int main(void) {
     char str[1];
-    scanf("%[1-6]%[1-6]%[1-6]", str);
+    scanf("%[1-6]", str);
     puts("result:");
     puts(str);
-    for (char i = 0; i < 5; i++) {
+    for (char i = 0; i < 6; i++) {
         printf("location: %d, result: %d\n", i, *(str + i));
     }
     return 0;
@@ -123,6 +123,7 @@ location: 1, result: 1
 location: 2, result: 51
 location: 3, result: 52
 location: 4, result: 53
+location: 5, result: 54
 */
 ```
 
@@ -132,10 +133,10 @@ location: 4, result: 53
 
 int main(void) {
     char str[1];
-    scanf("%[1-6]%[1-6]%[1-6]", str);
+    scanf("%[1-6]", str);
     puts("result:");
     puts(str);
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 6; i++) {
         printf("location: %d, result: %d\n", i, *(str + i));
     }
     return 0;
@@ -153,6 +154,7 @@ location: 1, result: 1
 location: 2, result: 0
 location: 3, result: 0
 location: 4, result: 0
+location: 5, result: 54
 */
 ```
 
