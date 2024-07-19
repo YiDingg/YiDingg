@@ -1,4 +1,4 @@
-# C Notes(6): Special Data Types
+# C Notes (6): Special Data Types
 
 ## struct
 

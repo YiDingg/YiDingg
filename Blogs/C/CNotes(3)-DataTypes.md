@@ -1,4 +1,4 @@
-# C Notes(3): Basic Data Types
+# C Notes (3): Basic Data Types
 
 ## 基本数据类型大小
 在不同位数的系统中，基本数据类型大小不尽相同，最典型的例子即为指针的大小，因为它与寻址空间大小有关。

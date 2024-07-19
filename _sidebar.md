@@ -32,8 +32,17 @@
     - [C语言笔记 (5)：内存管理](Blogs/C/CNotes(5)-MemoryManagement.md)
     - [C语言笔记 (6)：特殊数据类型](Blogs/C/CNotes(6)-SpecialDataTypes.md)
     - [C语言笔记 (7)：预处理](Blogs/C/CNotes(7)-Preproccess.md)
+    - [C语言笔记 (8)：输入输出函数](Blogs/C/CNotes(8)-IOFunctions.md)
   - Cpp
     - [Cpp笔记大纲](Blogs/Cpp/Cpp笔记大纲.md)
+  - Git
+    - [Git 教程与提交规范](Blogs/Git/Git教程与提交规范.md)
+    - [Git 命令速查](Blogs/Git/Git命令速查.md)
+    - [Git 生成 ChangeLog](Blogs/Git/Git生成ChangeLog.md)
+  - Matlab
+    - [Outline Of Matlab](Blogs/Matlab/OutlineOfMatlab.md)
+    - [Matlab Notes(1): Graphics](Blogs/Matlab/MatlabNotes(1)-Graphics.md)
+    - [Matlab Notes(2): Equations](Blogs/Matlab/MatlabNotes(2)-Equations.md)
   - STM32
     - [STM32系列汇总](Blogs/STM32/STM32系列汇总.md)
     - [STM32系列 (1)：Keil Debug 功能使用](Blogs/STM32/STM32系列%20(1)：Keil%20Debug%20功能使用.md)
@@ -41,12 +50,8 @@
     - [STM32系列 (3)：DMA的原理与用法](Blogs/STM32/STM32系列%20(3)：DMA的原理与用法.md)
     - [MCU系列 (4): WiFi (ESP8266)](Blogs/STM32/MCUSeries(4)-WiFi(ESP8266).md)
     - [STM32系列 (+)：实用技巧汇总](Blogs/STM32/STM32系列%20(+)：实用技巧汇总.md)
-  - Git
-    - [Git 教程与提交规范](Blogs/Git/Git教程与提交规范.md)
-    - [Git 命令速查](Blogs/Git/Git命令速查.md)
-    - [Git 生成 ChangeLog](Blogs/Git/Git生成ChangeLog.md)
   - Front End
-    - [Summary of Front End Series](Blogs/FrontEnd/Summary%20of%20Front%20End%20Series.md)
+    - [Summary of Frontend Series](Blogs/FrontEnd/Summary%20of%20Front%20End%20Series.md)
     - [Basic HTML](Blogs/FrontEnd/Basic%20HTML.md)
     - [Basic CSS](Blogs/FrontEnd/Basic%20CSS.md)
   - Fix Problem
@@ -57,6 +62,7 @@
     - [ATandR(1): Markdown](Blogs/ATandR/ATandR(1)-Markdown.md)
     - [ATandR(2): Programming](Blogs/ATandR/ATandR(2)-Programming.md)
     - [ATandR(3): Drawing](Blogs/ATandR/ATandR(3)-Drawing.md)
+    - [ATandR(4): ResearchPaper](Blogs/ATandR/ATandR(4)-ResearchPaper.md)
 
 
 - 📖 **PDF Notes**
@@ -82,6 +88,7 @@
 
 
 - 📝 **Projects**
+
   - [MuMeStar (Mutiple Menu Star for OLED)](Projects/MuMeStar%20(Mutiple%20Menu%20Star%20for%20OLED)%20详解.md)
   - [OLEDSD (OLED Software Driver)](Projects/OLEDSD%20(OLED%20Software%20Driver).md)
   - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo%20(Minimum%20System%20Board%20of%20STM32)%20详解.md)
