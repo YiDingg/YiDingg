@@ -33,7 +33,7 @@ WebDAV Synchronization: Koofr (10G for free)
 
 https://koofr.eu/blog/posts/koofr-with-zotero-via-webdav
 
-## plagiarism checker
+## Plagiarism Checker
 
 `cn` and `en` means supporting Chinese papers and English papers respectively, `-`means not sure yet.
 

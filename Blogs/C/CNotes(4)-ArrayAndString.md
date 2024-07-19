@@ -1,4 +1,4 @@
-# C Notes(4): Array and String (数组)
+# C Notes (4): Array and String (数组)
 
 ## 数组
 

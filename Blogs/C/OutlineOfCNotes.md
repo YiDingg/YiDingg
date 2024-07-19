@@ -6,21 +6,19 @@
 
 ## 笔记目录
 
-<div class='center'>
 
-| 📕笔记目录 |
-|:-|
- | [C语言笔记汇总](Blogs\C\C语言笔记汇总.md)  |
- | [C语言笔记 (1)：开始之前](Blogs/C/CSeriesNotes(1)-BeforeStarting.md) |
- | [C语言笔记 (2)：内存与关键字](Blogs/C/CSeriesNotes(2)-MemoryAndKeywords.md) |
- | [C语言笔记 (3)：数据类型](Blogs/C/CSeriesNotes(3)-DataTypes.md) |
- | [C语言笔记 (4)：数组与字符串](Blogs/C/CSeriesNotes(4)-ArrayAndString.md) |
- | [C语言笔记 (5)：内存管理](Blogs/C/CSeriesNotes(5)-MemoryManagement.md) |
- 
- 
- 
 
-</div>
+  - C
+    - [C语言笔记汇总](Blogs/C/OutlineOfCNotes.md)
+    - [C语言笔记 (1)：开始之前](Blogs/C/CNotes(1)-BeforeStarting.md)
+    - [C语言笔记 (2)：关键字](Blogs/C/CNotes(2)-MemoryAndKeywords.md)
+    - [C语言笔记 (3)：基本数据类型](Blogs/C/CNotes(3)-DataTypes.md)
+    - [C语言笔记 (4)：数组与字符串](Blogs/C/CNotes(4)-ArrayAndString.md)
+    - [C语言笔记 (5)：内存管理](Blogs/C/CNotes(5)-MemoryManagement.md)
+    - [C语言笔记 (6)：特殊数据类型](Blogs/C/CNotes(6)-SpecialDataTypes.md)
+    - [C语言笔记 (7)：预处理](Blogs/C/CNotes(7)-Preproccess.md)
+    - [C语言笔记 (8)：输入输出函数](Blogs/C/CNotes(8)-IOFunctions.md)
+
 
 ## 相关资料
 
@@ -38,4 +36,4 @@
 
 主要参考在此一并列出，后文不再提及。
 
-- [网道: C语言](https://wangdoc.com/clang/)(使用[ATTRIBUTION-SHAREALIKE 4.0 INTERNATIONAL](https://creativecommons.org/licenses/by-sa/4.0/))
+- [网道: C语言](https://wangdoc.com/clang/) (遵循[*CC BY-SA 4.0*](https://creativecommons.org/licenses/by-sa/4.0/))

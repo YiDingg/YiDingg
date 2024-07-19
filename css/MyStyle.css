@@ -311,7 +311,7 @@ span.tinyscript * {
 details.WordList {
     font-size: calc(var(--fontsize-main) - 0.05rem);
 }
-details.WordList > summary > span.Word {
+details > summary > span.Word {
     font-size: calc(var(--fontsize-main) + 0.05rem);
     font-weight: 600;
     color: rgb(0, 80, 255);

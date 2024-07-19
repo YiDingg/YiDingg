@@ -1,4 +1,4 @@
-# C Notes(5): Memory Management (内存管理)
+# C Notes (5): Memory Management (内存管理)
 
 ## Before 
 

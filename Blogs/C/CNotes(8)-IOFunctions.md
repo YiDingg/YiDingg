@@ -1,12 +1,12 @@
-# C Notes(8): I/O Functions
+# C Notes (8): I/O Functions
 
 ## Intro 
 
 I/O 指 Input/Output。
 
-严格来讲，I/O 函数并不是直接与外部设备通信，而是通过 buffer （缓存）间接通信（与嵌入式中的通信类似）。程序读取/发送数据时，都是将与缓存进行交互，由于缓存读完就被弃用或覆盖了，所以只能读取一次。这个过程就称为字节流操作。
+严格来讲，I/O 函数并不是直接与外部设备通信，而是通过 buffer （缓存）间接通信（与嵌入式中的通信类似）。程序读取/发送数据时，都是将与缓存进行交互，由于缓存读完就被弃用或覆盖了，所以只能读取一次。这个过程就称为字节流操作，读取/写入的数据称为数据流。
 
-C 语言的标准 I/O 函数，基本都在文件`stdio.h`中。并且，凡是涉及读写文件/设备的，都属于字节流操作。
+C 语言的标准 I/O 函数，基本都在文件`stdio.h`中。并且，凡是涉及读写文件/设备的，都属于字节流操作。后文所涉及的所有 I/O 函数，都来自`stdio.h`。
 
 ## `printf()`和`scanf()`
 
@@ -19,7 +19,7 @@ C 语言的标准 I/O 函数，基本都在文件`stdio.h`中。并且，凡是�
 `scanf()` 函数用于读取格式化输入，可以从标准输入（键盘）读取各种类型的数据，用法类似`printf()`，但占位符标识有所不同。
 
 ``` c
-/* 原型, <stdio.h> */
+/* 原型, stdio.h */
 int scanf( const char *format, ... );
 /* 返回值是 int 型，表示成功读取的变量个数
 如果没有读取任何项，或者匹配失败，则返回 0
@@ -160,4 +160,48 @@ location: 5, result: 54
 
 ## `sscanf()`
 
+`sscanf()`的用法与`scanf()`类似，但它是从给定字符串中读取输入，而不是从标准输入（一般指键盘）。
+
+``` c
+/* 原型, stdio.h */
+int sscanf( const char *buffer, const char *format, ... );
+
+/* 一般用法 */
+char str[100] = "123 456 789";
+sscanf(str, "%d%d", &i, &j);
+sscanf("12 45 89 6547", "%d%d%d", &x, &y, &z);
+```
+
+`sscanf()`的数据来源不是流数据，所有可以反复读取。`sscanf()`的返回值与`scanf()`类似，返回成功赋值变量的个数，如果失败，返回常量`EOF`。
+
 ## `getchar()`和`putchar()`
+
+`getchar()`和`putchar()`是最基本的输入输出函数，前者从标准输入（键盘）获取一个字符，后者输出一个字符到标准输出（屏幕）。
+
+`getchar()`和`putchar()`返回读取/输出的字符，由于失败时返回`EOF`（通常是 -1），所以返回类型是`int`。
+
+``` c
+/* 原型, stdio.h */
+int getchar( void );
+int putchar( int ch );
+
+/* 几个例子 */
+while ((ch = getchar()) == ' '){}   /* 跳过空格字符 */
+```
+
+另外，与`scanf()`和`printf()`相比，`getchar()`和`putchar()`的原理更简单（利用宏实现），速度更快。因此，在操作单个字符时，建议优先使用它们。
+
+## `puts()`和`gets()`
+
+`puts()`用于输出字符串，并自动在末尾添加换行。输出成功时返回非负整数，失败时返回`EOF`。
+
+``` c
+/* 原型, stdio.h */
+int puts( const char* str );
+
+/* 一般用法 */
+puts("Here are some messages:");
+puts("Hello World");
+```
+
+`gets()`已经被C语言废除，这里略过。
