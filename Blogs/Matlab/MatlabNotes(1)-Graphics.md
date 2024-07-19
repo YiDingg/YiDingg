@@ -2,7 +2,7 @@
 
 ## Intro 
 
-[Matlab Grphics](https://www.mathworks.com/help/releases/R2019b/matlab/graphics.html?s_tid=CRUX_lftnav)
+[Matlab Grphics](https://www.mathworks.com/help/releases/R2022a/matlab/graphics.html?s_tid=CRUX_lftnav)
 
 ## By Functions 
 
@@ -28,7 +28,9 @@ figure         % 新生成一个图层
 <details>
 <summary><span class='Word'> plot </span>: 2-D line plot</summary>
 
-Official link [here](https://www.mathworks.com/help/releases/R2019b/matlab/ref/plot.html). And you can refer [here](https://www.mathworks.com/help/releases/R2019b/matlab/ref/matlab.graphics.chart.primitive.line-properties.html) for more line properties. 
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/plot.html). And you can refer [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/matlab.graphics.chart.primitive.line-properties.html) for more line properties. 
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-23-56-26_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
 x = linspace(0,pi,50);
@@ -77,7 +79,7 @@ line_3.MarkerEdgeColor = 'black';
 ```
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-21-41-47_MatlabNotes(1)-Graphics.png"/></div> -->
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-22-05-30_MatlabNotes(1)-Graphics.png"/></div> -->
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-23-56-26_MatlabNotes(1)-Graphics.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-22-39-44_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
 % Attention: some uifigure controls cannot be exported by export_fig and will not appear in the generated output.
@@ -99,9 +101,8 @@ title('Plots with Different y-Scales')
 xlabel('Values from 0 to 25')
 ylabel('Left Side')
 ```
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-22-39-44_MatlabNotes(1)-Graphics.png"/></div>
 
-Refer [here](https://www.mathworks.com/help/releases/R2019b/matlab/examples.html?s_tid=CRUX_topnav&category=line-plots) for more examples. 
+Refer [here](https://www.mathworks.com/help/releases/R2022a/matlab/examples.html?s_tid=CRUX_topnav&category=line-plots) for more examples. 
 
 
 </details>
@@ -109,7 +110,8 @@ Refer [here](https://www.mathworks.com/help/releases/R2019b/matlab/examples.html
 <details>
 <summary><span class='Word'> plot3 </span>: 3-D point or line plot</summary>
 
-Official link [here](https://www.mathworks.com/help/releases/R2019b/matlab/ref/plot3.html).
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/plot3.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-22-19-45_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
 t = 0:pi/500:pi;
@@ -134,13 +136,13 @@ p2.LineWidth = 1.3;
 p2.Color = 'red';
 p2.Marker = 'none';
 ```
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-22-19-45_MatlabNotes(1)-Graphics.png"/></div>
 </details>
 <!-- details begin -->
 <details>
 <summary><span class='Word'>stairs </span>: Stairstep graph</summary>
 
-Official link [here](https://www.mathworks.com/help/releases/R2019b/matlab/ref/stairs.html).
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/stairs.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-22-44-05_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
 X = linspace(0,1,30)';
@@ -156,13 +158,13 @@ h(1).LineStyle = "-."
 h(2).Marker = 'o';
 h(2).MarkerFaceColor = 'm';
 ```
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-22-44-05_MatlabNotes(1)-Graphics.png"/></div>
 </details>
 <!-- details begin -->
 <details>
 <summary><span class='Word'> errorbar</span>: Line plot with error bars</summary>
 
-Official link [here](https://www.mathworks.com/help/releases/R2019b/matlab/ref/errorbar.html).
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/errorbar.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-22-53-34_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
 x = 1:10:100;
@@ -188,13 +190,13 @@ bar1.Color = 'b'
 bar3.MarkerSize = 10
 bar3.MarkerEdgeColor = 'red'
 ```
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-22-53-34_MatlabNotes(1)-Graphics.png"/></div>
 </details>
 <!-- details begin -->
 <details>
 <summary><span class='Word'> area </span>: Filled area 2-D plot</summary>
 
-Official link [here](https://www.mathworks.com/help/releases/R2019b/matlab/ref/area.html).
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/area.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-23-02-45_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
 Y = [1, 5, 3;
@@ -217,13 +219,13 @@ ax = gca; % current axes
 ax.XGrid = 'on';
 ax.Layer = 'top';   % put ax at the top layer (then you can see the grid)
 ```
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-23-02-45_MatlabNotes(1)-Graphics.png"/></div>
 </details>
 <!-- details begin -->
 <details>
 <summary><span class='Word'> stackedplot </span>: Stacked plot of several variables with common x-axis (Since R2018b)</summary>
 
 Official link [here]().
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-23-57-30_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
 X = 0:1:20
@@ -236,14 +238,14 @@ s.LineProperties(1).LineWidth = 5
 s.LineProperties(2).PlotType = 'scatter';
 s.LineProperties(3).PlotType = 'stairs';
 ```
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-23-57-30_MatlabNotes(1)-Graphics.png"/></div>
 </details>
 
 <!-- details begin -->
 <details>
 <summary><span class='Word'> semilogx, semilogy, loglog, </span>: logarithmic scale plot</summary>
 
-Official link [here](https://www.mathworks.com/help/releases/R2019b/matlab/ref/loglog.html).
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/loglog.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-00-05-06_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
 x=1:1000;
@@ -258,14 +260,14 @@ subplot(2,2,4)
 loglog(x,y,'k-')
 ```
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-00-05-06_MatlabNotes(1)-Graphics.png"/></div>
 </details>
 
 <!-- details begin -->
 <details>
 <summary><span class='Word'> fplot </span>: Plot expression or function</summary>
 
-Official link [here](https://www.mathworks.com/help/releases/R2019b/matlab/ref/fplot.html).
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/fplot.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-00-11-41_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
 % Use array operators instead of matrix operators for the best performance. For example, use .* (times) instead of * (mtimes).
@@ -299,14 +301,15 @@ ax = gca;
 ax.XTick = -2*pi:pi/2:2*pi;
 ax.XTickLabel = {'-2\pi','-3\pi/2','-\pi','-\pi/2','0','\pi/2','\pi','3\pi/2','2\pi'};
 ```
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-00-11-41_MatlabNotes(1)-Graphics.png"/></div>
 </details>
 
 <!-- details begin -->
 <details>
 <summary><span class='Word'> fimplicit </span>: Plot implicit function</summary>
 
-Official link [here](https://www.mathworks.com/help/releases/R2019b/matlab/ref/fimplicit.html).
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/fimplicit.html).
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-12-48-24_MatlabNotes(1)-Graphics.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-12-51-51_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
 % Use array operators instead of matrix operators for the best performance. For example, use .* (times) instead of * (mtimes).
@@ -324,15 +327,14 @@ fp.Color = 'r';
 fp.LineStyle = '--';
 fp.LineWidth = 2;
 ```
-<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-12-48-24_MatlabNotes(1)-Graphics.png"/></div> -->
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-12-51-51_MatlabNotes(1)-Graphics.png"/></div>
 </details>
 
 <!-- details begin -->
 <details>
 <summary><span class='Word'> fplot3 </span>: 3-D parametric curve plotter</summary>
 
-Official link [here](https://www.mathworks.com/help/releases/R2019b/matlab/ref/fplot3.html).
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/fplot3.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-12-55-51_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
 fplot3(@(t)sin(t), @(t)cos(t), @(t)t, [0 2*pi], 'LineWidth', 2)
@@ -342,7 +344,6 @@ fplot3(@(t)sin(t), @(t)cos(t), @(t)t, [4*pi 6*pi], '-.*c')
 hold off
 ```
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-12-55-51_MatlabNotes(1)-Graphics.png"/></div>
 </details>
 
 ### Data Distribution Plots
@@ -351,7 +352,8 @@ hold off
 <details>
 <summary><span class='Word'> histogram </span>: Histogram (bar chart) plot</summary>
 
-Official link [here](https://www.mathworks.com/help/releases/R2019b/matlab/ref/matlab.graphics.chart.primitive.histogram.html).
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/matlab.graphics.chart.primitive.histogram.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-13-11-41_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
 subplot(1,2,1)
@@ -387,14 +389,14 @@ hold off
 h.NumBins = 30;
 hh.NumBins = 30;
 ```
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-13-11-41_MatlabNotes(1)-Graphics.png"/></div>
 </details>
 
 <!-- details begin -->
 <details>
 <summary><span class='Word'> histogram2 </span>: Bivariate histogram plot (Since R2015b)</summary>
 
-Official link [here](https://www.mathworks.com/help/releases/R2019b/matlab/ref/matlab.graphics.chart.primitive.histogram2.html).
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/matlab.graphics.chart.primitive.histogram2.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-13-29-50_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
 figure
@@ -416,15 +418,58 @@ histogram2(x, y, [30 20], 'DisplayStyle','tile', 'ShowEmptyBins','on');
 ax1.FontSize = 20;
 ax2.LineWidth = 8;
 ```
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-13-29-50_MatlabNotes(1)-Graphics.png"/></div>
 </details>
 
+<!-- details begin -->
+<details>
+<summary><span class='Word'> swarmchart</span>: Swarm scatter chart</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/swarmchart.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-21-09-06_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+x1 = ones(1,500);
+x2 = 2 * ones(1,500);
+x3 = 3 * ones(1,500);
+y1 = 2 * randn(1,500);
+y2 = [randn(1,250) randn(1,250) + 4];
+y3 = 5 * randn(1,500) + 5;
+
+s1 = swarmchart(x1,y1,5)
+hold on
+swarmchart(x2,y2,5)
+swarmchart(x3,y3,5)
+hold off
+
+s1.SizeData = linspace(0.1,20,500)
+s1.MarkerEdgeColor = 'b'
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'> swarmchart3</span>: 	3-D swarm scatter chart</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/swarmchart3.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-21-12-13_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+x = [zeros(1,500) ones(1,500)];
+y = randi(2,1,1000);
+z = randn(1,1000).^2;
+c = sqrt(z);
+swarmchart3(x,y,z,50,c,'filled');
+cb = colorbar;
+cb.Location = 'eastoutside'
+```
+</details>
 
 <!-- details begin -->
 <details>
 <summary><span class='Word'> scatter </span>: Scatter plot</summary>
 
-Official link [here](https://www.mathworks.com/help/releases/R2019b/matlab/ref/scatter.html).
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/scatter.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-13-36-02_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
 figure 
@@ -436,60 +481,375 @@ sc.SizeData = linspace(1,100,200);
 sc.CData = linspace(1,10,length(x));
 sc.MarkerFaceColor = "flat"
 ```
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-13-36-02_MatlabNotes(1)-Graphics.png"/></div>
 </details>
 
 <!-- details begin -->
 <details>
 <summary><span class='Word'> scatter3 </span>: 3-D scatter plot </summary>
 
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/scatter3.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-18-20-43_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+z = linspace(0,4*pi,250);
+x = 2*cos(z) + rand(1,250);
+y = 2*sin(z) + rand(1,250);
+sc = scatter3(x,y,z,'filled');
+
+sc.SizeData = linspace(1,20,250);
+ax = gca
+ax.View = [-30,10];
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'> binscatter </span>: 	Binned scatter plot (Since R2017b)</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/binscatter.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-20-19-11_MatlabNotes(1)-Graphics.jpg"/></div>
+
+```matlab
+x = randn(1e5,1);
+y = randn(1e5,1);
+graph = binscatter(x,y)
+
+graph.NumBins = [150 150]
+graph.ShowEmptyBins = 'on';
+
+ax = gca;
+ax.SortMethod = "childorder"
+axis(ax,'equal') 
+colormap(ax,"hot")
+
+
+% export_fig is not working for binscatter, so we use print2eps and eps2pdf instead.
+% export_fig( gcf , '-png' , '-r200' , '-painters' , 'C:/Users/13081/Desktop/Test_Matlab/Example_binscatter');
+% export_fig( gcf , '-png' , '-r200' , '-painters' , 'C:/Users/13081/Desktop/Test_Matlab/Example_binscatter');
+print2eps 'C:/Users/13081/Desktop/Test_Matlab/Example_binscatter'
+eps2pdf('C:/Users/13081/Desktop/Test_Matlab/Example_binscatter.eps','C:/Users/13081/Desktop/Test_Matlab/Example_binscatter.pdf')
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'> scatterhistogram </span>: Create scatter plot with histograms (Since R2018b)</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/scatterhistogram.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-21-53-30_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+xvalues = [7 6 5 6.5 9 7.5 8.5 7.5 10 8];
+yvalues = categorical({'onsale','regular','onsale','onsale', ...
+    'regular','regular','onsale','onsale','regular','regular'});
+grpvalues = {'Red','Black','Blue','Red','Black','Blue','Red', ...
+    'Red','Blue','Black'};
+s = scatterhistogram(xvalues,yvalues,'GroupData',grpvalues);
+
+s.Title = 'Shoe Sales';
+s.XLabel = 'Shoe Size';
+s.YLabel = 'Price';
+s.LegendTitle = 'Shoe Color';
+
+s.Color = {'Red','Black','Blue'};
+s.BinWidths = 1;
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'> spy </span>: Visualize sparsity pattern of matrix</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/spy.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-20-31-28_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+B = bucky;
+spy(B)
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'> plotmatrix </span>: Scatter plot matrix</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/plotmatrix.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-20-38-03_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+X = randn(50,3);  
+plotmatrix(X)
+```
+</details>
+
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>pie </span>: Pie chart</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/pie.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-20-49-59_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+X = 1:3;
+explode = [0 1 0]
+labels = {'Taxes','Expenses','Profit'};
+p = pie(X,explode,labels);
+
+t = p(6);
+t.BackgroundColor = 'cyan';
+t.EdgeColor = 'red';
+t.FontSize = 14;
+
+p(1).FaceColor = 'r'
+p(2).String = 'new name here'
+p(2).Color = 'r'
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'> pie3</span>: 3-D pie chart</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/pie3.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-20-57-39_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+X = 1:3;
+explode = [0 1 0]
+labels = {'Taxes','Expenses','Profit'};
+p = pie3(X,explode,labels);
+le = legend(labels);
+le.Location = 'best';
+
+t = p(6);
+t.FaceColor = 'blue';
+t.EdgeColor = 'red';
+t.MarkerSize = 50;
+
+p(1).MarkerFaceColor = 'white';
+p(3).FaceColor = 'w';
+p(2).FaceColor = 'black';
+p(4).String = 'new name here'
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>heatmap</span>: Create heatmap chart</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/heatmap.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-21-51-03_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+cdata = [45 60 32; 43 54 76; 32 94 68; 23 95 58];
+xvalues = {'Small','Medium','Large'};
+yvalues = {'Green','Red','Blue','Gray'};
+h = heatmap(xvalues,yvalues,cdata);
+
+h.Title = 'T-Shirt Orders';
+h.XLabel = 'Sizes';
+h.YLabel = 'Colors';
+``` 
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>bubblechart</span>: Bubble chart</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/bubblechart.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-22-08-52_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+x = 1:20;
+y = rand(1,20);
+sz = rand(1,20);
+c = 1:20;
+bc = bubblechart(x,y,sz,c);
+bc.MarkerEdgeColor = 'red'
+
+xlabel('Number of Industrial Sites')
+ylabel('Contamination Level')
+le = bubblelegend('Town Population','Location','eastoutside')
+le.Color = 'red'
+le.TextColor = 'white'
+le.EdgeColor = 'blue'
+``` 
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'> wordcloud</span>: Create word cloud chart from text data</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/wordcloud.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-22-00-06_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+sonnets = string(fileread('sonnets.txt'));
+extractBefore(sonnets,"II")
+punctuationCharacters = ["." "?" "!" "," ";" ":"];
+sonnets = replace(sonnets,punctuationCharacters," ");
+words = split(join(sonnets));
+words(strlength(words)<5) = [];
+words = lower(words);
+words(1:10)
+[numOccurrences,uniqueWords] = histcounts(categorical(words));
+figure
+wordcloud(uniqueWords,numOccurrences);
+title("Sonnets Word Cloud")
+```
+</details>
+
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'> bubblecloud</span>: Create bubble cloud chart</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/bubblecloud.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-22-01-39_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+c = categorical(["Pumpkin" "Princess" "Princess" "Princess" "Spooky Monster" ...
+    "Spooky Monster" "Spooky Monster" "Spooky Monster" "Spooky Monster"]);
+[sz,labels] = histcounts(c);
+bubblecloud(sz,labels)
+```
+</details>
+
+### Discrete Data Plots
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>bar, barh</span>: 	Bar graph</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/bar.html).
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-22-22-55_MatlabNotes(1)-Graphics.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-22-24-52_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+subplot(2,2,1)
+x = 1900:10:2000;
+y = [75 91 105 123.5 131 150 179 203 226 249 281.5];
+b = bar(x,y);
+b.BarWidth = 0.4
+
+subplot(2,2,2)
+y = [2 2 3; 2 5 6; 2 8 9; 2 11 12];
+b2 = bar([1920 1950 1980],y)
+b2(1).FaceColor = 'r'
+b2(2).FaceColor = 'b'
+
+subplot(2,2,3)
+b3 = bar([1920 1950 1980],y,'stacked');
+
+subplot(2,2,4)
+x = [1980 1990 2000];
+y = [40 50 63 52; 42 55 50 48; 30 20 44 40];
+barh(x,y)
+xlabel('Snowfall')
+ylabel('Year')
+le = legend({'Springfield','Fairview','Bristol','Jamesville'})
+le.Location = 'northoutside'
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>bar3, bar3h</span>: 3-D bar graph</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/bar3.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-22-37-05_MatlabNotes(1)-Graphics.png"/></div>
+```matlab
+figure
+y = 0:pi/8:4*pi;
+z = [sin(y')/4 sin(y')/2 sin(y')];
+ba = bar3(y,z,0.5)
+ba(1).FaceColor = 'k';
+ba(2).FaceColor = 'white';
+ba(3).FaceColor = [.5 .7 .8];
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'></span>: </summary>
+
 Official link [here]().
 
 ```matlab
+
 ```
 
 </details>
 
 <!-- details begin -->
 <details>
-<summary><span class='Word'>  </span>: </summary>
+<summary><span class='Word'>pareto</span>: Pareto chart</summary>
 
-Official link [here]().
-
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/pareto.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-22-37-59_MatlabNotes(1)-Graphics.png"/></div>
 ```matlab
+y = [20 30 10 55 5];
+[charts, ax] = pareto(y);
+charts(1).FaceColor = [0.50  0.37  0.60];
+charts(2).Color = [0 0.50 0.10];
+ax(1).YColor = [0.50 0.37 0.60];
+ax(2).YColor = [0 0.50 0.10];
+grid on
 ```
-
 </details>
 
 <!-- details begin -->
 <details>
-<summary><span class='Word'>  </span>: </summary>
+<summary><span class='Word'></span>: </summary>
 
 Official link [here]().
 
 ```matlab
-```
 
+```
 </details>
 
-<!-- details begin -->
-<details>
-<summary><span class='Word'>  </span>: </summary>
-
-Official link [here]().
-
-```matlab
-```
-
-</details>
 ## By Request 
 
 There are some commonly used functions for plotting data in Matlab. It is worth learning them more deeply. 
 
+<!-- details begin -->
+<details>
+<summary><span class='Word'></span>: </summary>
+
+Official link [here]().
+
+```matlab
+
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'></span>: </summary>
+
+Official link [here]().
+
+```matlab
+
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'></span>: </summary>
+
+Official link [here]().
+
+```matlab
+
+```
+</details>
 
 ## Export 
 
-There are several ways to export figures in Matlab. You can defenitely follow the [official documentation](https://www.mathworks.com/help/releases/R2019b/matlab/creating_plots/saving-your-work.html) and [here](https://www.mathworks.com/help/releases/R2019b/matlab/printing-and-exporting.html?s_tid=CRUX_lftnav), but some extensions can do this perfectly while others may require some additional steps. Here are our recommendations.
+There are several ways to export figures in Matlab. You can defenitely follow the [official documentation](https://www.mathworks.com/help/releases/R2022a/matlab/creating_plots/saving-your-work.html) and [here](https://www.mathworks.com/help/releases/R2022a/matlab/printing-and-exporting.html?s_tid=CRUX_lftnav), but some extensions can do this perfectly while others may require some additional steps. Here are our recommendations.
 
 ### Entension: export_fig
 
