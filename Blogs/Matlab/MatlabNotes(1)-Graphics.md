@@ -2,26 +2,9 @@
 
 ## Intro 
 
-[Matlab Grphics](https://www.mathworks.com/help/releases/R2022a/matlab/graphics.html?s_tid=CRUX_lftnav)
+Official link: [Matlab Grphics](https://www.mathworks.com/help/releases/R2022a/matlab/graphics.html?s_tid=CRUX_lftnav). 
 
-## Axis Settings 
-
-```matlab 
-axis equal     % 纵横坐标轴采用等长刻度
-axis square    % 产生正方形坐标系（默认为矩形）
-axis auto      % 使用默认设置
-axis off       % 取消坐标轴
-axis on        % 显示坐标轴
-grid on        % 显示网格
-grid off       % 不显示网格
-box on         % 显示其他轴(上、右)
-box off        % 不显示其他轴(上、右)
-hold on        % 继续在同一图层绘图
-figure         % 新生成一个图层
-```
-
-
-## Graphic Functions 
+## 2-D and 3-D Plots
 
 ### Line Plots
 
@@ -34,6 +17,8 @@ Here are the functions to plot the data in a 2-D or 3-D view using a linear scal
 Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/plot.html). And you can refer [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/matlab.graphics.chart.primitive.line-properties.html) for more line properties. 
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-23-56-26_MatlabNotes(1)-Graphics.png"/></div>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-23-56-40_MatlabNotes(1)-Graphics.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-21-00-22-45_MatlabNotes(1)-Graphics.jpg"/></div>
 
 ```matlab
 x = linspace(0,pi,50);
@@ -82,27 +67,30 @@ line_3.MarkerEdgeColor = 'black';
 ```
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-21-41-47_MatlabNotes(1)-Graphics.png"/></div> -->
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-22-05-30_MatlabNotes(1)-Graphics.png"/></div> -->
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-22-39-44_MatlabNotes(1)-Graphics.png"/></div>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-22-39-44_MatlabNotes(1)-Graphics.png"/></div> -->
 
 ```matlab
-% Attention: some uifigure controls cannot be exported by export_fig and will not appear in the generated output.
-% export_fig 不支持具有多个坐标系的坐标区对象副本。
-
 x = linspace(0,25, 100);
 y = sin(x/2);
 r = x.^2/2;
 
-yyaxis left
-left = plot(x,y)
+ax = gca
+yyaxis(ax,"left")
+plot(x,y)
+ylabel('Left Side')
 hold on
-yyaxis right
-right = plot(x,r)
-yyaxis left
+yyaxis(ax,"right")
+rl = ylabel('Right Side')
+rl.Rotation = -90
+rl.Position = [28  180]
+plot(x,r)
 hold off
 
 title('Plots with Different y-Scales')
 xlabel('Values from 0 to 25')
-ylabel('Left Side')
+
+print2eps('C:/Users/13081/Desktop/Test_Matlab/Example_yyaxis')
+eps2pdf('C:/Users/13081/Desktop/Test_Matlab/Example_yyaxis.eps','C:/Users/13081/Desktop/Test_Matlab/Example_yyaxis.pdf')
 ```
 
 Refer [here](https://www.mathworks.com/help/releases/R2022a/matlab/examples.html?s_tid=CRUX_topnav&category=line-plots) for more examples. 
@@ -1055,33 +1043,355 @@ Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/f
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-17-16-53_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
+figure 
 
+nexttile
+x = linspace(0,1.5*pi, 100);
+y = sin(x);
+
+fillx = [x 0]
+filly = [y -1]
+
+plot(x,y)
+fi = fill(fillx,filly,[0 0 0])
+pbaspect([2 2 1])
+
+nexttile
+x = [0 1; 1.5 2.5; 3 4];
+y = [4 4; 2.5 2.5; 1 1];
+z = [0 0; 2 2; 0 0];
+c = [1 0];
+p = fill3(x,y,z,c);
+p(1).FaceAlpha = 0.5;
+
+pbaspect([1 1 0.5])
 ```
 </details>
 
-## By Request 
+## Formatting and Annotation
 
-There are some commonly used functions for plotting data in Matlab. It is worth learning them more deeply. 
+### Labels, Annotations and Axes
 
 <!-- details begin -->
 <details>
-<summary><span class='Word'></span>: </summary>
+<summary><span class='Word'>One single plot</span>: add labels and annotations to one single figure</summary>
 
-Official link [here]().
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/title.html).
 
+If you need to put the title below the plot, just cancel the title and add title in your Latex file.
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-22-20-00_MatlabNotes(1)-Graphics.jpg"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-22-33-44_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
+figure
+x = linspace(0,pi,50);
+y_1 = sin(x);
+y_2 = cos(x);
+y_3 = cos(x.^2/5);
+line_1 = plot(x,y_1);
+hold on
+line_2 = plot(x,y_2);
+line_3 = plot(x,y_3);
+hold off
 
+% add labels and annotations
+
+    ax = gca;   % get the axes
+
+    % set title
+        ax.Title.String = {['Figure 1: ' date] 'here is the second line'};  % the date function returns text with today's date.
+        ax.Title.FontName = 'times new roman';
+        ax.TitleFontWeight = "bold";
+        ax.Title.Position 
+        ax.Title.FontSize = 20;
+        ax.Subtitle.String = 'here is the subtitle';
+        ax.SubtitleFontWeight = "normal";
+
+    % set labels
+        ax.YLabel.String = 'y axis here, $y=x^2$';
+        ax.YLabel.Interpreter = 'latex';
+        ax.XLabel.String = {'x axis here, $x = \sqrt{y}$' 'secend line'};
+        ax.XLabel.Interpreter = 'latex';
+
+    % set legends
+        legend(ax,'$y_1 = sin(x)$','$y_2 = cos(x)$','$y_3 = cos(\frac{x^2}{5})$'); % use the function legend to add legend
+        ax.Legend.Interpreter = "latex";
+        ax.Legend.FontSize = 13;
+        ax.Legend.Location = "best";
+        ax.Legend.AutoUpdate = 'off';    % avoid line added being added in the legend 
+
+    % set axes limits and aspect ratios
+        ax.XLim = [0 6];
+        ax.XLimitMethod = "tight";
+        ax.YLimitMethod = "padded";
+        ax.Box = 'off';
+        ax.DataAspectRatio 
+        ax.PlotBoxAspectRatio
+
+    % add lines
+        xl1 = xline(3);
+        xl1.LineWidth = 1.3;
+        xl1.Label = 'xline1 is here';
+        xl1.FontAngle = "italic";
+        xl1.LabelVerticalAlignment = "middle";
+        xl1.LabelHorizontalAlignment = "center";
+        xl1.LabelOrientation = "horizontal";
+        xl2 = xline(x(25));
+        yl = yline(0);
+
+    % add text
+        text(x(4),y_1(4),'here is one text')
+        % gtext('by your mouse') % add text by your mouse
+
+    % grid lines and tick values
+        grid(ax,"on")  
+        ax.GridLineStyle = "--";
+        ax.XGrid = "off";
+
+    % tick values
+        ax.XTickLabelRotation = 45;
+        ax.XTick = linspace(0,6,13);
+        % ax.XTickLabel = linspace(0,6,13)
+        ax.YMinorTick = 'on';
+        
+    % show the axis
+        axis on % show the axis
+
+    % add annotation
+        x = [0.3,0.5];
+        y = [0.4,0.5];
+        a = annotation('textarrow',x,y);
+        a.Color = 'b';
+        a.FontSize = 14;
+        a.Interpreter = "latex";
+        a.String = 'here is $y_1 = sin(x)$';
+        dim = [.4 .4 .25 .15];
+        b = annotation('ellipse',dim);
+
+% set line properties
+
+    line_1.LineWidth = 1.3;
+    line_1.Color = 'blue';
+    line_1.Marker = '.';
+    line_1.MarkerSize = 8;
+    line_1.MarkerEdgeColor = 'b';
+
+    line_2.LineWidth = 1.3;
+    line_2.Color = 'red';
+    line_2.Marker = ">";
+    line_2.MarkerSize = 8;
+    line_2.MarkerEdgeColor = 'r';
+    line_2.MarkerIndices = 1:3:length(y_2); % set marker inteval 3
+
+    line_3.LineWidth = 1.3;
+    line_3.Color = 'black';
+    line_3.Marker = 's';
+    line_3.MarkerSize = 8;
+    line_3.MarkerFaceColor = 'yellow';
+    line_3.MarkerEdgeColor = 'black';
 ```
 </details>
 
-## Export 
 
-There are several ways to export figures in Matlab. You can defenitely follow the [official documentation](https://www.mathworks.com/help/releases/R2022a/matlab/creating_plots/saving-your-work.html) and [here](https://www.mathworks.com/help/releases/R2022a/matlab/printing-and-exporting.html?s_tid=CRUX_lftnav), but some extensions can do this perfectly while others may require some additional steps. Here are our recommendations.
+<!-- details begin -->
+<details>
+<summary><span class='Word'>Several Plots in One Figure</span>: Add title</summary>
 
-### Entension: export_fig
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/title.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-22-35-00_MatlabNotes(1)-Graphics.png"/></div>
 
-[export_fig](https://ww2.mathworks.cn/matlabcentral/fileexchange/23629-export_fig) is most popular extension for exporting figures in Matlab. It has the highest number of downloads (352.6K by 2024-7-18)
+```matlab
+figure
+subplot(2,2,1)
+t1 = title('First Subplot');
+st1 = subtitle("First Subplot's subtitle");
+subplot(2,2,2)
+title('Second Subplot')
+subplot(2,2,3)
+title('Third Subplot')
+subplot(2,2,4)
+title('Fourth Subplot')
+
+sgt = sgtitle('Subplot Grid Title');
+
+t1.Color = 'r';
+t1.FontSize = 15;
+st1.FontSize = 4;
+sgt.FontSize = 20;
+```
+</details>
+
+### Colormaps and 3-D Scene
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>colormaps, colorbar</span> </summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/colormap.html).
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-23-14-03_MatlabNotes(1)-Graphics.jpg"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-22-53-06_MatlabNotes(1)-Graphics.jpg"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-21-00-17-34_MatlabNotes(1)-Graphics.jpg"/></div>
+
+
+```matlab
+figure
+
+% one plot
+    c = nexttile;
+    m3 = mesh(peaks);
+
+    % settings
+        c.PlotBoxAspectRatio = [2 2 1.2];
+        c.Colormap = parula;
+        colorbar(c,"eastoutside")
+        brighten(0.6)
+
+% one plot
+    d = nexttile    
+    m4 = mesh(peaks);
+
+    % settings
+        d.PlotBoxAspectRatio = [2 2 1.2];
+        d.Colormap = parula;
+        colorbar(d,"eastoutside")
+      
+% one plot  
+    a = nexttile;
+    m1 = mesh(peaks);
+
+    % settings
+        a.PlotBoxAspectRatio = [2 2 1.2];
+        a.Colormap = autumn;
+        ac = colorbar(a,"eastoutside")
+        ac.Ticks = linspace(-10,10,11)
+
+% one plot
+    b = nexttile;
+    m2 = mesh(peaks);
+
+    % settings
+        b.PlotBoxAspectRatio = [2 2 1.2];
+        b.Colormap = autumn(3);
+        colorbar(b,"eastoutside")
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>view, rotate</span>: View or rotate object about specified origin and direction</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/view.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-23-28-02_MatlabNotes(1)-Graphics.jpg"/></div>
+
+```matlab
+figure
+[X,Y,Z] = peaks;
+
+a = nexttile;
+surf(X,Y,Z);
+xlabel('X')
+ylabel('Y')
+zlabel('Z')
+    a.View
+    
+
+b = nexttile;
+surf(X,Y,Z)
+xlabel('X')
+ylabel('Y')
+zlabel('Z')
+view(b,[90 0])
+
+c = nexttile;
+surf(X,Y,Z)
+xlabel('X')
+ylabel('Y')
+zlabel('Z')
+view(c,[45 -30 20])
+
+nexttile
+d = surf(peaks(30));
+xlabel('X')
+ylabel('Y')
+zlabel('Z')
+    direction = [1 0 0];
+    rotate(d,direction,-10)  % Rotate the surface plot -10 degrees around its x-axis.
+```
+</details>
+
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>light, alpha, material</span></summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/light.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-23-45-10_MatlabNotes(1)-Graphics.jpg"/></div>
+
+```matlab
+figure
+
+a = nexttile;
+sa = surf(peaks(25));
+xlabel('X')
+ylabel('Y')
+zlabel('Z')
+    sa.EdgeColor = "none";
+    camlight(a) % Create or move light object in camera coordinates
+
+b = nexttile;
+sb = surf(peaks(25));
+xlabel('X')
+ylabel('Y')
+zlabel('Z')
+    sb.EdgeColor = "none";
+    light(b)    % Create light
+
+c = nexttile;
+sc = surf(peaks(25));
+xlabel('X')
+ylabel('Y')
+zlabel('Z')
+shading(c,"interp")
+
+d = nexttile;
+sd = surf(peaks(25));
+xlabel('X')
+ylabel('Y')
+zlabel('Z')
+    sd.FaceColor = "interp";
+    sd.EdgeColor = "none";
+
+e = nexttile;
+se = surf(peaks(25));
+xlabel('X')
+ylabel('Y')
+zlabel('Z')
+    se.EdgeColor = "none";
+    camlight(e) % Create or move light object in camera coordinates
+    material dull;  % low reflectance
+
+f = nexttile;
+sf = surf(peaks(25));
+xlabel('X')
+ylabel('Y')
+zlabel('Z')
+    sf.EdgeColor = "none";
+    camlight(f) % Create or move light object in camera coordinates
+    alpha(f,0.5)
+```
+</details>
+
+## Export_fig
+
+### Intro
+
+There are several ways to export figures in Matlab. You can defenitely follow the official documents [here](https://www.mathworks.com/help/releases/R2022a/matlab/creating_plots/saving-your-work.html) and [here](https://www.mathworks.com/help/releases/R2022a/matlab/printing-and-exporting.html?s_tid=CRUX_lftnav). However, the official functions may not satisfy your requirements in some cases, including exporting to vector format (pdf & eps) that can be inserted into LaTeX documents without any additional steps, or exporting to jpg, png in different quality levels. But some extensions can do this perfectly while others may require some additional steps. That's why I recommend using the `export_fig` extension.
+
+[export_fig](https://ww2.mathworks.cn/matlabcentral/fileexchange/23629-export_fig) is most popular extension for exporting figures in Matlab. It has the highest number of downloads (352.6K by 2024-7-18). It can export figures in various formats, including bitmap (jpg, png), vector (pdf, eps), and printable (ps, eps). It also supports transparent backgrounds and can crop the figure to the specified size. It is easy to use and supports various options.
+
+### Usage
 
 To use this extension, download it [here](https://www.mathworks.com/matlabcentral/fileexchange/23629-export_fig), unzip the files to any path. Then, open your matlab, type the command below and press enter to add its path.  That's it! You can now use the functions to export your figures. 
 
@@ -1103,27 +1413,57 @@ If you have no idea what functions will be used, you can simplily put the folder
  -->
 By the way, when exporting to vector format (pdf & eps), and to bitmap using the painters renderer, ghostscript (http://ghostscript.com) (perhaps also [Xpdf](http://www.xpdfreader.com/download.html)) needs to be installed on your system. You can follow the blog [*Matlab配置export_fig*](https://blog.csdn.net/Liangontheway/article/details/90903348) to download and install them.
 
+My most frequently used codes are:
+
 ```matlab
-export_fig( gcf , '-p0.02','-png' , '-r150' , '-painters' , 'C:/Users/13081/Desktop/Test_Matlab/Example_stem');
+export_fig( gcf , '-p0.02','-pdf', 'C:/Users/13081/Desktop/Test_Matlab/YourImgNameHere');
+export_fig( gcf , '-p0.02','-jpg' , '-r350' , '-painters' , 'C:/Users/13081/Desktop/Test_Matlab/YourImgNameHere');
+export_fig( gcf , '-p0.02','-png' , '-r300' , '-painters' , 'C:/Users/13081/Desktop/Test_Matlab/YourImgNameHere');
 ```
 
-### Examples 
+## Else 
 
-You can open the `.m` file of the functions that you want to use for more information and examples, such as `export_fig.m` (as shown below). Also, refer [GitHub: export_fig](https://github.com/altmany/export_fig)  for more examples and tutorials.
+### Practical functions
 
-``` matlab 
-function [imageData, alpha] = export_fig(varargin) %#ok<*STRCL1,*DATST,*TNOW1>
-%EXPORT_FIG  Exports figures in a publication-quality format
-%
-% Examples:
-%   imageData = export_fig
-%   [imageData, alpha] = export_fig
-%   export_fig filename
-%   export_fig ... -<format>
-%   export_fig ... -nocrop
-%   export_fig ... -c[<val>,<val>,<val>,<val>]
-% ......
+<!-- details begin -->
+<details>
+<summary><span class='Word'>ginput</span>: click to get the mouse coordinates</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/ginput.html).
+
+
+```matlab
+
 ```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'></span>: </summary>
+
+Official link [here]().
 
 
-### export_fig
+```matlab
+
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'></span>: </summary>
+
+Official link [here]().
+
+
+```matlab
+
+``` 
+</details>
+
+### The Partial Enlarged Drawing 
+
+Refer to [GitHub: ZoomPlot-MATLAB](https://github.com/iqiukp/ZoomPlot-MATLAB) for more details and examples.
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-21-00-41-07_MatlabNotes(1)-Graphics.jpg"/></div>
+
