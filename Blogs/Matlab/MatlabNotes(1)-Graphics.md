@@ -4,11 +4,7 @@
 
 [Matlab Grphics](https://www.mathworks.com/help/releases/R2022a/matlab/graphics.html?s_tid=CRUX_lftnav)
 
-## By Functions 
-
-### Line Plots
-
-Here are the functions to plot the data in a 2-D or 3-D view using a linear scale. 
+## Axis Settings 
 
 ```matlab 
 axis equal     % 纵横坐标轴采用等长刻度
@@ -23,6 +19,13 @@ box off        % 不显示其他轴(上、右)
 hold on        % 继续在同一图层绘图
 figure         % 新生成一个图层
 ```
+
+
+## Graphic Functions 
+
+### Line Plots
+
+Here are the functions to plot the data in a 2-D or 3-D view using a linear scale. 
 
 <!-- details begin -->
 <details>
@@ -759,6 +762,7 @@ le.Location = 'northoutside'
 
 Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/bar3.html).
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-22-37-05_MatlabNotes(1)-Graphics.png"/></div>
+
 ```matlab
 figure
 y = 0:pi/8:4*pi;
@@ -772,22 +776,11 @@ ba(3).FaceColor = [.5 .7 .8];
 
 <!-- details begin -->
 <details>
-<summary><span class='Word'></span>: </summary>
-
-Official link [here]().
-
-```matlab
-
-```
-
-</details>
-
-<!-- details begin -->
-<details>
 <summary><span class='Word'>pareto</span>: Pareto chart</summary>
 
 Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/pareto.html).
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-22-37-59_MatlabNotes(1)-Graphics.png"/></div>
+
 ```matlab
 y = [20 30 10 55 5];
 [charts, ax] = pareto(y);
@@ -801,9 +794,265 @@ grid on
 
 <!-- details begin -->
 <details>
-<summary><span class='Word'></span>: </summary>
+<summary><span class='Word'>stem</span>: Plot discrete sequence data</summary>
 
 Official link [here]().
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-22-42-13_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+figure
+X = linspace(0,2*pi,50)';
+Y = (exp(X).*sin(X));
+s = stem(X,Y,':diamondr')
+s.MarkerFaceColor = 'black'
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>stem3</span>: Plot 3-D discrete sequence data</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/stem3.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-22-52-32_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+X = linspace(-2,2,50);
+Y = X.^3;
+Z = exp(X);
+tiledlayout(2,1)
+
+ax2 = nexttile;  
+stem3(ax2,X,Y,Z)
+
+ax3 = nexttile;  
+stem3(ax3,X,Y,Z)
+ax3.View = [0 0]
+```
+</details>
+
+### Surface and Mesh Plots
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>surf, surface</span>: Surface plot</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/surf.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-00-22-49_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+[X,Y] = meshgrid(1:0.25:10,1:0.5:20);
+Z = sin(X) + cos(Y);
+
+figure
+tiledlayout(2,2)
+
+nexttile
+s = surf(X,Y,Z);
+ax1 = gca;
+ax1.View = [40 50];
+cb = colorbar;
+cb.Location = "eastoutside"
+
+s.FaceColor = "interp";  % interpolate the colormap across the surface face
+s.EdgeColor = "none";
+colormap(ax1,"hot")
+
+nexttile
+s = surface(X,Y,Z);
+ax1 = gca;
+view(2) % Display the plot in a 2-D view.
+
+s.FaceColor = "interp";  % interpolate the colormap across the surface face
+s.EdgeColor = "none";
+colormap(ax1,"hot")
+
+
+nexttile
+s = surf(X,Y,Z);
+ax2 = gca;
+ax2.View = [40 50];
+colormap(ax2,"hot")
+
+s.FaceColor = "interp";  % interpolate the colormap across the surface face
+s.EdgeColor = "none";
+light               % create a light
+lighting gouraud    % preferred method for lighting curved surfaces
+material dull    % set material to be dull, no specular highlights
+
+
+nexttile
+s = surf(X,Y,Z);
+
+ax2 = gca;
+view(2) % Display the plot in a 2-D view.
+s.FaceColor = "interp";  % interpolate the colormap across the surface face
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>surfc</span>: Contour plot under surface plot</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/surfc.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-00-25-46_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+figure
+[X,Y] = meshgrid(-3:.125:3);
+Z = peaks(X,Y);
+C = X.*Y;
+surfc(X,Y,Z,C)
+colorbar
+view([-40 -60 20])
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>mesh</span>: Mesh surface plot</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/mesh.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-00-35-11_MatlabNotes(1)-Graphics.jpg"/></div>
+
+
+
+```matlab
+tiledlayout(2,1)
+
+nexttile
+[X,Y] = meshgrid(-8:.5:8);
+R = sqrt(X.^2 + Y.^2) + eps;
+Z = sin(R)./R;
+m = mesh(X,Y,Z)
+colorbar 
+
+nexttile
+[X,Y] = meshgrid(-8:.5:8);
+R = sqrt(X.^2 + Y.^2) + eps;
+Z = sin(R)./R;
+m = mesh(X,Y,Z)
+m.EdgeColor = "none"
+m.FaceColor = "interp"
+colorbar 
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>meshc</span>: Contour plot under mesh surface plot</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/meshc.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-00-37-49_MatlabNotes(1)-Graphics.jpg"/></div>
+
+```matlab
+figure
+[X,Y] = meshgrid(-3:.125:3);
+Z = peaks(X,Y);
+C = X.*Y;
+meshc(X,Y,Z,C)
+colorbar
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>meshz</span>: Mesh surface plot with curtain</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/meshz.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-00-38-26_MatlabNotes(1)-Graphics.jpg"/></div>
+
+```matlab
+figure
+[X,Y] = meshgrid(-3:.125:3);
+Z = peaks(X,Y);
+C = X.*Y;
+meshz(X,Y,Z,C)
+colorbar
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>fsurf, fmesh</span>: Plot 3-D surface or mesh</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/fsurf.html).
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-17-02-12_MatlabNotes(1)-Graphics.jpg"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-17-18-40_MatlabNotes(1)-Graphics.jpg"/></div>
+
+```matlab
+figure
+
+t = tiledlayout(4,2)
+
+nexttile(1,[2 2])
+f1 = @(x,y) erf(x)+cos(y);  
+fs1 = fsurf(f1,[-5 0 -5 5]);
+hold on
+f2 = @(x,y) sin(x)+cos(y);
+fs2 = fsurf(f2,[0 5 -5 5]);
+hold off
+
+% surface properties
+
+fs1.EdgeColor = 'none';
+fs2.ShowContours = 'on' % show the contour 
+fs2.EdgeColor = 'none';
+camlight
+
+% axes properties
+
+xlim([-5 5])
+xlabel('$x$','Interpreter','latex')
+ylabel('$y$','Interpreter','latex')
+zlabel('$z$','Interpreter','latex','Rotation',0)
+
+
+nexttile(5,[2 2])
+f1 = @(x,y) erf(x)+cos(y);  
+fm1 = fmesh(f1,[-5 0 -5 5]);
+hold on
+f2 = @(x,y) sin(x)+cos(y);
+fm2 = fmesh(f2,[0 5 -5 5]);
+hold off
+
+xlim([-5 5])
+xlabel('$x$','Interpreter','latex')
+ylabel('$y$','Interpreter','latex')
+zlabel('$z$','Interpreter','latex','Rotation',0)
+
+fm2.ShowContours = 'on';
+
+% tile properties
+
+title(t,'title here')
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>fimplicit3</span>: 	Plot 3-D implicit function</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/fimplicit3.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-17-06-05_MatlabNotes(1)-Graphics.jpg"/></div>
+
+```matlab
+figure
+
+f = @(x,y,z) x.^2 + y.^2 - z.^2;
+fin = fimplicit3(f);
+
+% properties (similar with function fsurf)
+fin.EdgeColor = "none";
+camlight
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>fill, fill3</span>: Create filled 2-D or 3-D patches</summary>
+
+Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/fill.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-17-16-53_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
 
@@ -820,27 +1069,6 @@ There are some commonly used functions for plotting data in Matlab. It is worth 
 
 Official link [here]().
 
-```matlab
-
-```
-</details>
-
-<!-- details begin -->
-<details>
-<summary><span class='Word'></span>: </summary>
-
-Official link [here]().
-
-```matlab
-
-```
-</details>
-
-<!-- details begin -->
-<details>
-<summary><span class='Word'></span>: </summary>
-
-Official link [here]().
 
 ```matlab
 
@@ -875,11 +1103,13 @@ If you have no idea what functions will be used, you can simplily put the folder
  -->
 By the way, when exporting to vector format (pdf & eps), and to bitmap using the painters renderer, ghostscript (http://ghostscript.com) (perhaps also [Xpdf](http://www.xpdfreader.com/download.html)) needs to be installed on your system. You can follow the blog [*Matlab配置export_fig*](https://blog.csdn.net/Liangontheway/article/details/90903348) to download and install them.
 
+```matlab
+export_fig( gcf , '-p0.02','-png' , '-r150' , '-painters' , 'C:/Users/13081/Desktop/Test_Matlab/Example_stem');
+```
+
 ### Examples 
 
-Here are some examples of how to use the export_fig extension to export figures. 
-
-You can open the `.m` file of the functions that you want to use for more information and examples, such as `export_fig.m` (as shown below).
+You can open the `.m` file of the functions that you want to use for more information and examples, such as `export_fig.m` (as shown below). Also, refer [GitHub: export_fig](https://github.com/altmany/export_fig)  for more examples and tutorials.
 
 ``` matlab 
 function [imageData, alpha] = export_fig(varargin) %#ok<*STRCL1,*DATST,*TNOW1>
