@@ -1383,9 +1383,13 @@ zlabel('Z')
 ```
 </details>
 
-## Export_fig
+## Graphics Objects
 
-### Intro
+Customize graphics by setting properties of the underlying objects. Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/graphics-objects.html).
+
+## Printing and Saving
+
+### export_fig
 
 There are several ways to export figures in Matlab. You can defenitely follow the official documents [here](https://www.mathworks.com/help/releases/R2022a/matlab/creating_plots/saving-your-work.html) and [here](https://www.mathworks.com/help/releases/R2022a/matlab/printing-and-exporting.html?s_tid=CRUX_lftnav). However, the official functions may not satisfy your requirements in some cases, including exporting to vector format (pdf & eps) that can be inserted into LaTeX documents without any additional steps, or exporting to jpg, png in different quality levels. But some extensions can do this perfectly while others may require some additional steps. That's why I recommend using the `export_fig` extension.
 
@@ -1423,7 +1427,7 @@ export_fig( gcf , '-p0.02','-png' , '-r300' , '-painters' , 'C:/Users/13081/Desk
 
 ## Else 
 
-### Practical functions
+### Practical Functions
 
 <!-- details begin -->
 <details>
@@ -1435,30 +1439,6 @@ Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/g
 ```matlab
 
 ```
-</details>
-
-<!-- details begin -->
-<details>
-<summary><span class='Word'></span>: </summary>
-
-Official link [here]().
-
-
-```matlab
-
-```
-</details>
-
-<!-- details begin -->
-<details>
-<summary><span class='Word'></span>: </summary>
-
-Official link [here]().
-
-
-```matlab
-
-``` 
 </details>
 
 ### The Partial Enlarged Drawing 
