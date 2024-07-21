@@ -42,7 +42,7 @@
   - Matlab
     - [Outline Of Matlab](Blogs/Matlab/OutlineOfMatlab.md)
     - [Matlab Notes(1): Graphics](Blogs/Matlab/MatlabNotes(1)-Graphics.md)
-    - [Matlab Notes(2): Equations](Blogs/Matlab/MatlabNotes(2)-Equations.md)
+    - [Matlab Notes(2): Mathematics](Blogs/Matlab/MatlabNotes(2)-Mathematics.md)
   - STM32
     - [STM32系列汇总](Blogs/STM32/STM32系列汇总.md)
     - [STM32系列 (1)：Keil Debug 功能使用](Blogs/STM32/STM32系列%20(1)：Keil%20Debug%20功能使用.md)
