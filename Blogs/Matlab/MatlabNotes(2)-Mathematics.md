@@ -577,48 +577,29 @@ output =
 
 ## Numerical Integration and Differential Equations
 
-### ode
+<!-- details begin -->
+<details>
+<summary><span class='Word'>ode23, ode45, ode78, ode89, ode113</span>: Solve nonstiff differential (非刚性) equations with low/medium/high order or variable order method</summary>
 
-**ode23, ode45, ode78, ode89, ode113**: Solve nonstiff differential (非刚性) equations with low/medium/high order or variable order method. See [Summary of ODE Options](https://www.mathworks.com/help/releases/R2022a/matlab/math/summary-of-ode-options.html) and [odeset](https://www.mathworks.com/help/releases/R2022a/matlab/ref/odeset.html) for a list of the options compatible with each solver.
+See [Summary of ODE Options](https://www.mathworks.com/help/releases/R2022a/matlab/math/summary-of-ode-options.html) and [odeset](https://www.mathworks.com/help/releases/R2022a/matlab/ref/odeset.html) for a list of the options compatible with each solver.
 
-To solve the ode (van der Pol equation as an example):
+van der Pol equation as an example:
 
 $$y'' - \mu(1 - y^2)y' + y = 0$$
 
 where $\mu > 0$ is a scalar constant. We need to rewrite the equation as a system of two first-order (一阶) equations. For instance, we can make the substitution $y' = y_2$ and $y = y_1$. Then, we have:
 
 $$\begin{bmatrix}
-y_1'\\
-y_1''
+y'\\
+y''
 \end{bmatrix} = \begin{bmatrix}
 y_2 \\
 \mu(1-y_1^2)y_2 - y_1
 \end{bmatrix}$$
 
 While $y_1$ and $y_2$ are the entries `y(1)` and `y(2)` of a two-element vector `dydt = [y(2); (1-y(1)^2)*y(2)-y(1)];`. $y_1 = y_1(t)$ is what we want to find, and the output solution is a two-element vector 
-
-
-
-<!-- details begin -->
-<details>
-<summary>Another example and options settings</summary>
-<div class='center'>
-
-| Option Group | Option | comment | value |
-|:-:|:-:|:-:|:-:|
- | Step Size | InitialStep |  initial step size | `x` $\in \mathbb{R}_+$, default $\frac{\Delta t}{10}$ |
- | Step Size | MaxStep |  maximum step size | `x` $ \in \mathbb{R}_+$, default $\frac{\Delta t}{10}$ |
- | Error Control | RelTol | relative error tolerance | `x` $ \in \mathbb{R}_+$, default $10^{-3}$ |
- | Error Control | AbsTol | absolute error tolerance | `x` $ \in \mathbb{R}_+$, default $10^{-6}$ |
- | Error Control | NormControl | Control error relative to norm | `'on'`, `'off'`(default) |
- | Solver Output | OutputFcn |  output function | `@odeplot`: Plot all components of the solution vs. time<br>`@odephas2`: <br>`@odephas3`:<br>`@odeprint`: Print solution and time step |
- | Solver Output | Refine | solution refinement factor | `n` $\in \mathbb{N}_+$ |
- | Solver Output | Stats | solver statistics | `'on'`, `'off'` |
-
-</div>
-
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-22-23-52-18_MatlabNotes(2)-Mathematics.png"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-22-22-56-25_MatlabNotes(2)-Mathematics.png"/></div>
+
 
 ```matlab
 mu = 1 
@@ -665,7 +646,29 @@ set(axes1,'FontName','TimesNewRoman','FontSize',13,'LineWidth',1.1,'XLimitMethod
 legend1 = legend(axes1,'show','box','on');
 set(legend1,'Location','northwest','FontSize',11,'FontName','TimesNewRoman');
 end
-```
+``` 
+</details>
+
+<!-- details begin -->
+<details>
+<summary>Another ode example and options settings</summary>
+<div class='center'>
+
+| Option Group | Option | comment | value |
+|:-:|:-:|:-:|:-:|
+ | Step Size | InitialStep |  initial step size | `x` $\in \mathbb{R}_+$, default $\frac{\Delta t}{10}$ |
+ | Step Size | MaxStep |  maximum step size | `x` $ \in \mathbb{R}_+$, default $\frac{\Delta t}{10}$ |
+ | Error Control | RelTol | relative error tolerance | `x` $ \in \mathbb{R}_+$, default $10^{-3}$ |
+ | Error Control | AbsTol | absolute error tolerance | `x` $ \in \mathbb{R}_+$, default $10^{-6}$ |
+ | Error Control | NormControl | Control error relative to norm | `'on'`, `'off'`(default) |
+ | Solver Output | OutputFcn |  output function | `@odeplot`: Plot all components of the solution vs. time<br>`@odephas2`: <br>`@odephas3`:<br>`@odeprint`: Print solution and time step |
+ | Solver Output | Refine | solution refinement factor | `n` $\in \mathbb{N}_+$ |
+ | Solver Output | Stats | solver statistics | `'on'`, `'off'` |
+
+</div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-22-22-56-25_MatlabNotes(2)-Mathematics.png"/></div>
+
 
 ```matlab
 % solve ode: y′ = − λ*y*t
@@ -731,7 +734,29 @@ fun =
 ``` 
 </details>
 
+<!-- details begin -->
+<details>
+<summary><span class='Word'>ode15s, ode23s, ode23t, ode23tb</span>: Solve stiff differential equations and DAEs (微分代数方程) </summary>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-23-00-25-09_MatlabNotes(2)-Mathematics.png"/></div>
 
+```matlab
+figure
+
+nexttile
+tspan = [0 3000]
+y0 = [2; 0]
+tic
+[t,y] = ode15s(@vdp1000,tspan,y0);  % costs 0.0184 seconds
+toc
+plot(t,y(:,1),':.')
+
+nexttile
+tic
+[t,y] = ode45(@vdp1000,tspan,y0);   % costs 7.61 seconds
+toc
+plot(t,y(:,1),':.')
+``` 
+</details>
 
 <!-- details begin -->
 <details>
