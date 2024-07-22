@@ -175,9 +175,6 @@ $$a=\begin{bmatrix}a_1 a_2\end{bmatrix},\quad b=\begin{bmatrix}b_1\\\\b_2\\\\b_3
 
 ### Constants and Test Matrices
 
-
-## Linear Algebra
-
 ## Random Number Generation
 
 - **rand**:	Uniformly distributed random numbers
@@ -187,7 +184,7 @@ $$a=\begin{bmatrix}a_1 a_2\end{bmatrix},\quad b=\begin{bmatrix}b_1\\\\b_2\\\\b_3
 - **rng**: Control random number generator
 - **RandStream**: Random number stream
 
-## Interpolation (插值) ✨
+## Interpolation (插值)
 
 <!-- details begin -->
 <details>
@@ -247,7 +244,7 @@ title('FFT Interpolation of Periodic Function')
 ``` 
 </details>
 
-## Optimization ✨
+## Optimization
 
 <!-- details begin -->
 <details>
@@ -299,11 +296,11 @@ val = -0.6828
 <!-- details begin -->
 <details>
 <summary><span class='Word'>fminsearch</span>: Find minimum of unconstrained multivariable function using derivative-free method</summary>
-
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-22-12-59-45_MatlabNotes(2)-Mathematics.jpg"/></div>
 
 ```matlab
 figure
-[X,Y] = meshgrid(-2.5:0.1:2.5, -2.5:0.1:2.5)
+[X,Y] = meshgrid(-2.5:0.2:2.5, -1:0.2:5);
 fun = @(x,y) 100*(y - x.^2).^2 + (1 - x).^2;
 
 problem.objective = @(x)100*(x(2) - x(1)^2)^2 + (1 - x(1))^2;
@@ -316,10 +313,13 @@ problem.options = optimset('Display','iter')
 nexttile
 mesh(X,Y,fun(X, Y))
 view([-70 30])
+pbaspect([1 1 0.5])
 
 nexttile
 mesh(X,Y,fun(X, Y))
 view([-140 20])
+pbaspect([1 1 0.5])
+
 
 % output: 
 problem = 
@@ -435,18 +435,93 @@ output =
 	
 <!-- details begin -->
 <details>
-<summary><span class='Word'>lsqnonneg</span>: Solve nonnegative linear least-squares problem</summary>
-
+<summary><span class='Word'>lsqnonneg</span>: Solve nonnegative linear least-squares (最小二乘) problem</summary>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-22-18-39-42_MatlabNotes(2)-Mathematics.png"/></div>
 
 ```matlab
+% get the least-squares line fitting y=ax+b for points (0,0), (1,2), (2,pi)
+% matirx (vector) x = [a b] is the parameter to solve, and matrix C*x is
+% the fitted value ^y, while vector d = [y1 y2 y3] is the real value y. 
 
+figure
+
+x1 = 0; y1 = 0;
+x2 = 1; y2 = 2;
+x3 = 2; y3 = pi;
+
+C = [
+x1 1
+x2 1
+x3 1
+]
+d = [
+y1
+y2
+y3
+]
+% x = [a b]
+
+problem.C = C;
+problem.d = d;
+problem.solver = 'lsqnonneg';
+problem.options = optimset('Display','final');
+
+[x,resnorm,residual,exitflag,output,lambda] = lsqnonneg(problem)
+
+a = x(1);
+b = x(2);
+
+f = @(x)(a*x + b)
+X = [x1 x2 x3]
+
+plot(X, [y1 y2 y3], 'o', X, f(X), 'LineWidth',1.3)
+
+% output:
+C = 3×2    
+     0     1
+     1     1
+     2     1
+
+d = 3×1    
+         0
+    2.0000
+    3.1416
+
+已终止优化。
+x = 2×1    
+    1.5708
+    0.1431
+
+resnorm = 0.1228
+residual = 3×1    
+   -0.1431
+    0.2861
+   -0.1431
+
+exitflag = 1
+output = 
+    iterations: 2
+     algorithm: 'active-set'
+       message: '已终止优化。'
+
+lambda = 2×1    
+1.0e-15 *
+
+    0.2220
+    0.4163
+
+f = 
+    @(x)(a*x+b)
+
+X = 1×3    
+     0     1     2
 ``` 
 </details>
 
 <!-- details begin -->
 <details>
 <summary><span class='Word'>fzero</span>: Root of nonlinear function</summary>
-
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-22-22-25-12_MatlabNotes(2)-Mathematics.png"/></div>
 
 ```matlab
 
@@ -459,20 +534,220 @@ output =
 
 
 ```matlab
+fun = @(x) sin(x).*log(x+6);
+problem1.objective = fun; % function
+problem1.x0 = [-4 4]; % initial point for x, real scalar or 2-element vector
+problem1.solver = 'fzero';
+problem1.options = optimset('Display','iter'); % show iterations (迭代次数)
+
+[x, fval, exitflag, output] = fzero(problem1)
+X = -4:0.2:4;
+plot(X,fun(X))
+yline(0);
+
+% output:
+ 
+ Func-count    x          f(x)             Procedure
+    2              -4      0.524576        initial
+    3              -4      0.524576        interpolation
+    4        -3.41285      0.254695        interpolation
+    5        -2.96072     -0.199969        interpolation
+    6        -3.15957     0.0187703        interpolation
+    7        -3.14251   0.000962753        interpolation
+    8        -3.14159  -1.23641e-06        interpolation
+    9        -3.14159   3.77999e-10        interpolation
+   10        -3.14159   3.37791e-16        interpolation
+   11        -3.14159   3.37791e-16        interpolation
+ 
+在区间 [-4, 4] 中发现零
+x = -3.1416
+fval = 3.3779e-16
+exitflag = 1
+output = 
+    intervaliterations: 0
+            iterations: 9
+             funcCount: 11
+             algorithm: 'bisection, interpolation'
+               message: '在区间 [-4, 4] 中发现零'
+``` 
+
+
+</details>
+
+
+## Numerical Integration and Differential Equations
+
+### ode
+
+**ode23, ode45, ode78, ode89, ode113**: Solve nonstiff differential (非刚性) equations with low/medium/high order or variable order method. See [Summary of ODE Options](https://www.mathworks.com/help/releases/R2022a/matlab/math/summary-of-ode-options.html) and [odeset](https://www.mathworks.com/help/releases/R2022a/matlab/ref/odeset.html) for a list of the options compatible with each solver.
+
+To solve the ode (van der Pol equation as an example):
+
+$$y'' - \mu(1 - y^2)y' + y = 0$$
+
+where $\mu > 0$ is a scalar constant. We need to rewrite the equation as a system of two first-order (一阶) equations. For instance, we can make the substitution $y' = y_2$ and $y = y_1$. Then, we have:
+
+$$\begin{bmatrix}
+y_1'\\
+y_1''
+\end{bmatrix} = \begin{bmatrix}
+y_2 \\
+\mu(1-y_1^2)y_2 - y_1
+\end{bmatrix}$$
+
+While $y_1$ and $y_2$ are the entries `y(1)` and `y(2)` of a two-element vector `dydt = [y(2); (1-y(1)^2)*y(2)-y(1)];`. $y_1 = y_1(t)$ is what we want to find, and the output solution is a two-element vector 
+
+
+
+<!-- details begin -->
+<details>
+<summary>Another example and options settings</summary>
+<div class='center'>
+
+| Option Group | Option | comment | value |
+|:-:|:-:|:-:|:-:|
+ | Step Size | InitialStep |  initial step size | `x` $\in \mathbb{R}_+$, default $\frac{\Delta t}{10}$ |
+ | Step Size | MaxStep |  maximum step size | `x` $ \in \mathbb{R}_+$, default $\frac{\Delta t}{10}$ |
+ | Error Control | RelTol | relative error tolerance | `x` $ \in \mathbb{R}_+$, default $10^{-3}$ |
+ | Error Control | AbsTol | absolute error tolerance | `x` $ \in \mathbb{R}_+$, default $10^{-6}$ |
+ | Error Control | NormControl | Control error relative to norm | `'on'`, `'off'`(default) |
+ | Solver Output | OutputFcn |  output function | `@odeplot`: Plot all components of the solution vs. time<br>`@odephas2`: <br>`@odephas3`:<br>`@odeprint`: Print solution and time step |
+ | Solver Output | Refine | solution refinement factor | `n` $\in \mathbb{N}_+$ |
+ | Solver Output | Stats | solver statistics | `'on'`, `'off'` |
+
+</div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-22-23-52-18_MatlabNotes(2)-Mathematics.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-22-22-56-25_MatlabNotes(2)-Mathematics.png"/></div>
+
+```matlab
+mu = 1 
+tspan = [0 20]
+y0 = [2; 0]
+[t,y] = ode23(@vdp1,tspan,y0);
+
+myplot_2([t,t],y)
+title('Solution of van der Pol Equation (\mu = 1) with ODE23');
+xlabel('Time t');
+ylabel('Solution y');
+legend('y_1',"y_2 = y_1'", Location="best",box = 'on')
+
+function myplot_2(XMatrix, YMatrix)
+% 函数myplot_2(X,Y)，用于在一张图中作出两条二维数据线。
+% 输入参数：
+    % "XMatrix"：应为两列，第一列为第一组数据的横坐标，第二列为第二组数据的横坐标，
+    % "YMatrix"：应为两列，第一列为第一组数据的纵坐标，第二列为第二组数据的纵坐标
+% 输出：函数图像
+
+% 创建 figure
+figure1 = figure('NumberTitle','off','Name','Figure','Color',[1 1 1]);
+
+% 创建 axes
+axes1 = axes('Parent',figure1);
+hold(axes1,'on');
+
+% 使用 plot 的矩阵输入创建多个 line 对象
+plot1 = plot(XMatrix,YMatrix,'MarkerSize',2,'Marker','o','LineWidth',1.1);
+set(plot1(1),'DisplayName','第一列数据','MarkerFaceColor',[0 0 0],'Color',[0.1 0.1 0.1]);
+set(plot1(2),'DisplayName','第二列','MarkerFaceColor',[0 0 0.8],'Color',[0 0 1]);
+
+% 创建 ylabel
+ylabel('纵坐标（单位）','FontName','TimesNewRoman');
+
+% 创建 xlabel
+xlabel('横坐标（单位）','FontName','TimesNewRoman');
+
+hold(axes1,'off');
+% 设置其余坐标区属性
+set(axes1,'FontName','TimesNewRoman','FontSize',13,'LineWidth',1.1,'XLimitMethod','padded',...
+    'YLimitMethod','padded');
+% 创建 legend
+legend1 = legend(axes1,'show','box','on');
+set(legend1,'Location','northwest','FontSize',11,'FontName','TimesNewRoman');
+end
+```
+
+```matlab
+% solve ode: y′ = − λ*y*t
+
+lambda = pi;
+
+fun = @(t,y) -lambda*y*t
+tspan = [0 2];  % solution interval
+y0 = 1;
+opts = odeset('Stats','on','InitialStep',0.01,'MaxStep',0.1); % options
+
+subplot(2,2,1)
+tic,
+re23 = ode23(fun, tspan, y0, opts);
+toc,
+plot(re23.x,re23.y,':.')
+title('ode23')
+
+subplot(2,2,2)
+tic
+re45 = ode45(fun, tspan, y0, opts);
+toc
+plot(re45.x,re45.y,':.')
+title('ode45')
+
+% solve ode: y′ = −λ*t*y
+
+subplot(2,2,3)
+tic
+re78 = ode78(fun, tspan, y0, opts);
+toc
+plot(re78.x,re78.y,':.')
+title('ode78')
+
+subplot(2,2,4)
+tic
+re113 = ode113(fun, tspan, y0, opts);
+toc
+plot(re113.x,re113.y,':.')
+title('ode113')
+
+% output: 
+
+fun = 
+    @(t,y)-lambda*y*t
+
+23 个成功步骤
+0 次失败尝试
+70 次函数计算
+历时 0.002053 秒。
+22 个成功步骤
+0 次失败尝试
+133 次函数计算
+历时 0.001731 秒。
+22 个成功步骤
+0 次失败尝试
+374 次函数计算
+历时 0.007955 秒。
+23 个成功步骤
+0 次失败尝试
+47 次函数计算
+历时 0.014177 秒。
+``` 
+</details>
+
+
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>integral, integral2, integral3</span>: Numerically evaluate one/double/triple integral</summary>
+
+
+```matlab
 
 ``` 
 </details>
 
-<!-- details begin -->
-<details>
-<summary><span class='Word'>optimset</span>: Create or modify optimization options structure</summary>
+### Differences Between ode Functions
 
-</details>
+### Differences 
 
-	
-	
-
-## Numerical Integration and Differential Equations
+## Linear Algebra
 
 ## Fourier Analysis and Filtering
 
