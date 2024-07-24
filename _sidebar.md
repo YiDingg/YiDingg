@@ -45,7 +45,7 @@
     - [Matlab Notes(2): Mathematics](Blogs/Matlab/MatlabNotes(2)-Mathematics.md)
     - [Matlab Notes(3): Symbolic Math](Blogs/Matlab/MatlabNotes(3)-SymbolicMath.md)
   - Mathematical Modeling
-    - [MM(1): Exercises](Blogs/MathematicalModeling/MM(1)-Exercises.md)
+    - [MM(1): Papers](Blogs/MathematicalModeling/MM(1)-Papers.md)
     - [MM(2): Optimization](Blogs/MathematicalModeling/MM(2)-Optimization.md)
   - STM32
     - [STM32系列汇总](Blogs/STM32/STM32系列汇总.md)
