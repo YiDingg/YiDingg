@@ -4,6 +4,171 @@
 
 Official link: Mathworks --> Help Center --> Matlab --> [Grphics](https://www.mathworks.com/help/releases/R2022a/matlab/graphics.html?s_tid=CRUX_lftnav). 
 
+## My Functions 
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>MyPlot </span>: 2-D line plot</summary>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-24-19-58-16_MatlabNotes(1)-Graphics.png"/></div>
+
+``` matlab 
+X = 0.2:0.3:10
+f = @(x) x.^2;
+g = @(x) x.^1.8;
+h = @(x) x.^1.6;
+v = @(x) log(x);
+
+MyPlot(X,[f(X); g(X); h(X); v(X)])
+
+function MyPlot(XData, YData, XYLabel)
+% 给定数据，作出 2-D 函数图像（注意输入的是行向量！）
+% 输入：
+    % XData：（所有数据共用的）横坐标，应为 1*n 行向量
+    % YData：每一行代表一条线，应为 m*n 矩阵，其中 m 为数据线总条数
+% 输出：图像
+
+    % 准备参数
+    MyColor = [
+      [0 0 1]   % 蓝色
+      [1 0 1]   % 粉色
+      [0 1 0]   % 绿色 
+      [1 0 0]   % 红色 
+      [0 0 0]   % 黑色 
+    ];
+    m = length(YData(:,1));
+
+    % 创建图窗
+    Myfigure = figure('NumberTitle','off','Name','MyPlot','Color',[1 1 1]);
+    Myaxes = axes('Parent',Myfigure);   
+    hold(Myaxes,'on');
+
+    % 作图
+    for i = 1:1:m
+        line = plot(XData, YData(i,:));
+        % 设置样式
+        line.LineWidth = 1.3;
+        line.Marker = '.';
+        line.MarkerSize = 7;
+        line.Color = MyColor(i,:);
+    end
+
+
+    % 设置样式
+    % title(Myaxes,'Title here, $y = f(x)$','Interpreter','latex')
+    xlabel(Myaxes, XYLabel(1,:),'Interpreter','latex')
+    ylabel(Myaxes, XYLabel(2,:),'Interpreter','latex')
+    % Myaxes.GridLineStyle = '--';
+    % Myle = legend(Myaxes,'$y_1 = sin(x)$','$y_2 = cos(x)$','$y_3 = cos(\frac{x^2}{5})$','Interpreter', 'latex', 'Location', 'best');
+    Myle = legend(Myaxes, 'Location', 'best');
+    Myle.FontSize = 11;
+    Myle.FontName = "TimesNewRoman";
+    grid(Myaxes,"on") % show the grid
+    axis(Myaxes,"padded") % show the axis
+    % set(Myaxes, 'YLimitMethod','padded', 'XLimitMethod','padded')
+            
+    % 收尾
+    hold(Myaxes,'on');
+end
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>MyMesh </span>: 3-D mesh plot</summary>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-24-20-52-34_MatlabNotes(1)-Graphics.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-24-21-03-47_MatlabNotes(1)-Graphics.jpg"/></div>
+
+```matlab
+function MyMesh(X, Y, Z)
+% 给定数据，作出 3-D mesh 图像
+% 输入：
+    % X：横坐标，应为 m*n 矩阵
+    % Y：纵坐标，应为 m*n 矩阵
+    % Z：竖坐标，应为 m*n 矩阵
+% 输出：图像
+
+    figure('Name','MyMesh','Color',[1 1 1]);
+    tiledlayout(1,2)
+
+    % 作图 1 并设置样式
+    p1 = nexttile;
+    meshc(X,Y,Z);
+    p1.View = [-35 25];
+    
+    p1.PlotBoxAspectRatio = [1.1 1 0.65];
+    p1.Colormap = bone;
+    colorbar(p1,"eastoutside"); 
+
+    title(p1,'(a)','Interpreter','latex')
+    xlabel(p1,'$x$ axis','Interpreter','latex')
+    ylabel(p1,'$y$ axis','Interpreter','latex')
+    zlabel(p1,'$z$ axis','Interpreter','latex')
+
+    % 作图 2 并设置样式
+    p2 = nexttile; 
+    contourf(X,Y,Z,12);
+
+    p2.PlotBoxAspectRatio = [1.1 1 0.65];
+    p2.Colormap = bone;
+
+    title(p2,'(b)','Interpreter','latex'); 
+    xlabel(p2,'$x$ axis','Interpreter','latex')
+    ylabel(p2,'$y$ axis','Interpreter','latex')
+    zlabel(p2,'$z$ axis','Interpreter','latex')
+end
+```
+</details>
+
+<!-- details begin -->
+<details>
+<summary><span class='Word'>MySurf </span>: 3-D Surf plot</summary>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-24-21-03-37_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+function MySurf(X, Y, Z)
+% 给定数据，作出 3-D mesh 图像
+% 输入：
+    % X：横坐标，应为 m*n 矩阵
+    % Y：纵坐标，应为 m*n 矩阵
+    % Z：竖坐标，应为 m*n 矩阵
+% 输出：图像
+
+    figure('Name','MyMesh','Color',[1 1 1]);
+    tiledlayout(1,2)
+
+    % 作图 1 并设置样式
+    p1 = nexttile;
+    sf = surf(X,Y,Z);
+
+    sf.FaceColor = "interp";
+    sf.EdgeColor = "none";
+    p1.View = [-35 30];
+    p1.PlotBoxAspectRatio = [1.1 1 0.65];
+    p1.Colormap = bone;
+    colorbar(p1,"eastoutside"); 
+    
+
+    title(p1,'(a)','Interpreter','latex')
+    xlabel(p1,'$x$ axis','Interpreter','latex')
+    ylabel(p1,'$y$ axis','Interpreter','latex')
+    zlabel(p1,'$z$ axis','Interpreter','latex')
+
+    % 作图 2 并设置样式
+    p2 = nexttile; 
+    contourf(X,Y,Z,12);
+
+    p2.PlotBoxAspectRatio = [1.1 1 0.65];
+    p2.Colormap = bone;
+
+    title(p2,'(b)','Interpreter','latex'); 
+    xlabel(p2,'$x$ axis','Interpreter','latex')
+    ylabel(p2,'$y$ axis','Interpreter','latex')
+    zlabel(p2,'$z$ axis','Interpreter','latex')
+end
+```
+</details>
+
 ## 2-D and 3-D Plots
 
 ### Line Plots
@@ -97,6 +262,7 @@ Refer [here](https://www.mathworks.com/help/releases/R2022a/matlab/examples.html
 
 
 </details>
+
 <!-- details begin -->
 <details>
 <summary><span class='Word'> plot3 </span>: 3-D point or line plot</summary>
@@ -128,6 +294,7 @@ p2.Color = 'red';
 p2.Marker = 'none';
 ```
 </details>
+
 <!-- details begin -->
 <details>
 <summary><span class='Word'>stairs </span>: Stairstep graph</summary>
@@ -416,7 +583,7 @@ ax2.LineWidth = 8;
 <summary><span class='Word'> swarmchart</span>: Swarm scatter chart</summary>
 
 Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/swarmchart.html).
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-19-21-09-06_MatlabNotes(1)-Graphics.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-24-20-01-53_MatlabNotes(1)-Graphics.png"/></div>
 
 ```matlab
 x1 = ones(1,500);
