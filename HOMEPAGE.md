@@ -31,7 +31,7 @@ Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeature
 - Video: use [FreeCompress](https://freecompress.com/) <span class='tinyscript'>or [Video To Edit](https://www.video2edit.com), [FCO](https://compress-video.file-converter-online.com/#google_vignette)</span> to compress the video.
 - Audio: use [YouCompress](https://www.youcompress.com/) <span class='tinyscript'>or [MP3Smaller](https://www.mp3smaller.com/)</span> to compress the audio.
 - PDF: use [PDF24 Tolls](https://tools.pdf24.org/zh/compress-pdf) <span class='tinyscript'> or [i2pdf](https://www.i2pdf.com/compress-pdf), [I Love PDF](https://www.ilovepdf.com/), [PDF IO](https://pdf.io/compress/)</span> to compress pdf. Use [topdf](https://topdf.com/) to convert other file to pdf.
-- Link: use [Short](https://d.igdu.xyz/)<span class='tinyscript'> or [C1N](https://www.c1n.cn/)</span> to create a short link for your file, and use [SINA](https://www.sina.lt/restore.html) to restore the short link.
+- Link: use [C1N](https://www.c1n.cn/)<span class='tinyscript'> or [Short](https://d.igdu.xyz/)</span> to create a short link for your file, and use [SINA](https://www.sina.lt/restore.html) to restore the short link.
 - Git to video: use [Screen to GIF]() to convert video into gif if you need.
 - Title: use [Capitalize](https://capitalizemytitle.com/style/APA/) <span class='tinyscript'>or [Wawa](https://www.iamwawa.cn/daxiaoxie.html)</span> to capitalize your titles, and use [Rewriter](https://capitalizemytitle.com/ai-title-rewriter/) to rewrite your title.
 
