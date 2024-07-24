@@ -1,6 +1,6 @@
 # Matlab Notes (2): Mathematics
 
-Learn at the official Matlab documentation [here](https://www.mathworks.com/help/releases/R2022a/matlab/mathematics.html?s_tid=CRUX_lftnav).
+Official link: Mathworks --> Help Center --> Matlab --> [Mathematics](https://www.mathworks.com/help/releases/R2022a/matlab/mathematics.html)
 
 There are some sections that are not included in this note, such as Sparse Matrices and Computational Geometry.
 
@@ -769,19 +769,7 @@ plot(t,y(:,1),':.')
 </details>
 
 ### Differences Between ode Functions
-
 ### Differences 
-
 ## Linear Algebra
-
 ## Fourier Analysis and Filtering
 
-<!-- details begin -->
-<details>
-<summary><span class='Word'></span>: </summary>
-
-
-```matlab
-
-``` 
-</details>

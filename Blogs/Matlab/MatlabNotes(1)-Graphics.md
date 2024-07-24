@@ -2,7 +2,7 @@
 
 ## Intro 
 
-Official link: [Matlab Grphics](https://www.mathworks.com/help/releases/R2022a/matlab/graphics.html?s_tid=CRUX_lftnav). 
+Official link: Mathworks --> Help Center --> Matlab --> [Grphics](https://www.mathworks.com/help/releases/R2022a/matlab/graphics.html?s_tid=CRUX_lftnav). 
 
 ## 2-D and 3-D Plots
 
