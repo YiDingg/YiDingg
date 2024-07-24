@@ -44,6 +44,9 @@
     - [Matlab Notes(1): Graphics](Blogs/Matlab/MatlabNotes(1)-Graphics.md)
     - [Matlab Notes(2): Mathematics](Blogs/Matlab/MatlabNotes(2)-Mathematics.md)
     - [Matlab Notes(3): Symbolic Math](Blogs/Matlab/MatlabNotes(3)-SymbolicMath.md)
+  - Mathematical Modeling
+    - [MM(1): Exercises](Blogs/MathematicalModeling/MM(1)-Exercises.md)
+    - [MM(2): Optimization](Blogs/MathematicalModeling/MM(2)-Optimization.md)
   - STM32
     - [STM32系列汇总](Blogs/STM32/STM32系列汇总.md)
     - [STM32系列 (1)：Keil Debug 功能使用](Blogs/STM32/STM32系列%20(1)：Keil%20Debug%20功能使用.md)

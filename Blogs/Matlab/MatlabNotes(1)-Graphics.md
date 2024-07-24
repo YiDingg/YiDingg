@@ -1068,6 +1068,26 @@ pbaspect([1 1 0.5])
 ```
 </details>
 
+<!-- details begin -->
+<details>
+<summary><span class='Word'>contourf</span>: Create filled 2-D contour plot</summary>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-24-14-10-23_MatlabNotes(1)-Graphics.png"/></div>
+
+```matlab
+xvec = linspace(0,75);
+yvec = linspace(0,75);
+[x,y] = meshgrid(xvec,yvec);
+distance = sqrt((x-X(1)).^2 + (y-Y(1)).^2)+...
+    sqrt((x-X(2)).^2 + (y-Y(2)).^2)+...
+    sqrt((x-X(3)).^2 + (y-Y(3)).^2);
+contourf(x,y,distance)
+ylabel("Y")
+xlabel("X")
+colorbar
+```
+</details>
+
 ## Formatting and Annotation
 
 ### Labels, Annotations and Axes

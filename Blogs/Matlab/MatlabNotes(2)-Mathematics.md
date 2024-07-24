@@ -613,6 +613,10 @@ xlabel('Time t');
 ylabel('Solution y');
 legend('y_1',"y_2 = y_1'", Location="best",box = 'on')
 
+function dydt = vdp1(t,y)
+    dydt = [y(2); (1-y(1)^2)*y(2)-y(1)];
+end
+
 function myplot_2(XMatrix, YMatrix)
 % 函数myplot_2(X,Y)，用于在一张图中作出两条二维数据线。
 % 输入参数：
@@ -755,6 +759,10 @@ tic
 [t,y] = ode45(@vdp1000,tspan,y0);   % costs 7.61 seconds
 toc
 plot(t,y(:,1),':.')
+
+function dydt = vdp1000(t,y)
+    dydt = [y(2); 1000*(1-y(1)^2)*y(2)-y(1)];
+end
 ``` 
 </details>
 
