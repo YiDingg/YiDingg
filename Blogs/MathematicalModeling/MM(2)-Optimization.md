@@ -118,7 +118,7 @@ yOpt = 36.2639
 ### OP求解器（有约束）
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-24-16-01-04_MM(2)-Optimization.jpg"/></div>
 
-``` maatlab 
+``` matlab 
 % https://matlabacademy.mathworks.com/R2024a/cn/portal.html?course=optim#chapter=3&lesson=4&section=1
 
 prob = optimproblem("Description","An Optimal Breakfast");
@@ -128,6 +128,7 @@ prob.Objective = sum(C);
 cals = food.Calories .* servings;
 prob.Constraints.calories = sum(cals) == 350;
 show(prob)
+
 % sol1
     carbs = food.Carbs .* servings; 
     totalCarbs = sum(carbs);
@@ -170,8 +171,12 @@ show(prob)
 
 ## Examples
 
-### 线性布尔数规划
+<!-- details begin -->
+<details>
+<summary>线性布尔数规划</summary>
+
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-24-16-02-20_MM(2)-Optimization.jpg"/></div>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-24-16-07-57_MM(2)-Optimization.jpg"/></div> -->
 
 ``` matlab 
 prob = optimproblem("Description", '整数优化练习','ObjectiveSense','maximize');
@@ -193,9 +198,45 @@ show(prob)
 sol.X
 
 % output: 
+  OptimizationProblem : 整数优化练习
 
+	Solve for:
+       X
+	where:
+       X integer
+
+	maximize :
+       3*X(1) - 2*X(2) + 5*X(3)
+
+
+	subject to constraints:
+       X(1) + 2*X(2) - X(3) <= 2
+       X(1) + 4*X(2) + X(3) <= 4
+       X(1) + X(2) <= 3
+       4*X(2) + X(3) <= 6
+
+	variable bounds:
+       0 <= X(1) <= 1
+       0 <= X(2) <= 1
+       0 <= X(3) <= 1
+Solving problem using intlinprog.
+LP:                Optimal objective value is -8.000000.                                            
+
+
+Optimal solution found.
+
+Intlinprog stopped at the root node because the objective value is within a gap tolerance of the optimal value, options.AbsoluteGapTolerance = 0 (the default
+value). The intcon variables are integer within tolerance, options.IntegerTolerance = 1e-05 (the default value).
+sol = 
+    X: [3×1 double]
+
+optval = 8
+ans = 3×1    
+     1
+     0
+     1
 ```
-
+</details>
 
 ## Else 
 
