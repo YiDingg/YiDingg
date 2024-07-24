@@ -1,1 +1,0 @@
-# Matlab Notes(3): Mathematical Modeling
