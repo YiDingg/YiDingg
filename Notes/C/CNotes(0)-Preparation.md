@@ -1,8 +1,8 @@
-# Outline Of C Notes
+# C Notes (0): Preparation
 
 ## 学习路线
 
-以 [网道: C语言](https://wangdoc.com/clang/) 为主要学习路线/资料，以 [菜鸟: C语言](https://www.runoob.com/cprogramming/c-tutorial.html) 作为辅助资料。
+在本校的C语言课程之前就开始了学习，因此主要利用网络资源而非教材书籍。以 [网道: C语言](https://wangdoc.com/clang/) 为主要学习路线/资料，以 [菜鸟: C语言](https://www.runoob.com/cprogramming/c-tutorial.html) 作为辅助资料。
 
 ## 相关资源
 

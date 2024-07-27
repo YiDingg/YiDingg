@@ -1,4 +1,4 @@
-# 光学笔记汇总
+# OpticsNotes (0): Preparation
 
 ## 系列说明
 
@@ -7,7 +7,7 @@
 - 用 AxGlyph + [Mathcha](https://www.mathcha.io/editor) + PPT 绘制光学示意图，用 Matlab + PPT 作可视化图表，（导出后截图）后插入到 Markdown 文档。
 
 
-## Reference
+## 相关资源
 
-- 《教材1》
-- 《辅导书1》
+- 《教材》
+- 《辅导书》
