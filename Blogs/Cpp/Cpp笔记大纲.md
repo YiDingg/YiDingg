@@ -6,9 +6,8 @@
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-00-42_Cpp笔记大纲.jpg"/></div>
 
-## 系列目录
 
-## 其它资料
+## 相关资源
 
 - [C++ Primer (5th Edition)](https://zz.etocs.us.kg/book/2733889/20ad6c/c-primer-5th-edition.html)
 
