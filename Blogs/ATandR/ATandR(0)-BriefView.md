@@ -1,6 +1,6 @@
-# Bried View of Awesome Tools and Resources
+# ATandR (0): Brief view
 
-Here is the brief view of awesome tools and resources and you can click them for more details.
+Here is the brief view of ATandR (Awesome Tools and Resources) and you can click them for more details.
 
 ## Pinned
 - [Z-Library](https://singlelogin.rs): Refer to the mirror site below if you can not access to the official link https://singlelogin.rs
