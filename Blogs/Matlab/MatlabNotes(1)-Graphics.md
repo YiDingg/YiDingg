@@ -992,7 +992,30 @@ ax3.View = [0 0]
 <summary><span class='Word'>surf, surface</span>: Surface plot</summary>
 
 Official link [here](https://www.mathworks.com/help/releases/R2022a/matlab/ref/surf.html).
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-27-18-11-34_MatlabNotes(1)-Graphics.png"/></div>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-27-18-06-14_MatlabNotes(1)-Graphics.jpg"/></div> -->
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-27-13-49-34_MatlabNotes(1)-Graphics.jpg"/></div> -->
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-20-00-22-49_MatlabNotes(1)-Graphics.png"/></div>
+
+``` matlab
+figure
+[X, Y, Z] = peaks;
+s1 = surf(X,Y,Z,'EdgeColor','none');
+s1.FaceColor = "interp";
+hold on
+zpos = -15  % 底图竖坐标
+s2 = surf(X,Y,zpos*ones(size(X)),Z,'EdgeColor','none'); % Z 矩阵作为颜色项
+s2.FaceColor = "interp";
+hold off
+colorbar
+colormap("turbo")
+hTitle = title('Surface with bottom');
+hXLabel = xlabel('x');
+hYLabel = ylabel('y');
+hZLabel = zlabel('z');
+view(-58,25)
+```
+
 
 ```matlab
 [X,Y] = meshgrid(1:0.25:10,1:0.5:20);
@@ -1634,3 +1657,14 @@ Refer to [GitHub: ZoomPlot-MATLAB](https://github.com/iqiukp/ZoomPlot-MATLAB) fo
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-21-00-41-07_MatlabNotes(1)-Graphics.jpg"/></div>
 
+### Red Blue Colormap
+
+Refer to Matlab [here](https://www.mathworks.com/matlabcentral/fileexchange/25536-red-blue-colormap) for this extension.
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-27-18-34-15_MatlabNotes(1)-Graphics.png"/></div>
+
+``` matlab 
+colormap(redblue)
+% colormap(redblue(15))
+% colormap(redblue(30))
+```

@@ -30,16 +30,127 @@ C 语言是一种编译型语言，源码都是文本文件，本身无法执行
 
 ### C/C++环境配置
 
-对于仅编译一个 .c或 .cpp文件的情况，推荐插件 Code Runner。它支持运行 C, C++, Java, JavaScript, PHP, Python, Go, PowerShell 等多种语言。
-但是，考虑到之后的学习/使用，我们不如直接配置VSCode中的C/C++ 编译、debug环境，使得多个 .c和 .cpp文件可以同时被编译。
+对于仅编译一个`.c`或`.cpp`文件的情况，推荐插件 Code Runner。它支持运行 C, C++, Java, JavaScript, PHP, Python, Go, PowerShell 等多种语言（即下面的方案一）。
+但是，考虑到之后的学习/使用会遇到多个`.c`和`.h`文件，甚至有`.c`和`.cpp`文件混合的情况，我们不如直接配置VSCode中的C/C++ 编译、debug环境，使得所有文件可以同时被编译（即下面的方案三）。
 
 我们有几种方案：
 
 1. 使用Code Runner插件，只运行当前文件
-2. 手动配置VSCode的.json文件，编译当前/多个文件
+2. 手动配置VSCode的`.json`文件，编译当前/多个文件
 3. 使用VCDode的CMake插件，编译当前/多个文件 (更方便)
 
-推荐第三种方案，参考[CSDN](https://blog.csdn.net/m0_50866704/article/details/137509106)即可。Cmake的详细教程可以参考 [爱编程的大丙](https://subingwen.cn/cmake/CMake-primer/?highlight=cmake)，这里不提。
+推荐第三种方案，步骤如下:
+- 下载链接 [here](https://www.writebug.com/static/uploads/2024/7/25/dca471be05b888754a00db430c0c665a.zip) 中的文件，解压到任意目录（或手动复制代码块）。
+- 在项目根目录下，创建`src`和`inc`文件夹，分别用于存放`.c`、`.h`文件。
+- 复制下载好的`CMakelists.txt`、`launch.json`和`tasks.json`文件。其中，`CMakelists.txt`放在项目根目录，同时在根目录创建`.vscode`文件夹，并将`launch.json`和`tasks.json`放在此文件内。
+- 配置 `launch.json` 中的编译器路径，例如我的路径为`"miDebuggerPath": "D:/aa_my_apps_main/mingw64/bin/gdb.exe"`。
+- 点击 “运行和调试” --> “CMake 调试程序” 以激活CMake配置。也可以在`CMakelists.txt`按下 ctrl + s，VSCode 会自动刷新CMake配置。
+- 点击下方的“生成”按钮以编译，点击三角形“启动”以运行编译产物。
+- 建议再添加`.clang-format`文件以自动格式化`C/C++`代码。
+
+另外，如果在编译时遇到报错“undefined reference to”、“fatal error: No such file or directory”或“error: ld returned 1 exit status”，可以尝试到`CMakelists.txt`文件 ctrl + s 刷新配置，再行编译。
+
+``` bash 
+# CMakelists.txt
+
+cmake_minimum_required(VERSION 2.8...3.13)  # 设定Cmake的最低版本要求
+project(test)   # 项目名称，可以和文件夹名称不同
+set(CMAKE_CXX_COMPILER "g++")   #设定编译器
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -O2 ") #设定编译选项
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)    #添加头文件
+
+# 命令指定 SRC变量（自己定义就行）来表示多个源文件
+# set (SRC main.cpp src/hello.cpp)
+
+# 命令指定 SRC变量（自己定义就行）来表示多个源文件
+# file(GLOB SRC main.cpp "src/*.c")   # 引入src下的所有.c文件
+file(GLOB SRC "src/*.c")   # 引入src下的所有.c文件
+file(GLOB SRC_cpp main.cpp "src/*.cpp")   # 引入.cpp文件
+file(GLOB SRC_cpp "src/*.cpp")   # 引入.cpp文件
+# 将生成的可执行文件保存至bin文件夹中
+set(EXECUTABLE_OUTPUT_PATH  ${CMAKE_CURRENT_SOURCE_DIR}/bin)
+# 生成可执行文件main.exe(可执行文件名 自己定义就行)，用${var_name}获取变量的值。
+add_executable(main ${SRC} ${SRC_cpp})
+```
+
+``` json 
+/* launch.json */
+
+{
+    // 使用 IntelliSense 了解相关属性。
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) 启动debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/main.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            /* 下面是 gcc (mingw) 编译器的路径 */
+            "miDebuggerPath": "D:/aa_my_apps_main/mingw64/bin/gdb.exe",
+            /* 上面是 gcc (mingw) 编译器的路径 */
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ] /* 下面要和tasks.json中的任务名称一致，但是报错，退出代码127，尚未解决 */
+            /* "preLaunchTask": "build active file" */
+        }
+    ]
+}
+```
+
+``` json 
+/* tasks.json */
+
+{
+    "version": "2.0.0",
+    "options": {
+        "cwd": "${workspaceFolder}/build"
+    },
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "cmake",
+            "command": "cmake",
+            "args": [".."]
+        },
+        {
+            "label": "make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "command": "mingw32-make.exe",
+            "args": []
+        },
+        {
+            "label": "build active file",
+            "dependsOn": ["cmake", "make"]
+        }
+    ]
+}
+```
+
+同时编译`.c`和`.cpp`文件的环境示例见 [here](https://www.writebug.com/static/uploads/2024/7/25/bb0cfac41d5d26b1d9e32b4b4cf9f5a4.zip)。
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-25-21-50-33_CNotes(1)-BeforeStarting.jpg"/></div>
+
+
+Cmake的详细教程可以参考 [爱编程的大丙](https://subingwen.cn/cmake/CMake-primer/?highlight=cmake)，这里不提。
 
 ### 代码格式化配置
 

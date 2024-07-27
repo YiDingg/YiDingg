@@ -20,40 +20,10 @@
     - [Data Host](Blogs/SiteFeatures/Data%20Host.md)
     - [Syntax Examples](Blogs/SiteFeatures/Syntax%20Examples.md)
     - [Custom Component](Blogs/SiteFeatures/Custom%20Component.md)
-  - Optics
-    - [光学笔记汇总](Blogs/Optics/光学笔记汇总.md)
-    - [光学笔记 (1)：hhh](Blogs/Optics/光学笔记%20(1)：hhh.md)
-  - C
-    - [C语言笔记汇总](Blogs/C/OutlineOfCNotes.md)
-    - [C语言笔记 (1)：开始之前](Blogs/C/CNotes(1)-BeforeStarting.md)
-    - [C语言笔记 (2)：关键字](Blogs/C/CNotes(2)-MemoryAndKeywords.md)
-    - [C语言笔记 (3)：基本数据类型](Blogs/C/CNotes(3)-DataTypes.md)
-    - [C语言笔记 (4)：数组与字符串](Blogs/C/CNotes(4)-ArrayAndString.md)
-    - [C语言笔记 (5)：内存管理](Blogs/C/CNotes(5)-MemoryManagement.md)
-    - [C语言笔记 (6)：特殊数据类型](Blogs/C/CNotes(6)-SpecialDataTypes.md)
-    - [C语言笔记 (7)：预处理](Blogs/C/CNotes(7)-Preproccess.md)
-    - [C语言笔记 (8)：输入输出函数](Blogs/C/CNotes(8)-IOFunctions.md)
-  - Cpp
-    - [Cpp笔记大纲](Blogs/Cpp/Cpp笔记大纲.md)
   - Git
     - [Git 教程与提交规范](Blogs/Git/Git教程与提交规范.md)
     - [Git 命令速查](Blogs/Git/Git命令速查.md)
     - [Git 生成 ChangeLog](Blogs/Git/Git生成ChangeLog.md)
-  - Matlab
-    - [Outline Of Matlab](Blogs/Matlab/OutlineOfMatlab.md)
-    - [Matlab Notes(1): Graphics](Blogs/Matlab/MatlabNotes(1)-Graphics.md)
-    - [Matlab Notes(2): Mathematics](Blogs/Matlab/MatlabNotes(2)-Mathematics.md)
-    - [Matlab Notes(3): Symbolic Math](Blogs/Matlab/MatlabNotes(3)-SymbolicMath.md)
-  - Mathematical Modeling
-    - [MM(1): Papers](Blogs/MathematicalModeling/MM(1)-Papers.md)
-    - [MM(2): Optimization](Blogs/MathematicalModeling/MM(2)-Optimization.md)
-  - STM32
-    - [STM32系列汇总](Blogs/STM32/STM32系列汇总.md)
-    - [STM32系列 (1)：Keil Debug 功能使用](Blogs/STM32/STM32系列%20(1)：Keil%20Debug%20功能使用.md)
-    - [STM32系列 (2)：定时器详解](Blogs/STM32/STM32系列%20(2)：定时器详解.md)
-    - [STM32系列 (3)：DMA的原理与用法](Blogs/STM32/STM32系列%20(3)：DMA的原理与用法.md)
-    - [MCU系列 (4): WiFi (ESP8266)](Blogs/STM32/MCUSeries(4)-WiFi(ESP8266).md)
-    - [STM32系列 (+)：实用技巧汇总](Blogs/STM32/STM32系列%20(+)：实用技巧汇总.md)
   - Front End
     - [Summary of Frontend Series](Blogs/FrontEnd/Summary%20of%20Front%20End%20Series.md)
     - [Basic HTML](Blogs/FrontEnd/Basic%20HTML.md)
@@ -69,7 +39,7 @@
     - [ATandR(4): ResearchPaper](Blogs/ATandR/ATandR(4)-ResearchPaper.md)
 
 
-- 📖 **PDF Notes**
+- 📖 **Notes**
   - Math
 
     - [Calculus 1](Notes/Math/Calculus1Notes.md)
@@ -80,8 +50,37 @@
     - [Mechanics](Notes/Phisics/Mecanics%20notes.md)
     - [Electromegnetism](Notes/Phisics/Electromegnetism%20Notes.md)
     - [Thermodynamics](Notes/Phisics/Thermodynamics%20notes.md)
-
-
+  - Optics
+    - [光学笔记大纲](Blogs/Optics/BriefViewOfOpticsNotes.md)
+    - [光学笔记 (1)：](Blogs/Optics/OpticsNotes(1)-.md)
+  - [Mathematical Physics Mathods](Notes/Phisics/MathematicalPhysicsMathods.md)
+  - C
+    - [C语言笔记汇总](Blogs/C/OutlineOfCNotes.md)
+    - [C语言笔记 (1)：开始之前](Blogs/C/CNotes(1)-BeforeStarting.md)
+    - [C语言笔记 (2)：关键字](Blogs/C/CNotes(2)-MemoryAndKeywords.md)
+    - [C语言笔记 (3)：基本数据类型](Blogs/C/CNotes(3)-DataTypes.md)
+    - [C语言笔记 (4)：数组与字符串](Blogs/C/CNotes(4)-ArrayAndString.md)
+    - [C语言笔记 (5)：内存管理](Blogs/C/CNotes(5)-MemoryManagement.md)
+    - [C语言笔记 (6)：特殊数据类型](Blogs/C/CNotes(6)-SpecialDataTypes.md)
+    - [C语言笔记 (7)：预处理](Blogs/C/CNotes(7)-Preproccess.md)
+    - [C语言笔记 (8)：输入输出函数](Blogs/C/CNotes(8)-IOFunctions.md)
+  - Cpp
+    - [Cpp笔记大纲](Blogs/Cpp/Cpp笔记大纲.md)
+  - Matlab
+    - [Outline Of Matlab](Blogs/Matlab/OutlineOfMatlab.md)
+    - [Matlab Notes(1): Graphics](Blogs/Matlab/MatlabNotes(1)-Graphics.md)
+    - [Matlab Notes(2): Mathematics](Blogs/Matlab/MatlabNotes(2)-Mathematics.md)
+    - [Matlab Notes(3): Symbolic Math](Blogs/Matlab/MatlabNotes(3)-SymbolicMath.md)
+  - Mathematical Modeling
+    - [MM(1): Papers](Blogs/MathematicalModeling/MM(1)-Papers.md)
+    - [MM(2): Optimization](Blogs/MathematicalModeling/MM(2)-Optimization.md)
+  - STM32
+    - [STM32系列汇总](Blogs/STM32/STM32系列汇总.md)
+    - [STM32系列 (1)：Keil Debug 功能使用](Blogs/STM32/STM32系列%20(1)：Keil%20Debug%20功能使用.md)
+    - [STM32系列 (2)：定时器详解](Blogs/STM32/STM32系列%20(2)：定时器详解.md)
+    - [STM32系列 (3)：DMA的原理与用法](Blogs/STM32/STM32系列%20(3)：DMA的原理与用法.md)
+    - [MCU系列 (4): WiFi (ESP8266)](Blogs/STM32/MCUSeries(4)-WiFi(ESP8266).md)
+    - [STM32系列 (+)：实用技巧汇总](Blogs/STM32/STM32系列%20(+)：实用技巧汇总.md)
 
 - 🎓 **English Learning**
   - [Words](EnglishLearning/Words.md)

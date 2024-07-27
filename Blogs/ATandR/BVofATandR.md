@@ -3,7 +3,13 @@
 Here is the brief view of awesome tools and resources and you can click them for more details.
 
 ## Pinned
-- [Z-Library](https://singlelogin.rs): Refer to the mirror site [mirror](https://www.kdocs.cn/l/cq7kDog4zkuR) if you can not access to the official link https://singlelogin.rs
+- [Z-Library](https://singlelogin.rs): Refer to the mirror site below if you can not access to the official link https://singlelogin.rs
+
+- https://www.tddaohang.cn/sites/43.html
+- https://www.kdocs.cn/l/cq7kDog4zkuR
+
+!> **<span style='color:red'>Attention:</span>**<br>
+We do not promise that the links below are completely safe and secure. Please access them with caution.
 
 ## Markdown
 
