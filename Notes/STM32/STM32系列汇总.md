@@ -1,33 +1,10 @@
 # STM32系列汇总
-## 一、STM32系列目录：
 
-<div class='center'> 
+## Intro
 
-| 📕STM32系列目录 |
-| :------ |
-| [STM32系列汇总](Blogs/STM32/STM32系列汇总.md) |
-| [STM32系列 (1)：Keil Debug 功能使用 ](Blogs/STM32/STM32系列%20(1)：Keil%20Debug%20功能使用)  |
-| [STM32系列 (2)：定时器详解](Blogs\STM32\STM32系列%20(2)：定时器详解.md)  |
-| [STM32系列 (3)：DMA的原理及用法（以IIC和SPI为例）](Blogs\STM32\STM32系列%20(3)：DMA的原理与用法.md)|
-| [STM32系列 (4)：实用技巧汇总](Blogs\STM32\STM32系列%20(4)：实用技巧汇总.md) |
-</div>
+本系列为笔者本科时“”的学习笔记，目前仅包含自学部分（2024-7），之后选修单片机课程时可能会补充一些内容。
 
-<div class='center'> 
-
-| 更新中 |
-| :------ |
-| [STM32系列 ()：RTC实时时钟 ]  |
-| [STM32系列 ()：低功耗模式]  |
-| [STM32系列 ()：ADC与DAC] |
-| [STM32系列 ()：事件与中断的区别] |
-| [STM32系列 ()：通信协议汇总（IIC, SPI, IIS, CAN）] |
-| [STM32系列 ()：看门狗] |
-| [STM32系列 ()：电机控制]|
-| [STM32系列 ()：FreeRTOS操作系统]|
-</div>
-
-
-## 二、相关资料
+## 相关资源
 下表是本系列的相关资料（点击即可下载），也可跳转至文档库下载：[STM32系列相关资料](https://www.writebug.com/group/DY's_Personal_Space/document/cb4b92aa-3567-11ef-b10a-0242c0a84014) 
 
 - [Cortex-M3权威指南 (中文版).pdf](https://write-bug-backend.oss-cn-beijing.aliyuncs.com/static/uploads/2024/5/30/0ced3785cf7e8f692d69f3b97f6440d6.pdf)
