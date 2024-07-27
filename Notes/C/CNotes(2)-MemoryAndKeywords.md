@@ -1,4 +1,4 @@
-# C Notes (2): Memory And Keywords
+# C Notes (2): Memory and Keywords
 
 ## 关键字
 

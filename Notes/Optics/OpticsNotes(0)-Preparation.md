@@ -1,6 +1,6 @@
 # OpticsNotes (0): Preparation
 
-## 系列说明
+## Intro
 
 本系列为笔者本科时的光学笔记(Optics Notes, 2024.9--2025.1)，考虑到光学示意图较多，同时也伴有数学公式，选择用 Markdown 语言进行记录。
 
