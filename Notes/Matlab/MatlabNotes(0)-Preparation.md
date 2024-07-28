@@ -11,4 +11,4 @@ Follow the oficial tutorials [here](https://www.mathworks.com/help/releases/R201
 
 ## Else 
 
-For more advanced functions and tips, you can refer to the [Matlab --> File Exchange](https://www.mathworks.com/matlabcentral/fileexchange) and [Matlab --> Documentation](https://www.mathworks.com/help/matlab/).
+For more advanced functions and tips, you can refer to the [Matlab --> File Exchange](https://www.mathworks.com/matlabcentral/fileexchange) and [Matlab --> Help Center](https://www.mathworks.com/help/matlab/).

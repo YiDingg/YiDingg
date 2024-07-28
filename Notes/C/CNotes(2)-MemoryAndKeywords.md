@@ -19,7 +19,7 @@ static, extern, register, auto
 const, volatile
 
 /* 九条基本逻辑语句 */ 
-if, else, switch, case, break, default, while, do, for, return, continue, goto
+if, else, switch, case, default, break, while, do, for, return, continue, goto
 
 /* 其它 */ 
 sizeof
