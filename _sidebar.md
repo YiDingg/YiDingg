@@ -75,6 +75,8 @@
   - Mathematical Modeling
     - [MM(1): Papers](Notes/MathematicalModeling/MM(1)-Papers.md)
     - [MM(2): Optimization](Notes/MathematicalModeling/MM(2)-Optimization.md)
+    - [MM(3): Skills](Notes/MathematicalModeling/MM(3)-Skills.md)
+    - [MM(4): Differencial Equation](Notes/MathematicalModeling/MM(4)-DifferencialEquation.md)
   - STM32
     - [STM32系列汇总](Notes/STM32/STM32系列汇总.md)
     - [STM32系列 (1)：Keil Debug 功能使用](Notes/STM32/STM32系列%20(1)：Keil%20Debug%20功能使用.md)

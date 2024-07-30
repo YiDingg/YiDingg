@@ -80,6 +80,9 @@ h4 .anchor span {
 }
 .markdown-section {
     background-color: var(--color--markdownsection, white);
+    border-radius: 20px;
+    /* box-shadow: {color} {x} {y} {阴影散度} {阴影大小}; */
+    box-shadow: rgb(0 0 0 / 20%) 0px 0px 10px 1px;
 }
 .markdown-section a {
     /* a: anchor */
@@ -922,7 +925,7 @@ code.lang-html .token.property {
     .markdown-section {
         font-size: calc(var(--fontsize-main) - 0.05rem);
         width: 90%;
-        max-width: 900px;
+        max-width: 870px; /* 不是900px，防止展开/关闭导航栏时内容宽度发生变化 */
         margin: auto;
     }
     .markdown-section h1 {
