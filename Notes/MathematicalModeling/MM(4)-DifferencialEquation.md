@@ -72,7 +72,7 @@ $$
 
 当然，对于多元函数，不同方向上的差分方式可以有所不同，例如 $x$ 方向上采样中心差分，而 $y$ 方向上采用显示差分（经典欧拉差分）。
 
-### 矩阵方程
+### 二元二阶中心差分矩阵方程
 
 有限差分法求微分方程的关键步骤是写出差分方程的矩阵形式，只要写出了矩阵方程，之后的工作都是简单的。但是，随着函数变元个数的增多，矩阵的维度呈指数级增长，这常为求解带来一定困难。
 
@@ -106,32 +106,41 @@ $$
 K\vec{U} = \vec{\Phi} \Longrightarrow \vec{U} = K^{-1}\vec{\Phi}
 $$
 
-其中
+其中矩阵（向量）$\vec{U}$：
 $$
-\vec{U} = \begin{bmatrix}\vec{u}_{1}\\\vec{u}_{2}\\\vdots\\\vec{u}_{N_x-1}\end{bmatrix} =\begin{bmatrix}u_{1,1}\\u_{1,2}\\\vdots\\u_{1,N_y-1}\\u_{2,1}\\\vdots\\u_{N_x-1,N_y-1}\end{bmatrix}_{(N_x-1)(N_y-1)\times 1},\ \vec{u}_i = \begin{bmatrix}u_{i,1}\\u_{i,2}\\\vdots\\u_{i,N_y-1}\end{bmatrix}_{(N_y-1)\times 1}\\ 
+\vec{U} = \begin{bmatrix}\vec{u}_{1}\\\vec{u}_{2}\\\vdots\\\vec{u}_{N_x-1}\end{bmatrix} =\begin{bmatrix}u_{1,1}\\u_{1,2}\\\vdots\\u_{1,N_y-1}\\u_{2,1}\\\vdots\\u_{N_x-1,N_y-1}\end{bmatrix}_{(N_x-1)(N_y-1)\times 1},\ \vec{u}_i = \begin{bmatrix}u_{i,1}\\u_{i,2}\\\vdots\\u_{i,N_y-1}\end{bmatrix}_{(N_y-1)\times 1},\ i = 1,...,N_x-1
 $$
 
-简记 $u_{i,j}$ 前的系数为 $\lambda_{i,j} = a - \frac{2C_{xx}}{h_x^2}-\frac{2C_{yy}}{h_y^2}$，$u_{i-1,j}, ..., u_{i,j+1}$ 的系数同理，则有：
+简记 $u_{i,j}$ 前的系数为 $\lambda_{0,0} = a - \frac{2C_{xx}}{h_x^2}-\frac{2C_{yy}}{h_y^2}$，$u_{i-1,j}, ..., u_{i,j+1}$ 的系数同理，并简记单位矩阵：
+$$
+I_m = \lambda_{-1,0}\cdot I_{N_y-1}\ ,\ \ I_p = \lambda_{1,0}\cdot I_{N_y-1}
+$$
+
+则矩阵$K$：
 
 $$
 K = 
-\begin{bmatrix}  
-  G & 0 & \cdots & 0 \\  
-  0 & G & \cdots & 0 \\  
-  \vdots & \vdots & \ddots & \vdots \\  
-  0 & 0 & \cdots & G  
-\end{bmatrix}_ {(N_x-1)(N_y-1)\times(N_x-1)(N_y-1)}\\
+\begin{bmatrix}
+  G&  I_p&  O&\cdots  &O &O \\
+  I_m&  G&  I_p&\cdots  &O  &O \\
+  O&  I_m&  G&\cdots  &O  &O \\
+  \vdots&  \vdots&  \vdots&  \ddots &\vdots  &\vdots \\
+  O&  O&  O&  \cdots&  G& I_p\\
+  O&  O&  O&  \cdots&  I_m&G
+\end{bmatrix}_{(N_x-1)(N_y-1)\times(N_x-1)(N_y-1)}\\
 G = 
 \begin{bmatrix}
-\lambda_{i,j} & \lambda_{i,j+1} & 0 &  &  & & \\
-\lambda_{i,j-1} & \lambda_{i,j} & \lambda_{i,j+1} & &  &  & \\
-0 & \lambda_{i,j-1} & \lambda_{i,j} & \ddots  &  & & \\
+\lambda_{0,0} & \lambda_{0,1} & 0 &  &  & & \\
+\lambda_{0,-1} & \lambda_{0,0} & \lambda_{0,1} & &  &  & \\
+0 & \lambda_{0,-1} & \lambda_{0,0} & \ddots  &  & & \\
  &  & \ddots & \ddots & \ddots &  & \\
-  &  & & \ddots & \lambda_{i,j} & \lambda_{i,j+1} & 0 \\
- &  & &  & \lambda_{i,j-1} & \lambda_{i,j} & \lambda_{i,j+1}  \\
-  &  & & & 0&\lambda_{i,j-1} & \lambda_{i,j} \\
-\end{bmatrix}_{(N_y-1)\times(N_y-1)}
+  &  & & \ddots & \lambda_{0,0} & \lambda_{0,1} & 0 \\
+ &  & &  & \lambda_{0,-1} & \lambda_{0,0} & \lambda_{0,1}  \\
+  &  & & & 0&\lambda_{0,-1} & \lambda_{0,0} \\
+\end{bmatrix}_{(N_y-1)\times(N_y-1)}\\
 $$
+
+矩阵（向量）$\vec{\Phi}$：
 
 $$
 \vec{\Phi} = 
@@ -147,22 +156,22 @@ $$
     \vdots \\ 
     \vec{\varphi}_{N_x-1}
 \end{bmatrix}+
-(-\lambda_{i,j-1})\begin{bmatrix}
+(-\lambda_{0,-1})\begin{bmatrix}
     \vec{u}_0 \\ 
     \vec{0} \\ 
     \vdots \\ 
     \vec{0}
 \end{bmatrix}+
-(-\lambda_{i,j+1})\begin{bmatrix}
+(-\lambda_{0,1})\begin{bmatrix}
     \vec{0} \\ 
     \vdots \\ 
     \vec{0} \\ 
-    \vec{u}_{N_x - 1} \\ 
+    \vec{u}_{N_x} \\ 
 \end{bmatrix}_{(N_x-1)(N_y-1)\times 1} \\ 
 \vec{\phi}_i = 
 \begin{bmatrix}\phi_{i,1}\\\phi_{i,2}\\\vdots\\\phi_{i,N_y-1}\end{bmatrix}_{(N_y-1)\times 1},\ 
 \vec{\varphi}_i = 
-\begin{bmatrix}-\lambda_{i,j-1}\phi_{i,0}\\0\\\vdots\\0\\-\lambda_{i,j+1}\phi_{i,N_y}\end{bmatrix}_{(N_y-1)\times 1}
+\begin{bmatrix}-\lambda_{0,-1}\phi_{i,0}\\0\\\vdots\\0\\-\lambda_{0,1}\phi_{i,N_y}\end{bmatrix}_{(N_y-1)\times 1},\ i = 1,...,N_x-1
 $$
 
 
@@ -171,6 +180,10 @@ $$
 ### 矩阵方程示例
 
 下面是化为矩阵方程的过程示例（先展开 $i$ 后展开 $j$）：
+
+$$
+\phi_{i,j}-\frac14(\phi_{i+1,j}+\phi_{i-1,j}+\phi_{i,j+1}+\phi_{i,j-1})=0
+$$
 
 令 $i = 1, 2, 3, ..., N_x-1$，得到方程组（含有 $N_x-1$ 个方程）：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-28-23-25-52_MM(4)-DifferencialEquation.png"/></div>
@@ -185,7 +198,7 @@ G=\begin{bmatrix}1&-\frac{1}{4}&0&\cdots&0\\-\frac{1}{4}&1&-\frac{1}{4}&&0\\0&-\
 $$
 则有：
 $$
--\frac{I_{N_x}}{4}\vec{\varphi}_{j-1}+G\vec{\varphi}_j-\frac{I_{N_x}}{4}\vec{\varphi}_{j+1}=\vec{b}_j
+-\frac{I_{N_x-1}}{4}\vec{\varphi}_{j-1}+G\vec{\varphi}_j-\frac{I_{N_x-1}}{4}\vec{\varphi}_{j+1}=\vec{b}_j
 $$
 
 再令 $j = 1, 2, ..., N_y-1$，得到矩阵方程组（含有 $N_y-1$ 个矩阵方程）。考虑到 $\vec{\varphi}_0$ 和 $\vec{\varphi}_N$ 都是已知量，写出方程组后移项，令 $\vec{\Phi}$、$\vec{B}$ 和矩阵 $K$ 如下：
@@ -200,6 +213,191 @@ $$
 $$
 K\vec{\Phi} = \vec{B} \Longrightarrow \vec{\Phi} = K^{-1}\vec{B}
 $$
+
+### MyPDESolver_2Var_Level2_Center
+
+下面的代码利用二元二阶中心差分求解 PDE：
+
+``` matlab
+function [X, Y, Result] = MyPDESolver_2Var_Level2_Center(PdeProblem)
+% PDE 求解器（二元，二阶，中心差分）
+% 若待求函数为 u = u(t,x)
+% 方程：a*u + b_t*u_t + b_x*u_x + c_tt*u_tt + c_xx*u_xx = phi(t,x)
+% 注：无法解决 u_tx 前系数不为零的方程
+    % 输入：PdeProblem 结构体
+        % PdeProblem.t_end ：t 轴范围 [0, x_end]
+        % PdeProblem.x_end ：x 轴范围 [0, x_end]
+        % PdeProblem.N_t   ：t 轴单元数，步长为 x_end/N_t
+        % PdeProblem.N_x   ：x 轴单元数，步长为 x_end/N_x
+        % PdeProblem.a     ：u 的系数
+        % PdeProblem.b_t   ：u_t 的系数
+        % PdeProblem.b_x   ：u_x 的系数
+        % PdeProblem.c_tt  ：u_tt 的系数
+        % PdeProblem.c_xx  ：u_xx 的系数
+    % 输出：
+
+% 若待求函数为： u = u(x,y)
+% 方程：a*u + b_x*u_x + b_y*u_y + c_xx*u_xx + c_yy*u_yy = phi(x,y)
+% 输入：PdeProblem 结构体
+    % PdeProblem.x_end     ：x 轴范围 [0, x_end]
+    % PdeProblem.y_end     ：y 轴范围 [0, y_end]
+    % PdeProblem.N_x       ：x 轴单元数，步长为 x_end/N_x
+    % PdeProblem.N_y       ：y 轴单元数，步长为 y_end/N_y
+
+    % PdeProblem.a         ：u 的系数
+    % PdeProblem.b_x       ：u_x 的系数
+    % PdeProblem.b_y       ：u_y 的系数
+    % PdeProblem.c_xx      ：u_xx 的系数
+    % PdeProblem.c_yy      ：u_yy 的系数
+    % PdeProblem.PhiIsZero ：右侧函数是否为零，ture 或 false
+    % PdeProblem.phi       ：右侧函数，@(x,y)
+
+    % PdeProblem.u_0_y    ：边界条件 @(y)
+    % PdeProblem.u_xend_y：边界条件 @(y)
+    % PdeProblem.u_x_0    ：边界条件 @(x)
+    % PdeProblem.u_x_yend：边界条件 @(x)
+% 输出：
+% 注：无法解决 u_xy 前系数不为零的方程
+
+tic
+
+% 数据准备
+    x_end = PdeProblem.x_end;
+    y_end = PdeProblem.y_end;
+    N_x = PdeProblem.N_x;
+    N_y = PdeProblem.N_y;
+    a = PdeProblem.a;
+    b_x = PdeProblem.b_x;
+    b_y = PdeProblem.b_y;
+    c_xx = PdeProblem.c_xx;
+    c_yy = PdeProblem.c_yy;
+    phi = PdeProblem.phi;
+    u_0_y = PdeProblem.u_0_y;
+    u_xend_y = PdeProblem.u_xend_y;
+    u_x_0 = PdeProblem.u_x_0;
+    u_x_yend = PdeProblem.u_x_yend;
+    
+    h_x = x_end/N_x;
+    h_y = y_end/N_y;
+     
+    lam_m0 = -1/4;     % lamda_{i-1, j}
+    lam_0m = -1/4;     % lamda_{i, j-1}
+    lam_00  = 1;       % lamda_{i, j}
+    lam_p0 = -1/4;     % lamda_{i, j+1}
+    lam_0p = -1/4;     % lamda_{i+1, j}
+
+% 矩阵初始化与数据准备
+    X = linspace(0, x_end, N_x+1);    % X 轴
+    Y = linspace(0, y_end, N_y+1);    % Y 轴
+    [GridX, GridY] = meshgrid(X,Y); 
+    I_m = lam_m0*eye(N_y-1);
+    I_p = lam_p0*eye(N_y-1);
+    U = zeros((N_x-1)*(N_y-1), 1);     % 待求函数
+    K = zeros((N_x-1)*(N_y-1), (N_x-1)*(N_y-1));      % 系数矩阵
+
+    Phi = zeros((N_x-1)*(N_y-1), 1);
+    phi_matrix = zeros(N_y+1,N_x+1);
+    if ~PdeProblem.PhiIsZero
+        phi_matrix = phi(GridX,GridY);
+    end
+    
+    varphi_matrix = zeros(N_y-1, N_x-1);
+    varphi_matrix(1, :) = -lam_0m*phi_matrix(1, 2:N_x); % 矩阵索引比网格索引多 1
+    varphi_matrix(end, :) = -lam_0p*phi_matrix(N_y+1, 2:N_x); % 矩阵索引比网格索引多 1
+    
+    Result = zeros(N_y+1,N_x+1);
+    Result(1,:) = u_x_0(X);
+    Result(end,:) = u_x_yend(X);
+    Result(:,1) = u_0_y(Y);
+    Result(:,end) = u_xend_y(Y);
+    % 平滑边缘突变
+    Result(1,1) = 0.5*( u_x_0(X(1)) +  u_0_y(Y(1)));
+    Result(1,end) = 0.5*( u_x_0(X(end)) + u_xend_y(Y(1)) );
+    Result(end, 1) = 0.5*( u_x_yend(X(1)) + u_0_y(Y(end)) );
+    Result(end, end) = 0.5*( u_x_yend(X(end)) + u_xend_y(Y(end)) );
+% 赋入矩阵数据
+    G = lam_00*eye((N_y-1)) ...
+        + [
+            zeros((N_y-1)-1, 1) , lam_0p*eye((N_y-1)-1);
+            zeros(1,(N_y-1))
+          ] ...
+        + [
+            zeros(1, (N_y-1));
+            lam_0m*eye((N_y-1)-1), zeros((N_y-1)-1, 1);
+          ];
+    for i = 1: N_x-1
+        K( (i-1)*(N_y-1)+1 : i*(N_y-1), (i-1)*(N_y-1)+1 : i*(N_y-1) ) = G;
+    end
+    for i = 1: N_x-2
+        K( (i)*(N_y-1)+1 : (i+1)*(N_y-1), (i-1)*(N_y-1)+1 : i*(N_y-1) ) = I_m;
+        K( (i-1)*(N_y-1)+1 : (i)*(N_y-1), (i)*(N_y-1)+1 : (i+1)*(N_y-1) ) = I_p;
+    end
+    % 第一项 \vec{\phi}
+    for i = 1: N_x-1    
+        Phi( (i-1)*(N_y-1)+1 : i*(N_y-1), 1 ) = phi_matrix(2:N_y, i+1);   % 网格索引 0 ~ N，矩阵索引 1 ~ N+1
+    end
+    % 第二项 \vec{\varphi}
+    for i = 1: N_x-1    
+        Phi( (i-1)*(N_y-1)+1 : i*(N_y-1), 1 ) = varphi_matrix(:, i) + Phi( (i-1)*(N_y-1)+1 : i*(N_y-1), 1 );   % 网格索引 0 ~ N，矩阵索引 1 ~ N+1
+    end
+    % 第三项 \vec{u}_09
+    Phi(1:(N_y-1), 1) = Phi(1:(N_y-1), 1) -lam_0m*u_0_y(Y(2:N_y));
+    % 第四项 \vec{u}_{N_x}
+    Phi( (N_x-2)*(N_y-1)+1:(N_x-1)*(N_y-1), 1) = Phi( (N_x-2)*(N_y-1)+1:(N_x-1)*(N_y-1), 1) -lam_0m*u_xend_y(Y(2:N_y));
+
+
+% 求解矩阵方程
+    U = K\Phi;
+
+% 展开结果
+    for i = 1: N_x-1    
+        Result(2:N_y, i+1) = U( (i-1)*(N_y-1)+1 : i*(N_y-1), 1 );   % 网格索引 0 ~ N，矩阵索引 1 ~ N+1
+    end
+
+time = toc;
+
+% 输出结果
+    %figure
+    mesh(GridX,GridY,Result)
+    xlabel('x')
+    ylabel('y')
+    zlabel('z') 
+    disp("----------------------------------------------")
+    disp("------- PDE 求解器（二元，二阶，中心差分）-------")
+    disp(['用时：', num2str(time)])
+    disp(['x 轴步长：', num2str(h_x)])
+    disp(['y 轴步长：', num2str(h_y)])
+    disp("PDE结构体：")
+    disp(PdeProblem)
+    disp("------- PDE 求解器（二元，二阶，中心差分）-------")
+    disp("----------------------------------------------")
+end
+```
+
+<details>
+<summary>示例：求解二维泊松方程</summary>
+
+$$
+\Delta u(x,y) = -2\pi^2\sin(\pi x)\sin(\pi y)\ ,\ \ (x,y) \in [0, 1]\times [0, 1]
+$$
+
+解析解：$$u(x,y) = \sin(\pi x)\sin(\pi y)$$
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-16-17-12_MM(4)-DifferencialEquation.jpg"/></div>
+
+
+数值解（$N_x = N_y = 50$）：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-16-17-52_MM(4)-DifferencialEquation.jpg"/></div>
+
+相对误差图：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-16-28-02_MM(4)-DifferencialEquation.jpg"/></div>
+
+可以看到，相对误差的数量级仅为 $10^{-4}$，一般情况下完全可以忽略。
+
+</details>
+
+在写 Matlab 代码时要特别注意，把求解区域离散为网格，并将函数离散值存储为 Matlab 矩阵时，矩阵的行号对应纵坐标 $y$，列号对应横坐标 $x$。相当于以矩阵的左上角建立 $Oxy$ 坐标系，向右为 $x$ 轴正方向，向下为 $y$ 轴正方向。这与通常的“行列直觉”不同。
+
+例如，函数 $\phi(x,y) = x^2 + 100y$，将其在区域 $[0, 1]\times [0, 1]$ 上离散为网格，记得到的矩阵为 $A$，则`A(:,1)`对应 $x=0$，而 `A(1,:)` 对应 $y=0$的情况（Matlab 的矩阵索引从 1 开始）。 
 
 
 
