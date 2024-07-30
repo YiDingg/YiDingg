@@ -35,11 +35,12 @@ aside.nav.nothing {
     margin-top: 0px;
     overflow-y: auto;
     max-height: 98%;
-    -webkit-scrollbars-style: none;
+    max-width: 200px;
 }
 /* 滑动条样式修改 */
 .page_toc::-webkit-scrollbar {
     width: 10px;
+    height: 5px;
     /* Width of the scrollbar */
 }
 .page_toc::-webkit-scrollbar-track {
