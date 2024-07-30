@@ -1,4 +1,4 @@
-# Mathematical Modeling (3): Skills 
+# Mathematical Modeling (+): Skills 
 
 ## Latex
 

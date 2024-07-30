@@ -76,15 +76,161 @@ $$
 X = [0 25 55.5 60.5 91 96 126.5	131.5 162 167 197.5 202.5 233 238 268.5 273.5 304 309 339.5 344.5 375 380 410.5 435.5]
 ```
 
-设炉内温度分布为 $T = T(x)$，给定过炉速度后，可由 $x = vt \Longrightarrow T = T(t)$ 得到焊件环境温度曲线。
+设炉内温度分布为 $T = T(x)$，给定过炉速度后，可由 $x = vt \Longrightarrow T = T(t)$ 得到炉内温度曲线。
+
+由热传导定律 $\begin{cases}j = -\nabla T\\ T_t' = a^2T_{xx}''\end{cases}$ 确定温区间隙的温度，由于达到稳态，$\nabla T \equiv C$ 为定值，因此间隙温度呈线性分布，由此得到炉内温度曲线：
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-23-36-14_MM(1)-Papers.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-23-46-05_MM(1)-Papers.png"/></div>
+
+``` matlab
+X = [0 25 55.5 60.5 91 96 126.5	131.5 162 167 197.5 202.5 233 238 268.5 273.5 304 309 339.5 344.5 375 380 410.5 435.5];
+
+% 问题一温度参数
+
+T = [175 195 235 255 25];
+
+% 炉内温度曲线
+T_s = @(x) ...
+    (X(1)<=x & x<X(2)) .* (  ( T(1)-25 )/( X(2)-X(1) )*(x-X(1)) + 25  )  + ...
+    (X(2)<=x & x<X(11)) .* (  T(1)  )  + ...
+    (X(11)<=x & x<X(12)).* (  ( T(2)-T(1) )/( X(12)-X(11) )*(x-X(11)) + T(1)  )  + ...
+    (X(12)<=x & x<X(13)).* T(2)  + ...
+    (X(13)<=x & x<X(14)).* (  ( T(3)-T(2) )/( X(14)-X(13) )*(x-X(13)) + T(2)  )  + ...
+    (X(14)<=x & x<X(15)).* T(3)  + ...
+    (X(15)<=x & x<X(16)).* (  ( T(4)-T(3) )/( X(16)-X(15) )*(x-X(15)) + T(3)  )  + ...
+    (X(16)<=x & x<X(19)).* T(4)  + ...
+    (X(19)<=x & x<X(20)).* (  ( T(5)-T(4) )/( X(20)-X(19) )*(x-X(19)) + T(4)  )  + ...
+    (X(20)<=x & x<X(24)).* T(5);
+
+fplot(T_s, [0, X(end)])
+integral(T_s,0,X(end))
+```
+
+不妨对最后两个区间进行温度修正，用 $T = ce^{-kx} + T_0$，则有：
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-31-00-25-26_MM(1)-Papers.png"/></div> -->
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-31-01-02-56_MM(1)-Papers.png"/></div>
+
+``` matlab
+X = [0 25 55.5 60.5 91 96 126.5	131.5 162 167 197.5 202.5 233 238 268.5 273.5 304 309 339.5 344.5 375 380 410.5 435.5];
+
+% 问题一温度参数
+
+T = [175 195 235 255 25];
+
+c = 10^5
+k = - log((T(4) - 25)/c)/X(19)
+
+% 炉内温度曲线 T = 
+T_sx = @(x) ...
+    (X(1)<=x & x<X(2)) .* (  ( T(1)-25 )/( X(2)-X(1) )*(x-X(1)) + 25  )  + ...
+    (X(2)<=x & x<X(11)) .* (  T(1)  )  + ...
+    (X(11)<=x & x<X(12)).* (  ( T(2)-T(1) )/( X(12)-X(11) )*(x-X(11)) + T(1)  )  + ...
+    (X(12)<=x & x<X(13)).* T(2)  + ...
+    (X(13)<=x & x<X(14)).* (  ( T(3)-T(2) )/( X(14)-X(13) )*(x-X(13)) + T(2)  )  + ...
+    (X(14)<=x & x<X(15)).* T(3)  + ...
+    (X(15)<=x & x<X(16)).* (  ( T(4)-T(3) )/( X(16)-X(15) )*(x-X(15)) + T(3)  )  + ...
+    (X(16)<=x & x<X(19)).* T(4)  + ...
+    (X(19)<=x & x<=X(24)).* ( c*exp(-k*x) +25 )
+
+MyPlot(0:X(end)/800:X(end), T_sx(0:X(end)/800:X(end)), ["$x/ \mathrm{cm}$"; "$T_s(x)/ \mathrm{K}$"])
+legend("炉内温度曲线")
+```
 
 ### 问题一
 
 在问题一，焊接区域整体与外界的热交换由牛顿冷却定律给出，焊接区域内部的热交换由热传导定律给出。显然，这是一个偏微分方程问题，几乎无法得出解析解，所以考虑数值解。算上时间变量 $t$，如果将焊接区域视为二维薄片，则为三变元（三维）偏微分方程，这是不易求解的。因此，我们希望能将焊接区域近似为一维细棒，这要求我们验证温度传导率远大于温度变化率。这样，此后便不再区分焊接区域与焊接区域中心，在求解和分析时也具有了更强的可行性。
 
-给定了过炉速度 $v$，相当于给定了环境温度曲线 $T(t)$，也即微分方程的边界条件，再算上初始条件，可求此二维 PDE 数值解。
+给定了过炉速度 $v$，相当于给定了炉内温度曲线 $T(t)$，也即微分方程的边界条件，再算上初始条件，可求此二维 PDE 数值解。
+
+在求解二维热传导方程时发现结果不稳定，于是利用函数拟合来观察中心温度变化趋势： 
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-31-01-00-35_MM(1)-Papers.png"/></div> -->
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-31-01-04-15_MM(1)-Papers.png"/></div> -->
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-31-01-05-38_MM(1)-Papers.png"/></div>
+
+``` matlab 
+k = 0.3*10^(-4);
+% 定义结构体
+    PdeProblem.N_x = 708;
+    PdeProblem.N_y = 20;
+
+    PdeProblem.x_beg = 0;
+    PdeProblem.x_end = t(end);
+    PdeProblem.y_beg = 0;
+    PdeProblem.y_end = 0.1;
+
+    PdeProblem.a = 0;
+    PdeProblem.b_x = 1;
+    PdeProblem.b_y = 0;
+    PdeProblem.c_xx = 0;
+    PdeProblem.c_yy = -k;
+    PdeProblem.PhiIsZero = true;
+    PdeProblem.phi = @(x,y) 0;    % 注意要用 .^ .* ./ 等符号
+    
+    PdeProblem.u_xbeg_y = @(y) 25;
+    PdeProblem.u_xend_y = @(y) 30;
+    PdeProblem.u_x_ybeg = T_st;
+    PdeProblem.u_x_yend = T_st;
+
+% 调用函数
+PdeProblem = MyPDESolver_2Var_Level2_Center(PdeProblem);
+% MySurf(PdeProblem.X,PdeProblem.Y,PdeProblem.Result, false)
+MyMesh(PdeProblem.X,PdeProblem.Y,PdeProblem.Result,1);
+% MySurf(PdeProblem.X,PdeProblem.Y,PdeProblem.Result,1,1);
+MyPlot(Appendix(:,1)', [Appendix(:,2)'; T_sx(linspace(0, X(end), si(1)));PdeProblem.Result(10,:)], ["$t/ \mathrm{s}$"; "$T_s(t)/ \mathrm{K}$"])
+
+fitX = Appendix(:,1)';
+fitY = PdeProblem.Result(10,:);
+
+       a1 =      -9.411 
+       b1 =       281.8  
+       c1 =       23.55  
+       a2 =      -1.134  
+       b2 =       288.2  
+       c2 =       3.107  
+       a3 =         213  
+       b3 =       307.1 
+       c3 =       77.07  
+       a4 =       148.8  
+       b4 =       184.3  
+       c4 =       102.4 
+       a5 =          15 
+       b5 =       366.1 
+       c5 =       13.85  
+       a6 =      -1.954  
+       b6 =       219.1  
+       c6 =       4.251 
+       a7 =        63.5 
+       b7 =       107.7 
+       c7 =       54.14  
+       a8 =       40.35  
+       b8 =       69.65  
+       c8 =       30.33   
+
+f = @(x) a1*exp(-((x-b1)/c1).^2) + a2*exp(-((x-b2)/c2).^2) + ...
+              a3*exp(-((x-b3)/c3).^2) + a4*exp(-((x-b4)/c4).^2) + ...
+              a5*exp(-((x-b5)/c5).^2) + a6*exp(-((x-b6)/c6).^2) + ...
+              a7*exp(-((x-b7)/c7).^2) + a8*exp(-((x-b8)/c8).^2)
+
+[fitresult, gof] = createFit(fitX, fitY);
+       a1 =       228.2  
+       b1 =    0.007358  
+       c1 =     -0.1637  
+       a2 =       41.39  
+       b2 =     0.02626  
+       c2 =      -0.398  
+f2 = @(x) a1*sin(b1*x+c1) + a2*sin(b2*x+c2)
+MyPlot(Appendix(:,1)', [Appendix(:,2)'; T_sx(linspace(0, X(end), si(1)));f(fitX);f2(fitX)], ["$t/ \mathrm{s}$"; "$T_s(t)/ \mathrm{K}$"])
+```
 
 
+事实上，我们完全可以将其看作 $0$ 维温度点，即整个焊接区域温度一致，仅依靠牛顿冷却定律 $T'(t) = k(T(t) - T_s(t))$ 与外界发生热交换，其中系数 $k$ 需要通过最优化得到。
+
+优秀论文 A07 在这里有一个闪光点，由附录所给数据，作 $k = \frac{T'(t)}{T(t) - T_s(t)}$ 图像，可以发现 $k$ 并不是常数，但可以分段视为常数。因此在不同的区间内，可以认为 $k$ 的值不同，这样优化后得到的 $k = k(x)$ 便能更好的符合附录所给数据。
 
 ### 问题二
 
