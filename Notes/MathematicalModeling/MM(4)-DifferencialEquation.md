@@ -4,11 +4,125 @@
 
 利用 Matlab 求数值解，我们有多种方法。例如，手动实现有限差分算法、利用 Matlab 的 `ode` 函数求解 ODE、利用 Matlab 的 `pdepe` 函数求解 PDE、利用 pdetool 工具箱等。
 
-`ode`函数、`pdepe` 函数和 pdetool 工具箱能够解决的问题十分有限，有限差分法更为普适，也是我们重点关注的对象。
+`ode`函数、`pdepe` 函数和 pdetool 工具箱能够解决的问题十分有限，有限差分法更为普适，也是我们重点关注的对象。下面先给出已经构建的 Matlab 函数，实现原理见后文。
 
-## ODE
+## Matlab 有限差分法 
 
-## PDE
+在写 Matlab 代码时要特别注意，把求解区域离散为网格，并将函数离散值存储为 Matlab 矩阵时，矩阵的行号对应纵坐标 $y$，列号对应横坐标 $x$。相当于以矩阵的左上角建立 $Oxy$ 坐标系，向右为 $x$ 轴正方向，向下为 $y$ 轴正方向。这与通常的“行列直觉”不同。
+
+例如，函数 $\phi(x,y) = x^2 + 100y$，将其在区域 $[0, 1]\times [0, 1]$ 上离散为网格，记得到的矩阵为 $A$，则`A(:,1)`对应 $x=0$，而 `A(1,:)` 对应 $y=0$的情况（Matlab 的矩阵索引从 1 开始）。 
+
+
+### MyPDESolver_2Var_Level2_Center
+
+源代码见 GitHub [here](https://github.com/YiDingg/Matlab/blob/main/MyPDESolver_2Var_Level2_Center.m)。
+
+<details>
+<summary>示例：求解二维泊松方程</summary>
+
+$$
+\Delta u(x,y) = -2\pi^2\sin(\pi x)\sin(\pi y)\ ,\ \ (x,y) \in [0, 1]\times [0, 1] \\ 
+\mathrm{s.t.}\ u(x,0) = u(0,x) = u(0,y) = u(y,0) = 0
+$$
+
+解析解：$$u(x,y) = \sin(\pi x)\sin(\pi y)\ ,\ \ (x,y) \in [0, 1]\times [0, 1] \\ $$
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-16-17-12_MM(4)-DifferencialEquation.jpg"/></div>
+
+
+数值解（$N_x = N_y = 50$）：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-16-17-52_MM(4)-DifferencialEquation.jpg"/></div>
+
+相对误差图：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-16-28-02_MM(4)-DifferencialEquation.jpg"/></div>
+
+可以看到，相对误差的数量级仅为 $10^{-4}$，一般情况下完全可以忽略。
+
+``` matlab 
+% 定义结构体
+    PdeProblem.N_x = 50;
+    PdeProblem.N_y = 50;
+
+    PdeProblem.x_beg = 0;
+    PdeProblem.x_end = 1;
+    PdeProblem.y_beg = 0;
+    PdeProblem.y_end = 1;
+
+    PdeProblem.a = 0;
+    PdeProblem.b_x = 0;
+    PdeProblem.b_y = 0;
+    PdeProblem.c_xx = 1;
+    PdeProblem.c_yy = 1;
+    PdeProblem.PhiIsZero = false;
+    PdeProblem.phi = @(x,y) -2*pi^2*sin(pi*x).*sin(pi*y);    % 注意要用 .^ .* ./ 等符号
+    
+    PdeProblem.u_xbeg_y = @(y) 0;
+    PdeProblem.u_xend_y = @(y) 0;
+    PdeProblem.u_x_ybeg = @(x) 0;
+
+    PdeProblem.u_x_yend = @(x) 0;
+
+% 调用函数
+PdeProblem = MyPDESolver_2Var_Level2_Center(PdeProblem);
+MySurf(PdeProblem.X,PdeProblem.Y,PdeProblem.Result, false)
+```
+
+
+</details>
+
+<details>
+<summary>示例：求解连续介质热传导方程</summary>
+
+$$
+T_t'(t,x) = kT_{xx}''(t,x) \\ 
+\mathrm{s.t.}\ T(0,x) = T_0\ ,\ \ T(t,0) = T_1,\ T(t,x_{\mathrm{end}}) = T_2
+$$
+
+数值解（$N_x = N_y = 50$）：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-21-47-10_MM(4)-DifferencialEquation.jpg"/></div>
+
+``` matlab 
+k = 2;
+% 定义结构体
+    PdeProblem.N_x = 50;
+    PdeProblem.N_y = 20;
+
+    PdeProblem.x_beg = 0;
+    PdeProblem.x_end = 0.5;
+    PdeProblem.y_beg = 0;
+    PdeProblem.y_end = 1;
+
+    PdeProblem.a = 0;
+    PdeProblem.b_x = 1;
+    PdeProblem.b_y = 0;
+    PdeProblem.c_xx = 0;
+    PdeProblem.c_yy = -k;
+    PdeProblem.PhiIsZero = true;
+    PdeProblem.phi = @(x,y) 0;    % 注意要用 .^ .* ./ 等符号
+    
+    PdeProblem.u_xbeg_y = @(y) 0;
+    PdeProblem.u_xend_y = @(y) 10*y;
+    PdeProblem.u_x_ybeg = @(x) 0;
+    PdeProblem.u_x_yend = @(x) 10;
+
+% 调用函数
+PdeProblem = MyPDESolver_2Var_Level2_Center(PdeProblem);
+% MySurf(PdeProblem.X,PdeProblem.Y,PdeProblem.Result, false)
+MyMesh(PdeProblem.X,PdeProblem.Y,PdeProblem.Result,1);
+```
+
+</details>
+
+### MyPDESolver_2Var_Level2_Center_DF
+
+`MyPDESolver_2Var_Level2_Center` 采用的是中心差分 Richardson 格式，稳定性较差，`MyPDESolver_2Var_Level2_Center_DF` 采用的是 DuFort-Frankel (DF) 格式，它是无条件 $L^2$ 稳定的。
+
+源码见 GitHub here。
+
+### MyPDESolver_2Var_Level2_Forward
+
+
+
+### MyPDESolver_2Var_Level2_Backward
 
 ## 有限差分法
 
@@ -50,7 +164,7 @@ B stands for Backward，C stands for Central.
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-28-18-33-08_MM(4)-DifferencialEquation.jpg"/></div>
 
-则可得二元二阶中心差分公式：
+则可得二元二阶中心差分公式（R 格式）：
 
 $$
 u_x'=\frac{1}{2h_x}(u_{i+1,j}-u_{i-1,j})\ ,\ \  
@@ -58,7 +172,7 @@ u_y'=\frac{1}{2h_y}(u_{i,j+1}-u_{i,j-1})\\
 u_{xx}''=\frac{1}{h_x^2}(u_{i-1,j}-2u_{i,j}+u_{i+1,j})\ , \ \ 
 u_{yy}''=\frac{1}{h_y^2}(u_{i,j-1}-2u_{i,j}+u_{i,j+1})\\ 
 u_{xy}''=\frac{u_{i,j+1}^{'x}-u_{i,j-1}^{'x}}{2h_y} 
-= \frac{1}{4h_xh_y}(u_{i-1,j-1} - u_{i-1,j+1} - u_{i+1,j-1} +u_{i+1,j+1}) （待定）
+= \frac{1}{4h_xh_y}(u_{i-1,j-1} - u_{i-1,j+1} - u_{i+1,j-1} +u_{i+1,j+1})
 $$
 
 其中 $h_x = \frac{a}{N_x}, h_y = \frac{b}{N_y}$ 为求解步长。
@@ -70,14 +184,17 @@ u_{tt}''=\frac{u_{i+1,j}-2u_{i,j}+u_{i-1,j}}{h_t^2},
 u_{xx}''=\frac{u_{i,j+1}-2u_{i,j}+u_{i,j-1}}{h_x^2} 
 $$
 
-当然，对于多元函数，不同方向上的差分方式可以有所不同，例如 $x$ 方向上采样中心差分，而 $y$ 方向上采用显示差分（经典欧拉差分）。
+当然，对于多元函数，不同方向上的差分方式可以有所不同，例如 $x$ 方向上向前差分（the Euler explicit scheme），而 $y$ 方向上采用中心差分。
 
 
-## 二元二阶中心差分
+## 二元二阶中心差分（R）
 
-中心差分具有较高的精度，也是最常用的一种，因此我们先推导中心差分，再推导其他情形。
+中心差分具有较高的精度，也是最常用的方法之一，我们先推导中心差分，再讨论其他情形。事实上，中心差分也有多种格式，这里讨论的是 Richardson 格式，其它还有 DuFort-Frankel (DF), Lax-Wendroff (LW) 格式等。
 
-“二元二阶中心差分”中的“二元”指待求函数有两个自变量，“二阶”指泰勒展开在二阶处截断。特别地，中心差分精度比截断阶数要更高一级。例如，在二阶处截断时，向前和向后差分仅具有二阶截断精度，而中心差分具有三阶截断精度。
+我们所说的“二元二阶中心差分”，“二元”是指待求函数有两个自变量，“二阶”指泰勒展开在二阶处截断，例如 $u(x+h) = u(x) + hu(x)' + \frac{h^2}{2}u(x)'' + o(h^2)$。特别地，中心差分精度比截断阶数要更高一级。例如，在二阶处截断时，向前和向后差分仅具有二阶截断精度，而中心差分具有三阶截断精度。
+
+必须指出的是，虽然 Richardson 格式无条件具有 (2,2) 阶局部截断误差 $o(h_x^2 + h_y^2)$. 但是，它无法用于大规模的数值运算，这是因为它的稳定性（相容性、收敛性）不佳，在许多问题中无法得到收敛解。作为一个著名的反面教材, 它让人们意识到数值稳定的重要性。具体可参考 [here](https://zhuanlan.zhihu.com/p/129681229)。一个较好的改进方法是采用 DuFort-Frankel 格式，它是无条件 $L^2$ 模稳定的，我们将在后文讨论。
+
 
 ### 矩阵方程
 
@@ -173,17 +290,17 @@ K =
     \vdots \\ 
     \vec{\varphi}_{N_x-1}
 \end{bmatrix}+
-(-\lambda_{-1,0})\begin{bmatrix}
-    \vec{u}_0 \\ 
+\begin{bmatrix}
+    -\lambda_{-1,0}\vec{u}_0 \\ 
     \vec{0} \\ 
     \vdots \\ 
     \vec{0}
 \end{bmatrix}+
-(-\lambda_{1,0})\begin{bmatrix}
+\begin{bmatrix}
     \vec{0} \\ 
     \vdots \\ 
     \vec{0} \\ 
-    \vec{u}_{N_x} \\ 
+    -\lambda_{1,0}\vec{u}_{N_x} \\ 
 \end{bmatrix}_{(N_x-1)(N_y-1)\times 1}
 $$
 
@@ -227,113 +344,82 @@ $$
 K\vec{\Phi} = \vec{B} \Longrightarrow \vec{\Phi} = K^{-1}\vec{B}
 $$
 
-### MyPDESolver_2Var_Level2_Center
 
-源代码见 GitHub [here](https://github.com/YiDingg/Matlab/blob/main/MyPDESolver_2Var_Level2_Center.m)。
+## 二元二阶中心差分（DF）
 
-<details>
-<summary>示例：求解二维泊松方程</summary>
-
+这里讨论 DuFort-Frankel (DF) 格式，差分公式如下：
 $$
-\Delta u(x,y) = -2\pi^2\sin(\pi x)\sin(\pi y)\ ,\ \ (x,y) \in [0, 1]\times [0, 1] \\ 
-\mathrm{s.t.}\ u(x,0) = u(0,x) = u(0,y) = u(y,0) = 0
-$$
-
-解析解：$$u(x,y) = \sin(\pi x)\sin(\pi y)\ ,\ \ (x,y) \in [0, 1]\times [0, 1] \\ $$
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-16-17-12_MM(4)-DifferencialEquation.jpg"/></div>
-
-
-数值解（$N_x = N_y = 50$）：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-16-17-52_MM(4)-DifferencialEquation.jpg"/></div>
-
-相对误差图：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-16-28-02_MM(4)-DifferencialEquation.jpg"/></div>
-
-可以看到，相对误差的数量级仅为 $10^{-4}$，一般情况下完全可以忽略。
-
-``` matlab 
-% 定义结构体
-    PdeProblem.N_x = 50;
-    PdeProblem.N_y = 50;
-
-    PdeProblem.x_beg = 0;
-    PdeProblem.x_end = 1;
-    PdeProblem.y_beg = 0;
-    PdeProblem.y_end = 1;
-
-    PdeProblem.a = 0;
-    PdeProblem.b_x = 0;
-    PdeProblem.b_y = 0;
-    PdeProblem.c_xx = 1;
-    PdeProblem.c_yy = 1;
-    PdeProblem.PhiIsZero = false;
-    PdeProblem.phi = @(x,y) -2*pi^2*sin(pi*x).*sin(pi*y);    % 注意要用 .^ .* ./ 等符号
-    
-    PdeProblem.u_xbeg_y = @(y) 0;
-    PdeProblem.u_xend_y = @(y) 0;
-    PdeProblem.u_x_ybeg = @(x) 0;
-    PdeProblem.u_x_yend = @(x) 0;
-
-% 调用函数
-PdeProblem = MyPDESolver_2Var_Level2_Center(PdeProblem);
-MySurf(PdeProblem.X,PdeProblem.Y,PdeProblem.Result, false)
-```
-
-
-</details>
-
-<details>
-<summary>示例：求解连续介质热传导方程</summary>
-
-$$
-T_t'(t,x) = kT_{xx}''(t,x) \\ 
-\mathrm{s.t.}\ T(0,x) = T_0\ ,\ \ T(t,0) = T_1,\ T(t,x_{\mathrm{end}}) = T_2
+u_x'=\frac{1}{2h_x}(u_{i+1,j}-u_{i-1,j})\ ,\ \  
+u_y'=\frac{1}{2h_y}(u_{i,j+1}-u_{i,j-1})\\
+u_{xx}''=\frac{1}{h_x^2}(u_{i-1,j}-u_{i,j-1}-u_{i,j+1}+u_{i+1,j}) \\
+u_{yy}''=\frac{1}{h_y^2}(u_{i,j-1}-u_{i-1,j}-u_{i+1,j}+u_{i,j+1})\\ 
 $$
 
-数值解（$N_x = N_y = 50$）：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-21-47-10_MM(4)-DifferencialEquation.jpg"/></div>
+### 矩阵方程
 
-``` matlab 
-k = 2;
-% 定义结构体
-    PdeProblem.N_x = 50;
-    PdeProblem.N_y = 20;
+代入二阶线性偏微分方程，得到：
 
-    PdeProblem.x_beg = 0;
-    PdeProblem.x_end = 0.5;
-    PdeProblem.y_beg = 0;
-    PdeProblem.y_end = 1;
+$$
+\begin{align*}
+& \lambda_{-1,-1} = \lambda_{1, 1} = 0 \\
+& \lambda_{0,0}  =  a- \frac{b_x}{h_x} - \frac{2c_{xx}}{h_x^2}-\frac{2c_{yy}}{h_y^2}\\ 
+& \lambda_{-1,0} =  \frac{c_{xx}}{h_x^2}\ ,\ \ \lambda_{0,-1} =  -\frac{b_y}{2h_y} + \frac{c_{yy}}{h_y^2}\\ 
+& \lambda_{1,0}  =  \frac{b_x}{h_x} + \frac{c_{xx}}{h_x^2}\ ,\ \ \lambda_{0,1}  =  \frac{b_y}{2h_y} + \frac{c_{yy}}{h_y^2}\\ 
+\end{align*}
+$$
 
-    PdeProblem.a = 0;
-    PdeProblem.b_x = 1;
-    PdeProblem.b_y = 0;
-    PdeProblem.c_xx = 0;
-    PdeProblem.c_yy = -k;
-    PdeProblem.PhiIsZero = true;
-    PdeProblem.phi = @(x,y) 0;    % 注意要用 .^ .* ./ 等符号
-    
-    PdeProblem.u_xbeg_y = @(y) 0;
-    PdeProblem.u_xend_y = @(y) 10*y;
-    PdeProblem.u_x_ybeg = @(x) 0;
-    PdeProblem.u_x_yend = @(x) 10;
+其余推导过程与之前完全相同，不再赘述。
 
-% 调用函数
-PdeProblem = MyPDESolver_2Var_Level2_Center(PdeProblem);
-% MySurf(PdeProblem.X,PdeProblem.Y,PdeProblem.Result, false)
-MyMesh(PdeProblem.X,PdeProblem.Y,PdeProblem.Result,1);
-```
+在 $G\vec{u}_i + \lambda_{1,0}\vec{u}_{i+1} = \vec{\phi}_i + \vec{\varphi}_i$ 中依次令 $i = 0, ..., N_x-1$ 而不是之前的 $1, ..., N_x-1$，得到矩阵方程：
 
-</details>
+$$
+K\vec{U} = \vec{\Phi} \Longrightarrow \vec{U} = K^{-1}\vec{\Phi}
+$$
 
-在写 Matlab 代码时要特别注意，把求解区域离散为网格，并将函数离散值存储为 Matlab 矩阵时，矩阵的行号对应纵坐标 $y$，列号对应横坐标 $x$。相当于以矩阵的左上角建立 $Oxy$ 坐标系，向右为 $x$ 轴正方向，向下为 $y$ 轴正方向。这与通常的“行列直觉”不同。
+其中：
+$$
+\vec{U} = \begin{bmatrix}\vec{u}_{1}\\\vec{u}_{2}\\\vdots\\\vec{u}_{N_x}\end{bmatrix} =\begin{bmatrix}u_{1,1}\\u_{1,2}\\\vdots\\u_{1,N_y-1}\\u_{2,1}\\\vdots\\u_{N_x,N_y-1}\end{bmatrix}_{{\color{red}N_x}(N_y-1)\times 1}\\
+K = 
+\begin{bmatrix}
+  D_p&  O&  O&\cdots  &O &O \\
+  G&  D_p&  O&\cdots  &O  &O \\
+  O&  G&  D_p&\cdots  &O  &O \\
+  \vdots&  \vdots&  \vdots&  \ddots &\vdots  &\vdots \\
+  O&  O&  O&  \cdots&  D_p& O\\
+  O&  O&  O&  \cdots&  G&D_p
+\end{bmatrix}_{{\color{red}N_x}(N_y-1)\times {\color{red}N_x}(N_y-1)}\\ 
+\vec{\Phi} = 
+\begin{bmatrix}
+    \vec{\phi}_{\color{red}0} \\ 
+    \vec{\phi}_1 \\ 
+    \vdots \\ 
+    \vec{\phi}_{N_x-1}
+\end{bmatrix} + 
+\begin{bmatrix}
+    \vec{\varphi}_{\color{red}0} \\ 
+    \vec{\varphi}_1 \\ 
+    \vdots \\ 
+    \vec{\varphi}_{N_x-1}
+\end{bmatrix}+
+\begin{bmatrix}
+    G\vec{u}_0 \\ 
+    \vec{0} \\ 
+    \vdots \\ 
+    \vec{0}
+\end{bmatrix}_{{\color{red}N_x}(N_y-1)\times 1}
+$$
 
-例如，函数 $\phi(x,y) = x^2 + 100y$，将其在区域 $[0, 1]\times [0, 1]$ 上离散为网格，记得到的矩阵为 $A$，则`A(:,1)`对应 $x=0$，而 `A(1,:)` 对应 $y=0$的情况（Matlab 的矩阵索引从 1 开始）。 
+
 
 ## 二元二阶向前差分
 
 容易看出，不同的差分方式，仅会影响 $\lambda_{r,s},\ r,s \in \{-1,0,1\}$ 的值，其他推导完全一致。这也是为什么在中心差分的推导中，我们将其单独命名为 $\lambda_{r,s}$。
 
 在时域问题中，最终态 $t = t_{\mathrm{end}}$ 时的状态常常未知，$Otx$ 上的待求区域仅有三条边界已知，分别是 $x=x_{\mathrm{beg}}$、$x=x_{\mathrm{end}}$ 和 $t=t_{\mathrm{beg}}$（$t=t_{\mathrm{end}}$ 未知），此时无法（在 $t$ 轴上）使用中心差分。因此，在这一小节，我们考虑 $t$ 轴上向前差分而 $x$ 轴仍中心差分的情况（$u = u(t,x)$），或者说 $x$ 轴上向前差分而 $y$ 轴仍中心差分（$u = u(x,y)$）的情况。
+
+
+另外，必须指出的是，向前差分不是无条件稳定格式，需要满足稳定性条件，这要求时间步长较短，一般考虑库朗数  $ \mathrm{CFL} =  | \frac{2\lambda_{0,1}}{\lambda_{1,0}} | \leq 1 \Longleftrightarrow h_t \leq |  \frac{b_t}{2\lambda_{0,1}} |$，具体可以参考 CFL 条件（库朗数）[here](https://zhuanlan.zhihu.com/p/363699096) and [here](https://zhuanlan.zhihu.com/p/365006118)。
+
 
 ### 矩阵方程
 
@@ -365,11 +451,47 @@ $$
 \end{align*}
 $$
 
-其它与之前完全相同。必须指出的是，向前差分（也称显式）不是无条件稳定格式，需要满足稳定性条件，这要求时间步长较短，具体为 $\frac{\lambda_{0,1}}{\lambda_{1,0}} \leq \frac{1}{2} \Longleftrightarrow h_t \leq \frac{b_t}{2\lambda_{0,1}}$
+在 $G\vec{u}_i + \lambda_{1,0}\vec{u}_{i+1} = \vec{\phi}_i + \vec{\varphi}_i$ 中依次令 $i = 0, ..., N_x-1$ 而不是之前的 $1, ..., N_x-1$，得到矩阵方程：
 
-### MyPDESolver_2Var_Level2_Forward
+$$
+K\vec{U} = \vec{\Phi} \Longrightarrow \vec{U} = K^{-1}\vec{\Phi}
+$$
 
-<!-- ## 二元二阶向后差分
+其中：
+$$
+\vec{U} = \begin{bmatrix}\vec{u}_{1}\\\vec{u}_{2}\\\vdots\\\vec{u}_{N_x}\end{bmatrix} =\begin{bmatrix}u_{1,1}\\u_{1,2}\\\vdots\\u_{1,N_y-1}\\u_{2,1}\\\vdots\\u_{N_x,N_y-1}\end{bmatrix}_{{\color{red}N_x}(N_y-1)\times 1}\\
+K = 
+\begin{bmatrix}
+  D_p&  O&  O&\cdots  &O &O \\
+  G&  D_p&  O&\cdots  &O  &O \\
+  O&  G&  D_p&\cdots  &O  &O \\
+  \vdots&  \vdots&  \vdots&  \ddots &\vdots  &\vdots \\
+  O&  O&  O&  \cdots&  D_p& O\\
+  O&  O&  O&  \cdots&  G&D_p
+\end{bmatrix}_{{\color{red}N_x}(N_y-1)\times {\color{red}N_x}(N_y-1)}\\ 
+\vec{\Phi} = 
+\begin{bmatrix}
+    \vec{\phi}_{\color{red}0} \\ 
+    \vec{\phi}_1 \\ 
+    \vdots \\ 
+    \vec{\phi}_{N_x-1}
+\end{bmatrix} + 
+\begin{bmatrix}
+    \vec{\varphi}_{\color{red}0} \\ 
+    \vec{\varphi}_1 \\ 
+    \vdots \\ 
+    \vec{\varphi}_{N_x-1}
+\end{bmatrix}+
+\begin{bmatrix}
+    G\vec{u}_0 \\ 
+    \vec{0} \\ 
+    \vdots \\ 
+    \vec{0}
+\end{bmatrix}_{{\color{red}N_x}(N_y-1)\times 1}
+$$
+
+
+## 二元二阶向后差分
 
 ### 矩阵方程
 
@@ -394,11 +516,51 @@ $$
 $$
 \begin{align*}
 & \lambda_{-1,-1} = \lambda_{1, 1} =  0\\ 
-& \lambda_{0,0}  =  a- \frac{b_x}{h_x} -\frac{2c_{yy}}{h_y^2}\\ 
-&  \lambda_{-1,0} = 0\ ,\ \ \lambda_{0,-1} =  -\frac{b_y}{2h_y} + \frac{c_{yy}}{h_y^2}\\ 
-& \lambda_{1,0}  =  \frac{b_x}{h_x}\ , \ \ \lambda_{0,1}  =  \frac{b_y}{2h_y} + \frac{c_{yy}}{h_y^2}\\ 
+& \lambda_{0,0}  =  a + \frac{b_x}{h_x} -\frac{2c_{yy}}{h_y^2}\\ 
+&  \lambda_{-1,0} = \frac{b_x}{h_x}\ ,\ \ \lambda_{0,-1} =  -\frac{b_y}{2h_y} + \frac{c_{yy}}{h_y^2}\\ 
+& \lambda_{1,0}  =  0 \ , \ \ \lambda_{0,1}  =  \frac{b_y}{2h_y} + \frac{c_{yy}}{h_y^2}\\ 
 \end{align*}
-$$ -->
+$$
+
+在 $\lambda_{-1,0}\vec{u}_{i-1} + G\vec{u}_i = \vec{\phi}_i + \vec{\varphi}_i$ 中依次令 $i = 1,...,N_x$，得到矩阵方程： 
+
+$$
+K\vec{U} = \vec{\Phi} \Longrightarrow \vec{U} = K^{-1}\vec{\Phi}
+$$
+
+其中：
+$$
+\vec{U} = \begin{bmatrix}\vec{u}_{1}\\\vec{u}_{2}\\\vdots\\\vec{u}_{N_x}\end{bmatrix} =\begin{bmatrix}u_{1,1}\\u_{1,2}\\\vdots\\u_{1,N_y-1}\\u_{2,1}\\\vdots\\u_{N_,N_y-1}\end{bmatrix}_{{\color{red}N_x}(N_y-1)\times 1} \\
+K = 
+\begin{bmatrix}
+  G&  O&  O&\cdots  &O &O \\
+  D_m&  G&  O&\cdots  &O  &O \\
+  O&  D_m&  G&\cdots  &O  &O \\
+  \vdots&  \vdots&  \vdots&  \ddots &\vdots  &\vdots \\
+  O&  O&  O&  \cdots&  G& O\\
+  O&  O&  O&  \cdots&  D_m&G
+\end{bmatrix}_{{\color{red}N_x}(N_y-1)\times {\color{red}N_x}(N_y-1)}\\ 
+\vec{\Phi} = 
+\begin{bmatrix}
+    \vec{\phi}_{\color{red}1} \\ 
+    \vec{\phi}_2 \\ 
+    \vdots \\ 
+    \vec{\phi}_{N_x}
+\end{bmatrix} + 
+\begin{bmatrix}
+    \vec{\varphi}_{\color{red}1} \\ 
+    \vec{\varphi}_2 \\ 
+    \vdots \\ 
+    \vec{\varphi}_{N_x}
+\end{bmatrix}+
+\begin{bmatrix}
+    -\lambda_{-1,0}\vec{u}_0 \\ 
+    \vec{0} \\ 
+    \vdots \\ 
+    \vec{0}
+\end{bmatrix}_{{\color{red}N_x}(N_y-1)\times 1}
+$$
+
 
 ## pdepe() 函数
 
@@ -406,7 +568,8 @@ $$ -->
 
 ## References 
 
-知乎：
+
+- [x] [Stable Explicit Schemes For Simulation of Nonlinear Moisture Transfer in Porous Materials](https://arxiv.org/pdf/1701.07059)
 - [x] [微分方程数值求解——有限差分法](https://zhuanlan.zhihu.com/p/411798670)
 - [x] [微分方程数值解法1.1:有限差分方法_定义与误差分析](https://zhuanlan.zhihu.com/p/353590423)
 - [x] [数值计算（三）matlab pdepe()函数 求解一般的偏微分方程组](https://zhuanlan.zhihu.com/p/110277324)
@@ -414,5 +577,7 @@ $$ -->
 - [x] [数值计算（五十二）一维连续介质热传导方程](https://zhuanlan.zhihu.com/p/239710629)
 - [x] [数值计算（七十九）matlab求解复杂偏微分方程](https://zhuanlan.zhihu.com/p/675966238)
 - [x] [数学物理方程 - 第二章 热传导方程](https://zhuanlan.zhihu.com/p/260066673)
+- [x] [PDE有限差分方法(6)——热传导方程的双层格式与三层格式](https://zhuanlan.zhihu.com/p/129681229)
+- [x] [CFD理论|什么是库朗数](https://zhuanlan.zhihu.com/p/363699096)
+- [x] [CFD理论|库朗数应用](https://zhuanlan.zhihu.com/p/365006118)
 
-论文：
