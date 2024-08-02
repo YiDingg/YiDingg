@@ -227,6 +227,7 @@ f2 = @(x) a1*sin(b1*x+c1) + a2*sin(b2*x+c2)
 MyPlot(Appendix(:,1)', [Appendix(:,2)'; T_sx(linspace(0, X(end), si(1)));f(fitX);f2(fitX)], ["$t/ \mathrm{s}$"; "$T_s(t)/ \mathrm{K}$"])
 ```
 
+我们又先后尝试了 DF 格式、Euler 向前差分和向后差分，但结果都不尽人意。
 
 事实上，我们完全可以将其看作 $0$ 维温度点，即整个焊接区域温度一致，仅依靠牛顿冷却定律 $T'(t) = k(T(t) - T_s(t))$ 与外界发生热交换，其中系数 $k$ 需要通过最优化得到。
 

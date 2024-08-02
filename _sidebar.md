@@ -68,7 +68,7 @@
   - Cpp
     - [Cpp笔记 (0)：准备](Notes/Cpp/CppNotes(0)-Preparation.md)
   - Matlab
-    - [Matlab Notes(1): Preparation](Notes/Matlab/MatlabNotes(0)-Preparation.md)
+    - [Matlab Notes(0): Preparation](Notes/Matlab/MatlabNotes(0)-Preparation.md)
     - [Matlab Notes(1): Graphics](Notes/Matlab/MatlabNotes(1)-Graphics.md)
     - [Matlab Notes(2): Mathematics](Notes/Matlab/MatlabNotes(2)-Mathematics.md)
     - [Matlab Notes(3): Symbolic Math](Notes/Matlab/MatlabNotes(3)-SymbolicMath.md)
