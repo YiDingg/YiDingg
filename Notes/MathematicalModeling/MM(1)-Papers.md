@@ -141,11 +141,11 @@ legend("炉内温度曲线")
 
 ### 问题一
 
-在问题一，焊接区域整体与外界的热交换由牛顿冷却定律给出，焊接区域内部的热交换由热传导定律给出。显然，这是一个偏微分方程问题，几乎无法得出解析解，所以考虑数值解。算上时间变量 $t$，如果将焊接区域视为二维薄片，则为三变元（三维）偏微分方程，这是不易求解的。因此，我们希望能将焊接区域近似为一维细棒，这要求我们验证温度传导率远大于温度变化率。这样，此后便不再区分焊接区域与焊接区域中心，在求解和分析时也具有了更强的可行性。
+在问题一，焊接区域整体与外界的热交换由牛顿冷却定律给出，焊接区域内部的热交换由热传导定律给出。显然，这是一个偏微分方程问题，几乎无法得出解析解，所以考虑数值解。算上时间变量 $t$，如果将焊接区域视为二维薄片，则为三变元（三维）偏微分方程，这是不易求解的。因此，我们希望能将焊接区域近似为一维细棒，这要求我们验证温度传导率远大于温度变化率（不验证问题也不大）。这样，此后便不再区分焊接区域与焊接区域中心，在求解和分析时也具有了更强的可行性。
 
-给定了过炉速度 $v$，相当于给定了炉内温度曲线 $T(t)$，也即微分方程的边界条件，再算上初始条件，可求此二维 PDE 数值解。
+给定了过炉速度 $v$，相当于给定了炉内温度曲线 $T(t)$，也即微分方程的边界条件，再算上初始条件和边界条件（将炉内温度曲线视为边界条件），可求此二维 PDE 数值解。
 
-在求解二维热传导方程时发现结果不稳定，于是利用函数拟合来观察中心温度变化趋势： 
+在求解二维热传导方程时发现结果不稳定，于是利用函数拟合来观察焊接区域中心温度曲线： 
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-31-01-00-35_MM(1)-Papers.png"/></div> -->
 
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-31-01-04-15_MM(1)-Papers.png"/></div> -->
@@ -229,9 +229,96 @@ MyPlot(Appendix(:,1)', [Appendix(:,2)'; T_sx(linspace(0, X(end), si(1)));f(fitX)
 
 我们又先后尝试了 DF 格式、Euler 向前差分和向后差分，但结果都不尽人意。
 
-事实上，我们完全可以将其看作 $0$ 维温度点，即整个焊接区域温度一致，仅依靠牛顿冷却定律 $T'(t) = k(T(t) - T_s(t))$ 与外界发生热交换，其中系数 $k$ 需要通过最优化得到。
+然后便是最优化参数 $k$，以拟合函数值与附录数据的残差平方和为目标函数（除以样本总数即为方差），最小化目标函数以得到最优参数 $k$。为了方便最优化操作，不妨以残差平方和的相反数作为目标函数，然后在实数域上最大化目标函数即可。
 
-优秀论文 A07 在这里有一个闪光点，由附录所给数据，作 $k = \frac{T'(t)}{T(t) - T_s(t)}$ 图像，可以发现 $k$ 并不是常数，但可以分段视为常数。因此在不同的区间内，可以认为 $k$ 的值不同，这样优化后得到的 $k = k(x)$ 便能更好的符合附录所给数据。
+优秀论文 A07 在这里有一个闪光点，由附录所给数据，作 $k = \frac{T'(t)}{T(t) - T_s(t)}$ 图像，可以发现 $k$ 并不严格是常数，但可以分段视为常数。因此在不同的区间内，可以认为 $k$ 的值不同，这样优化后得到的 $k = k(x)$ 便能更好的符合附录所给数据。虽然在热传导方程中，我们无法依据附录数据作出 $k = \frac{T_t'}{T_{xx}''}$ 的图像，但我们也可以有类似的思路，将 $k$ 分为多段，在每段中都视为常量。
+
+$k$ 在整个区间上为常数时，由模拟退火和网格法分别得到（数据拟合分别采用傅里叶、高斯和正弦）：
+
+模拟退火：
+$$
+k_{\mathrm{best,sin}} = 1.9991 \times 10^{-5}\, \ \ obj_{\mathrm{best,sin}} = -40296.116 \\
+k_{\mathrm{best,gauss}} = 2.2041 \times 10^{-5}\, \ \ obj_{\mathrm{best,gauss}} = -46318.0169 \\
+k_{\mathrm{best,fourier}} = 2.1013 \times 10^{-5}\, \ \ obj_{\mathrm{best,fourier}} = -80014.7308
+$$
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-03-23-24-48_MM(1)-Papers.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-04-00-41-26_MM(1)-Papers.png"/></div>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-04-00-42-32_MM(1)-Papers.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-04-00-47-40_MM(1)-Papers.png"/></div>
+
+网格法：
+$$
+k_{\mathrm{best,sin}} = 1.96 \times 10^{-5}\, \ \ obj_{\mathrm{best,sin}} = -40469.4337 \\
+k_{\mathrm{best,gauss}} = 2.212 \times 10^{-5}\, \ \ obj_{\mathrm{best,gauss}} = -35844.81 \\
+k_{\mathrm{best,fourier}} = 2.1013 \times 10^{-5}\, \ \ obj_{\mathrm{best,fourier}} = -80014.7308
+$$
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-04-20-30-32_MM(1)-Papers.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-04-20-28-59_MM(1)-Papers.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-04-20-29-37_MM(1)-Papers.png"/></div>
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-03-22-54-54_MM(1)-Papers.png"/></div> -->
+
+
+
+将 $k$ 分为三段时（区间），由模拟退火和网格法分别得到（热传导方程的 $k$ 分为三段时，有限差分法的结果及其不稳定，难以实现，以后有机会再尝试）。
+
+这样就完成了模型建立，问题一的主要内容也到此结束。
+
+问题一另外一种思路是（类似优秀论文 A07），将焊接区域直接看作 $0$ 维温度点，即整个焊接区域温度一致，仅依靠牛顿冷却定律 $T'(t) = k(T_s(t) - T(t))$ 与外界发生热交换（炉内温度即为环境温度），利用 `ODEs` 函数解此常微分方程，并最优化得到系数 $k$。
+
+下面的内容仅采用高斯拟合进行计算。
+
+依据附录数据作出 $k = \frac{T'(t)}{T_s(t) - T(t)}$ 的图像：
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-04-01-01-37_MM(1)-Papers.png"/></div>
+ -->
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-04-21-01-24_MM(1)-Papers.png"/></div>
+
+$k$ 在整个区间上为常数时，由模拟退火得到（高斯拟合）：
+
+$$
+k_{\mathrm{best,gauss}} = 0.017238\, \ \ obj_{\mathrm{best,gauss}} = -31183.7644
+$$
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-04-21-20-07_MM(1)-Papers.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-04-21-21-14_MM(1)-Papers.png"/></div>
+
+由网格搜索得到：
+
+$$
+k_{\mathrm{best,gauss}} = 0.0176\, \ \ obj_{\mathrm{best,gauss}} = -33944.8928
+$$
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-04-21-25-46_MM(1)-Papers.png"/></div>
+
+将 $k$ 分为三段时（炉前及温区 1 ~ 5，温区 6 ~ 9，温区 10 ~ 11 及炉后），由模拟退火得到（正弦拟合，耗时约 30 s）：
+
+$$
+k_{\mathrm{best,sin}} = [0.015246, 0.02154, 0.01866]\, \ \ obj_{\mathrm{best,sin}} = -19466.0694
+$$
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-04-22-09-40_MM(1)-Papers.png"/></div>
+
+由网格搜索得到：
+
+$$
+k_{\mathrm{best,sin}} = [0.0154, 0.022, 0.0184]\, \ \ obj_{\mathrm{best,sin}} = -19933.614
+$$
+
+``` matlab 
+---------------------------------
+>> --------  网格搜索  -------- <<
+总计算次数：9261
+历时 10675.887018 秒。
+最优参数：0.0154       0.022      0.0184
+最优目标值：-19933.614
+>> --------  网格搜索  -------- <<
+---------------------------------
+```
+
+可以明显的看到，模拟退火与网格搜索效率上的差异，前者花 30 s 得到的结果甚至要优于后者花 10676 s = 178 min 的结果。
 
 ### 问题二
 
