@@ -233,6 +233,8 @@ ans = 3×1
 
 ### 模拟退火
 
+最新源代码见 GitHub： [here](https://github.com/YiDingg/Matlab/blob/main/MySimulatedAnnealing.m)
+
 ``` matlab 
 function stc = MySimulatedAnnealing(stc, objective)
 % 输入退火问题结构体，输出迭代结果。
@@ -326,8 +328,6 @@ end
 <!-- details begin -->
 <details>
 <summary>示例1：国赛 2022-A 问题四</summary>
-
-自定义函数稍有修改，建议使用示例2中的代码。
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-24-22-52-27_MM(2)-Optimization.png"/></div>
 
@@ -548,187 +548,147 @@ end
 
 <!-- details begin -->
 <details>
-<summary>示例2：y = sin(x)^2/((x-1)^2 + 0.001) 的最大值</summary>
+<summary>示例2：求一元函数在给定区间的最大值</summary>
+
+$$
+\min_{x \in [0.5, 1.5]} f\left(x\right) = \frac{sin(x)^2}{(x-1)^2 + 0.001}
+$$
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-24-23-21-05_MM(2)-Optimization.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-24-23-21-10_MM(2)-Optimization.png"/></div>
 
-```matlab
+``` matlab 
+clc,clear
 g = @(x) sin(x).^2./((x-1).^2 + 0.001);
 X = 0.9:0.001:1.1;
 Y = g(X);
 MyPlot(X,g(X),['X';'Y'])
 export_fig(gcf , '-p0.02','-png' , '-r330' , '-painters' , 'C:/Users/13081/Desktop/Test_Matlab/MyPlot_Example');
 
-stc.Var.num = 1; % 一个参数
-stc.Var.range(1,:) = [0.90 1.10];
-stc.Init = [0, 0];
-stc.Annealing.T0 = 100;        % 初始温度
-stc.Annealing.lam = 0.1;         % TK 前的概率系数（一般为0.1即可）
-stc.Annealing.a = 0.97;        % 降温系数
-stc.Annealing.t0 = 1;         % 停止温度
-stc.Annealing.mkvlength = 3;   % 马尔科夫链长度
+Struct_SA.Var.num = 1; % 一个参数
+Struct_SA.Var.range = [0.5 1.5 0.6];
+Struct_SA.Annealing.T0 = 100;        % 初始温度
+Struct_SA.Annealing.a = 0.97;        % 降温系数
+Struct_SA.Annealing.t0 = 1;         % 停止温度
+Struct_SA.Annealing.mkvlength = 6;   % 马尔科夫链长度
 
-stc = MySimulatedAnnealing(stc, @objective);
-
-% export_fig(gcf , '-p0.02','-png' , '-r250' , '-painters' , 'C:/Users/13081/Desktop/Test_Matlab/MySimulatedAnnealing_2');
-
-function f = objective(x)
-    f = sin(x)^2/((x-1)^2 + 0.001);
-end
-
-function stc = MySimulatedAnnealing(stc, objective)
-% 输入退火问题结构体，输出迭代结果。
-% 输入参数：
-    % stc：退火问题结构体
-        % stc.Var：迭代参数信息
-            % stc.Var.num：迭代参数个数
-            % stc.Var.var1range：参数 1 的范围
-            % stc.Var.var2range：参数 2 的范围
-            % ...
-        % stc.Init：迭代参数初始值
-        % stc.Annealing：退火参数
-            % stc.Annealing.T0 = 100;        % 初始温度
-            % stc.Annealing.a = 0.97;        % 降温系数
-            % stc.Annealing.t0 = 1;         % 停止温度
-            % stc.Annealing.mkvlength = 1;   % 马尔科夫链长度
-% 输出：迭代结果
-
-    % 步骤一：初始化
-        TK = stc.Annealing.T0;
-        t0 = stc.Annealing.t0;
-        mkv = stc.Annealing.mkvlength;
-        a = stc.Annealing.a;
-        lam = stc.Annealing.lam;
-        f_best = 0;
-        change_1 = 0;    % 随机到更优解的次数
-        change_2 = 0;    % 接收较差解的次数（两者约 10:1 时有较好寻优效果）
-        mytry = 0;       % 当前迭代次数
-        N = mkv*log(t0/TK)/log(a);   % 迭代总次数
-        X = zeros(1, stc.Var.num); 
-        % 迭代记录仪初始化
-        X_best = zeros(1, stc.Var.num); 
-        process = zeros(1, floor(N));
-        process_change = zeros(1, floor(N));
-        
-
-    % 步骤二：退火
-        disp("初始化完成，开始退火")
-        tic; % 开始计时
-        while TK >= t0   
-            for i = 1:mkv  % 每个温度T下，我们都寻找 mkv 次新解 X，每一个新解都有可能被接受
-                r = rand;
-                if r>=0.5 % 在当前较优解附近扰动
-                    for j = 1:stc.Var.num
-                        X(j) = X_best(j)+(rand-0.5)*(stc.Var.range(:,2) - stc.Var.range(:,1));
-                        X(j) = max(stc.Var.range(j,1), min(X(j), stc.Var.range(j,2)));   % 确保扰动后的 X 仍在范围内
-                    end
-                else % 生成全局随机解
-                    X = rand*(stc.Var.range(:,2) - stc.Var.range(:,1))';  % 转置后才是行向量   
-                end
-                f = objective(X); % 计算目标函数
-                mytry = mytry+1;
-                if f > f_best   % 随机到更优解，接受新解
-                   f_best = f;
-                   X_best = X;
-                   change_1 = change_1+1;
-                   % disp(['较优参数为：',num2str(X_best)])
-                   disp(['    新目标值：',num2str(f_best)])
-                elseif exp((f-f_best)/(lam*TK)) > rand  % 满足概率，接受较差解
-                   f_best = f;
-                   X_best = X;
-                   % disp(['较优参数为：',num2str(X_best)])
-                   disp(['    新目标值：',num2str(f_best)])
-                   change_2 = change_2 + 1;
-                end
-                process(mytry) = f;
-                process_change(mytry) = f_best;
-            end
-            disp(['当前进度:',num2str((mytry-1)/N*100),'%'])
-            TK = TK*a;
-        end
-        time = toc; % 结束计时
-
-    % 步骤三：退火结束，输出最终结果
-        stc.process = process;
-        stc.process_change = process_change;
-        MyPlot(1:length(process),[process; process_change], ["times"; "objective"])
-        disp('---------------------------------')
-        disp(['此次退火用时(s)：',num2str(time)])
-        disp(['一共寻找新解：',num2str(mytry)])
-        disp(['change_1次数：',num2str(change_1)])
-        disp(['change_2次数：',num2str(change_2)])
-        disp('最优参数为：')
-        disp(num2str(X_best))
-        disp(['此参数下的目标函数值：',num2str(f_best)])
-        disp('---------------------------------')
-end
-
-function MyPlot(XData, YData, XYLabel)
-% 给定数据，作出 2-D 函数图像（注意输入的是行向量！）
-% 输入：
-    % XData：（所有数据共用的）横坐标，应为 1*n 行向量
-    % YData：每一行代表一条线，应为 m*n 矩阵，其中 m 为数据线总条数
-% 输出：图像
-
-    % 准备参数
-    MyColor = [
-      [0 0 1]   % 蓝色
-      [1 0 1]   % 粉色
-      [0 1 0]   % 绿色 
-      [1 0 0]   % 红色 
-      [0 0 0]   % 黑色 
-    ];
-    m = length(YData(:,1));
-
-    % 创建图窗
-    Myfigure = figure('NumberTitle','off','Name','MyPlot','Color',[1 1 1]);
-    Myaxes = axes('Parent',Myfigure);   
-    hold(Myaxes,'on');
-
-    % 作图
-    for i = 1:1:m
-        line = plot(XData, YData(i,:));
-        % 设置样式
-        line.LineWidth = 1.3;
-        line.Marker = '.';
-        line.MarkerSize = 7;
-        line.Color = MyColor(i,:);
-    end
-
-
-    % 设置样式
-    % title(Myaxes,'Title here, $y = f(x)$','Interpreter','latex')
-    xlabel(Myaxes, XYLabel(1,:),'Interpreter','latex')
-    ylabel(Myaxes, XYLabel(2,:),'Interpreter','latex')
-    % Myaxes.GridLineStyle = '--';
-    % Myle = legend(Myaxes,'$y_1 = sin(x)$','$y_2 = cos(x)$','$y_3 = cos(\frac{x^2}{5})$','Interpreter', 'latex', 'Location', 'best');
-    Myle = legend(Myaxes, 'Location', 'best');
-    Myle.FontSize = 11;
-    Myle.FontName = "TimesNewRoman";
-    grid(Myaxes,"on") % show the grid
-    axis(Myaxes,"padded") % show the axis
-    % set(Myaxes, 'YLimitMethod','padded', 'XLimitMethod','padded')
-            
-    % 收尾
-    hold(Myaxes,'on');
-end
-
-
-% output:
----------------------------------
-此次退火用时(s)：0.0048913
-一共寻找新解：456
-change_1次数：8
-change_2次数：2
-最优参数为：
-1.0009
-此参数下的目标函数值：708.3334
----------------------------------
+Struct_SA = MySimulatedAnnealing(Struct_SA, @(x) sin(x)^2/((x-1)^2+0.001));
+vpa(Struct_SA.X_best)
 ```
+
 </details>
 
 ### 网格搜索
+
+网格搜索虽然具有普适性，但在参数数目增多时，所需时间急剧增加，因此需谨慎使用。
+
+<!-- details begin -->
+<details>
+<summary>示例 1：求一元函数在给定区间的最大值</summary>
+
+$$
+\min_{x \in [0.5, 1.5]} f\left(x\right) = \frac{sin(x)^2}{(x-1)^2 + 0.001}
+$$
+
+``` matlab 
+clc,clear,close all
+obj1 = @(x) sin(x).^2./((x-1).^2 + 0.001);
+GridSearch.Var = [
+    0.9 1.1 1000
+];
+[GridSearch, figure] = MyGridSearch(GridSearch, obj1, 0);
+% export_fig(figure.fig , '-p0.02','-png' , '-r250' , '-painters' , 'C:/Users/13081/Desktop/Test_Matlab/test');
+
+% output: 
+---------------------------------
+>> --------  网格搜索  -------- <<
+总计算次数：1001
+历时 0.002452 秒。
+最优参数：1.0006
+最优目标值：708.3638
+>> --------  网格搜索  -------- <<
+---------------------------------
+```
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-04-20-07-58_MM(2)-Optimization.png"/></div>
+
+</details>
+
+<!-- details begin -->
+<details>
+<summary>示例 2：求二元函数在给定区间的最大值</summary>
+
+$$
+\min_{[x, y] \in [0, 2]\times[0, 2]} f\left(x, y\right) = \pi \sin(x^2+y)\ln(x+y)
+$$
+
+
+
+``` matlab 
+clc,clear,close all
+obj2 = @(x,y)pi*sin(x^2+y)*log(x+y);
+GridSearch.Var = [
+    0 2 40
+    0 2 40
+];
+[GridSearch, figure] = MyGridSearch(GridSearch, obj2, 0);
+export_fig(figure.fig , '-p0.02','-jpg' , '-r130' , '-painters' , 'C:/Users/13081/Desktop/Test_Matlab/MyGridSearch2');
+export_fig(figure.fig , '-p0.02','-png' , '-r130' , '-painters' , 'C:/Users/13081/Desktop/Test_Matlab/MyGridSearch2');
+
+% output: 
+---------------------------------
+>> --------  网格搜索  -------- <<
+总计算次数：1681
+历时 0.002336 秒。
+最优参数：0.5        1.75
+最优目标值：2.3219
+>> --------  网格搜索  -------- <<
+---------------------------------
+```
+
+</details>
+
+<!-- details begin -->
+<details>
+<summary>示例 3：求四元函数在给定区间的最大值</summary>
+
+$$
+\min_{x,y,z,t \in [0, 2]} f\left(x,y,z,t\right) = (x-1)^2 + (y-2)^2 + z^2 + (t-1)^2
+$$
+
+``` matlab 
+clc,clear,close all
+obj4 = @(x,y,z,t) (x-1)^2 + (y-2)^2 + z^2 + (t-1)^2;
+GridSearch.Var = [
+    0 2 10
+    0 2 10
+    0 2 10
+    0 2 10
+];
+GridSearch = MyGridSearch(GridSearch, obj4, 1);
+
+% output: 
+进度：9.0909%
+进度：18.1818%
+进度：27.2727%
+进度：36.3636%
+进度：45.4545%
+进度：54.5455%
+进度：63.6364%
+进度：72.7273%
+进度：81.8182%
+进度：90.9091%
+进度：100%
+---------------------------------
+>> --------  网格搜索  -------- <<
+总计算次数：14641
+历时 0.005525 秒。
+最优参数：0  0  2  0
+最优目标值：10
+>> --------  网格搜索  -------- <<
+---------------------------------
+```
+
+</details>
 
 ### 遗传算法
 

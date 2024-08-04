@@ -45,8 +45,9 @@
 
     - [光学笔记大纲](Notes/Optics/OpticsNotes(0)-Preparation.md)
     - [光学笔记 (1)：](Notes/Optics/OpticsNotes(1)-.md)
+  - Numerical Methods for PDE
+    - [NMFPDE(0)-Preparation](Notes/NumericalMethodsForPDE/NMFPDE(0)-Preparation.md)
   - Math
-
     - [Calculus 1](Notes/Math/Calculus1Notes.md)
     - [Calculus 2](Notes/Math/Calculus2Notes.md)
     - [Linear Algebra 1](Notes/Math/LinearAlgebra1Notes.md)

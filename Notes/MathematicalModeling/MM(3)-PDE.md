@@ -1,10 +1,12 @@
-# Mathematical Modeling (4): Differencial Equation
+# Mathematical Modeling (3): PDE
 
 考虑到数学建模得到的微分方程（组）常常具有不平凡的初始条件和边界条件，通常难以求得解析解，因此本文着重考虑微分方程的数值解。
 
-利用 Matlab 求数值解，我们有多种方法。例如，手动实现有限差分算法、利用 Matlab 的 `ode` 函数求解 ODE、利用 Matlab 的 `pdepe` 函数求解 PDE、利用 pdetool 工具箱等。
+利用 Matlab 求数值解，我们有多种方法。例如，手动实现有限差分算法、利用 Matlab 的 `ode` 函数求解 ODE、利用 Matlab 的 `pdepe` 函数求解 PDE、利用 pdetool 工具箱等。`ode`函数、`pdepe` 函数和 pdetool 工具箱能够解决的问题较为有限，有限差分法更为普适，也是我们重点关注的对象。下面先给出已经构建的 Matlab 函数，实现原理见后文。
 
-`ode`函数、`pdepe` 函数和 pdetool 工具箱能够解决的问题十分有限，有限差分法更为普适，也是我们重点关注的对象。下面先给出已经构建的 Matlab 函数，实现原理见后文。
+文章理论主要参考了书籍[《科学计算中的偏微分方程数值解法 (张文生)》](https://www.writebug.com/static/uploads/2024/8/4/ce21a47157bfcba5b44bf27dbfa9fb1c.pdf)、[《偏微分方程数值解法 (陆金甫)》 ](https://www.writebug.com/static/uploads/2024/8/4/f70d655ff4aed3522498fa632f42d7fe.pdf)和知乎，参考资料详见 References 一节。
+
+介于有限差分法的理论较为繁杂，后续我们会在专栏 Numerical Methods for PDE 中讨论。
 
 ## Matlab 有限差分法 
 
@@ -745,13 +747,13 @@ K =
 \end{bmatrix}_{{\color{red}N_x}(N_y-1)\times 1}
 $$
 
-
-## pdepe() 函数
-
-## pdetool 工具箱
+## PDE Toolbox
+Official link [here](https://www.mathworks.com/help/pde/index.html?s_tid=CRUX_lftnav)
 
 ## References 
 
+- [科学计算中的偏微分方程数值解法 (张文生)](https://www.writebug.com/static/uploads/2024/8/4/ce21a47157bfcba5b44bf27dbfa9fb1c.pdf)
+- [偏微分方程数值解法 (陆金甫) ](https://www.writebug.com/static/uploads/2024/8/4/f70d655ff4aed3522498fa632f42d7fe.pdf)
 
 - [x] [Stable Explicit Schemes For Simulation of Nonlinear Moisture Transfer in Porous Materials](https://arxiv.org/pdf/1701.07059)
 - [x] [微分方程数值求解——有限差分法](https://zhuanlan.zhihu.com/p/411798670)
