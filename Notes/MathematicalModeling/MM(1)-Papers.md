@@ -57,6 +57,8 @@ $$
 
 ### 概览
 
+- 主题：炉温曲线
+- 重点：PDE、ODE、最优化
 - 时间：2023年11月（自研）
 - 重做时间：2024年7月（自研）
 - 赛题：[CUMCM 2020-A 赛题.docx](https://www.writebug.com/static/uploads/2024/7/27/f2103d42290b446d13197930ec1c9258.docx)
@@ -294,7 +296,7 @@ $$
 将 $k$ 分为三段时（炉前及温区 1 ~ 5，温区 6 ~ 9，温区 10 ~ 11 及炉后），由模拟退火得到（正弦拟合，耗时约 30 s）：
 
 $$
-k_{\mathrm{best,sin}} = [0.015246, 0.02154, 0.01866]\, \ \ obj_{\mathrm{best,sin}} = -19466.0694
+k_{\mathrm{best,sin}} = [0.015046, 0.02284, 0.01845]\, \ \ obj_{\mathrm{best,sin}} = -19675.5288
 $$
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-04-22-09-40_MM(1)-Papers.png"/></div>
@@ -316,15 +318,102 @@ $$
 ---------------------------------
 ```
 
-可以明显的看到，模拟退火与网格搜索效率上的差异，前者花 30 s 得到的结果甚至要优于后者花 10676 s = 178 min 的结果。
+可以明显的看到，模拟退火与网格搜索效率上的差异，前者花约 100 s 得到的结果甚至要优于后者花 10676 s = 178 min 的结果。
 
 这样就完成了模型建立，问题一的主要内容也到此结束。对于问题一最后需要的数据，利用 `writematrix` 函数可以方便实现。
+
+### 问题一（补充）
+
+在上面的模型中，我们设置 ode 解算时间为 $[0 t_{end}]$，这只能得到一个可以接受的结果，勉强达到我们的要求：
+
+$$
+k_{\mathrm{best,sin}} = [0.015046    0.02284     0.01845]\, \ \ obj_{\mathrm{best,sin}} = -19675.5288 \\ 
+残差平方和\  \mathrm{SSE} = 19675.5288, \ 决定系数\  \mathrm{R^2}= 0.9900, \ 平均绝对误差 \ \mathrel{MAE} = 3.4605\  \mathrm{K}
+$$
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-05-21-41-20_MM(1)-Papers.png"/></div>
+
+``` matlab 
+---------------------------------
+历时 275.751771 秒。
+一共寻找新解：339
+change_1次数：18
+change_2次数：1
+最优参数为：
+0.015046    0.02284     0.01845
+此参数下的目标函数值：-19675.5288
+---------------------------------
+```
+
+为了建立更精确的模型，我们在保持离散单元数不变的情况下，将 ode 的初始时间和温度调整为附录数据的初始时间和温度，重新计算后得到：
+
+$$
+k_{\mathrm{best,sin}} = [0.017156    0.022332    0.018784]\, \ \ obj_{\mathrm{best,sin}} = -6576.4258 \\ 
+残差平方和\  \mathrm{SSE} = 6576.4258, \ 决定系数\  \mathrm{R^2}= 0.9966, \ 平均绝对误差 \ \mathrel{MAE} = 2.1833\  \mathrm{K}
+$$
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-05-21-51-01_MM(1)-Papers.png"/></div>
+
+``` matlab 
+---------------------------------
+历时 268.586637 秒。
+一共寻找新解：339
+change_1次数：14
+change_2次数：0
+最优参数为：
+0.017156    0.022332    0.018784
+此参数下的目标函数值：-6576.4258
+---------------------------------
+```
+
+显然，后者的结果更优，从图像上可以明显看出这一点。
 
 ### 问题二
 
 毋庸置疑，问题一中采用牛顿冷却定律的方式结果更优，在之后的问题中，我们都基于牛冷进行操作。
 
+对于任意给定的锅炉速度 $v$，检查其是否满足制程界限：
+
+- 依据 $v$ 和问题一中的 $k$，计算出环境温度 $T_s(t)$ 和炉温曲线 $T(t)$
+- 峰值温度：  $\mathrm{Logic_1} = (240 \mathrm{°C}<T_{\mathrm{max}}\  \&\ T_{\mathrm{max}} <250 \mathrm{°C})$
+- 导函数：$\mathrm{Logic_2} = \mathrm{prod}( -3 \mathrm{°C/s}<T'(t)\  \&\ T'(t) <3 \mathrm{°C/s})$
+- 150 °C ~ 190 °C 时间范围（上升）：$\mathrm{Logic_3} = (60\  \mathrm{s}<\mathrm{range_1}\  \&\ \mathrm{range_1} <120\ \mathrm{s})$
+- $>$ 217 °C 时间范围：$\mathrm{Logic_4} = (40\  \mathrm{s}<\mathrm{range_2}\  \&\ \mathrm{range_2} <90\ \mathrm{s})$
+- 最后取 $\mathrm{Logic} = \prod_{i=1}^4 \mathrm{Logic_i}$，即为是否满足制程界限的逻辑值。
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-05-17-44-13_MM(1)-Papers.png"/></div>
+
+先设定速度范围为 $v \in [50\  \mathrm{cm/min}, 100\  \mathrm{cm/min}]$，步长为 $0.05$ 进行搜索，锁定最大过炉速度所在区间为 [69.5, 72.5]。然后再对该区间进行搜索，步长设置 $0.01$，最终得到最大过炉速度 $v_{\mathrm{max}} = 71.61\  \mathrm{cm/min}$。
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-05-17-58-42_MM(1)-Papers.png"/></div>
+
 ### 问题三
+
+本题需要对炉温曲线进行积分，一种算法是进行离散积分，直接用 ODEs 解得的炉温曲线向量值进行积分，另一种是对拟合曲线进行积分。我们在问题一中建立的模型便是得到拟合曲线，因此这里采用后者。
+
+最优化参数共有 5 个：
+$$
+\overrightarrow{var} = [T_1, T_2, T_3, T_4, v]\\ 
+T_1 \in [165, 185],\ T_2 \in [185, 205],\ T_3 \in [225, 245],\ T_4 \in [245, 265],\ v \in [65, 100]
+$$
+
+我们设定目标函数为面积值的相反数，利用模拟退火算法最大化目标函数，以得到最优解。另外，勿忘验证每个参数下是否满足制程界限。
+
+对任意给定的 $\overrightarrow{var}$，求解目标函数的步骤如下：
+
+- 计算环境温度 $T_s(t)$ 和炉温曲线 $T(t)$
+- 验证制程界限
+- 确定 $T(t) \in [217 \mathrm{°C},  T_{max} ]$ 的时间范围
+- 计算目标函数（面积的相反数）
+
+利用模拟退火算法最优化目标函数，得到最优解如下：
+
+$$
+\overrightarrow{var} = [T_1,\  T_2,\  T_3,\  T_4,\  v] = [167.5253,\  200.5031,\ 238.0173 ,\ 251.0402 ,\ 65.23086] \\ 
+\mathrm{object_{best}} = -371.2401,\ 面积\  S = 371.2401\ \mathrm{°C\cdot s}
+$$
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-06-01-14-20_MM(1)-Papers.png"/></div>
 
 ### 问题四
 
