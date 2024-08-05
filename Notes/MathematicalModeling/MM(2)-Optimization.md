@@ -233,7 +233,7 @@ ans = 3×1
 
 ### 模拟退火
 
-最新源代码见 GitHub： [here](https://github.com/YiDingg/Matlab/blob/main/MySimulatedAnnealing.m)
+最新源代码见 GitHub： [here](https://github.com/YiDingg/Matlab/blob/main/MySimulatedAnnealing.m)。
 
 ``` matlab 
 function stc = MySimulatedAnnealing(stc, objective)
@@ -578,16 +578,58 @@ vpa(Struct_SA.X_best)
 
 </details>
 
+<!-- details begin -->
+<details>
+<summary>示例3：求二元函数在给定区间的最大值</summary>
+
+$$
+\max_{[x, y] \in [0, 2]\times[0, 2]} f\left(x, y\right) = \pi \sin(x^2+y)\ln(x+y)
+$$
+
+
+``` matlab 
+clc,clear,close all
+
+stc.Var.num = 2; % 参数个数
+stc.Var.range = [
+    0 2 1
+    0 2 1
+    ];
+stc.Annealing.T0 = 100;        % 初始温度
+stc.Annealing.a = 0.97;        % 降温系数
+stc.Annealing.t0 = 1;         % 停止温度
+stc.Annealing.mkvlength = 6;   % 马尔科夫链长度
+stc = MySimulatedAnnealing(stc, @objective2);
+
+function f = objective2(X)
+    f = pi*sin(X(1)^2+X(2))*log(X(1)+X(2));
+end
+
+% output: 
+---------------------------------
+>> --------  模拟退火  -------- <<
+历时 0.040900 秒。
+一共寻找新解：912
+change_1次数：17
+change_2次数：2
+最优参数：0.50035      1.8008
+最优目标值：2.3219
+>> --------  模拟退火  -------- <<
+---------------------------------
+```
+
+</details>
+
 ### 网格搜索
 
-网格搜索虽然具有普适性，但在参数数目增多时，所需时间急剧增加，因此需谨慎使用。
+最新源代码见 GitHub： [here](https://github.com/YiDingg/Matlab/blob/main/MyGridSearch.m)。网格搜索虽然具有普适性，但在参数数目增多时，所需时间急剧增加，因此需谨慎使用。
 
 <!-- details begin -->
 <details>
 <summary>示例 1：求一元函数在给定区间的最大值</summary>
 
 $$
-\min_{x \in [0.5, 1.5]} f\left(x\right) = \frac{sin(x)^2}{(x-1)^2 + 0.001}
+\max_{x \in [0.5, 1.5]} f\left(x\right) = \frac{sin(x)^2}{(x-1)^2 + 0.001}
 $$
 
 ``` matlab 
@@ -618,7 +660,7 @@ GridSearch.Var = [
 <summary>示例 2：求二元函数在给定区间的最大值</summary>
 
 $$
-\min_{[x, y] \in [0, 2]\times[0, 2]} f\left(x, y\right) = \pi \sin(x^2+y)\ln(x+y)
+\max_{[x, y] \in [0, 2]\times[0, 2]} f\left(x, y\right) = \pi \sin(x^2+y)\ln(x+y)
 $$
 
 
@@ -652,7 +694,7 @@ export_fig(figure.fig , '-p0.02','-png' , '-r130' , '-painters' , 'C:/Users/1308
 <summary>示例 3：求四元函数在给定区间的最大值</summary>
 
 $$
-\min_{x,y,z,t \in [0, 2]} f\left(x,y,z,t\right) = (x-1)^2 + (y-2)^2 + z^2 + (t-1)^2
+\max_{x,y,z,t \in [0, 2]} f\left(x,y,z,t\right) = (x-1)^2 + (y-2)^2 + z^2 + (t-1)^2
 $$
 
 ``` matlab 
@@ -692,6 +734,8 @@ GridSearch = MyGridSearch(GridSearch, obj4, 1);
 
 ### 遗传算法
 
+### 粒子群算法
+
 ## Else 
 
 其它Matlab官方资源：
@@ -700,3 +744,6 @@ GridSearch = MyGridSearch(GridSearch, obj4, 1);
 - [Optimization Toolbox](https://www.mathworks.com/products/optimization.html):指向关于在 MATLAB 中基于问题的优化的示例、网络研讨会和视频的链接
 - [示例](https://www.mathworks.com/help/optim/examples.html)：使用基于问题和基于求解器方法的各种优化应用的示例代码
 - [MATLAB 中的优化方法](https://www.mathworks.com/learn/training/optimization-techniques-in-matlab.html)：相关训练
+
+拓展阅读：
+- 

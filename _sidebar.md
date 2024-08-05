@@ -32,11 +32,11 @@
     - [VScode-Latex 中反向搜索失灵的解决方案](Blogs/FixProblem/VScode-Latex中反向搜索失灵的解决方案.md)
     - [新版 Keil_MDK 中无 Compiler_V5 的解决方案](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
   - Awesome Tools and Resources
-    - [Brief View of ATandR](Blogs/ATandR/BVofATandR.md)
+    - [ATandR(0): Brief View](Blogs/ATandR/ATandR(0)-BriefView.md)
     - [ATandR(1): Markdown](Blogs/ATandR/ATandR(1)-Markdown.md)
     - [ATandR(2): Programming](Blogs/ATandR/ATandR(2)-Programming.md)
     - [ATandR(3): Drawing](Blogs/ATandR/ATandR(3)-Drawing.md)
-    - [ATandR(4): ResearchPaper](Blogs/ATandR/ATandR(4)-ResearchPaper.md)
+    - [ATandR(4): Research Paper](Blogs/ATandR/ATandR(4)-ResearchPaper.md)
 
 
 - 📖 **Notes**
@@ -74,10 +74,11 @@
     - [Matlab Notes(2): Mathematics](Notes/Matlab/MatlabNotes(2)-Mathematics.md)
     - [Matlab Notes(3): Symbolic Math](Notes/Matlab/MatlabNotes(3)-SymbolicMath.md)
   - Mathematical Modeling
+    - [MM(+): Skills](Notes/MathematicalModeling/MM(+)-Skills.md)
     - [MM(1): Papers](Notes/MathematicalModeling/MM(1)-Papers.md)
     - [MM(2): Optimization](Notes/MathematicalModeling/MM(2)-Optimization.md)
-    - [MM(3): Skills](Notes/MathematicalModeling/MM(3)-Skills.md)
-    - [MM(4): Differencial Equation](Notes/MathematicalModeling/MM(4)-DifferencialEquation.md)
+    - [MM(3): PDE](Notes/MathematicalModeling/MM(3)-PDE.md)
+    - [MM(4): Data Processing](Notes/MathematicalModeling/MM(4)-DataProcessing.md)
   - STM32
     - [STM32系列汇总](Notes/STM32/STM32系列汇总.md)
     - [STM32系列 (1)：Keil Debug 功能使用](Notes/STM32/STM32系列%20(1)：Keil%20Debug%20功能使用.md)
