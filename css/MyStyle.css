@@ -101,7 +101,8 @@ h4 .anchor span {
 } */
 .markdown-section img {
     /* em: italic font*/
-    max-height: 600px;
+    /* max-height: 600px; */
+    max-height: none;
 }
 /*                                             */
 /* ------------- 全局基本配置 ---------------- */

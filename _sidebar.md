@@ -79,6 +79,9 @@
     - [MM(2): Optimization](Notes/MathematicalModeling/MM(2)-Optimization.md)
     - [MM(3): PDE](Notes/MathematicalModeling/MM(3)-PDE.md)
     - [MM(4): Data Processing](Notes/MathematicalModeling/MM(4)-DataProcessing.md)
+    - [MM(5): Problem B](Notes/MathematicalModeling/MM(5)-ProblemB.md)
+    - [MM(1.1): CUMCM 2022-A](Notes/MathematicalModeling/MM(1.1)-CUMCM2022A.md)
+    - [MM(1.2): CUMCM 2023-A](Notes/MathematicalModeling/MM(1.2)-CUMCM2023A.md)
   - STM32
     - [STM32系列汇总](Notes/STM32/STM32系列汇总.md)
     - [STM32系列 (1)：Keil Debug 功能使用](Notes/STM32/STM32系列%20(1)：Keil%20Debug%20功能使用.md)
