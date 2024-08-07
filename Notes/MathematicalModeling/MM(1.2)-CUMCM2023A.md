@@ -82,11 +82,11 @@ $$
 \vec{V}_{A,\mathrm{co}} = \frac{\vec{O}_C - \vec{O}_A}{ \left|  \vec{O}_C - \vec{O}_A \right| } 
 $$
 
-给定太阳高度角 $\alpha_s$、太阳方位角 $\gamma_s$，求太阳入射方向的单位向量 $\vec{V}_{\mathrm{sun}}$（地面坐标系，从镜面指向太阳）：
+给定太阳高度角 $\alpha_s$、太阳方位角 $\gamma_s$，求太阳入射方向的单位向量 $\vec{V}_{\mathrm{sun}}$（地面坐标系，从太阳指向镜面）：
 
 $$
 \vec{V}_{\mathrm{sun}} = 
-\begin{bmatrix}a\\ b\\ c\end{bmatrix} = 
+\begin{bmatrix}a\\ b\\ c\end{bmatrix} = -
 \begin{bmatrix}
 \cos\alpha_s\sin\gamma_s\\ 
 \cos\alpha_s\cos\gamma_s\\ 
@@ -98,7 +98,7 @@ $$
 
 $$
 \vec{S}_A = (x,y,z) = 
-\frac{\vec{V}_{A,\mathrm{co}} + \vec{V}_{\mathrm{sun}}}{\left|\vec{V}_{A,\mathrm{co}} + \vec{V}_{\mathrm{sun}}\right|}
+\frac{\vec{V}_{A,\mathrm{co}} - \vec{V}_{\mathrm{sun}}}{\left|\vec{V}_{A,\mathrm{co}} - \vec{V}_{\mathrm{sun}}\right|}（注意这里的正负号）
 $$
 
 直角坐标转为球坐标 $(r,\theta,\phi)$ 后，依据 $\theta + \theta_z = \frac{\pi}{2}$ 和 $\phi + \theta_s = \frac{\pi}{2}$，求得定日镜的俯仰角 $\theta_z$ 和方位角 $\theta_s$（方位角数值规定与太阳方位角相同）：
@@ -108,70 +108,303 @@ $$
 $$
 \theta_z = \frac{\pi}{2} - \arccos z \\ 
 \theta_s = \frac{\pi}{2} - \mathrm{Arctan}(y,x) \\
-\mathrm{Arctan}(y,x) = \begin{cases}\arctan\left(y/x\right)&(x>0)\\\arctan\left(y/x\right)+\pi&(x<0,y\geqslant0)\\\arctan\left(y/x\right)-\pi&(x<0,y<0)\\\pi/2&(x=0,y>0)\\-\pi/2&(x=0,y<0)\\0&(x=0,y=0)&\end{cases}
+\mathrm{Arctan}(y,x) = 
+\begin{cases}\arctan\left(y/x\right)&(x>0)\\
+\arctan\left(y/x\right)+\pi&(x<0,y\geqslant0)\\
+\arctan\left(y/x\right)&(x<0,y<0)\\
+\pi/2&(x=0,y>0)\\-\pi/2&(x=0,y<0)\\
+0&(x=0,y=0)&\end{cases}
 $$
 
-记镜面宽度 $d_{\mathrm{he}} = P_1P_2$，镜面长度 $l_{\mathrm{he}} = P_1P_4$ ，利用 $\overrightarrow{O_AP_1} = \vec{e}_1 + \vec{e}_2，\vec{e}_1 = (-\cos\theta_s, \sin\theta_s, 0)$ 和 $\vec{e_2} = \vec{S}_A \times \vec{e}_1$，$ 求得定日镜的四个顶点坐标 $\vec{P}_1, \vec{P}_2, \vec{P}_3, \vec{P}_4$：
+记镜面宽度 $d_{\mathrm{he}} = P_1P_2$，镜面长度 $l_{\mathrm{he}} = P_1P_4$ ，利用 $\overrightarrow{O_AP_1} = \vec{e}_1 + \vec{e}_2，\vec{e}_1 = (-\cos\theta_s, \sin\theta_s, 0)$ 和 $\vec{e_2} = \vec{S}_A \times \vec{e}_1$， 求得定日镜的四个顶点坐标 $\vec{P}_1,\vec{P}_2,\vec{P}_3,\vec{P}_4$ ：
 
 $$
-\vec{P}_1 = \vec{e_1} + \vec{e_2} = (\begin{bmatrix}1 \\1 \\1\end{bmatrix} + \vec{S}_A ) \times \vec{e}_1 \\ 
-\vec{P}_2 = -\vec{e_1} + \vec{e_2} = (-\begin{bmatrix}1 \\1 \\1\end{bmatrix} + \vec{S}_A ) \times \vec{e}_1 \\ 
-\vec{P}_3 = -\vec{e_1} - \vec{e_2} = (-\begin{bmatrix}1 \\1 \\1\end{bmatrix} - \vec{S}_A ) \times \vec{e}_1 \\ 
-\vec{P}_4 = \vec{e_1} - \vec{e_2} = (\begin{bmatrix}1 \\1 \\1\end{bmatrix} - \vec{S}_A ) \times \vec{e}_1 \\ 
+\vec{P}_1 =\vec{O}_A +  \vec{e_1} + \vec{S}_A \times \vec{e}_1\\ 
+\vec{P}_2 =\vec{O}_A   -\vec{e_1} +\vec{S}_A \times \vec{e}_1\\ 
+\vec{P}_3 =\vec{O}_A   -\vec{e_1} - \vec{S}_A \times \vec{e}_1\\ 
+\vec{P}_4 =\vec{O}_A +  \vec{e_1} - \vec{S}_A \times \vec{e}_1\\ 
 $$
 
-<!-- $$
-\begin{cases}
-    x_{P1}=x_{OA}
-    +\frac{1}{2}d_{\mathrm{he}}\cdot\left(\cos\theta_s- \sin\theta_s\right)\\
-    x_{P2}=x_{OA}
-    +\frac{1}{2}d_{\mathrm{he}}\cdot\left(-\cos\theta_s- \sin\theta_s \right)\\ 
-    x_{P3}=x_{OA}
-    +\frac{1}{2}d_{\mathrm{he}}\cdot\left(-\cos\theta_s+ \sin\theta_s \right)\\
-    x_{P4}=x_{OA}
-    +\frac{1}{2}d_{\mathrm{he}}\cdot\left(+\cos\theta_s+ \sin\theta_s \right)
-\end{cases} \\
-\begin{cases}
-y_{P1}=y_{OA}
-+\frac{1}{2}l_{\mathrm{he}}\cdot\left(+ \cos\theta_s+ \sin\theta_s \right)\\
-y_{P2}=y_{OA}
-+\frac{1}{2}l_{\mathrm{he}}\cdot\left(+ \cos\theta_s- \sin\theta_s \right)\\ 
-y_{P3}=y_{OA}
-+\frac{1}{2}l_{\mathrm{he}}\cdot\left(- \cos\theta_s- \sin\theta_s \right)\\
-y_{P4}=y_{OA}
-+\frac{1}{2}l_{\mathrm{he}}\cdot\left(- \cos\theta_s+ \sin\theta_s \right) \\ 
-\end{cases} \\
-\begin{cases}
-z_{P1}=z_{P2}=H_{\mathrm{he}}
-+\frac{1}{2}l_{\mathrm{he}}\cdot\sin(\theta_z)\\
-z_{P3}=z_{P4}=H_{\mathrm{he}}
--\frac{1}{2}l_{\mathrm{he}}\cdot\sin(\theta_z)
-\end{cases}
-$$
- -->
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-06-18-40-46_MM(1.2)-CUMCM2023A.png"/></div>
+
 
 ### 阴影遮挡效率
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-06-17-05-59_MM(1.2)-CUMCM2023A.jpg"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-06-17-06-31_MM(1.2)-CUMCM2023A.png"/></div>
 
+阴影挡光损失 = 镜阴影损失 + 镜挡光损失 + 塔阴影损失 
+
+**根据下面步骤求解所有镜面的阴影效率：**
+
+- 在一定范围内（最大干涉距离，见后文），选取一个可能发生干涉的镜面 $B$
+- 计算镜面 $B$ 在镜面 $A$ 上的遮光量
+- 计算镜面 $A$ 反射光被 $B$ 所挡住的量
+- 计算吸收塔在 $A$ 镜上的遮光量
+- 确定 $A$ 镜的阴影遮挡效率
+- 重复上述步骤，直至得到所有镜面的阴影遮挡效率
+
+已知镜 $A$ 四个顶点 $\vec{P}_i = (x_i,y_i,z_i)$ 和太阳入射向量 $\vec{V}_{\mathrm{sun}} = (V_x, V_y, V_z)$，求解地面投影区域的公式：
+
+$$
+\vec{P}_{i,\mathrm{gnd}} = 
+\begin{bmatrix}
+    x_i - \frac{V_x}{V_z}z_i \\
+    y_i - \frac{V_y}{V_z}z_i \\
+    0
+\end{bmatrix}\ ,\ \ i = 1,2,3,4
+$$
+
+**求解最大干涉距离（针对问题一）的思路：**
+
+- 任意选取一个镜面 $A$，计算其在时刻 09:00 ~ 15:00 内的最远干涉距离（间隔一小时）
+- 重复上面计算，直至得到所有镜面的最远干涉距离
+- 最远中取最大，即得结果
+
+``` matlab 
+tic
+Result = zeros(length(Appendix(:,1)),4);
+for i = 1: length(Appendix(:,1))
+    OA = [Appendix(i,:), H_he];
+    for j = 1:12
+        D = D_Array(j);
+        for ST = 9:1:15
+            P_gnd =  GetShade(OA, OC, D, varphi, ST);
+            test = sqrt(sum((P_gnd(1:2,:) - OA(1:2)').^2));
+            Result(i,:) = max(Result(i,:),test);
+        end
+    end
+    %disp([num2str(i/length(Appendix(:,1))*100), '%'])
+end
+distance_max = max(Result,[],"all")
+toc
+```
+
+``` output
+distance_max = 20.2165
+历时 0.808092 秒。
+```
+
+
+然后大致确定一下所有镜面的干涉情况，镜面最小距离为 $11.6805\  \mathrm{m}$，最大干涉距离 $20.2165\  \mathrm{m}$，因此会产生阴影或遮挡干涉。
+
+``` matlab 
+Result = zeros(Num_heliostat,1);
+Distans_min = Inf;
+for i = 1:Num_heliostat
+    OA = Heliostat(i,:);
+    x = (Heliostat - OA).^2;
+    x(i,:) = [100 100 100];
+    Distans = sqrt(sum(x,2));
+    Distans_min = min( Distans_min, min(Distans) );
+end
+disp(num2str(Distans_min))
+if Distans_min < 20.22
+   disp("发生阴影或遮挡干涉！")
+end
+```
+
+``` output 
+11.6805
+发生阴影或遮挡干涉！
+```
+
+
+
+**计算镜面 $B$ 在镜面 $A$ 上的遮光量：**
+
+
+在 $A$ 镜坐标系下，$A$ 镜（目标镜）中某一点 $P$ 的坐标 $\vec{x}_{P,A}$，沿太阳入射光投影到 $B$ 镜（最大范围内任意选取的）上记为点 $Q$，坐标 $\vec{x}_{Q,B}$（镜 $B$ 坐标系），计算阴影挡光损失的过程，即由已知 $\vec{x}_{P,A}$ ，求 $\vec{x}_{Q,B}$，再判断 $\vec{x}_{Q,B}$ 是否在镜面内。
+
+在一定范围（第一层筛选）内选取镜面 $B$ 后，需要判断 $B$ 的影子方向是否朝 $A$，将太阳光线向量（指向镜面）在地面坐标系中为 $\vec{V}_{\mathrm{sun},O} = \begin{bmatrix}a,b,c\end{bmatrix}^T$，这作了第二层筛选：
+
+$$
+\vec{x}_{AB,O}\cdot\vec{V}_{\mathrm{sun},O} > 0
+$$
+
+然后建立 $\vec{x}_{Q,B}$ 的计算公式：
+
+记 $A$ 镜中一点 $P$ 为 $\vec{x}_{P,A} = \begin{bmatrix}x_A,y_A,0\end{bmatrix}^T$，此点在地面坐标系下的坐标记为 $\vec{x}_{P,O}$，在 $B$ 镜坐标系下的坐标记为 $\vec{x}_{P,B} = \begin{bmatrix}x_{P,B},y_{P,B},z_{P,B}\end{bmatrix}^T$，$\vec{x}_{A,O}$ 为 $A$ 镜坐标系原点在地面坐标系的坐标值，$\vec{x}_{B,O}$ 为 $B$ 镜坐标系原点在地面坐标系的坐标值，下面求解投影点 $\vec{x}_{Q,B}$：
+
+镜面坐标系 $A$ 与地面坐标系 $O$ 之间的转换矩阵记为 $T$，则有：
+
+$$
+\vec{x}_{P,O} - \vec{x}_{A,O}= T_A \cdot (\vec{x}_{P,A} - \vec{x}_{A,A}) = T_A \cdot \vec{x}_{P,A}\\
+T=\begin{bmatrix}\sin\theta_s&-\sin\theta_z\cos\theta_s&\cos\theta_z\cos\theta_s\\\\-\cos\theta_s&-\sin\theta_z\sin\theta_s&\cos\theta_z\sin\theta_s\\\\0&\cos\theta_z&\sin\theta_z\end{bmatrix}
+$$
+
+于是：
+
+$$
+\vec{x}_{P,O} = T_A \cdot \vec{x}_{P,A} + \vec{x}_{A,O}\ （A 镜坐标与地面坐标）\\ 
+\vec{x}_{P,O} = T_B \cdot \vec{x}_{P,B} + \vec{x}_{B,O}\ （B 镜坐标与地面坐标）\\ 
+\Longrightarrow \vec{x}_{P,B} = T_B^{*} \cdot \left( T_A\cdot \vec{x}_{P,A} + \vec{x}_{A,O} - \vec{x}_{B,O}\right)（T 为实正交矩阵）
+$$
+
+然后沿光路 $\vec{V}_{\mathrm{sun},O}$ 计算在 $B$ 镜上的投影点 $Q$：
+
+$$
+\vec{V}_{\mathrm{sun},O} = T_B \cdot \vec{V}_{\mathrm{sun},B} + \vec{x}_{B,O}
+\Longrightarrow 
+\vec{V}_{\mathrm{sun},B} = T_B^* \cdot (\vec{V}_{\mathrm{sun},O}  - \vec{x}_{B,O})（T 为实正交矩阵）
+$$
+
+这样便得到了 B 镜坐标系中的点 $P$ 坐标 $\vec{x}_{P,B}$ 和光线向量 $ \vec{V}_{\mathrm{sun},B}$，由此确定直线，令 $z$ 坐标为零即得投影点 $Q$：
+
+$$
+\vec{x}_{Q,B}  = 
+\begin{bmatrix}
+    x_{P,B} - \frac{V_{x,B}}{V_{z,B}}z_{P,B} \\
+    y_{P,B} - \frac{V_{y,B}}{V_{z,B}}z_{P,B} \\
+    0
+\end{bmatrix}
+$$
+
+然后判断 $\vec{x}_{Q,B}$ 的横纵坐标范围即可。
+
+为了检验代码正确性，可以考虑验证 $\vec{x}_{Q,O}$ 的位置并作图：
+
+$$
+\vec{x}_{Q,O} = 
+T_B\cdot\vec{x}_{Q,B} + \vec{x}_{B,O}
+$$
+
+镜面的离散可以使用向量来操作，即考虑 $\vec{x}_{P_2P_1,O}$ 和 $\vec{x}_{P_2P_3,O}$。
+
+<span style="color:red">
+采用上面方法计算转换矩阵 $T$ 时，似乎有些不对，我们摒弃，改为采用下面的方法：
+</span>
+
+镜面坐标系 $A$ 到地面坐标系 $O$ 的转换关系单位矩阵为：
+$$
+T =
+\begin{bmatrix}
+l_x&l_y&l_z\\
+m_x&m_y&m_z\\
+n_x&n_y&n_z
+\end{bmatrix}
+$$
+
+
+
+$\begin{bmatrix}l_x \\ m_x \\ n_x\end{bmatrix}, 
+\begin{bmatrix}l_y \\ m_y \\ n_y\end{bmatrix}, 
+\begin{bmatrix}l_z \\ m_z \\ n_z\end{bmatrix}$ 是镜面坐标系 $A$ 的 3 个轴在地面坐标系 $O$ 的向量表示，也即 $\vec{e}_{A,O,1}^T, \vec{e}_{A,O,2}^T, \vec{e}_{A,O,3}^T$
+
+设镜 $A$ 的横轴在地面坐标系中的向量表示为 $\vec{e}_{A,O,1}$，其与地面坐标系 $O$ 的 $xy$ 平面平行，而镜面的法向量即为 $A$ 系的 $z$ 轴，即 $\vec{e}_{A,O,3} = \vec{S}_A$，我们有：
+$$
+\begin{align*}
+ &\vec{e}_{A,O,1} = -\frac{\vec{S}_A \times [0, 0, 1]^T}{\left| \vec{S}_A \times [0, 0, 1]^T \right| }（负号为考虑方向所得） \\ 
+ &\vec{e}_{A,O,2}  = \vec{S}_A \times \vec{e}_{A,O,1}  \\
+ &\vec{e}_{A,O,3}  = \vec{S}_A
+\end{align*}
+$$
+
+由此得到转换矩阵 $T = [\vec{e}_{A,O,1}^T, \vec{e}_{A,O,2}^T, \vec{e}_{A,O,3}^T]$。
+
+这样算出的投影点是正确的：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-07-23-02-51_MM(1.2)-CUMCM2023A.jpg"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-07-23-03-23_MM(1.2)-CUMCM2023A.jpg"/></div>
+
+``` matlab
+（测试，修改了转换矩阵理论）镜A被镜B遮挡情况
+ST = 9;
+D = D_Array(4);
+
+X_A_O = Heliostat(1,:)';
+disp("镜A选择第一面镜")
+X_B_O = Heliostat(2,:)';
+disp("镜B选择第二面镜")
+disp("点P在A系中的坐标：")
+X_P_A = [0 0 0]'
+
+
+
+[delta, omega, alpha, gamma, V_sun_O] = GetSun(D, varphi, ST);
+
+figure
+[P_A, S_A, ~, V_A_co, theta_z_A, theta_s_A] =  GetHeliostat(X_A_O', OC, V_sun_O); 
+disp("镜A俯仰角")
+rad2deg(theta_z_A)
+disp("镜A方位角")
+rad2deg(theta_s_A)
+hold on 
+[P_B, S_B, ~, V_B_co, theta_z_B, theta_s_B] =  GetHeliostat(X_B_O', OC, V_sun_O);
+hold on
+
+% 计算转换矩阵
+
+e_A_O_1 = - cross(S_A, [0 0 1]') / norm( cross(S_A, [0 0 1]') )
+e_A_O_2 = cross(S_A, e_A_O_1)
+e_A_O_3 = S_A
+
+quiver3(X_A_O(1), X_A_O(2), X_A_O(3), e_A_O_1(1),e_A_O_1(2),e_A_O_1(3))
+hold on
+quiver3(X_A_O(1), X_A_O(2), X_A_O(3), e_A_O_2(1),e_A_O_2(2),e_A_O_2(3))
+quiver3(X_A_O(1), X_A_O(2), X_A_O(3), e_A_O_3(1),e_A_O_3(2),e_A_O_3(3))
+
+e_B_O_1 = - cross(S_B, [0 0 1]') / norm( cross(S_B, [0 0 1]') )
+e_B_O_2 = cross(S_B, e_A_O_1)
+e_B_O_3 = S_B
+
+    disp("A与O的转换矩阵：")
+    T_A = [e_A_O_1, e_A_O_2, e_A_O_3]
+    disp("B与O的转换矩阵：")
+    T_B = [e_B_O_1, e_B_O_2, e_B_O_3]
+
+disp("点P在B系中的坐标：")
+X_P_B = T_B' * ( T_A*X_P_A + X_A_O - X_B_O )
+disp("入射光向量（O系）：")
+V_sun_O
+disp("入射光向量（B系）：")
+V_sun_B = T_B' * (V_sun_O - 0)
+disp("投影点Q在B系中的坐标：")
+X_Q_B = [
+    X_P_B(1) - V_sun_B(1)/V_sun_B(3)*X_P_B(3)
+    X_P_B(2) - V_sun_B(2)/V_sun_B(3)*X_P_B(3)
+    0
+    ]
+disp("投影点Q在O系中的坐标：")
+% 验证位置
+X_Q_O  = T_B*X_Q_B + X_B_O
+scatter3(X_Q_O(1),X_Q_O(2),X_Q_O(3),Marker="*")
+```
+
+
+
+
+**计算镜面 $A$ 反射光被 $B$ 所挡住的量：**
+
+
+类似地，再对光线向量 $\vec{V}_0$ 进行坐标转换，求$H'$与光线向量所确定的直线与镜面$B$的交点，最终可以得到：
 
 
 
 
 
+**计算吸收塔在 $A$ 镜上的遮光量**
 
+为简化计算，将吸收塔和集热器视为半径与集热器半径 $r_{\mathrm{co}}$ 相同，高度为 $ H_{\mathrm{co}} + \frac{h_{\mathrm{co}}}{2}$ 的圆柱体。
 
+为确定是否有镜面受到吸收塔影响，先计算吸收塔在地面上的最大投影距离。在入射阳光视角，吸收塔顶部椭圆的上半部分中点的投影即为最远投影距离。并且，当塔的高度角达到最低时（09:00 或 15:00），具有最大投影距离。
 
+圆柱体顶面中心坐标为 $\overrightarrow{top} = (0,0,H_{\mathrm{co}} + \frac{h_{\mathrm{co}}}{2})$，记 $\vec{V} = \vec{V}_{\mathrm{sun}}|_{z=0}$，则最远点为：
 
+$$
+\vec{x}_0 = (x_0,y_0,z_0) = \overrightarrow{top} + \frac{\vec{V}}{\left| V \right| }\cdot r_{\mathrm{co}}
+$$
 
+得到地面投影点：
 
-
-
-
-
-
+$$
+\vec{x} = 
+\begin{bmatrix}
+    x_0 - \frac{V_{\mathrm{sun},x}}{V_{\mathrm{sun},z}}z_0 \\
+    y_0 - \frac{V_{\mathrm{sun},y}}{V_{\mathrm{sun},z}}z_0 \\
+    0 
+\end{bmatrix}
+$$
 
 
 
@@ -202,7 +435,7 @@ $$
 $A$ 镜到 $B$ 镜的坐标转换矩阵为（传统定日镜旋转机制）：
 
 $$
-H_{B} = T\cdot H_{A}
+H_{B} = T\cdot H_{A} \\
 T=
 \begin{bmatrix}l_x&l_y&l_z\\\\m_x&m_y&m_z\\\\n_x&n_y&n_z\end{bmatrix} = 
 \begin{bmatrix}-\sin E_H&-\sin A_H&\cos E_H&\cos A_H&\cos E_H\\\\\cos E_H&-\sin A_H&\sin E_H&\cos A_H&\sin E_H\\\\0&\cos A_H&\sin A_H \end{bmatrix}
