@@ -269,8 +269,6 @@ $$
 T_B\cdot\vec{x}_{Q,B} + \vec{x}_{B,O}
 $$
 
-镜面的离散可以使用向量来操作，即考虑 $\vec{x}_{P_2P_1,O}$ 和 $\vec{x}_{P_2P_3,O}$。
-
 <span style="color:red">
 采用上面方法计算转换矩阵 $T$ 时，似乎有些不对，我们摒弃，改为采用下面的方法：
 </span>
@@ -371,6 +369,43 @@ X_Q_O  = T_B*X_Q_B + X_B_O
 scatter3(X_Q_O(1),X_Q_O(2),X_Q_O(3),Marker="*")
 ```
 
+镜面的离散可以使用向量来操作，即考虑 $\vec{x}_{P_2P_1,O}$ 和 $\vec{x}_{P_2P_3,O}$，如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-07-23-59-33_MM(1.2)-CUMCM2023A.jpg"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-08-00-03-24_MM(1.2)-CUMCM2023A.jpg"/></div>
+
+``` matlab 
+O = [0 0 0]';
+X = [2 0 6]';
+Y = [3 3 9]';
+Area = [O, X, Y]
+N_array = [5, 5]
+
+% 数据准备
+    OX = Area(:,2) -  Area(:,1);
+    OY = Area(:,3) -  Area(:,1);
+    N_x = N_array(1); N_y = N_array(2);
+    e_x = OX/N_x; e_y = OY/N_y;
+    % 矩阵初始化
+    disc_x = 0:1:N_x;
+    disc_y = 0:1:N_y;
+    Discrete_matrix = zeros(N_x+1, N_y+1, 3);
+
+    Add_x = disc_x * OX(1)/N_x + disc_y' * OY(1)/N_y;
+    Add_y = disc_x * OX(2)/N_x + disc_y' * OY(2)/N_y;
+    Add_z = disc_x * OX(3)/N_x + disc_y' * OY(3)/N_y;
+    Discrete_matrix(:,:,1) = O(1) + Add_x
+    Discrete_matrix(:,:,2) = O(2) + Add_y
+    Discrete_matrix(:,:,3) = O(3) + Add_z
+
+if 1
+    figure
+    scatter3(Discrete_matrix(:,:,1),Discrete_matrix(:,:,2),Discrete_matrix(:,:,3))
+    hold on
+    quiver3(O(1),O(2),O(3),OX(1),OX(2),OX(3))
+    quiver3(O(1),O(2),O(3),OY(1),OY(2),OY(3))
+end
+```
 
 
 
