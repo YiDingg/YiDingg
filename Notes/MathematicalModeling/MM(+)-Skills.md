@@ -4,7 +4,7 @@
 - Matlab 搜 [examples](https://www.mathworks.com/support/search.html?q=&fq%5B%5D=asset_type_name:documentation/example&page=1&s_tid=CRUX_topnav) 和 [fileexchange](https://www.mathworks.com/matlabcentral/fileexchange)
 - 搜相关论文
 
-## Skills 
+## Paper Skills 
 
 ### 插入 Matlab 代码
 
@@ -18,5 +18,26 @@
 
 这样可以保留矢量图形，并自动裁剪导出区域。
 
+## Matlab Skills
+
+对于数组或元胞数组，可以使用逻辑索引而不是 `find` 来改善性能：
+
+旧代码：
+
+``` matlab
+% 筛选（使用逻辑索引而不是find来改善性能）
+    % 最大距离
+        Index = find(   ( sqrt(sum((X_A_O' - Heliostat).^2, 2)) < distance_max+0.1 )   );
+        % 剔除镜面自身    
+        Index = Index( find(Index-i) );
+    % 方向筛选
+        BA = X_A_O' - Heliostat(Index,:);
+        Index = Index(   find( sum(BA(:,[1 2]).*V_sun_O([1 2])',2) > 0 )   ); 
+```
+
+优化后的代码：
+
+``` matlab 
 
 
+```

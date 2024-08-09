@@ -73,17 +73,24 @@ $$
   - [CUMCM 2022-A 优秀论文 A147.pdf](https://www.writebug.com/static/uploads/2024/7/27/a246ab85e0b87d9dd7aeb681e725ef2a.pdf)
   - [CUMCM 2022-A 优秀论文 A195.pdf](https://www.writebug.com/static/uploads/2024/7/27/1fcd73a55232834c3d8e1eb7241a3518.pdf)
   - [CUMCM 2022-A 优秀论文 A212.pdf](https://www.writebug.com/static/uploads/2024/7/27/30fd4c6d0ad2dd6cfc7230d921b74867.pdf)
+- 目前进度：完成问题一、二，问题三完成 80%。需要构建数值积分函数，重新优化问题三的参数，然后完成问题四；网格和模拟退火改为进度条。
 
 详见 [MM(1.1)-CUMCM2022A](Notes/MathematicalModeling/MM(1.1)-CUMCM2022A.md)。
 
 
 ## CUMCM 2023-A 
+- 主题：定日镜场的优化设计
+- 重点：坐标系转换，逻辑矩阵与逻辑索引，投影，
 - 时间：2024年8月（集训）
 - 赛题：
+  - [CUMCM 2023-A 赛题.pdf](https://www.writebug.com/static/uploads/2024/8/6/fb38a2f5e0f1435bf0ad9804633bb0e2.pdf)
+  - [CUMCM 2023-A 赛题附件.xlsx](https://www.writebug.com/static/uploads/2024/8/6/de25c88e35f98a56e71c59165d4f2036.xlsx)
 - 优秀论文：
-- 成果：
-  - pdf: <button onclick="window.open('')" type="button">click</button>
-  - tex: <button onclick="window.open('')" type="button">click</button>
+  - [CUMCM 2023-A 优秀论文 A092.pdf](https://www.writebug.com/static/uploads/2024/8/6/f7c567e8924efa866ba54e83443276df.pdf)
+  - [CUMCM 2023-A 优秀论文 A127.pdf](https://www.writebug.com/static/uploads/2024/8/6/79a0777f982a0db762adc5d7fc4febb2.pdf)
+  - [CUMCM 2023-A 优秀论文 A165.pdf](https://www.writebug.com/static/uploads/2024/8/6/6423084bd3029444d7604312440d941b.pdf)
+  - [CUMCM 2023-A 优秀论文 A175.pdf](https://www.writebug.com/static/uploads/2024/8/6/83f95a4d8175e51ab53d50a9b587ccf5.pdf)
+- 目前进度：问题一完成 70%。需要完成问题一塔阴影的收尾，并修改镜阴影干涉的计算原理（改为仅离散 $A$，确定 $B$ 的阴影面和 $A$ 的反射遮挡面后，计算重合情况）。还要整理离散函数 `Discrete()`。
 
 ## CUMCM 2023-B
 - 时间：2024年8月（集训）

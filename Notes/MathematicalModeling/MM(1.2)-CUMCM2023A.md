@@ -5,15 +5,19 @@
 - 主题：定日镜场的优化设计
 - 重点：
 - 时间：2024年8月（集训）
-- 赛题：[CUMCM 2023-A 赛题.pdf](https://www.writebug.com/static/uploads/2024/8/6/fb38a2f5e0f1435bf0ad9804633bb0e2.pdf)，[CUMCM 2023-A 赛题附件.xlsx](https://www.writebug.com/static/uploads/2024/8/6/de25c88e35f98a56e71c59165d4f2036.xlsx)
+- 赛题：
+  - [CUMCM 2023-A 赛题.pdf](https://www.writebug.com/static/uploads/2024/8/6/fb38a2f5e0f1435bf0ad9804633bb0e2.pdf)
+  - [CUMCM 2023-A 赛题附件.xlsx](https://www.writebug.com/static/uploads/2024/8/6/de25c88e35f98a56e71c59165d4f2036.xlsx)
 - 优秀论文：
   - [CUMCM 2023-A 优秀论文 A092.pdf](https://www.writebug.com/static/uploads/2024/8/6/f7c567e8924efa866ba54e83443276df.pdf)
   - [CUMCM 2023-A 优秀论文 A127.pdf](https://www.writebug.com/static/uploads/2024/8/6/79a0777f982a0db762adc5d7fc4febb2.pdf)
   - [CUMCM 2023-A 优秀论文 A165.pdf](https://www.writebug.com/static/uploads/2024/8/6/6423084bd3029444d7604312440d941b.pdf)
   - [CUMCM 2023-A 优秀论文 A175.pdf](https://www.writebug.com/static/uploads/2024/8/6/83f95a4d8175e51ab53d50a9b587ccf5.pdf)
-- 成果：
+
+<!-- - 成果：
   - pdf: <button onclick="window.open('')" type="button">click</button>
   - tex: <button onclick="window.open('')" type="button">click</button>
+ -->
 
 ## 赛题参考
 
@@ -130,6 +134,7 @@ $$
 
 ### 阴影遮挡效率
 
+
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-06-17-05-59_MM(1.2)-CUMCM2023A.jpg"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-06-17-06-31_MM(1.2)-CUMCM2023A.png"/></div>
 
@@ -211,7 +216,7 @@ end
 
 
 
-**计算镜面 $B$ 在镜面 $A$ 上的遮光量：**
+**计算镜面 $A$ 在镜面 $B$ 上的遮光量：**
 
 
 在 $A$ 镜坐标系下，$A$ 镜（目标镜）中某一点 $P$ 的坐标 $\vec{x}_{P,A}$，沿太阳入射光投影到 $B$ 镜（最大范围内任意选取的）上记为点 $Q$，坐标 $\vec{x}_{Q,B}$（镜 $B$ 坐标系），计算阴影挡光损失的过程，即由已知 $\vec{x}_{P,A}$ ，求 $\vec{x}_{Q,B}$，再判断 $\vec{x}_{Q,B}$ 是否在镜面内。
@@ -270,7 +275,7 @@ T_B\cdot\vec{x}_{Q,B} + \vec{x}_{B,O}
 $$
 
 <span style="color:red">
-采用上面方法计算转换矩阵 $T$ 时，似乎有些不对，我们摒弃，改为采用下面的方法：
+采用上面方法计算转换矩阵 T 时，似乎有些不对，我们摒弃，改为采用下面的方法：
 </span>
 
 镜面坐标系 $A$ 到地面坐标系 $O$ 的转换关系单位矩阵为：
@@ -407,27 +412,42 @@ if 1
 end
 ```
 
+需要注意的是：在写代码时，我们先给定镜面 $A$，再利用最大干涉距离和阴影方向，筛选出可能对 $A$ 产生干涉的镜面 $B$（一般有多个），然后对每个镜面 $B$，需要计算 $B$ 的阴影对 $A$ 的覆盖情况，再计算 $A$ 的反射光被 $B$ 遮挡情况。我们上面的公式讨论的是 $A$ 阴影对 $B$ 的覆盖情况，而不是代码中需要的 $B$ 阴影对 $A$ 的覆盖，在写代码时不要忘了对称过来。
+
+另外，计算阴影覆盖时需要对 $B$ 离散，计算反射遮挡时需要对 $A$ 进行离散。
+
+**计算镜面 $A$ 反射光遮挡情况：**
 
 
-**计算镜面 $A$ 反射光被 $B$ 所挡住的量：**
+只需要将太阳入射向量 $\vec{V}_{\mathrm{sun}}$ 换为镜 $A$ 的反射光向量 $\vec{V}_{A2\mathrm{co}}$，其它过程完全类似：
 
+$$
+\vec{V}_{A2\mathrm{co},B} = T_B^* \cdot (\vec{V}_{A2\mathrm{co},O}  - \vec{x}_{B,O})（T 为实正交矩阵）
+$$
 
-类似地，再对光线向量 $\vec{V}_0$ 进行坐标转换，求$H'$与光线向量所确定的直线与镜面$B$的交点，最终可以得到：
+ $B$ 镜坐标系中点 $P$（为镜 $A$ 上一点） 坐标公式不变，这样便得到了 $\vec{x}_{P,B}$ 和光线向量 $ \vec{V}_{A2\mathrm{co},B}$，由此确定直线，令 $z$ 坐标为零即得投影点 $Q$：
 
+$$
+\vec{x}_{Q,B}  = 
+\begin{bmatrix}
+    x_{P,B} - \frac{V_{x,B}}{V_{z,B}}z_{P,B} \\
+    y_{P,B} - \frac{V_{y,B}}{V_{z,B}}z_{P,B} \\
+    0
+\end{bmatrix}
+$$
 
+然后判断 $\vec{x}_{Q,B}$ 的横纵坐标范围即可，若在 $B$ 镜之内，则此点反射光被挡，应舍去。
 
-
-
-**计算吸收塔在 $A$ 镜上的遮光量**
+**计算吸收塔阴影对 $A$ 镜的覆盖**
 
 为简化计算，将吸收塔和集热器视为半径与集热器半径 $r_{\mathrm{co}}$ 相同，高度为 $ H_{\mathrm{co}} + \frac{h_{\mathrm{co}}}{2}$ 的圆柱体。
 
-为确定是否有镜面受到吸收塔影响，先计算吸收塔在地面上的最大投影距离。在入射阳光视角，吸收塔顶部椭圆的上半部分中点的投影即为最远投影距离。并且，当塔的高度角达到最低时（09:00 或 15:00），具有最大投影距离。
+为确定是否有镜面受到吸收塔影响，先计算吸收塔在地面上的最大投影距离。在入射阳光视角，吸收塔顶部椭圆的上半部分中点的投影即为最远投影距离。并且，当塔的高度角达到最低时（09:00 或 15:00），具有最大投影距离（直接遍历 ST_array 也无妨）。
 
-圆柱体顶面中心坐标为 $\overrightarrow{top} = (0,0,H_{\mathrm{co}} + \frac{h_{\mathrm{co}}}{2})$，记 $\vec{V} = \vec{V}_{\mathrm{sun}}|_{z=0}$，则最远点为：
+记太阳入射向量在 $xy$ 平面的投影为 $\vec{V}_{sun,Oxy} = \vec{V}_{\mathrm{sun},O}|_{z=0}$，圆柱体顶面中心坐标为 $\overrightarrow{top} = (0,0,H_{\mathrm{co}} + \frac{h_{\mathrm{co}}}{2})$，则最远点为：
 
 $$
-\vec{x}_0 = (x_0,y_0,z_0) = \overrightarrow{top} + \frac{\vec{V}}{\left| V \right| }\cdot r_{\mathrm{co}}
+\vec{x}_0 = (x_0,y_0,z_0) = \overrightarrow{top} + \frac{\vec{V}_{sun,Oxy}}{\left| \vec{V}_{sun,Oxy}\right| }\cdot r_{\mathrm{co}}
 $$
 
 得到地面投影点：
@@ -441,8 +461,127 @@ $$
 \end{bmatrix}
 $$
 
+于是可以计算塔的最大干涉距离：
+
+``` matlab 
+tic
+MaxDistance_co = 0;
+figure
+
+scatter(0,0)
+hold on
+
+for D = D_Array
+    for ST = ST_Array 
+    %for ST = [9 15]
+        [~, ~, ~, ~, V_sun_O] = GetSun(D, varphi, ST);
+        V_sun_Oxy = [V_sun_O(1) V_sun_O(2) 0];
+        X_0 = (  Top + V_sun_Oxy/norm(V_sun_Oxy)*r_co  )';
+        X = [
+            X_0(1) - V_sun_O(1)/V_sun_O(3)*X_0(3)
+            X_0(2) - V_sun_O(2)/V_sun_O(3)*X_0(3)
+            0
+            ];
+        MaxDistance_co = max(norm(X), MaxDistance_co);
+        scatter(X(1),X(2))
+    end
+end
+
+hold off
+
+save("Data_Q1.mat","MaxDistance_co",'-mat');
+MaxDistance_co
+toc
+```
+
+``` matlab 
+MaxDistance_co = 330.5511
+历时 0.022772 秒。
+```
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-09-10-20-08_MM(1.2)-CUMCM2023A.png"/></div>
+
+我们顺便看一眼塔阴影分布：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-09-10-17-53_MM(1.2)-CUMCM2023A.png"/></div>
+
+``` matlab
+% 塔阴影分布可视化
+clc,clear,close all
+load("Data_Q1.mat")
+D = D_Array(1);
+ST = ST_Array(1); 
+N_array = [4 40];
 
 
+% Area = [
+%         -r_co,  r_co, -r_co
+%         -Top(3)/2, -Top(3)/2, Top(3)/2 
+%         0,0,0
+%         ];
+figure
+tiledlayout(2,3)
+for D = [D_Array(1) D_Array(7)]
+    for ST = [ST_Array(1) ST_Array(4) ST_Array(7)]
+        [delta, omega, alpha, gamma, V_sun_O] = GetSun(D, varphi, ST)
+        axes = nexttile;
+        %axes.PlotBoxAspectRatio = [1.1 1 0.65];
+        Area = [
+            -r_co,  r_co, -r_co
+            -Top(3)/2, -Top(3)/2, Top(3)/2 
+            0,0,0
+            ];
+        X_A_O = [0 0 0]';
+        T_A = eye(3,3)
+        S_B = [V_sun_O(1); V_sun_O(2); 0];
+        S_B = S_B/norm(S_B);
+        X_B_O = Top'/2;
+        T_B = GetTransformMatrix(S_B);  % 计算 B 的转换矩阵
+        V_sun_A = T_A' * V_sun_O ;
+        Area = [
+                -r_co,  r_co, -r_co
+                -Top(3)/2, -Top(3)/2, Top(3)/2 
+                0,0,0
+                ];
+        Discrete_tower = Discrete(Area, 2, N_array); % 离散塔 B
+        %figure
+        scatter3(0,0,0,'MarkerFaceColor','b')
+        hold on
+        
+            % 计算阴影覆盖后的逻辑矩阵
+                for i = 1:size(Discrete_tower(:,:,1),1)
+                    for j = 1:size(Discrete_tower(:,:,1),2)
+                        X_P_B(:,1) = Discrete_tower(i,j,:);
+                        X_P_A = T_A' * ( T_B*X_P_B + X_B_O - X_A_O );
+                        X_Q_A = [
+                            X_P_A(1) - V_sun_A(1)/V_sun_A(3)*X_P_A(3)
+                            X_P_A(2) - V_sun_A(2)/V_sun_A(3)*X_P_A(3)
+                            0
+                        ];
+                        
+                        if 1
+                            scatter3(X_P_A(1),X_P_A(2),X_P_A(3),'b.');
+                            scatter3(X_Q_A(1),X_Q_A(2),X_Q_A(3),'black.');
+                        end
+                    end
+                end
+        scatter3(Top(1),Top(2),Top(3),'MarkerFaceColor','r')  
+        hold off
+        xlim([-50 50])
+        ylim([-50 50])
+        title(['D = ',num2str(D),', ST = ',num2str(ST)])
+    end
+end
+```
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-08-14-54-33_MM(1.2)-CUMCM2023A.png"/></div>
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-08-14-50-03_MM(1.2)-CUMCM2023A.png"/></div> -->
+
+获取最大投影距离后，可以计算塔阴影对镜面的干扰。与上面的类似，我们有两层镜面筛选：距离筛选和方向筛选。在代码中，为简化计算，我们将塔视为矩形，且法向量就是 $\vec{V}_{sun,Oxy}$，这样便可将塔视为一个特殊的镜面，使用 “$A$ 的阴影覆盖 $B$” 中的理论。当然，在代码中我们对称过来了，构建了函数 `BKillA()`，此时塔对应 $B$，镜对应 $A$。
+
+
+需要注意，在写代码时，对于任意给定目标镜面 $A$，应按顺序 “塔阴影损失 --> 阴影覆盖损失 --> 反射遮挡损失” 来计算镜面 $A$ 的阴影效率。
 
 
 
