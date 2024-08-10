@@ -1497,11 +1497,17 @@ By the way, when exporting to vector format (pdf & eps), and to bitmap using the
 
 My most frequently used codes are:
 
+- png:
 ```matlab
 export_fig( gcf , '-p0.02','-pdf', 'C:/Users/13081/Desktop/Test_Matlab/YourImgNameHere');
 export_fig( gcf , '-p0.02','-jpg' , '-r350' , '-painters' , 'C:/Users/13081/Desktop/Test_Matlab/YourImgNameHere');
 export_fig( gcf , '-p0.02','-png' , '-r300' , '-painters' , 'C:/Users/13081/Desktop/Test_Matlab/YourImgNameHere');
 ```
+- jpg:
+- pdf:
+- eps --> pdf:
+- print:
+
 
 ## Else 
 
