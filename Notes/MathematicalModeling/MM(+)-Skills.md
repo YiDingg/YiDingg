@@ -129,3 +129,41 @@ g_x = @(x) fittedmodel1( x, zeros(size(y)) );
 ```
 
 这样得到的匿名函数便支持矩阵输入，有时能大大提高代码效率。
+
+### 动态字段
+
+可以利用动态字段（ Matlab2019b 及之后版本）来生成变量名，这在循环或迭代时很方便。例如变量 `i = 80` 时：
+
+``` matlab 
+i = 80
+stc.(['Num_',num2str(i-1)]) = 89456;
+stc.(['Num_',num2str(i)]) = 'hello';
+stc
+```
+
+``` output
+i = 80
+ans = 'Num_79'
+stc = 
+    Num_79: 89456
+    Num_80: 'hello'
+```
+
+在更早的版本中，可以使用 `eval` 函数实现，但这种方法更复杂，也更容易出错，我们不过多阐述。一个例子如下：
+
+``` matlab
+for i = 1:5  
+    eval(['stc.var', num2str(i) ' = i^3;']); 
+end
+stc
+```
+
+``` output
+stc = 
+    var1: 1
+    var2: 8
+    var3: 27
+    var4: 64
+    var5: 125
+```
+

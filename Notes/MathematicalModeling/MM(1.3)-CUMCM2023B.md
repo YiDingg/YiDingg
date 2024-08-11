@@ -23,6 +23,12 @@
 
 ### 思路一：椭圆
 
+如图，随着 $\beta$ 的变化，覆盖宽度的两端点不断旋转，本质上是圆锥被斜平面所截，最终构成一个椭圆。$x$ 轴（横轴）上为短轴，短轴长见后文 公式，$y$ 轴上为长轴，长轴即为问题一的结果。
 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-11-13-13-46_MM(1.3)-CUMCM2023B.jpg"/></div>
+
+
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-11-13-05-51_MM(1.3)-CUMCM2023B.jpg"/></div> -->
 
 ### 思路二：两个仰角
