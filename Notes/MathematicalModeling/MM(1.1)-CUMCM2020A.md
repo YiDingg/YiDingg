@@ -1,19 +1,18 @@
-# Mathematical Modeling (1.1): CUMCM 2022-A
+# Mathematical Modeling (1.1): CUMCM 2020-A
 
 ## 概览
 
 - 主题：炉温曲线
 - 重点：PDE、ODE、最优化
-- 时间：2023年11月（自研）
-- 重做时间：2024年7月（自研）
-- 赛题：[CUMCM 2020-A 赛题.docx](https://www.writebug.com/static/uploads/2024/7/27/f2103d42290b446d13197930ec1c9258.docx)
+- 时间：2023年11月（自研），2024年7月（重做，自研）
+- 赛题：
+  - [CUMCM 2020-A 赛题.docx](https://www.writebug.com/static/uploads/2024/7/27/f2103d42290b446d13197930ec1c9258.docx)
+  - [CUMCM 2020-A 赛题附件.xlsx](https://www.writebug.com/static/uploads/2024/8/9/508db691b838cb1c76f89d0e425dd127.xlsx)
 - 优秀论文：
-  - [CUMCM 2022-A 优秀论文 A070.pdf](https://www.writebug.com/static/uploads/2024/7/27/3d504a7e2fc22b936b92dacc8e403c41.pdf)
-  - [CUMCM 2022-A 优秀论文 A147.pdf](https://www.writebug.com/static/uploads/2024/7/27/a246ab85e0b87d9dd7aeb681e725ef2a.pdf)
-  - [CUMCM 2022-A 优秀论文 A195.pdf](https://www.writebug.com/static/uploads/2024/7/27/1fcd73a55232834c3d8e1eb7241a3518.pdf)
-  - [CUMCM 2022-A 优秀论文 A212.pdf](https://www.writebug.com/static/uploads/2024/7/27/30fd4c6d0ad2dd6cfc7230d921b74867.pdf)
-
-详见
+  - [x] [CUMCM 2020-A 优秀论文 A070.pdf](https://www.writebug.com/static/uploads/2024/7/27/3d504a7e2fc22b936b92dacc8e403c41.pdf)
+  - [x] [CUMCM 2020-A 优秀论文 A147.pdf](https://www.writebug.com/static/uploads/2024/7/27/a246ab85e0b87d9dd7aeb681e725ef2a.pdf)
+  - [x] [CUMCM 2020-A 优秀论文 A195.pdf](https://www.writebug.com/static/uploads/2024/7/27/1fcd73a55232834c3d8e1eb7241a3518.pdf)
+  - [x] [CUMCM 2020-A 优秀论文 A212.pdf](https://www.writebug.com/static/uploads/2024/7/27/30fd4c6d0ad2dd6cfc7230d921b74867.pdf)
 
 
 ## 示意图与数据准备
@@ -272,10 +271,10 @@ $$
 
 ## 问题一（补充）
 
-在上面的模型中，我们设置 ode 解算时间为 $[0 t_{end}]$，这只能得到一个可以接受的结果，勉强达到我们的要求：
+在上面的模型中，我们设置 ode 解算时间为 $[0, t_{end}]$，这只能得到一个可以接受的结果，勉强达到我们的要求：
 
 $$
-k_{\mathrm{best,sin}} = [0.015046    0.02284     0.01845]\, \ \ obj_{\mathrm{best,sin}} = -19675.5288 \\ 
+k_{\mathrm{best,sin}} = [0.015046,\     0.02284,\      0.01845]\, \ \ obj_{\mathrm{best,sin}} = -19675.5288 \\ 
 残差平方和\  \mathrm{SSE} = 19675.5288, \ 决定系数\  \mathrm{R^2}= 0.9900, \ 平均绝对误差 \ \mathrel{MAE} = 3.4605\  \mathrm{K}
 $$
 
@@ -296,17 +295,11 @@ change_2次数：1
 为了建立更精确的模型，我们在保持离散单元数不变的情况下，将 ode 的初始时间和温度调整为附录数据的初始时间和温度，重新计算后得到：
 
 $$
-k_{\mathrm{best,sin}} = [0.017156    0.022332    0.018784]\, \ \ obj_{\mathrm{best,sin}} = -6700.1746 \\ 
+k_{\mathrm{best,sin}} = [0.017156,\    0.022332,\    0.018784]\, \ \ obj_{\mathrm{best,sin}} = -6700.1746 \\ 
 残差平方和\  \mathrm{SSE} = 6700.1746, \ 决定系数\  \mathrm{R^2}= 0.9966, \ 平均绝对误差 \ \mathrel{MAE} = 2.1833\  \mathrm{K}
 $$
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-05-21-51-01_MM(1)-Papers.png"/></div>
-
-如果不使用拟合函数，而是直接使用 ode 解算结果进行误差分析，更是可以得到：
-
-$$
-残差平方和\  \mathrm{SSE} = 6700.1746, \ 决定系数\  \mathrm{R^2}= 0.9966, \ 平均绝对误差 \ \mathrel{MAE} = 2.1833\  \mathrm{K}
-$$
 
 ``` matlab 
 ---------------------------------
@@ -337,7 +330,7 @@ change_2次数：0
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-05-17-44-13_MM(1)-Papers.png"/></div>
 
-先设定速度范围为 $v \in [50\  \mathrm{cm/min}, 100\  \mathrm{cm/min}]$，步长为 $0.05$ 进行搜索，锁定最大过炉速度所在区间为 [69.5, 72.5]。然后再对该区间进行搜索，步长设置 $0.01$，最终得到最大过炉速度 $v_{\mathrm{max}} = 71.61\  \mathrm{cm/min}$。
+先设定速度范围为 $v \in [50\  \mathrm{cm/min}, 100\  \mathrm{cm/min}]$，步长为 $0.05$ 进行搜索，锁定最大过炉速度所在区间为 $[69.5,\ 72.5]$。然后再对该区间进行搜索，步长设置 $0.01$，最终得到最大过炉速度 $v_{\mathrm{max}} = 71.61\  \mathrm{cm/min}$。
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-05-17-58-42_MM(1)-Papers.png"/></div>
 

@@ -3,16 +3,16 @@
 ## 概览
 
 - 主题：定日镜场的优化设计
-- 重点：
+- 重点：坐标系转换，逻辑矩阵与逻辑索引，投影计算，平面离散
 - 时间：2024年8月（集训）
 - 赛题：
   - [CUMCM 2023-A 赛题.pdf](https://www.writebug.com/static/uploads/2024/8/6/fb38a2f5e0f1435bf0ad9804633bb0e2.pdf)
   - [CUMCM 2023-A 赛题附件.xlsx](https://www.writebug.com/static/uploads/2024/8/6/de25c88e35f98a56e71c59165d4f2036.xlsx)
 - 优秀论文：
-  - [CUMCM 2023-A 优秀论文 A092.pdf](https://www.writebug.com/static/uploads/2024/8/6/f7c567e8924efa866ba54e83443276df.pdf)
-  - [CUMCM 2023-A 优秀论文 A127.pdf](https://www.writebug.com/static/uploads/2024/8/6/79a0777f982a0db762adc5d7fc4febb2.pdf)
-  - [CUMCM 2023-A 优秀论文 A165.pdf](https://www.writebug.com/static/uploads/2024/8/6/6423084bd3029444d7604312440d941b.pdf)
-  - [CUMCM 2023-A 优秀论文 A175.pdf](https://www.writebug.com/static/uploads/2024/8/6/83f95a4d8175e51ab53d50a9b587ccf5.pdf)
+  - [ ] [CUMCM 2023-A 优秀论文 A092.pdf](https://www.writebug.com/static/uploads/2024/8/6/f7c567e8924efa866ba54e83443276df.pdf)
+  - [ ] [CUMCM 2023-A 优秀论文 A127.pdf](https://www.writebug.com/static/uploads/2024/8/6/79a0777f982a0db762adc5d7fc4febb2.pdf)
+  - [ ] [CUMCM 2023-A 优秀论文 A165.pdf](https://www.writebug.com/static/uploads/2024/8/6/6423084bd3029444d7604312440d941b.pdf)
+  - [ ] [CUMCM 2023-A 优秀论文 A175.pdf](https://www.writebug.com/static/uploads/2024/8/6/83f95a4d8175e51ab53d50a9b587ccf5.pdf)
 
 <!-- - 成果：
   - pdf: <button onclick="window.open('')" type="button">click</button>
@@ -78,7 +78,7 @@ $$
 
 问题一的难点在于建立镜场光学效率计算模型。
 
-### 镜面各参数求解
+### 镜面参数求解
 
 给定镜面 $A$ 中心坐标（地面坐标系） $\vec{O}_A = (x_{OA}, y_{OA}, H_{\mathrm{he}})$、吸收塔坐标 $\vec{O}_C = (0,0,H_{\mathrm{co}})$，求从镜面中心指向集热器的光线的单位向量 $\vec{V}_{A,\mathrm{co}}$（其它位置反射后视为光锥）：
 

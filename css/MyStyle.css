@@ -827,7 +827,7 @@ code.lang-html .token.property {
 /* 适配fontsize，右侧navbar，表格最小单元格样式 */
 @media screen and (max-width: 400px) {
     .nav {
-        width: 100%;
+        width: 200px;
     }
     .content {
         /* 此宽度下左侧Sidebar默认收起, content需回位 */
