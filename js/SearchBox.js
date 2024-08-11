@@ -1,4 +1,4 @@
-// https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js
+// https://gcore.jsdelivr.net/npm/docsify/lib/plugins/search.min.js
 
 !(function () {
     function u(e) {

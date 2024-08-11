@@ -1,4 +1,4 @@
-// 插件：https://cdn.jsdelivr.net/npm/docsify-busuanzi@1.0.1/dist/docsify-busuanzi.min.js
+// 插件：https://gcore.jsdelivr.net/npm/docsify-busuanzi@1.0.1/dist/docsify-busuanzi.min.js
 
 // 不蒜子原地址：http://ibruce.info/2015/04/04/busuanzi/
 // http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js

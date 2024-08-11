@@ -1,4 +1,4 @@
-// https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js
+// https://gcore.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js
 
 let defaultDocsifyUpdatedOptions = {
     text: ">Last Modify: {docsify-updated}",

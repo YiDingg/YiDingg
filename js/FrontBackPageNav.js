@@ -1,4 +1,4 @@
-// https://cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js
+// https://gcore.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js
 
 !(function (t) {
     ("object" != typeof exports || "undefined" == typeof module) &&

@@ -35,10 +35,10 @@ myVid.volume=0.15;
 
 ### Picture
 
-<div class='center' style='width:250px'><img src='https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg' alt='img'/></div>
+<div class='center' style='width:250px'><img src='https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg' alt='img'/></div>
 
 ``` html
-<div class='center' style='width:250px'><img src='https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg' alt='img'/></div>
+<div class='center' style='width:250px'><img src='https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg' alt='img'/></div>
 <div class='center' style='width:250px'><img src='https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg' alt='img'/></div>
 ```
 
@@ -529,7 +529,7 @@ Introduction text for the FAQ page.
 https://github.com/peterbedorjr/docsify-algolia-search-plugin
 
 暂时用的另一个：
-//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js
+//gcore.jsdelivr.net/npm/docsify/lib/plugins/search.min.js
 
 
 ### <s>Termynal</s>

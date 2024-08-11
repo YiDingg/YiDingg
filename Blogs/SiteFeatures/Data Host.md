@@ -194,7 +194,7 @@ https:https://gcore.jsdelivr.net/gh/YiDingg/YiDingg/pdf/GitHub_YiDingg_pdf/Linea
 <!-- GitHub(cdn) -->
 
 ```pdf
-https:https://cdn.jsdelivr.net/gh/YiDingg/YiDingg/pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf
+https:https://gcore.jsdelivr.net/gh/YiDingg/YiDingg/pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf
 ```
 </div></td>
 
@@ -231,7 +231,7 @@ iframe + WB.Static:
 |domain|img|gif|mp4|
 |:-:|:-:|:-:|:-:|
  |gcore.jsdelivr.net|<img src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:40px"/>|<img src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" style="width:40px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|
- |cdn.jsdelivr.net|<img src="https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:40px"/>|<img src="https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" style="width:40px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://cdn.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|6|
+ |gcore.jsdelivr.net|<img src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:40px"/>|<img src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" style="width:40px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://gcore.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|6|
  |fastly.jsdelivr.net|<img src="https://fastly.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:40px"/>|<img src="https://fastly.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" style="width:40px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://fastly.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|
  |testingcf.jsdelivr.net|<img src="https://testingcf.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171018025.jpg" style="width:40px"/>|<img src="https://testingcf.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406171019604.gif" style="width:40px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://testingcf.jsdelivr.net/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|
  |code.webcache.cn|<img src="https://code.webcache.cn/gh/YiDingg/VideoBank_0@latest/PicGo/202406171018025.jpg" style="width:40px"/>|<img src="https://code-dev.webcache.cn/gh/YiDingg/VideoBank_0@main/PicGo/202406171019604.gif" style="width:40px"/>|<video controls="false"  muted="muted" id="video1" name="media" style="width:200px"><source src="https://code-dev.webcache.cn/gh/YiDingg/VideoBank_0/PicGo/202406170046093.mp4" type="video/mp4"></video>|

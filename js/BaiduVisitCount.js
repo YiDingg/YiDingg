@@ -1,4 +1,4 @@
-// https://cdn.jsdelivr.net/npm/docsify-giscus@1.0.2/dist/docsify-giscus.min.js
+// https://gcore.jsdelivr.net/npm/docsify-giscus@1.0.2/dist/docsify-giscus.min.js
 
 var _hmt = _hmt || [];
 (function () {

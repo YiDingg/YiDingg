@@ -1,4 +1,4 @@
-// https://cdn.jsdelivr.net/gh/sumsung524/docsify-backTop/dist/docsify-backTop.min.js
+// https://gcore.jsdelivr.net/gh/sumsung524/docsify-backTop/dist/docsify-backTop.min.js
 
 var docsifyBackTop = new Object();
 window.addEventListener("DOMContentLoaded", function () {
