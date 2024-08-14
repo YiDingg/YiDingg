@@ -1,4 +1,4 @@
-# MCUSeries(4)-WiFi(ESP8266)
+# MCU Notes (4): WiFi (ESP8266)
 
 ## Intro
 

@@ -1,11 +1,6 @@
-# STM32系列 (1)：Keil Debug 功能使用 
+# MCU Notes (1): Keil Debug (STM32) 
 
-## 前言
-本节目标：利用 Keil_MDK 进行软件Debug，如设置断点、查看寄存器值、查看引脚逻辑电平、设置按键功能等。
-
-> 系列汇总详见地址：[《📕STM32系列汇总》](Blogs\STM32\STM32系列汇总.md) 
-
-## 一、Keil 软件设置
+## Keil 软件设置
 官方对 Keil Debug 功能的说明详见：[官方 Keil Debug 文档](https://developer.arm.com/documentation/101407/0540/Dialogs/Project/Options/Debug?lang=en) 。下面是实际的一些操作：
 
 <div class='center'> 
@@ -18,7 +13,7 @@
 </div>
 
 
-## 二、各按键功能
+## 各按键功能
 软件仿真的所有按键如下图所示（图中罗马数字1表示序号11，罗马2表示12，以此类推）：
 <a href="https://imgse.com/i/pkdOzv9"><img src="https://s21.ax1x.com/2024/06/14/pkdOzv9.png" alt="pkdOzv9.png" border="0" /></a>
 
@@ -66,7 +61,7 @@
 | 20. Toolbox | 工具箱 | 不常用 |
 </div>
 
-## 三、仿真逻辑分析仪
+## 仿真逻辑分析仪
 
 Keil仿真逻辑分析仪不仅可以查看引脚电平，还能查看全局变量的值、虚拟仿真寄存器（Virtual Simulation Registers, VTREGs）等。下面是官方对其功能范围的描述，以及查看形式设置：
 <a href="https://imgse.com/i/pkdjuz4"><img src="https://s21.ax1x.com/2024/06/15/pkdjuz4.png" alt="pkdjuz4.png" border="0" /><img src="https://s21.ax1x.com/2024/06/15/pkdjMQJ.png" alt="pkdjMQJ.png" border="0" /></a>
@@ -106,11 +101,11 @@ Keil仿真逻辑分析仪不仅可以查看引脚电平，还能查看全局变�
 特别地，图中问号点击可以跳转至官方帮助文档：
 <img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/STM32系列 (1)：Keil Debug 功能使用--2024-06-23-00-28-55.png"/>
 
-## 四、仿真外部按键
+## 仿真外部按键
 
 Keil仿真可以自定义按键，按键对应一些函数语句，在按键按下时被执行（效果类似外部中断），配置步骤如下：
 
-## 五、硬件软件调试的区别
+## 硬件软件调试的区别
 单片机的调试（即Debug）一般分为软件和硬件两种。
 软件Debug：使用软件模拟调试，用开发单片机程序的软件（IDE）去模拟单片机的指令执行，并模拟单片机片内资源，从而实现调试的目的，但是计算机无法准确的模拟单片机的时序，不可能像真正的单片机运行环境那样执行的指令在同样一个时间能完成（往往要完成的比单片机慢）。
 硬件Debug：硬件调试其实也需要计算机软件的配合，大致过程是这样的：计算机软件把编译好的程序通过串行口、并行口或者USB口传输到硬件调试设备中（这个设备叫仿真器），仿真器仿真全部的单片机资源（所有的单片机接口，并且有真实的引脚输出），仿真器可以接入实际的电路中，然后与单片机一样执行。仿真的作用：仿真器也会返回单片机内部内存与时序等情况给计算机的辅助软件，这样 就可以在软件里看到真实的执行情况。不仅如此，还可以通过计算机上的软件实现单步、全速、运行到光标等常规调试手段。

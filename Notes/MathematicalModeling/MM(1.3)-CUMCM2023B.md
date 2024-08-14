@@ -23,7 +23,7 @@
 
 ### 思路一：椭圆
 
-如图，随着 $\beta$ 的变化，覆盖宽度的两端点不断旋转，本质上是圆锥被斜平面所截，最终构成一个椭圆。$x$ 轴（横轴）上为短轴，短轴长见后文 公式，$y$ 轴上为长轴，长轴即为问题一的结果。
+如图，随着 $\beta$ 的变化，覆盖宽度的两端点不断旋转，本质上是圆锥被斜平面所截，最终构成一个椭圆。$x$ 轴（横轴）上为短轴，短轴长见后文 公式，$y$ 轴上为长轴，长轴即为问题一的结果。更清晰的矢量图见 [多波束测线示意图.pdf](https://www.writebug.com/static/uploads/2024/8/12/27841290640d405aa1059cbf4ba783ed.pdf)。
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-11-13-13-46_MM(1.3)-CUMCM2023B.jpg"/></div>
 

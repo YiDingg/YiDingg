@@ -74,7 +74,7 @@
     - [Matlab Notes(2): Mathematics](Notes/Matlab/MatlabNotes(2)-Mathematics.md)
     - [Matlab Notes(3): Symbolic Math](Notes/Matlab/MatlabNotes(3)-SymbolicMath.md)
   - Mathematical Modeling
-    - [MM(+): Skills](Notes/MathematicalModeling/MM(+)-Skills.md)
+    - [MM(!): Skills](Notes/MathematicalModeling/MM(!)-Skills.md)
     - [MM(1): Papers](Notes/MathematicalModeling/MM(1)-Papers.md)
     - [MM(2): Optimization](Notes/MathematicalModeling/MM(2)-Optimization.md)
     - [MM(3): PDE](Notes/MathematicalModeling/MM(3)-PDE.md)
@@ -84,13 +84,13 @@
     - [MM(1.2): CUMCM 2023-A](Notes/MathematicalModeling/MM(1.2)-CUMCM2023A.md)
     - [MM(1.3): CUMCM 2023-B](Notes/MathematicalModeling/MM(1.3)-CUMCM2023B.md)
     - [MM(1.4): CUMCM 2022-A](Notes/MathematicalModeling/MM(1.4)-CUMCM2022A.md)
-  - STM32
-    - [STM32系列汇总](Notes/STM32/STM32系列汇总.md)
-    - [STM32系列 (1)：Keil Debug 功能使用](Notes/STM32/STM32系列%20(1)：Keil%20Debug%20功能使用.md)
-    - [STM32系列 (2)：定时器详解](Notes/STM32/STM32系列%20(2)：定时器详解.md)
-    - [STM32系列 (3)：DMA的原理与用法](Notes/STM32/STM32系列%20(3)：DMA的原理与用法.md)
-    - [MCU系列 (4): WiFi (ESP8266)](Notes/STM32/MCUSeries(4)-WiFi(ESP8266).md)
-    - [STM32系列 (+)：实用技巧汇总](Notes/STM32/STM32系列%20(+)：实用技巧汇总.md)
+  - MCU
+    - [MCU Notes (0): Preparations](Notes/MCU/MCUNotes(0)-Preparations.md)
+    - [MCU Notes (1): Keil Debug (STM32).md](Notes/MCU/MCUNotes(1)-KeilDebug(STM32).md)
+    - [MCU Notes (2): Timer (STM32).md](Notes/MCU/MCUNotes(2)-Timer(STM32).md)
+    - [MCU Notes (3): DMA (STM32).md](Notes/MCU/MCUNotes(3)-DMA(STM32).md)
+    - [MCU Notes (4): WiFi (ESP8266).md](Notes/MCU/MCUNotes(4)-WiFi(ESP8266).md)
+    - [MCU Notes (!): Tips and Tricks (STM32).md](Notes/MCU/MCUNotes(!)-TipsAndTricks(STM32).md)
 
 - 🎓 **English Learning**
   - [Words](EnglishLearning/Words.md)
