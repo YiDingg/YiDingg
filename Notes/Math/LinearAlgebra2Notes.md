@@ -11,6 +11,11 @@ https://www.writebug.com/git/YiDingg/Notes/raw/commit/77732e15298f9d2390549ae3a2
 ``` -->
 
 
-```pdf
+<!-- ```pdf
 https://yidingg.github.io/YiDingg/pdf/GitHub_YiDingg_pdf/Linear Algebra 2 notes.pdf
+``` -->
+
+
+```pdf
+https://www.writebug.com/git/YiDingg/WB.YiDingg/raw/branch/main/LinearAlgebra2Notes.pdf
 ```

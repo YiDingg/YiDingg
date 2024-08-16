@@ -40,8 +40,7 @@
 
 
 - 📖 **Notes**
-  - Numerical Methods for PDE
-    - [NMFPDE (0): Preparations](Notes/NumericalMethodsForPDE/NMFPDE(0)-Preparations.md)
+  - [Numerical Methods for PDE](Notes/Math/NumericalMethodsForPDE.md)
   - CircuitTheory
     - [Circuit Theory (0): Preparations](Notes/CircuitTheory/CircuitTheoryNotes(0)-Preparations.md)
   - Optics

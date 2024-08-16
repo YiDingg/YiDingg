@@ -13,7 +13,7 @@
 考虑到偏微分方程精确解的相关理论会在数学物理方法一门课中学到，我们这里就不涉及精确解的讨论了。至于更深入的精确或数值理论，等以后有机会再涉及。
 
 ## Resources 
-
+ 
 
 教材：
 - [科学计算中的偏微分方程数值解法（张文生）.pdf](https://www.writebug.com/static/uploads/2024/8/4/ce21a47157bfcba5b44bf27dbfa9fb1c.pdf)
