@@ -21,7 +21,8 @@
 ### 绘制矢量图像
 
 - Matlab 绘制数据可视化
-- 如果不麻烦，物理示意图直接用 AxGlyph + [Mathcha](https://www.mathcha.io/editor) 绘制并导出。否则，用平板作图后导出为 pdf，用 Adobe Acrobat 裁剪，
+- 如果不麻烦，物理示意图直接用 AxGlyph + [Mathcha](https://www.mathcha.io/editor) 绘制并导出。否则，用平板作图（适当使用“转文字 / 公式”）后导出为 pdf，用 Adobe Acrobat 裁剪
+- 流程图用 [draw.io](https://app.diagrams.net/?src=about)
 
 ## Matlab Skills
 

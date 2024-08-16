@@ -40,13 +40,17 @@
 
 
 - 📖 **Notes**
-  - [Mathematical Physics Mathods](Notes/Phisics/MathematicalPhysicsMathods.md)
+  - Numerical Methods for PDE
+    - [NMFPDE (0): Preparations](Notes/NumericalMethodsForPDE/NMFPDE(0)-Preparations.md)
+  - CircuitTheory
+    - [Circuit Theory (0): Preparations](Notes/CircuitTheory/CircuitTheoryNotes(0)-Preparations.md)
   - Optics
 
-    - [光学笔记大纲](Notes/Optics/OpticsNotes(0)-Preparation.md)
-    - [光学笔记 (1)：](Notes/Optics/OpticsNotes(1)-.md)
-  - Numerical Methods for PDE
-    - [NMFPDE(0)-Preparation](Notes/NumericalMethodsForPDE/NMFPDE(0)-Preparation.md)
+    - [Optics (0): Preparations](Notes/Phisics/Optics/OpticsNotes(0)-Preparations.md)
+    - [Optics (1):](Notes/Optics/OpticsNotes(1)-.md)
+  - [Mathematical Physics Mathods](Notes/Math/MathematicalPhysicsMathods.md)
+
+
   - Math
     - [Calculus 1](Notes/Math/Calculus1Notes.md)
     - [Calculus 2](Notes/Math/Calculus2Notes.md)
@@ -57,40 +61,40 @@
     - [Electromegnetism](Notes/Phisics/Electromegnetism%20Notes.md)
     - [Thermodynamics](Notes/Phisics/Thermodynamics%20notes.md)
   - C
-    - [C语言笔记 (0)：准备](Notes/C/CNotes(0)-Preparation.md)
-    - [C语言笔记 (1)：开始编程之前](Notes/C/CNotes(1)-BeforeStarting.md)
-    - [C语言笔记 (2)：关键字](Notes/C/CNotes(2)-MemoryAndKeywords.md)
-    - [C语言笔记 (3)：基本数据类型](Notes/C/CNotes(3)-DataTypes.md)
-    - [C语言笔记 (4)：数组与字符串](Notes/C/CNotes(4)-ArrayAndString.md)
-    - [C语言笔记 (5)：内存管理](Notes/C/CNotes(5)-MemoryManagement.md)
-    - [C语言笔记 (6)：特殊数据类型](Notes/C/CNotes(6)-SpecialDataTypes.md)
-    - [C语言笔记 (7)：预处理](Notes/C/CNotes(7)-Preproccess.md)
-    - [C语言笔记 (8)：输入输出函数](Notes/C/CNotes(8)-IOFunctions.md)
+    - [C语言 (0)：准备](Notes/C/CNotes(0)-Preparation.md)
+    - [C语言 (1)：开始编程之前](Notes/C/CNotes(1)-BeforeStarting.md)
+    - [C语言 (2)：关键字](Notes/C/CNotes(2)-MemoryAndKeywords.md)
+    - [C语言 (3)：基本数据类型](Notes/C/CNotes(3)-DataTypes.md)
+    - [C语言 (4)：数组与字符串](Notes/C/CNotes(4)-ArrayAndString.md)
+    - [C语言 (5)：内存管理](Notes/C/CNotes(5)-MemoryManagement.md)
+    - [C语言 (6)：特殊数据类型](Notes/C/CNotes(6)-SpecialDataTypes.md)
+    - [C语言 (7)：预处理](Notes/C/CNotes(7)-Preproccess.md)
+    - [C语言 (8)：输入输出函数](Notes/C/CNotes(8)-IOFunctions.md)
   - Cpp
-    - [Cpp笔记 (0)：准备](Notes/Cpp/CppNotes(0)-Preparation.md)
+    - [Cpp (0)：准备](Notes/Cpp/CppNotes(0)-Preparation.md)
   - Matlab
-    - [Matlab Notes(0): Preparation](Notes/Matlab/MatlabNotes(0)-Preparation.md)
-    - [Matlab Notes(1): Graphics](Notes/Matlab/MatlabNotes(1)-Graphics.md)
-    - [Matlab Notes(2): Mathematics](Notes/Matlab/MatlabNotes(2)-Mathematics.md)
-    - [Matlab Notes(3): Symbolic Math](Notes/Matlab/MatlabNotes(3)-SymbolicMath.md)
+    - [Matlab (0): Preparation](Notes/Matlab/MatlabNotes(0)-Preparation.md)
+    - [Matlab (1): Graphics](Notes/Matlab/MatlabNotes(1)-Graphics.md)
+    - [Matlab (2): Mathematics](Notes/Matlab/MatlabNotes(2)-Mathematics.md)
+    - [Matlab (3): Symbolic Math](Notes/Matlab/MatlabNotes(3)-SymbolicMath.md)
   - Mathematical Modeling
-    - [MM(!): Skills](Notes/MathematicalModeling/MM(!)-Skills.md)
-    - [MM(1): Papers](Notes/MathematicalModeling/MM(1)-Papers.md)
-    - [MM(2): Optimization](Notes/MathematicalModeling/MM(2)-Optimization.md)
-    - [MM(3): PDE](Notes/MathematicalModeling/MM(3)-PDE.md)
-    - [MM(4): Data Processing](Notes/MathematicalModeling/MM(4)-DataProcessing.md)
-    - [MM(5): Problem B](Notes/MathematicalModeling/MM(5)-ProblemB.md)
-    - [MM(1.1): CUMCM 2020-A](Notes/MathematicalModeling/MM(1.1)-CUMCM2020A.md)
-    - [MM(1.2): CUMCM 2023-A](Notes/MathematicalModeling/MM(1.2)-CUMCM2023A.md)
-    - [MM(1.3): CUMCM 2023-B](Notes/MathematicalModeling/MM(1.3)-CUMCM2023B.md)
-    - [MM(1.4): CUMCM 2022-A](Notes/MathematicalModeling/MM(1.4)-CUMCM2022A.md)
+    - [MM (!): Skills](Notes/MathematicalModeling/MM(!)-Skills.md)
+    - [MM (1): Papers](Notes/MathematicalModeling/MM(1)-Papers.md)
+    - [MM (2): Optimization](Notes/MathematicalModeling/MM(2)-Optimization.md)
+    - [MM (3): PDE](Notes/MathematicalModeling/MM(3)-PDE.md)
+    - [MM (4): Data Processing](Notes/MathematicalModeling/MM(4)-DataProcessing.md)
+    - [MM (5): Problem B](Notes/MathematicalModeling/MM(5)-ProblemB.md)
+    - [MM (1.1): CUMCM 2020-A](Notes/MathematicalModeling/MM(1.1)-CUMCM2020A.md)
+    - [MM (1.2): CUMCM 2023-A](Notes/MathematicalModeling/MM(1.2)-CUMCM2023A.md)
+    - [MM (1.3): CUMCM 2023-B](Notes/MathematicalModeling/MM(1.3)-CUMCM2023B.md)
+    - [MM (1.4): CUMCM 2022-A](Notes/MathematicalModeling/MM(1.4)-CUMCM2022A.md)
   - MCU
-    - [MCU Notes (0): Preparations](Notes/MCU/MCUNotes(0)-Preparations.md)
-    - [MCU Notes (1): Keil Debug (STM32).md](Notes/MCU/MCUNotes(1)-KeilDebug(STM32).md)
-    - [MCU Notes (2): Timer (STM32).md](Notes/MCU/MCUNotes(2)-Timer(STM32).md)
-    - [MCU Notes (3): DMA (STM32).md](Notes/MCU/MCUNotes(3)-DMA(STM32).md)
-    - [MCU Notes (4): WiFi (ESP8266).md](Notes/MCU/MCUNotes(4)-WiFi(ESP8266).md)
-    - [MCU Notes (!): Tips and Tricks (STM32).md](Notes/MCU/MCUNotes(!)-TipsAndTricks(STM32).md)
+    - [MCU (0): Preparations](Notes/MCU/MCUNotes(0)-Preparations.md)
+    - [MCU (1): Keil Debug (STM32).md](Notes/MCU/MCUNotes(1)-KeilDebug(STM32).md)
+    - [MCU (2): Timer (STM32).md](Notes/MCU/MCUNotes(2)-Timer(STM32).md)
+    - [MCU (3): DMA (STM32).md](Notes/MCU/MCUNotes(3)-DMA(STM32).md)
+    - [MCU (4): WiFi (ESP8266).md](Notes/MCU/MCUNotes(4)-WiFi(ESP8266).md)
+    - [MCU (!): Tips and Tricks (STM32).md](Notes/MCU/MCUNotes(!)-TipsAndTricks(STM32).md)
 
 - 🎓 **English Learning**
   - [Words](EnglishLearning/Words.md)

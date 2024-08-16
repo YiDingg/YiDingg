@@ -38,7 +38,8 @@ Download it [here](https://www.silabs.com/developers/simplicity-studio).
 
 Here are some official recources that might be helpful:
 
-- [Simplicity Studio User's Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-overview/): The official Simplicity Studio 5 User's Guide
+- [Simplicity Studio 5 User's Guide (online)](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-overview/): The official Simplicity Studio 5 User's Guide
+- - [Simplicity Studio 5 User's Guide.pdf](https://www.writebug.com/static/uploads/2024/8/14/2fd2582321ac1fcb4d48ad0e68873b04.pdf)
 - [Getting Started (Video Series)](https://www.silabs.com/support/training/ss-studio-100-getting-started): Getting started with Simplicity Studio video series
 - [Training and Tutorials](https://www.silabs.com/support/training.soft-development-environments_simplicity-studio): Our collection of Simplicity Studio training and tutorial videos
 - [Tips and Tricks](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tips-and-tricks/): Useful tips and tricks to help you optimize your tools setup
@@ -53,7 +54,7 @@ Here are some official recources that might be helpful:
 
 ### IIC
 
-- [simplicity-studio-5-users-guide](https://www.writebug.com/static/uploads/2024/8/14/2fd2582321ac1fcb4d48ad0e68873b04.pdf)
+- [simplicity-studio-5-users-guide.pdf](https://www.writebug.com/static/uploads/2024/8/14/2fd2582321ac1fcb4d48ad0e68873b04.pdf)
 
 
 ## SHT35 (Humidity Sensor)
@@ -85,25 +86,26 @@ Refer the example [here](https://wiki.dfrobot.com.cn/_SKU_SEN0333_SHT35_%E6%B8%A
     float Temperature = 0, Humidity = 0;
     uint8_t Status = 0;
     printf("-----\n");
-    if (SHT3X_PeriodMode_Enable() == HAL_OK) {
+    if (SHT3X.PeriodMode_Enable() == HAL_OK) {
         printf("Successfully enable SHT3X period mode !\r\n");
     } else {
-        printf("error: SHT3X_PeriodMode_Enable()\r\n");
+        printf("error: SHT3X.PeriodMode_Enable()\r\n");
     }
     printf("-----\n");
     while (1) {
         HAL_Delay(1000);
         HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
-
-        if (SHT3X_PeriodMode_GetData(I2CRXBuffer) == HAL_OK) {
-            Status = SHT3X_Data_To_Float(I2CRXBuffer, &Temperature, &Humidity);
+        if (SHT3X.PeriodMode_GetData(I2CRXBuffer) == HAL_OK) {
+            Status = SHT3X.Data_To_Float(I2CRXBuffer, &Temperature, &Humidity);
             if (!Status) {
-                printf("Temp:%.2fC, Humi:%.2f%%\r\n", Temperature, Humidity);
+                printf(
+                    "Temprature: %.2f C, Humidity: %.2f %%\r\n", Temperature,
+                    Humidity);
             } else {
                 printf("error: CRC check\r\n");
             }
         } else {
-            printf("error: SHT3X_PeriodMode_GetData()\r\n");
+            printf("error: SHT3X.PeriodMode_GetData()\r\n");
         }
         /* USER CODE END WHILE */
         /* USER CODE BEGIN 3 */
@@ -127,19 +129,19 @@ Refer the example [here](https://wiki.dfrobot.com.cn/_SKU_SEN0333_SHT35_%E6%B8%A
     float Temperature = 0, Humidity = 0;
     uint8_t Status = 0;
     while (1) {
-        printf("-----");
         HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
-
-        if (SHT3X_OnceMode_GetData(I2CRXBuffer) == HAL_OK) {
-            Status = SHT3X_Data_To_Float(I2CRXBuffer, &Temperature, &Humidity);
+        if (SHT3X.OnceMode_GetData(I2CRXBuffer) == HAL_OK) {
+            Status = SHT3X.Data_To_Float(I2CRXBuffer, &Temperature, &Humidity);
             if (!Status) {
-                printf("Temp:%.2fC, Humi:%.2f%%\r\n", Temperature, Humidity);
+                printf(
+                    "Temprature: %.2f C, Humidity: %.2f %%\r\n", Temperature,
+                    Humidity);
                 HAL_Delay(1000);
             } else {
                 printf("error: CRC check\r\n");
             }
         } else {
-            printf("error: SHT3X_OnceMode_GetData()\r\n");
+            printf("error: SHT3X.OnceMode_GetData()\r\n");
         }
         /* USER CODE END WHILE */
         /* USER CODE BEGIN 3 */
@@ -202,12 +204,22 @@ typedef enum {
     READOUT_FOR_PERIODIC_MODE = 0xE000,
 } SHT3X_CMD;
 
-void SHT3X_Reset(void);
-HAL_StatusTypeDef SHT3X_OnceMode_GetData(uint8_t* dat);
-HAL_StatusTypeDef SHT3X_PeriodMode_Enable(void);
-HAL_StatusTypeDef SHT3X_PeriodMode_GetData(uint8_t* dat);
+void Reset(void);
+HAL_StatusTypeDef OnceMode_GetData(uint8_t* dat);
+HAL_StatusTypeDef PeriodMode_Enable(void);
+HAL_StatusTypeDef PeriodMode_GetData(uint8_t* dat);
 uint8_t CheckCrc8(const uint8_t* message, uint8_t initial_value);
-uint8_t SHT3X_Data_To_Float(const uint8_t* dat, float* temp, float* humi);
+uint8_t Data_To_Float(const uint8_t* dat, float* temp, float* humi);
+
+/* Structure for user's usage */
+struct UserFuntions {
+    HAL_StatusTypeDef (*OnceMode_GetData)(uint8_t* dat);
+    HAL_StatusTypeDef (*PeriodMode_Enable)(void);
+    HAL_StatusTypeDef (*PeriodMode_GetData)(uint8_t* dat);
+    uint8_t (*Data_To_Float)(const uint8_t* dat, float* temp, float* humi);
+};
+
+extern struct UserFuntions SHT3X;
 
 #endif // __SHT3X_H
 
@@ -224,7 +236,7 @@ uint8_t SHT3X_Data_To_Float(const uint8_t* dat, float* temp, float* humi);
  * @param cmd SHT3X command (defined in enum SHT3X_MODE)
  * @retval Status of the operation
  */
-HAL_StatusTypeDef SHT3X_Send_Cmd(SHT3X_CMD cmd) {
+HAL_StatusTypeDef Send_Cmd(SHT3X_CMD cmd) {
     uint8_t cmd_buffer[2] = {cmd >> 8, cmd};
     return HAL_I2C_Master_Transmit(
         &hi2c1, SHT3X_ADDRESS_WRITE, (uint8_t*)cmd_buffer, 2, 0xFFFF);
@@ -235,8 +247,8 @@ HAL_StatusTypeDef SHT3X_Send_Cmd(SHT3X_CMD cmd) {
  * @param	none
  * @retval	none
  */
-void SHT3X_Reset(void) {
-    SHT3X_Send_Cmd(SOFT_RESET_CMD);
+void Reset(void) {
+    Send_Cmd(SOFT_RESET_CMD);
     HAL_Delay(20);
 }
 
@@ -245,8 +257,8 @@ void SHT3X_Reset(void) {
  * @param	dat the address of your varible to restore the data (6-byte array)
  * @retval	Status of the operation
  */
-HAL_StatusTypeDef SHT3X_OnceMode_GetData(uint8_t* dat) {
-    HAL_StatusTypeDef Status = SHT3X_Send_Cmd(HIGH_ENABLED_CMD);
+HAL_StatusTypeDef OnceMode_GetData(uint8_t* dat) {
+    HAL_StatusTypeDef Status = Send_Cmd(HIGH_ENABLED_CMD);
     HAL_Delay(20);
     if (Status != HAL_OK) { return Status; }
     return HAL_I2C_Master_Receive(&hi2c1, SHT3X_ADDRESS_READ, dat, 6, 0xFFFF);
@@ -259,8 +271,8 @@ HAL_StatusTypeDef SHT3X_OnceMode_GetData(uint8_t* dat) {
  * @param	none
  * @retval	Status of the operation
  */
-HAL_StatusTypeDef SHT3X_PeriodMode_Enable(void) {
-    return SHT3X_Send_Cmd(MEDIUM_2_CMD);
+HAL_StatusTypeDef PeriodMode_Enable(void) {
+    return Send_Cmd(MEDIUM_2_CMD);
 }
 
 /**
@@ -268,8 +280,8 @@ HAL_StatusTypeDef SHT3X_PeriodMode_Enable(void) {
  * @param	dat the address of your varible to restore the data (6-byte array)
  * @retval	Status of the operation
  */
-HAL_StatusTypeDef SHT3X_PeriodMode_GetData(uint8_t* dat) {
-    SHT3X_Send_Cmd(READOUT_FOR_PERIODIC_MODE);
+HAL_StatusTypeDef PeriodMode_GetData(uint8_t* dat) {
+    Send_Cmd(READOUT_FOR_PERIODIC_MODE);
     return HAL_I2C_Master_Receive(&hi2c1, SHT3X_ADDRESS_READ, dat, 6, 0xFFFF);
 }
 
@@ -279,7 +291,7 @@ HAL_StatusTypeDef SHT3X_PeriodMode_GetData(uint8_t* dat) {
  * @retval	0: success
  * @retval	1: failure
  */
-uint8_t SHT3X_Data_To_Float(const uint8_t* dat, float* temp, float* humi) {
+uint8_t Data_To_Float(const uint8_t* dat, float* temp, float* humi) {
     uint16_t recv_temperature = 0;
     uint16_t recv_humidity = 0;
 
@@ -327,6 +339,10 @@ uint8_t CheckCrc8(const uint8_t* message, uint8_t initial_value) {
     /* 返回计算的CRC码 */
     return remainder;
 }
+
+/* Structure for user's usage */
+struct UserFuntions SHT3X = {
+    OnceMode_GetData, PeriodMode_Enable, PeriodMode_GetData, Data_To_Float};
 
 ```
 

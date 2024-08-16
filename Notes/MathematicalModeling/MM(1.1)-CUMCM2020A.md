@@ -6,7 +6,7 @@
 - 重点：PDE、ODE、最优化
 - 时间：2023年11月（自研），2024年7月（重做，自研）
 - 赛题：
-  - [CUMCM 2020-A 赛题.docx](https://www.writebug.com/static/uploads/2024/7/27/f2103d42290b446d13197930ec1c9258.docx)
+  - [CUMCM 2020-A 赛题.pdf](/static/uploads/2024/8/15/95f9eb580f188250f445102a9dda24d2.pdf)
   - [CUMCM 2020-A 赛题附件.xlsx](https://www.writebug.com/static/uploads/2024/8/9/508db691b838cb1c76f89d0e425dd127.xlsx)
 - 优秀论文：
   - [x] [CUMCM 2020-A 优秀论文 A070.pdf](https://www.writebug.com/static/uploads/2024/7/27/3d504a7e2fc22b936b92dacc8e403c41.pdf)
