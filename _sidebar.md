@@ -105,9 +105,9 @@
 
 - 📝 **Projects**
 
-  - [MuMeStar (Mutiple Menu Star for OLED)](Projects/MuMeStar%20(Mutiple%20Menu%20Star%20for%20OLED)%20详解.md)
-  - [OLEDSD (OLED Software Driver)](Projects/OLEDSD%20(OLED%20Software%20Driver).md)
-  - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo%20(Minimum%20System%20Board%20of%20STM32)%20详解.md)
+  - [MuMeStar (Mutiple Menu Star for OLED)](Projects/MuMeStar.md)
+  - [OLEDSD (OLED Software Driver)](Projects/OLEDSD.md)
+  - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
   - [HDofDF (Humidity Detection of Diabetic Foot)](Projects/HDofDF.md)
   - [Mixed](Projects/Mixed.md)
   - WSETD
