@@ -79,8 +79,13 @@ Here are the other tools and resources.
 - [几款好用的截图工具](https://blog.csdn.net/lehe99/article/details/126151606)
 - [几款屏幕录制工具](https://www.cnblogs.com/leftshine/p/ScreenRecord.html)
 
-### Writing
+### Latex
+- [Latex Table Editor](https://www.latex-tables.com/)
+- [Create Latex Tables Online](https://www.tablesgenerator.com/latex_tables#google_vignette)
 - [Latex Templates](https://www.latexstudio.net/index/lists/index/type/2.html)
+- [Excel2LATEX](https://ctan.org/tex-archive/support/excel2latex/)
+
+### Writing
 - [蛙蛙工具](https://www.iamwawa.cn/fuhao.html): a convenient online tool site
 
 ### Programming

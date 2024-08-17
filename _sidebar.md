@@ -9,6 +9,7 @@
 - 📓 **Blogs**
   - Mixed <!-- empty line is necessary to avoid the error -->
 
+    - [Latex](Blogs/Mixed/Latex.md)
     - [Sentences](Blogs/Mixed/Sentences.md)  
     - [Repository Slimming](Blogs/Mixed/RepoSlimming.md)
     - [Build Your Personal Website](Blogs/Mixed/BuildYourSite.md)
