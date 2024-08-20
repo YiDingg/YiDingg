@@ -47,7 +47,7 @@
   - Optics
 
     - [Optics (0): Preparations](Notes/Phisics/Optics/OpticsNotes(0)-Preparations.md)
-    - [Optics (1):](Notes/Optics/OpticsNotes(1)-.md)
+    - [Optics (1):](Notes/Phisics/Optics/OpticsNotes(1)-.md)
   - [Mathematical Physics Mathods](Notes/Math/MathematicalPhysicsMathods.md)
 
 

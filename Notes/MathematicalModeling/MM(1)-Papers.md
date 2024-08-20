@@ -63,7 +63,7 @@ $$
 - 时间：2023年11月（自研）
 - 重做时间：2024年7月（自研）
 - 目前进度：完成问题一、二，问题三完成 80%。需要构建数值积分函数，重新优化问题三的参数，然后完成问题四；网格和模拟退火改为进度条。
-- 详见：[MM(1.1): CUMCM 2020-A](Notes/MathematicalModeling/MM(1.1)-CUMCM2022A.md)
+- 详见：[MM(1.1): CUMCM 2020-A](Notes/MathematicalModeling/MM(1.1)-CUMCM2020A.md)
 
 
 ## CUMCM 2023-A 

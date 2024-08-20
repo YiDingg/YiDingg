@@ -6,7 +6,7 @@
 - 重点：PDE、ODE、最优化
 - 时间：2023年11月（自研），2024年7月（重做，自研）
 - 赛题：
-  - [CUMCM 2020-A 赛题.pdf](/static/uploads/2024/8/15/95f9eb580f188250f445102a9dda24d2.pdf)
+  - [CUMCM 2020-A 赛题.pdf](https://www.writebug.com/static/uploads/2024/8/15/95f9eb580f188250f445102a9dda24d2.pdf)
   - [CUMCM 2020-A 赛题附件.xlsx](https://www.writebug.com/static/uploads/2024/8/9/508db691b838cb1c76f89d0e425dd127.xlsx)
 - 优秀论文：
   - [x] [CUMCM 2020-A 优秀论文 A070.pdf](https://www.writebug.com/static/uploads/2024/7/27/3d504a7e2fc22b936b92dacc8e403c41.pdf)
@@ -271,6 +271,8 @@ $$
 
 ## 问题一（补充）
 
+### ode 初始点修改
+
 在上面的模型中，我们设置 ode 解算时间为 $[0, t_{end}]$，这只能得到一个可以接受的结果，勉强达到我们的要求：
 
 $$
@@ -314,6 +316,98 @@ change_2次数：0
 ```
 
 显然，后者的结果更优，从图像上可以明显看出这一点。
+
+### 2024.8.20 PDE求解器测试
+
+
+``` matlab
+----------------------------------------------------------------------
+---- PDE 求解器：二元，DF格式（一阶导两点中心差分，二阶导四点中心差分）----
+用时：1.0477
+x 轴单元数：1000, x 轴步长：0.37329
+y 轴单元数：25, y 轴步长：0.004
+---- PDE 求解器：二元，DF格式（一阶导两点中心差分，二阶导四点中心差分）----
+----------------------------------------------------------------------
+```
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-20-21-46-32_MM(1.1)-CUMCM2020A.jpg"/></div> -->
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-20-21-48-47_MM(1.1)-CUMCM2020A.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-20-21-48-51_MM(1.1)-CUMCM2020A.png"/></div>
+
+``` matlab
+X = [0 25 55.5 60.5 91 96 126.5  131.5 162 167 197.5 202.5 233 238 268.5 273.5 304 309 339.5 344.5 375 380 410.5 435.5];
+
+
+% 问题一温度参数
+
+T = [175 195 235 255 25];
+
+% 炉内温度曲线
+c = 10^5
+k = - log((T(4) - 25)/c)/X(19)
+T_sx = @(x) ...
+    (X(1)<=x & x<X(2)) .* (  ( T(1)-25 )/( X(2)-X(1) )*(x-X(1)) + 25  )  + ...
+    (X(2)<=x & x<X(11)) .* (  T(1)  )  + ...
+    (X(11)<=x & x<X(12)).* (  ( T(2)-T(1) )/( X(12)-X(11) )*(x-X(11)) + T(1)  )  + ...
+    (X(12)<=x & x<X(13)).* T(2)  + ...
+    (X(13)<=x & x<X(14)).* (  ( T(3)-T(2) )/( X(14)-X(13) )*(x-X(13)) + T(2)  )  + ...
+    (X(14)<=x & x<X(15)).* T(3)  + ...
+    (X(15)<=x & x<X(16)).* (  ( T(4)-T(3) )/( X(16)-X(15) )*(x-X(15)) + T(3)  )  + ...
+    (X(16)<=x & x<X(19)).* T(4)  + ...
+    (X(19)<=x & x<=X(24)).* ( c*exp(-k*x) +25 );
+
+v = 70;
+v = v/60;
+Time = X/v;
+
+
+T_st = @(t) T_sx(v*t)
+figure
+fplot(T_st, [0, Time(end)])
+integral(T_st,0,Time(end))
+figure
+
+K = 0.23*10^(-4);
+% 定义结构体
+    PdeProblem.N_x = 1000;
+    PdeProblem.N_y = 25;
+
+    PdeProblem.x_beg = 0;
+    PdeProblem.x_end = Time(end);
+    PdeProblem.y_beg = 0;
+    PdeProblem.y_end = 0.1;
+
+    PdeProblem.a = 0;
+    PdeProblem.b_x = 1;
+    PdeProblem.b_y = 0;
+    PdeProblem.c_xx = 0;
+    PdeProblem.c_yy = -K;
+    PdeProblem.PhiIsZero = true;
+    PdeProblem.phi = @(x,y) 0;    % 注意要用 .^ .* ./ 等符号
+    
+    PdeProblem.u_xbeg_y = @(y) 0;
+    PdeProblem.u_x_ybeg = @(x) T_st(x);
+    PdeProblem.u_x_yend = @(x) T_st(x);
+
+% 调用函数
+PdeProblem = Test_MyPDESolver_2Var_Level2_Center_DF(PdeProblem);
+% MySurf(PdeProblem.X,PdeProblem.Y,PdeProblem.Result, false)
+MyMesh(PdeProblem.X,PdeProblem.Y,PdeProblem.Result',1);
+
+si = size(Appendix);
+%MyPlot(Appendix(:,1)', [Appendix(:,2)'; T_sx(linspace(0, X(end), si(1))); PdeProblem.Result(10,:)], ["$t/ \mathrm{s}$"; "$T_s(t)/ \mathrm{K}$"])
+
+fitX = PdeProblem.X(91:end);
+fitY = PdeProblem.Result( 91:end , floor(size(PdeProblem.Result,2)/2) )' ;
+
+[Temp_fit, gof] = SinFit(fitX, fitY);
+
+myplot = MyPlot(Appendix(:,1)', [Appendix(:,2)'; T_st( linspace(Appendix(1,1), Appendix(end,1), si(1)) );Temp_fit(Appendix(:,1))'])
+myplot.leg.String = ["Appendix", "LuWen",  'Result']
+```
+
 
 ## 问题二
 

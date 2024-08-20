@@ -8,124 +8,6 @@
 
 介于有限差分法的理论较为繁杂，后续我们会在专栏 Numerical Methods for PDE 中讨论。
 
-## Matlab 有限差分法 
-
-在写 Matlab 代码时要特别注意，把求解区域离散为网格，并将函数离散值存储为 Matlab 矩阵时，矩阵的行号对应纵坐标 $y$，列号对应横坐标 $x$。相当于以矩阵的左上角建立 $Oxy$ 坐标系，向右为 $x$ 轴正方向，向下为 $y$ 轴正方向。这与通常的“行列直觉”不同。
-
-例如，函数 $\phi(x,y) = x^2 + 100y$，将其在区域 $[0, 1]\times [0, 1]$ 上离散为网格，记得到的矩阵为 $A$，则`A(:,1)`对应 $x=0$，而 `A(1,:)` 对应 $y=0$的情况（Matlab 的矩阵索引从 1 开始）。 
-
-
-### MyPDESolver_2Var_Level2_Center
-
-源代码见 GitHub [here](https://github.com/YiDingg/Matlab/blob/main/MyPDESolver_2Var_Level2_Center.m)。
-
-<details>
-<summary>示例：求解二维泊松方程</summary>
-
-$$
-\Delta u(x,y) = -2\pi^2\sin(\pi x)\sin(\pi y)\ ,\ \ (x,y) \in [0, 1]\times [0, 1] \\ 
-\mathrm{s.t.}\ u(x,0) = u(0,x) = u(0,y) = u(y,0) = 0
-$$
-
-解析解：$$u(x,y) = \sin(\pi x)\sin(\pi y)\ ,\ \ (x,y) \in [0, 1]\times [0, 1] \\ $$
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-16-17-12_MM(4)-DifferencialEquation.jpg"/></div>
-
-
-数值解（$N_x = N_y = 50$）：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-16-17-52_MM(4)-DifferencialEquation.jpg"/></div>
-
-相对误差图：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-16-28-02_MM(4)-DifferencialEquation.jpg"/></div>
-
-可以看到，相对误差的数量级仅为 $10^{-4}$，一般情况下完全可以忽略。
-
-``` matlab 
-% 定义结构体
-    PdeProblem.N_x = 50;
-    PdeProblem.N_y = 50;
-
-    PdeProblem.x_beg = 0;
-    PdeProblem.x_end = 1;
-    PdeProblem.y_beg = 0;
-    PdeProblem.y_end = 1;
-
-    PdeProblem.a = 0;
-    PdeProblem.b_x = 0;
-    PdeProblem.b_y = 0;
-    PdeProblem.c_xx = 1;
-    PdeProblem.c_yy = 1;
-    PdeProblem.PhiIsZero = false;
-    PdeProblem.phi = @(x,y) -2*pi^2*sin(pi*x).*sin(pi*y);    % 注意要用 .^ .* ./ 等符号
-    
-    PdeProblem.u_xbeg_y = @(y) 0;
-    PdeProblem.u_xend_y = @(y) 0;
-    PdeProblem.u_x_ybeg = @(x) 0;
-
-    PdeProblem.u_x_yend = @(x) 0;
-
-% 调用函数
-PdeProblem = MyPDESolver_2Var_Level2_Center(PdeProblem);
-MySurf(PdeProblem.X,PdeProblem.Y,PdeProblem.Result, false)
-```
-
-
-</details>
-
-<details>
-<summary>示例：求解连续介质热传导方程</summary>
-
-$$
-T_t'(t,x) = kT_{xx}''(t,x) \\ 
-\mathrm{s.t.}\ T(0,x) = T_0\ ,\ \ T(t,0) = T_1,\ T(t,x_{\mathrm{end}}) = T_2
-$$
-
-数值解（$N_x = N_y = 50$）：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-21-47-10_MM(4)-DifferencialEquation.jpg"/></div>
-
-``` matlab 
-k = 2;
-% 定义结构体
-    PdeProblem.N_x = 50;
-    PdeProblem.N_y = 20;
-
-    PdeProblem.x_beg = 0;
-    PdeProblem.x_end = 0.5;
-    PdeProblem.y_beg = 0;
-    PdeProblem.y_end = 1;
-
-    PdeProblem.a = 0;
-    PdeProblem.b_x = 1;
-    PdeProblem.b_y = 0;
-    PdeProblem.c_xx = 0;
-    PdeProblem.c_yy = -k;
-    PdeProblem.PhiIsZero = true;
-    PdeProblem.phi = @(x,y) 0;    % 注意要用 .^ .* ./ 等符号
-    
-    PdeProblem.u_xbeg_y = @(y) 0;
-    PdeProblem.u_xend_y = @(y) 10*y;
-    PdeProblem.u_x_ybeg = @(x) 0;
-    PdeProblem.u_x_yend = @(x) 10;
-
-% 调用函数
-PdeProblem = MyPDESolver_2Var_Level2_Center(PdeProblem);
-% MySurf(PdeProblem.X,PdeProblem.Y,PdeProblem.Result, false)
-MyMesh(PdeProblem.X,PdeProblem.Y,PdeProblem.Result,1);
-```
-
-</details>
-
-### MyPDESolver_2Var_Level2_Center_DF
-
-`MyPDESolver_2Var_Level2_Center` 采用的是中心差分 Richardson 格式，稳定性较差，`MyPDESolver_2Var_Level2_Center_DF` 采用的是 DuFort-Frankel (DF) 格式，它是无条件 $L^2$ 稳定的。
-
-源码见 GitHub here。
-
-### MyPDESolver_2Var_Level2_Forward
-
-
-
-### MyPDESolver_2Var_Level2_Backward
-
 ## 有限差分法
 
 ### Intro
@@ -189,7 +71,9 @@ $$
 当然，对于多元函数，不同方向上的差分方式可以有所不同，例如 $x$ 方向上向前差分（the Euler explicit scheme），而 $y$ 方向上采用中心差分。
 
 
-## 二元二阶中心差分（R）
+## 二元二阶中心差分（R格式）
+
+### Intro
 
 中心差分具有较高的精度，也是最常用的方法之一，我们先推导中心差分，再讨论其他情形。事实上，中心差分也有多种格式，这里讨论的是 Richardson 格式，其它还有 DuFort-Frankel (DF), Lax-Wendroff (LW) 格式等。
 
@@ -324,7 +208,9 @@ $$
 
 
 
-## 二元二阶中心差分（DF）
+## 二元二阶中心差分（DF格式）
+
+### Intro
 
 这里讨论 DuFort-Frankel (DF) 格式，差分公式如下：
 $$
@@ -387,179 +273,6 @@ K =
 \end{bmatrix}_{{\color{red}N_x}(N_y-1)\times 1}
 $$
 
-``` matlab 
-function PdeProblem = MyPDESolver_2Var_Level2_Center_DF(PdeProblem)
-% PDE 求解器（二元，二阶，中心差分， DuFort-Frankel (DF) 格式）
-
-% 若待求函数为 u = u(t,x)
-% 方程：a*u + b_t*u_t + b_x*u_x + c_tt*u_tt + c_xx*u_xx = phi(t,x)
-% 注：无法解决 u_tx 前系数不为零的方程
-% 输入：PdeProblem 结构体
-    % PdeProblem.N_t       ：t 轴单元数，步长为 x_end/N_t
-    % PdeProblem.N_x       ：x 轴单元数，步长为 x_end/N_x
-
-    % PdeProblem.t_beg     ：t 轴范围 [t_beg, t_end]
-    % PdeProblem.t_end     ：t 轴范围 [t_beg, t_end]
-    % PdeProblem.x_beg     ：x 轴范围 [x_beg, x_end]
-    % PdeProblem.x_end     ：x 轴范围 [x_beg, x_end]
-
-    % PdeProblem.a         ：u 的系数
-    % PdeProblem.b_t       ：u_t 的系数
-    % PdeProblem.b_x       ：u_x 的系数
-    % PdeProblem.c_tt      ：u_tt 的系数
-    % PdeProblem.c_xx      ：u_xx 的系数
-    % PdeProblem.PhiIsZero ：右侧函数是否为零，ture 或 false
-    % PdeProblem.phi       ：右侧函数，@(t,x)
-
-    % PdeProblem.u_xbeg_y  ：边界条件 @(y)
-    % PdeProblem.u_xend_y  ：边界条件 @(y)
-    % PdeProblem.u_x_ybeg  ：边界条件 @(x)
-    % PdeProblem.u_x_yend  ：边界条件 @(x)
-% 输出：
-% 注：无法解决 u_xy 前系数不为零的方程
-
-% 若待求函数为： u = u(x,y)
-% 方程：a*u + b_x*u_x + b_y*u_y + c_xx*u_xx + c_yy*u_yy = phi(x,y)
-% 输入：PdeProblem 结构体
-    % PdeProblem.N_x       ：x 轴单元数，步长为 x_end/N_x
-    % PdeProblem.N_y       ：y 轴单元数，步长为 y_end/N_y
-
-    % PdeProblem.x_beg     ：x 轴范围 [x_beg, x_end]
-    % PdeProblem.x_end     ：x 轴范围 [x_beg, x_end]
-    % PdeProblem.y_beg     ：y 轴范围 [y_beg, y_end]
-    % PdeProblem.y_end     ：y 轴范围 [y_beg, y_end]
-
-    % PdeProblem.a         ：u 的系数
-    % PdeProblem.b_x       ：u_x 的系数
-    % PdeProblem.b_y       ：u_y 的系数
-    % PdeProblem.c_xx      ：u_xx 的系数
-    % PdeProblem.c_yy      ：u_yy 的系数
-    % PdeProblem.PhiIsZero ：右侧函数是否为零，ture 或 false
-    % PdeProblem.phi       ：右侧函数，@(x,y)
-
-    % PdeProblem.u_xbeg_y  ：边界条件 @(y)
-    % PdeProblem.u_xend_y  ：边界条件 @(y)
-    % PdeProblem.u_x_ybeg  ：边界条件 @(x)
-    % PdeProblem.u_x_yend  ：边界条件 @(x)
-% 输出：
-% 注：无法解决 u_xy 前系数不为零的方程
-
-tic
-
-% 数据准备
-    x_beg = PdeProblem.x_beg;
-    x_end = PdeProblem.x_end;
-    y_beg = PdeProblem.y_beg;
-    y_end = PdeProblem.y_end;
-    N_x = PdeProblem.N_x;
-    N_y = PdeProblem.N_y;
-    a = PdeProblem.a;
-    b_x = PdeProblem.b_x;
-    b_y = PdeProblem.b_y;
-    c_xx = PdeProblem.c_xx;
-    c_yy = PdeProblem.c_yy;
-    phi = PdeProblem.phi;
-    u_xbeg_y = PdeProblem.u_xbeg_y;
-    u_xend_y = PdeProblem.u_xend_y;
-    u_x_ybeg = PdeProblem.u_x_ybeg;
-    u_x_yend = PdeProblem.u_x_yend;
-    
-    h_x = x_end/N_x;
-    h_y = y_end/N_y;
-     
-    lam_m0 = -b_x/(2*h_x) + c_xx/h_x^2 - c_yy/h_y^2;         % lamda_{-1,0}
-    lam_0m = -b_y/(2*h_y) + c_yy/h_y^2 - c_xx/h_x^2;         % lamda_{0，-1}
-    lam_00 = a;   % lamda_{i, j}
-    lam_p0 = b_x/(2*h_x) + c_xx/h_x^2 - c_yy/h_y^2;          % lamda_{1,0}
-    lam_0p = b_y/(2*h_y) + c_yy/h_y^2 - c_xx/h_x^2;          % lamda_{0,1}
-
-    PdeProblem.X = linspace(x_beg, x_end, N_x+1);    % X 轴
-    PdeProblem.Y = linspace(y_beg, y_end, N_y+1);
-    X = PdeProblem.X;
-    Y = PdeProblem.Y;    % Y 轴
-
-% 矩阵初始化
-    [GridX, GridY] = meshgrid(X,Y); 
-    D_{-1,0} = lam_m0*eye(N_y-1);
-    D_{1,0} = lam_p0*eye(N_y-1);
-    U = zeros((N_x-1)*(N_y-1), 1);     % 待求函数
-    K = zeros((N_x-1)*(N_y-1), (N_x-1)*(N_y-1));      % 系数矩阵
-
-    Phi = zeros((N_x-1)*(N_y-1), 1);
-    phi_matrix = zeros(N_y+1,N_x+1);
-    if ~PdeProblem.PhiIsZero
-        phi_matrix = phi(GridX,GridY);
-    end
-    
-    varphi_matrix = zeros(N_y-1, N_x-1);
-    varphi_matrix(1, :) = -lam_0m*u_x_ybeg(X(2:N_x)); % 矩阵索引比网格索引多 1
-    varphi_matrix(end, :) = -lam_0p*u_x_yend(X(2:N_x)); % 矩阵索引比网格索引多 1
-    
-    Result = zeros(N_y+1,N_x+1);
-    Result(1,:) = u_x_ybeg(X);
-    Result(end,:) = u_x_yend(X);
-    Result(:,1) = u_xbeg_y(Y);
-    Result(:,end) = u_xend_y(Y);
-    % 平滑边缘突变
-    Result(1,1) = 0.5*( u_x_ybeg(X(1)) +  u_xbeg_y(Y(1)));
-    Result(1,end) = 0.5*( u_x_ybeg(X(end)) + u_xend_y(Y(1)) );
-    Result(end, 1) = 0.5*( u_x_yend(X(1)) + u_xbeg_y(Y(end)) );
-    Result(end, end) = 0.5*( u_x_yend(X(end)) + u_xend_y(Y(end)) );
-
-% 赋入矩阵数据
-    G = lam_00*eye((N_y-1)) ...
-        + [
-            zeros((N_y-1)-1, 1) , lam_0p*eye((N_y-1)-1);
-            zeros(1,(N_y-1))
-          ] ...
-        + [
-            zeros(1, (N_y-1));
-            lam_0m*eye((N_y-1)-1), zeros((N_y-1)-1, 1);
-          ];
-    for i = 1: N_x-1
-        K( (i-1)*(N_y-1)+1 : i*(N_y-1), (i-1)*(N_y-1)+1 : i*(N_y-1) ) = G;
-    end
-    for i = 1: N_x-2
-        K( (i)*(N_y-1)+1 : (i+1)*(N_y-1), (i-1)*(N_y-1)+1 : i*(N_y-1) ) = D_{-1,0};
-        K( (i-1)*(N_y-1)+1 : (i)*(N_y-1), (i)*(N_y-1)+1 : (i+1)*(N_y-1) ) = D_{1,0};
-    end
-    % 第一、二项 \vec{\phi} + \vec{\psi}
-    for i = 1: N_x-1    
-        Phi( (i-1)*(N_y-1)+1 : i*(N_y-1), 1 ) = phi_matrix(2:N_y, i+1) + varphi_matrix(:, i);;   % 网格索引 0 ~ N，矩阵索引 1 ~ N+1
-    end
-    % 第三项 -\lambda_{-1,0}\vec{u}_0
-    Phi(1:(N_y-1), 1) = Phi(1:(N_y-1), 1) -lam_m0*u_xbeg_y(Y(2:N_y))';  % 这里需要有转置，否则可能行向量 + 列向量构成新矩阵
-
-    % 第四项 -\lambda_{1,0}\vec{u}_{N_x}
-    Phi( (N_x-2)*(N_y-1)+1:(N_x-1)*(N_y-1), 1) = Phi( (N_x-2)*(N_y-1)+1:(N_x-1)*(N_y-1), 1) - lam_p0*u_xend_y(Y(2:N_y))';   % 这里需要有转置，否则可能行向量 + 列向量构成新矩阵
-
-% 求解矩阵方程
-    mn = size(K);
-    disp( [ num2str(rank(K)), '尺寸：', num2str(mn(1)) ] )
-    disp(det(K))
-    U = K\Phi;
-
-% 展开结果
-    for i = 1: N_x-1    
-        Result(2:N_y, i+1) = U( (i-1)*(N_y-1)+1 : i*(N_y-1), 1 );   % 网格索引 0 ~ N，矩阵索引 1 ~ N+1
-    end
-
-time = toc;
-
-% 返回结果
-    PdeProblem.Result = Result;
-    disp("----------------------------------------------")
-    disp("------- PDE 求解器（二元，二阶，中心差分）-------")
-    disp(['用时：', num2str(time)])
-    disp(['x 轴单元数：', num2str(N_x), ', x 轴步长：', num2str(h_x)])
-    disp(['y 轴单元数：', num2str(N_y), ', y 轴步长：', num2str(h_y)])
-    % disp("PDE结构体：")
-    % disp(PdeProblem)
-    disp("------- PDE 求解器（二元，二阶，中心差分）-------")
-    disp("----------------------------------------------")
-end
-```
-
 
 在解决热传导方程时报错 “警告：矩阵为奇异工作精度”，是因为此时 $a=0$，矩阵 $K$ 非满秩，无法求逆。一个可能的解决方法（不推荐）是将 $a$ 设为一个很小的数，如 $10^{-10}$*。
 
@@ -573,7 +286,114 @@ $$
 \end{align*} 
 $$
 
+
+在写 Matlab 代码时要特别注意，把求解区域离散为网格，并将函数离散值存储为 Matlab 矩阵时，矩阵的行号对应纵坐标 $y$，列号对应横坐标 $x$。相当于以矩阵的左上角建立 $Oxy$ 坐标系，向右为 $x$ 轴正方向，向下为 $y$ 轴正方向。这与通常的“行列直觉”不同。
+
+例如，函数 $\phi(x,y) = x^2 + 100y$，将其在区域 $[0, 1]\times [0, 1]$ 上离散为网格，记得到的矩阵为 $A$，则`A(:,1)`对应 $x=0$，而 `A(1,:)` 对应 $y=0$的情况（Matlab 的矩阵索引从 1 开始）。 
+
+
+### MyPDESolver_2Var_Level2_Center
+
+源代码见 GitHub [here](https://github.com/YiDingg/Matlab/blob/main/MyPDESolver_2Var_Level2_Center.m)。
+
+<details>
+<summary>示例：求解二维泊松方程</summary>
+
+$$
+\Delta u(x,y) = -2\pi^2\sin(\pi x)\sin(\pi y)\ ,\ \ (x,y) \in [0, 1]\times [0, 1] \\ 
+\mathrm{s.t.}\ u(x,0) = u(0,x) = u(0,y) = u(y,0) = 0
+$$
+
+解析解：$$u(x,y) = \sin(\pi x)\sin(\pi y)\ ,\ \ (x,y) \in [0, 1]\times [0, 1] \\ $$
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-16-17-12_MM(4)-DifferencialEquation.jpg"/></div>
+
+
+数值解（$N_x = N_y = 50$）：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-16-17-52_MM(4)-DifferencialEquation.jpg"/></div>
+
+相对误差图：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-16-28-02_MM(4)-DifferencialEquation.jpg"/></div>
+
+可以看到，相对误差的数量级仅为 $10^{-4}$，一般情况下完全可以忽略。
+
+``` matlab 
+% 定义结构体
+    PdeProblem.N_x = 50;
+    PdeProblem.N_y = 50;
+
+    PdeProblem.x_beg = 0;
+    PdeProblem.x_end = 1;
+    PdeProblem.y_beg = 0;
+    PdeProblem.y_end = 1;
+
+    PdeProblem.a = 0;
+    PdeProblem.b_x = 0;
+    PdeProblem.b_y = 0;
+    PdeProblem.c_xx = 1;
+    PdeProblem.c_yy = 1;
+    PdeProblem.PhiIsZero = false;
+    PdeProblem.phi = @(x,y) -2*pi^2*sin(pi*x).*sin(pi*y);    % 注意要用 .^ .* ./ 等符号
+    
+    PdeProblem.u_xbeg_y = @(y) 0;
+    PdeProblem.u_xend_y = @(y) 0;
+    PdeProblem.u_x_ybeg = @(x) 0;
+
+    PdeProblem.u_x_yend = @(x) 0;
+
+% 调用函数
+PdeProblem = MyPDESolver_2Var_Level2_Center(PdeProblem);
+MySurf(PdeProblem.X,PdeProblem.Y,PdeProblem.Result, false)
+```
+
+
+</details>
+
+<details>
+<summary>示例：求解连续介质热传导方程</summary>
+
+$$
+T_t'(t,x) = kT_{xx}''(t,x) \\ 
+\mathrm{s.t.}\ T(0,x) = T_0\ ,\ \ T(t,0) = T_1,\ T(t,x_{\mathrm{end}}) = T_2
+$$
+
+数值解（$N_x = N_y = 50$）：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-30-21-47-10_MM(4)-DifferencialEquation.jpg"/></div>
+
+``` matlab 
+k = 2;
+% 定义结构体
+    PdeProblem.N_x = 50;
+    PdeProblem.N_y = 20;
+
+    PdeProblem.x_beg = 0;
+    PdeProblem.x_end = 0.5;
+    PdeProblem.y_beg = 0;
+    PdeProblem.y_end = 1;
+
+    PdeProblem.a = 0;
+    PdeProblem.b_x = 1;
+    PdeProblem.b_y = 0;
+    PdeProblem.c_xx = 0;
+    PdeProblem.c_yy = -k;
+    PdeProblem.PhiIsZero = true;
+    PdeProblem.phi = @(x,y) 0;    % 注意要用 .^ .* ./ 等符号
+    
+    PdeProblem.u_xbeg_y = @(y) 0;
+    PdeProblem.u_xend_y = @(y) 10*y;
+    PdeProblem.u_x_ybeg = @(x) 0;
+    PdeProblem.u_x_yend = @(x) 10;
+
+% 调用函数
+PdeProblem = MyPDESolver_2Var_Level2_Center(PdeProblem);
+% MySurf(PdeProblem.X,PdeProblem.Y,PdeProblem.Result, false)
+MyMesh(PdeProblem.X,PdeProblem.Y,PdeProblem.Result,1);
+```
+
+</details>
+
 ## 二元二阶向前差分
+
+### Intro
 
 容易看出，不同的差分方式，仅会影响 $\lambda_{r,s},\ r,s \in \{-1,0,1\}$ 的值，其他推导完全一致。这也是为什么在中心差分的推导中，我们将其单独命名为 $\lambda_{r,s}$。
 
@@ -652,8 +472,111 @@ K =
 \end{bmatrix}_{{\color{red}N_x}(N_y-1)\times 1}
 $$
 
+### MyPDESolver_2Var_Level2_Center_DF
+
+`MyPDESolver_2Var_Level2_Center` 采用的是中心差分 Richardson 格式，是无条件不稳定格式，`MyPDESolver_2Var_Level2_Center_DF` 采用的是 DuFort-Frankel (DF) 格式，它是无条件稳定格式。
+
+源码见 GitHub [here](https://github.com/YiDingg/Matlab/blob/main/MyPDESolver_2Var_Level2_Center_DF.m)。
+
+<!-- details begin -->
+<details>
+<summary>示例：求解连续介质热传导方程</summary>
+
+
+``` matlab
+----------------------------------------------------------------------
+---- PDE 求解器：二元，DF格式（一阶导两点中心差分，二阶导四点中心差分）----
+用时：1.0477
+x 轴单元数：1000, x 轴步长：0.37329
+y 轴单元数：25, y 轴步长：0.004
+---- PDE 求解器：二元，DF格式（一阶导两点中心差分，二阶导四点中心差分）----
+----------------------------------------------------------------------
+```
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-20-21-48-47_MM(1.1)-CUMCM2020A.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-20-21-48-51_MM(1.1)-CUMCM2020A.png"/></div>
+
+
+
+``` matlab
+X = [0 25 55.5 60.5 91 96 126.5  131.5 162 167 197.5 202.5 233 238 268.5 273.5 304 309 339.5 344.5 375 380 410.5 435.5];
+
+
+% 问题一温度参数
+
+T = [175 195 235 255 25];
+
+% 炉内温度曲线
+c = 10^5
+k = - log((T(4) - 25)/c)/X(19)
+T_sx = @(x) ...
+    (X(1)<=x & x<X(2)) .* (  ( T(1)-25 )/( X(2)-X(1) )*(x-X(1)) + 25  )  + ...
+    (X(2)<=x & x<X(11)) .* (  T(1)  )  + ...
+    (X(11)<=x & x<X(12)).* (  ( T(2)-T(1) )/( X(12)-X(11) )*(x-X(11)) + T(1)  )  + ...
+    (X(12)<=x & x<X(13)).* T(2)  + ...
+    (X(13)<=x & x<X(14)).* (  ( T(3)-T(2) )/( X(14)-X(13) )*(x-X(13)) + T(2)  )  + ...
+    (X(14)<=x & x<X(15)).* T(3)  + ...
+    (X(15)<=x & x<X(16)).* (  ( T(4)-T(3) )/( X(16)-X(15) )*(x-X(15)) + T(3)  )  + ...
+    (X(16)<=x & x<X(19)).* T(4)  + ...
+    (X(19)<=x & x<=X(24)).* ( c*exp(-k*x) +25 );
+
+v = 70;
+v = v/60;
+Time = X/v;
+
+
+T_st = @(t) T_sx(v*t)
+figure
+fplot(T_st, [0, Time(end)])
+integral(T_st,0,Time(end))
+figure
+
+K = 0.23*10^(-4);
+% 定义结构体
+    PdeProblem.N_x = 1000;
+    PdeProblem.N_y = 25;
+
+    PdeProblem.x_beg = 0;
+    PdeProblem.x_end = Time(end);
+    PdeProblem.y_beg = 0;
+    PdeProblem.y_end = 0.1;
+
+    PdeProblem.a = 0;
+    PdeProblem.b_x = 1;
+    PdeProblem.b_y = 0;
+    PdeProblem.c_xx = 0;
+    PdeProblem.c_yy = -K;
+    PdeProblem.PhiIsZero = true;
+    PdeProblem.phi = @(x,y) 0;    % 注意要用 .^ .* ./ 等符号
+    
+    PdeProblem.u_xbeg_y = @(y) 0;
+    PdeProblem.u_x_ybeg = @(x) T_st(x);
+    PdeProblem.u_x_yend = @(x) T_st(x);
+
+% 调用函数
+PdeProblem = MyPDESolver_2Var_Level2_Center_DF(PdeProblem);
+% MySurf(PdeProblem.X,PdeProblem.Y,PdeProblem.Result, false)
+MyMesh(PdeProblem.X,PdeProblem.Y,PdeProblem.Result',1);
+
+si = size(Appendix);
+%MyPlot(Appendix(:,1)', [Appendix(:,2)'; T_sx(linspace(0, X(end), si(1))); PdeProblem.Result(10,:)], ["$t/ \mathrm{s}$"; "$T_s(t)/ \mathrm{K}$"])
+
+fitX = PdeProblem.X(91:end);
+fitY = PdeProblem.Result( 91:end , floor(size(PdeProblem.Result,2)/2) )' ;
+
+[Temp_fit, gof] = SinFit(fitX, fitY);
+
+myplot = MyPlot(Appendix(:,1)', [Appendix(:,2)'; T_st( linspace(Appendix(1,1), Appendix(end,1), si(1)) );Temp_fit(Appendix(:,1))'])
+myplot.leg.String = ["Appendix", "LuWen",  'Result']
+```
+
+
+</details>
 
 ## 二元二阶向后差分
+
+### Intro
 
 ### 矩阵方程
 
