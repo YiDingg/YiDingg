@@ -136,7 +136,8 @@ $$
 
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-06-17-05-59_MM(1.2)-CUMCM2023A.jpg"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-06-17-06-31_MM(1.2)-CUMCM2023A.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-20-18-08-58_MM(1.2)-CUMCM2023A.jpg"/></div>
 
 阴影挡光损失 = 镜阴影损失 + 镜挡光损失 + 塔阴影损失 
 

@@ -88,4 +88,4 @@ $$
 
 以西南方边界点（左下角）为迭代起点：
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-11-23-41-37_MM(1.3)-CUMCM2023B.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-20-18-09-33_MM(1.3)-CUMCM2023B.jpg"/></div>

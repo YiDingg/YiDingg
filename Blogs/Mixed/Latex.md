@@ -88,7 +88,6 @@ Latex 的图片插入支持以下格式：
   \includegraphics[width=\textwidth]{assets/2024-08-15_13-50-23.pdf}
   \caption{\textbf{这里是图注}}\label{这里是图注}
 \end{figure}
-
 ```
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-17-21-10-52_Latex.jpg"/></div>

@@ -230,10 +230,10 @@ $$
 
 $$
 \begin{cases}
-    \hspace{40px} \lambda_{-1,0}u_{i-1,1} + {\color{red}\lambda_{0,-1}u_{i,0}} + \lambda_{0,0}u_{i,1} + \lambda_{0,1}u_{i,2} + \lambda_{1,0}u_{i+1,1}= \phi_{i,1} \\ 
+    \hspace{40px} \lambda_{-1,0}u_{i-1,1} + \lambda_{0,-1}{\color{red}u_{i,0}} + \lambda_{0,0}u_{i,1} + \lambda_{0,1}u_{i,2} + \lambda_{1,0}u_{i+1,1}= \phi_{i,1} \\ 
     \hspace{40px} \lambda_{-1,0}u_{i-1,2} + \lambda_{0,-1}u_{i,1} + \lambda_{0,0}u_{i,2} + \lambda_{0,1}u_{i,3} + \lambda_{1,0}u_{i+1,2}= \phi_{i,2} \\ 
     \hspace{140px}\vdots \\
-    \lambda_{-1,0}u_{i-1,N_y-1} + \lambda_{0,-1}u_{i,N_y-2} + \lambda_{0,0}u_{i,N_y-1} + {\color{red}\lambda_{0,1}u_{i,N_y}} + \lambda_{1,0}u_{i+1,N_y-1}= \phi_{i,N_y-1} \\ 
+    \lambda_{-1,0}u_{i-1,N_y-1} + \lambda_{0,-1}u_{i,N_y-2} + \lambda_{0,0}u_{i,N_y-1} + \lambda_{0,1}{\color{red}u_{i,N_y}} + \lambda_{1,0}u_{i+1,N_y-1}= \phi_{i,N_y-1} \\ 
 \end{cases}
 $$
 
@@ -241,7 +241,7 @@ $$
 $$
 \vec{\phi}_i = 
 \begin{bmatrix}\phi_{i,1}\\\phi_{i,2}\\\vdots\\\phi_{i,N_y-1}\end{bmatrix}_{(N_y-1)\times 1},\ 
-\vec{\varphi}_i = 
+\vec{\psi}_i = 
 \begin{bmatrix}-\lambda_{0,-1}u_{i,0}\\0\\\vdots\\0\\-\lambda_{0,1}u_{i,N_y}\end{bmatrix}_{(N_y-1)\times 1}, \vec{u}_i = \begin{bmatrix}u_{i,1}\\u_{i,2}\\\vdots\\u_{i,N_y-1}\end{bmatrix}_{(N_y-1)\times 1},\ i \in \{1,...,N_x-1\} \\ 
 G = 
 \begin{bmatrix}
@@ -258,10 +258,29 @@ $$
 则方程组等价于：
 
 $$
-\lambda_{-1,0}\vec{u}_{i-1} + G\cdot \vec{u}_i + \lambda_{1,0}\vec{u}_{i+1} = \vec{\phi}_i + \vec{\varphi}_i\ ,\ \ i \in \{1,...,N_x-1\}
+\lambda_{-1,0}\vec{u}_{i-1} + G\cdot \vec{u}_i + \lambda_{1,0}\vec{u}_{i+1} = \vec{\phi}_i + \vec{\psi}_i\ ,\ \ i \in \{1,...,N_x-1\}
 $$
 
-简记对角矩阵 $D_m = \lambda_{-1,0}\cdot I_{N_y-1}\ ,\ \ D_p = \lambda_{1,0}\cdot I_{N_y-1}$，依次令 $i = 1,...,N_x-1$，并用类似的思路做移项，又得到：
+
+
+简记对角矩阵 $D_{-1,0} = \lambda_{-1,0}\cdot I_{N_y-1}\ ,\ \ D_{1,0} = \lambda_{1,0}\cdot I_{N_y-1}$，则上式又可写为：
+
+$$
+D_{-1,0}\cdot\vec{u}_{i-1} + G\cdot \vec{u}_i + D_{1,0}\cdot\vec{u}_{i+1} = \vec{\phi}_i + \vec{\psi}_i\ ,\ \ i \in \{1,...,N_x-1\}
+$$
+
+依次令 $i = 1,...,N_x-1$，得到：
+
+$$
+\begin{cases}
+    \hspace{30px} D_{-1,0}\cdot {\color{red} \vec{u}_{0}} + G\cdot \vec{u}_1 + D_{1,0}\cdot\vec{u}_{2} = \vec{\phi}_1 + \vec{\psi}_1\\ 
+    \hspace{30px} D_{-1,0}\cdot\vec{u}_{1} + G\cdot \vec{u}_2 + D_{1,0}\cdot\vec{u}_{3} = \vec{\phi}_2 + \vec{\psi}_2 \\ 
+    \hspace{110px}\vdots \\
+    D_{-1,0}\cdot\vec{u}_{N_x-2} + G\cdot \vec{u}_{N_x-1} + D_{1,0}\cdot {\color{red} \vec{u}_{N_x}} = \vec{\phi}_{N_x-1} + \vec{\psi}_{N_x-1} \\ 
+\end{cases}
+$$
+
+用类似的思路做移项，又得到：
 
 $$
 K\vec{U} = \vec{\Phi} \Longrightarrow \vec{U} = K^{-1}\vec{\Phi}
@@ -272,12 +291,12 @@ $$
 \vec{U} = \begin{bmatrix}\vec{u}_{1}\\\vec{u}_{2}\\\vdots\\\vec{u}_{N_x-1}\end{bmatrix} =\begin{bmatrix}u_{1,1}\\u_{1,2}\\\vdots\\u_{1,N_y-1}\\u_{2,1}\\\vdots\\u_{N_x-1,N_y-1}\end{bmatrix}_{(N_x-1)(N_y-1)\times 1} \\
 K = 
 \begin{bmatrix}
-  G&  D_p&  O&\cdots  &O &O \\
-  D_m&  G&  D_p&\cdots  &O  &O \\
-  O&  D_m&  G&\cdots  &O  &O \\
+  G&  D_{1,0}&  O&\cdots  &O &O \\
+  D_{-1,0}&  G&  D_{1,0}&\cdots  &O  &O \\
+  O&  D_{-1,0}&  G&\cdots  &O  &O \\
   \vdots&  \vdots&  \vdots&  \ddots &\vdots  &\vdots \\
-  O&  O&  O&  \cdots&  G& D_p\\
-  O&  O&  O&  \cdots&  D_m&G
+  O&  O&  O&  \cdots&  G& D_{1,0}\\
+  O&  O&  O&  \cdots&  D_{-1,0}&G
 \end{bmatrix}_{(N_x-1)(N_y-1)\times(N_x-1)(N_y-1)}\\ 
 \vec{\Phi} = 
 \begin{bmatrix}
@@ -287,66 +306,23 @@ K =
     \vec{\phi}_{N_x-1}
 \end{bmatrix} + 
 \begin{bmatrix}
-    \vec{\varphi}_1 \\ 
-    \vec{\varphi}_2 \\ 
+    \vec{\psi}_1 \\ 
+    \vec{\psi}_2 \\ 
     \vdots \\ 
-    \vec{\varphi}_{N_x-1}
+    \vec{\psi}_{N_x-1}
 \end{bmatrix}+
 \begin{bmatrix}
     -\lambda_{-1,0}\vec{u}_0 \\ 
     \vec{0} \\ 
     \vdots \\ 
-    \vec{0}
-\end{bmatrix}+
-\begin{bmatrix}
-    \vec{0} \\ 
-    \vdots \\ 
-    \vec{0} \\ 
-    -\lambda_{1,0}\vec{u}_{N_x} \\ 
+    0 \\
+    -\lambda_{1,0}\vec{u}_{N_x}
 \end{bmatrix}_{(N_x-1)(N_y-1)\times 1}
 $$
 
+当边界条件都已知时，未知量的个数和方程的个数是相同的，都为 $(N_x-1)(N_y-1)$，且容易证明线性无关，若此时矩阵 $K$ 可逆，则方程组有唯一解。
 
-当边界条件都已知时，未知量的个数和方程的个数是相同的，都为 $(N_x-1)(N_y-1)$，且容易证明线性无关，因此矩阵方程有唯一解。
-<!-- 
-### 矩阵方程推导示例
 
-下面是化为矩阵方程的过程示例（先展开 $i$ 后展开 $j$）：
-
-$$
-\phi_{i,j}-\frac14(\phi_{i+1,j}+\phi_{i-1,j}+\phi_{i,j+1}+\phi_{i,j-1})=0
-$$
-
-令 $i = 1, 2, 3, ..., N_x-1$，得到方程组（含有 $N_x-1$ 个方程）：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-28-23-25-52_MM(4)-DifferencialEquation.png"/></div>
-
-其中蓝色框出来的数值点在边界上，是我们的已知量而非未知量，因此将他们移到等式右边，得到：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-28-23-26-49_MM(4)-DifferencialEquation.png"/></div>
-
-令 $\vec{\varphi}$、$\vec{b}$ 和矩阵 $G$ 如下：
-$$
-\vec{\varphi}_j=\begin{bmatrix}\phi_{1,j}\\\phi_{2,j}\\\vdots\\\phi_{N_x-1,j}\end{bmatrix}_{(N_x-1)\times 1},\quad\vec{b}_j=\frac{1}{4}\begin{bmatrix}\phi_{0,j}\\0\\\vdots\\0\\\phi_{N_x,j}\end{bmatrix}_{(N_x-1)\times 1}\\ 
-G=\begin{bmatrix}1&-\frac{1}{4}&0&\cdots&0\\-\frac{1}{4}&1&-\frac{1}{4}&&0\\0&-\frac{1}{4}&1&\ddots&\vdots\\\vdots&\vdots&\ddots&\ddots&-\frac{1}{4}\\0&0&\cdots&-\frac{1}{4}&1\end{bmatrix}_{(N_x-1)\times (N_x-1)}
-$$
-则有：
-$$
--\frac{I_{N_x-1}}{4}\vec{\varphi}_{j-1}+G\vec{\varphi}_j-\frac{I_{N_x-1}}{4}\vec{\varphi}_{j+1}=\vec{b}_j
-$$
-
-再令 $j = 1, 2, ..., N_y-1$，得到矩阵方程组（含有 $N_y-1$ 个矩阵方程）。考虑到 $\vec{\varphi}_0$ 和 $\vec{\varphi}_N$ 都是已知量，写出方程组后移项，令 $\vec{\Phi}$、$\vec{B}$ 和矩阵 $K$ 如下：
-
-$$
-\vec{\Phi}=\begin{bmatrix}\vec{\varphi}_1\\\vec{\varphi}_2\\\vdots\\\vec{\varphi}_{N_y-1}\end{bmatrix}_{(N_x-1)(N_y-1)\times 1},\quad \vec{B}=\begin{bmatrix}\vec{b}_1+\frac I4\vec{\varphi}_0\\\vec{b}_2\\\vdots\\\vec{b}_{N-2}\\\vec{b}_{N-1}+\frac I4\vec{\varphi}_{N_y}\end{bmatrix}_{(N_x-1)(N_y-1)\times 1}\\ 
-K=\begin{bmatrix}G&-\frac I4&0&\cdots&0\\-\frac I4&G&-\frac I4&\cdots&0\\0&-\frac I4&\ddots&\ddots&\vdots\\\vdots&\vdots&\ddots&G&-\frac I4\\0&0&\cdots&-\frac I4&G\end{bmatrix}_{(N_x-1)(N_y-1)\times (N_x-1)(N_y-1)}
-$$
-
-最终得到：
-
-$$
-K\vec{\Phi} = \vec{B} \Longrightarrow \vec{\Phi} = K^{-1}\vec{B}
-$$
-
- -->
 
 ## 二元二阶中心差分（DF）
 
@@ -372,7 +348,7 @@ $$
 
 其余推导过程与之前完全相同，不再赘述。
 
-在 $G\vec{u}_i + \lambda_{1,0}\vec{u}_{i+1} = \vec{\phi}_i + \vec{\varphi}_i$ 中依次令 $i = 0, ..., N_x-1$ 而不是之前的 $1, ..., N_x-1$，得到矩阵方程：
+在 $G\vec{u}_i + \lambda_{1,0}\vec{u}_{i+1} = \vec{\phi}_i + \vec{\psi}_i$ 中依次令 $i = 0, ..., N_x-1$ 而不是之前的 $1, ..., N_x-1$，得到矩阵方程：
 
 $$
 K\vec{U} = \vec{\Phi} \Longrightarrow \vec{U} = K^{-1}\vec{\Phi}
@@ -383,12 +359,12 @@ $$
 \vec{U} = \begin{bmatrix}\vec{u}_{1}\\\vec{u}_{2}\\\vdots\\\vec{u}_{N_x}\end{bmatrix} =\begin{bmatrix}u_{1,1}\\u_{1,2}\\\vdots\\u_{1,N_y-1}\\u_{2,1}\\\vdots\\u_{N_x,N_y-1}\end{bmatrix}_{{\color{red}N_x}(N_y-1)\times 1}\\
 K = 
 \begin{bmatrix}
-  D_p&  O&  O&\cdots  &O &O \\
-  G&  D_p&  O&\cdots  &O  &O \\
-  O&  G&  D_p&\cdots  &O  &O \\
+  D_{1,0}&  O&  O&\cdots  &O &O \\
+  G&  D_{1,0}&  O&\cdots  &O  &O \\
+  O&  G&  D_{1,0}&\cdots  &O  &O \\
   \vdots&  \vdots&  \vdots&  \ddots &\vdots  &\vdots \\
-  O&  O&  O&  \cdots&  D_p& O\\
-  O&  O&  O&  \cdots&  G&D_p
+  O&  O&  O&  \cdots&  D_{1,0}& O\\
+  O&  O&  O&  \cdots&  G&D_{1,0}
 \end{bmatrix}_{{\color{red}N_x}(N_y-1)\times {\color{red}N_x}(N_y-1)}\\ 
 \vec{\Phi} = 
 \begin{bmatrix}
@@ -398,10 +374,10 @@ K =
     \vec{\phi}_{N_x-1}
 \end{bmatrix} + 
 \begin{bmatrix}
-    \vec{\varphi}_{\color{red}0} \\ 
-    \vec{\varphi}_1 \\ 
+    \vec{\psi}_{\color{red}0} \\ 
+    \vec{\psi}_1 \\ 
     \vdots \\ 
-    \vec{\varphi}_{N_x-1}
+    \vec{\psi}_{N_x-1}
 \end{bmatrix}+
 \begin{bmatrix}
     G\vec{u}_0 \\ 
@@ -504,8 +480,8 @@ tic
 
 % 矩阵初始化
     [GridX, GridY] = meshgrid(X,Y); 
-    D_m = lam_m0*eye(N_y-1);
-    D_p = lam_p0*eye(N_y-1);
+    D_{-1,0} = lam_m0*eye(N_y-1);
+    D_{1,0} = lam_p0*eye(N_y-1);
     U = zeros((N_x-1)*(N_y-1), 1);     % 待求函数
     K = zeros((N_x-1)*(N_y-1), (N_x-1)*(N_y-1));      % 系数矩阵
 
@@ -544,10 +520,10 @@ tic
         K( (i-1)*(N_y-1)+1 : i*(N_y-1), (i-1)*(N_y-1)+1 : i*(N_y-1) ) = G;
     end
     for i = 1: N_x-2
-        K( (i)*(N_y-1)+1 : (i+1)*(N_y-1), (i-1)*(N_y-1)+1 : i*(N_y-1) ) = D_m;
-        K( (i-1)*(N_y-1)+1 : (i)*(N_y-1), (i)*(N_y-1)+1 : (i+1)*(N_y-1) ) = D_p;
+        K( (i)*(N_y-1)+1 : (i+1)*(N_y-1), (i-1)*(N_y-1)+1 : i*(N_y-1) ) = D_{-1,0};
+        K( (i-1)*(N_y-1)+1 : (i)*(N_y-1), (i)*(N_y-1)+1 : (i+1)*(N_y-1) ) = D_{1,0};
     end
-    % 第一、二项 \vec{\phi} + \vec{\varphi}
+    % 第一、二项 \vec{\phi} + \vec{\psi}
     for i = 1: N_x-1    
         Phi( (i-1)*(N_y-1)+1 : i*(N_y-1), 1 ) = phi_matrix(2:N_y, i+1) + varphi_matrix(:, i);;   % 网格索引 0 ~ N，矩阵索引 1 ~ N+1
     end
@@ -637,7 +613,7 @@ $$
 \end{align*}
 $$
 
-在 $G\vec{u}_i + \lambda_{1,0}\vec{u}_{i+1} = \vec{\phi}_i + \vec{\varphi}_i$ 中依次令 $i = 0, ..., N_x-1$ 而不是之前的 $1, ..., N_x-1$，得到矩阵方程：
+在 $G\vec{u}_i + \lambda_{1,0}\vec{u}_{i+1} = \vec{\phi}_i + \vec{\psi}_i$ 中依次令 $i = 0, ..., N_x-1$ 而不是之前的 $1, ..., N_x-1$，得到矩阵方程：
 
 $$
 K\vec{U} = \vec{\Phi} \Longrightarrow \vec{U} = K^{-1}\vec{\Phi}
@@ -648,12 +624,12 @@ $$
 \vec{U} = \begin{bmatrix}\vec{u}_{1}\\\vec{u}_{2}\\\vdots\\\vec{u}_{N_x}\end{bmatrix} =\begin{bmatrix}u_{1,1}\\u_{1,2}\\\vdots\\u_{1,N_y-1}\\u_{2,1}\\\vdots\\u_{N_x,N_y-1}\end{bmatrix}_{{\color{red}N_x}(N_y-1)\times 1}\\
 K = 
 \begin{bmatrix}
-  D_p&  O&  O&\cdots  &O &O \\
-  G&  D_p&  O&\cdots  &O  &O \\
-  O&  G&  D_p&\cdots  &O  &O \\
+  D_{1,0}&  O&  O&\cdots  &O &O \\
+  G&  D_{1,0}&  O&\cdots  &O  &O \\
+  O&  G&  D_{1,0}&\cdots  &O  &O \\
   \vdots&  \vdots&  \vdots&  \ddots &\vdots  &\vdots \\
-  O&  O&  O&  \cdots&  D_p& O\\
-  O&  O&  O&  \cdots&  G&D_p
+  O&  O&  O&  \cdots&  D_{1,0}& O\\
+  O&  O&  O&  \cdots&  G&D_{1,0}
 \end{bmatrix}_{{\color{red}N_x}(N_y-1)\times {\color{red}N_x}(N_y-1)}\\ 
 \vec{\Phi} = 
 \begin{bmatrix}
@@ -663,10 +639,10 @@ K =
     \vec{\phi}_{N_x-1}
 \end{bmatrix} + 
 \begin{bmatrix}
-    \vec{\varphi}_{\color{red}0} \\ 
-    \vec{\varphi}_1 \\ 
+    \vec{\psi}_{\color{red}0} \\ 
+    \vec{\psi}_1 \\ 
     \vdots \\ 
-    \vec{\varphi}_{N_x-1}
+    \vec{\psi}_{N_x-1}
 \end{bmatrix}+
 \begin{bmatrix}
     G\vec{u}_0 \\ 
@@ -708,7 +684,7 @@ $$
 \end{align*}
 $$
 
-在 $\lambda_{-1,0}\vec{u}_{i-1} + G\vec{u}_i = \vec{\phi}_i + \vec{\varphi}_i$ 中依次令 $i = 1,...,N_x$，得到矩阵方程： 
+在 $\lambda_{-1,0}\vec{u}_{i-1} + G\vec{u}_i = \vec{\phi}_i + \vec{\psi}_i$ 中依次令 $i = 1,...,N_x$，得到矩阵方程： 
 
 $$
 K\vec{U} = \vec{\Phi} \Longrightarrow \vec{U} = K^{-1}\vec{\Phi}
@@ -720,11 +696,11 @@ $$
 K = 
 \begin{bmatrix}
   G&  O&  O&\cdots  &O &O \\
-  D_m&  G&  O&\cdots  &O  &O \\
-  O&  D_m&  G&\cdots  &O  &O \\
+  D_{-1,0}&  G&  O&\cdots  &O  &O \\
+  O&  D_{-1,0}&  G&\cdots  &O  &O \\
   \vdots&  \vdots&  \vdots&  \ddots &\vdots  &\vdots \\
   O&  O&  O&  \cdots&  G& O\\
-  O&  O&  O&  \cdots&  D_m&G
+  O&  O&  O&  \cdots&  D_{-1,0}&G
 \end{bmatrix}_{{\color{red}N_x}(N_y-1)\times {\color{red}N_x}(N_y-1)}\\ 
 \vec{\Phi} = 
 \begin{bmatrix}
@@ -734,10 +710,10 @@ K =
     \vec{\phi}_{N_x}
 \end{bmatrix} + 
 \begin{bmatrix}
-    \vec{\varphi}_{\color{red}1} \\ 
-    \vec{\varphi}_2 \\ 
+    \vec{\psi}_{\color{red}1} \\ 
+    \vec{\psi}_2 \\ 
     \vdots \\ 
-    \vec{\varphi}_{N_x}
+    \vec{\psi}_{N_x}
 \end{bmatrix}+
 \begin{bmatrix}
     -\lambda_{-1,0}\vec{u}_0 \\ 

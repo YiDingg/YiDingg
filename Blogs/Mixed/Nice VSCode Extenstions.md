@@ -4,6 +4,13 @@
 
 ## Mixed
 
+### CodeGeeX
+
+CodeGeeX: a free and useful AI assistant.
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-20-14-57-28_Nice VSCode Extenstions.jpg"/></div>
+
 ### Key Promoter
 
 Key Promoter is an extension that helps you to learn shortcuts while you are working. 
