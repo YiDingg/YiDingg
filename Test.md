@@ -6,6 +6,8 @@ This is a page only for test.
 
 ## Testing
 
+来自平板 VSCode Web 的更新！
+
 - Link: use [C1N](https://www.c1n.cn/)<span class='tinyscript'> or [Short](https://d.igdu.xyz/)</span> to create a short link for your file, and use [SINA](https://www.sina.lt/restore.html) to restore the short link.
 
 ``` video_progress
