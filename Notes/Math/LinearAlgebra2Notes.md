@@ -16,6 +16,10 @@ https://yidingg.github.io/YiDingg/pdf/GitHub_YiDingg_pdf/Linear Algebra 2 notes.
 ``` -->
 
 
-```pdf
+<!-- ```pdf
 https://www.writebug.com/git/YiDingg/WB.YiDingg/raw/branch/main/LinearAlgebra2Notes.pdf
+``` -->
+
+```pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/LinearAlgebra2/LinearAlgebra2Notes.pdf
 ```

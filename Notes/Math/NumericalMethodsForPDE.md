@@ -25,8 +25,9 @@
 You might not be able to view pdf online on the mobile devices as the broswer dosen't support the extension. Therefore, make sure you are using a mordern broswer on PC, such as Edge, Chrome, Quark, LianXiang, etc. You can also try clicking the link below to view or download
 the file.
 
-The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/NumericalMethodsForPDE/NumericalMethodsForPDENotes.pdf')" type="button">NumericalMethodsForPDENotes.pdf</button>
+The raw source url: <button onclick="window.open('https://testingcf.jsdelivr.net/gh/YiDingg/LatexNotes/NumericalMethodsForPDE/NumericalMethodsForPDENotes.pdf')" type="button">NumericalMethodsForPDENotes.pdf</button>
+
 
 ```pdf
-https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/NumericalMethodsForPDE/NumericalMethodsForPDENotes.pdf
+https://testingcf.jsdelivr.net/gh/YiDingg/LatexNotes/NumericalMethodsForPDE/NumericalMethodsForPDENotes.pdf
 ```

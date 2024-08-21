@@ -6,7 +6,15 @@ This is a page only for test.
 
 ## Testing
 
+### draw.io in VSCode 
+
+![图片](draw.io_test.drawio.svg)
+
+### 平板编辑 VSCode
+
 来自平板 VSCode Web 的更新！
+
+### WB.Cloud 代码
 
 - Link: use [C1N](https://www.c1n.cn/)<span class='tinyscript'> or [Short](https://d.igdu.xyz/)</span> to create a short link for your file, and use [SINA](https://www.sina.lt/restore.html) to restore the short link.
 

@@ -3,13 +3,20 @@
 ## 一、命令速查手册
 
 <details>
-<summary> 0. 非Git命令 </summary>  
+<summary> 0. 杂七杂八</summary>  
 
 ```bash
-常用：
-`ls`：  
-`pwd`：  
-`cat ~/.ssh/id_rsa.pub`：查看ssh公钥  
+# list files in current directory
+ls
+
+# print working directory
+pwd  
+
+# 查看ssh公钥  
+cat ~/.ssh/id_rsa.pub
+
+# 移除 FolderName 文件夹目录中的所有文件
+git rm --cached -r FolderName
 ```
 </details>
 
@@ -23,13 +30,13 @@
 `git branch -m old_name new_name`
 
 其它：
-`git branch`：查看本地分支
-`git branch -v`：查看本地分支 + 分支最近一次提交信息
-`git branch -vv`：查看本地分支 + 分支链接信息 + 分支最近一次提交信息
-`git branch -a`：查看本地和远程分支
-`git branch -a -v`：查看本地和远程分支 + 分支最近一次提交信息
-`git branch -a -vv`：查看本地和远程分支 + 分支链接信息 + 分支最近一次提交信息
-`git branch -m old_name new_name`：重命名本地分支
+`git branch`                      ：查看本地分支
+`git branch -v`                   ：查看本地分支 + 分支最近一次提交信息
+`git branch -vv`                  ：查看本地分支 + 分支链接信息 + 分支最近一次提交信息
+`git branch -a`                   ：查看本地和远程分支
+`git branch -a -v`                ：查看本地和远程分支 + 分支最近一次提交信息
+`git branch -a -vv`               ：查看本地和远程分支 + 分支链接信息 + 分支最近一次提交信息
+`git branch -m old_name new_name` ：重命名本地分支
 ```
 </details>
 
@@ -43,11 +50,11 @@
 `git remote remove {remote_name}`
 
 其它：
-`git remote`：查看链接
-`git remote -v`：查看链接信息（详细）
-`git remote prune {remote_name}`：从删除远程中不存在的本地分支
-`git remote prune --dry-run {remote_name}`：预览远程中不存在的本地分支
-`git remote remove {remote_name}`：移除链接
+`git remote`                                ：查看链接
+`git remote -v`                             ：查看链接信息（详细）
+`git remote prune {remote_name}`            ：从删除远程中不存在的本地分支
+`git remote prune --dry-run {remote_name}`  ：预览远程中不存在的本地分支
+`git remote remove {remote_name}`           ：移除链接 
 ```
 </details>
 
@@ -210,10 +217,16 @@
 `git config --gl -l`：查看全局设置
 `git config [--local|--global|--system] --list`：查看 [ 本地 | 全局 | 系统 ] 设置
 
-常用配置：
+我的常用配置：
+git config --global user.name "YiDing"
+git config --global user.email "dingyi233@mails.ucas.ac.cn"
 git config --global init.defaultBranch main # 配置初始化仓库的默认分支名
-git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue){%an}%Creset' --abbrev-commit -15"
-# 配置后 git lg 的信息大概是 (有颜色区别，显示最近15条commit)：* 84b2f5d - here is the info (45 minutes ago) {Author} 
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue){%an}%Creset' --abbrev-commit -15"  # 配置后 git lg 的信息大概是 (有颜色区别，显示最近15条commit)：* 84b2f5d - here is the info (45 minutes ago) {Author} 
+git config --global alias.a "add ."           # git a 等同于 git add .
+git config --global alias.c "commit -a -m"    # git c "message" 等同于 git commit -a -m "message"
+git config --global alias.s "status"          # git s 等同于 git status
+git config --global alias.pl "pull"           # git pl 等同于 git pull
+git config --global alias.ps "push"           # git ps 等同于 git push
 
 
 
