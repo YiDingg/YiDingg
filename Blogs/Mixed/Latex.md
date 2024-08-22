@@ -73,12 +73,18 @@
 
 Latex 的图片插入支持以下格式：
 
-- `\includegraphics`: jpg, png, pdf
-- `\includepdf`: pdf
+- jpg, png, eps, pdf: `\usepackage{graphicx}` 并 `\includegraphics{YourFileNameHere}`
+- svg: `\usepackage{svg}` 并 `\includesvg{YourFileNameHere}`
 
 代码如下：
 
 ``` latex
+% jpg, png, eps, pdf: \usepackage{graphicx} 并 \includegraphics{YourFileNameHere}
+
+% 导言区：
+% \usepackage{graphicx}  % 支持 jpg, png, eps, pdf 图片 
+
+% 正文区：
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{assets/2024-08-15_13-50-23.pdf}
@@ -86,7 +92,38 @@ Latex 的图片插入支持以下格式：
 \end{figure}
 ```
 
+注：Latex 插入 svg 实际上是通过 Inkscape 将 svg 转为 pdf 再执行插入的，由于这个过程在编译时进行，因此插入过多的 svg 图片可能会导致编译时间过长。
+``` latex
+% svg: \usepackage{svg} 并 \includesvg{YourFileNameHere}
+
+% 导言区：
+% \usepackage{svg}       % 支持 svg 图片
+%     \svgsetup{
+%         inkscapeexe = D:/aa_my_apps_main/Inkscape/bin/inkscape.exe, % 指向 inkscape.exe 的路径
+%         inkscapelatex = false                 % 一定程度上修复导入后图片文字溢出几何图形的问题
+%     }
+
+% 正文区：
+\begin{figure}[H]
+    \centering
+    \includesvg[width=0.5\textwidth]{assets/draw.io_test.drawio.svg}
+    \caption{\textbf{插入 svg}}\label{插入 svg}
+\end{figure}
+```
+
+
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-17-21-10-52_Latex.jpg"/></div>
+
+若插入 svg 遇到如下报错：
+
+``` latex
+Package svg: You didn't enable `shell escape' (or `write18')(svg)	so it wasn't possible to launch the Inkscape export(svg)	for `assets/draw.io_test.drawio.svg'.LaTeX
+Package svg: File `draw.io_test.drawio_svg-raw.pdf' is missing.LaTeX
+```
+则需要在编译选项中添加参数 `-shell-escape`，在 settings.json 中找到当初 Latex 编译时的命令设置，在其后添加 `-shell-escape` 即可。比如我使用的是 `XeLatex` 选项，则再添加一条 `-shell-escape` 参数即可，如图：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-22-22-37-08_Latex.jpg"/></div>
+
 
 ### 图片 caption
 
@@ -103,6 +140,6 @@ Latex 的图片插入支持以下格式：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-17-21-20-43_Latex.jpg"/></div>
 
-## 其他资源
+## 相关资源
 
 - [TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/)
