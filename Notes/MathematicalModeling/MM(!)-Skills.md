@@ -1,10 +1,10 @@
-# Mathematical Modeling (+): Skills 
+# Mathematical Modeling (+): Tips and Tricks
 
 ## During The Contest 
 - Matlab 搜 [examples](https://www.mathworks.com/support/search.html?q=&fq%5B%5D=asset_type_name:documentation/example&page=1&s_tid=CRUX_topnav) 和 [fileexchange](https://www.mathworks.com/matlabcentral/fileexchange)
 - 搜相关论文
 
-## Paper Skills 
+## Paper Tips 
 
 ### 插入 Matlab 代码
 
@@ -37,7 +37,11 @@ pdftocairo -svg C:\Users\13081\Desktop\Test_Matlab\2024-08-15_13-50-23.pdf
 
 批量转换可通过脚本实现，详见 [here](https://blog.csdn.net/erwei4710/article/details/138505393)
 
-## Matlab Skills
+## Matlab Tips
+
+### 自定义帮助文档本地下载路径
+
+参考 [here](https://zhuanlan.zhihu.com/p/715676397)
 
 ### 数组逻辑索引
 

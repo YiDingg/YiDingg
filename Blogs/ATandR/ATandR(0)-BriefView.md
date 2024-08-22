@@ -44,7 +44,9 @@ Go to [ATandR(2): Programming](Blogs/ATandR/ATandR(2)-Programming.md) for more d
 Here are the other tools and resources.
 
 ### Mixed
-
+- [Trays](https://zhuanlan.zhihu.com/p/148141287)
+- [File Converter](https://file-converter.org/)
+- [EverythingToolbar](https://github.com/srwi/EverythingToolbar)
 - [Circuit JS](https://www.eetree.cn/platform/3004): a free online circuit simulator.
 - [EETree](https://www.eetree.cn/): a website for electronics engineer.
 - [TC Games](https://www.zhihu.com/question/424853439/answer/3473650709): a free screen projector

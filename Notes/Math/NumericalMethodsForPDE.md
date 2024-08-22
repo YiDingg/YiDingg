@@ -14,8 +14,8 @@
 
 - 教材：
   - [科学计算中的偏微分方程数值解法（张文生）.pdf](https://www.writebug.com/static/uploads/2024/8/4/ce21a47157bfcba5b44bf27dbfa9fb1c.pdf)
-  - [科学计算中的偏微分方程数值解法（张文生，有书签版）.pdf](https://www.writebug.com/static/uploads/2024/8/15/fc41d33c5dd88be8f041549ba71efe4c.pdf)
 - 辅导书：
+  - [科学计算中的偏微分方程数值解法（张文生，有书签版）.pdf](https://www.writebug.com/static/uploads/2024/8/15/fc41d33c5dd88be8f041549ba71efe4c.pdf)
   - [偏微分方程数值解法（陆金甫）.pdf](https://www.writebug.com/static/uploads/2024/8/4/f70d655ff4aed3522498fa632f42d7fe.pdf)
 
 ## Notes
