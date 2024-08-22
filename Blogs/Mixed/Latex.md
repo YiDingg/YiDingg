@@ -16,21 +16,17 @@
 ### .gitignore 
 
 ``` .gitignore
-# .gitignore
+# .gitignore for Latex
 
-# 忽略所有文件，同时不忽略文件夹  
-*.*
-
-# 不忽略 .gitignore 文件本身  
-!.gitignore 
-
-# 不忽略所有的 .tex 和 .pdf 文件 
-!*.tex  
-!*.pdf
-
-# 不忽略 assets 文件夹及其下所有文件
-!assets/
-!assets/*.*
+# 忽略附属次要文件
+*.aux
+*.bbl 
+*.blg
+*.log
+*.out
+*.gz
+*.toc
+*.listing
 ```
 
 

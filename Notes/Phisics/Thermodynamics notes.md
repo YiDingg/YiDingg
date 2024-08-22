@@ -6,8 +6,16 @@ the file.
 
 <!-- The raw source url: <button onclick="window.open('https://www.writebug.com/git/YiDingg/WB.PDFBank/raw/branch/main/Notes/Thermodynamics notes.pdf')" type="button">click to view or download the file</button> -->
 
-The raw source url: <button onclick="window.open('https://www.writebug.com/static/uploads/2024/7/14/cc435f574f5ebb4aadefb7089e9eb31c.pdf')" type="button">click to view or download the file</button>
+<!-- The raw source url: <button onclick="window.open('https://www.writebug.com/static/uploads/2024/7/14/cc435f574f5ebb4aadefb7089e9eb31c.pdf')" type="button">click to view or download the file</button>
+ -->
+The raw source url: <button onclick="window.open('https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/Thermodynamics/ThermodynamicsNotes.pdf')" type="button">click to view or download the file</button>
+
+
+<!-- ```pdf
+https://www.writebug.com/static/uploads/2024/7/14/cc435f574f5ebb4aadefb7089e9eb31c.pdf
+```
+ -->
 
 ```pdf
-https://www.writebug.com/static/uploads/2024/7/14/cc435f574f5ebb4aadefb7089e9eb31c.pdf
+https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/Thermodynamics/ThermodynamicsNotes.pdf
 ```

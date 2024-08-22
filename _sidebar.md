@@ -41,15 +41,14 @@
 
 
 - 📖 **Notes**
-  - [Numerical Methods for PDE](Notes/Math/NumericalMethodsForPDE.md)
   - CircuitTheory
-    - [Circuit Theory (0): Preparations](Notes/CircuitTheory/CircuitTheoryNotes(0)-Preparations.md)
+    - [Circuit Theory (0): Preparations](Notes/MajorCourses/CircuitTheory/CircuitTheoryNotes(0)-Preparations.md)
   - Optics
 
-    - [Optics (0): Preparations](Notes/Phisics/Optics/OpticsNotes(0)-Preparations.md)
-    - [Optics (1):](Notes/Phisics/Optics/OpticsNotes(1)-.md)
+      - [Optics (0): Preparations](Notes/Phisics/Optics/OpticsNotes(0)-Preparations.md)
+      - [Optics (1):](Notes/Phisics/Optics/OpticsNotes(1)-.md)
   - [Mathematical Physics Mathods](Notes/Math/MathematicalPhysicsMathods.md)
-
+  - [Numerical Methods for PDE](Notes/Math/NumericalMethodsForPDE.md)
 
   - Math
     - [Calculus 1](Notes/Math/Calculus1Notes.md)
@@ -60,6 +59,7 @@
     - [Mechanics](Notes/Phisics/Mecanics%20notes.md)
     - [Electromegnetism](Notes/Phisics/Electromegnetism%20Notes.md)
     - [Thermodynamics](Notes/Phisics/Thermodynamics%20notes.md)
+
   - C
     - [C语言 (0)：准备](Notes/C/CNotes(0)-Preparation.md)
     - [C语言 (1)：开始编程之前](Notes/C/CNotes(1)-BeforeStarting.md)

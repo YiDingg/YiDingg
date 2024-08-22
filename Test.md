@@ -8,7 +8,7 @@ This is a page only for test.
 
 ### draw.io in VSCode 
 
-![图片](draw.io_test.drawio.svg)
+![图片](assets/draw.ioFiles/draw.io_test.drawio.svg)
 
 ### 平板编辑 VSCode
 

@@ -12,12 +12,12 @@
 
 ### .drawio.svg 示例
 
-<div class='center'><img src='draw.io_test.drawio.svg' alt='img'/>
+<div class='center'><img src='assets/draw.ioFiles/draw.io_test.drawio.svg' alt='img'/>
 <div class='caption'>Figure: draw.io_test.drawio.svg</div></div>
 
 
 ``` html
-<div class='center'><img src='draw.io_test.drawio.svg' alt='img'/>
+<div class='center'><img src='assets/draw.ioFiles/draw.io_test.drawio.svg' alt='img'/>
 <div class='caption'>Figure: draw.io_test.drawio.svg</div></div>
 ```
 
