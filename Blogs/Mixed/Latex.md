@@ -36,7 +36,7 @@
 
 最佳方法是利用表格生成器（手动输入内容）或表格转换器（Excel 数据转表格）生成代码：
 
-- [Latex Table Editor](https://www.latex-tables.com/)：`\usepackage{tabularray}`，可以在数学表格外统一使用 `equation*` 来创造数学环境，无需手动给每个元素添加 `$$`
+- [Latex Table Editor](https://www.latex-tables.com/)：`\usepackage{tabularray}`，可以在数学表格外统一使用 `\begin{equation*}` 来创造数学环境，无需手动给每个元素添加 `$$`
 - [Create Latex Tables Online](https://www.tablesgenerator.com/latex_tables#google_vignette)：`\usepackage{longtable}`，便于生成跨页长表格
 - [Excel2LATEX](https://ctan.org/tex-archive/support/excel2latex/)：可以将 Excel 表格转化为 Latex 表格
 

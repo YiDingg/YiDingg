@@ -15,8 +15,11 @@ pwd
 # 查看ssh公钥  
 cat ~/.ssh/id_rsa.pub
 
-# 移除 FolderName 文件夹目录中的所有文件
+# 移除对 FolderName 文件夹的跟踪但不删除文件
 git rm --cached -r FolderName
+
+# 允许合并不同的历史记录
+--allow-unrelated-histories
 ```
 </details>
 
