@@ -76,8 +76,7 @@ Latex 的图片插入支持以下格式：
 - jpg, png, eps, pdf: `\usepackage{graphicx}` 并 `\includegraphics{YourFileNameHere}`
 - svg: `\usepackage{svg}` 并 `\includesvg{YourFileNameHere}`
 
-代码如下：
-
+jpg, png, eps, pdf 代码如下：
 ``` latex
 % jpg, png, eps, pdf: \usepackage{graphicx} 并 \includegraphics{YourFileNameHere}
 
@@ -92,7 +91,8 @@ Latex 的图片插入支持以下格式：
 \end{figure}
 ```
 
-注：Latex 插入 svg 实际上是通过 Inkscape 将 svg 转为 pdf 再执行插入的，由于这个过程在编译时进行，因此插入过多的 svg 图片可能会导致编译时间过长。
+
+svg 代码如下（借助 VSCode 的 Draw.io 插件，可以方便且快速的编辑、导入 svg）：
 ``` latex
 % svg: \usepackage{svg} 并 \includesvg{YourFileNameHere}
 
@@ -110,7 +110,7 @@ Latex 的图片插入支持以下格式：
     \caption{\textbf{插入 svg}}\label{插入 svg}
 \end{figure}
 ```
-
+注：Latex 插入 svg 实际上是通过 Inkscape 将 svg 转为 pdf 再执行插入的，由于这个过程在编译时进行，因此插入过多的 svg 图片可能会导致编译时间过长。另外，`.drawio.svg` 图片中的数学排版在 Latex 中无法正常显示（以纯文本形式显示，而不渲染为数学公式），因此对于有数学排版要求的图片，建议使用 AxGlyph 进行编辑，并导出为 `.svg` 或 `.pdf` 格式（前者导出更方便，后者文件更小但可能与原图片有细微差别）。
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-17-21-10-52_Latex.jpg"/></div>
 

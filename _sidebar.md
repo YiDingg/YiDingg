@@ -41,7 +41,7 @@
 
 
 - 📖 **Notes**
-  - CircuitTheory
+  - Circuit Theory
     - [Circuit Theory (0): Preparations](Notes/MajorCourses/CircuitTheory/CircuitTheoryNotes(0)-Preparations.md)
   - Optics
 
@@ -49,6 +49,8 @@
       - [Optics (1):](Notes/Phisics/Optics/OpticsNotes(1)-.md)
   - [Mathematical Physics Mathods](Notes/Math/MathematicalPhysicsMathods.md)
   - [Numerical Methods for PDE](Notes/Math/NumericalMethodsForPDE.md)
+  - Basic Physics Experiment
+    - [BPE (0): Preparations](Notes/Phisics/BasicPhysicsExperiment/BPE(0)-Preparations.md)
 
   - Math
     - [Calculus 1](Notes/Math/Calculus1Notes.md)

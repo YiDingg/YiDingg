@@ -17,13 +17,16 @@
 <div class='caption'>Figure: 光学 svg 示意图示例</div></div>
 ```
 
+考核方式：平时作业 30%，期中闭卷考试 30%，期末闭卷考试 40%。
 
 ## Resources
 
 ### Textbook
 
+
 - 教材：
-  - x
+  - 光学（钱列加）(2024年8月第1版).pdf
+  - [光学原理：光的传播、干涉和衍射的电磁理论（马科斯·玻恩，埃米尔）(第7版).pdf](https://s.b1n.net/DABQD)
 - 辅导书：
   - y
 
