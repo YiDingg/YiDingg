@@ -252,6 +252,7 @@ footer {
     article object {
         /* max-width: 750px;  */ /* 850可能会超出中间区域 */
         max-width: 80%;
+        width: 900px;
     }
 }
 /*                                             */
