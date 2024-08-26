@@ -1,20 +1,25 @@
 # Mathematical Physics Methods
 
+
 ## Notes 
 
 !> **<span style='color:red'>Attention:</span>**<br>
 You might not be able to view pdf online on the mobile devices as the broswer dosen't support the extension. Therefore, make sure you are using a mordern broswer on PC, such as Edge, Chrome, Quark, LianXiang, etc. You can also try clicking the link below to view or download
 the file.
 
-The raw source url: <button onclick="window.open('https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/MathematicalPhysicsMethods/MathematicalPhysicsMethodsNotes.pdf')" type="button">Mathematical Physics Methods Notes.pdf</button>
+The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/MathematicalPhysicsMethods/MathematicalPhysicsMethodsNotes.pdf')" type="button">Mathematical Physics Methods Notes.pdf</button>
 
 ```pdf
-https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/MathematicalPhysicsMethods/MathematicalPhysicsMethodsNotes.pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/MathematicalPhysicsMethods/MathematicalPhysicsMethodsNotes.pdf
 ```
 
 ## Recourses
 
+- 主讲老师：张文生
+- 考核方式：30 % + 30 % + 40 %
+
 - 教材：
+  - 数学物理方法讲义（张文生）(2024).pdf
   - [数学物理方法（吴崇试）(第3版)，.pdf](https://s.b1n.net/Cso88)
 - 辅导书：
   - [习题答案 of 数学物理方法（吴崇试）(第3版).pdf](https://www.writebug.com/static/uploads/2024/8/25/8deddf98b901243add1494d82774f001.pdf)
