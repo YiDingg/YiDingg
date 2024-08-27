@@ -36,6 +36,7 @@ div.caption {
 ### 教学日历
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-10-15-24_CircuitTheoryNotes(0)-Preparations.jpg"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-17-37-36_CircuitTheoryNotes(0)-Preparations.jpg"/></div>
 
 ## Resources
 
@@ -58,10 +59,14 @@ Online:
 - [MultisimLive](https://www.multisim.com/get-started/)：Multisim 的免费在线版
 
 Offline: 
-- [Multisim](http://www.anyxz.com/index.php/12895.html)
+- [Multisim](https://www.ni.com/zh-cn/support/downloads/software-products/download.multisim.html#452133)
 - [LTspice](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html)
 - [Tina-Ti](https://www.ti.com/tool/TINA-TI)
 
+Multisim 系列：
+- [Multisim 官网下载](https://www.ni.com/zh-cn/support/downloads/software-products/download.multisim.html#452133)
+- [Multisim 淘宝](https://item.taobao.com/item.htm?spm=a21n57.1.item.1.5cdf523cnkKNJE&priceTId=2147806317247600582073947e9e5c)：[飞书下载](https://h2t5pqlfw1.feishu.cn/drive/folder/UyWcfUlc9leIfKdUj5zcdDwTn9d) [百度网盘下载]
+- [MultisimLive](https://www.multisim.com/get-started/)
 
 示例：
 - [SmartEDA 示例](https://www.ismarteda.com/)
@@ -138,6 +143,4 @@ Proteus
 综上所述，建议在选择仿真软件时，根据自己的实际需求和预算来权衡各款软件的优缺点，选择最适合自己的工具。
 ```
 
-
-### 拓展阅读
 

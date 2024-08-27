@@ -7,6 +7,7 @@
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-23-16-52-59_BPE(0)-Preparations.jpg"/></div> -->
 课程安排及考核方式：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-23-16-55-08_BPE(0)-Preparations.jpg"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-15-15-08_BPE(0)-Preparations.jpg"/></div>
 
 ## Resources
 
@@ -24,3 +25,4 @@
 
 ### 拓展阅读
 
+ 

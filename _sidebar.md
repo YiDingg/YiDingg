@@ -44,6 +44,7 @@
   - Circuit Theory
     - [Circuit Theory (0): Preparations](Notes/MajorCourses/CircuitTheory/CircuitTheoryNotes(0)-Preparations.md)
     - [Circuit Theory (1): Introductions](Notes/MajorCourses/CircuitTheory/CircuitTheoryNotes(1)-Introductions.md)
+    - [Circuit Theory (2): Simple Resistance Circuit](Notes/MajorCourses/CircuitTheory/CircuitTheoryNotes(2)-SimpleResistanceCircuit.md)
   - Optics
 
       - [Optics (0): Preparations](Notes/Phisics/Optics/OpticsNotes(0)-Preparations.md)

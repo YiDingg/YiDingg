@@ -1,4 +1,4 @@
-# Circuit Theory Notes (1): Introductions (绪论)
+# Circuit Theory Notes (1): Introductions 绪论
 
 本章首先介绍几个有关电路的基本问题，然后研究电压、电流和功率的定义，接下来简单介绍电路在信号处理与能量处理方面的应用，最后讨论电路的分类。本章是所有后
 续章节的共同基础。
