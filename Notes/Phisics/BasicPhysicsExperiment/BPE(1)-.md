@@ -1,1 +1,0 @@
-# Basic Physics Experiment (1): 

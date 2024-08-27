@@ -1,0 +1,1 @@
+# Circuit Theory Notes (2): Simple Resistance Circuit <br>简单电阻电路分析

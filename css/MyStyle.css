@@ -297,7 +297,7 @@ span.tinyscript * {
 /* ------------ 自定义 caption -------------- */
 /*                                            */
 div.caption {
-    font-weight: 500;
+    font-weight: 800;
     font-size: calc(var(--fontsize-main) * 0.8);
 }
 /*                                            */

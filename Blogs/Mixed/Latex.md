@@ -140,6 +140,13 @@ Package svg: File `draw.io_test.drawio_svg-raw.pdf' is missing.LaTeX
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-17-21-20-43_Latex.jpg"/></div>
 
+## 杂七杂八
+
+### 对号错号
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-26-18-50-05_Latex.jpg"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-26-18-50-36_Latex.png"/></div>
+
 ## 相关资源
 
 - [TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/)

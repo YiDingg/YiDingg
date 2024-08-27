@@ -24,6 +24,18 @@ div.caption {
 }
 ```
 
+## Infor
+
+### 课程要求
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-10-30-24_CircuitTheoryNotes(0)-Preparations.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-10-39-39_CircuitTheoryNotes(0)-Preparations.jpg"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-10-17-18_CircuitTheoryNotes(0)-Preparations.jpg"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-11-05-16_CircuitTheoryNotes(0)-Preparations.png"/></div>
+
+### 教学日历
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-10-15-24_CircuitTheoryNotes(0)-Preparations.jpg"/></div>
 
 ## Resources
 
@@ -34,6 +46,7 @@ div.caption {
 
 辅导书：
 - [电路原理导学导教及习题解答（朱桂萍、于歆杰、陆文娟、刘秀成）.pdf](https://s.b1n.net/4kGFu)
+- [电路原理学习指导与习题集 第2版 (朱桂萍 刘秀成 徐福媛) (Z-Library).pdf](https://www.writebug.com/static/uploads/2024/8/27/bdf7b26c0f4342845a66054cccd6cdc1.pdf)
 - [电路原理试题选编（朱桂萍、于歆杰、刘秀成）(第4版).pdf](https://s.b1n.net/OSmef)
 - [电路原理（朱桂萍，于歆杰，陆文娟）(Mooc 配套用书).pdf](https://s.b1n.net/6Smsc)
 
