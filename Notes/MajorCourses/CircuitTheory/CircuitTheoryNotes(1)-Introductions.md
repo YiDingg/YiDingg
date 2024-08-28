@@ -29,17 +29,44 @@ $$
 
 在分析电路时，<span style='color:red'> 必须 </span> 事先规定电路电流的参考方向（正方向），也必须规定电压的参考方向或参考极性。
 
+电压与电动势一般有三种表示方式，分别为结点、正负和箭头，如下（注意两者方向不同）：
+
+<div class='center'><img src='Notes/MajorCourses/CircuitTheory/assets/电动势与电压.drawio.svg' alt='img'/>
+<div class='caption'>Figure: 电压与电动势的三种表示方式</div></div>
+
 ### 其它概念
 
 端口：封装好的电路元件与电路其它部分的联接点称为端纽、端子或接线端（terminal）。如果从元件的两个端纽看进去满足 $i = -i'$，则这两个端子被称为一个端口。
 
-<div class='center'><img src='assets/draw.ioFiles/端口.drawio.svg' alt='img'/>
+<div class='center'><img src='Notes/MajorCourses/CircuitTheory/assets/端口.drawio.svg' alt='img'/>
 <div class='caption'>Figure: 端口示意图</div></div>
  
 ### 部分电气图图形符号
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-11-17-16_CircuitTheoryNotes(1)-Introductions.jpg"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-11-17-44_CircuitTheoryNotes(1)-Introductions.png"/></div>
+
+### 信号
+
+依据取值和时域的不同，信号可以分为：
+<div class='center'>
+
+```plantuml
+@startmindmap
+* 信号
+** 离散信号
+*** 数字信号
+*** 抽样信号
+** 连续信号
+*** 模拟信号
+*** 阶梯信号
+@endmindmap
+```
+</div>
+
+
+
+### 能量
 
 ## 中英文对照表
 

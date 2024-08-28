@@ -9,7 +9,7 @@
 - 可视化：用 Matlab 求解电路方程并可视化结果，导出为图片插入到 Markdown 文档
 - 其它：GeoGebra、[Mathcha](https://www.mathcha.io/editor) 
 
-<div class='center'><img src='assets/draw.ioFiles/draw.io_test.drawio.svg' alt='img'/>
+<div class='center'><img src='Notes/MajorCourses/CircuitTheory/assets/draw.io_test.drawio.svg' alt='img'/>
 <div class='caption'>Figure: draw.io_test.drawio.svg</div></div>
 
 ``` html
