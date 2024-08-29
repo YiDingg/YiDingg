@@ -40,7 +40,7 @@ By the way, we have to note that building a longtime, well-designed and constant
 
 To get started, we advise you to use GitHub Pages (host server) + docsify (static site generator). In this case, you can use the given domain name completely freely. You do not need to buy a domain name or a hosting server, and you do not have to register and filing you website domain.
 
-You can follow the link [CSDN](https://blog.csdn.net/liyou123456789/article/details/124504727) and [GitHub Pages Documentation](https://docs.github.com/en/pages/quickstart) for a quick start.
+You can follow the link [CSDN](https://blog.csdn.net/liyou123456789/article/details/124504727), [CSDN](https://blog.csdn.net/qq_62982856/article/details/129940209) and [GitHub Pages Documentation](https://docs.github.com/en/pages/quickstart) for a quick start.
 
 ## Copy Our Site
 

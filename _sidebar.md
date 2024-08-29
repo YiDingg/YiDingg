@@ -41,14 +41,11 @@
 
 
 - 📖 **Notes**
-  - Circuit Theory
-    - [Circuit Theory (0): Preparations](Notes/MajorCourses/CircuitTheory/CircuitTheoryNotes(0)-Preparations.md)
-    - [Circuit Theory (1): Introductions](Notes/MajorCourses/CircuitTheory/CircuitTheoryNotes(1)-Introductions.md)
-    - [Circuit Theory (2): Simple Resistance Circuit](Notes/MajorCourses/CircuitTheory/CircuitTheoryNotes(2)-SimpleResistanceCircuit.md)
   - Optics
 
       - [Optics (0): Preparations](Notes/Phisics/Optics/OpticsNotes(0)-Preparations.md)
       - [Optics (1):](Notes/Phisics/Optics/OpticsNotes(1)-.md)
+  - [Circuit Theory Notes](Notes/MajorCourses/CircuitTheory/CircuitTheoryNotes.md)
   - [Mathematical Physics Mathods](Notes/Math/MathematicalPhysicsMathods.md)
   - [Numerical Methods for PDE](Notes/Math/NumericalMethodsForPDE.md)
   - Basic Physics Experiment

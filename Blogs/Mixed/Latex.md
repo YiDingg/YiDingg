@@ -335,7 +335,7 @@ svg 代码如下（借助 VSCode 的 Draw.io 插件，可以方便且快速的�
     \caption{\textbf{插入 svg}}\label{插入 svg}
 \end{figure}
 ```
-注：Latex 插入 svg 实际上是通过 Inkscape 将 svg 转为 pdf 再执行插入的，由于这个过程在编译时进行，因此插入过多的 svg 图片可能会导致编译时间过长。另外，`.drawio.svg` 图片中的数学排版在 Latex 中无法正常显示（以纯文本形式显示，而不渲染为数学公式），因此对于有数学排版要求的图片，建议使用 AxGlyph 进行编辑，并导出为 `.svg` 或 `.pdf` 格式（前者导出更方便，后者文件更小但可能与原图片有细微差别）。
+注：Latex 插入 svg 实际上是通过 Inkscape 将 svg 转为 pdf 再执行插入的，由于这个过程在编译时进行，因此插入过多的 svg 图片可能会导致编译时间过长。遗憾的是，`.drawio.svg` 图片中的数学排版在 Latex 中无法正常显示（以纯文本形式显示，而不渲染为数学公式），`.drawio.png` 可以正常渲染数学公式，但是公式画质较低，因此对于有数学排版要求的图片，建议使用 `.drawio.png`，或者在 AxGlyph 中编辑后导出为 `.svg` 或 `.pdf`（前者文件更大，后者可能有轻微渲染差异）。当然，也可以将 `.drawio.svg` 中的内容手动导出为 `.svg`。
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-17-21-10-52_Latex.jpg"/></div>
 

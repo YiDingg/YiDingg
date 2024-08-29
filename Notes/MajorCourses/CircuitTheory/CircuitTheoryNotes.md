@@ -1,14 +1,27 @@
-# Circuit Theory Notes (0): Preparation
+# Circuit Theory Notes
 
-## Intro
+## Notes 
 
-本系列为笔者本科时“电路原理”的课程笔记（Circuit Theory Notes, 2024.9--2025.1），考虑到电路示意图较多，选择用 Markdown 而非 Latex 进行记录。
+!> **<span style='color:red'>Attention:</span>**<br>
+You might not be able to view pdf online on the mobile devices as the broswer dosen't support the extension. Therefore, make sure you are using a mordern broswer on PC, such as Edge, Chrome, Quark, LianXiang, etc. You can also try clicking the link below to view or download
+the file.
 
-- 电路图：在 VSCode 中借助 draw.io 插件绘制 .drawio.svg 格式的电路图
+The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/CircuitTheory/CircuitTheoryNotes.pdf')" type="button">Circuit Theory Notes.pdf</button>
+
+```pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/CircuitTheory/CircuitTheoryNotes.pdf
+```
+
+## Infor
+
+### workflow
+
+- 电路图：在 VSCode 中借助 draw.io 插件绘制电路示意图
 - 其它示意图：用 AxGlyph + [Mathcha](https://www.mathcha.io/editor) + PPT 绘制其他示意图
 - 可视化：用 Matlab 求解电路方程并可视化结果，导出为图片插入到 Markdown 文档
 - 其它：GeoGebra、[Mathcha](https://www.mathcha.io/editor) 
 
+draw.io 插件绘制电路图的示例：
 <div class='center'><img src='Notes/MajorCourses/CircuitTheory/assets/draw.io_test.drawio.svg' alt='img'/>
 <div class='caption'>Figure: draw.io_test.drawio.svg</div></div>
 
@@ -24,8 +37,6 @@ div.caption {
 }
 ```
 
-## Infor
-
 ### 课程要求
 
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-10-30-24_CircuitTheoryNotes(0)-Preparations.png"/></div> -->
@@ -36,8 +47,11 @@ div.caption {
 ### 教学日历
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-10-15-24_CircuitTheoryNotes(0)-Preparations.jpg"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-17-37-36_CircuitTheoryNotes(0)-Preparations.jpg"/></div>
 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-29-13-13-40_CircuitTheoryNotes(0)-Preparations.jpg"/></div>
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-17-37-36_CircuitTheoryNotes(0)-Preparations.jpg"/></div>
+ -->
 ## Resources
 
 ### 相关书籍
@@ -65,7 +79,7 @@ Offline:
 
 Multisim 系列：
 - [Multisim 官网下载](https://www.ni.com/zh-cn/support/downloads/software-products/download.multisim.html#452133)
-- [Multisim 淘宝](https://item.taobao.com/item.htm?spm=a21n57.1.item.1.5cdf523cnkKNJE&priceTId=2147806317247600582073947e9e5c)：[飞书下载](https://h2t5pqlfw1.feishu.cn/drive/folder/UyWcfUlc9leIfKdUj5zcdDwTn9d) [百度网盘下载]
+- [Multisim 淘宝](https://item.taobao.com/item.htm?spm=a21n57.1.item.1.5cdf523cnkKNJE&priceTId=2147806317247600582073947e9e5c)：[飞书下载](https://h2t5pqlfw1.feishu.cn/drive/folder/UyWcfUlc9leIfKdUj5zcdDwTn9d) [百度网盘下载](https://pan.baidu.com/s/1GVF6j89qCSGBTj86KVeMFA?pwd=1234)
 - [MultisimLive](https://www.multisim.com/get-started/)
 
 示例：
@@ -143,4 +157,11 @@ Proteus
 综上所述，建议在选择仿真软件时，根据自己的实际需求和预算来权衡各款软件的优缺点，选择最适合自己的工具。
 ```
 
+### 其它软件
 
+
+- [A+D Lab](https://www.x-cloud.cc/)
+  - [A+D Lab User Manual (v2017R4)](https://www.writebug.com/static/uploads/2024/8/29/2948871fe297835be2646d1367b38999.pdf)
+  - [A+D Lab Datasheet (v2017R2)](https://www.writebug.com/static/uploads/2024/8/29/7c45b7b2e2883c97f97e28e6a1a14c09.pdf)
+- [Digilent Waveforms](https://cloud.digilent.com/myproducts/waveform?pc=1&tab=2)：波形测量
+    - README: [file:///D:/aa_my_apps_main/DigilentWaveforms/WaveForms3/doc/index.html]()

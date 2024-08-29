@@ -13,10 +13,12 @@ The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/
 https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/MathematicalPhysicsMethods/MathematicalPhysicsMethodsNotes.pdf
 ```
 
-## Recourses
+## Infor
 
 - 主讲老师：张文生
 - 考核方式：30 % + 30 % + 40 %
+
+## Recourses
 
 - 教材：
   - 数学物理方法讲义（张文生）(2024).pdf
