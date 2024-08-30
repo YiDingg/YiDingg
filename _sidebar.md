@@ -41,13 +41,20 @@
 
 
 - 📖 **Notes**
-  - Optics
-
-      - [Optics (0): Preparations](Notes/Phisics/Optics/OpticsNotes(0)-Preparations.md)
-      - [Optics (1):](Notes/Phisics/Optics/OpticsNotes(1)-.md)
+  - [Optics Notes](Notes/Phisics/OpticsNotes.md)
   - [Circuit Theory Notes](Notes/MajorCourses/CircuitTheory/CircuitTheoryNotes.md)
   - [Mathematical Physics Mathods](Notes/Math/MathematicalPhysicsMathods.md)
   - [Numerical Methods for PDE](Notes/Math/NumericalMethodsForPDE.md)
+  - C
+    - [C语言 (0)：准备](Notes/C/CNotes(0)-Preparation.md)
+    - [C语言 (1)：开始编程之前](Notes/C/CNotes(1)-BeforeStarting.md)
+    - [C语言 (2)：关键字](Notes/C/CNotes(2)-MemoryAndKeywords.md)
+    - [C语言 (3)：基本数据类型](Notes/C/CNotes(3)-DataTypes.md)
+    - [C语言 (4)：数组与字符串](Notes/C/CNotes(4)-ArrayAndString.md)
+    - [C语言 (5)：内存管理](Notes/C/CNotes(5)-MemoryManagement.md)
+    - [C语言 (6)：特殊数据类型](Notes/C/CNotes(6)-SpecialDataTypes.md)
+    - [C语言 (7)：预处理](Notes/C/CNotes(7)-Preproccess.md)
+    - [C语言 (8)：输入输出函数](Notes/C/CNotes(8)-IOFunctions.md)
   - Basic Physics Experiment
     - [BPE (0): Preparations](Notes/Phisics/BasicPhysicsExperiment/BPE(0)-Preparations.md)
     - [BPE (1): Introductions](Notes/Phisics/BasicPhysicsExperiment/BPE(1)-Introductions.md)
@@ -62,16 +69,6 @@
     - [Electromegnetism](Notes/Phisics/Electromegnetism%20Notes.md)
     - [Thermodynamics](Notes/Phisics/Thermodynamics%20notes.md)
 
-  - C
-    - [C语言 (0)：准备](Notes/C/CNotes(0)-Preparation.md)
-    - [C语言 (1)：开始编程之前](Notes/C/CNotes(1)-BeforeStarting.md)
-    - [C语言 (2)：关键字](Notes/C/CNotes(2)-MemoryAndKeywords.md)
-    - [C语言 (3)：基本数据类型](Notes/C/CNotes(3)-DataTypes.md)
-    - [C语言 (4)：数组与字符串](Notes/C/CNotes(4)-ArrayAndString.md)
-    - [C语言 (5)：内存管理](Notes/C/CNotes(5)-MemoryManagement.md)
-    - [C语言 (6)：特殊数据类型](Notes/C/CNotes(6)-SpecialDataTypes.md)
-    - [C语言 (7)：预处理](Notes/C/CNotes(7)-Preproccess.md)
-    - [C语言 (8)：输入输出函数](Notes/C/CNotes(8)-IOFunctions.md)
   - Cpp
     - [Cpp (0)：准备](Notes/Cpp/CppNotes(0)-Preparation.md)
   - Matlab

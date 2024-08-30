@@ -219,10 +219,10 @@ AlwaysBreakBeforeMultilineStrings: false
 AlwaysBreakTemplateDeclarations: true
 
 # false表示函数实参要么都在同一行，要么都各自一行
-BinPackArguments: true
+BinPackArguments: false
 
 # false表示所有形参要么都在同一行，要么都各自一行
-BinPackParameters: true
+BinPackParameters: false
 
 # 大括号换行，只有当BreakBeforeBraces设置为Custom时才有效
 BraceWrapping:
@@ -275,7 +275,7 @@ BreakConstructorInitializers: AfterColon
 BreakStringLiterals: false
 
 # 每行字符的限制，0表示没有限制
-ColumnLimit: 80
+ColumnLimit: 120
 
 CompactNamespaces: true
 

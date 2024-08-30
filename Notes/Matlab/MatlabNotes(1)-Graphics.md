@@ -1478,11 +1478,14 @@ There are several ways to export figures in Matlab. You can defenitely follow th
 To use this extension, download it [here](https://www.mathworks.com/matlabcentral/fileexchange/23629-export_fig), unzip the files to any path. Then, open your matlab, type the command below and press enter to add its path.  That's it! You can now use the functions to export your figures. 
 
 ```matlab
-% add export_fig path
-addpath(genpath("your file path to export_fig"));savepath;
+% Add export_fig's path:
+addpath("your file path to export_fig");savepath;
 
 % For example, my code to add the path is:
-addpath(genpath("D:\my apps\matlab-code\learning\altmany-export_fig-3.46.0.0"));savepath;
+addpath("D:\my apps\matlab-code\learning\altmany-export_fig-3.46.0.0");savepath;
+
+% Delete the given path: 
+rmpath("D:\a_RemoteRepo\GH.MatlabCodes\MatlabExtensions");clc;path
 ```
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-18-18-28-27_MatlabNotes(1)-Graphics.jpeg"/></div>

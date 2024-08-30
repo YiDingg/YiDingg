@@ -1,10 +1,22 @@
 # OpticsNotes (0): Preparation
 
+## Notes 
+
+!> **<span style='color:red'>Attention:</span>**<br>
+You might not be able to view pdf online on the mobile devices as the broswer dosen't support the extension. Therefore, make sure you are using a mordern broswer on PC, such as Edge, Chrome, Quark, LianXiang, etc. You can also try clicking the link below to view or download
+the file.
+
+The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/CircuitTheory/CircuitTheoryNotes.pdf')" type="button">Optics Notes.pdf</button>
+
+```pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/CircuitTheory/CircuitTheoryNotes.pdf
+```
+
 ## Intro
 
-本系列为笔者本科时“光学”的课程笔记（Optics Notes, 2024.9--2025.1），考虑到光学示意图较多，同时也伴有数学公式，选择用 Markdown 语言进行记录。
+本文为笔者本科时“光学”的课程笔记（Optics Notes, 2024.9--2025.1）。
 
-- 电路示意图：在 VSCode 中借助 draw.io 插件绘制 .drawio.svg 格式的电路图
+- 光学示意图：在 VSCode 中借助 draw.io 插件绘制光学示意图
 - 其它示意图：用 AxGlyph 绘制其他示意图
 - 可视化：用 Matlab 求解电路方程并可视化结果，导出为图片插入到 Markdown 文档
 - 其它：GeoGebra、[Mathcha](https://www.mathcha.io/editor) 

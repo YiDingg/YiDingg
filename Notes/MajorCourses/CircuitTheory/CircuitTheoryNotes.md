@@ -12,6 +12,15 @@ The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/
 https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/CircuitTheory/CircuitTheoryNotes.pdf
 ```
 
+## Homework
+
+The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]CircuitTheory/HomeworkOfCircuitTheory.pdf')" type="button">Circuit Theory Notes.pdf</button>
+
+```pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]CircuitTheory/HomeworkOfCircuitTheory.pdf
+```
+
+
 ## Infor
 
 ### workflow
