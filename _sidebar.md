@@ -105,10 +105,11 @@
 
 - 📝 **Projects**
 
+  - [Gomoku](Projects/Gomoku.md)
+  - [HDofDF (Humidity Detection of Diabetic Foot)](Projects/HDofDF.md)
   - [MuMeStar (Mutiple Menu Star for OLED)](Projects/MuMeStar.md)
   - [OLEDSD (OLED Software Driver)](Projects/OLEDSD.md)
   - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
-  - [HDofDF (Humidity Detection of Diabetic Foot)](Projects/HDofDF.md)
   - [Mixed](Projects/Mixed.md)
   - WSETD
     - [Outline of WSETD](Projects/WSETD/OutlineOfWSETD.md)

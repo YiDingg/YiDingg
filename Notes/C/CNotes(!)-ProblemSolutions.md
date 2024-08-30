@@ -15,3 +15,19 @@
 
 `return 0` 前写 `getchar();` 或 `while(1)` 或 `system("pause");`  
 </details>
+
+<!-- details begin -->
+<details>
+<summary>运行报错：Segmentation fault</summary>
+
+一般是将变量当作指针传入，使得数值被当作地址来处理导致的错误，比如下面的例子：
+
+``` c
+/* 错误 */
+scanf("%d%d", CuurentCoordinate.raw, CuurentCoordinate.column);
+
+/* 正确 */
+scanf("%d%d", &CuurentCoordinate.raw, &CuurentCoordinate.column);
+```
+
+</details>
