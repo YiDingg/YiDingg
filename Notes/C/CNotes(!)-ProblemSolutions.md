@@ -29,5 +29,11 @@ scanf("%d%d", CuurentCoordinate.raw, CuurentCoordinate.column);
 /* 正确 */
 scanf("%d%d", &CuurentCoordinate.raw, &CuurentCoordinate.column);
 ```
+</details>
 
+<!-- details begin -->
+<details>
+<summary>cannot open output file bin\main.exe: Permission denied</summary>
+
+.exe 文件仍在运行，关闭后重新编译即可。
 </details>

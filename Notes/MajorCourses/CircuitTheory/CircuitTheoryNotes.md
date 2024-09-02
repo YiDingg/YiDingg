@@ -23,7 +23,7 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]CircuitTheory/Homewor
 
 ## Infor
 
-### workflow
+### Workflow
 
 - 电路图：在 VSCode 中借助 draw.io 插件绘制电路示意图
 - 其它示意图：用 AxGlyph + [Mathcha](https://www.mathcha.io/editor) + PPT 绘制其他示意图
@@ -53,7 +53,7 @@ div.caption {
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-10-17-18_CircuitTheoryNotes(0)-Preparations.jpg"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-11-05-16_CircuitTheoryNotes(0)-Preparations.png"/></div>
 
-### 教学日历
+### 课程安排
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-10-15-24_CircuitTheoryNotes(0)-Preparations.jpg"/></div>
 

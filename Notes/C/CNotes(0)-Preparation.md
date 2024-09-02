@@ -12,7 +12,8 @@
 
 教材：
 - [C程序设计语言（Brian W. Kernighan & Dennis M. Ritchie）(2019年第2版)](https://www.writebug.com/static/uploads/2024/8/23/10a1d56c28ff4ee46cbb2a4186c56393.pdf)
-
+- 其它
+  - [程序设计与实验 QandA](https://pan.renjikai.com/Academic/C-Tutorial/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%AE%9E%E9%AA%8C%20Directive%E4%B8%8EQ&A.md)
 
 ## Resources
 
