@@ -41,8 +41,8 @@
 
 
 - 📖 **Notes**
-  - [Optics Notes](Notes/Phisics/OpticsNotes.md)
-  - [Circuit Theory Notes](Notes/MajorCourses/CircuitTheory/CircuitTheoryNotes.md)
+  - [Optics](Notes/Phisics/OpticsNotes.md)
+  - [Circuit Theory](Notes/MajorCourses/CircuitTheory/CircuitTheoryNotes.md)
   - [Mathematical Physics Mathods](Notes/Math/MathematicalPhysicsMathods.md)
   - [Numerical Methods for PDE](Notes/Math/NumericalMethodsForPDE.md)
   - C
