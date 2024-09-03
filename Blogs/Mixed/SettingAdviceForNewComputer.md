@@ -39,6 +39,8 @@ Word, Excel, PowerPoint 和 Onenote 等，如图：
 - [VSCode](https://code.visualstudio.com/) + [VC 不同设备设置同步](https://blog.csdn.net/weixin_44423832/article/details/100181033)
 - [MinGW](https://sourceforge.net/projects/mingw-w64/files/)
 - [parsec](https://parsec.app/): 远程控制
+- TexLive （参考 here），安装后查看 file:///D:/aa_TexLive/2024/index.html for 指引与帮助
+
 
 ## 其它问题
 
