@@ -16,7 +16,8 @@ C 语言是一种编译型语言，源码都是文本文件，本身无法执行
 - [CodingGround](https://tutorialspoint.com/compile_c_online.php)
 - [OnlineGDB](https://onlinegdb.com/online_c_compiler)
 
-我这里已经下载并配置好了Visual Studio 2022，但考虑到更喜欢用VSCode，还是下载了MinGW。参考 [CSDN](https://blog.csdn.net/su272009/article/details/138245549) 进行下载安装，然后
+我这里已经下载并配置好了Visual Studio 2022，但考虑到更喜欢用 VSCode，还是下载了MinGW。参考 <!--  [CSDN](https://blog.csdn.net/su272009/article/details/138245549)  --> [CSDN](https://blog.csdn.net/weixin_52159554/article/details/134406628)进行下载和安装，然后配置环境变量，安装 C/C++ 插件，即可开始编写 C 代码。
+
 
 ### GCC编译
 
@@ -28,7 +29,7 @@ C 语言是一种编译型语言，源码都是文本文件，本身无法执行
 - `-std=`(Standard): 指定编译标准
 
 
-### C/C++环境配置
+### CMake 环境配置
 
 对于仅编译一个`.c`或`.cpp`文件的情况，推荐插件 Code Runner。它支持运行 C, C++, Java, JavaScript, PHP, Python, Go, PowerShell 等多种语言（即下面的方案一）。
 但是，考虑到之后的学习/使用会遇到多个`.c`和`.h`文件，甚至有`.c`和`.cpp`文件混合的情况，我们不如直接配置VSCode中的C/C++ 编译、debug环境，使得所有文件可以同时被编译（即下面的方案三）。
@@ -40,18 +41,21 @@ C 语言是一种编译型语言，源码都是文本文件，本身无法执行
 3. 使用VCDode的CMake插件，编译当前/多个文件 (更方便)
 
 推荐第三种方案，步骤如下:
-- 下载链接 [here](https://www.writebug.com/static/uploads/2024/7/25/dca471be05b888754a00db430c0c665a.zip) 中的文件，解压到任意目录（或手动复制代码块）。
-- 在项目根目录下，创建`src`和`inc`文件夹，分别用于存放`.c`、`.h`文件。
-- 复制下载好的`CMakelists.txt`、`launch.json`和`tasks.json`文件。其中，`CMakelists.txt`放在项目根目录，同时在根目录创建`.vscode`文件夹，并将`launch.json`和`tasks.json`放在此文件内。
+
+<!-- - 下载链接 [here](https://www.writebug.com/static/uploads/2024/7/25/dca471be05b888754a00db430c0c665a.zip) 中的文件，解压到任意目录（或手动复制代码块）。 -->
+- 到 [CMake 官网](https://cmake.org/)下载并安装 CMake.
+- 创建一个新项目（文件夹），用 VSCode 打开，在项目（文件夹）根目录下，创建`src`和`inc`文件夹，分别用于存放`.c`、`.h`文件。
+- 在项目根目录创建名为 `CMakeLists.txt` 的文件，同时在根目录创建`.vscode`文件夹，并在 `.vscode` 文件夹内创建名为 `launch.json` 和 `tasks.json` 的文件。
+- 将下面所示的代码分别复制到刚刚创建的三个文件中，也即 `CMakeLists.txt`、`launch.json` 和 `tasks.json`
 - 配置 `launch.json` 中的编译器路径，例如我的路径为`"miDebuggerPath": "D:/aa_my_apps_main/mingw64/bin/gdb.exe"`。
 - 点击 “运行和调试” --> “CMake 调试程序” 以激活CMake配置。也可以在`CMakelists.txt`按下 ctrl + s，VSCode 会自动刷新CMake配置。
-- 点击下方的“生成”按钮以编译，点击三角形“启动”以运行编译产物。
-- 建议再添加`.clang-format`文件以自动格式化`C/C++`代码。
+- 点击下方的“生成”按钮以编译，点击三角形按钮“启动”以编译并运行可执行文件。
+- 建议再添加`.clang-format`文件以自动格式化`C/C++`代码，详见后文“### 代码格式化配置”
 
-另外，如果在编译时遇到报错“undefined reference to”、“fatal error: No such file or directory”或“error: ld returned 1 exit status”，可以尝试到`CMakelists.txt`文件 ctrl + s 刷新配置，再行编译。
+另外，如果在编译时遇到报错“undefined reference to”、“fatal error: No such file or directory”或“error: ld returned 1 exit status”，到 `CMakelists.txt`文件 ctrl + s 刷新配置，再行编译即可。
 
 ``` bash 
-# CMakelists.txt
+# CMakeLists.txt
 
 cmake_minimum_required(VERSION 2.8...3.13)  # 设定Cmake的最低版本要求
 project(test)   # 项目名称，可以和文件夹名称不同
@@ -151,6 +155,14 @@ add_executable(main ${SRC} ${SRC_cpp})
 
 
 Cmake的详细教程可以参考 [爱编程的大丙](https://subingwen.cn/cmake/CMake-primer/?highlight=cmake)，这里不提。
+
+在不同设备间同步代码时，由于 CMakeLists.txt 文件路径可能不同，编译时会报错如下：
+
+``` output
+CMake Error: The current CMakeCache.txt directory D:/aa_MyRemoteRepo/GH.Gomoku/build/CMakeCache.txt is different than the directory d:/a_RemoteRepo/GH.Gomoku/build where CMakeCache.txt was created.
+```
+
+只需找到 build --> CMakeCache.txt 文件，将其删除然后刷新配置即可。
 
 ### 代码格式化配置
 

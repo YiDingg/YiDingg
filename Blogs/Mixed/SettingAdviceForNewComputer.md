@@ -25,20 +25,20 @@ Word, Excel, PowerPoint 和 Onenote 等，如图：
 
 
 
-## 我的安装选择
+## 我的安装
 
-- Everything
-- Everything Toolbar
-- Ditto
+- [Everything](https://www.voidtools.com/en-us/downloads/)
+- [Everything Toolbar](https://github.com/srwi/EverythingToolbar)
+- [Ditto](https://github.com/sabrogden/Ditto)
 - [Watt Toolkit](https://steampp.net/)
 - [Draw.io](https://www.drawio.com/)
 - AxGlyph
 - [SimpleTex](https://simpletex.cn/)
 - PicGo
-- [Git](https://blog.csdn.net/mukes/article/details/115693833)
-- VSCode + [不同设备设置同步](https://blog.csdn.net/weixin_44423832/article/details/100181033)
-
-另外，下载某些软件时，尽量不要
+- [Git](https://git-scm.com/downloads) + [Git 安装教程](https://blog.csdn.net/mukes/article/details/115693833)
+- [VSCode](https://code.visualstudio.com/) + [VC 不同设备设置同步](https://blog.csdn.net/weixin_44423832/article/details/100181033)
+- [MinGW](https://sourceforge.net/projects/mingw-w64/files/)
+- [parsec](https://parsec.app/): 远程控制
 
 ## 其它问题
 
