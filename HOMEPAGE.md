@@ -2,8 +2,8 @@
 
 **Pinned:**
 
-- ["One Student One Chip" Initiative (“一生一芯”计划)]()
-    - Official website: [here](https://ysyx.oscc.cc/) 
+- "One Student One Chip" Initiative (“一生一芯”计划)
+    - Official website: [https://ysyx.oscc.cc/](https://ysyx.oscc.cc/) 
     - Project introduction: [中文.pptx](https://ysyx.oscc.cc/res/files/ysyx.pptx), [English.pdf](https://ysyx.oscc.cc/res/files/ysyx-en.pdf)
 
 ## About The Site

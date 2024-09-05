@@ -32,14 +32,14 @@ Word, Excel, PowerPoint 和 Onenote 等，如图：
 - [Ditto](https://github.com/sabrogden/Ditto)
 - [Watt Toolkit](https://steampp.net/)
 - [Draw.io](https://www.drawio.com/)
-- AxGlyph
+- [AxGlyph](https://www.amyxun.com/)（到淘宝 [here](https://item.taobao.com/item.htm?_u=53k9pln2c3ec&id=712195325514&spm=a1z09.2.0.0.71812e8dqPrPkj&sku_properties=18800793:9311061474) 购买）
 - [SimpleTex](https://simpletex.cn/)
-- PicGo
+- [PicGo](https://github.com/Molunerfinn/PicGo)
 - [Git](https://git-scm.com/downloads) + [Git 安装教程](https://blog.csdn.net/mukes/article/details/115693833)
 - [VSCode](https://code.visualstudio.com/) + [VC 不同设备设置同步](https://blog.csdn.net/weixin_44423832/article/details/100181033)
 - [MinGW](https://sourceforge.net/projects/mingw-w64/files/)
 - [parsec](https://parsec.app/): 远程控制
-- TexLive （参考 here），安装后查看 file:///D:/aa_TexLive/2024/index.html for 指引与帮助
+- [TexLive](https://tug.org/texlive/) （参考 [here](https://zhuanlan.zhihu.com/p/166523064)），安装后查看 file:///D:/aa_TexLive/2024/index.html for 指引与帮助
 
 
 ## 其它问题

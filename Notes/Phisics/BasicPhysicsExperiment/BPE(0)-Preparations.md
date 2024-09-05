@@ -17,8 +17,8 @@
 
 ### Textbook
 
-- 教材：
-  - 物理实验讲义
+- 物理实验讲义与相关资料：
+  - [国科大在线](https://mooc.mooc.ucas.edu.cn/mooc2-ans/mooc2-ans/mycourse/stu?courseid=350140000011235&clazzid=350140000015441&cpi=350140000168546&enc=8b6aff5e5d9ab66828e442920e02decc&t=1725423560960&pageHeader=3&v=0)
 - 辅导资料：
   - [物理实验基础.pdf](https://www.writebug.com/static/uploads/2024/8/26/b42b3ac87db6c5f377d3cd92d73f44fc.pdf)
   - [数据分析讲义.pdf](https://www.writebug.com/static/uploads/2024/8/26/e172607a4f225c03c32d06404fdc30d3.pdf)
