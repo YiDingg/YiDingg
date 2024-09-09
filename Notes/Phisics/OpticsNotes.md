@@ -18,6 +18,19 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Optics/OpticsNotes.pdf
 
 ## Intro
 
+
+### 课程信息
+
+- 教师：奚婷婷
+- 考核方式：平时作业 30% + 期中考试 30% + 期末考试 40%。
+- 分数限制：优秀率 $\leqslant 35\ \%$ ，不及格率 $\leqslant 15\  \%$
+
+### “学长有话说”
+
+- 尽量不要缺勤，奚老师有时会在课上出题，现做现交，当作考勤分
+- 作业是每讲完一章（2 ~ 3 周），再过一周后收
+
+
 ### Workflow
 - 光学示意图：在 VSCode 中借助 draw.io 插件绘制光学示意图
 - 其它示意图：用 AxGlyph 绘制其他示意图
@@ -32,14 +45,6 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Optics/OpticsNotes.pdf
 <div class='caption'>Figure: 光学 svg 示意图示例</div></div>
 ```
 
-### 课程要求
-
-- 考核方式：平时作业 30%，期中考试 30%，期末考试 40%。
-- 分数限制：优秀率 $\leqslant 35%$，不及格率 $\leqslant 15%$
-
-### 课程安排
-
-（缺图：教学日历 PPT）
 
 ## Resources
 

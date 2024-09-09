@@ -54,28 +54,28 @@ C 语言是一种编译型语言，源码都是文本文件，本身无法执行
 
 另外，如果在编译时遇到报错“undefined reference to”、“fatal error: No such file or directory”或“error: ld returned 1 exit status”，到 `CMakelists.txt`文件 ctrl + s 刷新配置，再行编译即可。
 
-``` bash 
+``` bash
 # CMakeLists.txt
 
-cmake_minimum_required(VERSION 2.8...3.13)  # 设定Cmake的最低版本要求
-project(test)   # 项目名称，可以和文件夹名称不同
-set(CMAKE_CXX_COMPILER "g++")   #设定编译器
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -O2 ") #设定编译选项
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)    #添加头文件
+cmake_minimum_required(VERSION 2.8...3.13)                      # 设定Cmake的最低版本要求
+project(main)                                                   # 项目名称，可以和文件夹名称不同
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)            #添加头文件
+file(GLOB_RECURSE SOURCES src/*.c src/*.cpp)                    # 引入src下的所有.c文件和.cpp文件, 命名 SOURCES 变量来表示多个源文件
+add_executable(main ${SOURCES})                                 # 生成可执行文件 main.exe (可执行文件名 自己定义就行)
 
-# 命令指定 SRC变量（自己定义就行）来表示多个源文件
-# set (SRC main.cpp src/hello.cpp)
+set(CMAKE_CXX_STANDARD 11)                                      # 指定 C++ 标准为 C11
+set(CMAKE_CXX_STANDARD_REQUIRED True)                           # 使用指定的 C++ 标准
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -O2 ")         # 设定编译选项
+set(EXECUTABLE_OUTPUT_PATH  ${CMAKE_CURRENT_SOURCE_DIR}/bin)    # 将生成的可执行文件保存至bin文件夹中
+set(CMAKE_CXX_COMPILER "g++")                                   # 设定编译器
 
-# 命令指定 SRC变量（自己定义就行）来表示多个源文件
-# file(GLOB SRC main.cpp "src/*.c")   # 引入src下的所有.c文件
-file(GLOB SRC "src/*.c")   # 引入src下的所有.c文件
-file(GLOB SRC_cpp main.cpp "src/*.cpp")   # 引入.cpp文件
-file(GLOB SRC_cpp "src/*.cpp")   # 引入.cpp文件
-# 将生成的可执行文件保存至bin文件夹中
-set(EXECUTABLE_OUTPUT_PATH  ${CMAKE_CURRENT_SOURCE_DIR}/bin)
-# 生成可执行文件main.exe(可执行文件名 自己定义就行)，用${var_name}获取变量的值。
-add_executable(main ${SRC} ${SRC_cpp})
+
+# 对于 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -O2 ")         # 设定编译选项
+#-g：这个选项告诉编译器生成调试信息。调试信息对于使用调试器（如 GDB）来跟踪程序执行、查看变量值和调用堆栈等非常有用。当编译程序以进行调试时，通常会包含此选项。
+#-Wall：这个选项指示编译器显示所有警告信息。默认情况下，编译器可能只显示它认为最重要的警告，但使用 -Wall 可以确保显示所有可用的警告，帮助开发者发现潜在的代码问题。
+#-O2：这个选项启用了编译器优化，其中 2 表示中等程度的优化。编译器会尝试通过改变代码的布局、删除未使用的变量和代码、改进循环等方式来提高程序的运行效率。不同的编译器可能以不同的方式实现这些优化，但 -O2 通常是一个很好的起点，因为它提供了性能提升而不会引入过多的编译时间开销。
 ```
+
 
 ``` json 
 /* launch.json */

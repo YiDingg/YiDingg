@@ -37,5 +37,5 @@ https://www.writebug.com/git/YiDingg/WB.YiDingg/raw/branch/main/国赛2022A.pdf
 
 
 ``` tex
-代码较多就不放在这里了，点击上方按钮即可下载。
+代码较长就不放在这里了，点击上方按钮即可下载。
 ```
