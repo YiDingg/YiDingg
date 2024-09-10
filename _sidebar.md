@@ -41,7 +41,7 @@
 
 
 - 📖 **Notes**
-  - [MM (1.5): CUMCM 2024](Notes/MathematicalModeling/MM(1.5)-CUMCM2024.md)
+  - [MM (1.5): CUMCM 2024](Notes/MathematicalModeling/MM(1.5)-CUMCM2024A.md)
   - [Optics](Notes/Phisics/OpticsNotes.md)
   - [Circuit Theory](Notes/MajorCourses/CircuitTheory/CircuitTheoryNotes.md)
   - [Mathematical Physics Mathods](Notes/Math/MathematicalPhysicsMathods.md)
@@ -89,7 +89,7 @@
     - [MM (1.2): CUMCM 2023-A](Notes/MathematicalModeling/MM(1.2)-CUMCM2023A.md)
     - [MM (1.3): CUMCM 2023-B](Notes/MathematicalModeling/MM(1.3)-CUMCM2023B.md)
     - [MM (1.4): CUMCM 2022-A](Notes/MathematicalModeling/MM(1.4)-CUMCM2022A.md)
-    - [MM (1.5): CUMCM 2024-A](Notes/MathematicalModeling/MM(1.5)-CUMCM2024.md)
+    - [MM (1.5): CUMCM 2024-A](Notes/MathematicalModeling/MM(1.5)-CUMCM2024A.md)
   - MCU
     - [MCU (0): Preparations](Notes/MCU/MCUNotes(0)-Preparations.md)
     - [MCU (1): Keil Debug (STM32).md](Notes/MCU/MCUNotes(1)-KeilDebug(STM32).md)
