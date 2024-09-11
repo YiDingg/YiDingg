@@ -1,6 +1,6 @@
 # Circuit Theory Notes
 
-## Notes 
+## Notes
 
 !> **<span style='color:red'>Attention:</span>**<br>
 You might not be able to view pdf online on the mobile devices as the broswer dosen't support the extension. Therefore, make sure you are using a mordern broswer on PC, such as Edge, Chrome, Quark, LianXiang, etc. You can also try clicking the link below to view or download
@@ -20,40 +20,46 @@ The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/
 https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]CircuitTheory/HomeworkOfCircuitTheory.pdf
 ```
 
-
 ## Infor
 
 ### Workflow
 
-- 电路图：在 VSCode 中借助 draw.io 插件绘制电路示意图
-- 其它示意图：用 AxGlyph + [Mathcha](https://www.mathcha.io/editor) + PPT 绘制其他示意图
-- 可视化：用 Matlab 求解电路方程并可视化结果，导出为图片插入到 Markdown 文档
-- 其它：GeoGebra、[Mathcha](https://www.mathcha.io/editor) 
+-   电路图：在 VSCode 中借助 draw.io 插件绘制电路示意图
+-   其它示意图：用 AxGlyph + [Mathcha](https://www.mathcha.io/editor) + PPT 绘制其他示意图
+-   可视化：用 Matlab 求解电路方程并可视化结果，导出为图片插入到 Markdown 文档
+-   其它：GeoGebra、[Mathcha](https://www.mathcha.io/editor)
 
 draw.io 插件绘制电路图的示例：
+
 <div class='center'><img src='Notes/MajorCourses/CircuitTheory/assets/draw.io_test.drawio.svg' alt='img'/>
 <div class='caption'>Figure: draw.io_test.drawio.svg</div></div>
 
-``` html
-<div class='center'><img src='assets/draw.ioFiles/draw.io_test.drawio.svg' alt='img'/>
-<div class='caption'>Figure: draw.io_test.drawio.svg</div></div>
+```html
+<div class="center">
+    <img src="assets/draw.ioFiles/draw.io_test.drawio.svg" alt="img" />
+    <div class="caption">Figure: draw.io_test.drawio.svg</div>
+</div>
 ```
 
-``` css
+```css
 div.caption {
     font-weight: 500;
     font-size: calc(var(--fontsize-main) * 0.8);
 }
 ```
 
-### 课程要求
+### 课程信息
+
+-   主讲教师：冯杰
+-   开课院系： 电子电气与通信工程学院
+-   课程编号： B1011001Y
+-   学分： 3.00
+-   课时： 64
 
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-10-30-24_CircuitTheoryNotes(0)-Preparations.png"/></div> -->
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-10-39-39_CircuitTheoryNotes(0)-Preparations.jpg"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-10-17-18_CircuitTheoryNotes(0)-Preparations.jpg"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-11-05-16_CircuitTheoryNotes(0)-Preparations.png"/></div>
-
-### 课程安排
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-10-15-24_CircuitTheoryNotes(0)-Preparations.jpg"/></div>
 
@@ -61,47 +67,53 @@ div.caption {
 
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-27-17-37-36_CircuitTheoryNotes(0)-Preparations.jpg"/></div>
  -->
+
 ## Resources
 
 ### 相关书籍
 
 教材：
-- [电路原理（于歆杰）.pdf](https://s.b1n.net/2eH2q)
-- 电路原理讲义（冯杰、陈东旭）（老师不提供电子版）
+
+-   [电路原理（于歆杰）.pdf](https://s.b1n.net/2eH2q)
+-   电路原理讲义（冯杰、陈东旭）（老师不提供电子版）
 
 辅导书：
-- [电路原理导学导教及习题解答（朱桂萍、于歆杰、陆文娟、刘秀成）.pdf](https://s.b1n.net/4kGFu)
-- [电路原理学习指导与习题集 第2版 (朱桂萍 刘秀成 徐福媛) (Z-Library).pdf](https://www.writebug.com/static/uploads/2024/8/27/bdf7b26c0f4342845a66054cccd6cdc1.pdf)
-- [电路原理试题选编（朱桂萍、于歆杰、刘秀成）(第4版).pdf](https://s.b1n.net/OSmef)
-- [电路原理（朱桂萍，于歆杰，陆文娟）(Mooc 配套用书).pdf](https://s.b1n.net/6Smsc)
+
+-   [电路原理导学导教及习题解答（朱桂萍、于歆杰、陆文娟、刘秀成）.pdf](https://s.b1n.net/4kGFu)
+-   [电路原理学习指导与习题集 第 2 版 (朱桂萍 刘秀成 徐福媛) (Z-Library).pdf](https://www.writebug.com/static/uploads/2024/8/27/bdf7b26c0f4342845a66054cccd6cdc1.pdf)
+-   [电路原理试题选编（朱桂萍、于歆杰、刘秀成）(第 4 版).pdf](https://s.b1n.net/OSmef)
+-   [电路原理（朱桂萍，于歆杰，陆文娟）(Mooc 配套用书).pdf](https://s.b1n.net/6Smsc)
 
 ### 电路仿真
 
-Online: 
-- [CircuitJS](https://www.eetree.cn/circuitjs/circuitjs.html)：便携式电路仿真
-- [SmartEDA](https://www.ismarteda.com/)：国产在线跨平台仿真器
-- [MultisimLive](https://www.multisim.com/get-started/)：Multisim 的免费在线版
+Online:
 
-Offline: 
-- [Multisim](https://www.ni.com/zh-cn/support/downloads/software-products/download.multisim.html#452133)
-- [LTspice](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html)
-- [Tina-Ti](https://www.ti.com/tool/TINA-TI)
+-   [CircuitJS](https://www.eetree.cn/circuitjs/circuitjs.html)：便携式电路仿真
+-   [SmartEDA](https://www.ismarteda.com/)：国产在线跨平台仿真器
+-   [MultisimLive](https://www.multisim.com/get-started/)：Multisim 的免费在线版
+
+Offline:
+
+-   [Multisim](https://www.ni.com/zh-cn/support/downloads/software-products/download.multisim.html#452133)
+-   [LTspice](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html)
+-   [Tina-Ti](https://www.ti.com/tool/TINA-TI)
 
 Multisim 系列：
-- [Multisim 官网下载](https://www.ni.com/zh-cn/support/downloads/software-products/download.multisim.html#452133)
-- [Multisim 淘宝](https://item.taobao.com/item.htm?spm=a21n57.1.item.1.5cdf523cnkKNJE&priceTId=2147806317247600582073947e9e5c)：[飞书下载](https://h2t5pqlfw1.feishu.cn/drive/folder/UyWcfUlc9leIfKdUj5zcdDwTn9d) [百度网盘下载](https://pan.baidu.com/s/1GVF6j89qCSGBTj86KVeMFA?pwd=1234)
-- [MultisimLive](https://www.multisim.com/get-started/)
+
+-   [Multisim 官网下载](https://www.ni.com/zh-cn/support/downloads/software-products/download.multisim.html#452133)
+-   [Multisim 淘宝](https://item.taobao.com/item.htm?spm=a21n57.1.item.1.5cdf523cnkKNJE&priceTId=2147806317247600582073947e9e5c)：[飞书下载](https://h2t5pqlfw1.feishu.cn/drive/folder/UyWcfUlc9leIfKdUj5zcdDwTn9d) [百度网盘下载](https://pan.baidu.com/s/1GVF6j89qCSGBTj86KVeMFA?pwd=1234)
+-   [MultisimLive](https://www.multisim.com/get-started/)
 
 示例：
-- [SmartEDA 示例](https://www.ismarteda.com/)
 
+-   [SmartEDA 示例](https://www.ismarteda.com/)
 
-- [MultisimLive 示例](https://www.multisim.com/content/a3jq2FvzzNdfuU4dPYQDsV/circuittest/open/)：
+-   [MultisimLive 示例](https://www.multisim.com/content/a3jq2FvzzNdfuU4dPYQDsV/circuittest/open/)：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-23-00-55-48_CircuitTheoryNotes(0)-Preparations.jpg"/></div>
 
 文心一言作的评价：
 
-``` txt
+```txt
 问：我是一个需要做电路仿真以辅助相关课程学习的本科生，帮我比较下列仿真软件的优缺点，并给出最佳结论：LTspice、tina-ti、SmartEDA、Multisim、Proteus
 
 答：
@@ -169,9 +181,8 @@ Proteus
 
 ### 其它软件
 
-
-- [A+D Lab](https://www.x-cloud.cc/)
-  - [A+D Lab User Manual (v2017R4)](https://www.writebug.com/static/uploads/2024/8/29/2948871fe297835be2646d1367b38999.pdf)
-  - [A+D Lab Datasheet (v2017R2)](https://www.writebug.com/static/uploads/2024/8/29/7c45b7b2e2883c97f97e28e6a1a14c09.pdf)
-- [Digilent Waveforms](https://cloud.digilent.com/myproducts/waveform?pc=1&tab=2)：波形测量
-    - README: [file:///D:/aa_my_apps_main/DigilentWaveforms/WaveForms3/doc/index.html]()
+-   [A+D Lab](https://www.x-cloud.cc/)
+    -   [A+D Lab User Manual (v2017R4)](https://www.writebug.com/static/uploads/2024/8/29/2948871fe297835be2646d1367b38999.pdf)
+    -   [A+D Lab Datasheet (v2017R2)](https://www.writebug.com/static/uploads/2024/8/29/7c45b7b2e2883c97f97e28e6a1a14c09.pdf)
+-   [Digilent Waveforms](https://cloud.digilent.com/myproducts/waveform?pc=1&tab=2)：波形测量
+    -   README: [file:///D:/aa_my_apps_main/DigilentWaveforms/WaveForms3/doc/index.html]()
