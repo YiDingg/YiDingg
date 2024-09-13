@@ -29,7 +29,7 @@ C 语言是一种编译型语言，源码都是文本文件，本身无法执行
 - `-std=`(Standard): 指定编译标准
 
 
-### CMake 环境配置
+### C/C++ 环境配置
 
 对于仅编译一个`.c`或`.cpp`文件的情况，推荐插件 Code Runner。它支持运行 C, C++, Java, JavaScript, PHP, Python, Go, PowerShell 等多种语言（即下面的方案一）。
 但是，考虑到之后的学习/使用会遇到多个`.c`和`.h`文件，甚至有`.c`和`.cpp`文件混合的情况，我们不如直接配置VSCode中的C/C++ 编译、debug环境，使得所有文件可以同时被编译（即下面的方案三）。
@@ -40,19 +40,15 @@ C 语言是一种编译型语言，源码都是文本文件，本身无法执行
 2. 手动配置VSCode的`.json`文件，编译当前/多个文件
 3. 使用VCDode的CMake插件，编译当前/多个文件 (更方便)
 
-推荐第三种方案，步骤如下:
+推荐第三种方案，步骤见下。
 
-<!-- - 下载链接 [here](https://www.writebug.com/static/uploads/2024/7/25/dca471be05b888754a00db430c0c665a.zip) 中的文件，解压到任意目录（或手动复制代码块）。 -->
+### CMake 与 C/C++ Debug 环境配置
+
+下面在 VSCode 中配置 C/C++ 编译、debug 环境，以及 CMake 环境。
+
 - 到 [CMake 官网](https://cmake.org/)下载并安装 CMake.
-- 创建一个新项目（文件夹），用 VSCode 打开，在项目（文件夹）根目录下，创建`src`和`inc`文件夹，分别用于存放`.c`、`.h`文件。
-- 在项目根目录创建名为 `CMakeLists.txt` 的文件，同时在根目录创建`.vscode`文件夹，并在 `.vscode` 文件夹内创建名为 `launch.json` 和 `tasks.json` 的文件。
-- 将下面所示的代码分别复制到刚刚创建的三个文件中，也即 `CMakeLists.txt`、`launch.json` 和 `tasks.json`
-- 配置 `launch.json` 中的编译器路径，例如我的路径为`"miDebuggerPath": "D:/aa_my_apps_main/mingw64/bin/gdb.exe"`。
-- 点击 “运行和调试” --> “CMake 调试程序” 以激活CMake配置。也可以在`CMakelists.txt`按下 ctrl + s，VSCode 会自动刷新CMake配置。
-- 点击下方的“生成”按钮以编译，点击三角形按钮“启动”以编译并运行可执行文件。
-- 建议再添加`.clang-format`文件以自动格式化`C/C++`代码，详见后文“### 代码格式化配置”
-
-另外，如果在编译时遇到报错“undefined reference to”、“fatal error: No such file or directory”或“error: ld returned 1 exit status”，到 `CMakelists.txt`文件 ctrl + s 刷新配置，再行编译即可。
+- 创建一个新项目（文件夹），用 VSCode 打开，在项目（文件夹）根目录下，创建`src`和`inc`文件夹，分别用于存放`.c`、`.h`文件。 
+- 在项目根目录创建名为 `CMakeLists.txt` 的文件，将下面的代码复制到 `CMakeLists.txt` 文件中。
 
 ``` bash
 # CMakeLists.txt
@@ -77,6 +73,13 @@ set(CMAKE_CXX_COMPILER "g++")                                   # 设定编译�
 ```
 
 
+- 然后，打开 main.c 文件，点击窗口右上角的小齿轮按钮，选择 “C/C++: gcc.exe 生成和调试活动文件”，如下图所示。点击之后，VSCode 会自动生成 `.vscode` 文件夹，其中有 `launch.json` 和 `tasks.json` 两个文件。
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-09-13-20-03-32_CNotes(1)-BeforeStarting.png"/></div>
+
+- 到刚刚生成的两个文件，也即 `launch.json` 和 `tasks.json`，删去全部内容，并将下面的代码分别复制进去。
+
+
 ``` json 
 /* launch.json */
 
@@ -87,7 +90,7 @@ set(CMAKE_CXX_COMPILER "g++")                                   # 设定编译�
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) 启动debug",
+            "name": "Debug (gdb)",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/bin/main.exe",
@@ -97,9 +100,12 @@ set(CMAKE_CXX_COMPILER "g++")                                   # 设定编译�
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            /* 下面是 gcc (mingw) 编译器的路径 */
-            "miDebuggerPath": "D:/aa_my_apps_main/mingw64/bin/gdb.exe",
-            /* 上面是 gcc (mingw) 编译器的路径 */
+            /* 
+            下面是 gdb (mingw) 可执行文件的路径
+            例如我的是 C:/aa_Same/mingw64/bin/gdb.exe 
+            */
+            "miDebuggerPath": "C:/aa_Same/mingw64/bin/gdb.exe",
+            /* 上面是 gdb (mingw) 可执行文件的路径 */
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",
@@ -149,6 +155,18 @@ set(CMAKE_CXX_COMPILER "g++")                                   # 设定编译�
     ]
 }
 ```
+
+- 配置 `launch.json` 中的编译器路径，例如我的路径为`"miDebuggerPath": "D:/aa_my_apps_main/mingw64/bin/gdb.exe"`。
+- 点击 “运行和调试” --> “CMake 调试程序” 以激活CMake配置。也可以在`CMakelists.txt`按下 ctrl + s，VSCode 会自动刷新CMake配置。
+
+至此编译和 debug 环境配置完成，可以进行编译、debug 操作：
+
+- 编译并运行：点击下方的“生成”按钮以编译，点击三角形按钮“启动”以编译并运行可执行文件。
+- 启动 debug: 建议再添加`.clang-format`文件以自动格式化`C/C++`代码，详见后文“### 代码格式化配置”
+
+另外，如果在编译时遇到报错“undefined reference to”、“fatal error: No such file or directory”或“error: ld returned 1 exit status”，到 `CMakelists.txt`文件 ctrl + s 刷新配置，再行编译即可。
+
+
 
 同时编译`.c`和`.cpp`文件的环境示例见 [here](https://www.writebug.com/static/uploads/2024/7/25/bb0cfac41d5d26b1d9e32b4b4cf9f5a4.zip)。
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-25-21-50-33_CNotes(1)-BeforeStarting.jpg"/></div>
