@@ -32,9 +32,22 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Optics/OpticsNotes.pdf
 
 
 ### Workflow
-- 光学示意图：在 VSCode 中借助 draw.io 插件绘制光学示意图
-- 其它示意图：用 AxGlyph 绘制其他示意图
-- 可视化：用 Matlab 求解电路方程并可视化结果，导出为图片插入到 Markdown 文档
+- 光路仿真
+  - Web 在线端
+    - [Optico](https://www.optico.app/en/start-en/)
+    - [Ray Optics Simulation](https://phydemo.app/ray-optics/cn/)
+  - Local 软件端
+    - Thorlabs 器件文档 + Solidworks 中仿真
+- 光学示意图
+  - 方式一：在 VSCode 中借助 draw.io 插件绘制光学示意图
+  - 方式二：inkscape (+ AxGlyph + draw.io)
+  - 光学素材库
+    - [svg 格式](https://www.gwoptics.org/ComponentLibrary/)
+    - [png, ppt 格式](https://markelz.physics.buffalo.edu/node/411)
+    - [Latex 库](https://ctan.org/pkg/pst-optexp)（比较折磨）
+    - [2D, 3D 库](https://github.com/amv213/ComponentLibrary)
+    - [在 inkscape 中进行光路仿真](https://github.com/damienBloch/inkscape-raytracing)
+- 可视化：用 Matlab 求解可视化数据结果
 - 其它：GeoGebra、[Mathcha](https://www.mathcha.io/editor) 
 
 <div class='center'><img src='assets/draw.ioFiles/Optics_test.drawio.svg' alt='img'/>
