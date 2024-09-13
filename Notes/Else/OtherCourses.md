@@ -12,7 +12,7 @@
 
 ### Resources
 
--  （大英 2 教材）
+- 大英 2 教材：
 
 ## 大英 3 (College English 3)
 
@@ -26,7 +26,7 @@
 
 ### Resources
 
--   [[Brown_Kristine,\_Hood_Susan.]\_Academic_Encounters.(b-ok.xyz).pdf](https://www.writebug.com/static/uploads/2024/9/13/d65e533c30bebf4ef22c29647117f212.pdf)（大英 3 教材，范围是此书 uinit4 - unit5）
+-  大英 3 教材： [[Brown_Kristine,\_Hood_Susan.]\_Academic_Encounters.(b-ok.xyz).pdf](https://www.writebug.com/static/uploads/2024/9/13/d65e533c30bebf4ef22c29647117f212.pdf)（范围是此书 uinit4 - unit5）
 
 ## 电子信息科学引论与创新案例分析
 
