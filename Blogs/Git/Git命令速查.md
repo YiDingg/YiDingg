@@ -228,6 +228,7 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 git config --global alias.a "add ."           # git a 等同于 git add .
 git config --global alias.c "commit -a -m"    # git c "message" 等同于 git commit -a -m "message"
 git config --global alias.u "c 'update'"      # git u 等同于 git commit -a -m "update"
+git config --global alias.e "commit -a -m 'update'; git pull; git push;" # commit + pull + push
 git config --global alias.s "status"          # git s 等同于 git status
 git config --global alias.pl "pull"           # git pl 等同于 git pull
 git config --global alias.ps "push"           # git ps 等同于 git push
