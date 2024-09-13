@@ -98,6 +98,8 @@
         -   [MCU (3): DMA (STM32).md](<Notes/MCU/MCUNotes(3)-DMA(STM32).md>)
         -   [MCU (4): WiFi (ESP8266).md](<Notes/MCU/MCUNotes(4)-WiFi(ESP8266).md>)
         -   [MCU (!): Tips and Tricks (STM32).md](<Notes/MCU/MCUNotes(!)-TipsAndTricks(STM32).md>)
+    -   Else
+        -   [Other Courses](Notes/Else/OtherCourses.md)
 
 -   🎓 **English Learning**
 

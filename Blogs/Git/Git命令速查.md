@@ -228,12 +228,12 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 git config --global alias.a "add ."           # git a 等同于 git add .
 git config --global alias.c "commit -a -m"    # git c "message" 等同于 git commit -a -m "message"
 git config --global alias.u "c 'update'"      # git u 等同于 git commit -a -m "update"
-git config --global alias.e "commit -m 'update' -a; git pull; git push;" # commit + pull + push
 git config --global alias.s "status"          # git s 等同于 git status
 git config --global alias.pl "pull"           # git pl 等同于 git pull
 git config --global alias.ps "push"           # git ps 等同于 git push
-
-
+################### 下面的命令需要配合 .sh Shell 脚本来使用 ####################
+git config --global alias.e '!sh -c \"ShellScript/git-e.sh"'
+git config --global alias.s '!sh -c \"ShellScript/git-s.sh"'
 
 # 若要自定义其它配置，参考官方文档file:///D:/aa_my_apps_main/Git/mingw64/share/doc/git-doc/git-log.html
 ```
