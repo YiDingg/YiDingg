@@ -6,7 +6,8 @@
 - 📓 **Blogs**
 
     - Mixed <!-- empty line is necessary to avoid the error -->
-
+        - [Setting Advice for New Computer](Blogs/Mixed/SettingAdviceForNewComputer.md)
+        - [Download Inkscape](Blogs/Mixed/DownloadInkscape.md)
         - [Latex](Blogs/Mixed/Latex.md)
         - [Sentences](Blogs/Mixed/Sentences.md)
         - [Repository Slimming](Blogs/Mixed/RepoSlimming.md)
@@ -15,6 +16,11 @@
         - [嘉立创免费下单教程](Blogs/Mixed/嘉立创免费下单教程.md)
         - [结构体及其指针在树中的应用](Blogs/Mixed/结构体及其指针在树中的应用.md)
         - [手把手教你用 PWM 实现呼吸灯(标准库)](<Blogs/Mixed/手把手教你用PWM实现呼吸灯(标准库).md>)
+    - Fix Problem
+        - [VSCode 中按键失灵](Blogs/FixProblem/KeypadFailureInVSCode.md)
+        - [文件夹无权访问或访问被拒绝](Blogs/FixProblem/FolderPermissionProblem.md)
+        - [VScode-Latex 反向搜索失灵](Blogs/FixProblem/VScode-Latex中反向搜索失灵的解决方案.md)
+        - [新版 Keil MDK 中无 Compiler_V5](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
 
     - Site Features
         - [Data Host](Blogs/SiteFeatures/Data%20Host.md)
@@ -28,9 +34,6 @@
         - [Summary of Frontend Series](Blogs/FrontEnd/Summary%20of%20Front%20End%20Series.md)
         - [Basic HTML](Blogs/FrontEnd/Basic%20HTML.md)
         - [Basic CSS](Blogs/FrontEnd/Basic%20CSS.md)
-    - Fix Problem
-        - [VScode-Latex 中反向搜索失灵的解决方案](Blogs/FixProblem/VScode-Latex中反向搜索失灵的解决方案.md)
-        - [新版 Keil_MDK 中无 Compiler_V5 的解决方案](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
     - Awesome Tools and Resources
         - [ATandR(0): Brief View](<Blogs/ATandR/ATandR(0)-BriefView.md>)
         - [ATandR(1): Markdown](<Blogs/ATandR/ATandR(1)-Markdown.md>)

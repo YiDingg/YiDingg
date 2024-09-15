@@ -46,6 +46,4 @@ Word, Excel, PowerPoint 和 Onenote 等，如图：
 
 ### 文件夹无权访问
 
-
-
-其它拓展操作见 [here](https://blog.csdn.net/weixin_40351125/article/details/140239042)。
+参考文章 [文件夹无权访问或访问被拒绝](Blogs/FixProblem/FolderPermissionProblem.md)。

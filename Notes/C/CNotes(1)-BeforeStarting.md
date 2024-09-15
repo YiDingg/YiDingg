@@ -90,7 +90,7 @@ set(CMAKE_CXX_COMPILER "g++")                                   # 设定编译�
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug (gdb)",
+            "name": "(gdb) 启动debug",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/bin/main.exe",
@@ -104,7 +104,7 @@ set(CMAKE_CXX_COMPILER "g++")                                   # 设定编译�
             下面是 gdb (mingw) 可执行文件的路径
             例如我的是 C:/aa_Same/mingw64/bin/gdb.exe 
             */
-            "miDebuggerPath": "C:/aa_Same/mingw64/bin/gdb.exe",
+            "miDebuggerPath": "D:/aa_MySame/mingw64/bin/gdb.exe",
             /* 上面是 gdb (mingw) 可执行文件的路径 */
             "setupCommands": [
                 {

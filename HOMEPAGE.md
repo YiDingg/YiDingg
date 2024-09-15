@@ -28,7 +28,9 @@ After one stage's learning, I will compress and backup most of my notes and text
 
 By the way, I am trying to write notes in English as a practice.
 
-### Create New Blog
+## My Workflow
+
+### Frequently Used Tools 
 
 Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeatures\Data%20Host.md) for the reasons and more information.
 
@@ -41,6 +43,28 @@ Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeature
 -   Link: use [C1N](https://www.c1n.cn/administrators.html)<span class='tinyscript'> or [Short](https://d.igdu.xyz/)</span> to create a short link for your file, and use [SINA](https://www.sina.lt/restore.html) to restore the short link.
 -   Git to video: use [Screen to GIF]() to convert video into gif if you need.
 -   Title: use [Capitalize](https://capitalizemytitle.com/style/APA/) <span class='tinyscript'>or [Wawa](https://www.iamwawa.cn/daxiaoxie.html)</span> to capitalize your titles, and use [Rewriter](https://capitalizemytitle.com/ai-title-rewriter/) to rewrite your title.
+
+**Graphics:**
+
+- General
+    - Convinient
+        - Hand drawing --> screenshot --> `png`
+        - `.drawio.svg` in VSCode --> `svg`
+    - High quality
+        - AxGlyph --> print --> [Crop PDF](https://www.i2pdf.com/crop-pdf) --> `pdf`
+        - AxGlyph --> export --> `svg`
+        - AxGlyph --> inkscape export --> `pdf`
+- Optics
+    - Convinient
+        - [Optico](https://www.optico.app/en/start-en/) or [Ray Optics Simulation](https://phydemo.app/ray-optics/cn/) --> screenshot --> `png`
+    - High quality
+        - [Ray Optics Simulation](https://phydemo.app/ray-optics/cn/) --> export --> `svg`
+- Principles of Electronic Circuits
+    - Convinient
+        - Multisim --> screenshot --> `png`
+    - High quality
+        - Multisim --> print --> [Crop PDF](https://www.i2pdf.com/crop-pdf) --> `pdf`
+
 
 **Data host:**
 

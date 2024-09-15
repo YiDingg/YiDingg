@@ -39,8 +39,10 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Optics/OpticsNotes.pdf
   - Local 软件端
     - Thorlabs 器件文档 + Solidworks 中仿真
 - 光学示意图
-  - 方式一：在 VSCode 中借助 draw.io 插件绘制光学示意图
-  - 方式二：inkscape (+ AxGlyph + draw.io)
+  - 方式一：Drawio in VSCode --> `svg`
+  - 方式二：AxGlyph --> inkscape export --> `pdf`
+  - 方式三：AxGlyph --> print --> [Crop PDF](https://www.i2pdf.com/crop-pdf) --> `pdf`
+  - 方式四：AxGlyph --> export --> `svg`
   - 光学素材库
     - [svg 格式](https://www.gwoptics.org/ComponentLibrary/)
     - [png, ppt 格式](https://markelz.physics.buffalo.edu/node/411)
