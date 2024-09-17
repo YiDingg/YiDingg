@@ -1,5 +1,9 @@
 # ATandR(4): Research Paper
 
+> [!Note|style:callout|label:Infor]
+Initially published at 22:11 on 2024-06-23 in Beijing.
+
+
 If you are a reaseacher, or a technical student, you must be confused or used to be confused how to read plenty of related papers and summarize their findings at the same time, especially those are involved with your projects. Here are our suggestions.
 
 - manage the papers automatically (like tagging read and unread, switching between papers)

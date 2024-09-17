@@ -1,5 +1,9 @@
 # ATandR(1): Programming
 
+> [!Note|style:callout|label:Infor]
+Initially published at 20:56 on 2024-06-23 in Beijing.
+
+
 Here are some tools and recources for programming. You do not need to use all of them but to choose several to promote your programming journey. And you are expected to browse the TOC before reading, in order to find the most suitable tools for your needs.
 
 ## Programming Language

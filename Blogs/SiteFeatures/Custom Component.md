@@ -1,5 +1,9 @@
 # Custom Component (自定义组件)
 
+> [!Note|style:callout|label:Infor]
+Initially published at 18:36 on 2024-06-19 in Beijing.
+
+
 ## From HTML and CSS
 
 ### Button

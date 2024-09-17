@@ -1,5 +1,9 @@
 # MuMeStar (Mutiple Menu Star for OLED)
 
+> [!Note|style:callout|label:Infor]
+Initially published at 20:49 on 2024-06-19 in Beijing.
+
+
 ## 项目说明
 
 这是一个OLED多级菜单项目，（以下简称 “菜单” ），菜单基于多叉树结构，底层逻辑自洽，移植简单，可无限扩展。相关代码全部开源，持续更新。

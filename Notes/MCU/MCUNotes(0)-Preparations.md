@@ -1,5 +1,9 @@
 # MCU Notes (0): Preparations
 
+> [!Note|style:callout|label:Infor]
+Initially published at 14:36 on 2024-06-21 in Beijing.
+
+
 ## Intro
 
 本系列为笔者本科时的单片机学习笔记，目前仅包含自学部分（截至2024-7-24），之后选修单片机课程时可能会补充一些内容。

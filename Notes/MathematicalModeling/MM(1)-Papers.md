@@ -1,5 +1,8 @@
 # Mathematical Modeling (1): Papers
 
+> [!Note|style:callout|label:Infor]
+Initially published at 12:45 on 2024-08-17 in Lincang.
+
 ## 官网
 
 - [CUMCM](http://www.mcm.edu.cn/)

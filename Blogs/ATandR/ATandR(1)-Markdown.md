@@ -1,6 +1,10 @@
 # ATandR(1): Markdown
 
 
+> [!Note|style:callout|label:Infor]
+Initially published at 19:41 on 2024-06-23 in Beijing.
+
+
 As I am writing most of my blogs in Markdown, I have tried several Markdown editors to see which one is the best. Eventually, I settled on VSCode. Yes, you heard me right. VScode, a code editor instead of a text editor. 
 
 As usual, We will give the conclusions first. In the later contents, I will tell you why, and explain some tips to make your writing experience more enjoyable.

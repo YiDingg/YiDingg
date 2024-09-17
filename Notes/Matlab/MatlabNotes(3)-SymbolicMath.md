@@ -1,5 +1,9 @@
 # Matlab Notes(3): Symbolic Math
 
+> [!Note|style:callout|label:Infor]
+Initially published at 14:43 on 2024-08-08 in Lincang.
+
+
 Official link: Mathworks --> Help Center --> Symbolic Math Toolbox --> [Symbolic Computations in MATLAB](https://www.mathworks.com/help/releases/R2022a/symbolic/symbolic-computations-in-matlab.html)
 
 ## Symbolic Objects

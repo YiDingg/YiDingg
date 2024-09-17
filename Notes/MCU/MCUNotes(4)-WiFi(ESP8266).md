@@ -1,5 +1,9 @@
 # MCU Notes (4): WiFi (ESP8266)
 
+> [!Note|style:callout|label:Infor]
+Initially published at 16:49 on 2024-06-28 in Beijing.
+
+
 ## Intro
 
 ESP8266 是乐鑫设计的一款 WiFi 芯片，底层代码不开源，提供 SDK 一体化开发环境。乐鑫是芯片原厂，研制 ESP 系列芯片，提供 ESP-IDF 操作系统以及各种框架，以及国内外常用的云平台对接方案。安信可是乐鑫的主要客户之一，负责生产基于ESP系列芯片的模组，开发者到手就能开发，所以一般到我们手里的 ESP 系列模组都是安信可科技的。（否则只有一片干巴巴的 ESP8266 芯片，你还得设计外围电路才能使用它）

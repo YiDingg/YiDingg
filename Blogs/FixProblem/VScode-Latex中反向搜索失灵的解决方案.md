@@ -1,5 +1,9 @@
 ## 前言
 
+> [!Note|style:callout|label:Infor]
+Initially published at 14:05 on 2024-06-24 in Beijing.
+
+
 近几天（2024.4.17）使用 VScode Latex 编辑Latex时，发现反向搜索功能失灵（无法由PDF预览器反向定位到代码位置）。 
 经检验，这是 Latex Workshop 插件在 2024.4.15 的更新导致的，旧版本 (9.19.2) 中实现反向搜索功能的代码在新版本 (9.20.0) 中不适用。下面给出两种解决方案：回退至旧版本或修改新版本的json代码。
 

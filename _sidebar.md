@@ -52,6 +52,7 @@
 
         - [BPE (0): Preparations](<Notes/Phisics/BasicPhysicsExperiment/BPE(0)-Preparations.md>)
         - [BPE (1): Introductions](<Notes/Phisics/BasicPhysicsExperiment/BPE(1)-Introductions.md>)
+        - [BPE (2): Latex Template](<Notes/Phisics/BasicPhysicsExperiment/BPE(2)-Template.md>)
     - C
         - [C 语言 (!)：bug 解决](<Notes/C/CNotes(!)-FixProblems.md>)
         - [C 语言 (0)：准备](<Notes/C/CNotes(0)-Preparation.md>)

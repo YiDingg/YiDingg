@@ -1,5 +1,9 @@
 # MCU Notes (1): Keil Debug (STM32) 
 
+> [!Note|style:callout|label:Infor]
+Initially published at 18:40 on 2024-06-22 in Beijing.
+
+
 ## Keil 软件设置
 官方对 Keil Debug 功能的说明详见：[官方 Keil Debug 文档](https://developer.arm.com/documentation/101407/0540/Dialogs/Project/Options/Debug?lang=en) 。下面是实际的一些操作：
 

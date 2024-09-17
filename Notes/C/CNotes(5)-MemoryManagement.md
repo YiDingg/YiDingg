@@ -1,5 +1,9 @@
 # C Notes (5): Memory Management (内存管理)
 
+> [!Note|style:callout|label:Infor]
+Initially published at 16:27 on 2024-08-07 in Lincang.
+
+
 ## Before 
 
 C语言的内存由stack, heap, static (.bss and .data), .rodata, .text 五大部分构成，分别称为栈区、堆区、静态区、常量区（只读区）、代码区，带有“.”点号的部分构成可执行文件。在内存管理之前，我们先了解他们的概念。

@@ -1,6 +1,10 @@
 # OLEDSD (OLED Software Driver)
 
 
+> [!Note|style:callout|label:Infor]
+Initially published at 22:09 on 2024-06-19 in Beijing.
+
+
 ## 前言
 
 本项目提供OLED驱动，涵盖软件IIC、硬件IIC、硬件SPI；HAL库、标准库等多种版本。持续更新，全部开源，以供学习参考。

@@ -1,5 +1,9 @@
 # Syntax Examples
 
+> [!Note|style:callout|label:Infor]
+Initially published at 16:01 on 2024-06-20 in Beijing.
+
+
 ## Basic Components
 
 ### Music

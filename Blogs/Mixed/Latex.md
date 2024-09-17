@@ -1,5 +1,9 @@
 # Latex 
 
+> [!Note|style:callout|label:Infor]
+Initially published at 22:43 on 2024-09-03 in Beijing.
+
+
 本文环境：Windows 11 + Texlive 2023 + VSCode
 
 ## 表格
@@ -139,15 +143,15 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/TemplateOfReport/Repo
 
 ### Template of Homework
 
-- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/TemplateOfHomework)
-- 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/TemplateOfHomework/TemplateOfHomework.tex')" type="button">TemplateOfHomework.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/TemplateOfHomework/TemplateOfHomework.pdf')" type="button">TemplateOfHomework.pdf/button>
+- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/[Homework]TemplateOfHomework)
+- 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Homework]TemplateOfHomework/TemplateOfHomework.tex')" type="button">TemplateOfHomework.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Homework]TemplateOfHomework/TemplateOfHomework.pdf')" type="button">TemplateOfHomework.pdf</button>
 
 ```pdf
-https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/TemplateOfHomework/TemplateOfHomework.pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Homework]TemplateOfHomework/TemplateOfHomework.pdf
 ```
 
 
-### Template of Basic Physics Expe
+### Template of BPE
 
 - 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/TemplateOfBasicPhysicsExperiment)
 - 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/TemplateOfBasicPhysicsExperiment/TemplateOfBasicPhysicsExperiment.tex')" type="button">TemplateOfBasicPhysicsExperiment.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/TemplateOfBasicPhysicsExperiment/TemplateOfBasicPhysicsExperiment.pdf')" type="button">TemplateOfBasicPhysicsExperiment.pdf/button>

@@ -1,5 +1,9 @@
 # Basic HTML
 
+> [!Note|style:callout|label:Infor]
+Initially published at 13:01 on 2024-06-25 in Beijing.
+
+
 >[!TIP]<div>
 here
 - Awesome site for HTML+CSS+JS reference: https://www.w3schools.com/ (English)<br>

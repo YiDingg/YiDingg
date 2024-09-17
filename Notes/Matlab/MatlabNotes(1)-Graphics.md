@@ -1,5 +1,9 @@
 # Matlab Notes (1): Graphics 
 
+> [!Note|style:callout|label:Infor]
+Initially published at 23:54 on 2024-08-07 in Lincang.
+
+
 ## Intro 
 
 Official link: Mathworks --> Help Center --> Matlab --> [Grphics](https://www.mathworks.com/help/releases/R2022a/matlab/graphics.html?s_tid=CRUX_lftnav). 

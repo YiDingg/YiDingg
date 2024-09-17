@@ -1,5 +1,9 @@
 # Basic Physics Experiment (0): Preparations
 
+> [!Note|style:callout|label:Infor]
+Initially published at 09:38 on 2024-07-11 in Beijing.
+
+
 ## Intro
 
 本系列为笔者本科时“基础物理实验”的课程笔记兼报告准备（Basic Physics Experiment, 2024.9-2025.1）。

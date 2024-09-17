@@ -1,5 +1,9 @@
 # Linear Algebra 1 Notes
 
+> [!Note|style:callout|label:Infor]
+Initially published at 12:06 on 2024-07-01 in Beijing.
+
+
 !> **<span style='color:red'>Attention:</span>**<br>
 You might not be able to view pdf online on the mobile devices as the broswer usually dosen't support the extension. Therefore, make sure you are using a mordern broswer on PC, such as Edge, Chrome, Quark, LianXiang, etc. You can also try clicking the link below to view or download the file.
 
@@ -11,7 +15,7 @@ The raw source url: <button onclick="window.open('https://www.writebug.com/git/Y
 
 
 The raw source url: 
-<button onclick="window.open('https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/LinearAlgebra1/notes/LinearAlgebra1Notes.pdf')" type="button">Linear Algebra 1 Notes.pdf</button>
+<button onclick="window.open('https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/[Notes]LinearAlgebra1/notes/LinearAlgebra1Notes.pdf')" type="button">Linear Algebra 1 Notes.pdf</button>
 <button onclick="window.open('https://www.writebug.com/static/uploads/2024/7/14/563f4b06c7916f75ce853c8b5ce160f6.pdf')" type="button">Linear Algebra 1 Notes_nota.pdf</button>
 
 
@@ -21,7 +25,7 @@ https://www.writebug.com/git/YiDingg/WB.YiDingg/raw/commit/dd468fa8d2637553504e2
 ``` -->
 
 ```pdf
-https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/LinearAlgebra1/notes/LinearAlgebra1Notes.pdf
+https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/[Notes]LinearAlgebra1/notes/LinearAlgebra1Notes.pdf
 ```
 
 

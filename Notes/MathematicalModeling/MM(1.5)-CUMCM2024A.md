@@ -1,5 +1,8 @@
 # Mathematical Modeling (1.5): CUMCM 2024
 
+> [!Note|style:callout|label:Infor]
+Initially published at 13:31 on 2024-09-01 in Beijing.
+
 ## 开赛前
 
 2024.9.2 14:00 通知：
@@ -44,13 +47,18 @@
 
 ## 成果
 
-- pdf: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/MCM/CUMCM-2024/CUMCM-2024.pdf')" type="button">Circuit Theory Notes.pdf</button>
-- tex: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/MCM/CUMCM-2024/CUMCM-2024.tex')" type="button">Circuit Theory Notes.pdf</button>
+!> **<span style='color:red'>Attention:</span>**<br>
+You might not be able to view pdf online on the mobile devices as the broswer dosen't support the extension. Therefore, make sure you are using a mordern broswer on PC, such as Edge, Chrome, Quark, LianXiang, etc. You can also try clicking the link below to view or download the file.
+
+- PDF 文件: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/MCM/CUMCM-2024/CUMCM-2024.pdf')" type="button">Circuit Theory Notes.pdf</button>
+- TEX 源码: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/MCM/CUMCM-2024/CUMCM-2024.tex')" type="button">Circuit Theory Notes.tex</button>
 
 ```pdf
 https://gcore.jsdelivr.net/gh/YiDingg/MCM/CUMCM-2024/CUMCM-2024.pdf
 ```
 
 ``` tex
-代码较长就不放在这里了，点击上方按钮即可下载。
+代码较长就不放在这里了，点击上方按钮或下方链接即可下载。
+
+https://github.com/YiDingg/MCM/blob/main/CUMCM-2024/CUMCM-2024.tex
 ```

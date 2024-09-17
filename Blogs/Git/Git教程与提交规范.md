@@ -1,5 +1,9 @@
 # Git 教程与命令规范
 
+> [!Note|style:callout|label:Infor]
+Initially published at 13:05 on 2024-06-26 in Beijing.
+
+
 ## 前言
 Git 目前有 Bash，GUI，CMD 三种使用使用环境。Bash 与Linux命令格式相似，使用频率最高；GUI 为图形界面，CMD 类型Windows命令行环境。
 

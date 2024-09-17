@@ -1,5 +1,8 @@
 # Mathematical Modeling (1.3): CUMCM 2023-B
 
+> [!Note|style:callout|label:Infor]
+Initially published at 14.36 on 2024-08-19 in Lincang.
+
 ## 概览
 
 - 主题：多波束测线布设与优化

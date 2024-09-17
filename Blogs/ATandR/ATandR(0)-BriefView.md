@@ -1,5 +1,9 @@
 # ATandR (0): Brief view
 
+> [!Note|style:callout|label:Infor]
+Initially published at 00:53 on 2024-06-16 in Beijing.
+
+
 Here is the brief view of ATandR (Awesome Tools and Resources) and you can click them for more details.
 
 ## Pinned

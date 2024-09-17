@@ -1,5 +1,10 @@
 # Mathematical Modeling (2): Optimization
 
+
+> [!Note|style:callout|label:Infor]
+Initially published at 21:45 on 2024-08-19 in Lincang.
+
+
 ## 理论
 
 几乎所有的优化问题都具有相同的形式：

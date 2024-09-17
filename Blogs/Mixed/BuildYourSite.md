@@ -1,5 +1,9 @@
 # Build Your Personal Website
 
+> [!Note|style:callout|label:Infor]
+Initially published at 16:32 on 2024-06-27 in Beijing.
+
+
 ## Introduction
 
 This is a guide on how to build your personal website.

@@ -1,5 +1,9 @@
 # 文件夹无权访问或访问被拒绝
 
+> [!Note|style:callout|label:Infor]
+Initially published at 12:41 on 2024-09-01 in Beijing.
+
+
 文件夹无权访问或访问被拒绝，如下：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-09-15-16-04-08_文件夹权限问题.png"/></div>

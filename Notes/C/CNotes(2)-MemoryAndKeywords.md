@@ -1,5 +1,9 @@
 # C Notes (2): Memory and Keywords
 
+> [!Note|style:callout|label:Infor]
+Initially published at 12:31 on 2024-08-06 in Lincang.
+
+
 ## 关键字
 
 在C语言中有许多关键字(keywords，也称保留字)，常见的如 static,  const, volatile, extern, sizeof 等。由ANSI(C89)标准定义的C语言关键字共32个（ long long 类型归为long关键字），由下表列出。 

@@ -1,5 +1,9 @@
 # 手把手教你用PWM实现呼吸灯(标准库)
 
+> [!Note|style:callout|label:Infor]
+Initially published at 16:32 on 2024-06-26 in Beijing.
+
+
 ## 前言
 
 用PWM（"Pulse Width Modulation"，脉宽调制）实现呼吸灯一直是十分有趣且有锻炼意义的练习。本文既是笔者对呼吸灯学习的总结，也是学习PWM或呼吸灯的优质教程。

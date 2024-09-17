@@ -1,5 +1,9 @@
 # Programming of Gomoku<br>五子棋程序设计
 
+> [!Note|style:callout|label:Infor]
+Initially published at 09:13 on 2024-08-30 in Beijing.
+
+
 ## Intro
 
 本设计为 C 语言课程结课作业，源代码及最终成果见 [GitHub](https://github.com/YiDingg/Gomoku/releases)

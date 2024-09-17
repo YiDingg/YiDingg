@@ -1,5 +1,9 @@
 # Humidity Detection of Diabetic Foot<br>糖足湿度检测
 
+> [!Note|style:callout|label:Infor]
+Initially published at 16:13 on 2024-06-26 in Beijing.
+
+
 ## Preparation
 
 ### Preface

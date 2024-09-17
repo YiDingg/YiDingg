@@ -1,5 +1,9 @@
 # Numerical Methods for PDE
 
+> [!Note|style:callout|label:Infor]
+Initially published at 19:53 on 2024-08-09 in Lincang.
+
+
 ## Intro
 
 起因是数模解偏微分方程数值解时接触到有限差分法，比较感兴趣，所以打算抽空学习一下。在学校的课程开设表里暂时没有找到这门课（偏微分方程的数值解法），可能是以前开设但现在取消了。
@@ -25,9 +29,9 @@
 You might not be able to view pdf online on the mobile devices as the broswer dosen't support the extension. Therefore, make sure you are using a mordern broswer on PC, such as Edge, Chrome, Quark, LianXiang, etc. You can also try clicking the link below to view or download
 the file.
 
-The raw source url: <button onclick="window.open('https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/NumericalMethodsForPDE/NumericalMethodsForPDENotes.pdf')" type="button">NumericalMethodsForPDENotes.pdf</button>
+The raw source url: <button onclick="window.open('https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/[Notes]NumericalMethodsForPDE/NumericalMethodsForPDENotes.pdf')" type="button">NumericalMethodsForPDENotes.pdf</button>
 
 
 ```pdf
-https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/NumericalMethodsForPDE/NumericalMethodsForPDENotes.pdf
+https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/[Notes]NumericalMethodsForPDE/NumericalMethodsForPDENotes.pdf
 ```

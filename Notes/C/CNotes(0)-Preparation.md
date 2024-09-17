@@ -1,5 +1,9 @@
 # C Notes (0): Preparation
 
+> [!Note|style:callout|label:Infor]
+Initially published at 08:07 on 2024-08-06 in Lincang.
+
+
 ## Intro
 
 ### 自学阶段

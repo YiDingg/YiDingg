@@ -1,4 +1,10 @@
-# 
+# Problem B
+
+
+> [!Note|style:callout|label:Infor]
+Initially published at 08:13 on 2024-08-20 in Lincang.
+
+
 
 ## Reference 
 

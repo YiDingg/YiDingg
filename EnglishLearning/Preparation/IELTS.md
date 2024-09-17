@@ -1,5 +1,9 @@
 # IELTS Preparation
 
+> [!Note|style:callout|label:Infor]
+Initially published at 01:26 on 2024-08-12 in Lincang.
+
+
 ## Information 
 
 Here are some information that you have to know before IELTS.

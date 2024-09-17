@@ -1,5 +1,9 @@
 # C Notes (7): Preproccess
 
+> [!Note|style:callout|label:Infor]
+Initially published at 23:36 on 2024-08-07 in Lincang.
+
+
 ## Intro 
 
 C 语言编译器在编译之前，会先预处理代码（preproccess）。这包括清理无用代码、删除注释、多行语句合并为一个逻辑行等工作，然后执行`#`开头的预处理指令。

@@ -1,6 +1,10 @@
 # MCU Notes (!): Tips and Tricks (STM32)
 
-> 序号 `(!)` 表明此章节为补充章节，独立于主干内容之外。
+> [!Note|style:callout|label:Infor]
+Initially published at 19:46 on 2024-06-27 in Beijing.
+
+
+序号 `(!)` 表明此章节为补充章节，独立于主干内容之外。
 
 ## 前言
 

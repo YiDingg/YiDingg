@@ -1,5 +1,9 @@
 # Time Line
 
+> [!Note|style:callout|label:Infor]
+Initially published at 23:16 on 2024-06-14 in Beijing.
+
+
 ## Development Plan
 
 <!-- To be added to the timeline -->

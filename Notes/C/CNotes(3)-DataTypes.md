@@ -1,5 +1,9 @@
 # C Notes (3): Basic Data Types
 
+> [!Note|style:callout|label:Infor]
+Initially published at 09:42 on 2024-08-07 in Lincang.
+
+
 ## 基本数据类型大小
 在不同位数的系统中，基本数据类型大小不尽相同，最典型的例子即为指针的大小，因为它与寻址空间大小有关。
 下表列出了常见系统中各基本数据类型的大小（单位Byte）：

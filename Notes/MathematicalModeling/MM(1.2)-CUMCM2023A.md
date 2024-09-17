@@ -1,5 +1,10 @@
 # Mathematical Modeling (1.2): CUMCM 2023-A
 
+
+> [!Note|style:callout|label:Infor]
+Initially published at 14:05 on 2024-08-18 in Lincang.
+
+
 ## 概览
 
 -   主题：定日镜场的优化设计

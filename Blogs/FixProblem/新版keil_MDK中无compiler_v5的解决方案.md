@@ -1,6 +1,10 @@
 ## 前言
 
->笔者近期学习STM32时，在STM官网上下载了最新版的keil_MDK软件，新版keil_MDK默认编译器为compiler_v6且不提供compiler_v5。由于v5环境下的代码在v6中无法直接编译（直接编译会存在数十个error），因此考虑下载旧版compiler_v5。
+> [!Note|style:callout|label:Infor]
+Initially published at 12:41 on 2024-06-24 in Beijing.
+
+
+笔者近期学习STM32时，在STM官网上下载了最新版的keil_MDK软件，新版keil_MDK默认编译器为compiler_v6且不提供compiler_v5。由于v5环境下的代码在v6中无法直接编译（直接编译会存在数十个error），因此考虑下载旧版compiler_v5。
 
 下面给出完整解决方案，并解答部分可能遇到的问题。
 

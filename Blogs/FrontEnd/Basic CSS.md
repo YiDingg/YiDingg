@@ -1,5 +1,9 @@
 # Basic CSS
 
+> [!Note|style:callout|label:Infor]
+Initially published at 14:21 on 2024-06-25 in Beijing.
+
+
 ## Awesome Sites
 
 - CSS Challenges: https://css-challenges.com  

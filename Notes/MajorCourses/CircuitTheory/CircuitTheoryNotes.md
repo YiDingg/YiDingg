@@ -1,15 +1,19 @@
 # Circuit Theory Notes
 
+> [!Note|style:callout|label:Infor]
+Initially published at 09:46 on 2024-08-29 in Beijing.
+
+
 ## Notes
 
 !> **<span style='color:red'>Attention:</span>**<br>
 You might not be able to view pdf online on the mobile devices as the broswer dosen't support the extension. Therefore, make sure you are using a mordern broswer on PC, such as Edge, Chrome, Quark, LianXiang, etc. You can also try clicking the link below to view or download
 the file.
 
-The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/CircuitTheory/CircuitTheoryNotes.pdf')" type="button">Circuit Theory Notes.pdf</button>
+The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]CircuitTheory/CircuitTheoryNotes.pdf')" type="button">Circuit Theory Notes.pdf</button>
 
 ```pdf
-https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/CircuitTheory/CircuitTheoryNotes.pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]CircuitTheory/CircuitTheoryNotes.pdf
 ```
 
 ## Homework

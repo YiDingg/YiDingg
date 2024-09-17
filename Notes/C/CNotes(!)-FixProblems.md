@@ -1,5 +1,9 @@
 # C Notes(!): Problem Solutions
 
+> [!Note|style:callout|label:Infor]
+Initially published at 12:40 on 2024-08-06 in Lincang.
+
+
 记录 C 语言学习过程中遇到的一些问题及其解决方案。
 
 <!-- details begin -->

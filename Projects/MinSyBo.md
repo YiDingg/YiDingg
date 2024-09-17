@@ -1,5 +1,9 @@
 # MinSyBo (Minimum System Board of STM32) 
 
+> [!Note|style:callout|label:Infor]
+Initially published at 18:36 on 2024-06-19 in Beijing.
+
+
 ## 项目说明
 
 这是一个STM32F103C8T6最小系统板，（以下简称 “系统板” ），原理图和PCB使用立创EDA(专业版)进行设计，相关文件全部开源。

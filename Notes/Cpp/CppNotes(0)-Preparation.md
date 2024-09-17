@@ -1,5 +1,9 @@
 # Cpp 笔记大纲
 
+> [!Note|style:callout|label:Infor]
+Initially published at 20:49 on 2024-07-08 in Beijing.
+
+
 ## 学习路线
 
 以 [RoadMaop: Cpp](https://roadmap.sh/cpp) 为主要学习路线(如下图)，辅以 [菜鸟: Cpp](https://www.runoob.com/cplusplus/cpp-tutorial.html) 和 [W3Shools: Cpp](https://www.w3schools.com/cpp/default.asp)进行学习。

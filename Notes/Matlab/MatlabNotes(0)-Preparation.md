@@ -1,5 +1,9 @@
 # Matlab Notes (0): Preparation
 
+> [!Note|style:callout|label:Infor]
+Initially published at 21:53 on 2024-08-07 in Lincang.
+
+
 ## Intro
 
 I have been using Matlab for a while, but haven't made any notes on it yet. To document what I learned and help me review them in the future, I am taking Matlab Notes here.

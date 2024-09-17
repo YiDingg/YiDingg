@@ -1,5 +1,9 @@
 # Data Host
 
+> [!Note|style:callout|label:Infor]
+Initially published at 21:08 on 2024-06-19 in Beijing.
+
+
 ## Conclusion
 
 When building your own blog site, it is crucial to select an appropriate image host (image bank, image bed) or data host. Here are our suggestions and reasons.

@@ -1,5 +1,9 @@
 # Other Courses
 
+> [!Note|style:callout|label:Infor]
+Initially published at 20:12 on 2024-09-08 in Beijing.
+
+
 ## 大英 2 (College English 2)
 
 ### 课程信息

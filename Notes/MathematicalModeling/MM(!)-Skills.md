@@ -1,5 +1,8 @@
 # Mathematical Modeling (+): Tips and Tricks
 
+> [!Note|style:callout|label:Infor]
+Initially published at 12:42 on 2024-08-18 in Lincang.
+
 ## During The Contest 
 - Matlab 搜 [examples](https://www.mathworks.com/support/search.html?q=&fq%5B%5D=asset_type_name:documentation/example&page=1&s_tid=CRUX_topnav) 和 [fileexchange](https://www.mathworks.com/matlabcentral/fileexchange)
 - 搜相关论文
@@ -39,7 +42,20 @@ pdftocairo -svg C:\Users\13081\Desktop\Test_Matlab\2024-08-15_13-50-23.pdf
 
 ## Matlab Tips
 
-### 自定义帮助文档本地下载路径
+### 块注释
+
+Matlab 中除了用 `%` 作行注释，还可以用 `%{  %}` 作块注释，如下：
+``` matlab
+%{  
+   这是一个块注释，它可以有多行
+   可以有多行
+   可以有多行
+   可以有多行
+%}
+```
+
+
+### 帮助文档下载到本地
 
 参考 [here](https://zhuanlan.zhihu.com/p/715676397)
 

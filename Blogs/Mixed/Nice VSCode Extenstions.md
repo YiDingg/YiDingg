@@ -1,6 +1,8 @@
 # Nice VSCode Extenstions
 
->This page was initially created on 2024-06-26 and is updating constantly.
+> [!Note|style:callout|label:Infor]
+Initially published at 22:24 on 2024-06-26 in Beijing, updating constantly.
+
 
 ## Mixed
 

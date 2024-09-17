@@ -1,5 +1,10 @@
 # Mathematical Modeling (3): PDE
 
+
+> [!Note|style:callout|label:Infor]
+Initially published at 23:16 on 2024-08-19 in Lincang.
+
+
 考虑到数学建模得到的微分方程（组）常常具有不平凡的初始条件和边界条件，通常难以求得解析解，因此本文着重考虑微分方程的数值解。
 
 利用 Matlab 求数值解，我们有多种方法。例如，手动实现有限差分算法、利用 Matlab 的 `ode` 函数求解 ODE、利用 Matlab 的 `pdepe` 函数求解 PDE、利用 pdetool 工具箱等。`ode`函数、`pdepe` 函数和 pdetool 工具箱能够解决的问题较为有限，有限差分法更为普适，也是我们重点关注的对象。下面先给出已经构建的 Matlab 函数，实现原理见后文。

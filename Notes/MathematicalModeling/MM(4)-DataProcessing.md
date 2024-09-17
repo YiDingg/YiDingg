@@ -1,5 +1,9 @@
 # Mathematical Modeling (4): Data Processing
 
+> [!Note|style:callout|label:Infor]
+Initially published at 01:45 on 2024-08-20 in Lincang.
+
+
 ## Data Preprocessing 
 
 ### 缺失
