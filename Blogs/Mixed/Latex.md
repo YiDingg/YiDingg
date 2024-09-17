@@ -126,68 +126,70 @@ Package svg: File `draw.io_test.drawio_svg-raw.pdf' is missing.LaTeX
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-26-18-50-36_Latex.png"/></div>
  -->
 
-## 模版
+## 自定义模版
 
-### 我的模板
+全部自定义模版的最新源代码见：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates)
 
-模版汇总的最新源代码见：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates)
+### [Notes]Template
 
-### Template of Report
+Template of Notes，同时也是 Template of Report。
 
-- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/TemplateOfReport)
-- 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/TemplateOfReport/ReportTemplate.tex')" type="button">ReportTemplate.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/TemplateOfReport/ReportTemplate.pdf')" type="button">ReportTemplate.pdf</button>
+- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/[Notes]Template)
+- 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Notes]Template/[Notes]Template.tex')" type="button">ReportTemplate.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Notes]Template/[Notes]Template.pdf')" type="button">ReportTemplate.pdf</button>
 
 ```pdf
-https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/TemplateOfReport/ReportTemplate.pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Notes]Template/[Notes]Template.pdf
 ```
 
-### Template of Homework
+### [Homework]Template
+
+Template of Homework，用于课程作业。
 
 - 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/[Homework]TemplateOfHomework)
-- 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Homework]TemplateOfHomework/TemplateOfHomework.tex')" type="button">TemplateOfHomework.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Homework]TemplateOfHomework/TemplateOfHomework.pdf')" type="button">TemplateOfHomework.pdf</button>
+- 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Homework]TemplateOfHomework/[Homework]Template.tex')" type="button">[Homework]Template.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Homework]TemplateOfHomework/[Homework]Template.pdf')" type="button">[Homework]Template.pdf</button>
 
 ```pdf
-https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Homework]TemplateOfHomework/TemplateOfHomework.pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Homework]TemplateOfHomework/[Homework]Template.pdf
 ```
 
 
-### Template of BPE
+### [BPE]Template
 
-- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/TemplateOfBasicPhysicsExperiment)
-- 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/TemplateOfBasicPhysicsExperiment/TemplateOfBasicPhysicsExperiment.tex')" type="button">TemplateOfBasicPhysicsExperiment.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/TemplateOfBasicPhysicsExperiment/TemplateOfBasicPhysicsExperiment.pdf')" type="button">TemplateOfBasicPhysicsExperiment.pdf/button>
+Template of Basic Physics Experiment，即基础物理实验报告的模板。
+
+- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/[BPE]Template)
+- 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[BPE]Template/[BPE]Template.tex')" type="button">[BPE]Template.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[BPE]Template/[BPE]Template.pdf')" type="button">[BPE]Template.pdf</button>
 
 ```pdf
-https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/TemplateOfBasicPhysicsExperiment/TemplateOfBasicPhysicsExperiment.pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[BPE]Template/[BPE]Template.pdf
 ```
 
-### Template of CUMCM
+### [CUMCM]Template
 
-- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/TemplateOfCUMCM)
-- 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/TemplateOfCUMCM/CUMCMTemplate.tex')" type="button">CUMCMTemplate.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/TemplateOfCUMCM/CUMCMTemplate.pdf')" type="button">CUMCMTemplate.pdf/button>
+Template of CUMCM，数学建模国赛（CUMCM）专用模板。
+
+- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/[CUMCM]Template)
+- 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CUMCM]Template/[CUMCM]Template.tex')" type="button">[CUMCM]Template.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CUMCM]Template/[CUMCM]Template.pdf')" type="button">[CUMCM]Template.pdf</button>
 
 ```pdf
-https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/TemplateOfCUMCM/CUMCMTemplate.pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CUMCM]Template/[CUMCM]Template.pdf
 ```
 
-### 其它模板
+### [CheatSheet]Template
 
-- [Latex Templates](https://www.latexstudio.net/index/lists/index/type/2.html)
+Template of CheatSheet，速查表，速查手册模板。例如，有的课程在期末考试时会允许带一张有笔记的 A4 纸进去，这时就需要排版非常紧凑，上面的模版很好地做到了这一点。
 
-### .gitignore 
+- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/blob/main/Templates/[CheatSheet]Template)
+- 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CheatSheet]Template/[CheatSheet]Template.tex')" type="button">[CheatSheet]Template.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CheatSheet]Template/[CheatSheet]Template.pdf')" type="button">[CheatSheet]Template.pdf </button>
 
-``` .gitignore
-# .gitignore for Latex
-
-# 忽略附属次要文件
-*.aux
-*.bbl 
-*.blg
-*.log
-*.out
-*.gz
-*.toc
-*.listing
+```pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CheatSheet]Template/[CheatSheet]Template.pdf
 ```
+
+## 其它模版
+
+- [Latexstudio: Latex Templates](https://www.latexstudio.net/index/lists/index/type/2.html)
+- [Overleat: Templates](https://www.overleaf.com/latex/templates)
 
 ## 相关资源
 
