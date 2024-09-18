@@ -18,10 +18,10 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]CircuitTheory/CircuitThe
 
 ## Homework
 
-The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]CircuitTheory/HomeworkOfCircuitTheory.pdf')" type="button">Circuit Theory Notes.pdf</button>
+The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]CircuitTheory/[Homework]CircuitTheory.pdf')" type="button">Circuit Theory Notes.pdf</button>
 
 ```pdf
-https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]CircuitTheory/HomeworkOfCircuitTheory.pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]CircuitTheory/[Homework]CircuitTheory.pdf
 ```
 
 ## Infor

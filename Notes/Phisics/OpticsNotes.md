@@ -18,10 +18,10 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]Optics/OpticsNotes.pdf
 
 ## Homework
 
-The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]Optics/HomeworkOfOptics.pdf')" type="button">HomeworkOfOptics.pdf</button>
+The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]Optics/[Homework]Optics.pdf')" type="button">[Homework]Optics.pdf</button>
 
 ```pdf
-https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]Optics/HomeworkOfOptics.pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]Optics/[Homework]Optics.pdf
 ```
 
 ## Intro

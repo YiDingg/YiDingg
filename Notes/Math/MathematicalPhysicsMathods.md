@@ -18,10 +18,10 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]MathematicalPhysicsMetho
 ```
 ## Homework
 
-The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]MathematicalPhysicsMethods/HomeworkOfMathematicalPhysicsMethods.pdf')" type="button">HomeworkOfMathematicalPhysicsMethods.pdf</button>
+The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]MathematicalPhysicsMethods/[Homework]MathematicalPhysicsMethods.pdf')" type="button">[Homework]MathematicalPhysicsMethods.pdf</button>
 
 ```pdf
-https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]MathematicalPhysicsMethods/HomeworkOfMathematicalPhysicsMethods.pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]MathematicalPhysicsMethods/[Homework]MathematicalPhysicsMethods.pdf
 ```
 
 ## Infor
