@@ -72,10 +72,15 @@ You can buy the similar product SHT30 or SHT31 at [Taobao](https://detail.tmall.
 
 Refer the example [here](https://wiki.dfrobot.com.cn/_SKU_SEN0333_SHT35_%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8) for a ready-to-use code if you are using Arduino.
 
-### Demo 
-
-
 ### Usage: STM32 + CubeMX
+
+**Once Mode:**
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-09-18-16-51-52_HDofDF.png"/></div>
+
+**Period Mode:**
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-09-18-16-52-03_HDofDF.png"/></div>
 
 `main.c` (period mode):
 
@@ -170,18 +175,12 @@ Refer the example [here](https://wiki.dfrobot.com.cn/_SKU_SEN0333_SHT35_%E6%B8%A
 
 ## Reference
 
-- [ ] [www.silabs.com](https://www.silabs.com)
+- [x] [www.silabs.com](https://www.silabs.com)
 - [x] [www.silabs.com --> EFR32BG22](https://www.silabs.com/wireless/bluetooth/efr32bg22-series-2-socs)
 - [x] [www.edomtech.com](https://www.edomtech.com.cn/product-detail/efr32bg22-bluetooth-le-soc/#development_kit)
 - [x] [DF创客社区](https://wiki.dfrobot.com.cn/_SKU_SEN0333_SHT35_%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8)
 - [x] [UDF（优迪半导体）](http://www.udf-ic.com/goods/1098033)
 - [x] [SUNSTECH（森思德克）](https://sunsstech.com/item/27.html)
-
-<!-- - [x] [（软件IIC）STM32模拟IIC驱动sht30温湿度传感器](https://blog.csdn.net/lllmeimei/article/details/121552846) 
-- [x] [（软件IIC）IIC学习之SHT30温湿度传感器(基于STM32)](https://blog.csdn.net/qq_36973838/article/details/135546011)
--->
-
-
 - [x] [（软件IIC）STM32（HAL库）驱动SHT30温湿度传感器通过串口进行打印引脚配置](https://blog.csdn.net/weixin_44597885/article/details/131757338)
 - [x] [（硬件IIC）STM32硬件IIC驱动SHT35](https://blog.csdn.net/weixin_50621510/article/details/136555927)
 - [x] [（硬件IIC）STM32CubeMX的使用之四：IIC总线协议驱动SHT30温湿度传感器](https://blog.csdn.net/weixin_43444989/article/details/109141174)
