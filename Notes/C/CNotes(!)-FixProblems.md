@@ -13,8 +13,8 @@ Initially published at 12:40 on 2024-08-06 in Lincang.
 ``` c
 #include <windows.h>
 
-system("chcp 65001"); // 方式 1: system() 设置编码为 UTF-8
-SetConsoleOutputCP(65001); // 方式 3: SetConsoleOutputCP() 设置输出编码为 UTF-8
+system("chcp 65001");       // 方式 1: system() 设置编码为 UTF-8
+SetConsoleOutputCP(65001);  // 方式 2: SetConsoleOutputCP() 设置输出编码为 UTF-8
 ```
 
 </details>
