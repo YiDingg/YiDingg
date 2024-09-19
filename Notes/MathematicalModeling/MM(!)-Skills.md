@@ -42,6 +42,64 @@ pdftocairo -svg C:\Users\13081\Desktop\Test_Matlab\2024-08-15_13-50-23.pdf
 
 ## Matlab Tips
 
+### 输出结果到表格
+
+`writematrix` 可以方便的将数值变量输出到外部文件中（例如 `.xlsx`、`.txt`、`.docx`文件），一般情况下已经足够。但当输出有特别要求时（例如保留 6 位小数），则可以考虑将竖直变量转为字符变量，然后用函数 `writecell` 输出。下面是一个例子：
+
+``` matlab
+Data = linspace(0, pi, 5);
+Data_str = cell(size(Data));
+for i = 1:length(Data)
+    Data_str{i} = num2str(Data(i), '%.6f');
+end
+writecell(Data_str, 'test.xlsx');
+```
+
+输出到表格如下：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-09-19-23-43-04_MM(!)-Skills.png"/></div>
+
+
+
+### global 全局变量 
+
+Matlab 可以使用 `global` 来声明全局变量。在函数中，如果需要调用此全局变量，需要再用一次 `global` 来引入全局变量。下面是一个例子：
+
+``` matlab
+global x y % 声明全局变量
+x = 1;
+y = 0.5;
+
+s = add(2)
+
+function sum = add(z)
+   global x y % 引入全局变量
+   sum = x + y + z;
+   return
+end
+```
+输出如下：
+``` output
+s = 3.5000
+```
+
+全局变量一旦被赋值，除非再次主动修改，否则不会发生变化。例如，如果一个全局变量 y 在定义（赋值）时，使用了全局变量 x，那么当 x 的值发生变化时，y 还是原来的值不变。下面是一个例子：
+
+``` matlab
+global x y % 声明全局变量
+x = 1;
+y = x^2 + 1;
+
+y
+x = 3;
+y
+```
+输出如下：
+``` output
+y = 2
+y = 2
+```
+
+
 ### 块注释
 
 Matlab 中除了用 `%` 作行注释，还可以用 `%{  %}` 作块注释，如下：
