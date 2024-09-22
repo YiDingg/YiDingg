@@ -57,6 +57,150 @@ for n = 1:0.1:10
 end
 ```
 
+## Export 
+
+### .mp4
+
+Here is an example:
+
+```matlab
+%%%%%%%%%% 两个球面波源在平面上的干涉情况 (以 z 轴为标量电场 E) %%%%%%%%%%
+global lambda k omega X_OA X_OB A B
+
+lambda = 550.0 * 10^(-9); % 单位: m
+k = 1.3;      % k 取决于光的波长，但在可视化中不妨令为 1
+omega = 1;  % omega 取决于光的波长，但在可视化中不妨令为 1
+X_OA = [-2, 0];  % 球面波源 A 的位置
+X_OB = [ 2, 0];  % 球面波源 B 的位置
+A = 50; % r = 1 时 A 的振幅
+B = 50; % r = 1 时 B 的振幅
+
+E_A0 = @(x, y) A./sqrt( (x - X_OA(1)).^2 + (y - X_OA(2)).^2 ); % X 位置的振幅, 输入的 X_array 为一列行向量
+E_B0 = @(x, y) B./sqrt( (x - X_OB(1)).^2 + (y - X_OB(2)).^2 ); % X 位置的振幅, 输入的 X_array 为一列行向量
+alpha_A = @(x, y) k*sqrt( (x - X_OA(1)).^2 + (y - X_OA(2)).^2 );
+alpha_B = @(x, y) k*sqrt( (x - X_OB(1)).^2 + (y - X_OB(2)).^2 );
+E_0 = @(E_A0, alpha_A, E_B0, alpha_B) sqrt( E_A0.^2 + E_B0.^2 + 2*E_A0.*E_B0.*cos(alpha_A - alpha_B) );
+vib = @(E_0, t, alpha) E_0.*cos(-omega*t + alpha); % 振荡函数
+
+R_array = linspace(4, 20, 80);
+theta_array = transpose(linspace(0, 2*pi, 30));
+x_matrix = R_array .* cos(theta_array);
+y_matrix = R_array .* sin(theta_array);
+%E_0_matrix = E_A0(x_matrix, y_matrix);
+
+E_A0_matrix = E_A0(x_matrix, y_matrix);
+E_B0_matrix = E_B0(x_matrix, y_matrix);
+alpha_A_matrix = alpha_A(x_matrix, y_matrix);
+alpha_B_matrix = alpha_B(x_matrix, y_matrix);
+E_0_matrix = E_0(E_A0_matrix, alpha_A_matrix, E_B0_matrix, alpha_B_matrix);
+alpha_matrix = GetAlpha(E_0_matrix, E_A0_matrix, alpha_A_matrix, E_B0_matrix, alpha_B_matrix);
+
+MyMesh(x_matrix, y_matrix, vib(E_A0_matrix, 0, alpha_A_matrix), 1);
+MyMesh(x_matrix, y_matrix, vib(E_B0_matrix, 0, alpha_B_matrix), 1);
+MyMesh(x_matrix, y_matrix, vib(E_0_matrix, 0, alpha_matrix), 1);
+
+figure 
+    h = surf(x_matrix, y_matrix, E_0_matrix, 'EdgeColor', 'interp', FaceColor='interp');
+    hold on
+    surf([X_OA(1) X_OA(1)], [X_OA(2) X_OA(2)], [40 -40; 40 -40])
+    surf([X_OB(1) X_OB(1)], [X_OB(2) X_OB(2)], [40 -40; 40 -40])
+    colormap(redblue);
+    zlim([-35 35]);
+    xlim([-R_array(end), R_array(end)])
+    ylim([-R_array(end), R_array(end)])
+    drawnow
+
+t_array = linspace(0, 10, 50);
+for i = 1:length(t_array)
+    h.ZData = vib(E_0_matrix, t_array(i), alpha_matrix);
+    drawnow
+    %export_fig( gcf , '-p0.00','-png' , ['-r', num2str(100)] , '-painters' , ['D:/aa_MyGraphics/Test/img', num2str(i)]);
+end
+```
+
+After running the code in a `.mlx` file, click the button 'export' to export it to `.mp4` or `.gif`, and the former is recommended.
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-09-23-01-05-04_MatlabNotes(4)-Animations.jpg"/></div>
+
+### .gif
+
+Here is an example:
+
+``` matlab
+%%%%%%%%%%%%%%% 导出为 gif, 缺点是无法 interp facecolor
+
+clc, clear, close all;
+global lambda k omega X_OA X_OB A B
+
+lambda = 550.0 * 10^(-9); % 单位: m
+k = 1.3;      % k 取决于光的波长，但在可视化中不妨令为 1
+omega = 1;  % omega 取决于光的波长，但在可视化中不妨令为 1
+X_OA = [-2, 0];  % 球面波源 A 的位置
+X_OB = [ 2, 0];  % 球面波源 B 的位置
+A = 50; % r = 1 时 A 的振幅
+B = 50; % r = 1 时 B 的振幅
+
+E_A0 = @(x, y) A./sqrt( (x - X_OA(1)).^2 + (y - X_OA(2)).^2 ); % X 位置的振幅, 输入的 X_array 为一列行向量
+E_B0 = @(x, y) B./sqrt( (x - X_OB(1)).^2 + (y - X_OB(2)).^2 ); % X 位置的振幅, 输入的 X_array 为一列行向量
+alpha_A = @(x, y) k*sqrt( (x - X_OA(1)).^2 + (y - X_OA(2)).^2 );
+alpha_B = @(x, y) k*sqrt( (x - X_OB(1)).^2 + (y - X_OB(2)).^2 );
+E_0 = @(E_A0, alpha_A, E_B0, alpha_B) sqrt( E_A0.^2 + E_B0.^2 + 2*E_A0.*E_B0.*cos(alpha_A - alpha_B) );
+vib = @(E_0, t, alpha) E_0.*cos(-omega*t + alpha); % 振荡函数
+
+R_array = linspace(4, 20, 80);
+theta_array = transpose(linspace(0, 2*pi, 30));
+x_matrix = R_array .* cos(theta_array);
+y_matrix = R_array .* sin(theta_array);
+%E_0_matrix = E_A0(x_matrix, y_matrix);
+
+E_A0_matrix = E_A0(x_matrix, y_matrix);
+E_B0_matrix = E_B0(x_matrix, y_matrix);
+alpha_A_matrix = alpha_A(x_matrix, y_matrix);
+alpha_B_matrix = alpha_B(x_matrix, y_matrix);
+E_0_matrix = E_0(E_A0_matrix, alpha_A_matrix, E_B0_matrix, alpha_B_matrix);
+alpha_matrix = GetAlpha(E_0_matrix, E_A0_matrix, alpha_A_matrix, E_B0_matrix, alpha_B_matrix);
+
+MyMesh(x_matrix, y_matrix, vib(E_A0_matrix, 0, alpha_A_matrix), 1);
+MyMesh(x_matrix, y_matrix, vib(E_B0_matrix, 0, alpha_B_matrix), 1);
+MyMesh(x_matrix, y_matrix, vib(E_0_matrix, 0, alpha_matrix), 1);
+
+
+figure 
+set(gca,'NextPlot','replaceChildren','box','on','color','w');
+ 
+    h = mesh(x_matrix, y_matrix, E_0_matrix, 'EdgeColor', 'interp', FaceColor='interp');
+    hold on
+    surf([X_OA(1) X_OA(1)], [X_OA(2) X_OA(2)], [40 -40; 40 -40])
+    surf([X_OB(1) X_OB(1)], [X_OB(2) X_OB(2)], [40 -40; 40 -40])
+    hold off
+    view([45, 30])
+    colormap(redblue);
+    zlim([-35 35]);
+    xlim([-R_array(end), R_array(end)])
+    ylim([-R_array(end), R_array(end)])
+    drawnow
+
+t_array = linspace(0, 15, 80);
+numFrames = length(t_array);
+for i = 1:numFrames
+    h.ZData = vib(E_0_matrix, t_array(i), alpha_matrix);
+    f(i) = getframe(gcf);
+end
+ 
+animated(1,1,1,numFrames) = 0;
+for i = 1:numFrames
+    if i == 1
+        [animated,cmap] = rgb2ind(f(i).cdata,256,'nodither');
+    else
+        animated(:,:,1,i) = rgb2ind(f(i).cdata,cmap,'nodither');
+    end
+end
+filename = 'test.gif';
+imwrite(animated,cmap,filename,'DelayTime',1/20,'LoopCount',inf);
+web(filename)
+```
+
+
 ## Insert GIF in Latex
 
 ## Enviroment
