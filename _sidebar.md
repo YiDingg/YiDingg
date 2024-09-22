@@ -86,6 +86,7 @@
         - [Matlab (1): Graphics](<Notes/Matlab/MatlabNotes(1)-Graphics.md>)
         - [Matlab (2): Mathematics](<Notes/Matlab/MatlabNotes(2)-Mathematics.md>)
         - [Matlab (3): Symbolic Math](<Notes/Matlab/MatlabNotes(3)-SymbolicMath.md>)
+        - [Matlab (4): Animations](<Notes/Matlab/MatlabNotes(4)-Animations.md>)
     - Mathematical Modeling
         - [MM (!): Skills](<Notes/MathematicalModeling/MM(!)-Skills.md>)
         - [MM (1): Papers](<Notes/MathematicalModeling/MM(1)-Papers.md>)

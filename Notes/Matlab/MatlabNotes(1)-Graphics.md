@@ -8,6 +8,31 @@ Initially published at 23:54 on 2024-08-07 in Lincang.
 
 Official link: Mathworks --> Help Center --> Matlab --> [Grphics](https://www.mathworks.com/help/releases/R2022a/matlab/graphics.html?s_tid=CRUX_lftnav). 
 
+## My Colors
+
+#ff8080 #ff0000 #990000 #190000
+#80ff80 #00ff00 #009900 #001900
+#8080ff #0000ff #000099 #000019
+#ff80ff #ff00ff #990099 #190019
+#ffff80 #ffff00 #999900 #191900
+#80ffff #00ffff #009999 #001919
+#ffffff #bbbbbb #999999 #191919
+
+``` matlab
+MyColors = num2cell( ...
+    [
+    "#ff8080" "#ff0000" "#990000" "#190000"
+    "#80ff80" "#00ff00" "#009900" "#001900"
+    "#8080ff" "#0000ff" "#000099" "#000019"
+    "#ff80ff" "#ff00ff" "#990099" "#190019"
+    "#ffff80" "#ffff00" "#999900" "#191900"
+    "#80ffff" "#00ffff" "#009999" "#001919"
+    "#ffffff" "#bbbbbb" "#999999" "#191919"
+    ]' ...  % 这里的转置是必要的，否则以列为单位以此索引，也即 MyColors{1, 1}, MyColors{2, 1}, MyColors{3, 1}, ..., MyColors{2,1}, ...
+)
+```
+
+
 ## My Graphic Functions 
 
 <!-- details begin -->
