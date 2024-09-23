@@ -30,11 +30,10 @@ By the way, I am trying to write notes in English as a practice.
 
 ## My Workflow
 
-### Frequently Used Tools 
 
 Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeatures\Data%20Host.md) for the reasons and more information.
 
-**Tools:**
+### Frequently Used Tools 
 
 -   Img, gif: use [Resize](https://bulkresizephotos.com/zh?preset=true&type=filesize&filesize=80000) (img) and [Docsmall](https://docsmall.com/gif-compress) (gif) <span class='tinyscript'>or [i2img](https://www.i2img.com/image-compressor), [Tiomg](https://tiomg.org/compress-image), [Oplimize LLA](https://imagecompressor.com), [TinyPNG](https://tinypng.com/), [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
 -   Video: use [FreeCompress](https://freecompress.com/) <span class='tinyscript'>or [Video To Edit](https://www.video2edit.com), [FCO](https://compress-video.file-converter-online.com/#google_vignette)</span> to compress the video.
@@ -44,7 +43,7 @@ Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeature
 -   Git to video: use [Screen to GIF]() to convert video into gif if you need.
 -   Title: use [Capitalize](https://capitalizemytitle.com/style/APA/) <span class='tinyscript'>or [Wawa](https://www.iamwawa.cn/daxiaoxie.html)</span> to capitalize your titles, and use [Rewriter](https://capitalizemytitle.com/ai-title-rewriter/) to rewrite your title.
 
-**Graphics:**
+### Graphics
 
 - General
     - Convinient
@@ -66,15 +65,11 @@ Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeature
         - Multisim --> print --> [Crop PDF](https://www.i2pdf.com/crop-pdf) --> `pdf`
 
 
-**Data host:**
+### Data Host
 
--   Upload <span style="color:red">img and small gif to Aliyun</span> by VS-PicGo
--   Upload <span style="color:red">gif, video, audio pdf and other files to WB.Static</span> or WB.Cloud manually. <span style="color:red">
--   Upload the files to 123 NetDisk or Baidu NetDisk to share them.
-
-### About Me
-
-Go to [About Me](README.md) for more information.
+-   Upload <span style="color:red">img  </span> and <span style='color:red'>  small gif </span> to [Aliyun OSS](https://www.aliyun.com/product/oss) by VS-PicGo.
+-   Upload <span style="color:red">gif, pdf </span> and <span style='color:red'> other files </span> to [123 Cloud Disk](https://www.123pan.com) <span class='tinyscript'> or WB.Static or WB.Cloud </span> manually.
+-   Upload <span style='color:red'>video </span> and <span style='color:red'> audio </span> to WB.Static or [TianYi Cloud Disk](https://cloud.189.cn/)
 
 ## Other Personal Sites
 
@@ -89,3 +84,7 @@ Here are part of other excellent personal websites.
 -   [汇尘轩](https://kirigaya.cn/home)
 -   [陶小桃 Blog](https://www.52txr.cn/)
 -   [中文独立博客列表](https://github.com/timqian/chinese-independent-blogs) (Collection)
+
+## About Me
+
+Go to [About Me](README.md) for more information.

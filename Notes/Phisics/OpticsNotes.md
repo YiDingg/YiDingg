@@ -1,4 +1,4 @@
-# OpticsNotes (0): Preparation
+#  Optics <br> 光学
 
 > [!Note|style:callout|label:Infor]
 Initially published at 11:48 on 2024-08-23 in Lincang.
@@ -10,10 +10,10 @@ Initially published at 11:48 on 2024-08-23 in Lincang.
 You might not be able to view pdf online on the mobile devices as the broswer dosen't support the extension. Therefore, make sure you are using a mordern broswer on PC, such as Edge, Chrome, Quark, LianXiang, etc. You can also try clicking the link below to view or download
 the file.
 
-The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]Optics/OpticsNotes.pdf')" type="button">OpticsNotes.pdf</button>
+The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]Optics/[Notes]Optics.pdf')" type="button">[Notes]Optics.pdf</button>
 
 ```pdf
-https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]Optics/OpticsNotes.pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]Optics/[Notes]Optics.pdf
 ```
 
 ## Homework

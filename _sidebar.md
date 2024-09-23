@@ -6,6 +6,7 @@
 - 📓 **Blogs**
 
     - Mixed <!-- empty line is necessary to avoid the error -->
+        - [主流云盘网盘对比](Blogs/Mixed/CloudStorageComparison.md)
         - [Setting Advice for New Computer](Blogs/Mixed/SettingAdviceForNewComputer.md)
         - [Download Inkscape](Blogs/Mixed/DownloadInkscape.md)
         - [Latex](Blogs/Mixed/Latex.md)
