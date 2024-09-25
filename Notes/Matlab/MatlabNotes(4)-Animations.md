@@ -120,6 +120,31 @@ for i = 1:length(t_array)
     drawnow
     %export_fig( gcf , '-p0.00','-png' , ['-r', num2str(100)] , '-painters' , ['D:/aa_MyGraphics/Test/img', num2str(i)]);
 end
+
+function alpha = GetAlpha(E_0, E_A0, alpha_A, E_B0, alpha_B)
+    sin_alpha = ( E_A0.*sin(alpha_A) + E_B0.*sin(alpha_B) ) ./ E_0;
+    cos_alpha = ( E_A0.*cos(alpha_A) + E_B0.*cos(alpha_B) ) ./ E_0;
+    %{
+        if cos_alpha > 0
+            alpha = acos(cos_alpha);
+            return
+        elseif cos_alpha == 0
+            sin_alpha = ( E_A_0.*sin(alpha_A) + E_B_0.*sin(alpha_B) ) ./ E_0;
+            if sin_alpha > 0
+                alpha = pi/2;
+                return
+            else
+                alpha = -pi/2;
+                return
+            end
+        else
+            alpha = pi - acos(cos_alpha);
+            return 
+        end
+    %}
+    alpha = (cos_alpha >= 0) .* asin(sin_alpha) + (cos_alpha < 0) .* ( pi - asin(sin_alpha));
+    %alpha =  acos(cos_alpha);
+end
 ```
 
 After running the code in a `.mlx` file, click the button 'export' to export it to `.mp4` or `.gif`, and the former is recommended.
@@ -202,6 +227,31 @@ end
 filename = 'test.gif';
 imwrite(animated,cmap,filename,'DelayTime',1/20,'LoopCount',inf);
 web(filename)
+
+function alpha = GetAlpha(E_0, E_A0, alpha_A, E_B0, alpha_B)
+    sin_alpha = ( E_A0.*sin(alpha_A) + E_B0.*sin(alpha_B) ) ./ E_0;
+    cos_alpha = ( E_A0.*cos(alpha_A) + E_B0.*cos(alpha_B) ) ./ E_0;
+    %{
+        if cos_alpha > 0
+            alpha = acos(cos_alpha);
+            return
+        elseif cos_alpha == 0
+            sin_alpha = ( E_A_0.*sin(alpha_A) + E_B_0.*sin(alpha_B) ) ./ E_0;
+            if sin_alpha > 0
+                alpha = pi/2;
+                return
+            else
+                alpha = -pi/2;
+                return
+            end
+        else
+            alpha = pi - acos(cos_alpha);
+            return 
+        end
+    %}
+    alpha = (cos_alpha >= 0) .* asin(sin_alpha) + (cos_alpha < 0) .* ( pi - asin(sin_alpha));
+    %alpha =  acos(cos_alpha);
+end
 ```
 
 

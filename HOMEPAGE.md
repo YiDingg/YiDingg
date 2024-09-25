@@ -71,19 +71,29 @@ Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeature
 -   Upload <span style="color:red">gif, pdf </span> and <span style='color:red'> other files </span> to [123 Cloud Disk](https://www.123pan.com) <span class='tinyscript'> or WB.Static or WB.Cloud </span> manually.
 -   Upload <span style='color:red'>video </span> and <span style='color:red'> audio </span> to WB.Static or [TianYi Cloud Disk](https://cloud.189.cn/)
 
-## Other Personal Sites
+## Explore More Sites
 
-Here are part of other excellent personal websites.
+Here are some interesting educational or personal sites.
 
--   [上杉五岳](https://republic81.tech/)
--   [Dexter Chua](https://dec41.user.srcf.net/)
--   [Zerun's Blog](https://blog.zeruns.tech/category/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/)
--   [線代啟示錄](https://ccjou.wordpress.com/)
--   [科学空间](https://spaces.ac.cn/archives/1615)
--   [阮一峰的网络日志](https://www.ruanyifeng.com/blog/developer/)
--   [汇尘轩](https://kirigaya.cn/home)
--   [陶小桃 Blog](https://www.52txr.cn/)
--   [中文独立博客列表](https://github.com/timqian/chinese-independent-blogs) (Collection)
+- [Bilgin's Blog](http://bilgin.esme.org/BitsAndBytes/KalmanFilterforDummies#)
+- [ProDuckThieves](https://produckthieves.home.blog)
+- [Physics HyperTextbook](https://physics.info/)
+- [Physics Videos by Eugene Khutoryansky](https://www.youtube.com/user/EugeneKhutoryansky/videos)
+- [Professor Dave Explains](https://www.youtube.com/channel/UC0cd_-e49hZpWLH3UIwoWRA)
+- [PhET Simulations](https://phet.colorado.edu/en/simulations/filter?type=html)
+- [Maths is Fun](https://www.mathsisfun.com/)
+- [I Want to Study Engineering](https://i-want-to-study-engineering.org/)
+- [CRASH COURSE](https://thecrashcourse.com/)
+- [ChemGuide](https://chemguide.co.uk/)
+- [上杉五岳](https://republic81.tech/)
+- [Dexter Chua](https://dec41.user.srcf.net/)
+- [Zerun's Blog](https://blog.zeruns.tech/category/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/)
+- [線代啟示錄](https://ccjou.wordpress.com/)
+- [科学空间](https://spaces.ac.cn/archives/1615)
+- [阮一峰的网络日志](https://www.ruanyifeng.com/blog/developer/)
+- [汇尘轩](https://kirigaya.cn/home)
+- [陶小桃 Blog](https://www.52txr.cn/)
+- [中文独立博客列表](https://github.com/timqian/chinese-independent-blogs) (Collection)
 
 ## About Me
 

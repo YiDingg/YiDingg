@@ -35,7 +35,7 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]Optics/[Homework]Opti
 
 ### “学长有话说”
 
-- 尽量不要缺勤，奚老师有时会在课上出题，现做现交，当作考勤分
+- 尽量不要缺勤，奚老师有时会在课上出题，现做现交，当作考勤分，有时也会在下课前点名
 - 作业是每讲完一章（2 ~ 3 周），再过一周后收
 
 
