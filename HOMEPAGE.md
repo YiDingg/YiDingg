@@ -10,7 +10,7 @@
 
 ### What Is This Site
 
-This site is a collection of my notes, blogs and documents. It is maintained by myself, hosted on GitHub Pages.
+This site is a collection of my notes, blogs and documents. It is maintained by myself, hosted on GitHub Pages. If you encountered into any problems or bugs while visiting the site, please visit [GitHub --> YiDingg]() and submit an issue. Sincere thanks.
 
 Refer to [Build Your Personal Website](Blogs/Mixed/BuildYourSite.md) if you also want to build your own website.
 

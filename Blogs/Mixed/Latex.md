@@ -82,7 +82,7 @@ svg 代码如下（借助 VSCode 的 Draw.io 插件，可以方便且快速的�
 % 正文区：
 \begin{figure}[H]
     \centering
-    \includesvg[width=0.5\textwidth]{Notes/MajorCourses/CircuitTheory/assets/draw.io_test.drawio.svg}
+    \includesvg[width=0.5\textwidth]{assets/draw.ioFiles/draw.io_test.drawio.svg}
     \caption{\textbf{插入 svg}}\label{插入 svg}
 \end{figure}
 ```
