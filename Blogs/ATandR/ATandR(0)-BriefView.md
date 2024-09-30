@@ -48,6 +48,8 @@ Go to [ATandR(2): Programming](Blogs/ATandR/ATandR(2)-Programming.md) for more d
 Here are the other tools and resources.
 
 ### Mixed
+- [GeoGebra 电磁学可视化 (100 个动画)](https://www.geogebra.org/m/ze59wnpp)
+- [GeoGebra 高中物理可视化资源库 (全免费)](https://ggb123.cn/m/phhgubfg)
 - [Ditto](https://zhuanlan.zhihu.com/p/206813990): a clipboard enhancement tool
 - [Trays](https://zhuanlan.zhihu.com/p/148141287)
 - [File Converter](https://file-converter.org/): convert files to different formats by right-clicking on them.

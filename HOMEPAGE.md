@@ -20,7 +20,7 @@ Click the button at the bottom left or go to [Navgation Page](_sidebar.md) for t
 
 ### About Blogs
 
-Our notes, blogs and documents are written with Notability, Markdown or Latex, following [_WSETD (Writing Standards of Easy-read Technical Document)_](Projects\WSETD\OutlineOfWSETD.md). Unless otherwise specified, all the blogs, articles, notes and documents are licensed under [_CC BY-NC 4.0_](https://creativecommons.org/licenses/by-nc/4.0/deed.en) license agreement. Commercial use is prohibited and please indicate the source when reprinting.
+Our notes, blogs and documents are written with Notability, Markdown or Latex, following [_WSETD (Writing Standards of Easy-read Technical Document)_](Projects\WSETD\OutlineOfWSETD.md). Unless otherwise specified, all the blogs, articles, notes and documents are licensed under [_CC BY-NC 4.0_](https://creativecommons.org/licenses/by-nc/4.0/deed.en) license agreement. You can freely download and share them but commercial use is prohibited. Please indicate the source when reprinting.
 
 To create a new blog, some that need a lot of graphs are taken by Markdown + HTML on VSCode or Typora. Some that need numerous formula to derive the conclusions are written by Latex on VSCode, displayed in PDF format. The rest will be written with Markdown or Notability, displayed in PDF format.
 

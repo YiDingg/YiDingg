@@ -10,8 +10,9 @@ When building your own blog site, it is crucial to select an appropriate image h
 
 **Conclusion:**
 - <span style="color:red">img and small gif to Aliyun</span> by VS-PicGo
-- upload <span style="color:red">gif, video, audio pdf and other files to WB.Static</span> manually. <span style="color:red">
-- upload the files to 123 NetDisk or Baidu NetDisk to share them.
+- upload <span style="color:red">gif, video, audio pdf and other files to 123 CloudDisk</span> manually. <span style="color:red">
+- <s>upload gif, video, audio pdf and other files to 123 CloudDisk</span> manually. </s>
+- <s>upload the files to 123 NetDisk or Baidu NetDisk to share them.</s>
 - <s>gif, video, audio to WB.Cloud manually, pdf and other files to WB.Static manually. (Or create a filefolder on WB.Cloud and provide the link)</s>
 - <s>gif, video, audio, pdf and other files to WB.Cloud manually.</s>
 - <s>gif to TouTiao manually by PanLuo Uploading, gif, video, audio, pdf and other files to WB.Cloud manually.</s>

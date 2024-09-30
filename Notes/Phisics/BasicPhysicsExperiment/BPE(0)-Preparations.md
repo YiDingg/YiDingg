@@ -19,7 +19,7 @@ Initially published at 09:38 on 2024-07-11 in Beijing.
 
 实验报告模板见 GitHub 仓库 [here](https://github.com/YiDingg/LatexNotes/tree/main/Templates/TemplateOfBasicPhysicsExperiment)。
 
-### Textbook
+### 相关书籍
 
 - 物理实验讲义与相关资料：
   - [国科大在线](https://mooc.mooc.ucas.edu.cn/mooc2-ans/mooc2-ans/mycourse/stu?courseid=350140000011235&clazzid=350140000015441&cpi=350140000168546&enc=8b6aff5e5d9ab66828e442920e02decc&t=1725423560960&pageHeader=3&v=0)

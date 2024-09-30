@@ -30,9 +30,4 @@ https://www.writebug.com/static/uploads/2024/7/14/563f4b06c7916f75ce853c8b5ce160
 
 ## Resources
 
-- 代数学引论-柯斯特利金-答案与笔记：
-<button onclick="window.open('https://www.writebug.com/static/uploads/2024/9/17/7f81a316729f42dba20132ace4d29623.pdf')" type="button">代数学引论-柯斯特利金-答案与笔记.pdf</button>
-
-```pdf
-https://www.writebug.com/static/uploads/2024/9/17/7f81a316729f42dba20132ace4d29623.pdf
-```
+Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-aFKj3) for all relevant resources. You can freely preview them online or download it. 

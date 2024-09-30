@@ -41,8 +41,22 @@ Initially published at 23:16 on 2024-06-14 in Beijing.
 <!-------------- Add Time Block Below -------------->
 
 
-<!-- -------------------------------------------- -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<!------------------------------------>
+<!-- new node here -->
+<!------------------------------------>
 <div class="timeline-item_node"></div>
+<div class="timeline-item_timestamp">October 1, 2024</div>
+<div class="timeline-item_content"><br><br>
+<div class="tbox"><div class='outerBox'><div class="dateLeftBox"><div>
+<tl-title>Better File Repository</tl-title><ul>
+New file repo (123 CloudDisk) was introduced.
+</ul></div></div></div></div>
+</div>
+<div class="timeline-item_node"></div>
+<!------------------------------------>
+<!-- new node here -->
+<!------------------------------------>
 <div class="timeline-item_timestamp">August 1, 2024</div>
 <div class="timeline-item_content"><br><br><br><!-- 每块顶部单独留一些空间 -->
 <!------------------------------------>
@@ -74,8 +88,7 @@ More awesome features were added to the site, you can go to <a href="#/Blogs/Sit
 We optimized our image host (Aliyun OSS), pdf and other files host (WB Static). You could now browse most of the contents freely and quickly.
 </ul></div></div></div></div>
 <!------------------------------------>
-
-
+<!-- new node here -->
 <!------------------------------------>
 <div class="timeline-item_node"></div>
 <div class="timeline-item_timestamp">July 1, 2024</div>

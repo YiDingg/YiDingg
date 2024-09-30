@@ -110,6 +110,7 @@
         - [MCU (!): Tips and Tricks (STM32).md](<Notes/MCU/MCUNotes(!)-TipsAndTricks(STM32).md>)
     - Else
         - [Other Courses](Notes/Else/OtherCourses.md)
+        - [Goodness of Fit](Notes/Else/GoodnessOfFit.md)
 
 - 🎓 **English Learning**
 

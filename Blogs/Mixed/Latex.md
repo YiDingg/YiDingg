@@ -170,7 +170,7 @@ You can refer to [ImageMagick](https://www.imagemagick.org/script/command-line-p
 
 Template of Notes，同时也是 Template of Report。
 
-- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/[Notes]Template)
+- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/%5BNotes%5DTemplate)
 - 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Notes]Template/[Notes]Template.tex')" type="button">ReportTemplate.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Notes]Template/[Notes]Template.pdf')" type="button">ReportTemplate.pdf</button>
 
 ```pdf
@@ -181,7 +181,7 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Notes]Template/[Note
 
 Template of Homework，用于课程作业。
 
-- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/[Homework]TemplateOfHomework)
+- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/%5BHomework%5DTemplateOfHomework)
 - 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Homework]TemplateOfHomework/[Homework]Template.tex')" type="button">[Homework]Template.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Homework]TemplateOfHomework/[Homework]Template.pdf')" type="button">[Homework]Template.pdf</button>
 
 ```pdf
@@ -193,7 +193,7 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[Homework]TemplateOfH
 
 Template of Basic Physics Experiment，即基础物理实验报告的模板。
 
-- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/[BPE]Template)
+- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/%5BBPE%5DTemplate)
 - 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[BPE]Template/[BPE]Template.tex')" type="button">[BPE]Template.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[BPE]Template/[BPE]Template.pdf')" type="button">[BPE]Template.pdf</button>
 
 ```pdf
@@ -204,7 +204,7 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[BPE]Template/[BPE]Te
 
 Template of CUMCM，数学建模国赛（CUMCM）专用模板。
 
-- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/[CUMCM]Template)
+- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/%5BCUMCM%5DTemplate)
 - 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CUMCM]Template/[CUMCM]Template.tex')" type="button">[CUMCM]Template.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CUMCM]Template/[CUMCM]Template.pdf')" type="button">[CUMCM]Template.pdf</button>
 
 ```pdf
@@ -215,7 +215,7 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CUMCM]Template/[CUMC
 
 Template of CheatSheet，速查表，速查手册模板。例如，有的课程在期末考试时会允许带一张有笔记的 A4 纸进去，这时就需要排版非常紧凑，上面的模版很好地做到了这一点。
 
-- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/blob/main/Templates/[CheatSheet]Template)
+- 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/%5BCheatSheet%5DTemplate)
 - 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CheatSheet]Template/[CheatSheet]Template.tex')" type="button">[CheatSheet]Template.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CheatSheet]Template/[CheatSheet]Template.pdf')" type="button">[CheatSheet]Template.pdf </button>
 
 ```pdf
@@ -230,3 +230,5 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CheatSheet]Template/
 ## 相关资源
 
 - [TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/)
+- [Latex Studio](https://www.latexstudio.net/articles/)
+- [LaTeX 入门与进阶](https://latex.lierhua.top/zh/)

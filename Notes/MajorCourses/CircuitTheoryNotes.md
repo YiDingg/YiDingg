@@ -76,17 +76,27 @@ div.caption {
 
 ### 相关书籍
 
-教材：
+Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-pGKj3) for all relevant resources. You can freely preview them online and download them. Below is the list of resources.
 
--   [电路原理（于歆杰）.pdf](https://s.b1n.net/2eH2q)
--   电路原理讲义（冯杰、陈东旭）（老师不提供电子版）
+<!-- - 教材：
+    - 电路原理（于歆杰）.pdf
+    - 电路原理讲义（冯杰、陈东旭）（老师未提供电子版）
+- 辅导书：
+    - [电路原理习题集（第 2 版）(朱桂萍 刘秀成 徐福媛) (Z-Library).pdf](https://www.123865.com/s/0y0pTd-fGKj3)
+    - 电路原理导学导教（朱桂萍、于歆杰、陆文娟、刘秀成）.pdf
+    - 电路原理试题选编（朱桂萍、于歆杰、刘秀成）(第 4 版).pdf
+    - 电路原理 Mooc 配套用书（朱桂萍，于歆杰，陆文娟）.pdf
+ -->
 
-辅导书：
+- 教材：
+    -   [电路原理（于歆杰）.pdf](https://s.b1n.net/2eH2q)
+    -   电路原理讲义（冯杰、陈东旭）（老师未提供电子版）
+- 辅导书：
+    -   [电路原理导学导教及习题解答（朱桂萍、于歆杰、陆文娟、刘秀成）.pdf](https://s.b1n.net/4kGFu)
+    -   [电路原理学习指导与习题集 第 2 版 (朱桂萍 刘秀成 徐福媛) (Z-Library).pdf](https://www.writebug.com/static/uploads/2024/8/27/bdf7b26c0f4342845a66054cccd6cdc1.pdf)
+    -   [电路原理试题选编（朱桂萍、于歆杰、刘秀成）(第 4 版).pdf](https://s.b1n.net/OSmef)
+    -   [电路原理（朱桂萍，于歆杰，陆文娟）(Mooc 配套用书).pdf](https://s.b1n.net/6Smsc)
 
--   [电路原理导学导教及习题解答（朱桂萍、于歆杰、陆文娟、刘秀成）.pdf](https://s.b1n.net/4kGFu)
--   [电路原理学习指导与习题集 第 2 版 (朱桂萍 刘秀成 徐福媛) (Z-Library).pdf](https://www.writebug.com/static/uploads/2024/8/27/bdf7b26c0f4342845a66054cccd6cdc1.pdf)
--   [电路原理试题选编（朱桂萍、于歆杰、刘秀成）(第 4 版).pdf](https://s.b1n.net/OSmef)
--   [电路原理（朱桂萍，于歆杰，陆文娟）(Mooc 配套用书).pdf](https://s.b1n.net/6Smsc)
 
 ### 电路仿真
 

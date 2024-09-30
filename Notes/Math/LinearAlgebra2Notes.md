@@ -3,6 +3,7 @@
 > [!Note|style:callout|label:Infor]
 Initially published at 00:16 on 2024-07-28 in Beijing.
 
+## Notes
 
 !> **<span style='color:red'>Attention:</span>**<br>
 You might not be able to view pdf online on the mobile devices as the broswer dosen't support the extension. Therefore, make sure you are using a mordern broswer on PC, such as Edge, Chrome, Quark, LianXiang, etc. You can also try clicking the link below to view or download
@@ -30,3 +31,7 @@ https://www.writebug.com/git/YiDingg/WB.YiDingg/raw/branch/main/LinearAlgebra2No
 ```pdf
 https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/[Notes]LinearAlgebra2/LinearAlgebra2Notes.pdf
 ```
+
+## Resources
+
+Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-BFKj3) for all relevant resources. You can freely preview them online or download it. 
