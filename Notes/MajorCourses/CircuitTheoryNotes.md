@@ -18,11 +18,18 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]CircuitTheory/[Notes]Cir
 
 ## Homework
 
-The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]CircuitTheory/[Homework]CircuitTheory.pdf')" type="button">[Homework]CircuitTheory.pdf</button>
+The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]CircuitTheory')" type="button">[Homework]CircuitTheory.pdf</button>
+
+```pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]CircuitTheory
+```
+
+<!-- 下面是正确的地址 -->
+<!-- The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]CircuitTheory/[Homework]CircuitTheory.pdf')" type="button">[Homework]CircuitTheory.pdf</button>
 
 ```pdf
 https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]CircuitTheory/[Homework]CircuitTheory.pdf
-```
+``` -->
 
 ## Infor
 
