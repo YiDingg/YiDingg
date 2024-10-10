@@ -34,4 +34,4 @@ https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/[Notes]LinearAlgebra2/LinearAlg
 
 ## Resources
 
-Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-BFKj3) for all relevant resources. You can freely preview them online or download it. 
+Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-BFKj3) for all relevant resources. You can freely download or preview them online. 

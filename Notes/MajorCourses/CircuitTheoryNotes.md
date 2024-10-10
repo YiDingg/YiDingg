@@ -83,7 +83,7 @@ div.caption {
 
 ### 相关书籍
 
-Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-pGKj3) for all relevant resources. You can freely preview them online and download them. Below is the list of resources.
+Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-pGKj3) for all relevant resources. You can freely preview them online and download them. 
 
 <!-- - 教材：
     - 电路原理（于歆杰）.pdf

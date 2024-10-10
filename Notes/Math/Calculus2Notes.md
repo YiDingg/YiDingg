@@ -31,7 +31,7 @@ https://www.writebug.com/static/uploads/2024/7/14/8233253642c6dd7a1371fad9e69e53
 
 ## Resources
 
-Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-fFKj3) for all relevant resources. You can freely preview them online or download it. 
+Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-fFKj3) for all relevant resources. You can freely download or preview them online. 
 
 
 

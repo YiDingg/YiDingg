@@ -38,7 +38,7 @@ Initially published at 08:07 on 2024-08-06 in Lincang.
 
 ## Resources
 
-Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-iXKj3) for all relevant resources. You can freely preview them online or download it. 
+Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-iXKj3) for all relevant resources. You can freely download or preview them online. 
 
 - 教材：
   - [C 程序设计语言（2019 年第 2 版）(Brian W. Kernighan & Dennis M. Ritchie)](https://www.writebug.com/static/uploads/2024/8/30/3119b9e68008855ca5337dc7f5595505.pdf)

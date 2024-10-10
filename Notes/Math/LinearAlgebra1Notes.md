@@ -30,4 +30,4 @@ https://www.writebug.com/static/uploads/2024/7/14/563f4b06c7916f75ce853c8b5ce160
 
 ## Resources
 
-Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-aFKj3) for all relevant resources. You can freely preview them online or download it. 
+Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-aFKj3) for all relevant resources. You can freely download or preview them online. 

@@ -62,11 +62,15 @@ h1 {
 }
 h1 .anchor span {
     color: var(--color-h1);
+    font-style: normal;
+    font-weight: 550;
 }
 h2 .anchor span {
     color: rgb(245, 230, 255);
     background-color: rgb(110, 0, 200);
     padding: 0.1rem 0.4rem;
+    font-weight: 550;
+    font-style: normal;
 }
 /* h2::before {
     content: "& ";
@@ -74,9 +78,13 @@ h2 .anchor span {
 } */
 h3 .anchor span {
     color: var(--color-h3);
+    font-weight: 550;
+    font-style: normal;
 }
 h4 .anchor span {
     color: var(--color-h4);
+    font-weight: 550;
+    font-style: normal;
 }
 .markdown-section {
     background-color: var(--color--markdownsection, white);
@@ -87,7 +95,8 @@ h4 .anchor span {
 .markdown-section a {
     /* a: anchor */
     color: var(--theme-color, #42b983);
-    font-weight: 550;
+    /* font-weight: 200; */
+    /* font-style: italic; */
 }
 .markdown-section p {
     /* p: paragraph */

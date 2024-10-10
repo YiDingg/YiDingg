@@ -31,6 +31,9 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]MathematicalPhysicsMe
 
 ## Recourses
 
+Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-xOKj3) for all relevant resources. You can freely download or preview them online. 
+
+
 - 教材：
   - 数学物理方法讲义（张文生）(2024).pdf
   - [数学物理方法（吴崇试）(第3版)，.pdf](https://s.b1n.net/Cso88)

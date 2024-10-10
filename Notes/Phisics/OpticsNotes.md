@@ -73,7 +73,7 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]Optics/[Homework]Opti
 
 ### 相关书籍
 
-Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-1GKj3) for all relevant resources. You can freely preview them online and download them. Below is the list of resources.
+Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-1GKj3) for all relevant resources. You can freely preview them online and download them. 
 
 - 教材：
   - 光学（钱列加）(2024年8月第1版).pdf

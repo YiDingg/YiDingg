@@ -152,6 +152,48 @@ You may need a certain PDF viewer to view the GIF in your pdf file, such as Adou
 
 You can refer to [ImageMagick](https://www.imagemagick.org/script/command-line-processing.php) for more advanced usage.
 
+## Latex 转 word
+
+### 直接法：`.tex` 转 `.docx`
+
+考虑使用 pandoc + pandoc-crossref，首先到 pandoc-crossref 的官网 [here](https://github.com/lierdakil/pandoc-crossref/releases) 下载最新版 release，然后到 pandoc 官网 [here](https://github.com/jgm/pandoc/releases/) 下载并安装对应版本的 release。安装时注意选择正确的系统，例如我的是 Windows，则选择 `pandoc-3.5-windows-x86_64.msi`。还要注意是依据 pandoc-crossref 的版本来选择 pandoc 的版本，如下图所示：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-10-10-21-14-18_Latex.jpg"/></div>
+
+两边都下载 / 安装完成之后，将 pandoc-crossref 的 `.exe` 可执行文件放到 pandoc 的安装目录 `C:\Program Files\Pandoc` 下，然后在命令行中输入下面代码检查是否安装成功：
+
+``` shell
+pandoc-crossref --version # 检查 pandoc-crossref 是否安装成功
+pandoc --version # 检查 pandoc 是否安装成功
+
+```
+
+如果正常显示版本号如下，则说明安装成功：
+
+``` shell
+# pandoc-crossref --version # 检查 pandoc-crossref 是否安装成功
+pandoc-crossref v0.3.18.0 git commit 6cff8a6f8fa193ebeb8b84cc71006f635036344c (HEAD) built with Pandoc v3.4, pandoc-types v1.23.1 and GHC 9.6.6 
+
+# pandoc --version # 检查 pandoc 是否安装成功
+pandoc.exe 3.4
+Features: +server +lua
+Scripting engine: Lua 5.4
+User data directory: C:\Users\13081\AppData\Roaming\pandoc
+Copyright (C) 2006-2024 John MacFarlane. Web: https://pandoc.org
+This is free software; see the source for copying conditions. There is no
+warranty, not even for merchantability or fitness for a particular purpose.
+```
+
+
+
+参考文章 [CSDN](https://blog.csdn.net/qq_35091353/article/details/124281241) 即可。
+
+### 间接法：`.pdf` 转 `.docx`
+
+在线网址：
+- https://www.i2pdf.com/pdf-to-word: 文字较好，公式一般，图片一般
+- https://www.ilovepdf.com/pdf_to_word: 文字一般，公式一般，图片较好
+- https://pdf.io/pdf2doc/: 文字一般，公式较好，图片较好
+
 ## 杂七杂八
 
 ### 对号错号
