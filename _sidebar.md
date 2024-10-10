@@ -1,6 +1,7 @@
 - [🏠 **Home Page**](HOMEPAGE.md)
 - [👋 **About**](README.md)
 - [📃 **Time Line**](TimeLine.md)
+- [🔎 **Navgation Page**](_sidebar.md)
 <!-- - [📰 **To Be Dealing With**](ToBeDealingWith.md) -->
 
 - 📓 **Blogs**

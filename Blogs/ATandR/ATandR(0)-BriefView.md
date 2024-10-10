@@ -48,6 +48,7 @@ Go to [ATandR(2): Programming](Blogs/ATandR/ATandR(2)-Programming.md) for more d
 Here are the other tools and resources.
 
 ### Mixed
+- [desmos: 免费使用的精美数学工具组](https://www.desmos.com/)
 - [GeoGebra 电磁学可视化 (100 个动画)](https://www.geogebra.org/m/ze59wnpp)
 - [GeoGebra 高中物理可视化资源库 (全免费)](https://ggb123.cn/m/phhgubfg)
 - [Ditto](https://zhuanlan.zhihu.com/p/206813990): a clipboard enhancement tool
