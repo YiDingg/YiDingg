@@ -154,10 +154,15 @@ You can refer to [ImageMagick](https://www.imagemagick.org/script/command-line-p
 
 ## Latex 转 word
 
-### 直接法：`.tex` 转 `.docx`
+直接法：`.tex` 转 `.docx`，间接法：`.pdf` 转 `.docx`。
 
-考虑使用 pandoc + pandoc-crossref，首先到 pandoc-crossref 的官网 [here](https://github.com/lierdakil/pandoc-crossref/releases) 下载最新版 release，然后到 pandoc 官网 [here](https://github.com/jgm/pandoc/releases/) 下载并安装对应版本的 release。安装时注意选择正确的系统，例如我的是 Windows，则选择 `pandoc-3.5-windows-x86_64.msi`。还要注意是依据 pandoc-crossref 的版本来选择 pandoc 的版本，如下图所示：
+### 直接法：
+
+考虑 pandoc + pandoc-crossref。首先到 pandoc-crossref 的 GitHub 官网 [here](https://github.com/lierdakil/pandoc-crossref/releases) 下载最新版 release，然后到 pandoc 的 GitHub 官网 [here](https://github.com/jgm/pandoc/releases/) 下载并安装对应版本的 release。
+安装时注意选择正确的系统，例如我的是 Windows，则选择 `pandoc-3.5-windows-x86_64.msi`。还要注意是依据 pandoc-crossref 的版本来选择 pandoc 的版本，如下图所示：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-10-10-21-14-18_Latex.jpg"/></div>
+
+如果你无法访问 GitHub，且是 Windows 用户，也可以到链接 [here](https://www.123865.com/s/0y0pTd-XOKj3) 下载它们，其中的两个文件已经是对应版本。
 
 两边都下载 / 安装完成之后，将 pandoc-crossref 的 `.exe` 可执行文件放到 pandoc 的安装目录 `C:\Program Files\Pandoc` 下，然后在命令行中输入下面代码检查是否安装成功：
 
@@ -183,16 +188,32 @@ This is free software; see the source for copying conditions. There is no
 warranty, not even for merchantability or fitness for a particular purpose.
 ```
 
+之后参考文章 [CSDN](https://blog.csdn.net/qq_35091353/article/details/124281241) 即可。
 
-
-参考文章 [CSDN](https://blog.csdn.net/qq_35091353/article/details/124281241) 即可。
-
-### 间接法：`.pdf` 转 `.docx`
+### 间接法
 
 在线网址：
-- https://www.i2pdf.com/pdf-to-word: 文字较好，公式一般，图片一般
-- https://www.ilovepdf.com/pdf_to_word: 文字一般，公式一般，图片较好
-- https://pdf.io/pdf2doc/: 文字一般，公式较好，图片较好
+- [i2pdf](https://www.i2pdf.com/pdf-to-word): 文字较好，公式一般，图片一般
+- [ilovepdf](https://www.ilovepdf.com/pdf_to_word): 文字一般，公式一般，图片较好
+- [pdf.io](https://pdf.io/pdf2doc/): 文字一般，公式较好，图片较好
+
+使用 ABBYY 软件：
+可以到官网 [here](https://www.abbyychina.com/) <span style='color:red'> 购买 </span> 并下载，也可以到链接 [here (123 云盘)](https://www.123865.com/s/0y0pTd-nOKj3) 下载并安装 ABBYY Windows 版，或者备用链接 [here](https://downloadlynet.ir/2020/30/17871/07/abbyy-finereader/19/?#/17871-abbyy-fi-192405103010.html)（标有 `Mac` 的是 MacOS 版，其它的都是 Windows 版）
+
+效果对比（10 分为满分）：
+
+<div class='center'>
+
+| 方法 | 文字处理效果 | 公式处理效果 | 图片处理效果 | 平均分 |
+|:-:|:-:|:-:|:-:|:-:|
+ | [pdf.io](https://pdf.io/pdf2doc/) | 5 | 7 | 7 | 6.3 |
+ | [ABBYY](https://www.123865.com/s/0y0pTd-nOKj3) | 10 | 3 | 4 | 5.7 |
+ | [ilovepdf](https://www.ilovepdf.com/pdf_to_word) | 5 | 4 | 7 | 5.3 |
+ | [i2pdf](https://www.i2pdf.com/pdf-to-word) | 7 | 4 | 5 | 5.3 |
+</div>
+
+可根据需要选择合适的转换方式，文本较多的情况尤其建议 [ABBYY](https://www.123865.com/s/0y0pTd-nOKj3)。特别地，如果有较多超链接跳转需求，也非常建议使用 ABBYY，它能极好的保留原有超链接。
+
 
 ## 杂七杂八
 

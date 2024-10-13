@@ -7,7 +7,7 @@ Initially published at 00:53 on 2024-06-16 in Beijing.
 Here is the brief view of ATandR (Awesome Tools and Resources) and you can click them for more details.
 
 ## Pinned
-- [Z-Library](https://singlelogin.rs): Refer to the mirror site below if you can not access to the official link https://singlelogin.rs
+- [Z-Library](https://singlelogin.rs): Refer to the mirror site below if you can not access to the official link [here (https://singlelogin.rs)](https://singlelogin.rs).
 
 - https://www.tddaohang.cn/sites/43.html
 - https://www.kdocs.cn/l/cq7kDog4zkuR
@@ -48,7 +48,8 @@ Go to [ATandR(2): Programming](Blogs/ATandR/ATandR(2)-Programming.md) for more d
 Here are the other tools and resources.
 
 ### Mixed
-- [desmos: 免费使用的精美数学工具组](https://www.desmos.com/)
+- [Upscayl](https://github.com/upscayl/upscayl): Upscayl lets you enlarge and enhance low-resolution images using advanced AI algorithms. Enlarge images without losing quality.
+- [desmos](https://www.desmos.com/): 免费使用的精美数学工具组
 - [GeoGebra 电磁学可视化 (100 个动画)](https://www.geogebra.org/m/ze59wnpp)
 - [GeoGebra 高中物理可视化资源库 (全免费)](https://ggb123.cn/m/phhgubfg)
 - [Ditto](https://zhuanlan.zhihu.com/p/206813990): a clipboard enhancement tool

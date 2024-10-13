@@ -20,7 +20,7 @@ C 语言是一种编译型语言，源码都是文本文件，本身无法执行
 - [CodingGround](https://tutorialspoint.com/compile_c_online.php)
 - [OnlineGDB](https://onlinegdb.com/online_c_compiler)
 
-我这里已经下载并配置好了Visual Studio 2022，但考虑到更喜欢用 VSCode，还是下载了MinGW。参考 <!--  [CSDN](https://blog.csdn.net/su272009/article/details/138245549)  --> [CSDN](https://blog.csdn.net/weixin_52159554/article/details/134406628)进行下载和安装，然后配置环境变量，安装 C/C++ 插件，即可开始编写 C 代码。
+我这里已经下载并配置好了Visual Studio 2022，但考虑到更喜欢用 VSCode，还是下载了 MinGW。到网盘 [here](https://www.123865.com/s/0y0pTd-cOKj3) 下载 Win64 版，或者参考 <!--  [CSDN](https://blog.csdn.net/su272009/article/details/138245549)  --> [CSDN](https://blog.csdn.net/weixin_52159554/article/details/134406628) 进行下载和安装，然后配置环境变量，安装 C/C++ 插件，即可开始编写 C 代码。
 
 
 ### GCC编译
