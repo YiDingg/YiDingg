@@ -6,6 +6,8 @@ Initially published at 09:38 on 2024-07-11 in Beijing.
 
 ## 课程信息
 
+### Infor
+
 - 基础物理实验-02
 - 主讲教师：张海龙、王帅、林晓等
 - 开课院系：	物理科学学院
@@ -19,7 +21,11 @@ Initially published at 09:38 on 2024-07-11 in Beijing.
 
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-23-16-52-59_BPE(0)-Preparations.jpg"/></div> -->
 
+### 实验报告评阅标准
 
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-10-22-18-43-32_BasicPhysicsExperiment.jpg"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-10-22-18-42-50_BasicPhysicsExperiment.jpg"/></div>
 
 ## Resources
 

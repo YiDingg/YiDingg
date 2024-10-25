@@ -4,13 +4,35 @@
 Initially published at 22:11 on 2024-06-23 in Beijing.
 
 
-If you are a reaseacher, or a technical student, you must be confused or used to be confused how to read plenty of related papers and summarize their findings at the same time, especially those are involved with your projects. Here are our suggestions.
+
+If you are a reaseacher, or a technical student, you must be confused or used to be confused how to read plenty of related papers and summarize their findings at the same time, especially those are involved with your projects. The demands are as follows:
 
 - manage the papers automatically (like tagging read and unread, switching between papers)
 - smoothy and comfortable translation function
 - summarize the papers's main ideas by AI
 - show possible connections between the papers
 - highlight the key findings and the main ideas
+
+ Here are our solutions.
+
+## Tools
+
+### Inciteful
+
+[Inciteful](https://inciteful.xyz/) is a tool to help you accelerate your research. You can build a network of academic papers and analyze the network to discover the most relevant literature.
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-10-15-21-03-25_ATandR(4)-ResearchPaper.jpg"/></div>
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-10-15-21-01-28_ATandR(4)-ResearchPaper.jpg"/></div> -->
+
+### Web of Science
+
+### Bohrium
+[Bohrium](https://bohrium.dp.tech) is an AI assistant for searching, analyzing, and summarizing academic papers
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-10-15-20-56-08_ATandR(4)-ResearchPaper.jpg"/></div>
+
+
 
 ## Zotero
 

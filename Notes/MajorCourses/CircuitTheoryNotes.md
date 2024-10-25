@@ -99,8 +99,9 @@ Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-pGKj3) for all relev
     -   [电路原理（于歆杰）.pdf](https://s.b1n.net/2eH2q)
     -   电路原理讲义（冯杰、陈东旭）（老师未提供电子版）
 - 辅导书：
-    -   [电路原理导学导教及习题解答（朱桂萍、于歆杰、陆文娟、刘秀成）.pdf](https://s.b1n.net/4kGFu)
-    -   [电路原理学习指导与习题集 第 2 版 (朱桂萍 刘秀成 徐福媛) (Z-Library).pdf](https://www.writebug.com/static/uploads/2024/8/27/bdf7b26c0f4342845a66054cccd6cdc1.pdf)
+    -   [电路原理习题集参考答案（第 2 版）(朱桂萍 刘秀成 徐福媛)](https://www.writebug.com/static/uploads/2024/10/16/2a08bdcd820bcc86d4fb09e2c4a3c7ea.pdf)
+    -   [电路原理习题集（第 2 版）(朱桂萍 刘秀成 徐福媛) (Z-Library).pdf](https://www.writebug.com/static/uploads/2024/8/27/bdf7b26c0f4342845a66054cccd6cdc1.pdf)
+    -   [电路原理导学导教（朱桂萍、于歆杰、陆文娟、刘秀成）.pdf](https://s.b1n.net/4kGFu)
     -   [电路原理试题选编（朱桂萍、于歆杰、刘秀成）(第 4 版).pdf](https://s.b1n.net/OSmef)
     -   [电路原理（朱桂萍，于歆杰，陆文娟）(Mooc 配套用书).pdf](https://s.b1n.net/6Smsc)
 

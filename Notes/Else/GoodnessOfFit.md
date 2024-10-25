@@ -88,7 +88,7 @@ $$
 fitness = \frac{RMSE}{R^2} = \frac{\sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2} }{1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}}
 $$
 
-#### MSLE, RMSLE
+### MSLE, RMSLE
 
 - `MSLE`, Mean Squared Logarithmic Error, 均方对数误差。范围 $[0, +\infty)$，越接近 0 越好。
 - `RMSLE`, Root Mean Squared Logarithmic Error, 均方根对数误差, MSLE 的平方根。范围 $[0, +\infty)$，越接近 0 越好。
@@ -109,7 +109,7 @@ MSLE 对预测值小于真实值的惩罚要大一些，比较适合应用在预
 
 ### 优度衡量
 
-#### SAAE 标准绝对面积误差
+### SAAE (标准绝对面积误差)
 
 SAAE, Standard Absolute Area Error, 标准绝对面积误差。范围 $[0, +\infty)$，越接近 0 越好。
 

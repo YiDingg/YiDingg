@@ -289,10 +289,14 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CheatSheet]Template/
 
 - [Latexstudio: Latex Templates](https://www.latexstudio.net/index/lists/index/type/2.html)
 - [Overleat: Templates](https://www.overleaf.com/latex/templates)
+- [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook):  LaTeX 书籍模板（备用链接 [here](https://gitee.com/ElegantLaTeX/ElegantBook)）
+- [BeautyBook](https://github.com/BeautyLaTeX/Beautybook/tree/master): LaTeX 书籍模板
 
 ## 相关资源
 
 - [TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/)
-- [Latex Studio](https://www.latexstudio.net/articles/)
+- [Latex Studio](https://www.latexstudio.net)
+- [Latex Studio > Articles](https://www.latexstudio.net/articles/)
+- [Latex Studio > Learn LaTeX](https://www.latexstudio.net/LearnLaTeX/)
 - [LaTeX 入门与进阶](https://latex.lierhua.top/zh/)
 - [Overleaf > Learn Latex](https://www.overleaf.com/learn)
