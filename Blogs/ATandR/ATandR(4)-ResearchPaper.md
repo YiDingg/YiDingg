@@ -59,6 +59,11 @@ WebDAV Synchronization: Koofr (10G for free)
 
 https://koofr.eu/blog/posts/koofr-with-zotero-via-webdav
 
+### Translation and Notes
+
+[知乎：Zetero 读文献，翻译+笔记](https://zhuanlan.zhihu.com/p/578523246)
+
+
 ## Plagiarism Checker
 
 `cn` and `en` means supporting Chinese papers and English papers respectively, `-`means not sure yet.

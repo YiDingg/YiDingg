@@ -12,9 +12,15 @@ Initially published at 22:43 on 2024-09-03 in Beijing.
 
 最佳方法是利用表格生成器（手动输入内容）或表格转换器（Excel 数据转表格）生成代码：
 
-- [Latex Table Editor](https://www.latex-tables.com/)：`\usepackage{tabularray}`，可以在数学表格外统一使用 `\begin{equation*}` 来创造数学环境，无需手动给每个元素添加 `$$`
-- [Create Latex Tables Online](https://www.tablesgenerator.com/latex_tables#google_vignette)：`\usepackage{longtable}`，便于生成跨页长表格
-- [Excel2LATEX](https://ctan.org/tex-archive/support/excel2latex/)：可以将 Excel 表格转化为 Latex 表格
+- Latex Table
+    - [Latex Table Editor](https://www.latex-tables.com/)：`\usepackage{tabularray}`，可以在数学表格外统一使用 `\begin{equation*}` 来创造数学环境，无需手动给每个元素添加 `$$`
+    - [Create Latex Tables Online](https://www.tablesgenerator.com/latex_tables#google_vignette)：`\usepackage{longtable}`，便于生成跨页长表格
+    - [Excel2LATEX](https://ctan.org/tex-archive/support/excel2latex/)：可以将 Excel 表格转化为 Latex 表格
+- Image to Excel
+    - [Online OCR](https://www.onlineocr.net/)
+    - [image-to-excel](https://web.baimiaoapp.com/image-to-excel)
+    - [图片转 Excel](https://zhiyakeji.com/freg/)
+    
 
 使用 [Latex Table Editor](https://www.latex-tables.com/) 的一个例子：
 
@@ -260,7 +266,7 @@ Template of Basic Physics Experiment，即基础物理实验报告的模板。
 - 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[BPE]Template/[BPE]Template.tex')" type="button">[BPE]Template.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[BPE]Template/[BPE]Template.pdf')" type="button">[BPE]Template.pdf</button>
 
 ```pdf
-https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[BPE]Template/[BPE]Template.pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/%5BBPE%5DTemplate/BPE-Template.pdf
 ```
 
 ### [CUMCM]Template

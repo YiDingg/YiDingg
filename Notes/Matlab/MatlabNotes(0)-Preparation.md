@@ -16,3 +16,21 @@ Follow the oficial tutorials [here](https://www.mathworks.com/help/releases/R201
 ## Else 
 
 For more advanced functions and tips, you can refer to the [Matlab --> File Exchange](https://www.mathworks.com/matlabcentral/fileexchange) and [Matlab --> Help Center](https://www.mathworks.com/help/matlab/).
+
+## Tools 
+
+Enter the commands below in the command line window to open these simple and practical tools.
+``` matlab
+funtool % 观察函数 
+taylortool % 观察泰勒拟合
+polytool % 观察多项式拟合
+dfittool % 观察概率分布拟合
+randtool % 随机数生成工具
+disttool % 概率分布绘制工具
+plottool % 画图工具
+rftool % 射频工具
+
+% 下面是小游戏
+xpbombs % 扫雷
+wrldtrv % 环球旅行
+```

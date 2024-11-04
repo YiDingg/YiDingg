@@ -77,14 +77,14 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Homework]Optics/[Homework]Opti
 Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-1GKj3) for all relevant resources. You can freely preview them online and download them. 
 
 - 教材：
-  - 光学（钱列加）(2024年8月第1版).pdf
-  - [光学（第五版）optics (尤金，Eugene Hecht).pdf](https://www.writebug.com/static/uploads/2024/9/2/3ed06af7e4f074f1964feb480a541a6b.pdf)
+  - [Optics (Eugene Hecht).pdf](https://www.writebug.com/static/uploads/2024/9/2/3ed06af7e4f074f1964feb480a541a6b.pdf)
   - [光学新概念物理教程 (赵凯华).pdf](https://www.writebug.com/static/uploads/2024/9/2/4354c0a83b3b86c3c390cb816f649675.pdf)
   - [光学 PPT（奚婷婷）](https://www.123865.com/s/0y0pTd-4GKj3)
 - 辅导书：
   - [光学原理：光的传播、干涉和衍射的电磁理论（马科斯·玻恩，埃米尔）(第7版).pdf](https://s.b1n.net/DABQD)
   - [物理光学（第五版） (梁铨廷).pdf](https://www.writebug.com/static/uploads/2024/9/2/501fb70a8ae70b6d7fa45c5c328e50e9.pdf)
   - Fundamentals of Photonics (Bahaa E. A. Saleh, Malvin Carl Teich): 包括几何光学（矩阵光学）、波动光学、光的电磁理论、波导光学、半导体光电器件、激光原理、最基础的统计光学，最基础的量子光学，最基础的非线性光学，超快光学等，最新已达 edition 3 (2019)
+  - 光学（钱列加）(2024年8月第1版).pdf
 
 <!--   - [光学 PPT（奚婷婷）](https://www.writebug.com/code/53666336-413e-11ef-afda-0242c0a84017/src/branch/main/%E5%85%89%E5%AD%A6%20PPT/#) -->
 

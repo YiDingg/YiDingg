@@ -6,6 +6,15 @@ This is a page only for test.
 
 ## Testing
 
+<figure><embed src="https://wakatime.com/share/@YiDingg/3ae1ed6b-a5d8-4b62-a05c-0ae23db3f1d1.svg"></embed></figure>
+
+<div class='center'><img src='https://wakatime.com/share/@YiDingg/3ae1ed6b-a5d8-4b62-a05c-0ae23db3f1d1.svg' alt='img'/>
+<div class='caption'>Figure: </div></div>
+
+<figure><embed src="https://wakatime.com/share/@YiDingg/64ec894d-bf86-4bdf-9307-8881ad71f12b.svg"></embed></figure>
+
+<div class='center'><img src='https://wakatime.com/share/@YiDingg/64ec894d-bf86-4bdf-9307-8881ad71f12b.svg' alt='img'/></div>
+
 ### 123 云盘
 
 ```pdf
