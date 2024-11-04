@@ -39,3 +39,9 @@ TypeScript               1 repo              ██░░░░░░░░░�
 
  Last Updated on 2024.11.03 18:40 UTC
 <!--END_SECTION:waka-->
+
+<!-- Coding activity over the last year -->
+<div class='center'><img src='https://wakatime.com/share/@YiDingg/260601e0-8e46-41ab-9832-d4d0ae5fd0bd.svg' alt='img'/></div>
+
+<!-- Languages over the last year -->
+<div class='center'><img src='https://wakatime.com/share/@YiDingg/99546fa3-4cc3-4808-ab6e-13f38e27aba1.svg' alt='img'/></div>

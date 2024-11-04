@@ -1,34 +1,34 @@
 name: Waka Readme
 
 on:
-  schedule:
-    # Runs at 12am IST
-    - cron: "30 18 * * *"
-  workflow_dispatch:
+    schedule:
+        # Runs at 12am IST
+        - cron: "30 18 * * *"
+    workflow_dispatch:
 jobs:
-  update-readme:
-    name: Update Readme with Metrics
-    runs-on: ubuntu-latest
-    steps:
-      - uses: anmol098/waka-readme-stats@master
-        with:
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          ### content
-          SHOW_LINES_OF_CODE: "True"
-          SHOW_PROFILE_VIEWS: "False"
-          SHOW_SHORT_INFO: "False"
-          SYMBOL_VERSION: "1"
-          SHOW_LOC_CHART: "False"
-          SHOW_TOTAL_CODE_TIME: "True"
-          SHOW_UPDATED_DATE: "True"
-          UPDATED_DATE_FORMAT: "%Y.%m.%d %H:%M"
-          SHOW_TIMEZONE: "False"
-          SHOW_EDITORS: "False"
-          SHOW_PROJECTS: "True"
-          SHOW_LANGUAGE: "True"
-          SHOW_OS: "False"
-          ### commit
-          COMMIT_BY_ME: "True"
+    update-readme:
+        name: Update Readme with Metrics
+        runs-on: ubuntu-latest
+        steps:
+            - uses: anmol098/waka-readme-stats@master
+              with:
+                  WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+                  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+                  ### content
+                  SHOW_LINES_OF_CODE: "True"
+                  SHOW_PROFILE_VIEWS: "False"
+                  SHOW_SHORT_INFO: "False"
+                  SYMBOL_VERSION: "1"
+                  SHOW_LOC_CHART: "False"
+                  SHOW_TOTAL_CODE_TIME: "True"
+                  SHOW_UPDATED_DATE: "True"
+                  UPDATED_DATE_FORMAT: "%Y.%m.%d %H:%M"
+                  SHOW_TIMEZONE: "False"
+                  SHOW_EDITORS: "False"
+                  SHOW_PROJECTS: "True"
+                  SHOW_LANGUAGE: "True"
+                  SHOW_OS: "False"
+                  ### commit
+                  COMMIT_BY_ME: "True"
 #
 
