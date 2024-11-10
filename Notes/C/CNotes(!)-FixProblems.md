@@ -67,3 +67,10 @@ scanf("%d%d", &CuurentCoordinate.raw, &CuurentCoordinate.column);
 **结论与解决方案：**路径中的所有文件夹名，都不能以 `[` 开头（否则会被认为是 `\[` 转义字符），重命名文件夹为 `Homework-C` 后，问题解决，此时工作区路径 `"C:\Users\13081\Desktop\Homework-C\Homework1"`
 
 </details>
+
+<!-- details begin -->
+<details>
+<summary>CMake Error: Target DependInfo.cmake file not found</summary>
+
+使用 CMake 时，路径中不能包含中文字符，否则会报错。将文件/文件夹名改为英文即可。
+</details>

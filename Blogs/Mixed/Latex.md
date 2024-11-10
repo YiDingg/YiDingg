@@ -6,6 +6,73 @@ Initially published at 22:43 on 2024-09-03 in Beijing.
 
 本文环境：Windows 11 + Texlive 2023 + VSCode
 
+
+## 自定义目录 (TOC)
+
+起因是需要在我的 Homework of Circuits Theory 中插入由 Notability 手写导出的 pdf，这一步我们使用了 `pdfpages` 中的 `\include` 命令，但是如何在目录中显示这个 pdf 的标题和页码呢？使用了常规的 `\addcontentsline{toc}{chapter}{Homework 10: 2024.11.06 - 2024.11.12}` 后意识到，标题是正常显示在目录里了，但是之前的几个 chapter 在目录中都是自带编号的，而这个 Homework 10 却没有。这便引起了前后编号的冲突，如下图所示：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-11-10-01-00-52_Latex.jpg"/></div>
+
+并且还有一个问题，`\addcontentsline` 后，由于 Latex 没有给 include 的 pdf 分配实际的页面空间，它的超链接是无法点击的（点击无任何效果）。这一个问题我们可以用 `pdfpages` 中的 `\phantomsection` 命令来解决，它的作用是添加虚拟节, 使得 pdf 书签定位正确。因此最后插入 pdf 的代码如下：
+
+``` latex
+\phantomsection % 添加虚拟节, 使得 pdf 书签定位正确
+\addcontentsline{toc}{chapter}{Homework 11: 2024.11.06 - 2024.11.12} 
+\includepdf[pages=-]{assets/Notability/电路原理   Homework 10 _ 2024.11.06 - 2024.11.12.pdf}
+```
+
+
+对第一个问题，我们需要对 TOC 进行样式上的设置，先后试过了 `tocloft` 和 `titletoc` 宏包，最终选择了 `titletoc`，因为它的使用更加简单，而且效果也很好。主要用的是 `\titlecontents` 命令，它的语法如下：
+
+``` latex
+\usepackage{titletoc}   % 用于设置 toc
+ \titlecontents{x1: 需要设置的标题}
+               [x2: 左间距(标题左侧的额外页边距)]
+               {x3: 标题格式}
+               {x4: 标题标志(前缀)}
+               {x5: 无序号标题的前缀}
+               {x6: 指引线与页码}
+               [x7: 下间距]
+
+% 下面是各参数的详细解释
+% x1: 需要设置的标题 (广义), 如 chapter, section, subsection 等, 也可以是 figure, table 等
+% x2: 左间距, 严谨的说是标题左侧的额外页边距, 我比较习惯 0pt (无额外间距)
+% x3: 标题格式, 一般是 \normalfont\bfseries, 也可以是 \normalfont\itshape 等
+% x4: 标题标志, 直接使用 \thecontentslabel 相当只输出此标题的编号 (一个数字), \contentslabel{2.5em} 会显示宽为 2.5em 的章节编号
+% x5: 无序号标题的前缀, 字面意思
+% x6: 指引线与页码, \contentspage 是页码 (一个数字); {\titlerule*[0.5pc]{\footnotesize .}\contentspage} 是一个例子, 0.5pc 表示 '.' 号的间隔, {\hfill \contentspage \vspace{10.5pt}} 可以达到默认行间距效果 (无 '...页码')
+% x7: 下间距, 暂时没弄懂这个参数的格式, 可以自行翻阅官方文档 
+
+% 官方文档：https://mirror.bjtu.edu.cn/CTAN/macros/latex/contrib/titlesec/titlesec.pdf
+```
+
+最终的代码和效果如下，解决了我们之前说的“编号冲突问题”（因为我们没有输出 \thecontentslabel 标题编号）：
+``` latex
+\usepackage{titletoc}   % 用于设置 toc
+\titlecontents{chapter}
+              [0em]
+              {\bf}%
+              {}%   % \contentslabel{2.5em} 会显示宽为 2.5em 的章节编号
+              {}%
+              {\hfill \contentspage \vspace{10.5pt}}%
+              []%
+```
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-11-10-01-12-45_Latex.jpg"/></div>
+
+另外，如果想要一些其他的格式，我们再给出一个例子：
+``` latex
+\usepackage{titletoc}   % 用于设置 toc
+\titlecontents{chapter}
+              [3cm]
+              {\bf \large}%
+              {\contentslabel{2.5em}}%
+              {}%
+              {\titlerule*[0.5pc]{$\cdot$}\contentspage\hspace*{3cm}}%
+              []%
+```
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-11-10-01-14-59_Latex.jpg"/></div>
+
+另外，再提一句，`\includepdf` 时，路径解析只会解析出一个空格，这也就是说，如果你的文件名是 `Hello**World.pdf` (我们用`*`代表空格以做强调)，那么 `\includepdf{Hello**World.pdf}` 是无法正常工作的，它会报错“找不到文件 `Hello*World.pdf`”。这是我们可以将文件名改为 `Hello*World.pdf` 以解决这个问题，其它方法暂时还没试过。
+
 ## 表格
 
 ### 表格插入

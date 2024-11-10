@@ -93,7 +93,7 @@ https://koofr.eu/blog/posts/koofr-with-zotero-via-webdav
 |:-:|:-:|
  | [火龙果](https://web.mypitaya.com/writing?type=&from=home&assistant=6&subAssistant=auto&id=d774a140-4334-11ef-b1a0-9b68468f3f15) |rewrite, translate (CtoE) and search for ref |  
  | [茅茅虫](https://mymmc.net.cn/) | a free summary, outline and paper generator |  
- 
+ | [论文查重 /合集](https://www.rymdh.com/#term-287) | a collection of plagiarism checkers and rewriters |  
 </div>
 
 ---
