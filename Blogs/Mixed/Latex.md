@@ -349,7 +349,7 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CUMCM]Template/[CUMC
 
 ### [CheatSheet]Template
 
-Template of CheatSheet，速查表，速查手册模板。例如，有的课程在期末考试时会允许带一张有笔记的 A4 纸进去，这时就需要排版非常紧凑，上面的模版很好地做到了这一点。
+Template of CheatSheet，速查表，速查手册模板。例如，有的课程在期末考试时会允许带一张有笔记的 A4 纸进去，这时就需要排版非常紧凑，下面的模版很好地做到了这一点。
 
 - 源码：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates/%5BCheatSheet%5DTemplate)
 - 快捷下载：<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CheatSheet]Template/[CheatSheet]Template.tex')" type="button">[CheatSheet]Template.tex</button>  <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CheatSheet]Template/[CheatSheet]Template.pdf')" type="button">[CheatSheet]Template.pdf </button>
@@ -362,8 +362,16 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CheatSheet]Template/
 
 - [Latexstudio: Latex Templates](https://www.latexstudio.net/index/lists/index/type/2.html)
 - [Overleat: Templates](https://www.overleaf.com/latex/templates)
-- [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook):  LaTeX 书籍模板（备用链接 [here](https://gitee.com/ElegantLaTeX/ElegantBook)）
+- [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook):  LaTeX 书籍模板
+- [ElegantPaper](https://github.com/ElegantLaTeX/ElegantPaper): LaTeX 论文模板
+- [ElegantNote](https://github.com/ElegantLaTeX/ElegantNote): LaTeX 笔记模板
 - [BeautyBook](https://github.com/BeautyLaTeX/Beautybook/tree/master): LaTeX 书籍模板
+- [Eye-Candy-Lecture-Notes-Theme](https://github.com/sohamch08/Eye-Candy-Lecture-Notes-Theme): LaTeX 笔记模板
+
+## Latex 即时预览与其他在线编辑器
+
+详见 [知乎：Scientific WorkPlace](https://zhuanlan.zhihu.com/p/3574614730)
+
 
 ## 相关资源
 

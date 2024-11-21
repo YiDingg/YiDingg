@@ -48,8 +48,9 @@ Go to [ATandR(2): Programming](Blogs/ATandR/ATandR(2)-Programming.md) for more d
 Here are the other tools and resources.
 
 ### Mixed
+- [硬件工程师小助手](https://www.bilibili.com/video/BV1Zxm6YPEVt): From WeChat official accounts “硬件工程师炼成之路”, an awesome tool for hardware engineers.
 - [Upscayl](https://github.com/upscayl/upscayl): Upscayl lets you enlarge and enhance low-resolution images using advanced AI algorithms. Enlarge images without losing quality.
-- [desmos](https://www.desmos.com/): 免费使用的精美数学工具组
+- [desmos](https://www.desmos.com/): A beautiful set of math tools for free to use
 - [GeoGebra 电磁学可视化 (100 个动画)](https://www.geogebra.org/m/ze59wnpp)
 - [GeoGebra 高中物理可视化资源库 (全免费)](https://ggb123.cn/m/phhgubfg)
 - [Ditto](https://zhuanlan.zhihu.com/p/206813990): a clipboard enhancement tool

@@ -35,15 +35,16 @@ Refer to [here (123 Cloud)](https://www.123865.com/s/0y0pTd-xOKj3) for all relev
 
 
 - 教材：
-  - 数学物理方法讲义（张文生）(2024).pdf
   - [数学物理方法（吴崇试）(第3版)，.pdf](https://s.b1n.net/Cso88)
+  - 数学物理方法讲义（张文生）(2024).pdf
 - 辅导书：
-  - [习题答案 of 数学物理方法（吴崇试）(第3版).pdf](https://www.writebug.com/static/uploads/2024/8/25/8deddf98b901243add1494d82774f001.pdf)
-  - [数学物理方法习题指导（吴崇试）(第二版).pdf](https://s.b1n.net/OJVet)
-  - [数学物理方法习题解释（曾焰）.pdf](https://s.b1n.net/PG89D) 
+  - [习题解答 for [数学物理方法 (吴崇试)]](https://www.writebug.com/static/uploads/2024/11/21/680772cd099303670b1f7cbfb447909a.pdf)
+  - [习题答案 for [数学物理方法 (吴崇试) (第3版)].pdf](https://www.writebug.com/static/uploads/2024/8/25/8deddf98b901243add1494d82774f001.pdf)
+  - [数学物理方法习题指导 (吴崇试) (第二版).pdf](https://s.b1n.net/OJVet)
+  - [数学物理方法习题解释 (曾焰).pdf](https://s.b1n.net/PG89D) 
 - 拓展阅读：
   - [简单的偏微分方程解法汇总](https://zhuanlan.zhihu.com/p/549037473)
-  - 
+
 
 教材提供的数学资料补充：
 - [第一部分：选学内容和习题答案](https://biz.cli.im/test/AX614299?coding=JipwCO&qrurl=http%3A%2F%2Fqr31.cn%2FJipwCO&gtype=2)

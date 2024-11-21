@@ -7,14 +7,15 @@
 - 📓 **Blogs**
 
     - Mixed <!-- empty line is necessary to avoid the error -->
-        - [主流云盘网盘对比](Blogs/Mixed/CloudStorageComparison.md)
+        - [Zotero](Blogs/Mixed/Zotero.md)
+        - [Latex](Blogs/Mixed/Latex.md)
         - [Setting Advice for New Computer](Blogs/Mixed/SettingAdviceForNewComputer.md)
         - [Download Inkscape](Blogs/Mixed/DownloadInkscape.md)
-        - [Latex](Blogs/Mixed/Latex.md)
         - [Sentences](Blogs/Mixed/Sentences.md)
         - [Repository Slimming](Blogs/Mixed/RepoSlimming.md)
         - [Build Your Personal Website](Blogs/Mixed/BuildYourSite.md)
         - [Nice VSCode Extensions](Blogs/Mixed/Nice%20VSCode%20Extenstions.md)
+        - [主流云盘网盘对比](Blogs/Mixed/CloudStorageComparison.md)
         - [嘉立创免费下单教程](Blogs/Mixed/嘉立创免费下单教程.md)
         - [结构体及其指针在树中的应用](Blogs/Mixed/结构体及其指针在树中的应用.md)
         - [手把手教你用 PWM 实现呼吸灯(标准库)](<Blogs/Mixed/手把手教你用PWM实现呼吸灯(标准库).md>)

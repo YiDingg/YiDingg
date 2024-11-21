@@ -47,11 +47,6 @@ https://www.bilibili.com/video/BV16y411z7b2
 ### Get Started
 https://www.zhihu.com/question/292293671, To be completed...
 
-### Usage
-To be completed...
-
-## Zotero Extensions
-To be completed...
 
 ###  Synchronization (云同步)
 
