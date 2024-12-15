@@ -59,26 +59,50 @@ https://koofr.eu/blog/posts/koofr-with-zotero-via-webdav
 [知乎：Zetero 读文献，翻译+笔记](https://zhuanlan.zhihu.com/p/578523246)
 
 
-## Plagiarism Checker
+## Plagiarism and AIGC (AI Generated Content) Checker
 
 `cn` and `en` means supporting Chinese papers and English papers respectively, `-`means not sure yet.
 
 <div class='center'>
 
-| Name | free times per day | Language |
-|:-:|:-:|:-:|
- | [PaperCrazy](https://www.papercrazy.cn/) | $+\infty$ (completely free)<br>but seemingly unaccessible | - |
- | [PaperRed](https://www.paperred.com/check) | 2 | cn, en |
- | [PaperYY](https://www.paperyy.cn/NoLoginPost.aspx) | 1 | cn |
- | [PaperCcb](https://www.paperccb.com/) | 1 | - |
- | [PaperWord](https://www.paperword.com/NoLoginPost.aspx) | 1 | cn |
- | [PaperAsk](https://paperask.yuebaixx.top/NoLoginPost.aspx) | 1 | cn |
- | [PaperGe](https://m.paperge.com/#/pages/index/check?=) | 1 | cn |
- | [PaperPro](https://check.paperpro.cn/#/check) | 1 | - |
- | [论文狗](https://check.lunwengo.net/#/check) | 1 | - |
-  | [火龙果](https://web.mypitaya.com/writing?type=&from=home&assistant=6&subAssistant=auto&id=d774a140-4334-11ef-b1a0-9b68468f3f15) | 1 | - | 
+| Name | free times per day | language | format | AIGC check |
+|:-:|:-:|:-:|:-:|:-:|
+ | <s>[PaperCrazy](https://www.papercrazy.cn/)</s> (inaccessible)  | $\infty$  | - | docx, pdf | - |
+ | [PaperPass](https://www.paperpass.com/panel/index)         | 2 | cn | docx, pdf | free 2 times |
+ | [PaperRed](https://www.paperred.com/check)                 | 2 | cn, en | docx, pdf | 2￥/Kwords |
+ | [PaperYY](https://www.paperyy.cn/NoLoginPost.aspx)         | 1 | cn | docx, pdf | 2￥/Kwords |
+ | <s>[PaperCcb](https://www.paperccb.com/)</s>  (inaccessible)      | 1 | - | - | - |
+ | [PaperWord](https://www.paperword.com/NoLoginPost.aspx)    | 1 | cn | docx, pdf | - |
+ | [PaperAsk](https://paperask.yuebaixx.top/NoLoginPost.aspx) | 1 | cn | docx, pdf | - |
+ | [PaperGe](https://m.paperge.com/#/pages/index/check?=)     | 1 | cn | docx, pdf | - |
+ | [PaperPro](https://check.paperpro.cn/#/check)              | 1 | - | docx | - |
+ | [论文狗](https://check.lunwengo.net/#/check)                | 1 | - | docx | - |
+  | [火龙果](https://web.mypitaya.com/writing)                 | 1 | - | docx | - |
 </div>
 
+Some free AIGC checkers:
+| Name | free times per day |
+|:-:|:-:|
+ | [Zerogpt](https://www.zerogpt.plus/en) (best) | $\infty$ |
+ |[TextRecogn](https://textrecogn.longjin666.cn/)| $\infty$ |
+ | [Mitata AI](https://www.copyleaks.top/ai-content-detector) | $\infty$ |
+ | [AI Checker](https://www.gptzero.wang/ai-content-detector) | $\infty$   |
+ | [TTAI.LOVE](https://www.zerogpt.ren/) | $\infty$ |
+ | [P*Pass AI Checker](https://www.gptzero.wang/ai-content-detector-paper) |  $\infty$ |
+
+Here are official paid checkers:
+
+| Name |
+|:-:|
+| [万方](https://cx.wanfangdata.com.cn/aigc-check/) |
+
+
+## Workflow
+
+- Write the thesis: you can use 
+- Plagiarism check: [PaperRed](https://www.paperred.com/check) and [火龙果](https://web.mypitaya.com/writing), the latter one allows you to perform a self-built database plagiarism check (docx paper and pdf reference).
+- AI to human converter: [zerogpt](https://www.zerogpt.plus/en/ai-to-human-text-converter), use it to convert the AI generated content to human language.
+- Rewrite: [火龙果](https://web.mypitaya.com/writing)
 
 ## Else 
 
@@ -86,7 +110,7 @@ https://koofr.eu/blog/posts/koofr-with-zotero-via-webdav
 
 | Name | Note | 
 |:-:|:-:|
- | [火龙果](https://web.mypitaya.com/writing?type=&from=home&assistant=6&subAssistant=auto&id=d774a140-4334-11ef-b1a0-9b68468f3f15) |rewrite, translate (CtoE) and search for ref |  
+ | [火龙果](https://web.mypitaya.com/writing) |rewrite, translate (cn to en) and search for ref |  
  | [茅茅虫](https://mymmc.net.cn/) | a free summary, outline and paper generator |  
  | [论文查重 /合集](https://www.rymdh.com/#term-287) | a collection of plagiarism checkers and rewriters |  
 </div>

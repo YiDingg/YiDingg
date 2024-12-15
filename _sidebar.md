@@ -7,6 +7,7 @@
 - 📓 **Blogs**
 
     - Mixed <!-- empty line is necessary to avoid the error -->
+        - [LTeX – grammar/spell checking](Blogs/Mixed/LTEX.md)
         - [Zotero](Blogs/Mixed/Zotero.md)
         - [Latex](Blogs/Mixed/Latex.md)
         - [Setting Advice for New Computer](Blogs/Mixed/SettingAdviceForNewComputer.md)

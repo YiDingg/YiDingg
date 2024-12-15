@@ -36,7 +36,7 @@ Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeature
 
 ### Frequently Used Tools 
 
--   Img, gif: use [Resize](https://bulkresizephotos.com/zh?preset=true&type=filesize&filesize=80000) (img) and [Docsmall](https://docsmall.com/gif-compress) (gif) <span class='tinyscript'>or [i2img](https://www.i2img.com/image-compressor), [Tiomg](https://tiomg.org/compress-image), [Oplimize LLA](https://imagecompressor.com), [TinyPNG](https://tinypng.com/), [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
+-   Img, gif: use [Resize](https://bulkresizephotos.com/zh?preset=true&type=filesize&filesize=80000) (img) and [Docsmall](https://docsmall.com/gif-compress) (img, gif) <span class='tinyscript'>or [imgdiet](https://www.imgdiet.com/zh-CN/compress) (compress the entire folder),  [i2img](https://www.i2img.com/image-compressor), [Tiomg](https://tiomg.org/compress-image), [Oplimize LLA](https://imagecompressor.com), [TinyPNG](https://tinypng.com/), [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
 -   Video: use [FreeCompress](https://freecompress.com/) <span class='tinyscript'>or [Video To Edit](https://www.video2edit.com), [FCO](https://compress-video.file-converter-online.com/#google_vignette)</span> to compress the video.
 -   Audio: use [YouCompress](https://www.youcompress.com/) <span class='tinyscript'>or [MP3Smaller](https://www.mp3smaller.com/)</span> to compress the audio.
 -   PDF: use [PDF24 Tolls](https://tools.pdf24.org/zh/compress-pdf) <span class='tinyscript'> or [hipdf](https://www.hipdf.cn/), [i2pdf](https://www.i2pdf.com/compress-pdf), [I Love PDF](https://www.ilovepdf.com/), [PDF IO](https://pdf.io/compress/)</span> to compress pdf. Use [topdf](https://topdf.com/) to convert other file to pdf.
@@ -82,6 +82,7 @@ Go to [About Me](README.md) for more information.
 
 Here are some interesting educational or personal sites.
 
+- [Douglas M. Gingrich](https://sites.ualberta.ca/~gingrich/)
 - [Bilgin's Blog](http://bilgin.esme.org/BitsAndBytes/KalmanFilterforDummies#)
 - [ProDuckThieves](https://produckthieves.home.blog)
 - [Physics HyperTextbook](https://physics.info/)

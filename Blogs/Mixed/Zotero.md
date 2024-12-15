@@ -1,5 +1,9 @@
 # Zotero
 
+> [!Note|style:callout|label:Infor]
+Initially published at 14:32 on 2024-11-15 in Beijing.
+
+
 ## 下载与安装
 
 [Zotero](https://www.zotero.org/) is a free, open-source and cross-platform research assistantto help you

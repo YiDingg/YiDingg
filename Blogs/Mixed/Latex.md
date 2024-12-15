@@ -7,6 +7,118 @@ Initially published at 22:43 on 2024-09-03 in Beijing.
 本文环境：Windows 11 + Texlive 2023 + VSCode
 
 
+## 多文档编译
+
+推荐使用 `subfiles` 宏包，简单且实用。以下面的文章结构为例：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-12-07-16-40-38_Latex.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-12-07-16-40-23_Latex.png"/></div>
+
+有几个需要注意的地方：
+- 主文件名不能有空格或中文字符（否则会报错），但子文件可以有空格或中文字符
+- 为了能够同时独立编译子文件和主文件，我们需要修改子文件的图片引入路径，具体见下文代码
+
+
+下面给出一个代码示例，点击 [Subfiles Package Example.zip](https://www.writebug.com/static/uploads/2024/12/7/83e8bb98c5a885ffe622d592582e6dcd.zip) 以下载整个示例文件夹（压缩包）。
+
+`main.tex` 如下：
+``` latex
+%%% 主文件 main.tex %%%
+
+% 注意主文件名不能有空格或中文字符
+
+\documentclass{article}
+\usepackage{graphicx}
+
+%\graphicspath{{assets/}}
+
+% 如果习惯引入图片时直接输入图片文件名，应取消注释上面 \graphicspath{{assets/}} 一行，否则保留注释
+% 例如我们的图片都放在 assets 文件夹下，其中有一张图片叫做 2024-08-15_13-50-23.pdf
+% 那么在取消了注释后，应使用 \includegraphics{2024-08-15_13-50-23.pdf} 来引入图片
+% 如果没有取消注释，则应使用 \includegraphics{assets/2024-08-15_13-50-23.pdf} 来引入图片
+
+
+\usepackage{blindtext}
+\usepackage{subfiles} % Best loaded last in the preamble
+
+\title{Subfiles package example}
+\author{YiDingg}
+\date{2024.12.07}
+
+\begin{document}
+
+\maketitle
+
+\subfile{Chapter/Chapter 1/Chapter 1.tex}
+\subfile{Chapter/Chapter 2/Chapter 2.tex}
+
+\end{document}
+```
+
+`Chapter 1.tex` 如下：
+``` latex
+%%% 子文件 Chapter 1.tex %%%
+
+\documentclass[../main.tex]{subfiles}
+%为了能正常分文档编译，主文件的文件名不能含有中文或空格，否则会报错
+%在子文件中，指定主文件的正确路径应为 ../../main.tex, 但这样每次 ctrl+s 编译子文件时会弹出文件编译选择框, 比较麻烦。经过测试发现路径设置为 ../main.tex 时不仅能正常编译子文件（正常引入导言区），而且不会弹出文件编译选择框
+
+\graphicspath{{\subfix{../../}}}
+\begin{document}
+
+
+\chapter{This Chapter 1}\thispagestyle{fancy}
+
+\begin{figure}[bh]
+\centering
+\includegraphics[width=0.8\columnwidth]{assets/1N4007 Operation Chara 测试电路.pdf}
+\label{fig:img1}
+\caption{Test Circuits of 1N4007 Operation Characteristics}
+\end{figure}
+
+Hello, here is some text without a meaning...
+
+Hello, here is some text without a meaning...
+
+Hello, here is some text without a meaning...
+
+Hello, here is some text without a meaning...
+
+\end{document}
+```
+
+`Chapter 2.tex` 如下：
+``` latex
+\documentclass[../main.tex]{subfiles}
+%为了能正常分文档编译，主文件的文件名不能含有中文或空格，否则会报错
+%在子文件中，指定主文件的正确路径应为 ../../main.tex, 但这样每次 ctrl+s 编译子文件时会弹出文件编译选择框, 比较麻烦。经过测试发现路径设置为 ../main.tex 时不仅能正常编译子文件（正常引入导言区），而且不会弹出文件编译选择框
+
+\graphicspath{{\subfix{../../}}}
+\begin{document}
+
+\chapter{This Chapter 1}\thispagestyle{fancy}
+
+This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. 
+
+\begin{figure}[bh]
+\centering
+\includegraphics[width=0.5\columnwidth]{assets/1N4007 Operation Chara 测试电路.pdf}
+\label{fig:img1}
+\caption{Test Circuits of 1N4007 Operation Characteristics}
+\end{figure}
+
+This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. This is chapter 2. 
+\end{document}
+```
+
+`Chapter 1.tex` 单独编译的效果：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-12-07-16-49-14_Latex.png"/></div>
+
+`Chapter 2.tex` 单独编译的效果：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-12-07-16-49-51_Latex.png"/></div>
+
+`main.tex` 的编译效果：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-12-07-16-50-42_Latex.png"/></div>
+
 ## 自定义目录 (TOC)
 
 起因是需要在我的 Homework of Circuits Theory 中插入由 Notability 手写导出的 pdf，这一步我们使用了 `pdfpages` 中的 `\include` 命令，但是如何在目录中显示这个 pdf 的标题和页码呢？使用了常规的 `\addcontentsline{toc}{chapter}{Homework 10: 2024.11.06 - 2024.11.12}` 后意识到，标题是正常显示在目录里了，但是之前的几个 chapter 在目录中都是自带编号的，而这个 Homework 10 却没有。这便引起了前后编号的冲突，如下图所示：
