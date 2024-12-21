@@ -1,6 +1,6 @@
 - [🏠 **Home Page**](HOMEPAGE.md)
 - [🔎 **Navgation Page**](_sidebar.md)
-- [📃 **Time Line**](TimeLine.md)
+- [📃 **Timeline**](TimeLine.md)
 - [👋 **About**](README.md)
 <!-- - [📰 **To Be Dealing With**](ToBeDealingWith.md) -->
 
@@ -50,19 +50,19 @@
     - [Optics](Notes/Phisics/OpticsNotes.md)
     - [Basic Physics Experiment](Notes/Phisics/BasicPhysicsExperiment.md)
     - [Principles of Electric Circuits](Notes/MajorCourses/CircuitTheoryNotes.md)
-    - [Mathematical Physics Mathods](Notes/Math/MathematicalPhysicsMathods.md)
+    - [Mathematical Physics Methods](Notes/Math/MathematicalPhysicsMathods.md)
     - [Other Courses](Notes/Else/OtherCourses.md)
     - C
-        - [C 语言 (!)：bug 解决](<Notes/C/CNotes(!)-FixProblems.md>)
-        - [C 语言 (0)：准备](<Notes/C/CNotes(0)-Preparation.md>)
-        - [C 语言 (1)：开始编程之前](<Notes/C/CNotes(1)-BeforeStarting.md>)
-        - [C 语言 (2)：关键字](<Notes/C/CNotes(2)-MemoryAndKeywords.md>)
-        - [C 语言 (3)：基本数据类型](<Notes/C/CNotes(3)-DataTypes.md>)
-        - [C 语言 (4)：数组与字符串](<Notes/C/CNotes(4)-ArrayAndString.md>)
-        - [C 语言 (5)：内存管理](<Notes/C/CNotes(5)-MemoryManagement.md>)
-        - [C 语言 (6)：特殊数据类型](<Notes/C/CNotes(6)-SpecialDataTypes.md>)
-        - [C 语言 (7)：预处理](<Notes/C/CNotes(7)-Preproccess.md>)
-        - [C 语言 (8)：输入输出函数](<Notes/C/CNotes(8)-IOFunctions.md>)
+        - [C 语言 (!): bug 解决](<Notes/C/CNotes(!)-FixProblems.md>)
+        - [C 语言 (0): 准备](<Notes/C/CNotes(0)-Preparation.md>)
+        - [C 语言 (1): 开始编程之前](<Notes/C/CNotes(1)-BeforeStarting.md>)
+        - [C 语言 (2): 关键字](<Notes/C/CNotes(2)-MemoryAndKeywords.md>)
+        - [C 语言 (3): 基本数据类型](<Notes/C/CNotes(3)-DataTypes.md>)
+        - [C 语言 (4): 数组与字符串](<Notes/C/CNotes(4)-ArrayAndString.md>)
+        - [C 语言 (5): 内存管理](<Notes/C/CNotes(5)-MemoryManagement.md>)
+        - [C 语言 (6): 特殊数据类型](<Notes/C/CNotes(6)-SpecialDataTypes.md>)
+        - [C 语言 (7): 预处理](<Notes/C/CNotes(7)-Preproccess.md>)
+        - [C 语言 (8): 输入输出函数](<Notes/C/CNotes(8)-IOFunctions.md>)
     - Math
         - [Calculus 1](Notes/Math/Calculus1Notes.md)
         - [Calculus 2](Notes/Math/Calculus2Notes.md)
@@ -70,10 +70,10 @@
         - [Linear Algebra 2](Notes/Math/LinearAlgebra2Notes.md)
         - [Numerical Methods for PDE](Notes/Math/NumericalMethodsForPDE.md)
         - [Mathematical Physics Mathods](Notes/Math/MathematicalPhysicsMathods.md)
-    - Phisics
+    - Physics
 
         - [Mechanics](Notes/Phisics/Mecanics%20notes.md)
-        - [Electromegnetism](Notes/Phisics/Electromegnetism%20Notes.md)
+        - [Electromagnetism](Notes/Phisics/Electromegnetism%20Notes.md)
         - [Thermodynamics](Notes/Phisics/Thermodynamics%20notes.md)
         - [Optics](Notes/Phisics/OpticsNotes.md)
         - [Basic Physics Experiment](Notes/Phisics/BasicPhysicsExperiment.md)
@@ -118,18 +118,27 @@
     - Preparation
         - [IELTS](EnglishLearning/Preparation/IELTS.md)
 
-- 📝 **Projects**
+- 📝 **Projects and Designs**
 
+    - [All-in-one Multifunctional DC-DC Power Supply](<Designs/Multifunctional DC-DC Power Supply.md>)
+    - [Transistor Tester for Digilent Analog Discovery](<Projects/Transistor Tester for ADx.md>)
     - [Gomoku](Projects/Gomoku.md)
+    - [ESP12-F Adapter Board](<Projects/ESP12-F Adapter Board.md>)
     - [HDofDF (Humidity Detection of Diabetic Foot)](Projects/HDofDF.md)
-    - [MuMeStar (Mutiple Menu Star for OLED)](Projects/MuMeStar.md)
+    - [MuMeStar (Multiple Menu Star for OLED)](Projects/MuMeStar.md)
     - [OLEDSD (OLED Software Driver)](Projects/OLEDSD.md)
     - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
     - [Mixed](Projects/Mixed.md)
     - WSETD
         - [Outline of WSETD](Projects/WSETD/OutlineOfWSETD.md)
         - [WSETD (1): Chinese Document](<Projects/WSETD/WSETD(1)-ChineseDocument.md>)
-        - [WSETD (2): Englsih Document](<Projects/WSETD/WSETD(2)-EnglishDocument.md>)
+        - [WSETD (2): English Document](<Projects/WSETD/WSETD(2)-EnglishDocument.md>)
+
+- 📚 **Books**
+
+    - [Analog Circuits Manual](<Books/Analog Circuits Manual.md>)
+    - [Analog Components Manual](<Books/Analog Components Manual.md>)
+    - [Practical Reference to Electronic Circuit Design](<Books/Practical Reference to Electronic Circuit Design.md>)
 
 - [❔ **Test**](Test.md)
 <!-- 🔗 -->

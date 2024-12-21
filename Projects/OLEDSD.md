@@ -16,7 +16,7 @@ Initially published at 22:09 on 2024-06-19 in Beijing.
 | 相关链接 |
 | :-: |
 | 最新版源码下载地址(GitHub)：[OLEDSD](https://github.com/YiDingg/OLEDSD) |
-| OLED驱动详解：[OLEDSD (OLED Software Driver)](Projects\OLEDSD%20(OLED%20Software%20Driver).md) |
+| OLED驱动详解：[OLEDSD (OLED Software Driver)](Projects/OLEDSD.md) |
 
 </div>
 

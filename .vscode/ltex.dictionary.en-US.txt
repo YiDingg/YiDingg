@@ -1,2 +1,9 @@
 LTEX
 Infor
+LDO
+Keil
+PDE
+VSCode
+Zotero
+LTeX
+Digilent
