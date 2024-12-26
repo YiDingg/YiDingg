@@ -1,4 +1,4 @@
-# ESP12-F Adapter Board
+# ESP12-F Adapter Board<br> (Series Number: DIA0001)
 
 > [!Note|style:callout|label:Infor]
 Initially published at 19:41 on 2024-06-19 in Beijing.

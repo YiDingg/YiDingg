@@ -1,4 +1,4 @@
-# MinSyBo (Minimum System Board of STM32) 
+# MinSyBo (Minimum System Board of STM32) <br> (Series Number: DIB0001)
 
 > [!Note|style:callout|label:Infor]
 Initially published at 18:36 on 2024-06-19 in Beijing.

@@ -7,3 +7,6 @@ VSCode
 Zotero
 LTeX
 Digilent
+LTspice
+LTwiki
+MinSyBo
