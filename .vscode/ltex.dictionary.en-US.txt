@@ -10,3 +10,5 @@ Digilent
 LTspice
 LTwiki
 MinSyBo
+mV
+uF
