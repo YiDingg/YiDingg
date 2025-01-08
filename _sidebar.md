@@ -138,16 +138,15 @@
     - [![A2] Transistor Tester for Digilent Analog Discovery](<Projects/Transistor Tester for ADx.md>)
     - [![A3] DC-DC Converter (10V~36V to ±12V)](<Designs/DC-DC Converter.md>)
     - [![A4] Portable Ammeter](<Projects/Portable Ammeter.md>)
-    - [![A5] General VCCS (Voltage Controlled Current Source)](<Projects/General Voltage Contrled Current Source.md>)
-    - [![A6] General VCVS (Voltage Controlled Voltage Source)](<Projects/General Voltage Contrled Voltage Source.md>)
-    - [![A7] Fast VCVS (Voltage Controlled Voltage Source)](<Projects/General Current Contrled Current Source.md>)
     - [[B1] MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
-    - [![B2] All-in-one Multifunctional DC-DC Power Supply](<Designs/Multifunctional DC-DC Power Supply.md>)
+    - [[B2] General VCVS and VCCS (up to 10 A)](<Designs/General VCVS and VCCS (up to 10 A).md>)
+    - [![B3] Multifunctional Voltage and Current Source](<Designs/Multifunctional DC-DC Power Supply.md>)
+    - [![B4] All-in-one Multifunctional DC-DC Power Supply](<Designs/Multifunctional DC-DC Power Supply.md>)
 
 <!-- 
 - 编号先这样写着，未完成的 design 用!号标注，出现两位数后统一在前面加 0 以对齐文本
 - 对于一个设计，如果后续有改进，只需加编号，例如 A1 变为 A1-2 (从2开始, 1 为原始设计)
-- design 不对原理作介绍, 只给出电路图、原理图、PCB 图和实物图等, 并给出使用说明和实际测试结果 (或 datasheet)
+- design 不对原理作介绍, 只给出电路图、原理图、PCB 图和 实物图等, 并给出使用说明和实际测试结果 (或 datasheet)
   也就是说, design 的内容将不会放在 analog circuits manual 中, 而是仅放在 practical reference to manual 中
 
 A: 放在 A 类的是小 design, A 类 design 至少要给出简单的介绍和原理图（或电路图）。

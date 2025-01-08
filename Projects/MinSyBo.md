@@ -181,6 +181,8 @@ BOOT Modes：
 |Alt+B|移动到底层|
 |Shift+A|等长调节|
 |Alt+D|差分对布线|
+|Tab|布线时修改线宽|
+|Shift+W|布线时切换常用线宽|
 
 </div>
 
