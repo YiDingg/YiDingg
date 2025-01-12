@@ -55,10 +55,6 @@
 
 - 📖 **Notes**
 
-    - [Optics](Notes/Phisics/OpticsNotes.md)
-    - [Basic Physics Experiment](Notes/Phisics/BasicPhysicsExperiment.md)
-    - [Principles of Electric Circuits](Notes/MajorCourses/CircuitTheoryNotes.md)
-    - [Mathematical Physics Methods](Notes/Math/MathematicalPhysicsMathods.md)
     - [Other Courses](Notes/Else/OtherCourses.md)
     - C
         - [C 语言 (!): bug 解决](<Notes/C/CNotes(!)-FixProblems.md>)
@@ -123,6 +119,7 @@
 
 - 📝 **Projects**
 
+    - [Basic Physics Experiment](Notes/Phisics/BasicPhysicsExperiment.md)
     - [Gomoku](Projects/Gomoku.md)
     - [HDofDF (Humidity Detection of Diabetic Foot)](Projects/HDofDF.md)
     - [MuMeStar (Multiple Menu Star for OLED)](Projects/MuMeStar.md)
@@ -135,13 +132,13 @@
 - 💡 **Electronic Designs**
 
     - [[A1] ESP12-F Adapter Board](<Projects/ESP12-F Adapter Board.md>)
-    - [![A2] Transistor Tester for Digilent Analog Discovery](<Projects/Transistor Tester for ADx.md>)
-    - [![A3] DC-DC Converter (10V~36V to ±12V)](<Designs/DC-DC Converter.md>)
-    - [![A4] Portable Ammeter](<Projects/Portable Ammeter.md>)
+    - [[A2] General VCVS and VCCS (up to 10 A)](<Designs/General VCVS and VCCS (up to 10 A).md>)
+    - [[] Transistor Tester for Digilent Analog Discovery](<Projects/Transistor Tester for ADx.md>)
+    - [[] DC-DC Converter (10V~36V to ±12V)](<Designs/DC-DC Converter.md>)
+    - [[] Portable Ammeter](<Projects/Portable Ammeter.md>)
     - [[B1] MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
-    - [[B2] General VCVS and VCCS (up to 10 A)](<Designs/General VCVS and VCCS (up to 10 A).md>)
-    - [![B3] Multifunctional Voltage and Current Source](<Designs/Multifunctional DC-DC Power Supply.md>)
-    - [![B4] All-in-one Multifunctional DC-DC Power Supply](<Designs/Multifunctional DC-DC Power Supply.md>)
+    - [[] Multifunctional Voltage and Current Source](<Designs/Multifunctional DC-DC Power Supply.md>)
+    - [[] All-in-one Multifunctional DC-DC Power Supply](<Designs/Multifunctional DC-DC Power Supply.md>)
 
 <!-- 
 - 编号先这样写着，未完成的 design 用!号标注，出现两位数后统一在前面加 0 以对齐文本
