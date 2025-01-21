@@ -10,16 +10,16 @@
         - [纪念第一次炸电容](Blogs/Electronics/纪念第一次炸电容.md)
         - [用 Pi 型滤波器改善可调直流电源的输出纹波](Blogs/Electronics/用Pi型滤波器改善可调直流电源的输出纹波.md)
         - [一伟 D-30F12 开关电源测评](<Blogs/Electronics/一伟 D-30F12 开关电源测评.md>)
+        - [LTspice](Blogs/Mixed/LTspice.md)
     - Mixed <!-- empty line is necessary to avoid the error -->
         - [关于国科大本科部电子信息工程专业课程安排的一些思考](Blogs/Mixed/关于国科大本科部电子信息工程专业课程安排的一些思考.md)
-        - [LTspice](Blogs/Mixed/LTspice.md)
         - [LTeX – grammar/spell checking](Blogs/Mixed/LTEX.md)
         - [Zotero](Blogs/Mixed/Zotero.md)
         - [Latex](Blogs/Mixed/Latex.md)
         - [Setting Advice for New Computer](Blogs/Mixed/SettingAdviceForNewComputer.md)
         - [Download Inkscape](Blogs/Mixed/DownloadInkscape.md)
         - [Sentences](Blogs/Mixed/Sentences.md)
-        - [Repository Slimming](Blogs/Mixed/RepoSlimming.md)
+        - [GitHub Repo Slimming](Blogs/Mixed/RepoSlimming.md)
         - [Build Your Personal Website](Blogs/Mixed/BuildYourSite.md)
         - [Nice VSCode Extensions](Blogs/Mixed/Nice%20VSCode%20Extenstions.md)
         - [主流云盘网盘对比](Blogs/Mixed/CloudStorageComparison.md)
@@ -131,14 +131,17 @@
 
 - 💡 **Electronic Designs**
 
-    - [[A1] ESP12-F Adapter Board](<Projects/ESP12-F Adapter Board.md>)
-    - [[A2] General VCVS and VCCS (up to 10 A)](<Designs/General VCVS and VCCS (up to 10 A).md>)
-    - [[] Transistor Tester for Digilent Analog Discovery](<Projects/Transistor Tester for ADx.md>)
-    - [[] DC-DC Converter (10V~36V to ±12V)](<Designs/DC-DC Converter.md>)
+    - [Other Circuit Boards](<ElectronicDesigns/Other Circuit Boards.md>)
+    - [Transistor Tester for Analog Discovery](<ElectronicDesigns/Transistor Tester for ADx.md>)
+    - [General VCVS and VCCS](<ElectronicDesigns/General VCVS and VCCS (up to 10 A).md>)
+    - [ESP12-F Adapter Board](<ElectronicDesigns/ESP12-F Adapter Board.md>)
+    - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
+    - [[] Adapter Board for Analog Discovery](<ElectronicDesigns/Transistor Tester for ADx.md>)
+    - [[] Impedance Tester for Analog Discovery](<ElectronicDesigns/Transistor Tester for ADx.md>)
+    - [[] DC-DC Converter (10V~36V to ±12V)](<ElectronicDesigns/DC-DC Converter.md>)
     - [[] Portable Ammeter](<Projects/Portable Ammeter.md>)
-    - [[B1] MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
-    - [[] Multifunctional Voltage and Current Source](<Designs/Multifunctional DC-DC Power Supply.md>)
-    - [[] All-in-one Multifunctional DC-DC Power Supply](<Designs/Multifunctional DC-DC Power Supply.md>)
+    - [[] Multifunctional Voltage and Current Source](<ElectronicDesigns/Multifunctional DC-DC Power Supply.md>)
+    - [[] All-in-one Multifunctional DC-DC Power Supply](<ElectronicDesigns/Multifunctional DC-DC Power Supply.md>)
 
 <!-- 
 - 编号先这样写着，未完成的 design 用!号标注，出现两位数后统一在前面加 0 以对齐文本

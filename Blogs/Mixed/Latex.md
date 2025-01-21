@@ -487,9 +487,15 @@ https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/Templates/[CheatSheet]Template/
 
 ## 相关资源
 
+教程与文档：
 - [TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/)
 - [Latex Studio](https://www.latexstudio.net)
 - [Latex Studio > Articles](https://www.latexstudio.net/articles/)
 - [Latex Studio > Learn LaTeX](https://www.latexstudio.net/LearnLaTeX/)
 - [LaTeX 入门与进阶](https://latex.lierhua.top/zh/)
 - [Overleaf > Learn Latex](https://www.overleaf.com/learn)
+
+免费模板：
+- [VividBook: 生动的 LaTeX 书籍模板](https://github.com/Azure1210/VividBooK) or [知乎](https://zhuanlan.zhihu.com/p/631306342)
+- [spTemplate: 高度封装化的 LaTeX 类文件](https://github.com/SweetPastry/spTemplate) or [知乎](https://zhuanlan.zhihu.com/p/17531477449)
+- 

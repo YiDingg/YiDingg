@@ -14,3 +14,5 @@ mV
 uF
 VCVS
 VCCS
+VScode-Latex
+mH

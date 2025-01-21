@@ -1,0 +1,33 @@
+# Transistor Tester for Analog Discovery
+
+> [!Note|style:callout|label:Infor]
+> Initially published at 22:59 on 2024-12-20 in Beijing.
+
+- Time: 2025.01.21
+- Notes: for NFET/PFET/NPN/PNP testing, suitable for Analog Discovery [1](https://digilent.com/reference/test-and-measurement/analog-discovery/start), [2](https://digilent.com/reference/test-and-measurement/analog-discovery-2/start), and [3](https://digilent.com/reference/test-and-measurement/analog-discovery-3/start)
+- Details: 可用于测试 TO-220, TO-263, SOT-23, TO-92, SOP-8 等常见封装, 可外接功率放大电路 (例如 VCVS), 另外还有分别由 V+ 和 V- 控制的两个 LED 
+- Interactive BOM: [here](https://www.123865.com/s/0y0pTd-cNuj3)
+- Relevant Resources: to be uploaded
+
+
+<div class='center'>
+
+| Top view | Bottom view | 
+|:-:|:-:|
+ |<div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-01-21-14-54-30_Transistor Tester for ADx.png"/></div>|<div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-01-21-14-53-43_Transistor Tester for ADx.png"/></div>|
+
+</div>
+
+<div class='center'>
+
+| Top view | Bottom view | 
+|:-:|:-:|
+ | <div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-01-21-14-24-32_Transistor Tester for ADx.png"/></div> | <div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-01-21-14-24-46_Transistor Tester for ADx.png"/></div> |
+</div>
+
+
+
+
+
+
+
