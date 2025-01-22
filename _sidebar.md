@@ -73,7 +73,7 @@
         - [Linear Algebra 1](Notes/Math/LinearAlgebra1Notes.md)
         - [Linear Algebra 2](Notes/Math/LinearAlgebra2Notes.md)
         - [Numerical Methods for PDE](Notes/Math/NumericalMethodsForPDE.md)
-        - [Mathematical Physics Mathods](Notes/Math/MathematicalPhysicsMathods.md)
+        - [Mathematical Physics Methods](Notes/Math/MathematicalPhysicsMathods.md)
     - Physics
 
         - [Mechanics](Notes/Phisics/Mecanics%20notes.md)
@@ -133,7 +133,7 @@
 
     - [Other Circuit Boards](<ElectronicDesigns/Other Circuit Boards.md>)
     - [Transistor Tester for Analog Discovery](<ElectronicDesigns/Transistor Tester for ADx.md>)
-    - [General VCVS and VCCS](<ElectronicDesigns/General VCVS and VCCS (up to 10 A).md>)
+    - [General VCVS and VCCS (up to 5A)](<ElectronicDesigns/General VCVS and VCCS (up to 10 A).md>)
     - [ESP12-F Adapter Board](<ElectronicDesigns/ESP12-F Adapter Board.md>)
     - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
     - [[] Adapter Board for Analog Discovery](<ElectronicDesigns/Transistor Tester for ADx.md>)

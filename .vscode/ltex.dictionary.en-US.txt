@@ -16,3 +16,4 @@ VCVS
 VCCS
 VScode-Latex
 mH
+MOSFET
