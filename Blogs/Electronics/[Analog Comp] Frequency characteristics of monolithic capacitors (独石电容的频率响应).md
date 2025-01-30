@@ -1,4 +1,4 @@
-# [Analog Components Handbook] Frequency characteristics of monolithic capacitors (独石电容的频率响应)
+# [Analog Components Handbook]<br> Frequency characteristics of mono cap (独石电容频率响应)
 
 
 > [!Note|style:callout|label:Infor]

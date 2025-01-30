@@ -7,8 +7,10 @@
 - 📓 **Blogs**
 
     - Electronics
+        - [Gm Av calculation](<Blogs/Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>)
+        - [MOSFET's Terminal Resistance](<Blogs/Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>)
         - [DC 母座的接线方法](<Blogs/Electronics/DC 母座的接线方法.md>)
-        - [独石电容的频率响应](<Blogs/Electronics/[Analog Components Handbook] Frequency characteristics of monolithic capacitors (独石电容的频率响应).md>)
+        - [Frequency chara of mono cap](<Blogs/Electronics/[Analog Comp] Frequency characteristics of monolithic capacitors (独石电容的频率响应).md>)
         - [纪念第一次炸电容](Blogs/Electronics/纪念第一次炸电容.md)
         - [用 Pi 型滤波器改善可调直流电源的输出纹波](Blogs/Electronics/用Pi型滤波器改善可调直流电源的输出纹波.md)
         - [一伟 D-30F12 开关电源测评](<Blogs/Electronics/一伟 D-30F12 开关电源测评.md>)
