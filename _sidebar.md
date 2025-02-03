@@ -59,6 +59,7 @@
 
 - 📖 **Notes**
 
+    - [Design of Analog CMOS Integrated Circuits](<Notes/MajorCourses/Design of Analog CMOS Integrated Circuits.md>)
     - [Other Courses](Notes/Else/OtherCourses.md)
     - C
         - [C 语言 (!): bug 解决](<Notes/C/CNotes(!)-FixProblems.md>)
@@ -86,7 +87,7 @@
         - [Optics](Notes/Phisics/OpticsNotes.md)
         - [Basic Physics Experiment](Notes/Phisics/BasicPhysicsExperiment.md)
     - Major Courses
-    
+        - [Design of Analog CMOS Integrated Circuits](<Notes/MajorCourses/Design of Analog CMOS Integrated Circuits.md>)
       - [Principles of Electric Circuits](Notes/MajorCourses/CircuitTheoryNotes.md)
     - Cpp
         - [Cpp (0)：准备](<Notes/Cpp/CppNotes(0)-Preparation.md>)
@@ -123,7 +124,6 @@
 
 - 📝 **Projects**
 
-    - [Basic Physics Experiment](Notes/Phisics/BasicPhysicsExperiment.md)
     - [Gomoku](Projects/Gomoku.md)
     - [HDofDF (Humidity Detection of Diabetic Foot)](Projects/HDofDF.md)
     - [MuMeStar (Multiple Menu Star for OLED)](Projects/MuMeStar.md)
