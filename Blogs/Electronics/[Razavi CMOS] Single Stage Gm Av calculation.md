@@ -1,4 +1,4 @@
-# Single Stage Gm and Av calculation
+# [Razavi CMOS] Single Stage Gm and Av calculation
 
 > [!Note|style:callout|label:Infor]
 Initially published at 00:15 on 2025-01-06 in Beijing.

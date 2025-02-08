@@ -21,3 +21,7 @@ Lincang
 NMOS
 PMOS
 Razavi
+Cascode
+Transconductance
+cascode
+Thevenin

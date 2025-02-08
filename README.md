@@ -18,7 +18,9 @@ My Technology Stack:
 - Matlab
 - C
 - MCU
-- PCB Design
+- PCB Layout
+- Analog Design
+
 
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 

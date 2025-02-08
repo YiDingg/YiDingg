@@ -7,6 +7,8 @@
 - 📓 **Blogs**
 
     - Electronics
+        - [Mismatches of Basic Differential Pair](<Blogs/Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)
+        - [Cascode stage with PMOS load](<Blogs/Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>)
         - [Gm Av calculation](<Blogs/Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>)
         - [MOSFET's Terminal Resistance](<Blogs/Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>)
         - [DC 母座的接线方法](<Blogs/Electronics/DC 母座的接线方法.md>)
