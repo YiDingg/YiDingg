@@ -25,42 +25,9 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-922%20hrs%2025%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-926%20hrs%2031%20mins-blue)
 
-![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-743.4%20thousand%20lines%20of%20code-blue)
-
-**I'm a Night 🦉** 
-
-```text
-🌞 Morning                79 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   07.45 % 
-🌆 Daytime                385 commits         █████████░░░░░░░░░░░░░░░░   36.29 % 
-🌃 Evening                352 commits         ████████░░░░░░░░░░░░░░░░░   33.18 % 
-🌙 Night                  245 commits         ██████░░░░░░░░░░░░░░░░░░░   23.09 % 
-```
-📅 **I'm Most Productive on Monday** 
-
-```text
-Monday                   179 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.87 % 
-Tuesday                  126 commits         ███░░░░░░░░░░░░░░░░░░░░░░   11.88 % 
-Wednesday                116 commits         ███░░░░░░░░░░░░░░░░░░░░░░   10.93 % 
-Thursday                 179 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.87 % 
-Friday                   177 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.68 % 
-Saturday                 116 commits         ███░░░░░░░░░░░░░░░░░░░░░░   10.93 % 
-Sunday                   168 commits         ████░░░░░░░░░░░░░░░░░░░░░   15.83 % 
-```
-
-
-📊 **This Week I Spent My Time On** 
-
-```text
-💬 Programming Languages: 
-TeX                      8 hrs 35 mins       █████████████████░░░░░░░░   67.74 % 
-Markdown                 4 hrs 5 mins        ████████░░░░░░░░░░░░░░░░░   32.26 % 
-
-🐱‍💻 Projects: 
-GH.LatexNotes            8 hrs 35 mins       █████████████████░░░░░░░░   67.74 % 
-GH.YiDingg               4 hrs 5 mins        ████████░░░░░░░░░░░░░░░░░   32.26 % 
-```
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-743.8%20thousand%20lines%20of%20code-blue)
 
 **I Mostly Code in C** 
 
@@ -75,7 +42,7 @@ TypeScript               1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2025.02.12 18:42 UTC
+ Last Updated on 2025.02.13 18:42 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
