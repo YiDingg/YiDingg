@@ -7,6 +7,7 @@
 - 📓 **Blogs**
 
     - Electronics
+        - [Op Amp Measurement Methods](<Blogs/Electronics/Op Amp Measurement Methods.md>)
         - [Mismatches of Basic Differential Pair](<Blogs/Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)
         - [Cascode stage with PMOS load](<Blogs/Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>)
         - [Gm Av calculation](<Blogs/Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>)
@@ -138,16 +139,19 @@
 - 💡 **Electronic Designs**
 
     - [Other Circuit Boards](<ElectronicDesigns/Other Circuit Boards.md>)
+    - [Basic Op Amp Measurement Board](<ElectronicDesigns/Basic Op Amp Measurement Board.md>)
+    - [Adapter Board for Analog Discovery](<ElectronicDesigns/Adapter Board for Analog Discovery.md>)
     - [Transistor Tester for Analog Discovery](<ElectronicDesigns/Transistor Tester for ADx.md>)
     - [General VCVS and VCCS (up to 5A)](<ElectronicDesigns/General VCVS and VCCS (up to 10 A).md>)
     - [ESP12-F Adapter Board](<ElectronicDesigns/ESP12-F Adapter Board.md>)
     - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
-    - [[] Adapter Board for Analog Discovery](<ElectronicDesigns/Transistor Tester for ADx.md>)
-    - [[] Impedance Tester for Analog Discovery](<ElectronicDesigns/Transistor Tester for ADx.md>)
+
+<!--     
     - [[] DC-DC Converter (10V~36V to ±12V)](<ElectronicDesigns/DC-DC Converter.md>)
     - [[] Portable Ammeter](<Projects/Portable Ammeter.md>)
     - [[] Multifunctional Voltage and Current Source](<ElectronicDesigns/Multifunctional DC-DC Power Supply.md>)
-    - [[] All-in-one Multifunctional DC-DC Power Supply](<ElectronicDesigns/Multifunctional DC-DC Power Supply.md>)
+    - [[] All-in-one Multifunctional DC-DC Power Supply](<ElectronicDesigns/Multifunctional DC-DC Power Supply.md>) 
+-->
 
 <!-- 
 - 编号先这样写着，未完成的 design 用!号标注，出现两位数后统一在前面加 0 以对齐文本

@@ -6,13 +6,19 @@ Initially published at 19:41 on 2024-06-19 in Beijing.
 
 ESP12-F is a Wi-Fi module based on the ESP8266 chip, manufactured by Ai-Thinker (安信可). Here is the adapter board for ESP-12. You can refer to [立创开源硬件平台](https://oshwhub.com/dy130810/esp12-f_adapterboard) for the schematic diagram and PCB layout.
 
-## Display 
+## Demo
 
-Here is what it looks like:
+<div class='center'>
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-14-22-51-16_Mixed.jpg"/></div>
-<div class='center'><img src='https://s.b1n.net/SxqPO' alt='img'/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-14-22-58-44_Mixed.jpg"/></div>
+| Schematic | Top view | 
+|:-:|:-:|
+ |<div class='center'><img height = 250px src='https://s.b1n.net/SxqPO' alt='img'/></div>|<div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-14-22-51-16_Mixed.jpg"/></div>|
+
+</div>
+
+
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-14-22-58-44_Mixed.jpg"/></div> -->
 
 
 ## BOM 

@@ -1,7 +1,7 @@
 # Transistor Tester for Analog Discovery
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 22:59 on 2024-12-20 in Beijing.
+> Initially published at 22:59 on 2024-01-20 in Beijing.
 
 - Time: 2025.01.21
 - Notes: for NFET/PFET/NPN/PNP testing, suitable for Analog Discovery [1](https://digilent.com/reference/test-and-measurement/analog-discovery/start), [2](https://digilent.com/reference/test-and-measurement/analog-discovery-2/start), and [3](https://digilent.com/reference/test-and-measurement/analog-discovery-3/start)
@@ -14,6 +14,14 @@
 
 | Top view | Bottom view | 
 |:-:|:-:|
+ | <div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-01-21-14-24-32_Transistor Tester for ADx.png"/></div> | <div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-01-21-14-24-46_Transistor Tester for ADx.png"/></div> |
+</div>
+
+
+<div class='center'>
+
+| Schematic | 3D view | 
+|:-:|:-:|
  |<div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-01-21-14-54-30_Transistor Tester for ADx.png"/></div>|<div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-01-21-14-53-43_Transistor Tester for ADx.png"/></div>|
 
 </div>
@@ -22,12 +30,8 @@
 
 | Top view | Bottom view | 
 |:-:|:-:|
- | <div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-01-21-14-24-32_Transistor Tester for ADx.png"/></div> | <div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-01-21-14-24-46_Transistor Tester for ADx.png"/></div> |
+ | <div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-13-02-33-28_Transistor Tester for ADx.png"/></div> | <div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-13-02-33-46_Transistor Tester for ADx.png"/></div> |
 </div>
-
-
-
-
 
 
 

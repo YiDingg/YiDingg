@@ -24,7 +24,7 @@ Initially published at 18:36 on 2024-06-19 in Beijing.
 
 | 正面 | 背面 |
 | :------: | :------: |
- |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-30-00_MinSyBo (Minimum System Board of STM32) 详解.jpg"/></div>|<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-32-43_MinSyBo (Minimum System Board of STM32) 详解.jpg"/></div>|
+ |<div class="center"><img height = 400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-30-00_MinSyBo (Minimum System Board of STM32) 详解.jpg"/></div>|<div class="center"><img height = 400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-32-43_MinSyBo (Minimum System Board of STM32) 详解.jpg"/></div>|
  |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-28-12_MinSyBo (Minimum System Board of STM32) 详解.jpg"/></div>|<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-07-07-13-30-21_MinSyBo (Minimum System Board of STM32) 详解.jpg"/></div>|
 </div>
 由于个人时间、精力和水平有限，项目难免存在不足，望读者不吝指正。
@@ -182,6 +182,7 @@ BOOT Modes：
 |Shift+A|等长调节|
 |Alt+D|差分对布线|
 |Tab|布线时修改线宽|
+|Shift+W|布线时切换常用线宽|
 |Shift+W|布线时切换常用线宽|
 
 </div>

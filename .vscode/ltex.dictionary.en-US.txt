@@ -25,3 +25,10 @@ Cascode
 Transconductance
 cascode
 Thevenin
+DUT
+dc
+DUTVCC
+DC CMRR
+PSRR
+CMRR
+Num

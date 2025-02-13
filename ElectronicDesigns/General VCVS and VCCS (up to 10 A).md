@@ -3,6 +3,12 @@
 > [!Note|style:callout|label:Infor]
 Initially published at 17:27 on 2025-01-08 in Beijing.
 
+## Infor
+
+- Time: 2025.01.07
+- Details: 一路 VCVS 和一路 VCCS, 最大峰值电流取决于电源最大输出电流 (和输出电压)
+- Relevant Resources: [https://www.123684.com/s/0y0pTd-1euj3](https://www.123684.com/s/0y0pTd-1euj3)
+
 ## 背景
 
 出于自身实验需求 (主要是测量和驱动)，设计了一种通用 VCVS (Voltage Controlled Voltage Source) 和 VCCS (Voltage Controlled Current Source)，主要特性如下：

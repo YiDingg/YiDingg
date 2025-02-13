@@ -65,7 +65,7 @@ $$
 $$
 \begin{gather}
 {\color{red}
-A_{CM-DM} \approx \frac{g_m \Delta R_D}{1 + 2 g_m r_{O3}}
+A_{CM-DM} \approx \frac{-g_m \Delta R_D}{1 + 2 g_m r_{O3}}
 }
 \end{gather}
 $$
