@@ -1,63 +1,8 @@
 - [🏠 **Home Page**](HOMEPAGE.md)
-- [🔎 **Navgation Page**](_sidebar.md)
+- [🔎 **Navigation Page**](_sidebar.md)
 - [📃 **Timeline**](TimeLine.md)
 - [👋 **About**](README.md)
 <!-- - [📰 **To Be Dealing With**](ToBeDealingWith.md) -->
-
-- 📓 **Blogs**
-
-    - Electronics
-        - [Op Amp Measurement Methods](<Blogs/Electronics/Op Amp Measurement Methods.md>)
-        - [Mismatches of Basic Differential Pair](<Blogs/Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)
-        - [Cascode stage with PMOS load](<Blogs/Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>)
-        - [Gm Av calculation](<Blogs/Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>)
-        - [MOSFET's Terminal Resistance](<Blogs/Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>)
-        - [DC 母座的接线方法](<Blogs/Electronics/DC 母座的接线方法.md>)
-        - [Frequency chara of mono cap](<Blogs/Electronics/[Analog Comp] Frequency characteristics of monolithic capacitors (独石电容的频率响应).md>)
-        - [纪念第一次炸电容](Blogs/Electronics/纪念第一次炸电容.md)
-        - [用 Pi 型滤波器改善可调直流电源的输出纹波](Blogs/Electronics/用Pi型滤波器改善可调直流电源的输出纹波.md)
-        - [一伟 D-30F12 开关电源测评](<Blogs/Electronics/一伟 D-30F12 开关电源测评.md>)
-        - [LTspice](Blogs/Mixed/LTspice.md)
-    - Mixed <!-- empty line is necessary to avoid the error -->
-        - [关于国科大本科部电子信息工程专业课程安排的一些思考](Blogs/Mixed/关于国科大本科部电子信息工程专业课程安排的一些思考.md)
-        - [LTeX – grammar/spell checking](Blogs/Mixed/LTEX.md)
-        - [Zotero](Blogs/Mixed/Zotero.md)
-        - [Latex](Blogs/Mixed/Latex.md)
-        - [Setting Advice for New Computer](Blogs/Mixed/SettingAdviceForNewComputer.md)
-        - [Download Inkscape](Blogs/Mixed/DownloadInkscape.md)
-        - [Sentences](Blogs/Mixed/Sentences.md)
-        - [GitHub Repo Slimming](Blogs/Mixed/RepoSlimming.md)
-        - [Build Your Personal Website](Blogs/Mixed/BuildYourSite.md)
-        - [Nice VSCode Extensions](Blogs/Mixed/Nice%20VSCode%20Extenstions.md)
-        - [主流云盘网盘对比](Blogs/Mixed/CloudStorageComparison.md)
-        - [嘉立创免费下单教程](Blogs/Mixed/嘉立创免费下单教程.md)
-        - [结构体及其指针在树中的应用](Blogs/Mixed/结构体及其指针在树中的应用.md)
-        - [手把手教你用 PWM 实现呼吸灯(标准库)](<Blogs/Mixed/手把手教你用PWM实现呼吸灯(标准库).md>)
-    - Fix Problem
-        - [VSCode 中按键失灵](Blogs/FixProblem/KeypadFailureInVSCode.md)
-        - [文件夹无权访问或访问被拒绝](Blogs/FixProblem/FolderPermissionProblem.md)
-        - [VScode-Latex 反向搜索失灵](Blogs/FixProblem/VScode-Latex中反向搜索失灵的解决方案.md)
-        - [新版 Keil MDK 中无 Compiler_V5](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
-
-    - Site Features
-        - [Data Host](Blogs/SiteFeatures/Data%20Host.md)
-        - [Syntax Examples](Blogs/SiteFeatures/Syntax%20Examples.md)
-        - [Custom Component](Blogs/SiteFeatures/Custom%20Component.md)
-    - Git
-        - [Git 教程与提交规范](Blogs/Git/Git教程与提交规范.md)
-        - [Git 命令速查](Blogs/Git/Git命令速查.md)
-        - [Git 生成 ChangeLog](Blogs/Git/Git生成ChangeLog.md)
-    - Front End
-        - [Summary of Frontend Series](Blogs/FrontEnd/Summary%20of%20Front%20End%20Series.md)
-        - [Basic HTML](Blogs/FrontEnd/Basic%20HTML.md)
-        - [Basic CSS](Blogs/FrontEnd/Basic%20CSS.md)
-    - Awesome Tools and Resources
-        - [ATandR(0): Brief View](<Blogs/ATandR/ATandR(0)-BriefView.md>)
-        - [ATandR(1): Markdown](<Blogs/ATandR/ATandR(1)-Markdown.md>)
-        - [ATandR(2): Programming](<Blogs/ATandR/ATandR(2)-Programming.md>)
-        - [ATandR(3): Drawing](<Blogs/ATandR/ATandR(3)-Drawing.md>)
-        - [ATandR(4): Research Paper](<Blogs/ATandR/ATandR(4)-ResearchPaper.md>)
-
 
 
 - 📖 **Notes**
@@ -114,15 +59,87 @@
         - [MM (1.5): CUMCM 2024-A](<Notes/MathematicalModeling/MM(1.5)-CUMCM2024A.md>)
     - MCU
         - [MCU (0): Preparations](<Notes/MCU/MCUNotes(0)-Preparations.md>)
-        - [MCU (1): Keil Debug (STM32).md](<Notes/MCU/MCUNotes(1)-KeilDebug(STM32).md>)
-        - [MCU (2): Timer (STM32).md](<Notes/MCU/MCUNotes(2)-Timer(STM32).md>)
-        - [MCU (3): DMA (STM32).md](<Notes/MCU/MCUNotes(3)-DMA(STM32).md>)
-        - [MCU (4): WiFi (ESP8266).md](<Notes/MCU/MCUNotes(4)-WiFi(ESP8266).md>)
-        - [MCU (!): Tips and Tricks (STM32).md](<Notes/MCU/MCUNotes(!)-TipsAndTricks(STM32).md>)
+        - [MCU (1): Keil Debug (STM32)](<Notes/MCU/MCUNotes(1)-KeilDebug(STM32).md>)
+        - [MCU (2): Timer (STM32)](<Notes/MCU/MCUNotes(2)-Timer(STM32).md>)
+        - [MCU (3): DMA (STM32)](<Notes/MCU/MCUNotes(3)-DMA(STM32).md>)
+        - [MCU (4): WiFi (ESP8266)](<Notes/MCU/MCUNotes(4)-WiFi(ESP8266).md>)
+        - [MCU (!): Tips and Tricks (STM32)](<Notes/MCU/MCUNotes(!)-TipsAndTricks(STM32).md>)
     - Else
         - [Other Courses](Notes/Else/OtherCourses.md)
         - [Goodness of Fit](Notes/Else/GoodnessOfFit.md)
 
+
+
+
+- 📓 **Blogs**
+
+    - Electronics
+        - [半屏蔽式贴片功率电感参数](Blogs/Electronics/贴片功率电感相关参数.md)
+        - [Ideal and Nonideal Op Amp](<Blogs/Electronics/Ideal and Nonideal Op Amp.md>)
+        - [Using Buck as an Inverting Converter](<Blogs/Electronics/Using Buck Topology as an Inverting Converter.md>)
+        - [Op Amp Measurement Methods](<Blogs/Electronics/Op Amp Measurement Methods.md>)
+        - [Mismatches of Basic Differential Pair](<Blogs/Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)
+        - [Cascode stage with PMOS load](<Blogs/Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>)
+        - [Gm Av calculation](<Blogs/Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>)
+        - [MOSFET's Terminal Resistance](<Blogs/Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>)
+        - [DC 母座的接线方法](<Blogs/Electronics/DC 母座的接线方法.md>)
+        - [Frequency chara of mono cap](<Blogs/Electronics/[Analog Comp] Frequency characteristics of monolithic capacitors (独石电容的频率响应).md>)
+        - [纪念第一次炸电容](Blogs/Electronics/纪念第一次炸电容.md)
+        - [用 Pi 型滤波器改善可调直流电源的输出纹波](Blogs/Electronics/用Pi型滤波器改善可调直流电源的输出纹波.md)
+        - [一伟 D-30F12 开关电源测评](<Blogs/Electronics/一伟 D-30F12 开关电源测评.md>)
+        - [LTspice](Blogs/Mixed/LTspice.md)
+    - Mixed <!-- empty line is necessary to avoid the error -->
+        - [关于国科大本科部电子信息工程专业课程安排的一些思考](Blogs/Mixed/关于国科大本科部电子信息工程专业课程安排的一些思考.md)
+        - [LTeX – grammar/spell checking](Blogs/Mixed/LTEX.md)
+        - [Zotero](Blogs/Mixed/Zotero.md)
+        - [Latex](Blogs/Mixed/Latex.md)
+        - [Setting Advice for New Computer](Blogs/Mixed/SettingAdviceForNewComputer.md)
+        - [Download Inkscape](Blogs/Mixed/DownloadInkscape.md)
+        - [Sentences](Blogs/Mixed/Sentences.md)
+        - [GitHub Repo Slimming](Blogs/Mixed/RepoSlimming.md)
+        - [Build Your Personal Website](Blogs/Mixed/BuildYourSite.md)
+        - [Nice VSCode Extensions](Blogs/Mixed/Nice%20VSCode%20Extenstions.md)
+        - [主流云盘网盘对比](Blogs/Mixed/CloudStorageComparison.md)
+        - [嘉立创免费下单教程](Blogs/Mixed/嘉立创免费下单教程.md)
+        - [结构体及其指针在树中的应用](Blogs/Mixed/结构体及其指针在树中的应用.md)
+        - [手把手教你用 PWM 实现呼吸灯(标准库)](<Blogs/Mixed/手把手教你用PWM实现呼吸灯(标准库).md>)
+    - Fix Problem
+        - [VSCode 中按键失灵](Blogs/FixProblem/KeypadFailureInVSCode.md)
+        - [文件夹无权访问或访问被拒绝](Blogs/FixProblem/FolderPermissionProblem.md)
+        - [VScode-Latex 反向搜索失灵](Blogs/FixProblem/VScode-Latex中反向搜索失灵的解决方案.md)
+        - [新版 Keil MDK 中无 Compiler_V5](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
+
+    - Site Features
+        - [Data Host](Blogs/SiteFeatures/Data%20Host.md)
+        - [Syntax Examples](Blogs/SiteFeatures/Syntax%20Examples.md)
+        - [Custom Component](Blogs/SiteFeatures/Custom%20Component.md)
+    - Git
+        - [Git 教程与提交规范](Blogs/Git/Git教程与提交规范.md)
+        - [Git 命令速查](Blogs/Git/Git命令速查.md)
+        - [Git 生成 ChangeLog](Blogs/Git/Git生成ChangeLog.md)
+    - Front End
+        - [Summary of Frontend Series](Blogs/FrontEnd/Summary%20of%20Front%20End%20Series.md)
+        - [Basic HTML](Blogs/FrontEnd/Basic%20HTML.md)
+        - [Basic CSS](Blogs/FrontEnd/Basic%20CSS.md)
+    - Awesome Tools and Resources
+        - [ATandR(0): Brief View](<Blogs/ATandR/ATandR(0)-BriefView.md>)
+        - [ATandR(1): Markdown](<Blogs/ATandR/ATandR(1)-Markdown.md>)
+        - [ATandR(2): Programming](<Blogs/ATandR/ATandR(2)-Programming.md>)
+        - [ATandR(3): Drawing](<Blogs/ATandR/ATandR(3)-Drawing.md>)
+        - [ATandR(4): Research Paper](<Blogs/ATandR/ATandR(4)-ResearchPaper.md>)
+
+
+
+- 💡 **Electronic Designs**
+
+    - [Other Circuit Boards](<ElectronicDesigns/Other Circuit Boards.md>)
+    - [All-In-One DC-DC Power Supply (5V Input)](<ElectronicDesigns/All-In-One DC-DC Power Supply (5V Input).md>)
+    - [Basic Op Amp Measurement Board](<ElectronicDesigns/Basic Op Amp Measurement Board.md>)
+    - [Adapter Board for Analog Discovery](<ElectronicDesigns/Adapter Board for Analog Discovery.md>)
+    - [Transistor Tester for Analog Discovery](<ElectronicDesigns/Transistor Tester for ADx.md>)
+    - [General VCVS and VCCS (up to 5A)](<ElectronicDesigns/General VCVS and VCCS (up to 10 A).md>)
+    - [ESP12-F Adapter Board](<ElectronicDesigns/ESP12-F Adapter Board.md>)
+    - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
 
 
 - 📝 **Projects**
@@ -136,15 +153,6 @@
         - [WSETD (1): Chinese Document](<Projects/WSETD/WSETD(1)-ChineseDocument.md>)
         - [WSETD (2): English Document](<Projects/WSETD/WSETD(2)-EnglishDocument.md>)
 
-- 💡 **Electronic Designs**
-
-    - [Other Circuit Boards](<ElectronicDesigns/Other Circuit Boards.md>)
-    - [Basic Op Amp Measurement Board](<ElectronicDesigns/Basic Op Amp Measurement Board.md>)
-    - [Adapter Board for Analog Discovery](<ElectronicDesigns/Adapter Board for Analog Discovery.md>)
-    - [Transistor Tester for Analog Discovery](<ElectronicDesigns/Transistor Tester for ADx.md>)
-    - [General VCVS and VCCS (up to 5A)](<ElectronicDesigns/General VCVS and VCCS (up to 10 A).md>)
-    - [ESP12-F Adapter Board](<ElectronicDesigns/ESP12-F Adapter Board.md>)
-    - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
 
 <!--     
     - [[] DC-DC Converter (10V~36V to ±12V)](<ElectronicDesigns/DC-DC Converter.md>)
@@ -171,8 +179,8 @@ B: 放在 B 类的是稍大一点的 design, B 类 design 至少要给出较为�
 
 - 📚 **Books**
 
-    - [Analog Circuits Manual](<Books/Analog Circuits Manual.md>)
-    - [Analog Components Manual](<Books/Analog Components Manual.md>)
+    - [Analog Circuits Handbook](<Books/Analog Circuits Handbook.md>)
+    - [Analog Components Handbook](<Books/Analog Components Handbook.md>)
     - [Practical Reference to Electronic Circuit Design](<Books/Practical Reference to Electronic Circuit Design.md>)
 
 - 🎓 **English Learning**

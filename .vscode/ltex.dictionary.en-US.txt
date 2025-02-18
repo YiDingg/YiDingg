@@ -32,3 +32,6 @@ DC CMRR
 PSRR
 CMRR
 Num
+pA
+mA
+Nonideal

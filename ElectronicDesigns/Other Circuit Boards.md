@@ -17,12 +17,15 @@ Initially published at 15:40 on 2025-01-21 in Lincang.
 ## Voltage Inverter (3.5V ~ 12V, ICL7660)
 
 - Time: 2025.01.28
-- Notes: input 3.5V ~ 12 V, 10 mA max (continuously)
-- Details: using ICL7660, $R_{out} = 50 \ \mathrm{m\Omega}$
+- Notes: input 3.5V ~ 12 V, $V_{out} = -V_{in}$
+- Details: using ICL7660, $R_{out} = 50 \ \mathrm{m\Omega}$,  max 10 mA (continuous) or 30 mA (pulsed).
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-11-15-08-18_Other Circuit Boards.png"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-11-15-08-34_Other Circuit Boards.png"/></div>
+<div class='center'>
 
+| Top view | Bottom view | 
+|:-:|:-:|
+ | <div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-11-15-08-18_Other Circuit Boards.png"/></div> | <div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-11-15-08-34_Other Circuit Boards.png"/></div> |
+</div>
 
 <!-- ## Pi Filter (0 ~ 40 V, 3 A max)
 

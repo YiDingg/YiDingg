@@ -25,7 +25,7 @@ Changing TP1 to adjust DUT output to ground (midway between the supplies) gives 
 $$
 \begin{gather}
 V_{DUT, out} = 0 \Longrightarrow 
-V_{IO} = 1000\,V_{TP1}
+V_{IO} = \frac{V_{TP1}}{1000}
 \end{gather}
 $$
 Noticing that TP2 and $V_{DUT, out}$ are at the same voltage, we abbreviate $V_{DUT, out}$ as $V_{TP2}$ in the following contents.
