@@ -25,9 +25,43 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-944%20hrs%2034%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-944%20hrs%2047%20mins-blue)
 
-![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-744.6%20thousand%20lines%20of%20code-blue)
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-744.9%20thousand%20lines%20of%20code-blue)
+
+**I'm a Night 🦉** 
+
+```text
+🌞 Morning                79 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   07.33 % 
+🌆 Daytime                387 commits         █████████░░░░░░░░░░░░░░░░   35.90 % 
+🌃 Evening                354 commits         ████████░░░░░░░░░░░░░░░░░   32.84 % 
+🌙 Night                  258 commits         ██████░░░░░░░░░░░░░░░░░░░   23.93 % 
+```
+📅 **I'm Most Productive on Thursday** 
+
+```text
+Monday                   180 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.70 % 
+Tuesday                  129 commits         ███░░░░░░░░░░░░░░░░░░░░░░   11.97 % 
+Wednesday                117 commits         ███░░░░░░░░░░░░░░░░░░░░░░   10.85 % 
+Thursday                 181 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.79 % 
+Friday                   181 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.79 % 
+Saturday                 118 commits         ███░░░░░░░░░░░░░░░░░░░░░░   10.95 % 
+Sunday                   172 commits         ████░░░░░░░░░░░░░░░░░░░░░   15.96 % 
+```
+
+
+📊 **This Week I Spent My Time On** 
+
+```text
+💬 Programming Languages: 
+Markdown                 11 hrs 16 mins      █████████████████████████   99.78 % 
+TeX                      1 min               ░░░░░░░░░░░░░░░░░░░░░░░░░   00.21 % 
+Other                    0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.01 % 
+
+🐱‍💻 Projects: 
+GH.YiDingg               11 hrs 16 mins      █████████████████████████   99.79 % 
+GH.LatexNotes            1 min               ░░░░░░░░░░░░░░░░░░░░░░░░░   00.21 % 
+```
 
 **I Mostly Code in C** 
 
@@ -42,7 +76,7 @@ TypeScript               1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2025.02.22 18:39 UTC
+ Last Updated on 2025.02.23 18:39 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
