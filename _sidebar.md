@@ -74,6 +74,9 @@
 - 📓 **Blogs**
 
     - Electronics
+        - [常见 NPN 三极管特性曲线测量](<Blogs/Electronics/常见 NPN 三极管特性曲线测量.md>)
+        - [常见 NMOS 特性曲线测量](<Blogs/Electronics/常见 NMOS 特性曲线测量.md>)
+        - [Negative VCVS Test](<Blogs/Electronics/Negative VCVS Test.md>)
         - [半屏蔽式贴片功率电感参数](Blogs/Electronics/贴片功率电感相关参数.md)
         - [Ideal and Nonideal Op Amp](<Blogs/Electronics/Ideal and Nonideal Op Amp.md>)
         - [Using Buck as an Inverting Converter](<Blogs/Electronics/Using Buck Topology as an Inverting Converter.md>)
@@ -133,6 +136,8 @@
 - 💡 **Electronic Designs**
 
     - [Other Circuit Boards](<ElectronicDesigns/Other Circuit Boards.md>)
+    - [Voltage Linear Operation Board](<ElectronicDesigns/Voltage Linear Operation Board.md>)
+    - [Versatile Voltage-Controlled Power Source](<ElectronicDesigns/Versatile Voltage-Controlled Power Source.md>)
     - [All-In-One DC-DC Power Supply (5V Input)](<ElectronicDesigns/All-In-One DC-DC Power Supply (5V Input).md>)
     - [Basic Op Amp Measurement Board](<ElectronicDesigns/Basic Op Amp Measurement Board.md>)
     - [Adapter Board for Analog Discovery](<ElectronicDesigns/Adapter Board for Analog Discovery.md>)

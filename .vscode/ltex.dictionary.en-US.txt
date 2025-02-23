@@ -35,3 +35,6 @@ Num
 pA
 mA
 Nonideal
+noninverting
+On−Region
+VSVS

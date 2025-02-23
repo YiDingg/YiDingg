@@ -3,6 +3,8 @@
 > [!Note|style:callout|label:Infor]
 Initially published at 20:03 on 2025-02-12 in Lincang.
 
+## Infor
+
 
 - Time: 2025.02.13
 - Details: suitable for [AD1](https://digilent.com/reference/test-and-measurement/analog-discovery/start) (Analog Discovery 1), [AD2](https://digilent.com/reference/test-and-measurement/analog-discovery-2/start), and [AD3](https://digilent.com/reference/test-and-measurement/analog-discovery-3/start)；可以直接测量包括失调电压 $V_{IO}$、偏置电流 $I_{B\pm}$、开环增益 $A_{OL}$ 在内的 8 种运放基本参数 (详见后文)

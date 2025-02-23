@@ -3,9 +3,27 @@
 > [!Note|style:callout|label:Infor]
 Initially published at 18:18 on 2025-02-15 in Lincang.
 
+## Infor
+
+
 - Time: 2025.02.15
-- Details: 适用于运放供电、±5V 和 ±12V (3A 以内电流) 输出等场合。
-- Relevant Resources: 
+- Details: 共四路输出，±5V 和 ±12V (3A 以内电流) 输出、适用于运放供电等场合。
+- Relevant Resources: [https://www.123684.com/s/0y0pTd-lquj3](https://www.123684.com/s/0y0pTd-lquj3)
+
+<div class='center'>
+
+| Schematic | 3D view | 
+|:-:|:-:|
+ |<div class="center"><img width = 400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-18-23-40-47_All-in-one DC-DC Power Supply (5V Input).png"/></div>|<div class="center"><img width = 400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-18-23-42-25_All-in-one DC-DC Power Supply (5V Input).jpg"/></div>|
+</div>
+
+<div class='center'>
+
+| Top view | Bottom view | 
+|:-:|:-:|
+ | <div class="center"><img width = 400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-18-23-43-18_All-in-one DC-DC Power Supply (5V Input).png"/></div> | <div class="center"><img width = 400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-18-23-43-35_All-in-one DC-DC Power Supply (5V Input).png"/></div> |
+</div>
+
 
 ## Design Requirements
 
