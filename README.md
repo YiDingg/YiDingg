@@ -25,43 +25,9 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-938%20hrs%209%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-944%20hrs%2034%20mins-blue)
 
-![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-743.9%20thousand%20lines%20of%20code-blue)
-
-**I'm a Night 🦉** 
-
-```text
-🌞 Morning                79 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   07.40 % 
-🌆 Daytime                385 commits         █████████░░░░░░░░░░░░░░░░   36.05 % 
-🌃 Evening                352 commits         ████████░░░░░░░░░░░░░░░░░   32.96 % 
-🌙 Night                  252 commits         ██████░░░░░░░░░░░░░░░░░░░   23.60 % 
-```
-📅 **I'm Most Productive on Monday** 
-
-```text
-Monday                   180 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.85 % 
-Tuesday                  126 commits         ███░░░░░░░░░░░░░░░░░░░░░░   11.80 % 
-Wednesday                116 commits         ███░░░░░░░░░░░░░░░░░░░░░░   10.86 % 
-Thursday                 180 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.85 % 
-Friday                   180 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.85 % 
-Saturday                 117 commits         ███░░░░░░░░░░░░░░░░░░░░░░   10.96 % 
-Sunday                   169 commits         ████░░░░░░░░░░░░░░░░░░░░░   15.82 % 
-```
-
-
-📊 **This Week I Spent My Time On** 
-
-```text
-💬 Programming Languages: 
-Markdown                 14 hrs 24 mins      █████████████████████░░░░   84.15 % 
-TeX                      2 hrs 42 mins       ████░░░░░░░░░░░░░░░░░░░░░   15.82 % 
-CSS                      0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.03 % 
-
-🐱‍💻 Projects: 
-GH.YiDingg               14 hrs 24 mins      █████████████████████░░░░   84.18 % 
-GH.LatexNotes            2 hrs 42 mins       ████░░░░░░░░░░░░░░░░░░░░░   15.82 % 
-```
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-744.6%20thousand%20lines%20of%20code-blue)
 
 **I Mostly Code in C** 
 
@@ -76,7 +42,7 @@ TypeScript               1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2025.02.17 18:40 UTC
+ Last Updated on 2025.02.22 18:39 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
