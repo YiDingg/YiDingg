@@ -3,11 +3,12 @@
 > [!Note|style:callout|label:Infor]
 > Initially published at 22:59 on 2024-01-20 in Beijing.
 
+
 - Time: 2025.01.21
 - Notes: for NFET/PFET/NPN/PNP testing, suitable for Analog Discovery [1](https://digilent.com/reference/test-and-measurement/analog-discovery/start), [2](https://digilent.com/reference/test-and-measurement/analog-discovery-2/start), and [3](https://digilent.com/reference/test-and-measurement/analog-discovery-3/start)
 - Details: 可用于测试 TO-220, TO-263, SOT-23, TO-92, SOP-8 等常见封装, 可外接功率放大电路 (例如 VCVS), 另外还有分别由 V+ 和 V- 控制的两个 LED 
 - Interactive BOM: [here](https://www.123865.com/s/0y0pTd-cNuj3)
-- Relevant Resources: to be uploaded
+- Relevant Resources: [https://www.123684.com/s/0y0pTd-zjuj3](https://www.123684.com/s/0y0pTd-zjuj3)
 
 
 <div class='center'>
@@ -32,6 +33,4 @@
 |:-:|:-:|
  | <div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-13-02-33-28_Transistor Tester for ADx.png"/></div> | <div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-13-02-33-46_Transistor Tester for ADx.png"/></div> |
 </div>
-
-
 

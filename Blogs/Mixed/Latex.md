@@ -410,6 +410,15 @@ warranty, not even for merchantability or fitness for a particular purpose.
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2024-08-26-18-50-36_Latex.png"/></div>
  -->
 
+### 埃米符号
+
+``` latex
+\qty{8}{\angstrom}
+```
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-24-22-22-29_Latex.png"/></div>
+
+
+
 ## 自定义模版
 
 全部自定义模版的最新源代码见：[GitHub](https://github.com/YiDingg/LatexNotes/tree/main/Templates)

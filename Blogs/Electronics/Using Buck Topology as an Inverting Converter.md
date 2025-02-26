@@ -1,13 +1,27 @@
-# Using Buck Topology as an Inverting Converter
+# Using Buck Topology as an Inverting Converter (Buck-Boost)
 
 > [!Note|style:callout|label:Infor]
 Initially published at 13:57 on 2025-02-16 in Lincang.
 
-一个 Buck Topology ，通常可以简化为具有 $V_{in}$、$V_{out}$ 和 $\mathrm{GND} (V_{ref})$ 的三端（三节点）网络，并且满足 $V_{in} > V_{out} > \mathrm{GND}$。大多数情况下，我们都可以利用这样的电压关系实现负电压输出，下面就来看看如何实现。
+## 前言
 
-## Configure Buck Topology to an Inverting Converter
+由于 buck 和 buck-boost 在拓扑上的“同一性”（拓扑结构完全相同，仅端口定义不同），我们可以将 buck 电路用作 buck-boost 电路，从而获得负电压输出。当然，反过来将 buck-boost 用作 buck 也是可以的。下面我们先介绍为什么说“两者拓扑相同”，再讨论实现负电压输出的具体方法。
 
-<span style='color:red'> 在注意滤波电容位置的情况下</span>，只需简单交换 buck 中的 `GND` 和 `V_out` 节点，即可实现负电压输出，下面我们研究输入输出的范围关系。设 buck 输入电压范围被限制在 $[(V_{in,\min})_{\mathrm{buck}},\ (V_{in,\max})_{\mathrm{buck}}]$ (Absolute Maximum Ratings)，输出电压至少为 $(V_{out,\min})_{\mathrm{buck}}$ 同时 buck 输入电压至少比输出电压高 $\Delta V$。写成数学形式：
+## Buck and Buck-Boost Topology
+
+一个 Buck Topology ，通常可以简化为具有 $V_{in}$、$V_{out}$ 和 $\mathrm{GND} (V_{ref})$ 的三端（三节点）网络，并且满足 $V_{in} > V_{out} > \mathrm{GND}$，如下图所示：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-26-17-05-30_Using Buck Topology as an Inverting Converter.png"/></div>
+
+而 buck-boost 输出电压为负，因此也满足 $V_{in} > V_{out} > \mathrm{GND}$，如下图所示：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-26-17-07-45_Using Buck Topology as an Inverting Converter.png"/></div>
+
+由图中可以看出，两者的拓扑结构完全相同，只是端口定义不同（序号不同）。 buck 中的 GND (2号端口) 是 boost 中的 V_out (3号端口)，buck 中的 V_out (3号端口) 是 boost 中的 GND (2号端口)。
+
+
+## Configure Buck Topology to an Inverting Converter (Buck-Boost)
+
+如何将 buck 电路当作 buck-boost 来使用呢？ <span style='color:red'> 在注意滤波电容（不是储能电容）位置的情况下</span>，只需简单交换 buck 中的 `GND` 和 `V_out` 节点，即可实现负电压输出，下面我们研究输入输出的范围关系。设 buck 输入电压范围被限制在 $[(V_{in,\min})_{\mathrm{buck}},\ (V_{in,\max})_{\mathrm{buck}}]$ (Absolute Maximum Ratings)，输出电压至少为 $(V_{out,\min})_{\mathrm{buck}}$ 同时 buck 输入电压至少比输出电压高 $\Delta V$。写成数学形式：
 $$
 \begin{gather}
 \begin{cases}
@@ -82,7 +96,7 @@ $$
 $$
 
 
-## Inverting Converter Demo
+## Demo
 
 作为一个例子，我们用手上现有的一个 Buck 电路进行实验（如下图）。
 <div class="center"><img width=500px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-16-16-10-54_Using Buck Topology as an Inverting Converter.png"/></div>
@@ -93,10 +107,15 @@ $$
 
 显然，输出为 -5V，这与我们的预测完全一致。此时，作为  `Inverting: +5V to -5V` 的 Buck 电路实际上（以为自己）工作在 `Buck: +10V to +5V` 的条件下。在 `Inverting: +5V to -5V` 条件下分别测试 1A ~ 3A 负载的 Load Regulation 和 Output Ripple ，所得结果与 `Buck: +10V to +5V` 时无明显差异。
 
+## Can we use buck (or buck-boost) as a boost converter? 
+
+Boost 电路的拓扑结构与 buck (or buck-boost) 并不相同，因此原则上无法与之等效，如下图所示。
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-26-17-10-28_Using Buck Topology as an Inverting Converter.png"/></div>
+
 ## Can we use LDO as an Inverting Converter?
 
-LDO 的输入输出电压与 Buck 电路类似，那么 LDO 是否可以实现负电压输出呢？
-仿照上面的思路，我们利用一个 LDO (AMS1117-5.0) 来尝试实现负压输出，事实证明，这是不可行的。具体原因与 LDO 的工作原理有关，我们不多赘述。
+LDO 的输入输出电压关系与 Buck 电路类似，那么 LDO 是否可以实现负电压输出呢？
+仿照上面的思路，我们利用一个 LDO (AMS1117-5.0) 来尝试实现负压输出，事实证明，这是不可行的。就像 boost 无法等效转换一样， LDO 的工作原理决定了它无法当作 buck 来使用，具体原因我们不多赘述。
 <!-- <div class="center"><img width=500px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-16-16-08-38_Using Buck Topology as an Inverting Converter.png"/></div> -->
 <div class="center"><img width=500px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-16-16-12-19_Using Buck Topology as an Inverting Converter.png"/></div>
 

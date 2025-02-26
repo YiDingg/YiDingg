@@ -74,6 +74,8 @@
 - 📓 **Blogs**
 
     - Electronics
+        - [DC-DC SX1308 输出异常记录](<Blogs/Electronics/DC-DC SX1308 输出异常记录.md>)
+        - [DC-DC TPS5430DDAR 输出异常记录](<Blogs/Electronics/DC-DC TPS5430DDAR 输出异常记录.md>)
         - [常见 NPN 三极管特性曲线测量](<Blogs/Electronics/常见 NPN 三极管特性曲线测量.md>)
         - [常见 NMOS 特性曲线测量](<Blogs/Electronics/常见 NMOS 特性曲线测量.md>)
         - [Negative VCVS Test](<Blogs/Electronics/Negative VCVS Test.md>)
@@ -133,9 +135,11 @@
 
 
 
-- 💡 **Electronic Designs**
+- 💡 **My Electronic Designs**
 
     - [Other Circuit Boards](<ElectronicDesigns/Other Circuit Boards.md>)
+    - [! Precission Current Source.md](<ElectronicDesigns/Precision Current Source.md>)
+    - [! General-Purpose Transistor Tester](<ElectronicDesigns/General-Purpose Transistor Tester Transistor Tester.md>)
     - [Voltage Linear Operation Board](<ElectronicDesigns/Voltage Linear Operation Board.md>)
     - [Versatile Voltage-Controlled Power Source](<ElectronicDesigns/Versatile Voltage-Controlled Power Source.md>)
     - [All-In-One DC-DC Power Supply (5V Input)](<ElectronicDesigns/All-In-One DC-DC Power Supply (5V Input).md>)
