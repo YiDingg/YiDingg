@@ -1,11 +1,7 @@
-# Basic Op Amp Measurement Board (运算放大器参数测量板)
-
-> [!Note|style:callout|label:Infor]
-Initially published at 20:03 on 2025-02-12 in Lincang.
+# Basic Op Amp Measurement Board
 
 ## Infor
 
-本板用于测量运算放大器包括失调电压 $V_{IO}$、偏置电流 $I_{B\pm}$、开环增益 $A_{OL}$ 在内的 8 种运放基本参数。
 
 - Time: 2025.02.13
 - Notes: suitable for [AD1](https://digilent.com/reference/test-and-measurement/analog-discovery/start) (Analog Discovery 1), [AD2](https://digilent.com/reference/test-and-measurement/analog-discovery-2/start), and [AD3](https://digilent.com/reference/test-and-measurement/analog-discovery-3/start)
@@ -90,8 +86,8 @@ Then, we can start the measurement:
  | 4 | AC Gain | S4 to `R9`, 'AD1 Impedance' inputs ac signal (500Hz ~ 5MHz), measure $v_{TH2}$ | $A_{OL} = \left(1 + \frac{R_9}{R_1}\right)\cdot \frac{v_{TP2, amp}}{v_{IN, amp}}$ |  |  |
  | 5 | DC CMRR |W1 and W2 from ±4V to +5V and -3V, write $\Delta V_{TP1}$ | $\mathrm{CMRR} = \frac{1001\, \Delta V_{CM}}{\Delta V_{TP1}}$ |
  | 6 | DC PSRR |W1 and W2 from ±4V to ±12V (or ±5V), write $\Delta V_{TP1}$ | $\mathrm{PSRR} = \frac{1001\, \Delta V_{PS,total}}{\Delta V_{TP1}}$ |
- | 7 | AC CMRR | <span style='color:red'> S3 to 1</span>, configure W1 to sine wave (1V amplitude, +4V offset), W2 to sine wave (1V amplitude, -4V offset), ${\color{red}{\Delta \varphi = 0}}$ and measure $v_{TP1, amp}$ | $\mathrm{CMRR} = \frac{1001\, v_{W1, amp}}{v_{TP1,amp}}$ |
- | 8 | AC PSRR |<span style='color:red'> S3 to 1</span>, configure W1 to sine wave (1V amplitude, +4V offset), W2 to sine wave (1V amplitude, -4V offset), ${\color{red}{\Delta \varphi = \pi}}$ and measure $v_{TP1, amp}$ | $\mathrm{CMRR} = \frac{2002\, v_{W1, amp}}{v_{TP1,amp}}$ |
+ | 7 | AC CMRR | <span style='color:red'> S3 to 1</span>, configure W1 to sine wave (1V amplitude, +4V offset), W2 to sine wave (1V amplitude, -4V offset),   <span style='color:red'> $\Delta \varphi = 0$</span> and measure $v_{TP1, amp}$ | $\mathrm{CMRR} = \frac{1001\, v_{W1, amp}}{v_{TP1,amp}}$ |
+ | 8 | AC PSRR |<span style='color:red'> S3 to 1</span>, configure W1 to sine wave (1V amplitude, +4V offset), W2 to sine wave (1V amplitude, -4V offset), <span style='color:red'> $\Delta \varphi = \pi$</span> and measure $v_{TP1, amp}$ | $\mathrm{CMRR} = \frac{2002\, v_{W1, amp}}{v_{TP1,amp}}$ |
 
 </div>
 
@@ -181,7 +177,7 @@ $$
 \begin{gather}
 V_{TP1} = \left(1 + \frac{R_3}{R_2}\right) \times V_{IO} = \left(1 + \frac{100 \ \mathrm{K\Omega}}{100}\right) \times V_{IO}
 \Longrightarrow 
-{\color{red}{V_{IO} = \frac{V_{TP1}}{1001}}} 
+{{V_{IO} = \frac{V_{TP1}}{1001}}} 
 \end{gather}
 $$
 
@@ -194,7 +190,7 @@ $$
 $$
 \begin{gather}
 \Delta V_{IO} = -R_7I_{B-} = \frac{\Delta V_{TP1}}{1001} \Longrightarrow  
-{\color{red}{I_{B-} = - \frac{\Delta V_{TP1}}{1001\,R_7}}}
+{{I_{B-} = - \frac{\Delta V_{TP1}}{1001\,R_7}}}
 \end{gather}
 $$
 
@@ -203,7 +199,7 @@ $$
 $$
 \begin{gather}
 \Delta V_{IO} = R_6I_{B+} = \frac{\Delta V_{TP1}}{1001} \Longrightarrow  
-{\color{red}{I_{B+} = +\frac{\Delta V_{TP1}}{1001\,R_6}}}
+{{I_{B+} = +\frac{\Delta V_{TP1}}{1001\,R_6}}}
 \end{gather}
 $$
 
@@ -228,7 +224,7 @@ For values of IB of the order of 5 pA or less, it becomes quite difficult to use
 
 $$
 \begin{gather}
-A_{OL} = \frac{\Delta V_{TP2}}{\frac{\Delta V_{TP1}}{1001}} \Longrightarrow {\color{red}{ A_{OL} = 1001 \times \frac{\Delta V_{TP2}}{\Delta V_{TP1}}}}
+A_{OL} = \frac{\Delta V_{TP2}}{\frac{\Delta V_{TP1}}{1001}} \Longrightarrow {{ A_{OL} = 1001 \times \frac{\Delta V_{TP2}}{\Delta V_{TP1}}}}
 \end{gather}
 $$
 
@@ -246,7 +242,7 @@ A_{OL} = \frac{V_{TP2}}{V_{DUT, in}} ,\quad
 V_{DUT, in} = - \frac{R_1}{R_1 + R_9} V_{IN}
 \\
 \Longrightarrow
-{\color{red}{} A_{OL} = (1 + \frac{R_9}{R_1}) \cdot \frac{V_{TP2, \mathrm{amplitude}}}{V_{IN,\mathrm{amplitude}}} }
+{ A_{OL} = (1 + \frac{R_9}{R_1}) \cdot \frac{V_{TP2, \mathrm{amplitude}}}{V_{IN,\mathrm{amplitude}}} }
 \end{gather}
 $$
 
@@ -265,7 +261,7 @@ $$
 \mathrm{CMRR} = \frac{\Delta V_{CM}}{\Delta V_{IO}} = \frac{1001\,\Delta V_{CM}}{\Delta V_{TP1}}
 \\
 \Longrightarrow 
-{\color{red}{\mathrm{CMRR} = \frac{1001 \times \Delta V_{CM}}{\Delta V_{TP1}}}}
+{{\mathrm{CMRR} = \frac{1001 \times \Delta V_{CM}}{\Delta V_{TP1}}}}
 \end{gather}
 $$
 
@@ -282,7 +278,7 @@ $$
 \mathrm{PSRR} = \frac{\Delta V_{PS, total}}{\Delta V_{IO}} = \frac{1001\,\Delta V_{PS, total}}{\Delta V_{TP1}}
 \\
 \Longrightarrow 
-{\color{red}{\mathrm{PSRR} = \frac{1001 \times \Delta V_{PS, total}}{\Delta V_{TP1}}}}
+{{\mathrm{PSRR} = \frac{1001 \times \Delta V_{PS, total}}{\Delta V_{TP1}}}}
 \end{gather}
 $$
 
@@ -299,7 +295,7 @@ $$
 \mathrm{CMRR} = \frac{V_{CM}}{V_{IO}} = \frac{1001\,V_{CM}}{V_{TP1}}
 \\
 \Longrightarrow 
-{\color{red}{
+{{
 \mathrm{CMRR} = \frac{1001\, V_{W1, \mathrm{amplitude}}}{V_{TP1, \mathrm{amplitude}}}
 }}
 \end{gather}
@@ -316,7 +312,7 @@ $$
 \mathrm{PSRR} = \frac{V_{PS}}{V_{IO}} = \frac{1001\,V_{PS}}{V_{TP1}}
 \\
 \Longrightarrow 
-{\color{red}{
+{{
 \mathrm{PSRR} = \frac{2002\, V_{W1, \mathrm{amplitude}}}{V_{TP1, \mathrm{amplitude}}}
 }}
 \end{gather}

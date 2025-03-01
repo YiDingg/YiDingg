@@ -1,4 +1,4 @@
-# MinSyBo (Minimum System Board of STM32) <br> (Series Number: DIB0001)
+# MinSyBo (Minimum System Board of STM32) <br> STM32 最小系统板设计
 
 > [!Note|style:callout|label:Infor]
 Initially published at 18:36 on 2024-06-19 in Beijing.
@@ -201,6 +201,8 @@ BOOT Modes：
 
 当仅剩地线GND未连接时，进行铺铜，将地线连接完毕，并检查有无错误：
 <div class='center' ><img src="https://www.writebug.com/static/uploads/2024/5/17/e70921650b64c5e8aab6e0ba795edd1c.png"/></div>
+
+**建议在整板上布置相当数量的地孔，避免悬空地平面存在的同时，增强系统的导热性和稳定性。**
 
 ## 物料表与焊接图
 BOM表（简略）：

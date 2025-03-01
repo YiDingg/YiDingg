@@ -94,6 +94,7 @@
         - [一伟 D-30F12 开关电源测评](<Blogs/Electronics/一伟 D-30F12 开关电源测评.md>)
         - [LTspice](Blogs/Mixed/LTspice.md)
     - Mixed <!-- empty line is necessary to avoid the error -->
+        - [Markdown 转微信公众号或知乎](<Blogs/Mixed/Markdown 转微信公众号或知乎.md>)
         - [关于国科大本科部电子信息工程专业课程安排的一些思考](Blogs/Mixed/关于国科大本科部电子信息工程专业课程安排的一些思考.md)
         - [LTeX – grammar/spell checking](Blogs/Mixed/LTEX.md)
         - [Zotero](Blogs/Mixed/Zotero.md)
@@ -138,10 +139,11 @@
 - 💡 **My Electronic Designs**
 
     - [Other Circuit Boards](<ElectronicDesigns/Other Circuit Boards.md>)
-    - [! Precission Current Source.md](<ElectronicDesigns/Precision Current Source.md>)
+    - [! General-Purpose Transistor Tester](<ElectronicDesigns/General-Purpose Transistor Tester Transistor Tester.md>)
+    - [Precision Current Source.md](<ElectronicDesigns/Precision Voltage-Controlled Current Source.md>)
     - [! General-Purpose Transistor Tester](<ElectronicDesigns/General-Purpose Transistor Tester Transistor Tester.md>)
     - [Voltage Linear Operation Board](<ElectronicDesigns/Voltage Linear Operation Board.md>)
-    - [Versatile Voltage-Controlled Power Source](<ElectronicDesigns/Versatile Voltage-Controlled Power Source.md>)
+    - [Voltage-Controlled Power Source](<ElectronicDesigns/Versatile Voltage-Controlled Power Source.md>)
     - [All-In-One DC-DC Power Supply (5V Input)](<ElectronicDesigns/All-In-One DC-DC Power Supply (5V Input).md>)
     - [Basic Op Amp Measurement Board](<ElectronicDesigns/Basic Op Amp Measurement Board.md>)
     - [Adapter Board for Analog Discovery](<ElectronicDesigns/Adapter Board for Analog Discovery.md>)
@@ -149,6 +151,7 @@
     - [General VCVS and VCCS (up to 5A)](<ElectronicDesigns/General VCVS and VCCS (up to 10 A).md>)
     - [ESP12-F Adapter Board](<ElectronicDesigns/ESP12-F Adapter Board.md>)
     - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
+    - [[Veri] INA180 and INA240 Current Sampling.md](<ElectronicDesigns/[Verification] INA180 and INA240 Current Sampling.md>)
 
 
 - 📝 **Projects**

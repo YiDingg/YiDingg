@@ -82,6 +82,7 @@ Go to [About Me](README.md) for more information.
 
 Here are some interesting educational or personal sites.
 
+- [EEVBlog](https://www.eevblog.com/)
 - [Cambridge Notes](https://dec41.user.srcf.net/notes/)
 - [Douglas M. Gingrich](https://sites.ualberta.ca/~gingrich/)
 - [Bilgin's Blog](http://bilgin.esme.org/BitsAndBytes/KalmanFilterforDummies#)

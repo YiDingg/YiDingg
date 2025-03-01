@@ -5,7 +5,7 @@ Initially published at 13:57 on 2025-02-16 in Lincang.
 
 ## 前言
 
-由于 buck 和 buck-boost 在拓扑上的“同一性”（拓扑结构完全相同，仅端口定义不同），我们可以将 buck 电路用作 buck-boost 电路，从而获得负电压输出。当然，反过来将 buck-boost 用作 buck 也是可以的。下面我们先介绍为什么说“两者拓扑相同”，再讨论实现负电压输出的具体方法。
+由于 buck 和 buck-boost 在拓扑上的“同一性”，即拓扑结构完全相同，仅端口定义不同（但是反馈环路稍有不同，我们不作细究），**我们可以将 buck 电路用作 buck-boost 电路，从而获得负电压输出**。当然，反过来将 buck-boost 用作 buck 也是可以的。下面我们先介绍为什么说“两者拓扑相同”，再讨论实现负电压输出的具体方法。
 
 ## Buck and Buck-Boost Topology
 
@@ -16,12 +16,16 @@ Initially published at 13:57 on 2025-02-16 in Lincang.
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-26-17-07-45_Using Buck Topology as an Inverting Converter.png"/></div>
 
+
+
+
 由图中可以看出，两者的拓扑结构完全相同，只是端口定义不同（序号不同）。 buck 中的 GND (2号端口) 是 boost 中的 V_out (3号端口)，buck 中的 V_out (3号端口) 是 boost 中的 GND (2号端口)。
 
 
 ## Configure Buck Topology to an Inverting Converter (Buck-Boost)
 
 如何将 buck 电路当作 buck-boost 来使用呢？ <span style='color:red'> 在注意滤波电容（不是储能电容）位置的情况下</span>，只需简单交换 buck 中的 `GND` 和 `V_out` 节点，即可实现负电压输出，下面我们研究输入输出的范围关系。设 buck 输入电压范围被限制在 $[(V_{in,\min})_{\mathrm{buck}},\ (V_{in,\max})_{\mathrm{buck}}]$ (Absolute Maximum Ratings)，输出电压至少为 $(V_{out,\min})_{\mathrm{buck}}$ 同时 buck 输入电压至少比输出电压高 $\Delta V$。写成数学形式：
+
 $$
 \begin{gather}
 \begin{cases}
@@ -32,7 +36,9 @@ $$
 \end{cases}
 \end{gather}
 $$
+
 buck 向 inverting 的转换关系为：
+
 $$
 \begin{gather}
 \begin{cases}
@@ -48,6 +54,7 @@ $$
 $$
 
 代入转换关系，得到 inverting 结构下的输入输出电压限制：
+
 $$
 \begin{gather}
 \begin{cases}
@@ -58,7 +65,9 @@ $$
 \end{cases}
 \end{gather}
 $$
+
 进一步化简第四条，得到：
+
 $$
 \begin{gather}
 \begin{cases}
@@ -69,7 +78,9 @@ $$
 \end{cases}
 \end{gather}
 $$
+
 这便得到了 inverting 结构下的输入输出电压限制。举个例子，设 $(V_{in,\min})_{\mathrm{buck}} = 4 \ \mathrm{V}$，$(V_{in,\max})_{\mathrm{buck}} = 40 \ \mathrm{V}$，$(V_{out,\min})_{\mathrm{buck}} = 2 \ \mathrm{V}$，$\Delta V = 2 \ \mathrm{V}$，那么 inverting 结构下的输入输出电压范围是：
+
 $$
 \begin{gather}
 \begin{cases}
@@ -119,7 +130,31 @@ LDO 的输入输出电压关系与 Buck 电路类似，那么 LDO 是否可以�
 <!-- <div class="center"><img width=500px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-16-16-08-38_Using Buck Topology as an Inverting Converter.png"/></div> -->
 <div class="center"><img width=500px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-16-16-12-19_Using Buck Topology as an Inverting Converter.png"/></div>
 
+## Conclusion
 
+总的来讲，若原 buck 电路的输入、输出和 GND 分别为 1、2、3 号端口，那么**生成负压源时，我们只需将正输入接 1 号端口、 GND 接 2 号端口、负输出接 3 号端口即可**。特别地，依据芯片数据手册中的公式 $V_{out} = V_{ref} \left(1 + \frac{R_1}{R_2}\right)$ 来设置反馈电阻时，反馈电阻的计算公式如下：
+
+$$
+\begin{gather}
+| \mathrm{负输出} | = V_{ref} \left(1 + \frac{R_1}{R_2}\right)
+\Longrightarrow 
+\frac{R_1}{R_2} = \frac{| \mathrm{负输出} |}{V_{ref}} - 1
+\end{gather}
+$$
+
+当所需的负输出电压已知时，$R_1$ 与 $R_2$ 的比值便唯一确定。
+
+举个简单的例子，若我们的正输入为 +5V，负输出为 -10V，首先要保证 $|\mathrm{正输入}| + |\mathrm{负输入}|$ 不超过芯片的最大输入电压，然后便可计算所需的反馈电阻（假设 $V_{ref} = 1.25\ \mathrm{V}$）：
+
+$$
+\begin{gather}
+| \mathrm{负输出} | = 10\ \mathrm{V} = 1.25\ \mathrm{V} \times\left(1 + \frac{R_1}{R_2}\right)
+\Longrightarrow 
+R_1 = R_2 \cdot \left( \frac{10\ \mathrm{V}}{1.25\ \mathrm{V}} - 1 \right) = 7 R_2
+\end{gather}
+$$
+
+如果选择 $R_2 = 10 \ \mathrm{K\Omega}$，那么 $R_1 = 70 \ \mathrm{K\Omega}$。
 
 ## References
 

@@ -38,3 +38,6 @@ Nonideal
 noninverting
 On−Region
 VSVS
+RampUp
+mOhm
+BW

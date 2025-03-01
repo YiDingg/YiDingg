@@ -25,6 +25,20 @@ Initially published at 18:18 on 2025-02-15 in Lincang.
 </div>
 
 
+## Output Test Results
+
+<div class='center'>
+
+ | Channel |  Actual Output Range <br> (Input +5V) | Test Condition | Output Voltage Ripple  | PH Voltage |
+|:-:|:-:|:-:|:-:|:-:|
+ | CH1 (+3V ~ +8V) | +2.90V ~ +8.57V | +5V@15Ohm | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-13-33-18_All-In-One DC-DC Power Supply (5V Input).png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-13-36-05_All-In-One DC-DC Power Supply (5V Input).png"/></div> |
+ | CH2 (-3V ~ -7V) | -3.08V ~ -7.22V | +5V@15Ohm | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-13-37-53_All-In-One DC-DC Power Supply (5V Input).png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-13-38-46_All-In-One DC-DC Power Supply (5V Input).png"/></div> |
+ | CH3 (+8V ~ +16V) | +7.68V ~ +16.8V | +12V@15Ohm | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-14-45-43_All-In-One DC-DC Power Supply (5V Input).png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-14-44-01_All-In-One DC-DC Power Supply (5V Input).png"/></div> |
+ | CH4 (+3V ~ +7V) |  |  |  |  |
+</div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-14-02-37_All-In-One DC-DC Power Supply (5V Input).png"/></div>
+
 ## Design Requirements
 
 - 输入 +5V（+3V 至 +10V）

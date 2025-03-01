@@ -32,8 +32,8 @@ Initially published at 17:58 on 2025-02-20 in Lincang.
 
 本文，我们用下图所示的线性运算器电路来实现加法器和减法器的功能：
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-20-18-00-12_Voltage Adder and Subtractor using Op Amp.png"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-20-18-00-26_Voltage Adder and Subtractor using Op Amp.png"/></div>
+<div class="center"><img width=500px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-20-18-00-12_Voltage Adder and Subtractor using Op Amp.png"/></div>
+<div class="center"><img width=500px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-20-18-00-26_Voltage Adder and Subtractor using Op Amp.png"/></div>
 
 ### Voltage Adder (加法器)
 
@@ -44,7 +44,7 @@ V_{out} = V_1 + V_2
 \end{gather}
 $$
 下面的 LTspice 仿真验证了这个结果：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-20-18-01-00_Voltage Adder and Subtractor using Op Amp.png"/></div>
+<div class="center"><img width=500px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-20-18-01-00_Voltage Adder and Subtractor using Op Amp.png"/></div>
 
 ### Voltage Subtractor (减法器)
 
@@ -55,4 +55,10 @@ V_{out} = V_1 - V_2
 \end{gather}
 $$
 下面的 LTspice 仿真验证了这个结果：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-20-18-04-05_Voltage Adder and Subtractor using Op Amp.png"/></div>
+<div class="center"><img width=500px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-20-18-04-05_Voltage Adder and Subtractor using Op Amp.png"/></div>
+
+## Configuration Demo 
+
+基于上面的线性运算器，选择合适的电阻值，我们可以实现很多电路。下面是两个例子：
+<div class="center"><img width=500px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-26-21-32-23_Voltage Linear Operation Board.png"/></div>
+<div class="center"><img width=500px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-26-21-33-30_Voltage Linear Operation Board.png"/></div>

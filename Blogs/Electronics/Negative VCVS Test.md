@@ -5,7 +5,11 @@ Initially published at 12:20 on 2025-02-20 in Lincang.
 
 ## 前言
 
-先前我们在 [General VCVS and VCCS (up to 10 A)](<ElectronicDesigns/General VCVS and VCCS (up to 10 A).md>) 已经介绍过 VCVS ，但是当时的 VCVS 仅限于输出电压为正的情况，也就是正输出半区。在实际电路中，我们有时候也需要输出负电压，这时候就需要使用负输出半区的 VCVS ，即负 VCVS 。本文基于正半区的 VCVS 电路，对负半区的 VCVS 提出几种猜想，并进行实际测试。
+先前我们在 [General VCVS and VCCS (up to 10 A)](<ElectronicDesigns/General VCVS and VCCS (up to 10 A).md>) 已经介绍过 VCVS ，但是当时的 VCVS 仅限于输出电压为正的情况，也就是正输出半区。在实际电路中，我们有时候也需要输出负电压，这时候就需要使用负输出半区的 VCVS ，即负 VCVS 。
+
+本文基于正半区的 VCVS 电路，对负半区的 VCVS 提出几种猜想，并进行实际测试。
+
+
 
 ## 方案一
 
