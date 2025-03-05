@@ -1,4 +1,4 @@
-# All-In-One DC-DC Power Supply (5V Input)
+# All-In-One DC-DC Power Supply (5V~12V Input)
 
 > [!Note|style:callout|label:Infor]
 Initially published at 18:18 on 2025-02-15 in Lincang.
@@ -7,7 +7,18 @@ Initially published at 18:18 on 2025-02-15 in Lincang.
 
 
 - Time: 2025.02.15
-- Details: 共四路输出，±5V 和 ±12V (3A 以内电流) 输出、适用于运放供电等场合。
+- Notes:
+    - Input: +5V ~ +12V
+    - Output: 4 channels in total (guaranteed 2A per channel)
+- Details: 
+    - 共四路输出，可覆盖 ±3V ~ ±15V 输出范围
+    - 多种输入接口：排针排母、 USB 、接线端子和 DC005母座
+    - 两种输出接口：排针排母和接线端子
+    - 配有电源总开关，且每一路都有单独控制开关
+    - 配有电源输入指示灯，且每一路都有输出指示灯
+    - 适用于 ±5V 和 ±12V (3A 以内电流) 输出场景
+    - 适用于运放供电
+    - 四通道共四枚 DC-DC 芯片的价格仅 1 元, 整板成本约 5 元
 - Relevant Resources: [https://www.123684.com/s/0y0pTd-lquj3](https://www.123684.com/s/0y0pTd-lquj3)
 
 <div class='center'>
@@ -24,28 +35,45 @@ Initially published at 18:18 on 2025-02-15 in Lincang.
  | <div class="center"><img width = 400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-18-23-43-18_All-in-one DC-DC Power Supply (5V Input).png"/></div> | <div class="center"><img width = 400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-18-23-43-35_All-in-one DC-DC Power Supply (5V Input).png"/></div> |
 </div>
 
+<div class='center'>
+
+| Demo (Top view) | Demo (Bottom view) | 
+|:-:|:-:|
+ | <div class="center"><img width = 400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-02-13-25-31_All-In-One DC-DC Power Supply (5V Input).png"/></div> | <div class="center"><img width = 400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-02-13-21-56_All-In-One DC-DC Power Supply (5V Input).png"/></div> |
+</div>
+
+
 
 ## Output Test Results
 
+我们分别测试了四个通道的输出纹波和开关波形，结果如下 (输入 +5V, 室温)：
+<div class="center"><img width = 500px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-02-12-45-46_All-In-One DC-DC Power Supply (5V Input).png"/></div>
+
+
 <div class='center'>
 
- | Channel |  Actual Output Range <br> (Input +5V) | Test Condition | Output Voltage Ripple  | PH Voltage |
-|:-:|:-:|:-:|:-:|:-:|
- | CH1 (+3V ~ +8V) | +2.90V ~ +8.57V | +5V@15Ohm | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-13-33-18_All-In-One DC-DC Power Supply (5V Input).png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-13-36-05_All-In-One DC-DC Power Supply (5V Input).png"/></div> |
- | CH2 (-3V ~ -7V) | -3.08V ~ -7.22V | +5V@15Ohm | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-13-37-53_All-In-One DC-DC Power Supply (5V Input).png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-13-38-46_All-In-One DC-DC Power Supply (5V Input).png"/></div> |
- | CH3 (+8V ~ +16V) | +7.68V ~ +16.8V | +12V@15Ohm | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-14-45-43_All-In-One DC-DC Power Supply (5V Input).png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-14-44-01_All-In-One DC-DC Power Supply (5V Input).png"/></div> |
- | CH4 (+3V ~ +7V) |  |  |  |  |
+ | Channel | DC-DC Chip | Actual Output Range <br> (Input +5V) | Test Condition | Output Voltage Ripple  | SW Waveform |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+ | CH1 (+3V ~ +8V) | TPS63070 RNMR | +2.90V ~ +8.57V | +5V@15Ohm | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-13-33-18_All-In-One DC-DC Power Supply (5V Input).png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-13-36-05_All-In-One DC-DC Power Supply (5V Input).png"/></div> |
+ | CH2 (-3V ~ -7V) | TPS563201 DDCR | -3.08V ~ -7.22V | +5V@15Ohm | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-13-37-53_All-In-One DC-DC Power Supply (5V Input).png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-13-38-46_All-In-One DC-DC Power Supply (5V Input).png"/></div> |
+ | CH3 (+8V ~ +16V) | SX1308 | +7.68V ~ +16.8V | +12V@15Ohm | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-14-45-43_All-In-One DC-DC Power Supply (5V Input).png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-14-44-01_All-In-One DC-DC Power Supply (5V Input).png"/></div> |
+ | CH4 (-3V ~ -16V) | TPS5430 DDAR | -2.7V ~ -16.2V | -12V@15Ohm | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-13-02-29_DC-DC TPS5430DDAR 输出异常记录.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-13-03-53_DC-DC TPS5430DDAR 输出异常记录.png"/></div> |
+
 </div>
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-14-02-37_All-In-One DC-DC Power Supply (5V Input).png"/></div>
 
-## Design Requirements
+<!-- LM2596S-ADJ SW 波形：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-14-02-37_All-In-One DC-DC Power Supply (5V Input).png"/></div> -->
+
+
+## Design Notes
+
+
+### Design Requirements
 
 - 输入 +5V（+3V 至 +10V）
 - 输出 ±5V 和 ±12V 至少四路电压，每一路有至少 2 A 的持续输出能力（峰值电流至少 3A）
 - 考虑是否再添加 0 ~ ±15V 可调输出，用于运放供电
-
-## Design Notes
 
 
 ### Output +5V (TPS63070)

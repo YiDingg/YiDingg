@@ -74,6 +74,7 @@
 - 📓 **Blogs**
 
     - Electronics
+        - [BJT's Terminal Resistances](<Blogs/Electronics/BJT's Terminal Resistances.md>)
         - [DC-DC SX1308 输出异常记录](<Blogs/Electronics/DC-DC SX1308 输出异常记录.md>)
         - [DC-DC TPS5430DDAR 输出异常记录](<Blogs/Electronics/DC-DC TPS5430DDAR 输出异常记录.md>)
         - [常见 NPN 三极管特性曲线测量](<Blogs/Electronics/常见 NPN 三极管特性曲线测量.md>)
@@ -137,7 +138,7 @@
 
 
 - 💡 **My Electronic Designs**
-
+    - [DC-DC Converter Modules](<ElectronicDesigns/DC-DC Converter Modules.md>)
     - [Other Circuit Boards](<ElectronicDesigns/Other Circuit Boards.md>)
     - [! General-Purpose Transistor Tester](<ElectronicDesigns/General-Purpose Transistor Tester Transistor Tester.md>)
     - [Precision Current Source.md](<ElectronicDesigns/Precision Voltage-Controlled Current Source.md>)

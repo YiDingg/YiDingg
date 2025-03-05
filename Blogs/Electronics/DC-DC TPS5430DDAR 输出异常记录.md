@@ -29,7 +29,7 @@ Initially published at 18:23 on 2025-02-24 in Beijing.
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-12-41-24_DC-DC TPS5430DDAR 输出异常记录.png"/></div>
 
-- 举个例子，我们将输出电压从 -3V 调整到 -11V，电路都能正常工作；继续调高电压，达到约 -11.5V 时，便会出现周期性的重启现象。我们将新故障的排查结果放在下一小节。类似地，新故障现象记录放在文末，以便随时参考。
+- 举个例子，我们将输出电压从 -3V 调整到 -11V，电路都能正常工作；继续调高电压，达到约 -11.5V 时，便会出现周期性的重启现象。我们将新故障的排查结果放在下一小节。
 
 
 ## 新故障排查结果
@@ -102,42 +102,7 @@ Initially published at 18:23 on 2025-02-24 in Beijing.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- 
 
 ## 异常现象记录
 
@@ -166,8 +131,9 @@ Initially published at 18:23 on 2025-02-24 in Beijing.
 - 芯片无虚焊 (包括 PowerPAD), 共焊接过三个芯片, 异常现象基本不变
 - 反馈电阻阻值正确
 - 输入电压 5V 正常
+ -->
 
-## 类似案例参考
+### 类似案例参考
 
 下面是利用 buck 芯片 TPS563201DDCR 实现的 +5V 转 -5V 电路（实际可转 -3V ~ -7V），已成功验证：
 
@@ -175,6 +141,10 @@ Initially published at 18:23 on 2025-02-24 in Beijing.
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-24-21-00-40_Using Buck Topology as an Inverting Converter.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-24-21-00-55_Using Buck Topology as an Inverting Converter.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-24-21-04-12_DC-DC TPS5430DDAR 输出异常记录.png"/></div>
+
+<!-- ## 新故障现象记录
+ -->
+
 
 ## 更详细的讨论
 

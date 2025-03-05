@@ -1,4 +1,4 @@
-# Negative VCVS Test
+# Solutions for Negative VCVS (负压控电压源的设计方案)
 
 > [!Note|style:callout|label:Infor]
 Initially published at 12:20 on 2025-02-20 in Lincang.
@@ -33,3 +33,7 @@ Initially published at 12:20 on 2025-02-20 in Lincang.
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-20-12-53-46_Negative VCVS Test.png"/></div>
 
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-20-12-53-27_Negative VCVS Test.png"/></div> -->
+
+## 方案三 (最佳)
+
+为了使输出电压（正端减去负端）的值与输入负电压相等，只需在方案一的基础上将 NMOS 换为 PMOS （同时对称翻转布局）。这样，输出的性能与常规的正 VCVS 电路类似，是相当稳定的。
