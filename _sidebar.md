@@ -74,8 +74,9 @@
 - 📓 **Blogs**
 
     - Electronics
+        - [Three Basic Types of Transistors](<Blogs/Electronics/Three Basic Types of Transistors.md>)
+        - [Instrument Amplifier Using Op Amp](<Blogs/Electronics/Instrument Amplifier Using Op Amp.md>)
         - [BJT's Terminal Resistances](<Blogs/Electronics/BJT's Terminal Resistances.md>)
-        - [DC-DC SX1308 输出异常记录](<Blogs/Electronics/DC-DC SX1308 输出异常记录.md>)
         - [DC-DC TPS5430DDAR 输出异常记录](<Blogs/Electronics/DC-DC TPS5430DDAR 输出异常记录.md>)
         - [常见 NPN 三极管特性曲线测量](<Blogs/Electronics/常见 NPN 三极管特性曲线测量.md>)
         - [常见 NMOS 特性曲线测量](<Blogs/Electronics/常见 NMOS 特性曲线测量.md>)
@@ -138,11 +139,11 @@
 
 
 - 💡 **My Electronic Designs**
-    - [DC-DC Converter Modules](<ElectronicDesigns/DC-DC Converter Modules.md>)
     - [Other Circuit Boards](<ElectronicDesigns/Other Circuit Boards.md>)
-    - [! General-Purpose Transistor Tester](<ElectronicDesigns/General-Purpose Transistor Tester Transistor Tester.md>)
+    - [! General-Purpose Transistor Tester](<ElectronicDesigns/General-Purpose Transistor Tester.md>)
+    - [Current Sense Amplifiers](<ElectronicDesigns/Current Sense Amplifiers.md>)
+    - [DC-DC Converter Modules](<ElectronicDesigns/DC-DC Converter Modules.md>)
     - [Precision Current Source.md](<ElectronicDesigns/Precision Voltage-Controlled Current Source.md>)
-    - [! General-Purpose Transistor Tester](<ElectronicDesigns/General-Purpose Transistor Tester Transistor Tester.md>)
     - [Voltage Linear Operation Board](<ElectronicDesigns/Voltage Linear Operation Board.md>)
     - [Voltage-Controlled Power Source](<ElectronicDesigns/Versatile Voltage-Controlled Power Source.md>)
     - [All-In-One DC-DC Power Supply (5V Input)](<ElectronicDesigns/All-In-One DC-DC Power Supply (5V Input).md>)
@@ -152,7 +153,6 @@
     - [General VCVS and VCCS (up to 5A)](<ElectronicDesigns/General VCVS and VCCS (up to 10 A).md>)
     - [ESP12-F Adapter Board](<ElectronicDesigns/ESP12-F Adapter Board.md>)
     - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
-    - [[Veri] INA180 and INA240 Current Sampling.md](<ElectronicDesigns/[Verification] INA180 and INA240 Current Sampling.md>)
 
 
 - 📝 **Projects**

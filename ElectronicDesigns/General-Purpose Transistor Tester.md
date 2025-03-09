@@ -206,7 +206,7 @@ you can also use a smaller $R_{sense}$ for higher sampling range:
 
 ## Current Sampling Veri
 
-我们 Layout 一个验证版，链接 [here](<ElectronicDesigns/[Verification] INA180 and INA240 Current Sampling.md>), 用于验证下面几种方案：
+我们 Layout 一个验证版，链接 [Current Sense Amplifiers](<ElectronicDesigns/Current Sense Amplifiers.md>), 用于验证下面几种方案：
 
 <div class='center'>
 

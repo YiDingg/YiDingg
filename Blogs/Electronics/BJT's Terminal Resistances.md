@@ -1,5 +1,9 @@
 # BJT's Small-Signal Terminal Resistances (三极管的小信号节点电阻)
 
+> [!Note|style:callout|label:Infor]
+> Initially published at 16:44 on 2025-03-05 in Beijing.
+
+
 ## 前言
 
 为了快速且准确地得出三极管放大器的 $G_m$, $R_{out}$ 和增益 $A_v$，我们有相当的必要求解三极管的小信号节点电阻。常见的近似结果有 $r_{O},\ r_{\pi},\ \frac{1}{g_m}$ 等，但它们在某些情况下并不适用（误差很大），因此我们需要更加普适的表达式，本文将给出这些表达式及其推导过程。

@@ -27,6 +27,14 @@ Initially published at 20:03 on 2025-02-12 in Lincang.
  | <div class="center"><img height = 200px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-16-14-09-16_Basic Op Amp Measurement Board.png"/></div> | <div class="center"><img height = 200px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-16-14-09-32_Basic Op Amp Measurement Board.png"/></div> |
 </div>
 
+<div class='center'>
+
+| Demo (Top view) | Demo (Bottom view) | 
+|:-:|:-:|
+ | <div class="center"><img height = 200px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-06-13-42-38_Basic Op Amp Measurement Board.png"/></div> | <div class="center"><img height = 200px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-06-13-42-49_Basic Op Amp Measurement Board.png"/></div> |
+</div>
+
+
 <!-- 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-16-13-59-58_Basic Op Amp Measurement Board.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-16-14-07-05_Basic Op Amp Measurement Board.png"/></div>
