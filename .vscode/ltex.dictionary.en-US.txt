@@ -43,3 +43,4 @@ mOhm
 BW
 Vout
 typ
+BJT

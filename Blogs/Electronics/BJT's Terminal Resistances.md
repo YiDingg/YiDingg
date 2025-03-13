@@ -35,7 +35,9 @@
 
 下面我们分别计算 $R_{coll}$, $R_{base}$ 和 $R_{emitter}$。$R_{coll}$ 的计算过程如下：
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-05-19-43-33_BJT's Terminal Resistances.png"/></div>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-05-19-43-33_BJT's Terminal Resistances.png"/></div>
+ -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-12-14-08-33_BJT's Terminal Resistances.png"/></div>
 
 $R_{base}$ 的计算过程如下：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-05-19-43-46_BJT's Terminal Resistances.png"/></div>

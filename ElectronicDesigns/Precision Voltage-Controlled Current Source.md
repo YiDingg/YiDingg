@@ -1,7 +1,7 @@
 # Precision VCCS (Voltage-Controlled Current Source)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at  on  in .
+> Initially published at 18:59 on 2025-03-01 in Beijing.
 
 ## Infor
 
@@ -10,10 +10,10 @@
     - 输入：OPA+ (运放正电源), OPA- (运放负电源), VCC (电流输出电源), V_IN1 (CH 1 输入电压), V_IN2 (CH 2 输入电压)
     - 输出：I_OUT1+ (CH1 输出电流), I_OUT2+ (CH2 输出电流)
 - Details: 
-    - 输出电流范围从 0~50uA, 0~500uA, ..., 0~5A 可调
+    - 输出电流范围从 0\~50uA, 0\~500uA, ..., 0\~5A 可调
     - 采用 1x3P 排母的直插式方案，方便配合实际情况更换 MOSFET
     - 配有 OPA+, VCC, OPA- 电源指示灯
-    - Ro 系列 100Ohm ~ 100KOhm 电阻建议使用 0.1% ±25PPMM 的低温漂高精密电阻
+    - Ro 系列 (100Ohm ~ 100KOhm) 建议使用 0.1% ±25PPMM 的低温漂高精密电阻
 - Relevant Resources: [https://www.123684.com/s/0y0pTd-svUj3](https://www.123684.com/s/0y0pTd-svUj3)
 
 
@@ -22,7 +22,7 @@
 
 | Schematic | 3D view | 
 |:-:|:-:|
- |<div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-01-12-25-42_Precision Voltage-Controlled Current Source.png"/></div>|<div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-01-12-22-28_Precision Voltage-Controlled Current Source.png"/></div>|
+ |<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-01-12-25-42_Precision Voltage-Controlled Current Source.png"/></div>|<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-01-12-22-28_Precision Voltage-Controlled Current Source.png"/></div>|
 
 </div>
 
@@ -31,15 +31,16 @@
 
 | Top view | Bottom view | 
 |:-:|:-:|
- | <div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-01-12-27-25_Precision Voltage-Controlled Current Source.png"/></div> | <div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-01-12-27-44_Precision Voltage-Controlled Current Source.png"/></div> |
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-01-12-27-25_Precision Voltage-Controlled Current Source.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-01-12-27-44_Precision Voltage-Controlled Current Source.png"/></div> |
 </div>
 
 <div class='center'>
 
 | Demo (top view)| Demo (bottom view) | 
 |:-:|:-:|
- | <div class="center"><img height = 250px src=""/></div> | <div class="center"><img height = 250px src=""/></div> |
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-14-28-34_Precision Voltage-Controlled Current Source.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-14-32-27_Precision Voltage-Controlled Current Source.png"/></div> |
 </div>
+
 
 ## Design Notes
 
@@ -90,3 +91,63 @@ R_o = 10 ~ 10K (coefficient = $10^{-1} \sim 10^{-4}$), $I_{out,\max}$ = 500mA ~ 
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-28-16-23-39_Precision Voltage-Controlled Current Source.png"/></div> -->
 
 由图可以看到，除了在输入接近零的很小一段，$R_o$ 两端的电压与输入电压近乎完美匹配，相对误差仅仅只有 $\frac{\Delta V}{V} = 1.0 \times 10^{-5} \sim 4.5 \times 10^{-5}$。
+
+## Test Results
+
+若无特别说明，下面的测试在室温 (约 25°C) 下进行，VCC+ = +12V, VCC- = -12V, frequency response 中输入信号为 1V (实际约为 1.022V) amplitude (1V offset) 的 sine wave。
+
+<div class='center'>
+
+| Test Condition | Resistor Voltage Drop $V_R$ <br> (input 100KHz Sine) | Resistor Voltage Drop $V_R$ <br> (input 100KHz RampUp) | Resistor Voltage Drop $V_R$ <br> (input 100KHz Square) | Frequency Response |
+|:-:|:-:|:-:|:-:|:-:|
+ | $R_L = 0,\ R_o = 1 \ \mathrm{K\Omega}\ (I_{\max} = 5 \ \mathrm{mA})$ <br> using 2N7000 (NMOS) | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-15-00-01_Precision Voltage-Controlled Current Source.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-15-00-24_Precision Voltage-Controlled Current Source.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-15-24-11_Precision Voltage-Controlled Current Source.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-15-06-47_Precision Voltage-Controlled Current Source.png"/></div> |
+ | $R_L = 0,\ R_o = 1 \ \mathrm{K\Omega}\ (I_{\max} = 5 \ \mathrm{mA})$ <br> using IRF540NPBF (Power NMOS) | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-15-13-59_Precision Voltage-Controlled Current Source.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-15-14-15_Precision Voltage-Controlled Current Source.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-15-20-37_Precision Voltage-Controlled Current Source.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-15-08-21_Precision Voltage-Controlled Current Source.png"/></div> |
+ | $R_L = 0,\ R_o = 1 \ \mathrm{K\Omega}\ (I_{\max} = 5 \ \mathrm{mA})$ <br> using SS8050 (NPN) | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-15-13-00_Precision Voltage-Controlled Current Source.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-15-12-28_Precision Voltage-Controlled Current Source.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-15-23-08_Precision Voltage-Controlled Current Source.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-15-11-43_Precision Voltage-Controlled Current Source.png"/></div> |
+ | $R_L = 0,\ R_o = 1 \ \mathrm{K\Omega}\ (I_{\max} = 5 \ \mathrm{mA})$ <br> using 2SD882 (Power NPN) | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-15-17-35_Precision Voltage-Controlled Current Source.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-15-18-10_Precision Voltage-Controlled Current Source.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-15-21-27_Precision Voltage-Controlled Current Source.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-09-15-17-10_Precision Voltage-Controlled Current Source.png"/></div> |
+</div>
+
+我们还发现，（在上述测试条件下）输入端浮空时，$I_{out+}$ 可能会有一定的漏电流，下面是一些参考数据：
+
+
+
+<div class='center'>
+
+| $I_{\max}$ | $R_L$ | $V_{out}$ | $V_{R}$ | $I_{R, leak}$ |
+|:-:|:-:|:-:|:-:|:-:|
+ | 0.5A (10R) | 10R | 10.81V | 26.0mV | 2.60mA |
+ | 0.5A (10R) | 100R | 9.57V | <span style='color:red'> 970mV </span> | <span style='color:red'> 97mA </span> |
+ | 0.5A (10R) | 1K | 10.52V | 121mV | 12.1mA |
+ | 0.5A (10R) | 10K | 10.79V | 26.2mV | 2.62mA |
+ | 0.5A (10R) | $\infty$ | 10.87V | 15.4mV | 1.54mA |
+</div>
+
+
+<div class='center'>
+
+| $I_{\max}$ | $R_L$ | $V_{out}$  | $V_{R}$ | $I_{R, leak}$ |
+|:-:|:-:|:-:|:-:|:-:|
+ | 50mA (100R) | 10R     | 0.0129V | 20.24mV | 0.20mA |
+ | 50mA (100R) | 100R    | 0.0129V | 20.682mV | 0.21mA |
+ | 50mA (100R) | 1K      | 9.692V | <span style='color:red'> 981.45mV </span> | <span style='color:red'> 9.81mA </span> |
+ | 50mA (100R) | 10K     | 10.687V | 122.28mV | 1.22mA |
+ | 50mA (100R) |$\infty$ | 10.859V | 17.244mV | 0.17mA |
+</div>
+
+
+<div class='center'>
+
+| $I_{\max}$ | $R_L$ | $V_{G}$ (Gate)  | $V_{R}$ | $I_{R, leak}$ |
+|:-:|:-:|:-:|:-:|:-:|
+ | 5mA (1K) | 10R     | -11.382V | 22.394mV | 22.394uA |
+ | 5mA (1K) | 100R    | -11.384V | 22.514mV | 22.514uA |
+ | 5mA (1K) | 1K      | -11.369V | 22.548mV | 22.548uA |
+ | 5mA (1K) | 10K     | 11.979V | <span style='color:red'> 959.6mV </span> |  <span style='color:red'> 959.6uA </span> |
+ | 5mA (1K) |$\infty$ | 11.977V | 26.202mV | 26.202uA |
+</div>
+
+0 输入时（输入端接 GND）, $V_G = -11.381 \ \mathrm{V}$, $V_R = 22.532 \ \mathrm{mV}$。由此可以知道，$V_R$ 约 22mV 的偏移量是由运放的输入失调和偏置引起的，但是当负载电阻为 $R_o$ 的十倍时（输入浮空），漏电流会比较明显，这是为什么？有待进一步讨论。
+
+另外，当负载为二极管时（例如一个导通压降约 2.5V）的 LED, 漏电流（漏电压）也会比较明显，且漏电流随着档位的升高而逐渐增大（和上面类似）。
+
+
+为了使输入端浮空时 MOS 正常关断（输出电流为 0），我们首先尝试了将输入端下拉到 GND, 但效果不尽人意。即使在下拉电阻为 100KOhm 的情况，$V_{G}$ 也无法被下拉到 $-11 \ \mathrm{V}$（仍维持在 +11.9V）。

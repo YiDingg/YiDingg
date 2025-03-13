@@ -74,6 +74,8 @@
 - 📓 **Blogs**
 
     - Electronics
+        - [Transistor Measurement Methods](<Blogs/Electronics/Transistor Measurement Methods.md>)
+        - [BJT 三种基本放大器的增益、跨导与输出阻抗](<Blogs/Electronics/BJT (三极管) 三种基本放大器的增益、跨导与输出阻抗.md>)
         - [Three Basic Types of Transistors](<Blogs/Electronics/Three Basic Types of Transistors.md>)
         - [Instrument Amplifier Using Op Amp](<Blogs/Electronics/Instrument Amplifier Using Op Amp.md>)
         - [BJT's Terminal Resistances](<Blogs/Electronics/BJT's Terminal Resistances.md>)
@@ -95,6 +97,9 @@
         - [用 Pi 型滤波器改善可调直流电源的输出纹波](Blogs/Electronics/用Pi型滤波器改善可调直流电源的输出纹波.md)
         - [一伟 D-30F12 开关电源测评](<Blogs/Electronics/一伟 D-30F12 开关电源测评.md>)
         - [LTspice](Blogs/Mixed/LTspice.md)
+        - [嘉立创免费下单教程](Blogs/Electronics/嘉立创免费下单教程.md)
+        - [手把手教你用 PWM 实现呼吸灯(标准库)](Blogs/Electronics/手把手教你用PWM实现呼吸灯(标准库).md)
+        - [新版 Keil MDK 中无 Compiler_V5](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
     - Mixed <!-- empty line is necessary to avoid the error -->
         - [Markdown 转微信公众号或知乎](<Blogs/Mixed/Markdown 转微信公众号或知乎.md>)
         - [关于国科大本科部电子信息工程专业课程安排的一些思考](Blogs/Mixed/关于国科大本科部电子信息工程专业课程安排的一些思考.md)
@@ -108,14 +113,11 @@
         - [Build Your Personal Website](Blogs/Mixed/BuildYourSite.md)
         - [Nice VSCode Extensions](Blogs/Mixed/Nice%20VSCode%20Extenstions.md)
         - [主流云盘网盘对比](Blogs/Mixed/CloudStorageComparison.md)
-        - [嘉立创免费下单教程](Blogs/Mixed/嘉立创免费下单教程.md)
         - [结构体及其指针在树中的应用](Blogs/Mixed/结构体及其指针在树中的应用.md)
-        - [手把手教你用 PWM 实现呼吸灯(标准库)](<Blogs/Mixed/手把手教你用PWM实现呼吸灯(标准库).md>)
     - Fix Problem
         - [VSCode 中按键失灵](Blogs/FixProblem/KeypadFailureInVSCode.md)
         - [文件夹无权访问或访问被拒绝](Blogs/FixProblem/FolderPermissionProblem.md)
         - [VScode-Latex 反向搜索失灵](Blogs/FixProblem/VScode-Latex中反向搜索失灵的解决方案.md)
-        - [新版 Keil MDK 中无 Compiler_V5](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
 
     - Site Features
         - [Data Host](Blogs/SiteFeatures/Data%20Host.md)
@@ -139,12 +141,12 @@
 
 
 - 💡 **My Electronic Designs**
-    - [Other Circuit Boards](<ElectronicDesigns/Other Circuit Boards.md>)
-    - [! General-Purpose Transistor Tester](<ElectronicDesigns/General-Purpose Transistor Tester.md>)
+    - [Simplified Transistor Tester](<ElectronicDesigns/Simplified Transistor Tester.md>)
     - [Current Sense Amplifiers](<ElectronicDesigns/Current Sense Amplifiers.md>)
-    - [DC-DC Converter Modules](<ElectronicDesigns/DC-DC Converter Modules.md>)
     - [Precision Current Source.md](<ElectronicDesigns/Precision Voltage-Controlled Current Source.md>)
+    - [DC-DC Converter Modules](<ElectronicDesigns/DC-DC Converter Modules.md>)
     - [Voltage Linear Operation Board](<ElectronicDesigns/Voltage Linear Operation Board.md>)
+    - [General-Purpose Transistor Tester](<ElectronicDesigns/General-Purpose Transistor Tester.md>)
     - [Voltage-Controlled Power Source](<ElectronicDesigns/Versatile Voltage-Controlled Power Source.md>)
     - [All-In-One DC-DC Power Supply (5V Input)](<ElectronicDesigns/All-In-One DC-DC Power Supply (5V Input).md>)
     - [Basic Op Amp Measurement Board](<ElectronicDesigns/Basic Op Amp Measurement Board.md>)
@@ -153,6 +155,7 @@
     - [General VCVS and VCCS (up to 5A)](<ElectronicDesigns/General VCVS and VCCS (up to 10 A).md>)
     - [ESP12-F Adapter Board](<ElectronicDesigns/ESP12-F Adapter Board.md>)
     - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
+    - [Other Circuit Boards](<ElectronicDesigns/Other Circuit Boards.md>)
 
 
 - 📝 **Projects**
