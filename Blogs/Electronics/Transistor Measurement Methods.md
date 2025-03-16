@@ -10,7 +10,6 @@
 ## MOSFET
 
 ### 测试原理
-
 在不考虑温度的情况下， MOSFET 的三个参数 $V_{GS}$, $I_D$ 和 $V_{DS}$ 仅含有 2 个自由度，也就是说，任意给定两个限制条件，即可确定三个参数的值。最典型的例子，给定 $V_{DS}$（作为横坐标） 和 $V_{GS}$（作为第二变量），便可确定 $I_D$ 的值。随着 $V_{DS}$（和 $V_{GS}$）不断变化，我们便绘制出了 MOSFET 的 Static Characteristics
 
 ### 可测曲线概览
@@ -87,7 +86,7 @@
 
 <div class='center'>
 
-| Num | 名称 | $(y,\ x,\ var)$ | 测试方法 | 图片示例 |
+| Data Num (数据序列号) | 名称 | $(y,\ x,\ var)$ | 测试方法 | 图片示例 |
 |:-:|:-:|:-:|:-:|:-:|
  | 1 | <span style='color:red'> Static Characteristics </span> | $(I_C,\ V_{CE},\  I_B)$ | 电压源提供 $V_{CE}$，精密电流源提供 $I_B$ <br> CH1 (纵坐标) 测 $I_C$，CH2 (横坐标) 测 $V_{CE}$  | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-27-21-55-48_General-Purpose Transistor Tester Transistor Tester.png"/></div> |
  | 8 | 用于计算 $\beta$ | $(I_{B,actual},\ V_{CE},\  I_B)$ | 在上一条的基础上，CH1 (纵坐标) 测 $I_B$  | - |
@@ -109,6 +108,7 @@
  | 1 | Early Resistance <br> (small-signal) | $(r_O,\ I_C,\ I_B)$ | $r_O = \frac{\partial V_{CE} }{\partial I_C } = \left(\frac{\partial I_C }{\partial V_{CE} }\right)^{-1}$ <br> 拟合 $r_O = \frac{V_A}{I_C}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-12-14-26-03_General-Purpose Transistor Tester.png"/></div> |
  | 1 | Early Resistance <br> (small-signal) | $(r_O,\ V_{CE},\ I_B)$ | $r_O = \frac{\partial V_{CE} }{\partial I_C } = \left(\frac{\partial I_C }{\partial V_{CE} }\right)^{-1}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-12-14-26-38_General-Purpose Transistor Tester.png"/></div> |
  | 2 | Transconductance <br> (small-signal) | $(g_m,\ I_C,\ V_{CE})$ | $g_m = \frac{\partial I_C }{\partial V_{BE} }$ | - |
+ | 2 | Transconductance <br> (small-signal) | $(\frac{g_m}{I_C},\ I_C,\ V_{CE})$ | $g_m = \frac{\partial I_C }{\partial V_{BE} }$ | - |
  | 2 | Transconductance <br> (small-signal) | $(g_m,\ V_{BE},\ V_{CE})$ | $g_m = \frac{\partial I_C }{\partial V_{BE} }$ | - |
  | 2, 3 | Base Resistance <br> (small-signal) | $(r_{\pi},\ I_C,\ V_{CE})$ | $r_{\pi} = \frac{\partial V_{BE} }{\partial I_B }$，用 num2 的 $I_C$ 作横坐标 | - |
  | 2, 3 | Base Resistance <br> (small-signal) | $(r_{\pi},\ V_{BE},\ V_{CE})$ | $r_{\pi} = \frac{\partial V_{BE} }{\partial I_B }$，用 num2 的 $I_C$ 作横坐标 | - |
@@ -154,6 +154,30 @@
 上表中的 `res` 指用外源 resistor 作为 ammeter, `amp` 指用外源 amplifier 作为 ammeter, `sou` 指用 precision current source 自带的 $R_o$ 作为 ammeter。
 
 然后进行数据的整理、计算，并绘制出特性曲线图。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 相关实验记录
+
+- 2025.03.14, 15:50, Beijing. 对 SS8050 进行了特性曲线测试，实验记录见 [BJT Measurement of SS8050](<Blogs/Electronics/[Analog Comp] Transistor Measurement of SS8050 (NPN).md>)
+
+
+
+
+
 
 
 

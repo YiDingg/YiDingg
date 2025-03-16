@@ -34,7 +34,7 @@ Initially published at 17:58 on 2025-02-20 in Lincang.
 
 | Demo (top view)| Demo (bottom view) | 
 |:-:|:-:|
- |  |  |
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-14-00-00-16_Versatile Voltage-Controlled Power Source.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-14-00-00-26_Versatile Voltage-Controlled Power Source.png"/></div> |
 </div>
 
 

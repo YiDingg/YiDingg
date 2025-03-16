@@ -31,7 +31,7 @@
 
 | Demo (top view)| Demo (bottom view) | 
 |:-:|:-:|
- |  |  |
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-13-20-38-16_Simplified Transistor Tester.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-13-20-38-28_Simplified Transistor Tester.png"/></div> |
 </div>
 
 

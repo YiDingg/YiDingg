@@ -74,6 +74,7 @@
 - 📓 **Blogs**
 
     - Electronics
+        - [Transistor Meas of SS8050 (NPN)](<Blogs/Electronics/[Analog Comp] Transistor Measurement of SS8050 (NPN).md>)
         - [Transistor Measurement Methods](<Blogs/Electronics/Transistor Measurement Methods.md>)
         - [BJT 三种基本放大器的增益、跨导与输出阻抗](<Blogs/Electronics/BJT (三极管) 三种基本放大器的增益、跨导与输出阻抗.md>)
         - [Three Basic Types of Transistors](<Blogs/Electronics/Three Basic Types of Transistors.md>)
@@ -141,6 +142,7 @@
 
 
 - 💡 **My Electronic Designs**
+    - [Voltage Source with Ammeter](<ElectronicDesigns/Voltage Source with Ammeter.md>)
     - [Simplified Transistor Tester](<ElectronicDesigns/Simplified Transistor Tester.md>)
     - [Current Sense Amplifiers](<ElectronicDesigns/Current Sense Amplifiers.md>)
     - [Precision Current Source.md](<ElectronicDesigns/Precision Voltage-Controlled Current Source.md>)
