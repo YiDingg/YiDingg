@@ -39,6 +39,19 @@
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-14-19-26-47_Transistor Measurement Methods.png"/></div>
 
 
+## 实验改进
+
+经过此次实验，我们发现实验中存在一些小问题。因此，对原来的实验流程作出部分调整，同时规定整个实验中的电流测量范围，使测量更符合实际设计要求，便于实际设计时进行参考。
+
+首先是电流 $I_C$ 的范围分级：
+
+<div class='center'>
+
+| Power Level | lower | low | moderate | high | higher |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+ | $I_C$ Range |  |  |
+ | Measurement Range |  |  |
+</div>
 
 
 

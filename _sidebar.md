@@ -74,6 +74,9 @@
 - 📓 **Blogs**
 
     - Electronics
+        - [The Polarity of Input Offset Voltage of Op Amps](<Blogs/Electronics/The Polarity of Input Offset Voltage of Op Amps.md>)
+        - [Features of Cascading Op Amp Stages](<Blogs/Electronics/Features of Cascading Op Amp Stages.md>)
+        - [Design of Discrete Op Amp](<Blogs/Electronics/Design of Discrete Op Amps.md>)
         - [Transistor Meas of SS8050 (NPN)](<Blogs/Electronics/[Analog Comp] Transistor Measurement of SS8050 (NPN).md>)
         - [Transistor Measurement Methods](<Blogs/Electronics/Transistor Measurement Methods.md>)
         - [BJT 三种基本放大器的增益、跨导与输出阻抗](<Blogs/Electronics/BJT (三极管) 三种基本放大器的增益、跨导与输出阻抗.md>)
@@ -142,6 +145,7 @@
 
 
 - 💡 **My Electronic Designs**
+    - [* Op Amp using Discrete MOSFETs](<ElectronicDesigns/Op Amp using Discrete MOSFETs.md>)
     - [Voltage Source with Ammeter](<ElectronicDesigns/Voltage Source with Ammeter.md>)
     - [Simplified Transistor Tester](<ElectronicDesigns/Simplified Transistor Tester.md>)
     - [Current Sense Amplifiers](<ElectronicDesigns/Current Sense Amplifiers.md>)

@@ -1,4 +1,4 @@
-# Mecanics Notes
+# Mechanics Notes
 
 > [!Note|style:callout|label:Infor]
 Initially published at 11:21 on 2024-06-24 in Beijing.
