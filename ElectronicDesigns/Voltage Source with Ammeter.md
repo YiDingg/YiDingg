@@ -46,3 +46,15 @@
 <!-- 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-13-20-46-47_Voltage Source with Ammeter.png"/></div>
  -->
+
+## Test Results
+
+若无特别说明，下面的测试在室温 (约 25°C) 下进行，VCC = VCC_OPA+ = +12V, VCC_OPA- = -12V, frequency response 中输入信号为 1V (实际约为 1.022V) amplitude (2V offset) 的 sine wave。
+
+
+<div class='center'>
+
+| Op Amp | Test Condition | Output <br> (input 100KHz RampUp) | Output <br> (input 100KHz Square) | Frequency Response |
+|:-:|:-:|:-:|:-:|:-:|
+ | NE5532P | $R_L = 10 \ \Omega$ |  |  |  |
+</div>
