@@ -504,13 +504,18 @@
     <script src="https://gcore.jsdelivr.net/npm/docsify-gitalk@1.0.0/dist/docsify-gitalk.min.js"></script> -->
 
         <!-- latex公式支持 (gcore.jsdelivr.net) 有时不稳定，我们换为 unpkg.com -->
-        <script src="https://unpkg.com/katex@latest/dist/katex.min.js"></script>
+        <!-- <script src="https://unpkg.com/katex@latest/dist/katex.min.js"></script>
         <link
             rel="stylesheet"
             href="//unpkg.com/katex@latest/dist/katex.min.css"
         />
         <script src="https://unpkg.com/marked@3"></script>
-        <script src="//unpkg.com/docsify-katex@latest/dist/docsify-katex.js"></script>
+        <script src="//unpkg.com/docsify-katex@latest/dist/docsify-katex.js"></script> --><!-- 当文档中出现某种特殊的 latex 错误时, 此句会报错, 网页无法正常进入 (一直转圈圈), 因此我们更换为了下面新链接中的 js 文件 -->
+        <!-- latex公式支持 https://github.com/upupming/docsify-katex -->
+        <script src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+        <script src="//cdn.jsdelivr.net/npm/marked@4"></script>
+        <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
         <!-- 代码块折叠 -->
         <script src="https://unpkg.com/docsify-hide-code/dist/docsify-hide-code.min.js"></script>
         <!-- 插入slides(不行) -->
