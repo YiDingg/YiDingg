@@ -166,22 +166,7 @@ $$
 在众多的 Band-stop Network 中， Twin-T Network 是十分特殊的一种，因为它在中心频率 $f_c$ 处提供了**无穷大**的抑制能力，更像是一个“点阻”滤波器，或称为 notch filter (窄阻带滤波器)。其电路图如下：
 <div class="center"><img width=400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-14-32-00_双 T 桥振荡器.png"/></div>
 
-对 $RC$ 低通网络，我们有：
-
-$$
-\begin{gather}
-f_{c1} = \frac{1}{2 \pi} \sqrt{\frac{\frac{1}{C} + \frac{1}{C}}{2C R^2}} = \frac{1}{2 \pi R C}
-\end{gather}
-$$
-
-对于 $RC$ 高通网络，我们也有：
-$$
-\begin{gather}
-f_{c2} = \frac{1}{2 \pi} \sqrt{\frac{1}{C^2 \frac{R}{2} (R + R)}} = \frac{1}{2 \pi R C}
-\end{gather}
-$$
-
-调整两网络的底部元件数值后， $f_{c1} = \frac{1}{2 \pi (\frac{1}{2} R) C},\ f_{c2} = \frac{1}{2 \pi R (2C)}$。然后将两网络并联，可以得到 Twin-T Bridge 的中心频率：
+Twin-T Bridge 的中心频率为：
 $$
 \begin{gather}
 f_{c} = \sqrt{f_{c1} f_{c2}} = \frac{1}{2 \pi R C}

@@ -6,7 +6,7 @@ Initially published at 11:27 on 2025-03-23 in Beijing.
 在昨天的 transfer function of twin-T network 计算中，我们犯了一些计算错误，得到了不正确的结果。文本对原计算的错误进行了更正（采用二端口矩阵来计算）。
 
 
-## Wrong Calculation
+## Improper Calculation
 
 <div class="center"><img width=400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-23-00-04-19_Classical RC Oscillators.png"/></div>
 
@@ -140,7 +140,7 @@ T(j \omega) = \frac{2 \,\omega^2\,R\,R_0\,C^2 -1}{2 \,\omega^2\,R\,R_0\,C^2  + \
 \end{gather}
 $$
 
-由于分子上始终有零点，因此只要满足条件 $C_0 = C \frac{4R_0}{R}$ (任意选择不太离谱的 $R_0$)，都可以起到 ideal-notch band-stop filter 的效果。不妨用 LTspice 仿真来验证我们的猜想，我们分别令 $R_0 = \frac{R}{4},\ \frac{R}{2},\ R$，也就是分别令：
+由于分子上始终有零点，因此只要满足条件 $C_0 = C \frac{4R_0}{R}$ (任意选择不太离谱的 $R_0$)，都可以起到 ideal notch band-stop filter 的效果。不妨用 LTspice 仿真来验证我们的猜想，我们分别令 $R_0 = \frac{R}{4},\ \frac{R}{2},\ R$，也就是分别令：
 
 $$
 \begin{gather}
@@ -170,4 +170,31 @@ $$
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-23-12-45-33_A Mistake on Twin-T Network Calculation.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-23-12-55-47_A Mistake on Twin-T Network Calculation.png"/></div>
 
-可以看到，理论预测与仿真结果符合的非常好；
+可以看到，理论预测与仿真结果符合的非常好。
+
+本小节我们借助 MATLAB 进行了公式的推导、计算，相关代码如下：
+
+``` matlab
+clc, clear
+syms R R_0 C C_0 Y_1 Y_2 Y_3 Y_21 Y_22 omega
+Y_21 = (-1/R^2)  /  (2/R + 1j*omega*C_0)   +   (omega^2*C^2)  /  (2*1j*omega*C + 1/R_0);
+Y_22 = ( 1/R*(1/R+1j*omega*C_0) )  /  (2/R + 1j*omega*C_0)   +   (1j*omega*C*(1j*omega*C+1/R_0))  /  (2*1j*omega*C + 1/R_0);
+Y_21 = simplify(Y_21)
+Y_22 = simplify(Y_22)
+%Y_21 = simplifyFraction(Y_21)
+%Y_22 = simplifyFraction(Y_22)
+
+re_C_0 = C*4*R_0/R;
+Y_21 = simplify(subs(Y_21, C_0, re_C_0))
+Y_22 = simplify(subs(Y_22, C_0, re_C_0))
+
+T = - Y_21/ Y_22
+T = simplifyFraction(- Y_21/ Y_22)
+
+R = 10e3;
+C = 10e-9;
+R_0 = [0.25, 0.5, 1] * R
+f_c = 1./(2*pi*sqrt(2*R*R_0)*C)
+```
+
+
