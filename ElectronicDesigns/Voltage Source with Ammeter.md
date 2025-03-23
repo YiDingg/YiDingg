@@ -54,7 +54,13 @@
 
 <div class='center'>
 
-| Op Amp | Test Condition | Output <br> (input 100KHz RampUp) | Output <br> (input 100KHz Square) | Frequency Response |
-|:-:|:-:|:-:|:-:|:-:|
- | NE5532P | $R_L = 10 \ \Omega$ |  |  |  |
+| Op Amp | Test Condition | Output <br> (input 100KHz Sine) | Output <br> (input 100KHz RampUp) | Output <br> (input 100KHz Square) | Frequency Response |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+ | NE5532P | $R_L = 100 \ \mathrm{\Omega}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-01-12-01_Voltage Source with Ammeter.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-01-11-42_Voltage Source with Ammeter.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-01-10-59_Voltage Source with Ammeter.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-01-07-23_Voltage Source with Ammeter.png"/></div> |
+  | NE5532P | $R_L = 100 \ \mathrm{\Omega}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-00-54-18_Voltage Source with Ammeter.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-00-53-59_Voltage Source with Ammeter.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-00-53-29_Voltage Source with Ammeter.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-00-52-00_Voltage Source with Ammeter.png"/></div> |
+  | LM258P | $R_L = 100 \ \mathrm{\Omega}$ <br> (这里是 258, 后面两图错写为 358) | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-00-59-27_Voltage Source with Ammeter.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-00-59-47_Voltage Source with Ammeter.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-01-00-04_Voltage Source with Ammeter.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-00-58-45_Voltage Source with Ammeter.png"/></div> | 
+  | JRC4558D | $R_L = 100 \ \mathrm{\Omega}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-01-03-01_Voltage Source with Ammeter.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-01-03-59_Voltage Source with Ammeter.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-01-02-39_Voltage Source with Ammeter.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-01-05-16_Voltage Source with Ammeter.png"/></div> | 
+  |  | $R_L = 100 \ \mathrm{\Omega}$ |  |  |  |  | 
+  |  | $R_L = 100 \ \mathrm{\Omega}$ |  |  |  |  | 
 </div>
+

@@ -8,7 +8,13 @@
 - 📖 **Notes**
 
     - [Design of Analog CMOS Integrated Circuits](<Notes/MajorCourses/Design of Analog CMOS Integrated Circuits.md>)
-    - [Other Courses](Notes/Else/OtherCourses.md)
+    - [Fundamentals of Microelectronics](<Notes/MajorCourses/Fundamentals of Microelectronics.md>)
+    - Major Courses
+        - [Design of Analog CMOS Integrated Circuits](<Notes/MajorCourses/Design of Analog CMOS Integrated Circuits.md>)
+        - [Fundamentals of Microelectronics](<Notes/MajorCourses/Fundamentals of Microelectronics.md>)
+        - [Signals and Systems](<Notes/MajorCourses/Signals and Systems.md>)
+        - [Probability and Statistics](<Notes/MajorCourses/Probability and Statistics.md>)
+        - [Principles of Electric Circuits](Notes/MajorCourses/CircuitTheoryNotes.md)
     - C
         - [C 语言 (!): bug 解决](<Notes/C/CNotes(!)-FixProblems.md>)
         - [C 语言 (0): 准备](<Notes/C/CNotes(0)-Preparation.md>)
@@ -27,6 +33,7 @@
         - [Linear Algebra 2](Notes/Math/LinearAlgebra2Notes.md)
         - [Numerical Methods for PDE](Notes/Math/NumericalMethodsForPDE.md)
         - [Mathematical Physics Methods](Notes/Math/MathematicalPhysicsMathods.md)
+        - [Probability and Statistics](<Notes/MajorCourses/Probability and Statistics.md>)
     - Physics
 
         - [Mechanics](Notes/Phisics/Mecanics%20notes.md)
@@ -34,9 +41,6 @@
         - [Thermodynamics](Notes/Phisics/Thermodynamics%20notes.md)
         - [Optics](Notes/Phisics/OpticsNotes.md)
         - [Basic Physics Experiment](Notes/Phisics/BasicPhysicsExperiment.md)
-    - Major Courses
-        - [Design of Analog CMOS Integrated Circuits](<Notes/MajorCourses/Design of Analog CMOS Integrated Circuits.md>)
-      - [Principles of Electric Circuits](Notes/MajorCourses/CircuitTheoryNotes.md)
     - Cpp
         - [Cpp (0)：准备](<Notes/Cpp/CppNotes(0)-Preparation.md>)
     - Matlab
@@ -64,9 +68,8 @@
         - [MCU (3): DMA (STM32)](<Notes/MCU/MCUNotes(3)-DMA(STM32).md>)
         - [MCU (4): WiFi (ESP8266)](<Notes/MCU/MCUNotes(4)-WiFi(ESP8266).md>)
         - [MCU (!): Tips and Tricks (STM32)](<Notes/MCU/MCUNotes(!)-TipsAndTricks(STM32).md>)
-    - Else
-        - [Other Courses](Notes/Else/OtherCourses.md)
-        - [Goodness of Fit](Notes/Else/GoodnessOfFit.md)
+    - [Other Courses](Notes/Else/OtherCourses.md)
+
 
 
 
@@ -74,6 +77,11 @@
 - 📓 **Blogs**
 
     - Electronics
+        - [A Mistake on Twin-T Network Calculation](<Blogs/Electronics/A Mistake on Twin-T Network Calculation.md>)
+        - [How to Set a Variable in LTspice](<Blogs/Electronics/How to Set a Variable in LTspice.md>)
+        - [Analog Pulse Width Modulation](<Blogs/Electronics/Analog Pulse Width Modulation.md>)
+        - [Classical RC Oscillators](<Blogs/Electronics/Classical RC Oscillators.md>)
+        - [用 MATLAB 控制普源 (RIGOL) MSO2202A 数字示波器](<Blogs/Electronics/Control RIGOL MSO2202A Oscilloscope using MATLAB.md>)
         - [The Polarity of Input Offset Voltage of Op Amps](<Blogs/Electronics/The Polarity of Input Offset Voltage of Op Amps.md>)
         - [Features of Cascading Op Amp Stages](<Blogs/Electronics/Features of Cascading Op Amp Stages.md>)
         - [Discrete Op Amp Design Reference](<Blogs/Electronics/Discrete Op Amp Design Reference.md>)
@@ -100,7 +108,7 @@
         - [纪念第一次炸电容](Blogs/Electronics/纪念第一次炸电容.md)
         - [用 Pi 型滤波器改善可调直流电源的输出纹波](Blogs/Electronics/用Pi型滤波器改善可调直流电源的输出纹波.md)
         - [一伟 D-30F12 开关电源测评](<Blogs/Electronics/一伟 D-30F12 开关电源测评.md>)
-        - [LTspice](Blogs/Mixed/LTspice.md)
+        - [LTspice](Blogs/Electronics/LTspice.md)
         - [嘉立创免费下单教程](Blogs/Electronics/嘉立创免费下单教程.md)
         - [手把手教你用 PWM 实现呼吸灯(标准库)](Blogs/Electronics/手把手教你用PWM实现呼吸灯(标准库).md)
         - [新版 Keil MDK 中无 Compiler_V5](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
@@ -110,6 +118,7 @@
         - [LTeX – grammar/spell checking](Blogs/Mixed/LTEX.md)
         - [Zotero](Blogs/Mixed/Zotero.md)
         - [Latex](Blogs/Mixed/Latex.md)
+        - [Goodness of Fit](Blogs/Mixed/GoodnessOfFit.md)
         - [Setting Advice for New Computer](Blogs/Mixed/SettingAdviceForNewComputer.md)
         - [Download Inkscape](Blogs/Mixed/DownloadInkscape.md)
         - [Sentences](Blogs/Mixed/Sentences.md)

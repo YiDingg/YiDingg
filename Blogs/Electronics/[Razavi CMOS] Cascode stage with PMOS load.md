@@ -1,7 +1,7 @@
 # [Razavi CMOS] Cascode stage with PMOS load
 
 > [!Note|style:callout|label:Infor]
-Initially published at 16:37 on 2025-01-23 in Lincang.
+Initially published at 18:53 on 2025-02-05 in Lincang.
 
 对于常见的 cascode stage with PMOS load (2 NMOS + 2 PMOS)，教材上仅给出了 $R_{out}$ 的计算，而近似了 $G_m \approx g_m$。为了方便回顾，这里给出完整的 small-signal gain 推导过程。
 

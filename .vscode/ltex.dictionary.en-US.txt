@@ -46,3 +46,8 @@ typ
 BJT
 MOSFETs
 VAS
+RIGOL
+Wien-bridge
+Wien-Bridge
+bandpass
+bandpass
