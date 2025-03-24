@@ -185,7 +185,18 @@ H(s) = \frac{s^2 R^2 C^2 + 1}{s^2 R^2 C^2 + 1 + 4 s R C}
 \end{gather}
 $$
 
+我们令 $R = 3.3\ \mathrm{k\Omega},\ R_0 = \frac{R}{2},\ C = 10\ \mathrm{nF},\ C_0 = 2 C$，搭建实际电路，对其传递函数进行测试。理论中心频率为：
+$$
+\begin{gather}
+f_c = \frac{1}{2 \pi \times 3.3\ \mathrm{k\Omega} \times  10\ \mathrm{nF}} = 4.8229 \ \mathrm{kHz}
+\end{gather}
+$$
 
+实际测试结果如下图：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-23-18-45-40_Classical RC Oscillators.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-23-18-53-41_Classical RC Oscillators.png"/></div>
+
+与理论预测符合得比较好。
 
 <!-- 
 双 T 振荡器产生频率为 $f_c = \frac{1}{2 \pi RC}$ 的正弦波，但是 $f_c$ 处的传递函数（幅值）不能达到 0 dB 。因此，要想实现自激振荡，还需要外围的放大电路。下面是一个应用实例：
@@ -209,12 +220,12 @@ LTspice 仿真结果如下：
 
 ## Reference
 
+- [Kushwaha, A.K., Kumar, A. Sinusoidal Oscillator Realization Using Band-Pass Filter  J. Inst. Eng. India Ser. B 100, 499–508 (2019). https://doi.org/10.1007/s40031-019-00408-w](https://rdcu.be/eeBAB)
 - [Electronics-Tutorials: Twin-T Oscillator](https://www.electronics-tutorials.ws/oscillator/twin-t-oscillator.html)
 - [Twin-T oscillator](http://www.discovercircuits.com/Andy/Twin-Toscillator.pdf)
 - [A Note on a Bridged-T Network](https://tf.nist.gov/general/pdf/2526.pdf)
 - [Classical R-C Oscillators: The Bridged-T Network and the Wien Oscillator Network](https://www.allaboutcircuits.com/technical-articles/classical-r-c-oscillator-bridged-t-network-wien-oscillator-network/)
 - [Band Stop Filter Basics, Diagram, Examples](https://www.electronicshub.org/band-stop-filter/)
-- [Kushwaha, A.K., Kumar, A. Sinusoidal Oscillator Realization Using Band-Pass Filter  J. Inst. Eng. India Ser. B 100, 499–508 (2019). https://doi.org/10.1007/s40031-019-00408-w](https://rdcu.be/eeBAB)
 - [Twin-T RC Oscillators](https://electronicspedia.com/Topics/analog_electronics/sinusoidal_oscillators/twin-t_rc_oscillators.html)
 - [Realization of Nonminimum Phase Transfer Functions Using Twin-T RC Networks](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1083308)
 - [Twin-T Notch Filter Design Tool](http://sim.okawa-denshi.jp/en/TwinTCRkeisan.html)

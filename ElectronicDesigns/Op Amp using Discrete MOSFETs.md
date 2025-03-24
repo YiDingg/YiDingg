@@ -48,6 +48,7 @@ Initially published at 00:01 on 2025-03-18 in Beijing.
  | Supply current | $I_S$ | $25 \ \mathrm{mA}$ (no load) |
 </div>
 
+
 ## Design Notes
 
 考虑 DIS + VAS + OS 的典型三级运放，即 Differential input stage + voltage amplifier stage + output stage. 为了满足高增益的需求, VAS 可由一个增益一般的 level shift 和一个增益较高的 voltage amplifier 构成。
@@ -58,6 +59,27 @@ Initially published at 00:01 on 2025-03-18 in Beijing.
 在进行设计之前，我们需要先测量所用晶体管的特性曲线和小信号参数，实验记录见 [待完成](待完成)。
 
 完成测量之后，可以对每一级分别进行计算：
+
+### Design Verification
+
+在具体设计之前，先搭建完整的运放进行测试 ($C_c = 100 \ \mathrm{pF}$)，验证其可行性：
+
+<div class='center'>
+
+取 $C_c = 100 \ \mathrm{pF}$ 进行仿真：
+
+| Type | Voltage Follower | Bode Plot |
+|:-:|:-:|:-:|
+ | VAF 无 SF | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-23-14-36-40_Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-23-14-35-36_Op Amp using Discrete MOSFETs.png"/></div> |
+ | VAF 有 SF | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-23-14-38-14_Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-23-14-39-35_Op Amp using Discrete MOSFETs.png"/></div> |
+</div>
+
+有 SF 时相位裕度仅为 -33°，因此我们选择无 SF 的普通三级结构。利用 cascode 结构提高增益和裕度，由于 VAS 处用 cascode 时， LTspice （短时间内）找不到 DC 工作点，因此用 4mA 的理想电流源代替，进行仿真：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-23-14-55-45_Op Amp using Discrete MOSFETs.png"/></div>
+增益的提升并不明显，但相位裕度提高到了 19° 。
+
+值得注意的是，如果 VAF 采用 BC850C (NPN)，相位裕度会有明显的提高：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-23-15-09-42_Op Amp using Discrete MOSFETs.png"/></div>
 
 ### Differential Input Stage
 
@@ -81,6 +103,20 @@ no load 时的增益曲线：
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-19-17-45-12_Op Amp using Discrete MOSFETs.png"/></div>
  -->
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-19-17-45-56_Op Amp using Discrete MOSFETs.png"/></div>
+
+NMOS 输入示例：
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-24-22-33-46_Op Amp using Discrete MOSFETs.png"/></div>
+ -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-24-22-35-33_Op Amp using Discrete MOSFETs.png"/></div>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-24-22-40-44_Op Amp using Discrete MOSFETs.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-24-22-44-12_Op Amp using Discrete MOSFETs.png"/></div>
+ -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-24-22-50-20_Op Amp using Discrete MOSFETs.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-24-22-47-58_Op Amp using Discrete MOSFETs.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-24-22-45-54_Op Amp using Discrete MOSFETs.png"/></div>
+
+Large-Signal:
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-24-22-58-55_Op Amp using Discrete MOSFETs.png"/></div>
 
 ### Voltage Amplifier
 

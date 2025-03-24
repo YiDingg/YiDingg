@@ -77,6 +77,9 @@
 - 📓 **Blogs**
 
     - Electronics
+        - [* The Five-Transistor OTA](<Blogs/Electronics/The Five-Transistor OTA.md>)
+        - [* How to Design a PCB Light Painting](<Blogs/Electronics/How to Design a PCB Light Painting.md>)
+        - [PCB 走线的温升与压降数据](<Blogs/Electronics/PCB 走线的温升与压降数据.md>)
         - [A Mistake on Twin-T Network Calculation](<Blogs/Electronics/A Mistake on Twin-T Network Calculation.md>)
         - [How to Set a Variable in LTspice](<Blogs/Electronics/How to Set a Variable in LTspice.md>)
         - [Analog Pulse Width Modulation](<Blogs/Electronics/Analog Pulse Width Modulation.md>)
@@ -154,6 +157,7 @@
 
 
 - 💡 **My Electronic Designs**
+    - [* PCB Light Painting](<ElectronicDesigns/PCB Light Painting.md>)
     - [* Op Amp using Discrete MOSFETs](<ElectronicDesigns/Op Amp using Discrete MOSFETs.md>)
     - [Voltage Source with Ammeter](<ElectronicDesigns/Voltage Source with Ammeter.md>)
     - [Simplified Transistor Tester](<ElectronicDesigns/Simplified Transistor Tester.md>)
@@ -175,10 +179,12 @@
 
 - 📝 **Projects**
 
+    - [Op Amp using Discrete MOSFETs](<ElectronicDesigns/Op Amp using Discrete MOSFETs.md>)
     - [Gomoku](Projects/Gomoku.md)
     - [HDofDF (Humidity Detection of Diabetic Foot)](Projects/HDofDF.md)
     - [MuMeStar (Multiple Menu Star for OLED)](Projects/MuMeStar.md)
     - [OLEDSD (OLED Software Driver)](Projects/OLEDSD.md)
+    - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
     - WSETD
         - [Outline of WSETD](Projects/WSETD/OutlineOfWSETD.md)
         - [WSETD (1): Chinese Document](<Projects/WSETD/WSETD(1)-ChineseDocument.md>)
