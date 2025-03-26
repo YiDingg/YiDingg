@@ -77,7 +77,10 @@
 - 📓 **Blogs**
 
     - Electronics
-        - [* The Five-Transistor OTA](<Blogs/Electronics/The Five-Transistor OTA.md>)
+        - [The Definitions of SPICE Model Parameters](<Blogs/Electronics/The Definitions of SPICE Model Parameters.md>)
+        - [Basic Differential Circuit Simulation Report](<Blogs/Electronics/Differential Circuit Simulation Report.md>)
+        - [主流锂电池充放一体芯片选型对比](<Blogs/Electronics/主流锂电池充放一体芯片选型对比.md>)
+        - [The Five-Transistor OTA](<Blogs/Electronics/The Five-Transistor OTA.md>)
         - [* How to Design a PCB Light Painting](<Blogs/Electronics/How to Design a PCB Light Painting.md>)
         - [PCB 走线的温升与压降数据](<Blogs/Electronics/PCB 走线的温升与压降数据.md>)
         - [A Mistake on Twin-T Network Calculation](<Blogs/Electronics/A Mistake on Twin-T Network Calculation.md>)
