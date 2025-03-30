@@ -77,6 +77,9 @@
 - 📓 **Blogs**
 
     - Electronics
+        - [Common-Emitter Amp Experiment](<Blogs/Electronics/Common Emitter Amplifier Experiment.md>)
+        - [Improved Push-Pull Stage](<Blogs/Electronics/Improved Push-Pull Stage.md>)
+        - [Cascode Differential Amplifier](<Blogs/Electronics/Cascode Differential Amplifier.md>)
         - [The Definitions of SPICE Model Parameters](<Blogs/Electronics/The Definitions of SPICE Model Parameters.md>)
         - [Basic Differential Circuit Simulation Report](<Blogs/Electronics/Differential Circuit Simulation Report.md>)
         - [主流锂电池充放一体芯片选型对比](<Blogs/Electronics/主流锂电池充放一体芯片选型对比.md>)
@@ -118,6 +121,8 @@
         - [嘉立创免费下单教程](Blogs/Electronics/嘉立创免费下单教程.md)
         - [手把手教你用 PWM 实现呼吸灯(标准库)](Blogs/Electronics/手把手教你用PWM实现呼吸灯(标准库).md)
         - [新版 Keil MDK 中无 Compiler_V5](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
+
+
     - Mixed <!-- empty line is necessary to avoid the error -->
         - [Markdown 转微信公众号或知乎](<Blogs/Mixed/Markdown 转微信公众号或知乎.md>)
         - [关于国科大本科部电子信息工程专业课程安排的一些思考](Blogs/Mixed/关于国科大本科部电子信息工程专业课程安排的一些思考.md)

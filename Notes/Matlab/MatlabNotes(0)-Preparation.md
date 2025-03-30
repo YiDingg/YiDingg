@@ -21,6 +21,9 @@ For more advanced functions and tips, you can refer to the [Matlab --> File Exch
 
 Enter the commands below in the command line window to open these simple and practical tools.
 ``` matlab
+dbstop if error % 错误调试
+dbstop if warning % 警告调试
+
 funtool % 观察函数 
 taylortool % 观察泰勒拟合
 polytool % 观察多项式拟合

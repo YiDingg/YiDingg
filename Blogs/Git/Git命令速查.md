@@ -10,6 +10,10 @@ Initially published at 13:49 on 2024-06-26 in Beijing.
 <summary> 0. 杂七杂八</summary>  
 
 ```bash
+# accessing github via ssh
+ssh://git@ssh.github.com:443/YiDingg/LatexNotes.git
+
+
 # list files in current directory
 ls
 
