@@ -1,4 +1,4 @@
-# [Razavi CMOS] MOSFET's Terminal Resistance
+# MOSFET's Terminal Resistance
 
 > [!Note|style:callout|label:Infor]
 Initially published at 17:55 on 2025-01-29 in Lincang.
@@ -92,3 +92,10 @@ $$
 ## Current or Resistance?
 
 上述模型对 current source 的情况也具有普适性，理想的 current source 在 small-single angle 下电流不会有任何变化，因此在 small-single model 中呈现断路 (等价于 $R_S = \infty$)。如果使用一个有 gate bias 的 MOS 来充当 current source, 其在 small-single model 中呈现出 $r_O$（也可能是 $r_O \parallel \frac{1}{g_{mb}}$），这是因为流过的电流与 $V_{ds}$ 呈线性关系。
+
+## Advanced Equivalent
+
+对于存在 Gate-Drain Feedback 的情况 (例如 Miller Effect), 其等效电阻如下：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-04-18-19-51_[Razavi CMOS] MOSFET's Terminal Resistance.png"/></div> 
+
+上图来自于 https://cppsim.com/circuit_lectures.html 的 https://cppsim.com/CircuitLectures/impedance_view_mos_feedback.pdf

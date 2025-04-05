@@ -3,9 +3,13 @@
 > [!Note|style:callout|label:Infor]
 Initially published at 16:26 on 2025-03-21 in Beijing.
 
+## Intro
+
+如何在电脑上用 MATLAB 来控制普源 (RIGOL) MSO2202A 数字示波器？本文基于普源 (RIGOL) MSO2202A 数字示波器的官方编程手册，给出了常用命令的解释和 MATLAB 代码示例。
+
 ## 官方资料
 
-- 官网 MSO2000A/DS2000A 编程手册： https://www.rigol.com/Images/MSO2000ADS2000AProgrammingGuideCN_tcm4-2899.pdf (MSO2202A 属于 MSO2000A 系列)
+- 官网 MSO2000A/DS2000A 编程手册：[https://www.rigol.com/Images/MSO2000ADS2000AProgrammingGuideCN_tcm4-2899.pdf]( https://www.rigol.com/Images/MSO2000ADS2000AProgrammingGuideCN_tcm4-2899.pdf) (MSO2202A 属于 MSO2000A 系列)
 
 
 官方 MATLAB 编程实例：
@@ -384,7 +388,7 @@ function stc = MyOscilloscope_MSO2202A_Read_TwoCh
 end
 ```
 
-输出示例：
+## 自定义函数输出示例
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-23-11-24-48_Control RIGOL MSO2202A Oscilloscope using MATLAB.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-23-11-25-34_Control RIGOL MSO2202A Oscilloscope using MATLAB.png"/></div>

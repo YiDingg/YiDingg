@@ -1,7 +1,7 @@
 - [🏠 **Home Page**](HOMEPAGE.md)
 - [🔎 **Navigation Page**](_sidebar.md)
 - [📃 **Timeline**](TimeLine.md)
-- [👋 **About**](README.md)
+- [👋 **About** 🎓](README.md)
 <!-- - [📰 **To Be Dealing With**](ToBeDealingWith.md) -->
 
 
@@ -71,12 +71,26 @@
     - [Other Courses](Notes/Else/OtherCourses.md)
 
 
+- 📃 **Reading Papers**
+
+    - Transfer Function Analysis
+
+
+        - [Navigation Page of Transfer Function Analysis](<Papers/Transfer Function Analysis/Navigation Page of Transfer Function Analysis.md>)
+        - [NDI and EET (Null Double Injection and the Extra Element Theorem)](<Papers/Transfer Function Analysis/Null Double Injection and the Extra Element Theorem.md>)
+        - [The TEET (Two Extra Element Theorem)](<Papers/Transfer Function Analysis/The Two Extra Element Theorem.md>)
 
 
 
 - 📓 **Blogs**
 
+
     - Electronics
+
+        - [**[Pinned] Roadmap for Analog ICer**](<Blogs/Electronics/Roadmap for Analog ICer.md>)
+        - [**[Pinned] Collection of Electronic Websites**](<Blogs/Electronics/Collection of Electronic Websites.md>)
+        - [Roadmap for Analog ICer](<Blogs/Electronics/Roadmap for Analog ICer.md>)
+        - [Compound BJT (Sziklai and Darlington)](<Blogs/Electronics/Compound BJT (Sziklai and Darlington).md>)
         - [Common-Emitter Amp Experiment](<Blogs/Electronics/Common Emitter Amplifier Experiment.md>)
         - [Improved Push-Pull Stage](<Blogs/Electronics/Improved Push-Pull Stage.md>)
         - [Cascode Differential Amplifier](<Blogs/Electronics/Cascode Differential Amplifier.md>)
@@ -84,13 +98,13 @@
         - [Basic Differential Circuit Simulation Report](<Blogs/Electronics/Differential Circuit Simulation Report.md>)
         - [主流锂电池充放一体芯片选型对比](<Blogs/Electronics/主流锂电池充放一体芯片选型对比.md>)
         - [The Five-Transistor OTA](<Blogs/Electronics/The Five-Transistor OTA.md>)
-        - [* How to Design a PCB Light Painting](<Blogs/Electronics/How to Design a PCB Light Painting.md>)
+        - [How to Design a PCB Light Painting](<Blogs/Electronics/How to Design a PCB Light Painting.md>)
         - [PCB 走线的温升与压降数据](<Blogs/Electronics/PCB 走线的温升与压降数据.md>)
         - [A Mistake on Twin-T Network Calculation](<Blogs/Electronics/A Mistake on Twin-T Network Calculation.md>)
         - [How to Set a Variable in LTspice](<Blogs/Electronics/How to Set a Variable in LTspice.md>)
         - [Analog Pulse Width Modulation](<Blogs/Electronics/Analog Pulse Width Modulation.md>)
         - [Classical RC Oscillators](<Blogs/Electronics/Classical RC Oscillators.md>)
-        - [用 MATLAB 控制普源 (RIGOL) MSO2202A 数字示波器](<Blogs/Electronics/Control RIGOL MSO2202A Oscilloscope using MATLAB.md>)
+        - [Control MSO2202A using MATLAB](<Blogs/Electronics/Control RIGOL MSO2202A Oscilloscope using MATLAB.md>)
         - [The Polarity of Input Offset Voltage of Op Amps](<Blogs/Electronics/The Polarity of Input Offset Voltage of Op Amps.md>)
         - [Features of Cascading Op Amp Stages](<Blogs/Electronics/Features of Cascading Op Amp Stages.md>)
         - [Discrete Op Amp Design Reference](<Blogs/Electronics/Discrete Op Amp Design Reference.md>)
@@ -164,9 +178,10 @@
 
 
 
-- 💡 **My Electronic Designs**
-    - [* PCB Light Painting](<ElectronicDesigns/PCB Light Painting.md>)
+- 💡 **Electronic Designs**
+    - [**[Pinned] DC-DC Converter Modules**](<ElectronicDesigns/DC-DC Converter Modules.md>)
     - [* Op Amp using Discrete MOSFETs](<ElectronicDesigns/Op Amp using Discrete MOSFETs.md>)
+    - [PCB Light Painting](<ElectronicDesigns/PCB Light Painting.md>)
     - [Voltage Source with Ammeter](<ElectronicDesigns/Voltage Source with Ammeter.md>)
     - [Simplified Transistor Tester](<ElectronicDesigns/Simplified Transistor Tester.md>)
     - [Current Sense Amplifiers](<ElectronicDesigns/Current Sense Amplifiers.md>)
@@ -184,6 +199,8 @@
     - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
     - [Other Circuit Boards](<ElectronicDesigns/Other Circuit Boards.md>)
 
+- 🗓️ **Monthly Summary**
+    - [2025.03](<MonthlySummary/Monthly Summary (2025.03).md>)
 
 - 📝 **Projects**
 
@@ -217,8 +234,6 @@ A: 放在 A 类的是小 design, A 类 design 至少要给出简单的介绍和�
 
 B: 放在 B 类的是稍大一点的 design, B 类 design 至少要给出较为详细的介绍、结构图 (如果有)、原理图 (或电路图、PCB layout、实物图)
    如果可以，最好给出具体的原理分析、仿真结果、以及最终的 datasheet (实际电路测试结果) 等。
-
-
 -->
 
 
@@ -228,7 +243,7 @@ B: 放在 B 类的是稍大一点的 design, B 类 design 至少要给出较为�
     - [Analog Components Handbook](<Books/Analog Components Handbook.md>)
     - [Practical Reference to Electronic Circuit Design](<Books/Practical Reference to Electronic Circuit Design.md>)
 
-- 🎓 **English Learning**
+- 🔤 **Learning English**
 
     - [Words](EnglishLearning/Words.md)
     - [Read Books](EnglishLearning/ReadBooks.md)

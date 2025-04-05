@@ -5,7 +5,7 @@
 
 ## Intro
 
-本文，我们介绍三种经典的 RC 振荡器： Wien-Bridge Oscillator (文氏振荡器)， T-Bridge Oscillator (T 桥振荡器) 和 Twin-T Oscillator (双 T 桥振荡器)。其中，文氏振荡器是以 band-pass filter 作为放大器的输入回路产生振荡，而 T 桥和双 T 桥振荡器则是以 band-stop filter 作为放大器的反馈回路产生振荡。
+本文，我们介绍三种经典的 RC 振荡器： Wien-Bridge Oscillator (文氏振荡器)， T-Bridge Oscillator (T 桥振荡器) 和 Twin-T Oscillator (双 T 桥振荡器)。其中，文氏振荡器是以 band-pass filter 作为放大器的正反馈回路（输入输入回路）产生振荡，而 T 桥和双 T 桥振荡器则是以 band-stop filter 作为放大器的负反馈回路来产生振荡。
 
 
 
@@ -90,6 +90,7 @@ H(j \omega) = \frac{1}{\frac{\alpha }{R\,{\left(C\,\omega \,\mathrm{i}+\frac{2}{
 $$
 
 上下同乘 $i$, 得到与 T-Bridge Network (1) 完全相同的传递函数：
+
 $$
 \begin{gather}
 H(j \omega) = \frac{-\alpha \,C^2 \,R^2 \,\omega^2 +2\,C\,R\,\omega \,\mathrm{i}+\alpha }{-C^2 \,R^2 \,\alpha \,\omega^2 +C\,R\,\alpha^2 \,\omega \,\mathrm{i}+2\,C\,R\,\omega \,\mathrm{i}+\alpha }
@@ -112,6 +113,7 @@ $\alpha$ 取值不同时 $\alpha$, 带阻网络的“质量”也不同。在一
 可以看到，在取正反馈电阻为 $10 \ \mathrm{k\Omega}$ 时（ noninverting 端电源等效输入电阻为 $5 \ \mathrm{k\Omega}$），$\alpha = 1,\ 2$ 的电路无法起振，而 $\alpha = 5$ 的电路可以起振。
 
 在进一步的仿真验证中，我们采用 $\alpha = 10$ 的 T-bridge (2) 型网络。理论振荡频率为：
+
 $$
 \begin{gather}
 f = \frac{1}{2 \pi R C} = \frac{1}{2 \pi \times 10 \ \mathrm{k\Omega} \times 10 \ \mathrm{nF}} = 1.5915 \ \mathrm{kHz}
@@ -155,6 +157,7 @@ $R_F = 200 \ \mathrm{k\Omega}$ 的仿真结果如下：
 <div class="center"><img width=400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-22-23-31-31_Classical RC Oscillators.png"/></div>
 
 即中心频率和带宽分别为（有待考证）：
+
 $$
 \begin{gather}
 f_c = \sqrt{f_{c1}f_{c2}},\ \mathrm{BW} = f_{c2} - f_{c1}
@@ -167,6 +170,7 @@ $$
 <div class="center"><img width=400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-21-14-32-00_双 T 桥振荡器.png"/></div>
 
 Twin-T Bridge 的中心频率为：
+
 $$
 \begin{gather}
 f_{c} = \sqrt{f_{c1} f_{c2}} = \frac{1}{2 \pi R C}
@@ -186,6 +190,7 @@ H(s) = \frac{s^2 R^2 C^2 + 1}{s^2 R^2 C^2 + 1 + 4 s R C}
 $$
 
 我们令 $R = 3.3\ \mathrm{k\Omega},\ R_0 = \frac{R}{2},\ C = 10\ \mathrm{nF},\ C_0 = 2 C$，搭建实际电路，对其传递函数进行测试。理论中心频率为：
+
 $$
 \begin{gather}
 f_c = \frac{1}{2 \pi \times 3.3\ \mathrm{k\Omega} \times  10\ \mathrm{nF}} = 4.8229 \ \mathrm{kHz}
@@ -216,7 +221,7 @@ LTspice 仿真结果如下：
 
 <div class="center"><img width=400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-22-22-26-18_Classical RC Oscillators.png"/></div>
 
-作为一个经验定律， $R_9$ 的值在 $R_S$ (信号源等效输出电阻, 在这里是 5 kOhm) 的 100 倍以上，且基本不超过 500 倍，我们在上述仿真中选择的是 500 倍。同时，可以注意到， noninverting 端信号源的输出电压就是输出正弦波的偏置电压。
+作为一个经验定律， $R_9$ 的值在 $R_S$ (信号源等效输出电阻, 在这里是 5 kOhm) 的 100 倍以上，且基本不超过 500 倍，我们在上述仿真中选择的是 200 倍。同时，可以注意到， noninverting 端信号源的输出电压就是输出正弦波的偏置电压。
 
 ## Reference
 

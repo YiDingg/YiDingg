@@ -52,3 +52,21 @@ Initially published at 12:52 on 2025-03-27 in Beijing.
 用 MOSFET 搭建 output stage 时，我们一般不会去考虑 gate 端的输入阻抗（一般都非常大）。但是对于 BJT 的情形，输入阻抗可能只有十几千欧，这时就不得不考虑输入阻抗对电路的影响。
 
 求解 input impedance of  的具体过程如下：
+
+
+### Power Dissipation and Efficiency
+
+Conclusions:
+$$
+\begin{gather}
+P_{S, av} = \frac{2V_P V_{CC}}{\pi R_L},\quad 
+P_{O,av} = \frac{V_P^2}{2 R_L} ,\quad 
+P_{Q,av} = P_{S, av} - P_{O,av}
+\\
+\eta = \frac{P_{O,av}}{P_{S,av}} = \frac{\pi V_P}{4 \,V_{CC}} < \frac{\pi}{4} \approx 78.5 \,\%
+\\
+P_{Q,peak}  = \frac{V_{CC}^2}{\pi^2 R_L}\quad \left(V_P = \frac{2}{\pi} V_{CC} \approx V_{CC}\times 64\,\% \right)
+\end{gather}
+$$
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-01-00-23-31_Improved Push-Pull Stage.png"/></div>

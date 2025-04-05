@@ -58,3 +58,7 @@ Calcul
 Datasheet
 datasheet
 LCE
+Sziklai
+ICer
+EET
+Kimi
