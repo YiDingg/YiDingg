@@ -129,16 +129,16 @@
 
                 /* 搜索 */
                 search: {
-                    maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-                    paths: "auto", // 注意：仅适用于 paths: 'auto' 模式
+                    maxAge: 86400000, // 过期时间，单位毫秒，默认一天, 86400000 为天 
+                    paths: 'auto', // 注意：仅适用于 paths: 'auto' 模式
                     placeholder: "搜索",
                     // 支持本地化
                     placeholder: {
                         "/zh-cn/": "搜索",
-                        "/": "Type to search",
+                        "/": "Type to search (refresh before using)",
                     },
                     noData: "no results",
-                    depth: 5,
+                    depth: 1,
                     hideOtherSidebarContent: true,
                     namespace: "Docsify-Guide",
                 },

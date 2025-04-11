@@ -21,6 +21,7 @@ Chinese version:
 
 ## MOSFET
 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-07-18-20-51_The Definitions of SPICE Model Parameters.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-26-00-27-39_The Definitions of SPICE Model Parameters.png"/></div>
 
 ## JFET

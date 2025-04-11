@@ -4,7 +4,7 @@
 
 # 🏠<span style="font-family:'Baskerville Old Face','Times New Roman';">Yi Ding's Website</span><br> 
 
-<span style="font-family:'Times New Roman';font-size:1.2rem;">Major in EE (Electronic Engineering), share notes and thoughts here. (●'◡'●)</span>
+<span style="font-family:'Times New Roman';font-size:1.2rem;">Majoring in EE (Electronic Engineering), sharing notes and thoughts here. (●'◡'●)</span>
 
 <div class='clumsy'>Everyone is clumsy at the beginning </div><br>
 

@@ -16,10 +16,10 @@ About Me:
 My Technology Stack:
 - Latex
 - Matlab
-- C
-- MCU
-- PCB Layout
+- C Language
+- MCU 
 - Analog Design
+- PCB Layout
 
 
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)

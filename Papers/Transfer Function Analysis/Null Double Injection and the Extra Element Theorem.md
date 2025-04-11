@@ -6,13 +6,20 @@ Initially published at 23:46 on 2025-04-02 in Beijing.
 
 ## Infor 
 
-- Title: [Null Double Injection and the Extra Element Theorem](https://ieeexplore.ieee.org/document/34149)
+- Title: [*Null Double Injection and the Extra Element Theorem*](https://ieeexplore.ieee.org/document/34149)
 - DOI: [10.1109/13.34149](https://doi.org/10.1109/13.34149)
 - Author:  [R. D. MIDDLEBROOK](https://ieeexplore.ieee.org/author/37299930400)
 - Publication Date: 06 August 2002
 - Published in: [IEEE Transactions on Education](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=13) (Volume: 32, Issue: 3, August 1989)
 
 ## Abstract
+
+The extra element theorem (EET) states that any transfer function of a linear system can be expressed in terms of its value when a given 'extra' element is absent, and a correction factor involving the extra element and two driving-point impedances are seen by the element. 
+
+In the present work, the EET is derived and applied to several examples in a manner that has been developed and refined in the classroom over a number of years. 
+The concept of null double injection is introduced first, because it is the key to making easy the calculation of the two driving-point impedances needed for the EET correction factor.
+
+The EET for series and parallel elements is then considered, and attention is also given to the EET as an analysis tool, to the symmetry of the two forms of the EET, and to return ratios and sensitivity.
 
 <!-- details begin -->
 <details>
@@ -22,6 +29,7 @@ The extra element theorem (EET) states that any transfer function of a linear sy
 
 In the present work, the EET is derived and applied to several examples in a manner that has been developed and refined in the classroom over a number of years. 
 The concept of null double injection is introduced first, because it is the key to making easy the calculation of the two driving-point impedances needed for the EET correction factor.
+
 The EET for series and parallel elements is then considered, and attention is also given to the EET as an analysis tool, to the symmetry of the two forms of the EET, and to return ratios and sensitivity.
 </details>
 
@@ -52,6 +60,7 @@ ratios and sensitivity.
 
 <details>
 <summary>AI 全文总结 (Kimi, 2025.04.02)</summary>
+
 
 这篇文章由R. D. Middlebrook撰写，发表于1989年8月的《IEEE Transactions on Education》第32卷第3期，题为“Null Double Injection and the Extra Element Theorem”。文章主要介绍了额外元素定理（Extra Element Theorem, EET）及其在电路分析中的应用，通过引入“空双重注入”（null double injection）的概念，简化了线性系统中额外元件对传递函数的影响分析。
 
@@ -86,8 +95,68 @@ EET的核心思想是：任何线性系统的传递函数都可以表示为在�
 
 ### 观点与现象
 文章强调了EET作为一种分析工具的价值，尤其是在处理复杂电路时，它可以显著简化分析过程。通过将复杂的电路分析分解为对更简单电路的分析，EET使得工程师能够更高效地处理电路设计中的问题。此外，文章还指出，尽管EET的概念可能对学生来说较为陌生，但通过实践和例子，他们可以逐渐掌握这一强大的工具。
+
 </details>
 </div>
+
+
+## Null Double Injection
+
+考虑一个两输入两输出的线性系统，由于系统是线性的，我们一定有：
+
+$$
+\begin{gather}
+u_{o1} = A_1 u_{i1} + B_1 u_{i2} ,\quad 
+u_{o2} = A_2 u_{i1} + B_2 u_{i2}
+\end{gather}
+$$
+
+这里的 $u$ 可以是任何一种信号形式，包括但不限于电压、电流等。
+
+我们将上式重写为：
+
+$$
+\begin{gather}
+u_{o1} = B_1 u_{i1} \left(\frac{A_1}{B_1} + \frac{u_{i2}}{u_{i1}}\right)
+ ,\quad 
+u_{o2} = B_2 u_{i1} \left(\frac{A_2}{B_2} + \frac{u_{i2}}{u_{i1}}\right)
+\end{gather}
+$$
+
+从这种写法可以看出，如果我们保持 $\frac{u_{i2}}{u_{i1}}$ 为某个特殊的常数，输出（中的一个）将会恒为零，此时我们说 we "null" the output. 作数学上的处理，我们可以得到：
+
+$$
+\begin{gather}
+\left.\frac{u_{o2}}{u_{i2}}\right|_{u_{o1}=0} = \frac{A_1 B_2 - A_2 B_1}{A_1},\quad 
+\left.\frac{u_{o2}}{u_{i2}}\right|_{u_{i1}=0} = B_2
+\end{gather}
+$$
+
+这便是 null double injection 的内容。
+
+## EET for a parallel element
+
+现在，如下图，我们假设 $u_{i2}$ 为电流，$u_{o2}$ 为电压，且两者在同一端口上（后文称为 2 号端口），也就是：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-11-09-09-34_Null Double Injection and the Extra Element Theorem.png"/></div>
+
+这样，无论是 $u_{o1} = 0 $ 还是 $u_{i1} = 0$，$\frac{u_{o2}}{u_{i2}} = \frac{v}{i}$ 的比值都是一个常数，分别记作 $Z_{dp}|_{u_{o1} = 0 } = Z_n$ 和 $Z_{dp}|_{u_{i1} = 0 } = Z_d$, "dp" here stands for "driving point".
+
+在上面一步，我们相当于是在 2 号端口上施加了一个电流源 $u_{i2} = i$，现在，我们在二号端口并联一个阻抗 $Z$ (没有电流源)，如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-11-09-15-03_Null Double Injection and the Extra Element Theorem.png"/></div>
+
+可以注意到，当加入的阻抗 $Z= \infty$ 时，2 号 端口的电流输入量 $u_{i2} = i = 0$，把 $u_{i1}$ 和 $u_{o1}$ 分别视为系统的输入、输出量，此时系统的传递函数 (或者说 gain) 可以表示为：
+
+$$
+\begin{gather}
+H_0 = A_{z=\infty}
+\end{gather}
+$$
+
+## EET for a series element
+
+
+
 
 
 

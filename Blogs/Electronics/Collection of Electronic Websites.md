@@ -12,4 +12,5 @@ Initially published at xx:xx on 2025-xx-xx in xxxx.
 - [Electornics Tutorials](https://www.electronics-tutorials.ws/) : 提供了丰富的电子学习资料，包括 Transistors, Amplifiers, Diodes, Filters 等，还提供了很多实用的电子工程师工具，例如在线电阻电感电容计算器；
 - [https://cppsim.com/circuit_lectures.html](https://cppsim.com/circuit_lectures.html) : 由 CppSim (System Simulator) 提供的 Lectures, 包括 Analysis and Design of Analog IC, Basic Communication Principles, Phase-Locked Loops and their Applications, High Speed Communication Circuits and Systems, and Other Presentations. 值得一题的是，所有的 Lecture 都是 PDF (slides) 格式的，质量也很高，适合电子工程师学习和参考；
 - [Analysis and Design of Analog Integrated Circuits](https://cppsim.com/circuit_lectures.html) : 由 CppSim (System Simulator) 提供的 Lectures 之一, 
-
+- [EDN: Electronics Design Ideas and Projects](https://www.edn.com/category/design/design-idea)
+- [mbedded.ninja](https://blog.mbedded.ninja/)

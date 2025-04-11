@@ -9,6 +9,7 @@
 
     - [Design of Analog CMOS Integrated Circuits](<Notes/MajorCourses/Design of Analog CMOS Integrated Circuits.md>)
     - [Fundamentals of Microelectronics](<Notes/MajorCourses/Fundamentals of Microelectronics.md>)
+    - [Other Courses](Notes/Else/OtherCourses.md)
     - Major Courses
         - [Design of Analog CMOS Integrated Circuits](<Notes/MajorCourses/Design of Analog CMOS Integrated Circuits.md>)
         - [Fundamentals of Microelectronics](<Notes/MajorCourses/Fundamentals of Microelectronics.md>)
@@ -68,7 +69,6 @@
         - [MCU (3): DMA (STM32)](<Notes/MCU/MCUNotes(3)-DMA(STM32).md>)
         - [MCU (4): WiFi (ESP8266)](<Notes/MCU/MCUNotes(4)-WiFi(ESP8266).md>)
         - [MCU (!): Tips and Tricks (STM32)](<Notes/MCU/MCUNotes(!)-TipsAndTricks(STM32).md>)
-    - [Other Courses](Notes/Else/OtherCourses.md)
 
 
 - 📃 **Reading Papers**
@@ -77,7 +77,7 @@
 
 
         - [Navigation Page of Transfer Function Analysis](<Papers/Transfer Function Analysis/Navigation Page of Transfer Function Analysis.md>)
-        - [NDI and EET (Null Double Injection and the Extra Element Theorem)](<Papers/Transfer Function Analysis/Null Double Injection and the Extra Element Theorem.md>)
+        - [EET and NDI (the Extra Element Theorem and Null Double Injection)](<Papers/Transfer Function Analysis/Null Double Injection and the Extra Element Theorem.md>)
         - [The TEET (Two Extra Element Theorem)](<Papers/Transfer Function Analysis/The Two Extra Element Theorem.md>)
 
 
@@ -89,12 +89,15 @@
 
         - [**[Pinned] Roadmap for Analog ICer**](<Blogs/Electronics/Roadmap for Analog ICer.md>)
         - [**[Pinned] Collection of Electronic Websites**](<Blogs/Electronics/Collection of Electronic Websites.md>)
+        - [Calc CS Transfer Func using EET](<Blogs/Electronics/Calculate CS Transfer Function using EET.md>)
+        - [Understanding Poles and Zeros](<Blogs/Electronics/Understanding Poles and Zeros.md>)
+        - [Freq Response of CE and CS Stages](<Blogs/Electronics/Frequency Response of CE and CS Stages.md>)
         - [Roadmap for Analog ICer](<Blogs/Electronics/Roadmap for Analog ICer.md>)
         - [Compound BJT (Sziklai and Darlington)](<Blogs/Electronics/Compound BJT (Sziklai and Darlington).md>)
         - [Common-Emitter Amp Experiment](<Blogs/Electronics/Common Emitter Amplifier Experiment.md>)
         - [Improved Push-Pull Stage](<Blogs/Electronics/Improved Push-Pull Stage.md>)
         - [Cascode Differential Amplifier](<Blogs/Electronics/Cascode Differential Amplifier.md>)
-        - [The Definitions of SPICE Model Parameters](<Blogs/Electronics/The Definitions of SPICE Model Parameters.md>)
+        - [Definitions of SPICE Model Parameters](<Blogs/Electronics/The Definitions of SPICE Model Parameters.md>)
         - [Basic Differential Circuit Simulation Report](<Blogs/Electronics/Differential Circuit Simulation Report.md>)
         - [主流锂电池充放一体芯片选型对比](<Blogs/Electronics/主流锂电池充放一体芯片选型对比.md>)
         - [The Five-Transistor OTA](<Blogs/Electronics/The Five-Transistor OTA.md>)
