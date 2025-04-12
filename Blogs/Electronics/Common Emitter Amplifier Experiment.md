@@ -320,13 +320,19 @@ $$
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-30-13-57-54_Common Emitter Amplifier Experiment.png"/></div>
 
 
-## 5 - Output Impedance (Theoretical)
+## 5 - Input/Output Impedance
 
-Since the presence of the coupling capacitors, the output impedance is a function of frequency. 
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-29-17-50-08_Common Emitter Amplifier Experiment.png"/></div>
 
-We can see that $|R_{out}| \approx 1 \ \mathrm{k}\Omega$ within the frequency range of $1 \ \mathrm{Hz}$ to $100 \ \mathrm{MHz}$
+Since the presence of the coupling capacitors, the input/output impedance is a function of frequency. Considering the impedance of input/output capacitors, it can be derived that:
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-29-17-50-08_Common Emitter Amplifier Experiment.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-11-20-38-33_Common Emitter Amplifier Experiment.png"/></div>
+ -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-11-20-58-41_Common Emitter Amplifier Experiment.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-11-20-59-11_Common Emitter Amplifier Experiment.png"/></div>
+
+We can see that $|R_{in}| = 5.571 \ \mathrm{k}\Omega$ and $|R_{out}| = 1.007 \ \mathrm{k\Omega}$ at $f = 1 \ \mathrm{kHz}$.
 
 
 
@@ -521,7 +527,7 @@ I_S = 4.679e-14;
 R_B0 = 1;
 R_C0 = 1;
 R_E0 = 0.2598;
-beta = 458.7;
+beta = 250;
 n_f = 1.01;
 V_A = 52.64;
 
@@ -551,9 +557,9 @@ stc.ax2.YLim = [-1 1];
 stc.ax2.XLim = [0 range_I_C(end)];
 stc.ax2.YScale = 'log';
 
+% dc point calculation 
 I_C = fzero(eq, [0 4e-3]);
 disp(['I_C = ', num2str(I_C*1000, '%.8f') ' mA'])  
-
 I_B = I_C/beta
 V_B_ = V_B(I_C)
 V_C = Vcc - I_C*(R_C0 + R_C1)
@@ -580,15 +586,21 @@ R_B = R_B0 + MyParallel_n([1/(1j*omega*C_in), R_1, R_2])
 R_C = R_C1
 R_E = R_E1 + MyParallel(R_E2, 1/(1j*omega*C_E))
 
+
 r_O = V_A/I_C
 g_m = I_C/(n_f*V_T)
 r_pi = beta/g_m
 
+R_base = r_pi + R_E * (beta*r_O + r_O + R_C)/(R_E + r_O + R_C)
+R_in = MyParallel_n([R_1, R_2, R_base])
+R_in_abs = abs(R_in)
+
 R_coll = r_O * (  1 + (beta/(r_pi + R_B) + 1/r_O)*MyParallel(R_E, r_pi) )
 R_out = MyParallel(R_C, R_coll)
+R_out_abs = abs(R_out)
 G_m = beta/(r_pi + R_B) / R_E * MyParallel_n([R_E, (r_pi + R_B)/(beta + 1), r_O])
 A_v = -G_m*R_out
-A_v_abs = abs(A_v)
+A_v_abs = -abs(A_v)
 
 % ac gain frequency response
 f = logspace(0, 6, 7*100);
@@ -633,7 +645,10 @@ stc.label.y_left.String = 'Gain $A_v$ (dB)';
 stc.label.y_right.String = 'Phase $\theta$ ($^\circ$)';
 stc.leg.Visible = 'off';
 
-% Output Impedance
+
+
+
+% Input/Output Impedance
 f = logspace(0, 6, 7*100);
 omega = 2*pi*f;
 C_in = 10e-6;
@@ -649,6 +664,12 @@ g_m = I_C/(n_f*V_T);
 r_pi = beta/g_m;
 
 R_coll = r_O * (  1 + (beta./(r_pi + R_B) + 1/r_O) .* MyParallel(R_E, r_pi) );
+R_base = r_pi + R_E * (beta*r_O + r_O + R_C) / (R_E + r_O + R_C);
+
+
+R_in = 1./(omega*C_in) + MyParallel(MyParallel(R_1, R_2), R_B0 + R_base);
+R_in_abs = abs(R_in);
+
 R_out = MyParallel(R_C, R_coll);
 R_out_abs = abs(R_out);
 %G_m = beta./(r_pi + R_B) ./ R_E .* MyParallel_n([R_E, (r_pi + R_B)./(beta + 1), r_O])
@@ -663,12 +684,15 @@ abs(A_v(1));
 phase = rad2deg(angle(A_v));
 %phase(phase > 90) = phase(phase > 90) - 360;
 
-stc = MyYYPlot([f; f], [A_v_abs; R_out_abs]);
+stc = MyYYPlot([f; f], [R_in_abs; R_out_abs]);
 stc.axes.XScale = 'log';
 stc.label.x.String = 'Frequency $f$ (Hz)';
-stc.label.y_left.String = 'Gain $A_v$ (V/V)';
+stc.label.y_left.String = 'Input Impedance $|Z_{in}|$ ($\Omega$)';
 stc.label.y_right.String = 'Output Impedance $|Z_{out}|$ ($\Omega$)';
 stc.leg.Visible = 'off';
+yyaxis('left')
+MyFigure_ChangeSize_2048x512
+
 
 % input/output voltage range calculation
 if 0

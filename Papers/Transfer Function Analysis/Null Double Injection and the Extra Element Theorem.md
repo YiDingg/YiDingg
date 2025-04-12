@@ -127,38 +127,226 @@ $$
 
 $$
 \begin{gather}
-\left.\frac{u_{o2}}{u_{i2}}\right|_{u_{o1}=0} = \frac{A_1 B_2 - A_2 B_1}{A_1},\quad 
-\left.\frac{u_{o2}}{u_{i2}}\right|_{u_{i1}=0} = B_2
+\left.\frac{u_{o2}}{u_{i2}}\right|_{u_{o1}=0} = Z_{v_{out} = 0} = \frac{A_1 B_2 - A_2 B_1}{A_1}
 \end{gather}
 $$
 
-这便是 null double injection 的内容。
+这便是 null double injection 的内容。简单来说， null double injection 中的 "null" 是指在某种输入信号下，输出 $v_{out} = 0$（<span style='color:red'> 不是简单的接地 </span>）；而 "double" 是指这时我们共有两个输入量，一个是 $v_{in}$，另一个是并联到两节点的电压源或者电流源。
 
-## EET for a parallel element
+相应地，另一个阻抗 $\left.\frac{u_{o2}}{u_{i2}}\right|_{u_{i1}=0} = Z_{v_{in} = 0}= B_2$ 称为 "single injection" 。
+
+再次强调，<span style='color:red'> "Nulling is not the same as shorting" </span>，不能简单接地处理。
+
+利用 null double injection 求解等效阻抗时的 <span style='color:red'> 一个小技巧是：当某条支路上没有电流通过时，支路所连的两节点可看作“虚短+虚断” </span>；无论支路上的总阻抗 $Z$ 是多少，只要 $|Z| < \infty$，都可视为“虚短+虚断”。
+
+## EET for a Parallel Element
 
 现在，如下图，我们假设 $u_{i2}$ 为电流，$u_{o2}$ 为电压，且两者在同一端口上（后文称为 2 号端口），也就是：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-11-09-09-34_Null Double Injection and the Extra Element Theorem.png"/></div>
+<div class="center"><img width=400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-11-09-09-34_Null Double Injection and the Extra Element Theorem.png"/></div>
 
-这样，无论是 $u_{o1} = 0 $ 还是 $u_{i1} = 0$，$\frac{u_{o2}}{u_{i2}} = \frac{v}{i}$ 的比值都是一个常数，分别记作 $Z_{dp}|_{u_{o1} = 0 } = Z_n$ 和 $Z_{dp}|_{u_{i1} = 0 } = Z_d$, "dp" here stands for "driving point".
-
-在上面一步，我们相当于是在 2 号端口上施加了一个电流源 $u_{i2} = i$，现在，我们在二号端口并联一个阻抗 $Z$ (没有电流源)，如下：
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-11-09-15-03_Null Double Injection and the Extra Element Theorem.png"/></div>
-
-可以注意到，当加入的阻抗 $Z= \infty$ 时，2 号 端口的电流输入量 $u_{i2} = i = 0$，把 $u_{i1}$ 和 $u_{o1}$ 分别视为系统的输入、输出量，此时系统的传递函数 (或者说 gain) 可以表示为：
+这样，无论是 $u_{o1} = 0 $ 还是 $u_{i1} = 0$，$\frac{u_{o2}}{u_{i2}} = \frac{v}{i}$ 的比值都是一个常数，分别记作 $Z_{dp}|_{u_{o1} = 0 } = Z_n$ 和 $Z_{dp}|_{u_{i1} = 0 } = Z_d$, "dp" here stands for "driving point". 也就是：
 
 $$
 \begin{gather}
-H_0 = A_{z=\infty}
+Z_n = \frac{A_1 B_2 - A_2 B_1}{A_1},\quad 
+Z_d = B_2
 \end{gather}
 $$
 
-## EET for a series element
+在上面一步，我们相当于是在 2 号端口上施加了一个电流源 $u_{i2} = i$，现在，我们在二号端口并联一个阻抗 $Z$ (没有电流源)，如下：
+
+<div class="center"><img width=400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-11-09-15-03_Null Double Injection and the Extra Element Theorem.png"/></div>
+
+可以注意到，当加入的阻抗 $Z= \infty$ 时 (也就是还没有把 $Z$ 并联进电路的时候)，2 号 端口的电流输入量 $u_{i2} = i = 0$，把 $u_{i1}$ 和 $u_{o1}$ 分别视为系统的输入、输出量，则系统的原始传递函数 (或者说 original gain) 可以表示为：
+
+$$
+\begin{gather}
+(u_{o1} = A_1 u_{i1} + B_1 u_{i2} )_{u_{i2} = 0} \Longrightarrow 
+H_0 = \left(\frac{u_{o1}}{u_{i1}}\right)_{u_{i2} = 0} =  A_1
+\end{gather}
+$$
+
+当加入的阻抗 $Z$ 为有限值时 (也就是现在把 $Z$ 并联进电路)，将 $\frac{u_{o2}}{u_{i2}} = -Z$ 代入 (消去 $u_{i2}$)，再联立线性系统的两个方程解出 $u_{o2}$ 和 $u_{o1}$ (写成关于 $u_{i1}$ 的表达式)，得到：
+
+$$
+\begin{gather}
+\frac{u_{o2}}{u_{i1}} = \frac{B_1}{1 + \frac{B_2}{Z}} ,\quad 
+\frac{u_{o1}}{u_{i1}} = A_1 \frac{1 + \frac{1}{Z} \frac{A_1 B_2 - A_2 B_1}{A_1}}{1 + \frac{B_2}{Z}}
+\end{gather}
+$$
+
+我们前面已经得到了 $Z_n = \frac{A_1 B_2 - A_2 B_1}{A_1}$ 和 $Z_d = B_2$，并且注意 $A_1$ 就是系统的原始增益（原始传递函数 $H_0$），所以可以将上面的第二个等式改写为：
+
+$$
+\begin{gather}
+\boxed{
+H = H_0 \cdot \frac{1 + \frac{Z_n}{Z}}{1 + \frac{Z_d}{Z}}
+,\quad 
+\mathrm{or}
+\quad 
+A_{Z} = A_{Z=\infty} \cdot \frac{1 + \frac{Z_n}{Z}}{1 + \frac{Z_d}{Z}}
+}
+\end{gather}
+$$
+
+至此，我们便证明了 extra element theorem (EET) 的并联形式。
 
 
+## Example 1: CE Stage
+
+考虑如下图所示的共射单极放大器 (common-emitter amplifier stage):
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-12-14-26-22_Null Double Injection and the Extra Element Theorem.png"/></div>
+
+对 base 左端的输入/偏置部分作戴维南等效，得到：
+
+$$
+\begin{gather}
+V_{Thev} = \frac{ R_1 \parallel R_2}{ R_1 \parallel R_2 + R_S}
+,\quad 
+R_{S} = R_S \parallel R_1 \parallel R_2
+\end{gather}
+$$
+
+在之前的文章中 ([BJT 三种基本放大器的增益、跨导与输出阻抗](https://mp.weixin.qq.com/s/5ifWKEfBFn1nUKo4Rq7aVw))，我们已经讨论过标准 CE Stage 的增益，忽略沟道调制效应时，结论为：
+
+$$
+\begin{gather}
+A_v = \frac{ \alpha R_C}{R_E + \frac{1}{g_m} + \frac{R_B}{\beta + 1}} \approx
+\frac{R_C}{R_E + \frac{1}{g_m} + \frac{R_B}{\beta + 1}}
+,\quad \alpha = \frac{\beta}{\beta + 1}
+\end{gather}
+$$
+
+将这个结论应用到上图中，得到总增益为：
+
+$$
+\begin{gather}
+A_v = \frac{ R_1 \parallel R_2}{ R_1 \parallel R_2 + R_S} \cdot \frac{R_L}{R + \frac{1}{g_m} + \frac{R_S \parallel R_1 \parallel R_2}{\beta + 1}}
+\end{gather}
+$$
+
+下面我们用两种方法来计算加入旁路电容 $C_b$ 后的总增益。
+
+### Direct Calculation
+
+第一种是直接计算，由于 $C_b$ 与 $R$ 是并联关系，直接将 $R$ 替换为 $R \parallel \frac{1}{sC_b} = \frac{R}{1 + sRC_b}$，便得到并入电容后的结果：
+
+$$
+\begin{gather}
+A_v' = \frac{ R_1 \parallel R_2}{ R_1 \parallel R_2 + R_S} \cdot \frac{R_L}{\frac{R}{1 + sRC_b} + \frac{1}{g_m} + \frac{R_S \parallel R_1 \parallel R_2}{\beta + 1}} =
+\end{gather}
+$$
+
+我们将 $A_v'$ 重写为 $A_v$ 的形式：
+
+$$
+\begin{align}
+\frac{A_v'}{A_v} &= \frac{R + \frac{1}{g_m} + \frac{R_S \parallel R_1 \parallel R_2}{\beta + 1}}{\frac{R}{1 + sRC_b} + \frac{1}{g_m} + \frac{R_S \parallel R_1 \parallel R_2}{\beta + 1}} 
+\\
+&= \frac{(1 + sRC_b)(R + \frac{1}{g_m} + \frac{R_S \parallel R_1 \parallel R_2}{\beta + 1})}{R + (1 + sRC_b)(\frac{1}{g_m} + \frac{R_S \parallel R_1 \parallel R_2}{\beta + 1})}
+\\
+&= \frac{(1 + sRC_b)(R + \frac{1}{g_m} + \frac{R_S \parallel R_1 \parallel R_2}{\beta + 1})}{R + \frac{1}{g_m} + \frac{R_S \parallel R_1 \parallel R_2}{\beta + 1} + sRC_b(\frac{1}{g_m} + \frac{R_S \parallel R_1 \parallel R_2}{\beta + 1})}
+\\
+&= \frac{1 + sRC_b}{1 + sC_b \frac{R(\frac{1}{g_m} + \frac{R_S \parallel R_1 \parallel R_2}{\beta + 1})}{R + \frac{1}{g_m} + \frac{R_S \parallel R_1 \parallel R_2}{\beta + 1}}}
+\\
+&= \frac{1 + sC_bR}{1 + sC_b \left[R \parallel \left(\frac{1}{g_m} + \frac{R_S \parallel R_1 \parallel R_2}{\beta + 1}\right)\right]}
+\end{align}
+$$
+
+### Using EET
+
+下面考虑利用 EET, 先求 $Z_n = Z_{v_{out} = 0}$。注意到 $v_{out} = 0$ 时，$R_L$ 断路 <span style='color:red'> （这与直接把 $V_{out}$ 接地不同！） </span>，$I_C$ 断路，因此 $I_B$ 也断路，看入的阻抗就是 $R$，也即：
+
+$$
+\begin{gather}
+Z_n = Z_{v_{out} = 0} = R
+\end{gather}
+$$
+
+对于 $Z_d = Z_{v_{in} = 0}$, 看入的阻抗是：
+
+$$
+\begin{gather}
+ Z_d = R \parallel R_{emit} =  R \parallel \left(\frac{1}{g_m} + \frac{R_S \parallel R_1 \parallel R_2}{\beta + 1}\right)
+\end{gather}
+$$
+
+应用 EET，得到：
+
+$$
+\begin{gather}
+A_v' = A_v \cdot \frac{1 + sC_bR}{1 + sC_b \cdot \left[R \parallel \left(\frac{1}{g_m} + \frac{R_S \parallel R_1 \parallel R_2}{\beta + 1}\right)\right]}
+\end{gather}
+$$
+
+这与我们前面直接分析得到的结果相同。
+
+## EET for a Series Element
+
+将 EET 的并联形式改写为：
+
+$$
+\begin{gather}
+A|_Z = A|_{Z = \infty} \cdot \frac{1 + \frac{Z_n}{Z}}{1 + \frac{Z_d}{Z}}
+\Longleftrightarrow 
+A|_Z = \left[A|_{Z = \infty} \frac{Z_n}{Z_d}\right] \cdot \frac{1 + \frac{Z}{Z_n}}{1 + \frac{Z}{Z_d}}
+\end{gather}
+$$
+
+注意到 $\left[A|_{Z = \infty} \frac{Z_n}{Z_d}\right]$ 就是 $A|_{Z = 0}$，上式变为：
+
+$$
+\begin{gather}
+A|_Z = A|_{Z = 0} \cdot \frac{1 + \frac{Z}{Z_n}}{1 + \frac{Z}{Z_d}}
+\end{gather}
+$$
+
+这就是 EET 的串联形式。也就是说，原本电路中的某条支路是导线（$Z=0$），计算得到的增益为 $A|_{Z = 0}$，当我们想在这条支路上串联进一个阻抗 $Z$ 时（$Z\ne 0$），增益就变为 $A|_Z = A|_{Z = 0} \cdot \frac{1 + \frac{Z}{Z_n}}{1 + \frac{Z}{Z_d}}$。$Z_n$ 与 $Z_d$ 的含义仍不变，也就是 $Z_n = Z_{v_{out} = 0}$ 和 $Z_d = Z_{v_{in} = 0}$。
 
 
+注意，在准备利用 EET 的串联形式，正在计算 $Z_n$ 和 $Z_d$ 时，<span style='color:red'> 需要将这条支路“断开” </span>，因为 $Z_n$ 和 $Z_d$ 是在 $Z = \infty$ 的条件下得到的。
 
+## Example 2: CS Stage with Miller Effect
+
+MOS gate 和 drain 之间的寄生电容 (记作 $C_{GD}$) 通常是限制增益带宽的主要因素，我们可以用 EET 来分析这个电容对增益的影响。
+
+现在，我们便尝试利用 EET 求出 CS 的传递函数 $H(s)$, 并与直接列 KCL/KVL 所得结果进行比较。
+
+利用等效小信号电路，列出 KCL/KVl 的过程比较繁琐，详见 [Frequency Response of CE and CS Stages (共射/共源放大器的频率响应)](https://zhuanlan.zhihu.com/p/1892732378264339436)，我们这里只给出结论：
+
+$$
+\begin{gather}
+\frac{V_{out}}{V_{in}} = -g_m R_L \cdot \frac{1 - \frac{s}{\frac{g_m}{C_{GD}}}}{a s^2 + bs + 1}
+\\
+a = R_{S}R_L \left( C_{GS} C_{GD} + C_{GS} C_{DB} + C_{GD}C_{DB} \right)
+\\
+b = g_m R_L R_{S}C_{GD}  + R_{S} (C_{GD} + C_{GS}) + R_L (C_{GD} + C_{DB})
+\\ \Longrightarrow 
+\begin{cases}
+\frac{1}{\omega_{p1}}\frac{1}{\omega_{p2}} = a\\
+\frac{1}{\omega_{p1}} + \frac{1}{\omega_{p2}} = b
+\end{cases}
+\\ \Longrightarrow 
+\begin{cases}
+\omega_{zero} = \frac{g_m}{C_{GD}} \\
+\omega_{p1} = \frac{2}{b + \sqrt{b^2 - 4a}} \approx \frac{1}{b}\\
+\omega_{p2} = \frac{2}{b - \sqrt{b^2 - 4a}} \approx \frac{b}{a}\\
+\end{cases}
+\end{gather}
+$$
+
+其中 $R_S$ 是前级的等效输出阻抗，$R_L$ 是 CS 的总负载电阻（可以包括 $r_O$）。
+
+
+下面就用 EET 来求解这个传递函数。
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-11-00-23-37_Calcu CS Transfer Function using EET.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-11-00-23-50_Calcu CS Transfer Function using EET.png"/></div>
+
+可以看到，用 EET 所得结果与直接分析法完全一致。
+
+## Else
+
+值得指出的是， EET 可以用于求解任何形式的传递函数，包括但不限于输入/输出阻抗/导纳、电压/电流增益，PSRR，CMRR 等，只要系统满足线性性即可（例如小信号分析）。特别地，当传递函数是 "self-impedance" 时： $v_{in} = 0$ 等价于 input 开路，$v_{out} = 0$ 等价于 input 短路（即 $v_{out}$ 的两节点短路）
 
 ## Summary
 
