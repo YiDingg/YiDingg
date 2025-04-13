@@ -7,19 +7,26 @@
 
 测量 TI 公司运算放大器 NE5532P 的常见参数，包括 input offset voltage $V_{OS}\ (\mathrm{or\ }V_{IO})$, input bias current $I_{B\pm}$ (and input offset current $I_{OS}$), open-loop dc/ac gain $A_{OL}$, dc/ac CMRR, dc/ac PSRR 共八个参数。
 
-实验原理与具体测试步骤见 [Op Amp Measurement Methods](<Blogs/Electronics/Op Amp Measurement Methods.md>)
+实验原理与具体测试步骤见 [Op Amp Measurement Methods](<Blogs/Electronics/Op Amp Measurement Methods.md>)。
 
 ## 实验记录
 
 - Time: 2025.04.13 
 - Location: Beijing
-- Auxiliary device (辅助运放): LM358P (absolute max supply range: ±16V or 32V)
+- Auxiliary device (辅助运放): NE5532P (absolute max supply range: ±22V or 44V)
 - Device under test (待测运放): NE5532P (absolute max supply range: ±22V or 44V)
 - Measurement board (测试板): [Basic Op Amp Measurement Board](<ElectronicDesigns/Basic Op Amp Measurement Board.md>)
 - 依次测量: V_IO, I_B; DC gain, DC CMRR, DC PSRR; AC gain, AC CMRR, AC PSRR
 - AUX: 始终由直流电源供电 (±12V)
 - DUT: 除了测试 AC CMRR 和 AC PSRR 时, DUT 的供电由信号发生器提供 (不超过 [-5V, +5V]), 其它参数测试时, DUT 均由直流电源供电 (±12V, 与 AUX 供电相同)。
 
+
+<div class='center'>
+
+| 测试板 ([Basic Op Amp Measurement Board](<ElectronicDesigns/Basic Op Amp Measurement Board.md>)) | 待测运放 (NE5532P) |
+|:-:|:-:|
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-22-21-21_Op Amp Measurement of NE5532P.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-22-21-34_Op Amp Measurement of NE5532P.png"/></div> |
+</div>
 
 各开关初始状态如下:
 <div class='center'>
@@ -33,14 +40,14 @@
 实验记录如下：
 <div class='center'>
 
-| Num | Parameter | Steps | Formula | Figure |
+| Data Num | Parameter | Steps | Formula | Figure |
 |:-:|:-:|:-:|:-:|:-:|
  | 1 | $V_{IO}$ |record $V_{TP1}$ | $V_{IO} = \frac{V_{TP1}}{1001}$  | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-16-15-51_Op Amp Measurement of NE5532P.png"/></div> |
  | 2 | $I_{B\pm}$ |S2 `0R`, S1 from `0R` to `R7`, write $(\Delta V_{TP1})_{1}$ <br> S1 `0R`, S2 from `0R` to `R6`, write $(\Delta V_{TP1})_{2}$ | $I_{B-} = - \frac{(\Delta V_{TP1})_1}{1001\,R7}$ <br> $I_{B+} = +\frac{(\Delta V_{TP1})_2}{1001\,R6}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-16-16-17_Op Amp Measurement of NE5532P.png"/></div> <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-16-16-38_Op Amp Measurement of NE5532P.png"/></div> |
  | 3 | DC Gain | S6 from `0 10K` to `1 +1V`, write $\Delta V_{TP2}$ and $\Delta V_{TP1}$ | $A_{OL} = \frac{1001\, \Delta V_{TP2}}{\Delta V_{TP1}}$  | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-16-18-14_Op Amp Measurement of NE5532P.png"/></div> |
  | 5 | DC CMRR |W1 and W2 from ±4V to +5V and -3V, write $\Delta V_{TP1}$, $\Delta V_{CM} = \frac{\Delta V_{CC+} + \Delta V_{CC-}}{2}$ | $\mathrm{CMRR} = \frac{1001\, \Delta V_{CM}}{\Delta V_{TP1}}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-16-22-14_Op Amp Measurement of NE5532P.png"/></div> |
  | 6 | DC PSRR |W1 and W2 from ±4V to ±12V (or ±5V), write $\Delta V_{TP1}$ | $\mathrm{PSRR} = \frac{1001\, \Delta V_{PS,total}}{\Delta V_{TP1}}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-16-28-12_Op Amp Measurement of NE5532P.png"/></div> |
- | 4 | AC Gain | S4 to `R9`, 'AD1 Impedance' inputs ac signal (500Hz ~ 5MHz), measure $v_{TP2}$ | $A_{OL} = \left(1 + \frac{\frac{1}{2\pi f C_{in}} + R_9}{R_1}\right)\cdot \frac{v_{TP2, amp}}{v_{IN, amp}}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-16-58-51_Op Amp Measurement of NE5532P.png"/></div><div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-18-31-16_Op Amp Measurement of NE5532P.png"/></div><div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-19-26-25_Op Amp Measurement of NE5532P.png"/></div> |
+ | 4 | AC Gain | S4 to `R9`, **AD1 Impedance** inputs ac signal (50Hz ~ 5MHz), measure $v_{TP2}$ | $A_{OL} = \left(1 + \frac{\frac{1}{2\pi f C_{in}} + R_9}{R_1}\right)\cdot \frac{v_{TP2, amp}}{v_{IN, amp}}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-16-58-51_Op Amp Measurement of NE5532P.png"/></div><div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-18-31-16_Op Amp Measurement of NE5532P.png"/></div><div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-19-26-25_Op Amp Measurement of NE5532P.png"/></div> |
  | 7 | AC CMRR | <span style='color:red'> S3 to 1</span>, configure W1 to sine wave (1V amplitude, +4V offset), W2 to sine wave (1V amplitude, -4V offset), ${\color{red}{\Delta \varphi = 0}}$ and measure $v_{TP2, amp}$ | $\mathrm{CMRR} = \frac{10001\, V_{W1, \mathrm{amp}}}{V_{TP2, \mathrm{amp}}}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-19-14-12_Op Amp Measurement of NE5532P.png"/></div> |
  | 8 | AC PSRR |<span style='color:red'> S3 to 1</span>, configure W1 to sine wave (1V amplitude, +4V offset), W2 to sine wave (1V amplitude, -4V offset), ${\color{red}{\Delta \varphi = \pi}}$ and measure $v_{TP2, amp}$ | $\mathrm{PSRR} = \frac{20002\, V_{W1, \mathrm{amp}}}{V_{TP2, \mathrm{amp}}}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-19-34-24_Op Amp Measurement of NE5532P.png"/></div><div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-19-46-16_Op Amp Measurement of NE5532P.png"/></div><div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-19-47-21_Op Amp Measurement of NE5532P.png"/></div> |
 
@@ -100,7 +107,7 @@ $$
 如下图所示，其它运放测得的增益曲线也出现了低频时增益异常下降的现象，因此这很可能是系统误差导致的，也就是目前测量原理的设计上具有某种缺陷。
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-21-24-19_Op Amp Measurement of NE5532P.png"/></div>
 
-尝试了将 AUX 运放更改为 NE5532P 和 JRC4558D, 现象无明显变化。
+尝试了将 AUX 运放更改为 LM358P 和 JRC4558D, 现象无明显变化。
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-21-18-12_Op Amp Measurement of NE5532P.png"/></div>
  -->
 
@@ -113,9 +120,9 @@ $$
 下面是 DC 相关参数的结果汇总：
 <div class='center'>
 
-| Parameter | $V_{IO}$ | $I_{B+}$ | $I_{B-}$ | $I_{B}$ | $I_{OS}$ | DC Gain | DC CMRR | DC PSRR |
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
- | Value | +0.4981 mV | +220.51 nA | +218.15 nA | +219.33 nA | +2.3566 nA | 2.0019e6 (126.0285 dB) | -2.3553e6 (127.4409 dB) | 0.6518e6 (116.2825 dB) |
+| Op Amp | Parameter | $V_{IO}$ | $I_{B+}$ | $I_{B-}$ | $I_{B}$ | $I_{OS}$ | DC Gain | DC CMRR | DC PSRR |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| NE5532P | Value | +0.4981 mV | +220.51 nA | +218.15 nA | +219.33 nA | +2.3566 nA | 2.0019e6 (126.0285 dB) | -2.3553e6 (127.4409 dB) | 0.6518e6 (116.2825 dB) |
 </div>
 
 ## 测试板改进思路
