@@ -5,7 +5,7 @@ Initially published at xx:xx on 2025-xx-xx in xxxx.
 
 ## Infor 
 
-- Title: [article title]()
+- Paper: [article title]()
 - DOI: [xxx]()
 - Author:  [xxx]()
 - Publication Date: xxx
@@ -34,6 +34,23 @@ Initially published at xx:xx on 2025-xx-xx in xxxx.
 
 </details>
 </div>
+
+
+
+``` txt
+
+```
+
+``` txt
+
+```
+
+
+
+
+
+
+
 
 ## Contents of Article
 

@@ -71,7 +71,7 @@
         - [MCU (!): Tips and Tricks (STM32)](<Notes/MCU/MCUNotes(!)-TipsAndTricks(STM32).md>)
 
 
-- 📃 **Reading Papers**
+- 📃 **Paper Reading**
 
     - Transfer Function Analysis
 
@@ -89,6 +89,7 @@
 
         - [**[Pinned] Roadmap for Analog ICer**](<Blogs/Electronics/Roadmap for Analog ICer.md>)
         - [**[Pinned] Collection of Electronic Websites**](<Blogs/Electronics/Collection of Electronic Websites.md>)
+        - [Op Amp Meas. of NE5532P](<Blogs/Electronics/Op Amp Measurement of NE5532P.md>)
         - [Calc CS Transfer Func using EET](<Blogs/Electronics/Calculate CS Transfer Function using EET.md>)
         - [Understanding Poles and Zeros](<Blogs/Electronics/Understanding Poles and Zeros.md>)
         - [Freq Response of CE and CS Stages](<Blogs/Electronics/Frequency Response of CE and CS Stages.md>)

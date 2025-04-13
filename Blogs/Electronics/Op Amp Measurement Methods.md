@@ -102,11 +102,11 @@ The simple attenuator shown will only work at frequencies up to 100 kHz or so, e
 
 <div class="center"><img width=500px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-12-20-15-28_Op Amp Measurement Methods.png"/></div>
 
-Set ac input with 1V amplitude (2V peak-peak) and measure the output ac amplitude at $V_{TP1}$. Assuming $V_{TP1}$ has an ac amplitude of x volts, the ac gain is given by:
+Set ac input with 1V amplitude (2V peak-peak) and measure the output ac amplitude at $V_{TP2}$. Assuming $V_{TP2}$ has an ac amplitude of x volts, the ac gain is given by:
 
 $$
 \begin{gather}
-A_{OL} = \frac{1 \ \mathrm{V}}{ \frac{x}{10000} } = \frac{10000}{x} \cdot 1 \ \mathrm{V}
+A_{OL} = \frac{x}{ \frac{1 \ \mathrm{V}}{10000} } = \frac{10000}{1 \ \mathrm{V}} \cdot x
 \end{gather}
 $$
 
@@ -150,7 +150,7 @@ If the ac voltage at TP2 has an amplitude of x volts peak (2x volts peak-to-peak
 
 $$
 \begin{gather}
-\mathrm{AC\ \   CMRR} = \frac{\frac{x\ \mathrm{V}}{100}}{1 \ \mathrm{V}} = \frac{x}{100}
+\mathrm{AC\ \   CMRR} = \frac{1 \ \mathrm{V}}{\frac{x\ \mathrm{V}}{100}} = \frac{100}{x}
 \end{gather}
 $$
 
@@ -165,6 +165,6 @@ The calculation is very similar to the previous one:
 
 $$
 \begin{gather}
-\mathrm{AC\ \   PMRR} = \frac{\frac{x\ \mathrm{V}}{100}}{1 \ \mathrm{V}} = \frac{x}{100}
+\mathrm{AC\ \   PSRR} = \frac{2\times 1 \ \mathrm{V}}{\frac{x\ \mathrm{V}}{100}} = \frac{200}{x}
 \end{gather}
 $$

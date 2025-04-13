@@ -304,16 +304,16 @@ $$
 
 $$
 \begin{gather}
-\mathrm{CMRR} = \frac{V_{CM}}{V_{IO}} = \frac{1001\,V_{CM}}{V_{TP1}}
+\mathrm{CMRR} = \frac{V_{CM}}{V_{IO}} = \frac{10001\,V_{CM}}{V_{TP2}}
 \\
 \Longrightarrow 
 {\color{red}{
-\mathrm{CMRR} = \frac{1001\, V_{W1, \mathrm{amplitude}}}{V_{TP1, \mathrm{amplitude}}}
+\mathrm{CMRR} = \frac{10001\, V_{W1, \mathrm{amplitude}}}{V_{TP2, \mathrm{amplitude}}}
 }}
 \end{gather}
 $$
 
-类似的，按 1V 的 $V_{CM, \mathrm{amplitude}}$ 和 10mV 的 $V_{TP1, \mathrm{amplitude}}$ 来算，可以测量最高为 100000 (即 100 V/mV, 100dB) 的 CMRR 。
+类似的，按 1V 的 $V_{CM, \mathrm{amplitude}}$ 和 10mV 的 $V_{TP2, \mathrm{amplitude}}$ 来算，可以测量最高为 100000 (即 100 V/mV, 100dB) 的 CMRR 。
 
 ### 8. AC PSRR
 
@@ -321,13 +321,13 @@ $$
 
 $$
 \begin{gather}
-\mathrm{PSRR} = \frac{V_{PS}}{V_{IO}} = \frac{1001\,V_{PS}}{V_{TP1}}
+\mathrm{PSRR} = \frac{V_{PS}}{V_{IO}} = \frac{10001\,(2 V_{W1,amp})}{V_{TP2}}
 \\
 \Longrightarrow 
 {\color{red}{
-\mathrm{PSRR} = \frac{2002\, V_{W1, \mathrm{amplitude}}}{V_{TP1, \mathrm{amplitude}}}
+\mathrm{PSRR} = \frac{20002\, V_{W1, \mathrm{amplitude}}}{V_{TP2, \mathrm{amplitude}}}
 }}
 \end{gather}
 $$
 
-按 1V 的 $V_{CM, \mathrm{amplitude}}$ 和 10mV 的 $V_{TP1, \mathrm{amplitude}}$ 来算，可以测量最高为 200000 (即 200 V/mV, 106dB) 的 CMRR 。
+按 1V 的 $V_{CM, \mathrm{amplitude}}$ 和 10mV 的 $V_{TP2, \mathrm{amplitude}}$ 来算，可以测量最高为 200000 (即 200 V/mV, 106dB) 的 CMRR 。
