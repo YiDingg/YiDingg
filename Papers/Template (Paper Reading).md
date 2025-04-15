@@ -6,7 +6,7 @@ Initially published at xx:xx on 2025-xx-xx in xxxx.
 ## Infor 
 
 - Paper: [article title]()
-- DOI: [xxx]()
+- DOI: [xxx](https://doi.org/)
 - Author:  [xxx]()
 - Publication Date: xxx
 - Published in: [xxx]()
@@ -38,10 +38,14 @@ Initially published at xx:xx on 2025-xx-xx in xxxx.
 
 
 ``` txt
+Abstract: 
+
 
 ```
 
 ``` txt
+AI 全文总结 (): 
+
 
 ```
 

@@ -73,6 +73,9 @@
 
 - 📃 **Paper Reading**
 
+    - Op Amp Measurement Methods
+        - [Meas. of OpAmp in the Freq. Domain](<Papers/Op Amp Measurement Methods/Measurement of Operational Amplifier Characteristics in the Frequency Domain.md>)
+
     - Transfer Function Analysis
 
 
