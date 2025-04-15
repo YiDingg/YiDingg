@@ -89,6 +89,7 @@
 
         - [**[Pinned] Roadmap for Analog ICer**](<Blogs/Electronics/Roadmap for Analog ICer.md>)
         - [**[Pinned] Collection of Electronic Websites**](<Blogs/Electronics/Collection of Electronic Websites.md>)
+        - [Several Problems in Op Amp Measurement](<Blogs/Electronics/Several Problems in Op Amp Measurement.md>)
         - [Op Amp Meas. of NE5532P](<Blogs/Electronics/Op Amp Measurement of NE5532P.md>)
         - [Calc CS Transfer Func using EET](<Blogs/Electronics/Calculate CS Transfer Function using EET.md>)
         - [Understanding Poles and Zeros](<Blogs/Electronics/Understanding Poles and Zeros.md>)

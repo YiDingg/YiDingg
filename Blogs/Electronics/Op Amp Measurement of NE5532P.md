@@ -133,3 +133,5 @@ $$
 - New feature: 将 `+1V` 网络引出，并增大其可调范围，相当于自带了一个 0~VCC 的参考电压，可以用于 AC CMRR, AC PSRR 测试环节中 W2 输入信号的生成 (与线性运算器搭配使用)
 - New feature: 在 new version 的设计中，加入多个 auxiliary package adapter (例如 SOP-8 转 DIP-8), 便于测量不同封装的运放
 - New feature: AUX 辅助运放也采用杜邦线进行连接, 方便更换不同型号的运放
+- New feature: 添加 LED 电源指示灯, 便于观察供电状态
+- New feature: 在 AC input 等关键位置增加接口，方便更换不同的电容/电阻
