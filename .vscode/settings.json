@@ -14,6 +14,7 @@
         "MOSFET",
         "NFET",
         "NMOS",
+        "Nonideal",
         "noninverting",
         "Opamp",
         "PFET",

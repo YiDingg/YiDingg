@@ -1,9 +1,10 @@
 # Collection of Electronic Websites
 
 > [!Note|style:callout|label:Infor]
-Initially published at xx:xx on 2025-xx-xx in xxxx.
+Initially published at 00:09 on 2025-04-22 in Beijing.
 
-
+- [Circuit Cellar](https://circuitcellar.com/) : 电子电路设计杂志，提供了大量的电子电路知识讲解、设计实例和应用笔记，例如 [Circuit Cellar > Impedance Matching Fundamentals](https://circuitcellar.com/research-design-hub/basics-of-design/impedance-matching-fundamentals/) 简明易懂地讲解了阻抗匹配的基础知识；
+- [TI: Analog Circuits](https://www.ti.com/design-development/analog-circuits.html) : TI 官方的模拟电路设计网站，收集了大量的模拟电路设计实例和应用笔记；
 - [Learn About Electronics](https://www.learnabout-electronics.org/) : 提供了电子学习的基础和进阶知识，包括 Semiconductors, Amplifiers, Oscillators, Power Supplies 等，最令人惊喜的是几乎所有资料都提供了 PDF 下载，方便读者下载后自行学习；
 - [Electronics Lab](https://www.electronics-lab.com) : 不仅开源了很多电子电路设计实例，包括基础电路、模拟电路、数字电路等，还提供了丰富的学习资源（文章）在 https://www.electronics-lab.com/articles
 - [Microchip](https://developerhelp.microchip.com/) : 这是 Microchip 官方的开发者帮助网站，提供了大量的电子元件的 Data Sheet, Application Notes, Reference Manuals 等，是学习 Microchip 产品的重要参考网站，当然，在这里也可以找到与模拟电路、数字电路相关的的学习资料；

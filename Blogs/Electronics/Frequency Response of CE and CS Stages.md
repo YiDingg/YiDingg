@@ -8,6 +8,11 @@ Initially published at 18:53 on 2025-04-07 in Beijing.
 - 参考教材： *Fundamentals of Microelectronics (Razavi) (2nd edition, 2014)*, Chapter 11: Frequency Response
 - 下载链接： [Fundamentals of Microelectronics (Razavi) (Second Edition, 2014).pdf](https://www.writebug.com/static/uploads/2025/4/8/5a55e0a23da277ad840c26464cc08ea5.pdf)
 
+先给出共射/共源放大器频率响应的总结，再作详细的推导：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-18-08-15-19_Frequency Response of CE and CS Stages.png"/></div>
+
+本文目录如下：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-18-08-21-44_Frequency Response of CE and CS Stages.png"/></div>
 
 ## 2. Transfer Function
 
@@ -191,3 +196,9 @@ $$
 \mathrm{MOS:\ \ } Z_{out} \approx \frac{1}{\left[ C_{DB} + \frac{C_{GD}}{1 + g_m R_D} \right]} \parallel R_D \parallel R_{drain}
 \end{gather}
 $$
+
+## Summary
+
+为方便查阅，我们将共射/共源放大器的结论总结在下图：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-18-08-15-19_Frequency Response of CE and CS Stages.png"/></div>
