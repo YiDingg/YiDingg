@@ -14,32 +14,86 @@
 
 ### 可测曲线概览
 
-下面是本测试板可测量的特性曲线（仅列出一部分），括号内三个参数表示 (y, x, var)，分别为横坐标、纵坐标和第二变量。
+下表列出了本板 ([General](<ElectronicDesigns/General-Purpose Transistor Tester.md>) or [Simplified](<ElectronicDesigns/Simplified Transistor Tester.md>)) 可以测量的特性曲线（列列出一部分），括号内三个参数表示 (y, x, var)，分别为横坐标、纵坐标和第二变量。
 
 <div class='center'>
 
-| $y$ (纵坐标) | $x$ (横坐标) | var (第二变量) |
-|:-:|:-:|:-:|
- |  |  |  |
- |  |  |  |
+| 数据号 | $y$ (纵坐标) | $x$ (横坐标) | var (第二变量) | note (备注) |
+|:-:|:-:|:-:|:-:|:-:|
+ | 1 | $I_D$ | $V_{DS}$ | $V_{GS}$ | static chara |
+ | 2 | $I_D$ | $V_{GS}$ | $V_{DS}$ | transfer curve |
+ | 3 | $g_m$ | $f$ | $I_{D}$ | - |
 </div>
+
+特别地，对于 $(g_m, f, I_D)$ 的测试，我们的初步想法如下：
+1. MOSFET 由 resistor divider + $R_G = 100 \ \mathrm{k}\Omega$（用于提高输入阻抗）来给定 $V_{GS}$ 偏置，手动调节 $V_{CC1}$ 以使 $I_D$ 处于待测值
+2. $V_{DS}$ 固定，由自带电流检测的电压源给出 (比如 5V)，以保证 MOS 处于饱和区
+3. 用 capacitor coupling 在 gate 端进行输入，输入幅度应尽量小以保证小信号近似成立 (可以考虑 10 kOhm + 100 Ohm 分压以获得 40dB 的衰减)；需要注意耦合电容不应大于 10uF ($f_c = 391.93 \ \mathrm{kHz}$)
+4. 1、2 两条共用一个电源 VCC1, 第 3 条直接用 AD1 的 W1 输入即可。
+
+由上面的测量数据，可以进一步计算得到：
+
+<div class='center'>
+
+| Using Data | $y$ (纵坐标) | $x$ (横坐标) | var (第二变量) | 参考计算方法 |
+|:-:|:-:|:-:|:-:|:-:|
+| 1 | $r_O$ | $V_{DS}$ | $V_{GS}$ | 取饱和区数据作线性拟合 |
+| 1 | $R_{ON}$ | $V_{DS}$ | $V_{GS}$ | 横坐标 $V_{DS}$ 直接除以纵坐标 $I_D$ |
+| 2 | $g_m$ | $V_{GS}$ | $V_{DS}$ | （数据滤波后）直接求导 |
+</div>
+
+
 
 
 ### 具体测试方法
 
 在实际应用中，我们只对众多特性曲线的一部分感兴趣，也是比较重要的几个特性曲线，下面将介绍它们的测试方法：
 
+| Data Num (数据序列号) | 名称 | $(y,\ x,\ var)$ | 测试方法 | 图片示例 |
+|:-:|:-:|:-:|:-:|:-:|
+ | 1 | <span style='color:red'> Static Characteristics </span> | $(I_D,\ V_{DS},\  V_{GS})$ | 两个电压源分别提供 $V_{DS}$ 和 $V_{GS}$ <br> CH1 (纵坐标) 测 $I_D$，CH2 (横坐标) 测 $V_{DS}$  | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-22-17-07-30_Transistor Measurement Methods.png"/></div> |
+ | 2 | <span style='color:red'> Transfer Characteristics </span> | $(I_D,\ V_{GS},\  V_{DS})$ | 两个电压源分别提供 $V_{DS}$ 和 $V_{GS}$ <br> CH1 (纵坐标) 测 $I_D$，CH2 (横坐标) 测 $V_{GS}$  | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-22-17-13-01_Transistor Measurement Methods.png"/></div> |
+
+
+### 测量流程示例
+
+<div class='center'>
+
+**被测元件: NMOS 2N7002, 2D current level: `low (0 ~ 5mA)`, 3D current level: `moderate (0 ~ 25mA)`**
+
+(这里放实物图)
+
+
+**3D Measurement, current level: `moderate (0 ~ 25mA)`**
+
+| 测量序号 | 数据号 | <span style='color:red'> 3D </span> $(y,\ x,\ var)$ | Test condition | 图片记录 |
+|:-:|:-:|:-:|:-:|:-:|
+ | 1 | 1 | $(I_D,\ V_{DS},\ V_{GS})$ | 电流检测 $R_{I_D} = \ \mathrm{\Omega}$ |  |
+ | 2 | 2 | $(I_D,\ V_{GS},\ V_{DS})$ | 电流检测 $R_{I_D} = \ \mathrm{\Omega}$ |  |
+
+</div>
+
+<div class='center'>
+
+**2D Measurement, current level: `low (0 ~ 5mA)`**
+
+| 测量序号 | 数据号 | <span style='color:red'> 2D </span> $(y,\ x,\ var)$ | Test condition | 图片记录 |
+|:-:|:-:|:-:|:-:|:-:|
+ | 1 | 1 | $(I_D,\ V_{DS},\ V_{GS})$ | 电流检测 $R_{I_D} = \ \mathrm{\Omega}$ |  |
+ | 2 | 2 | $(I_D,\ V_{GS},\ V_{DS})$ | 电流检测 $R_{I_D} = \ \mathrm{\Omega}$ |  |
+</div>
+
 ## BJT (Bipolar Transistor)
 
 ### 测试原理
 
-同理，在不考虑温度的情况下，BJT 的四个参数 $V_{CE}$, $I_C$, $V_{BE}$ 和 $I_B$ 仅含有 2 个自由度，也就是说，任意给定两个限制条件，即可确定四个参数的值。最典型的例子，给定 $V_{CE}$（作为横坐标） 和 $I_B$（作为第二变量），便可确定 $I_C$ 和 $V_{BE}$ 的值。随着 $V_{CE}$（和 $I_B$）不断变化，我们便绘制出了 BJT 的 Static Characteristics。
+同理，在不考虑温度的情况下， BJT 的四个参数 $V_{CE}$, $I_C$, $V_{BE}$ 和 $I_B$ 仅含有 2 个自由度，也就是说，任意给定两个限制条件，即可确定四个参数的值。最典型的例子，给定 $V_{CE}$（作为横坐标） 和 $I_B$（作为第二变量），便可确定 $I_C$ 和 $V_{BE}$ 的值。随着 $V_{CE}$（和 $I_B$）不断变化，我们便绘制出了 BJT 的 Static Characteristics。
 
 
 
 ### 可测曲线概览
 
-下面是本测试板可测量的特性曲线（仅列出一部分），括号内三个参数表示 (y, x, var)，分别为横坐标、纵坐标和第二变量。
+下面是本测试板 ([General](<ElectronicDesigns/General-Purpose Transistor Tester.md>) or [Simplified](<ElectronicDesigns/Simplified Transistor Tester.md>)) 可测量的特性曲线（仅列出一部分），括号内三个参数表示 (y, x, var)，分别为横坐标、纵坐标和第二变量。
 
 
 <div class='center'>

@@ -129,8 +129,10 @@ $$
 
 - Bug fix: DUTOUT 未接入 AUX 的 input-, 板子上已飞线修正, 原理图上已更正
 - Bug fix: 板子上标的丝印, DUT_Vin+ 和 DUT_Vin- 反了, 板子上已马克笔更正, 原理图上已更正
-- New feature: 将示波器接口换为 test point, 以便于连接示波器探头
-- New feature: 将 `+1V` 网络引出，并增大其可调范围，相当于自带了一个 0~VCC 的参考电压，可以用于 AC CMRR, AC PSRR 测试环节中 W2 输入信号的生成 (与线性运算器搭配使用)
+- Improvement: 将示波器接口换为 test point, 以便于连接示波器探头
+- Improvement: 将 `+1V` 网络引出，电阻换为自带旋钮的精密电位器,并增大其可调范围.相当于自带了一个 0~VCC 的参考电压，可以用于 AC CMRR, AC PSRR 测试环节中 W2 输入信号的生成 (与线性运算器搭配使用)
+- Improvement: 排针排母全部换为贴片排针，提高焊接效率
+- Improvement: 滤波电容全部换为贴片电容，提高焊接效率 (耦合电容等设计到精确计算的电容，仍然使用插件独石电容)
 - New feature: 在 new version 的设计中，加入多个 auxiliary package adapter (例如 SOP-8 转 DIP-8), 便于测量不同封装的运放
 - New feature: AUX 辅助运放也采用杜邦线进行连接, 方便更换不同型号的运放
 - New feature: 添加 LED 电源指示灯, 便于观察供电状态
