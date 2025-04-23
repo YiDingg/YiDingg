@@ -41,6 +41,13 @@
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-14-19-26-47_Transistor Measurement Methods.png"/></div>
 
 
+## 数据处理
+
+对实验数据进行处理，作图，得到结果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-24-00-07-04_[Analog Comp] Transistor Measurement of SS8050 (NPN).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-24-00-07-16_[Analog Comp] Transistor Measurement of SS8050 (NPN).png"/></div>
+
 ## 实验改进
 
 经过此次实验，我们发现实验中存在一些小问题。因此，对原来的实验流程作出部分调整，同时规定整个实验中的电流测量范围，使测量更符合实际设计要求，便于实际设计时进行参考。
@@ -51,8 +58,7 @@
 
 | Power Level | lower | low | moderate | high | higher |
 |:-:|:-:|:-:|:-:|:-:|:-:|
- | $I_C$ Range | $0 \sim 0.5 \ \mathrm{mA}$ | $0 \sim 5 \ \mathrm{mA}$ | $0 \sim 20 \ \mathrm{mA}$ | $0 \sim 100 \ \mathrm{mA}$ | $0 \sim 500 \ \mathrm{mA}$ |
- | Measurement Range | $0 \sim 0.5 \ \mathrm{mA}$ | $0 \sim 5 \ \mathrm{mA}$ | $0 \sim 25 \ \mathrm{mA}$ | $0 \sim 200 \ \mathrm{mA}$ | $0 \sim 1000 \ \mathrm{mA}$ |
+ | $I_C$ Range | $0 \sim 0.5 \ \mathrm{mA}$ | $0 \sim 5 \ \mathrm{mA}$ | $0 \sim 25 \ \mathrm{mA}$ | $0 \sim 125 \ \mathrm{mA}$ | $0 \sim 500 \ \mathrm{mA}$ |
 </div>
 
 对于大多数的 BJT ，或者说大多数的 BJT 电路，其晶体管的工作电流范围约在 $0 \sim 20 \ \mathrm{mA}$，也就是 moderate level 。除此之外，我们自己的设计也有相当一部分会在 $0 \sim 5 \ \mathrm{mA}$ 内工作。

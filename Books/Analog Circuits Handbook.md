@@ -10,8 +10,8 @@ You might not be able to view pdf online on the mobile devices as the broswer us
 
 
 - Download PDF: 
-<button onclick="window.open('https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/[Notes]LinearAlgebra1/notes/LinearAlgebra1Notes.pdf')" type="button">Analog_Circuits_Handbook.pdf</button>
+<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]LinearAlgebra1/notes/LinearAlgebra1Notes.pdf')" type="button">Analog_Circuits_Handbook.pdf</button>
 
 ```pdf
-https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/%5BBook%5D%20Analog%20Circuits%20Handbook/Analog_Circuits_Handbook.pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/%5BBook%5D%20Analog%20Circuits%20Handbook/Analog_Circuits_Handbook.pdf
 ```

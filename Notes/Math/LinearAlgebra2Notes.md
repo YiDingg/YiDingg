@@ -11,7 +11,7 @@ the file.
 
 <!-- The raw source url: <button onclick="window.open('pdf/GitHub_YiDingg_pdf/Linear%20Algebra%202%20notes.pdf')" type="button">click to view or download the file</button>
  -->
-The raw source url: <button onclick="window.open('https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/[Notes]LinearAlgebra2/LinearAlgebra2Notes.pdf')" type="button">LinearAlgebra2Notes.pdf</button>
+The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]LinearAlgebra2/LinearAlgebra2Notes.pdf')" type="button">LinearAlgebra2Notes.pdf</button>
 
 
 <!-- ```pdf
@@ -29,7 +29,7 @@ https://www.writebug.com/git/YiDingg/WB.YiDingg/raw/branch/main/LinearAlgebra2No
 ``` -->
 
 ```pdf
-https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/[Notes]LinearAlgebra2/LinearAlgebra2Notes.pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]LinearAlgebra2/LinearAlgebra2Notes.pdf
 ```
 
 ## Resources

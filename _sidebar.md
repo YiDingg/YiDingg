@@ -92,6 +92,7 @@
 
         - [**[Pinned] Roadmap for Analog ICer**](<Blogs/Electronics/Roadmap for Analog ICer.md>)
         - [**[Pinned] Collections of Electronic Websites**](<Blogs/Electronics/Collection of Electronic Websites.md>)
+        - [Transistor Meas. of 2N7000 (N VDMOS)](<Blogs/Electronics/Transistor Measurement of 2N7000 (N VDMOS).md>)
         - [二端口“标准”级联方法中隐含的误差](<Blogs/Electronics/二端口“标准”级联方法中隐含的误差.md>)
         - [Collections of Electronic Websites](<Blogs/Electronics/Collection of Electronic Websites.md>)
         - [Several Problems in Op Amp Measurement](<Blogs/Electronics/Several Problems in Op Amp Measurement.md>)
@@ -118,7 +119,7 @@
         - [The Polarity of Input Offset Voltage of Op Amps](<Blogs/Electronics/The Polarity of Input Offset Voltage of Op Amps.md>)
         - [Features of Cascading Op Amp Stages](<Blogs/Electronics/Features of Cascading Op Amp Stages.md>)
         - [Discrete Op Amp Design Reference](<Blogs/Electronics/Discrete Op Amp Design Reference.md>)
-        - [SS8050 (NPN) Transistor Measurement](<Blogs/Electronics/[Analog Comp] Transistor Measurement of SS8050 (NPN).md>)
+        - [Transistor Meas. of SS8050 (NPN)](<Blogs/Electronics/[Analog Comp] Transistor Measurement of SS8050 (NPN).md>)
         - [Transistor Measurement Methods](<Blogs/Electronics/Transistor Measurement Methods.md>)
         - [BJT 三种基本放大器的增益、跨导与输出阻抗](<Blogs/Electronics/Three Basic Types of BJT Amplifiers.md>)
         - [Three Basic Types of Transistors](<Blogs/Electronics/Three Basic Types of Transistors.md>)

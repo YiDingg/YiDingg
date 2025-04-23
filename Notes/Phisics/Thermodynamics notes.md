@@ -12,7 +12,7 @@ the file.
 
 <!-- The raw source url: <button onclick="window.open('https://www.writebug.com/static/uploads/2024/7/14/cc435f574f5ebb4aadefb7089e9eb31c.pdf')" type="button">click to view or download the file</button>
  -->
-The raw source url: <button onclick="window.open('https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/[Notes]Thermodynamics/ThermodynamicsNotes.pdf')" type="button">click to view or download the file</button>
+The raw source url: <button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]Thermodynamics/ThermodynamicsNotes.pdf')" type="button">click to view or download the file</button>
 
 
 <!-- ```pdf
@@ -21,5 +21,5 @@ https://www.writebug.com/static/uploads/2024/7/14/cc435f574f5ebb4aadefb7089e9eb3
  -->
 
 ```pdf
-https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/[Notes]Thermodynamics/ThermodynamicsNotes.pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]Thermodynamics/ThermodynamicsNotes.pdf
 ```

@@ -16,12 +16,12 @@ The raw source url: <button onclick="window.open('https://www.writebug.com/git/Y
 
 
 - Latex Notes: 
-<button onclick="window.open('https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/[Notes]LinearAlgebra1/notes/LinearAlgebra1Notes.pdf')" type="button">LinearAlgebra1Notes.pdf</button>
+<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]LinearAlgebra1/notes/LinearAlgebra1Notes.pdf')" type="button">LinearAlgebra1Notes.pdf</button>
 - Notability Notes:
 <button onclick="window.open('https://www.writebug.com/static/uploads/2024/7/14/563f4b06c7916f75ce853c8b5ce160f6.pdf')" type="button">LinearAlgebra1Notes_nota.pdf</button>
 
 ```pdf
-https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/[Notes]LinearAlgebra1/notes/LinearAlgebra1Notes.pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]LinearAlgebra1/notes/LinearAlgebra1Notes.pdf
 ```
 
 ```pdf

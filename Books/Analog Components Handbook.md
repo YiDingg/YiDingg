@@ -1,4 +1,4 @@
-# Analog Components Manual
+# Analog Components Handbook
 
 > [!Note|style:callout|label:Infor]
 Initially published at 10:12 on 2024-12-18 in Beijing.
@@ -9,8 +9,8 @@ You might not be able to view pdf online on the mobile devices as the broswer us
 
 
 - Download PDF: 
-<button onclick="window.open('https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/[Notes]LinearAlgebra1/notes/LinearAlgebra1Notes.pdf')" type="button">Analog_Components_Handbook.pdf</button>
+<button onclick="window.open('https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Notes]LinearAlgebra1/notes/LinearAlgebra1Notes.pdf')" type="button">Analog_Components_Handbook.pdf</button>
 
 ```pdf
-https://jsd.onmicrosoft.cn/gh/YiDingg/LatexNotes/%5BBook%5D%20Analog%20Components%20Handbook/Analog_Components_Handbook.pdf
+https://gcore.jsdelivr.net/gh/YiDingg/LatexNotes/[Book] Analog Components Handbook/Analog_Components_Handbook.pdf
 ```

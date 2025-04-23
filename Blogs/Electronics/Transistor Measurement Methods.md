@@ -55,14 +55,16 @@
  | 2 | <span style='color:red'> Transfer Characteristics </span> | $(I_D,\ V_{GS},\  V_{DS})$ | 两个电压源分别提供 $V_{DS}$ 和 $V_{GS}$ <br> CH1 (纵坐标) 测 $I_D$，CH2 (横坐标) 测 $V_{GS}$  | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-22-17-13-01_Transistor Measurement Methods.png"/></div> |
 
 
-### 测量流程示例
+### MOSFET 测量流程示例
 
 <div class='center'>
 
 **被测元件: NMOS 2N7002, 2D current level: `low (0 ~ 5mA)`, 3D current level: `moderate (0 ~ 25mA)`**
 
 (这里放实物图)
+</div>
 
+<div class='center'>
 
 **3D Measurement, current level: `moderate (0 ~ 25mA)`**
 
@@ -183,7 +185,7 @@
 
 在大多数情况下，上面三种特性曲线已经足够我们较精确地设计有关 BJT 的电路了（例如三种基本放大器）。
 
-### 测试流程示例
+### BJT 测试流程示例
 
 <div class='center'>
 
@@ -226,8 +228,8 @@
 
 ## 相关实验记录
 
-- 2025.03.14, 15:50, Beijing. 对 SS8050 进行了特性曲线测试，实验记录见 [BJT Measurement of SS8050](<Blogs/Electronics/[Analog Comp] Transistor Measurement of SS8050 (NPN).md>)
-
+- 2025.03.14, 15:50, Beijing. 对 SS8050 (NPN) 进行了特性曲线测试，实验记录见 [BJT Measurement of SS8050](<Blogs/Electronics/[Analog Comp] Transistor Measurement of SS8050 (NPN).md>)
+- 2025.04.23, 21:37, Beijing. 对 2N7000 (NMOS) 进行了测量，实验记录见 [Transistor Measurement of 2N7000 (NMOS)](<Blogs/Electronics/Transistor Measurement of 2N7000 (N VDMOS).md>)
 
 
 
