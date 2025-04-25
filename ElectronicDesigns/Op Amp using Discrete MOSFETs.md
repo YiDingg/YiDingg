@@ -126,6 +126,23 @@ Large-Signal:
 
 ### Output Stage
 
+## Current Source Veri.
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-24-23-31-53_Op Amp using Discrete MOSFETs.png"/></div>
+
+## Differential Input Veri.
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-24-23-03-50_Op Amp using Discrete MOSFETs.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-24-23-05-14_Op Amp using Discrete MOSFETs.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-24-23-06-00_Op Amp using Discrete MOSFETs.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-24-23-07-30_Op Amp using Discrete MOSFETs.png"/></div>
+
+## Overall Verification
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-24-23-22-52_Op Amp using Discrete MOSFETs.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-24-23-23-18_Op Amp using Discrete MOSFETs.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-24-23-23-37_Op Amp using Discrete MOSFETs.png"/></div>
+
 ## LTspice Simulation
 
 结合淘宝价格和设计情况，可选的 MOSFET 型号有（都为 SOT-23 封装）：

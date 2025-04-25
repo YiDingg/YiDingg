@@ -20,9 +20,11 @@ I_{DUT} = I_{Res} = \frac{V_{Res}}{R}
 \\
 \mathrm{OutputPhase} = \varphi_{V_{DUT}}= \angle V_{DUT}\ \ {\color{red} \mathrm{(unit:\ deg)}}
 \\
-\mathrm{Phase} = \theta = \varphi_{out} - \varphi_{in} = \angle V_{DUT} - \angle V_{Res}\ \ {\color{red} \mathrm{(unit:\ deg)}}\ \ (官方文档上写错了)
+\mathrm{Phase} = \theta\  (计算公式仍未知,\ 官方文档中给出的是\ \varphi_{in} - \varphi_{out},\ 但是经过考察并不是这样)
 \\
-注：V_{DUT} 或 V_{Res} 幅值过小时，其相位值不准确，接近随机值 (而不是恒为 0)
+\mathrm{(\mathrm{mode\ 3})\ 实际\ Input\ Phase} =  \varphi_{CH1} - \varphi_{CH2}\ \ \ {\color{red} \mathrm{(unit:\ deg)}}
+\\
+注：V_{DUT}\ 或\ V_{Res}\ 幅值过小时，其相位值不准确，接近随机值\ (而不是恒为\ 0)
 \end{cases}
 \end{gather}
 $$
@@ -54,6 +56,6 @@ V_2 = V_DUT = VRMS*sqrt(2)
 Condition 3: W1-C1P-DUT-C1N-C2-R-GND
 
 V_1 = V_DUT = VRMS*sqrt(2)
-V_2 = IRMS*Resistor *sqrt(2)
+V_2 = IRMS*Resistor*sqrt(2)
 ```
 

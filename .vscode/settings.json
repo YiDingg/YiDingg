@@ -6,6 +6,7 @@
         "CMRR",
         "datasheet",
         "Infor",
+        "IRMS",
         "Kimi",
         "Lincang",
         "mathrm",
@@ -33,7 +34,9 @@
         "UGBW",
         "VCCS",
         "VCVS",
+        "VDMOS",
         "Veri",
-        "Vout"
+        "Vout",
+        "VRMS"
     ]
 }

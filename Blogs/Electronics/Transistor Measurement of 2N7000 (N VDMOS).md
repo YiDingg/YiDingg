@@ -58,6 +58,10 @@
 
 对实验数据进行处理，作图，得到结果如下：
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-24-01-00-29_Transistor Measurement of 2N7000 (N VDMOS).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-24-21-39-17_Transistor Measurement of 2N7000 (N VDMOS).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-24-21-39-28_Transistor Measurement of 2N7000 (N VDMOS).png"/></div>
 
-0 ~ 125mA 的 2D, 3D 图待补充
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-24-21-09-26_Transistor Measurement of 2N7000 (N VDMOS).png"/></div> -->
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-24-01-00-29_Transistor Measurement of 2N7000 (N VDMOS).png"/></div>
+ -->
