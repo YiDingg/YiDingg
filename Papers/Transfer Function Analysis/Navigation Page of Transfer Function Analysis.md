@@ -30,7 +30,7 @@ Transfer function analysis 是 analog 中非常重要的一部分，其分析方
 
 ### Time Constant Method
 
-- Time constant method (时间常数法), including infinite-value time constant (IVT), zero-value time constant (ZVT), time and transfer constants (TTC), open-circuit time constant (OCT) and short-circuit time constant (SCT).
+- Time constant method (时间常数法), including infinite-value time constant (IVTC), zero-value time constant (ZVTC), time and transfer constants (TTC), open-circuit time constant (OCTC) and short-circuit time constant (SCTC).
     - [ ] OCTC [https://ieeexplore.ieee.org/document/8741560](https://ieeexplore.ieee.org/document/8741560) N. F. Voudoukis, D. Baxevanakis, K. Papafotis, C. Dimas, C. Oustoglou and P. P. Sotiriadis, "Introducing Senior Undergraduate Students to the Open-Circuit Time-Constant Method for Circuit Analysis," 2019 8th International Conference on Modern Circuits and Systems Technologies (MOCAST), Thessaloniki, Greece, 2019, pp. 1-4, doi: 10.1109/MOCAST.2019.8741560.
     - [ ] TTC [https://ieeexplore.ieee.org/document/5340556](https://ieeexplore.ieee.org/document/5340556) : A. Hajimiri, "Generalized Time- and Transfer-Constant Circuit Analysis," in IEEE Transactions on Circuits and Systems I: Regular Papers, vol. 57, no. 6, pp. 1105-1121, June 2010, doi: 10.1109/TCSI.2009.2030092.
 

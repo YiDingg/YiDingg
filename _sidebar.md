@@ -79,10 +79,17 @@
     - Transfer Function Analysis
 
 
-        - [Navigation Page of Transfer Function Analysis](<Papers/Transfer Function Analysis/Navigation Page of Transfer Function Analysis.md>)
-        - [EET and NDI (the Extra Element Theorem and Null Double Injection)](<Papers/Transfer Function Analysis/Null Double Injection and the Extra Element Theorem.md>)
-        - [The TEET (Two Extra Element Theorem)](<Papers/Transfer Function Analysis/The Two Extra Element Theorem.md>)
+        - [Navi. Page of Transfer Function Analysis](<Papers/Transfer Function Analysis/Navigation Page of Transfer Function Analysis.md>)
+        - [EET (The Extra Element Theorem)](<Papers/Transfer Function Analysis/The Extra Element Theorem.md>)<!-- x -->
+        - [TEET (The Two Extra Element Theorem)](<Papers/Transfer Function Analysis/The Two Extra Element Theorem.md>)
+        - [Open-Circuit Time Constant Method](<Papers/Transfer Function Analysis/Open-Circuit Time Constant Method.md>)
 
+
+    <!-- (这里的缩进不能省略, 否则会影响 sidebar 的 css 效果)
+    Papers, Blogs: 条目后跟有注释符号的表示已经发过知乎，注释内标有 x 的表示公众号也发过了。
+                另外，有部分标有注释和 x 的文章并没有发在知乎，是因为文章表格中具有多个图片，不方便直接转载到知乎
+    Designs: 条目后跟有注释符号的表示已经发过微信公众号
+    -->
 
 
 - 📓 **Blogs**
@@ -92,6 +99,10 @@
 
         - [**[Pinned] Roadmap for Analog ICer**](<Blogs/Electronics/Roadmap for Analog ICer.md>)
         - [**[Pinned] Collections of Electronic Websites**](<Blogs/Electronics/Collection of Electronic Websites.md>)
+        - [Constant Current Source using Transistors](<Blogs/Electronics/Constant Current Source using Transistors.md>)
+        - [A Brief View of Negative Feedback](<Blogs/Electronics/A Brief View of Negative Feedback.md>)
+        - [Miller Effect of CE Stage](<Blogs/Electronics/Miller Effect of CE Stage.md>)
+        - [Precision Full-Wave Rectifier](<Blogs/Electronics/Precision Full-Wave Rectifier.md>)
         - [Transistor Meas. of 2N7000 (N VDMOS)](<Blogs/Electronics/Transistor Measurement of 2N7000 (N VDMOS).md>)
         - [二端口“标准”级联方法中隐含的误差](<Blogs/Electronics/二端口“标准”级联方法中隐含的误差.md>)
         - [Collections of Electronic Websites](<Blogs/Electronics/Collection of Electronic Websites.md>)
@@ -99,7 +110,7 @@
         - [Op Amp Meas. of NE5532P](<Blogs/Electronics/Op Amp Measurement of NE5532P.md>)
         - [Calc CS Transfer Func using EET](<Blogs/Electronics/Calculate CS Transfer Function using EET.md>)
         - [Understanding Poles and Zeros](<Blogs/Electronics/Understanding Poles and Zeros.md>)
-        - [Freq Response of CE and CS Stages](<Blogs/Electronics/Frequency Response of CE and CS Stages.md>)
+        - [Freq Response of CE and CS Stages](<Blogs/Electronics/Frequency Response of CE and CS Stages.md>)<!-- x -->
         - [Roadmap for Analog ICer](<Blogs/Electronics/Roadmap for Analog ICer.md>)
         - [Compound BJT (Sziklai and Darlington)](<Blogs/Electronics/Compound BJT (Sziklai and Darlington).md>)
         - [Common-Emitter Amp Experiment](<Blogs/Electronics/Common Emitter Amplifier Experiment.md>)
@@ -108,43 +119,44 @@
         - [Definitions of SPICE Model Parameters](<Blogs/Electronics/The Definitions of SPICE Model Parameters.md>)
         - [Basic Differential Circuit Simulation Report](<Blogs/Electronics/Differential Circuit Simulation Report.md>)
         - [主流锂电池充放一体芯片选型对比](<Blogs/Electronics/主流锂电池充放一体芯片选型对比.md>)
-        - [The Five-Transistor OTA](<Blogs/Electronics/The Five-Transistor OTA.md>)
+        - [The Five-Transistor OTA](<Blogs/Electronics/The Five-Transistor OTA.md>)<!--  -->
         - [How to Design a PCB Light Painting](<Blogs/Electronics/How to Design a PCB Light Painting.md>)
-        - [PCB 走线的温升与压降数据](<Blogs/Electronics/PCB 走线的温升与压降数据.md>)
-        - [A Mistake on Twin-T Network Calculation](<Blogs/Electronics/A Mistake on Twin-T Network Calculation.md>)
-        - [How to Set a Variable in LTspice](<Blogs/Electronics/How to Set a Variable in LTspice.md>)
-        - [Analog Pulse Width Modulation](<Blogs/Electronics/Analog Pulse Width Modulation.md>)
-        - [Classical RC Oscillators](<Blogs/Electronics/Classical RC Oscillators.md>)
-        - [Control MSO2202A using MATLAB](<Blogs/Electronics/Control RIGOL MSO2202A Oscilloscope using MATLAB.md>)
-        - [The Polarity of Input Offset Voltage of Op Amps](<Blogs/Electronics/The Polarity of Input Offset Voltage of Op Amps.md>)
-        - [Features of Cascading Op Amp Stages](<Blogs/Electronics/Features of Cascading Op Amp Stages.md>)
+        - [PCB 走线的温升与压降数据](<Blogs/Electronics/PCB 走线的温升与压降数据.md>)<!--  -->
+        - [A Mistake on Twin-T Network Calculation](<Blogs/Electronics/A Mistake on Twin-T Network Calculation.md>)<!--  -->
+        - [How to Set a Variable in LTspice](<Blogs/Electronics/How to Set a Variable in LTspice.md>)<!--  -->
+        - [Analog Pulse Width Modulation](<Blogs/Electronics/Analog Pulse Width Modulation.md>)<!--  -->
+        - [Classical RC Oscillators](<Blogs/Electronics/Classical RC Oscillators.md>)<!-- x -->
+        - [Control MSO2202A using MATLAB](<Blogs/Electronics/Control RIGOL MSO2202A Oscilloscope using MATLAB.md>)<!-- x -->
+        - [The Polarity of Input Offset Voltage of Op Amps](<Blogs/Electronics/The Polarity of Input Offset Voltage of Op Amps.md>)<!-- x -->
+        - [Features of Cascading Op Amp Stages](<Blogs/Electronics/Features of Cascading Op Amp Stages.md>)<!--  -->
+        - [Op Amp using Discrete MOSFETs](<Blogs/Electronics/Op Amp using Discrete MOSFETs.md>)
         - [Discrete Op Amp Design Reference](<Blogs/Electronics/Discrete Op Amp Design Reference.md>)
-        - [Transistor Meas. of SS8050 (NPN)](<Blogs/Electronics/[Analog Comp] Transistor Measurement of SS8050 (NPN).md>)
+        - [Transistor Meas. of SS8050 (NPN)](<Blogs/Electronics/[Analog Comp] Transistor Measurement of SS8050 (NPN).md>)<!-- x -->
         - [Transistor Measurement Methods](<Blogs/Electronics/Transistor Measurement Methods.md>)
-        - [BJT 三种基本放大器的增益、跨导与输出阻抗](<Blogs/Electronics/Three Basic Types of BJT Amplifiers.md>)
+        - [BJT 三种基本放大器的增益、跨导与输出阻抗](<Blogs/Electronics/Three Basic Types of BJT Amplifiers.md>)<!-- x -->
         - [Three Basic Types of Transistors](<Blogs/Electronics/Three Basic Types of Transistors.md>)
         - [Instrument Amplifier Using Op Amp](<Blogs/Electronics/Instrument Amplifier Using Op Amp.md>)
-        - [BJT's Terminal Resistances](<Blogs/Electronics/BJT's Terminal Resistances.md>)
-        - [DC-DC TPS5430DDAR 输出异常记录](<Blogs/Electronics/DC-DC TPS5430DDAR 输出异常记录.md>)
-        - [常见 NPN 三极管特性曲线测量](<Blogs/Electronics/常见 NPN 三极管特性曲线测量.md>)
+        - [BJT's Terminal Resistances](<Blogs/Electronics/BJT's Terminal Resistances.md>)<!--  -->
+        - [DC-DC TPS5430DDAR 输出异常记录](<Blogs/Electronics/DC-DC TPS5430DDAR 输出异常记录.md>)<!--  -->
+        - [常见 NPN 三极管特性曲线测量](<Blogs/Electronics/常见 NPN 三极管特性曲线测量.md>)<!--  -->
         - [常见 NMOS 特性曲线测量](<Blogs/Electronics/常见 NMOS 特性曲线测量.md>)
         - [Negative VCVS Test](<Blogs/Electronics/Negative VCVS Test.md>)
         - [半屏蔽式贴片功率电感参数](Blogs/Electronics/贴片功率电感相关参数.md)
-        - [Ideal and Nonideal Op Amp](<Blogs/Electronics/Ideal and Nonideal Op Amp.md>)
-        - [Using Buck as an Inverting Converter](<Blogs/Electronics/Using Buck Topology as an Inverting Converter.md>)
-        - [Op Amp Measurement Methods](<Blogs/Electronics/Op Amp Measurement Methods.md>)
-        - [Mismatches of Basic Differential Pair](<Blogs/Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)
-        - [Cascode stage with PMOS load](<Blogs/Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>)
-        - [Gm Av calculation](<Blogs/Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>)
-        - [MOSFET's Terminal Resistance](<Blogs/Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>)
+        - [Ideal and Nonideal Op Amp](<Blogs/Electronics/Ideal and Nonideal Op Amp.md>)<!--  -->
+        - [Using Buck as an Inverting Converter](<Blogs/Electronics/Using Buck Topology as an Inverting Converter.md>)<!--  -->
+        - [Op Amp Measurement Methods](<Blogs/Electronics/Op Amp Measurement Methods.md>)<!--  -->
+        - [Mismatches of Basic Differential Pair](<Blogs/Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)<!--  -->
+        - [Cascode stage with PMOS load](<Blogs/Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>)<!--  -->
+        - [Gm Av calculation](<Blogs/Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>)<!--  -->
+        - [MOSFET's Terminal Resistance](<Blogs/Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>)<!--  -->
         - [DC 母座的接线方法](<Blogs/Electronics/DC 母座的接线方法.md>)
-        - [Frequency chara of mono cap](<Blogs/Electronics/[Analog Comp] Frequency characteristics of monolithic capacitors (独石电容的频率响应).md>)
+        - [Frequency chara of mono cap](<Blogs/Electronics/[Analog Comp] Frequency characteristics of monolithic capacitors (独石电容的频率响应).md>)<!-- x -->
         - [纪念第一次炸电容](Blogs/Electronics/纪念第一次炸电容.md)
         - [用 Pi 型滤波器改善可调直流电源的输出纹波](Blogs/Electronics/用Pi型滤波器改善可调直流电源的输出纹波.md)
-        - [一伟 D-30F12 开关电源测评](<Blogs/Electronics/一伟 D-30F12 开关电源测评.md>)
+        - [一伟 D-30F12 开关电源测评](<Blogs/Electronics/一伟 D-30F12 开关电源测评.md>)<!--  -->
         - [LTspice](Blogs/Electronics/LTspice.md)
         - [嘉立创免费下单教程](Blogs/Electronics/嘉立创免费下单教程.md)
-        - [手把手教你用 PWM 实现呼吸灯(标准库)](Blogs/Electronics/手把手教你用PWM实现呼吸灯(标准库).md)
+        - [手把手教你用 PWM 实现呼吸灯(标准库)](Blogs/Electronics/手把手教你用PWM实现呼吸灯(标准库).md)<!--  -->
         - [新版 Keil MDK 中无 Compiler_V5](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
 
     - Mixed <!-- empty line is necessary to avoid the error -->
@@ -191,33 +203,34 @@
 
 
 - 💡 **Electronic Designs**
+
     - [**[Pinned] DC-DC Converter Modules**](<ElectronicDesigns/DC-DC Converter Modules.md>)
+    - [μA741 using Discrete BJTs (SOT-23)](<ElectronicDesigns/μA741 using Discrete BJTs (SOT-23).md>)
     - [Basic Op Amp Measurement Board v2](<ElectronicDesigns/Basic Op Amp Measurement Board v2.md>)
-    - [* Op Amp using Discrete MOSFETs](<ElectronicDesigns/Op Amp using Discrete MOSFETs.md>)
     - [PCB Light Painting](<ElectronicDesigns/PCB Light Painting.md>)
     - [Voltage Source with Ammeter](<ElectronicDesigns/Voltage Source with Ammeter.md>)
     - [Simplified Transistor Tester](<ElectronicDesigns/Simplified Transistor Tester.md>)
     - [Current Sense Amplifiers](<ElectronicDesigns/Current Sense Amplifiers.md>)
     - [Precision Current Source.md](<ElectronicDesigns/Precision Voltage-Controlled Current Source.md>)
     - [DC-DC Converter Modules](<ElectronicDesigns/DC-DC Converter Modules.md>)
-    - [Voltage Linear Operation Board](<ElectronicDesigns/Voltage Linear Operation Board.md>)
+    - [Voltage Linear Operation Board](<ElectronicDesigns/Voltage Linear Operation Board.md>)<!--  -->
     - [General-Purpose Transistor Tester](<ElectronicDesigns/General-Purpose Transistor Tester.md>)
     - [Voltage-Controlled Power Source](<ElectronicDesigns/Versatile Voltage-Controlled Power Source.md>)
     - [All-In-One DC-DC Power Supply (5V Input)](<ElectronicDesigns/All-In-One DC-DC Power Supply (5V Input).md>)
-    - [Basic Op Amp Measurement Board](<ElectronicDesigns/Basic Op Amp Measurement Board.md>)
+    - [Basic Op Amp Measurement Board](<ElectronicDesigns/Basic Op Amp Measurement Board.md>)<!--  -->
     - [Adapter Board for Analog Discovery](<ElectronicDesigns/Adapter Board for Analog Discovery.md>)
     - [Transistor Tester for Analog Discovery](<ElectronicDesigns/Transistor Tester for ADx.md>)
     - [General VCVS and VCCS (up to 5A)](<ElectronicDesigns/General VCVS and VCCS (up to 10 A).md>)
     - [ESP12-F Adapter Board](<ElectronicDesigns/ESP12-F Adapter Board.md>)
-    - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
+    - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)<!--  -->
     - [Other Circuit Boards](<ElectronicDesigns/Other Circuit Boards.md>)
 
 - 🗓️ **Monthly Summary**
+
     - [2025.03](<MonthlySummary/Monthly Summary (2025.03).md>)
 
 - 📝 **Projects**
 
-    - [Op Amp using Discrete MOSFETs](<ElectronicDesigns/Op Amp using Discrete MOSFETs.md>)
     - [Gomoku](Projects/Gomoku.md)
     - [HDofDF (Humidity Detection of Diabetic Foot)](Projects/HDofDF.md)
     - [MuMeStar (Multiple Menu Star for OLED)](Projects/MuMeStar.md)
@@ -229,25 +242,25 @@
         - [WSETD (2): English Document](<Projects/WSETD/WSETD(2)-EnglishDocument.md>)
 
 
-<!--     
-    - [[] DC-DC Converter (10V~36V to ±12V)](<ElectronicDesigns/DC-DC Converter.md>)
-    - [[] Portable Ammeter](<Projects/Portable Ammeter.md>)
-    - [[] Multifunctional Voltage and Current Source](<ElectronicDesigns/Multifunctional DC-DC Power Supply.md>)
-    - [[] All-in-one Multifunctional DC-DC Power Supply](<ElectronicDesigns/Multifunctional DC-DC Power Supply.md>) 
--->
+    <!-- (这里的缩进不能省略, 否则会影响 sidebar 的 css 效果)
+        - [[] DC-DC Converter (10V~36V to ±12V)](<ElectronicDesigns/DC-DC Converter.md>)
+        - [[] Portable Ammeter](<Projects/Portable Ammeter.md>)
+        - [[] Multifunctional Voltage and Current Source](<ElectronicDesigns/Multifunctional DC-DC Power Supply.md>)
+        - [[] All-in-one Multifunctional DC-DC Power Supply](<ElectronicDesigns/Multifunctional DC-DC Power Supply.md>) 
+    -->
 
-<!-- 
-- 编号先这样写着，未完成的 design 用!号标注，出现两位数后统一在前面加 0 以对齐文本
-- 对于一个设计，如果后续有改进，只需加编号，例如 A1 变为 A1-2 (从2开始, 1 为原始设计)
-- design 不对原理作介绍, 只给出电路图、原理图、PCB 图和 实物图等, 并给出使用说明和实际测试结果 (或 datasheet)
-  也就是说, design 的内容将不会放在 analog circuits manual 中, 而是仅放在 practical reference to manual 中
+    <!-- (这里的缩进不能省略, 否则会影响 sidebar 的 css 效果)
+    - 编号先这样写着，未完成的 design 用!号标注，出现两位数后统一在前面加 0 以对齐文本
+    - 对于一个设计，如果后续有改进，只需加编号，例如 A1 变为 A1-2 (从2开始, 1 为原始设计)
+    - design 不对原理作介绍, 只给出电路图、原理图、PCB 图和 实物图等, 并给出使用说明和实际测试结果 (或 datasheet)
+    也就是说, design 的内容将不会放在 analog circuits manual 中, 而是仅放在 practical reference to manual 中
 
-A: 放在 A 类的是小 design, A 类 design 至少要给出简单的介绍和原理图（或电路图）。
-   如果可以，最好给出具体的原理分析、仿真结果、PCB 设计、实物图、实际电路测试结果等。
+    A: 放在 A 类的是小 design, A 类 design 至少要给出简单的介绍和原理图（或电路图）。
+    如果可以，最好给出具体的原理分析、仿真结果、PCB 设计、实物图、实际电路测试结果等。
 
-B: 放在 B 类的是稍大一点的 design, B 类 design 至少要给出较为详细的介绍、结构图 (如果有)、原理图 (或电路图、PCB layout、实物图)
-   如果可以，最好给出具体的原理分析、仿真结果、以及最终的 datasheet (实际电路测试结果) 等。
--->
+    B: 放在 B 类的是稍大一点的 design, B 类 design 至少要给出较为详细的介绍、结构图 (如果有)、原理图 (或电路图、PCB layout、实物图)
+    如果可以，最好给出具体的原理分析、仿真结果、以及最终的 datasheet (实际电路测试结果) 等。
+    -->
 
 
 - 📚 **Books**

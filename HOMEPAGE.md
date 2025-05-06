@@ -36,6 +36,7 @@ Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeature
 
 ### Frequently Used Tools 
 
+- Text comparing tool: [diffing_tool](https://csacademy.com/app/diffing_tool/)
 -   Img, gif: use [Resize](https://bulkresizephotos.com/zh?preset=true&type=filesize&filesize=80000) (img) and [Docsmall](https://docsmall.com/gif-compress) (img, gif) <span class='tinyscript'>or [imgdiet](https://www.imgdiet.com/zh-CN/compress) (compress the entire folder),  [i2img](https://www.i2img.com/image-compressor), [Tiomg](https://tiomg.org/compress-image), [Oplimize LLA](https://imagecompressor.com), [TinyPNG](https://tinypng.com/), [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
 - Image inversion: [LZL tool](https://lzltool.cn/batch-img-color-reverse)
 -   Video: use [FreeCompress](https://freecompress.com/) <span class='tinyscript'>or [Video To Edit](https://www.video2edit.com), [FCO](https://compress-video.file-converter-online.com/#google_vignette)</span> to compress the video.

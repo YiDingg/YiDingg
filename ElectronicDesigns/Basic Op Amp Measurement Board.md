@@ -331,3 +331,7 @@ $$
 $$
 
 按 1V 的 $V_{CM, \mathrm{amplitude}}$ 和 10mV 的 $V_{TP2, \mathrm{amplitude}}$ 来算，可以测量最高为 200000 (即 200 V/mV, 106dB) 的 CMRR 。
+
+## New Version (v2)
+
+在经过 NE5532P 运放的测量实验后 ([Op Amp Measurement of NE5532P](<Blogs/Electronics/Op Amp Measurement of NE5532P.md>))，我们对板子的设计进行了一些优化，同时更正了原设计存在的错误，详见 [Basic Op Amp Measurement Board V2](<ElectronicDesigns/Basic Op Amp Measurement Board v2.md>)。

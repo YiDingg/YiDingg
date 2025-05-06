@@ -22,7 +22,8 @@ I_{DUT} = I_{Res} = \frac{V_{Res}}{R}
 \\
 \mathrm{Phase} = \theta\  (计算公式仍未知,\ 官方文档中给出的是\ \varphi_{in} - \varphi_{out},\ 但是经过考察并不是这样)
 \\
-\mathrm{(\mathrm{mode\ 3})\ 实际\ Input\ Phase} =  \varphi_{CH1} - \varphi_{CH2}\ \ \ {\color{red} \mathrm{(unit:\ deg)}}
+\mathrm{(\mathrm{mode\ 3})\ 实际\ Input\ Phase} =  \varphi_{CH1} - \varphi_{CH2}\ \ \ {\color{red} \mathrm{(unit:\ deg)}}\\
+\mathrm{在\ mode\ 3\ 且\ CH1\ 为输入,\ CH2\ 为输出时,\ -\ input\ phase\ 即为频率响应中的相位}
 \\
 注：V_{DUT}\ 或\ V_{Res}\ 幅值过小时，其相位值不准确，接近随机值\ (而不是恒为\ 0)
 \end{cases}

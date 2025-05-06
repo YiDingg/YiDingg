@@ -1,4 +1,4 @@
-# Transfer Function Analysis Methods: Null Double Injection and the Extra Element Theorem
+# [Transfer Function Analysis Techniques] The Extra Element Theorem
 
 > [!Note|style:callout|label:Infor]
 Initially published at 23:46 on 2025-04-02 in Beijing.
@@ -11,6 +11,9 @@ Initially published at 23:46 on 2025-04-02 in Beijing.
 - Author:  [R. D. MIDDLEBROOK](https://ieeexplore.ieee.org/author/37299930400)
 - Publication Date: 06 August 2002
 - Published in: [IEEE Transactions on Education](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=13) (Volume: 32, Issue: 3, August 1989)
+
+> **Full Citation:**
+R. D. Middlebrook, "Null double injection and the extra element theorem," in IEEE Transactions on Education, vol. 32, no. 3, pp. 167-180, Aug. 1989, doi: 10.1109/13.34149.
 
 ## 1 - Abstract 
 <!-- details begin -->

@@ -1,4 +1,4 @@
-# 手把手教你用PWM实现呼吸灯(标准库)
+# 手把手教你用PWM实现呼吸灯 (STM32 标准库)
 
 > [!Note|style:callout|label:Infor]
 Initially published at 16:32 on 2024-06-26 in Beijing.

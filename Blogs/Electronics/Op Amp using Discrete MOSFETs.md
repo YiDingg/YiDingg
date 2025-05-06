@@ -56,7 +56,7 @@ Initially published at 00:01 on 2025-03-18 in Beijing.
 设计思路如下图：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-18-19-45-54_Op Amp using Discrete MOSFETs.jpeg"/></div>
 
-在进行设计之前，我们需要先测量所用晶体管的特性曲线和小信号参数，实验记录见 [待完成](待完成)。
+在进行设计之前，我们需要先测量所用晶体管的特性曲线和小信号参数，实验记录见 [待完成](../../ElectronicDesigns/待完成)。
 
 完成测量之后，可以对每一级分别进行计算：
 
