@@ -23,7 +23,7 @@
 
 $$
 \begin{gather}
-\textrm{Voltage-voltage amp:\ }
+\mathrm{Voltage-voltage\ amp:\ }
 \begin{cases}
 A_{CL} = \frac{A_{OL}}{1 + KA_{OL}}         \\
 Z_{in,CL} = \left(1 + KA_{OL}\right)Z_{in}  \\
@@ -47,13 +47,13 @@ Bode's Method 适用于 forward system 中至少有一个晶体管的情况（�
 - 求出 $A$, $B$, $C$, $D$ 四个参数，满足 $\begin{bmatrix} V_{out} \\ V_1 \end{bmatrix} = \mathbf{Bode} \cdot \begin{bmatrix} A & B \\ C & D \end{bmatrix} = \begin{bmatrix} A & B \\ C & D \end{bmatrix} \cdot \begin{bmatrix} V_{in} \\ I_1 \end{bmatrix} = \begin{bmatrix} AV_{in} + B I_1 \\ C V_{in} + D I_1 \end{bmatrix}$
     - 设置 $I_1 = 0$ (开路), 在激励为 $V_{in}$ 的情况下，求出响应 $V_{out}$ 和 $V_1$, 以此得到 $A = \left(\frac{V_{out}}{V_{in}}\right)_{I_1 = 0}$ 和 $C = \left(\frac{V_{1}}{V_{in}}\right)_{I_1 = 0}$
     - 设置 $V_{in} = 0$ (短路), 在激励为 $I_1$ 的情况下，求出响应 $V_{out}$ 和 $V_1$, 以此得到 $B = \left(\frac{V_{out}}{I_1}\right)_{V_{in} = 0}$ 和 $D = \left(\frac{V_{1}}{I_1}\right)_{V_{in} = 0}$
-- 计算闭环增益：$A_{CL} = \frac{A - g_m \textrm{det} (\mathbf{Bode})}{1\ \  -\ \  g_m D}$
+- 计算闭环增益：$A_{CL} = \frac{A - g_m \mathrm{det} (\mathbf{Bode})}{1\ \  -\ \  g_m D}$
 
 总结下来就是一个公式：
 
 $$
 \begin{gather}
-A_{CL} = \frac{A - g_m \textrm{det} (\mathbf{Bode})}{1\ \  -\ \  g_m D}
+A_{CL} = \frac{A - g_m \mathrm{det} (\mathbf{Bode})}{1\ \  -\ \  g_m D}
 \end{gather}
 $$
 
@@ -84,7 +84,7 @@ $$
 
 $$
 \begin{gather}
-A_{CL} = \frac{A - g_m \textrm{det} (\mathbf{Bode})}{1\ \  -\ \  g_m D} = \frac{0 - g_m \cdot \frac{r_O R_D}{R_D + r_O + R_S}}{1\ \  -\ \  g_m \cdot \frac{- r_O R_S}{R_D + r_O + R_S}}
+A_{CL} = \frac{A - g_m \mathrm{det} (\mathbf{Bode})}{1\ \  -\ \  g_m D} = \frac{0 - g_m \cdot \frac{r_O R_D}{R_D + r_O + R_S}}{1\ \  -\ \  g_m \cdot \frac{- r_O R_S}{R_D + r_O + R_S}}
 = \frac{- g_m r_O R_D}{g_m r_O R_S + R_D + r_O + R_S}
 \end{gather}
 $$
@@ -183,9 +183,9 @@ $$
 ,\quad 
 \mathbf{Y} =
 \begin{bmatrix}
-V_{\textrm{in}} \\
-V_{\textrm{out}} \\
-I_{\textrm{in}} \\
+V_{\mathrm{in}} \\
+V_{\mathrm{out}} \\
+I_{\mathrm{in}} \\
 I_2 \\
 V_e 
 \end{bmatrix}
@@ -208,8 +208,8 @@ g_{11}  & g_{12}  & 1 & 0
 ,\quad 
 \mathbf{X} =
 \begin{bmatrix}
-V_{\textrm{out}} \\
-I_{\textrm{in}} \\
+V_{\mathrm{out}} \\
+I_{\mathrm{in}} \\
 I_2 \\
 V_e 
 \end{bmatrix}\cdot \frac{1}{V_{in}}
@@ -221,7 +221,7 @@ V_e
 \end{gather}
 $$
 
-不妨把 $\mathbf{X}$ 记作 $\mathbf{X} = \begin{bmatrix} V_{\textrm{out}}, & I_{\textrm{in}}, & I_2, & V_e \end{bmatrix}^T$, 求出结果后再统一除以 $V_{in}$。在 MATLAB 中解此线性方程组，得到：
+不妨把 $\mathbf{X}$ 记作 $\mathbf{X} = \begin{bmatrix} V_{\mathrm{out}}, & I_{\mathrm{in}}, & I_2, & V_e \end{bmatrix}^T$, 求出结果后再统一除以 $V_{in}$。在 MATLAB 中解此线性方程组，得到：
 
 $$
 \begin{gather}

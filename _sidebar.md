@@ -205,6 +205,7 @@
 - 💡 **Electronic Designs**
 
     - [**[Pinned] DC-DC Converter Modules**](<ElectronicDesigns/DC-DC Converter Modules.md>)
+    - [Basic Two-Stage Op Amp using Discrete MOSFETs](<ElectronicDesigns/Basic Two-Stage Op Amp using Discrete MOSFETs.md>)
     - [μA741 using Discrete BJTs (SOT-23)](<ElectronicDesigns/μA741 using Discrete BJTs (SOT-23).md>)
     - [Basic Op Amp Measurement Board v2](<ElectronicDesigns/Basic Op Amp Measurement Board v2.md>)
     - [PCB Light Painting](<ElectronicDesigns/PCB Light Painting.md>)
