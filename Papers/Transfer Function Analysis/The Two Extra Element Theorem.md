@@ -1,4 +1,4 @@
-# The Two Extra Element Theorem
+# The Two Extra Element Theorem (TEET)
 
 > [!Note|style:callout|label:Infor]
 Initially published at xx:xx on 2025-xx-xx in xxxx.

@@ -82,7 +82,7 @@
         - [Navi. Page of Transfer Function Analysis](<Papers/Transfer Function Analysis/Navigation Page of Transfer Function Analysis.md>)
         - [EET (The Extra Element Theorem)](<Papers/Transfer Function Analysis/The Extra Element Theorem.md>)<!-- x -->
         - [TEET (The Two Extra Element Theorem)](<Papers/Transfer Function Analysis/The Two Extra Element Theorem.md>)
-        - [Open-Circuit Time Constant Method](<Papers/Transfer Function Analysis/Open-Circuit Time Constant Method.md>)
+        - [OCTC (Open-Circuit Time Constant Method)](<Papers/Transfer Function Analysis/Open-Circuit Time Constant Method.md>)
 
 
     <!-- (这里的缩进不能省略, 否则会影响 sidebar 的 css 效果)

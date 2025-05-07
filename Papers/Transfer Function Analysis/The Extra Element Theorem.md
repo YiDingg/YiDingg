@@ -1,4 +1,4 @@
-# [Transfer Function Analysis Techniques] The Extra Element Theorem
+# The Extra Element Theorem (EET)
 
 > [!Note|style:callout|label:Infor]
 Initially published at 23:46 on 2025-04-02 in Beijing.
