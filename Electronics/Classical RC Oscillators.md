@@ -177,7 +177,7 @@ f_{c} = \sqrt{f_{c1} f_{c2}} = \frac{1}{2 \pi R C}
 \end{gather}
 $$
 
-之所以要调整为 $\frac{R}{2}$ 和 $2 C$, 是因为这样能将传递函数从 3 阶降为 2 阶，同时对 $f_c$ 有无穷大的抑制能力，使得 twin-T network 成为一个 ideal notch band-stop filter (不考虑 tolerance 的情况下)。通过推导传递函数，可以看出这一点，具体过程见 [A Mistake on Twin-T Network Calculation](<Blogs/Electronics/A Mistake on Twin-T Network Calculation.md>)。我们这里直接给出结论：
+之所以要调整为 $\frac{R}{2}$ 和 $2 C$, 是因为这样能将传递函数从 3 阶降为 2 阶，同时对 $f_c$ 有无穷大的抑制能力，使得 twin-T network 成为一个 ideal notch band-stop filter (不考虑 tolerance 的情况下)。通过推导传递函数，可以看出这一点，具体过程见 [A Mistake on Twin-T Network Calculation](<Electronics/A Mistake on Twin-T Network Calculation.md>)。我们这里直接给出结论：
 
 $$
 \begin{gather}

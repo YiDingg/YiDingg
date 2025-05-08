@@ -5,7 +5,7 @@ Initially published at 20:15 on 2025-03-17 in Beijing.
 
 
 
-建议参考 [3. SGA-SOA-2 Simple Discrete Operation Amplifier](<http://localhost:3000/#/Blogs/Electronics/Design%20of%20Discrete%20Op%20Amps?id=_4-sga-hva-1-high-voltage-discrete-operational-amplifier>) 进行设计
+建议参考 [3. SGA-SOA-2 Simple Discrete Operation Amplifier](<http://localhost:3000/#/Electronics/Design%20of%20Discrete%20Op%20Amps?id=_4-sga-hva-1-high-voltage-discrete-operational-amplifier>) 进行设计
 
 
 ## 1. 918 Discrete OpAmp

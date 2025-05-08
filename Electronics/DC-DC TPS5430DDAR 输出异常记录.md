@@ -9,7 +9,7 @@ Initially published at 18:23 on 2025-02-24 in Beijing.
 
 经过一些努力，我们已经找出了原始问题的原因，但尚未完全解决异常输出，希望有网友能帮忙找出问题所在，感激不尽！
 
-注：若读者对 buck 与 buck-boost 之间的等效不熟悉，可以先转到这篇文章：[YiDingg：Using Buck Topology as an Inverting Converter (Buck-Boost)](<Blogs/Electronics/Using Buck Topology as an Inverting Converter.md>)
+注：若读者对 buck 与 buck-boost 之间的等效不熟悉，可以先转到这篇文章：[YiDingg：Using Buck Topology as an Inverting Converter (Buck-Boost)](<Electronics/Using Buck Topology as an Inverting Converter.md>)
 
 我们先叙述问题的排查结果，将原始故障的记录放在文末，以供随时参考。
 

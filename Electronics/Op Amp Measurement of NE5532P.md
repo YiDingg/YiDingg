@@ -7,7 +7,7 @@
 
 测量 TI 公司运算放大器 NE5532P 的常见参数，包括 input offset voltage $V_{OS}\ (\mathrm{or\ }V_{IO})$, input bias current $I_{B\pm}$ (and input offset current $I_{OS}$), open-loop dc/ac gain $A_{OL}$, dc/ac CMRR, dc/ac PSRR 共八个参数。
 
-实验原理与具体测试步骤见 [Op Amp Measurement Methods](<Blogs/Electronics/Op Amp Measurement Methods.md>)。
+实验原理与具体测试步骤见 [Op Amp Measurement Methods](<Electronics/Op Amp Measurement Methods.md>)。
 
 ## 实验记录
 

@@ -29,7 +29,7 @@
  |  |  |
 </div>
 
-设计原理见博客 [How to Design a PCB Light Painting](<Blogs/Electronics/How to Design a PCB Light Painting.md>)
+设计原理见博客 [How to Design a PCB Light Painting](<Electronics/How to Design a PCB Light Painting.md>)
 
 ## Design Notes
 

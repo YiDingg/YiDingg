@@ -36,7 +36,7 @@
 
 ## Transistor Measurement Methods
 
-Go to [Transistor Measurement Methods](<Blogs/Electronics/Transistor Measurement Methods.md>).
+Go to [Transistor Measurement Methods](<Electronics/Transistor Measurement Methods.md>).
 
 ## Design Notes
 

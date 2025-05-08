@@ -25,7 +25,7 @@ R_{out}
 \end{align}
 $$
 
-对 $R_{\mathrm{drain}}$ 和 $R_{S0}$ 不熟悉的读者可以回顾往期文章： [MOSFET's Terminal Resistance](<Blogs/Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>)。
+对 $R_{\mathrm{drain}}$ 和 $R_{S0}$ 不熟悉的读者可以回顾往期文章： [MOSFET's Terminal Resistance](<Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>)。
 
 ## Transconductance Gm
 

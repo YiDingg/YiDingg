@@ -77,71 +77,71 @@
     Designs: 条目后跟有注释符号的表示已经发过微信公众号
     -->
 
-- 💡 **Electronics**
+- 💡 **Electronics Blogs**
 
-    - [**[Pinned] Roadmap for Analog ICer**](<Blogs/Electronics/Roadmap for Analog ICer.md>)
-    - [**[Pinned] Collections of Electronic Websites**](<Blogs/Electronics/Collection of Electronic Websites.md>)
-    - [An Example of Negative FB Amp](<Blogs/Electronics/An Example of Negative FB Amp.md>)
-    - [Constant Current Source using Transistors](<Blogs/Electronics/Constant Current Source using Transistors.md>)
-    - [A Brief View of Negative Feedback](<Blogs/Electronics/A Brief View of Negative Feedback.md>)
-    - [An Example of Miller Effect of CE Stage](<Blogs/Electronics/Miller Effect of CE Stage.md>)
-    - [Precision Full-Wave Rectifier](<Blogs/Electronics/Precision Full-Wave Rectifier.md>)
-    - [Transistor Meas. of 2N7000 (N VDMOS)](<Blogs/Electronics/Transistor Measurement of 2N7000 (N VDMOS).md>)
-    - [二端口“标准”级联方法中隐含的误差](<Blogs/Electronics/二端口“标准”级联方法中隐含的误差.md>)
-    - [Collections of Electronic Websites](<Blogs/Electronics/Collection of Electronic Websites.md>)
-    - [Several Problems in Op Amp Measurement](<Blogs/Electronics/Several Problems in Op Amp Measurement.md>)
-    - [Op Amp Meas. of NE5532P](<Blogs/Electronics/Op Amp Measurement of NE5532P.md>)
-    - [Calc CS Transfer Func using EET](<Blogs/Electronics/Calculate CS Transfer Function using EET.md>)
-    - [Understanding Poles and Zeros](<Blogs/Electronics/Understanding Poles and Zeros.md>)
-    - [Freq Response of CE and CS Stages](<Blogs/Electronics/Frequency Response of CE and CS Stages.md>)<!-- x -->
-    - [Roadmap for Analog ICer](<Blogs/Electronics/Roadmap for Analog ICer.md>)
-    - [Compound BJT (Sziklai and Darlington)](<Blogs/Electronics/Compound BJT (Sziklai and Darlington).md>)
-    - [Common-Emitter Amp Experiment](<Blogs/Electronics/Common Emitter Amplifier Experiment.md>)
-    - [Improved Push-Pull Stage](<Blogs/Electronics/Improved Push-Pull Stage.md>)
-    - [Cascode Differential Amplifier](<Blogs/Electronics/Cascode Differential Amplifier.md>)
-    - [Definitions of SPICE Model Parameters](<Blogs/Electronics/The Definitions of SPICE Model Parameters.md>)
-    - [Basic Differential Circuit Simulation Report](<Blogs/Electronics/Differential Circuit Simulation Report.md>)
-    - [主流锂电池充放一体芯片选型对比](<Blogs/Electronics/主流锂电池充放一体芯片选型对比.md>)
-    - [The Five-Transistor OTA](<Blogs/Electronics/The Five-Transistor OTA.md>)<!--  -->
-    - [How to Design a PCB Light Painting](<Blogs/Electronics/How to Design a PCB Light Painting.md>)
-    - [PCB 走线的温升与压降数据](<Blogs/Electronics/PCB 走线的温升与压降数据.md>)<!--  -->
-    - [A Mistake on Twin-T Network Calculation](<Blogs/Electronics/A Mistake on Twin-T Network Calculation.md>)<!--  -->
-    - [How to Set a Variable in LTspice](<Blogs/Electronics/How to Set a Variable in LTspice.md>)<!--  -->
-    - [Analog Pulse Width Modulation](<Blogs/Electronics/Analog Pulse Width Modulation.md>)<!--  -->
-    - [Classical RC Oscillators](<Blogs/Electronics/Classical RC Oscillators.md>)<!-- x -->
-    - [Control MSO2202A using MATLAB](<Blogs/Electronics/Control RIGOL MSO2202A Oscilloscope using MATLAB.md>)<!-- x -->
-    - [The Polarity of Input Offset Voltage of Op Amps](<Blogs/Electronics/The Polarity of Input Offset Voltage of Op Amps.md>)<!-- x -->
-    - [Features of Cascading Op Amp Stages](<Blogs/Electronics/Features of Cascading Op Amp Stages.md>)<!--  -->
-    - [Op Amp using Discrete MOSFETs](<Blogs/Electronics/Op Amp using Discrete MOSFETs.md>)
-    - [Discrete Op Amp Design Reference](<Blogs/Electronics/Discrete Op Amp Design Reference.md>)
-    - [Transistor Meas. of SS8050 (NPN)](<Blogs/Electronics/[Analog Comp] Transistor Measurement of SS8050 (NPN).md>)<!-- x -->
-    - [Transistor Measurement Methods](<Blogs/Electronics/Transistor Measurement Methods.md>)
-    - [BJT 三种基本放大器的增益、跨导与输出阻抗](<Blogs/Electronics/Three Basic Types of BJT Amplifiers.md>)<!-- x -->
-    - [Three Basic Types of Transistors](<Blogs/Electronics/Three Basic Types of Transistors.md>)
-    - [Instrument Amplifier Using Op Amp](<Blogs/Electronics/Instrument Amplifier Using Op Amp.md>)
-    - [BJT's Terminal Resistances](<Blogs/Electronics/BJT's Terminal Resistances.md>)<!--  -->
-    - [DC-DC TPS5430DDAR 输出异常记录](<Blogs/Electronics/DC-DC TPS5430DDAR 输出异常记录.md>)<!--  -->
-    - [常见 NPN 三极管特性曲线测量](<Blogs/Electronics/常见 NPN 三极管特性曲线测量.md>)<!--  -->
-    - [常见 NMOS 特性曲线测量](<Blogs/Electronics/常见 NMOS 特性曲线测量.md>)
-    - [Negative VCVS Test](<Blogs/Electronics/Negative VCVS Test.md>)
-    - [半屏蔽式贴片功率电感参数](Blogs/Electronics/贴片功率电感相关参数.md)
-    - [Ideal and Nonideal Op Amp](<Blogs/Electronics/Ideal and Nonideal Op Amp.md>)<!--  -->
-    - [Using Buck as an Inverting Converter](<Blogs/Electronics/Using Buck Topology as an Inverting Converter.md>)<!--  -->
-    - [Op Amp Measurement Methods](<Blogs/Electronics/Op Amp Measurement Methods.md>)<!--  -->
-    - [Mismatches of Basic Differential Pair](<Blogs/Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)<!--  -->
-    - [Cascode stage with PMOS load](<Blogs/Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>)<!--  -->
-    - [Gm Av calculation](<Blogs/Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>)<!--  -->
-    - [MOSFET's Terminal Resistance](<Blogs/Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>)<!--  -->
-    - [DC 母座的接线方法](<Blogs/Electronics/DC 母座的接线方法.md>)
-    - [Frequency chara of mono cap](<Blogs/Electronics/[Analog Comp] Frequency characteristics of monolithic capacitors (独石电容的频率响应).md>)<!-- x -->
-    - [纪念第一次炸电容](Blogs/Electronics/纪念第一次炸电容.md)
-    - [用 Pi 型滤波器改善可调直流电源的输出纹波](Blogs/Electronics/用Pi型滤波器改善可调直流电源的输出纹波.md)
-    - [一伟 D-30F12 开关电源测评](<Blogs/Electronics/一伟 D-30F12 开关电源测评.md>)<!--  -->
 
+    - [**[Pinned] Roadmap for Analog ICer**](<Electronics/Roadmap for Analog ICer.md>)
+    - [**[Pinned] Collections of Electronic Websites**](<Electronics/Collection of Electronic Websites.md>)
+    - [An Example of Negative FB Amp](<Electronics/An Example of Negative FB Amp.md>)
+    - [Constant Current Source using Transistors](<Electronics/Constant Current Source using Transistors.md>)
+    - [A Brief View of Negative Feedback](<Electronics/[Razavi CMOS] A Brief View of Negative Feedback.md>)
+    - [An Example of Miller Effect of CE Stage](<Electronics/An Example of Miller Effect of CE Stage.md>)
+    - [Precision Full-Wave Rectifier](<Electronics/Precision Full-Wave Rectifier.md>)
+    - [Transistor Meas. of 2N7000 (N VDMOS)](<Electronics/Transistor Measurement of 2N7000 (N VDMOS).md>)
+    - [二端口“标准”级联方法中隐含的误差](<Electronics/二端口“标准”级联方法中隐含的误差.md>)
+    - [Collections of Electronic Websites](<Electronics/Collection of Electronic Websites.md>)
+    - [Several Problems in Op Amp Measurement](<Electronics/Several Problems in Op Amp Measurement.md>)
+    - [Op Amp Meas. of NE5532P](<Electronics/Op Amp Measurement of NE5532P.md>)
+    - [Calc CS Transfer Func using EET](<Electronics/Calculate CS Transfer Function using EET.md>)
+    - [Understanding Poles and Zeros](<Electronics/Understanding Poles and Zeros.md>)
+    - [Freq Response of CE and CS Stages](<Electronics/Frequency Response of CE and CS Stages.md>)<!-- x -->
+    - [Roadmap for Analog ICer](<Electronics/Roadmap for Analog ICer.md>)
+    - [Compound BJT (Sziklai and Darlington)](<Electronics/Compound BJT (Sziklai and Darlington).md>)
+    - [Common-Emitter Amp Experiment](<Electronics/Common Emitter Amplifier Experiment.md>)
+    - [Improved Push-Pull Stage](<Electronics/Improved Push-Pull Stage.md>)
+    - [Cascode Differential Amplifier](<Electronics/Cascode Differential Amplifier.md>)
+    - [Definitions of SPICE Model Parameters](<Electronics/The Definitions of SPICE Model Parameters.md>)
+    - [Basic Differential Circuit Simulation Report](<Electronics/Differential Circuit Simulation Report.md>)
+    - [主流锂电池充放一体芯片选型对比](<Electronics/主流锂电池充放一体芯片选型对比.md>)
+    - [The Five-Transistor OTA](<Electronics/The Five-Transistor OTA.md>)<!--  -->
+    - [How to Design a PCB Light Painting](<Electronics/How to Design a PCB Light Painting.md>)
+    - [PCB 走线的温升与压降数据](<Electronics/PCB 走线的温升与压降数据.md>)<!--  -->
+    - [A Mistake on Twin-T Network Calculation](<Electronics/A Mistake on Twin-T Network Calculation.md>)<!--  -->
+    - [How to Set a Variable in LTspice](<Electronics/How to Set a Variable in LTspice.md>)<!--  -->
+    - [Analog Pulse Width Modulation](<Electronics/Analog Pulse Width Modulation.md>)<!--  -->
+    - [Classical RC Oscillators](<Electronics/Classical RC Oscillators.md>)<!-- x -->
+    - [Control MSO2202A using MATLAB](<Electronics/Control RIGOL MSO2202A Oscilloscope using MATLAB.md>)<!-- x -->
+    - [The Polarity of Input Offset Voltage of Op Amps](<Electronics/The Polarity of Input Offset Voltage of Op Amps.md>)<!-- x -->
+    - [Features of Cascading Op Amp Stages](<Electronics/Features of Cascading Op Amp Stages.md>)<!--  -->
+    - [Op Amp using Discrete MOSFETs](<Electronics/Op Amp using Discrete MOSFETs.md>)
+    - [Discrete Op Amp Design Reference](<Electronics/Discrete Op Amp Design Reference.md>)
+    - [Transistor Meas. of SS8050 (NPN)](<Electronics/[Analog Comp] Transistor Measurement of SS8050 (NPN).md>)<!-- x -->
+    - [Transistor Measurement Methods](<Electronics/Transistor Measurement Methods.md>)
+    - [BJT 三种基本放大器的增益、跨导与输出阻抗](<Electronics/Three Basic Types of BJT Amplifiers.md>)<!-- x -->
+    - [Three Basic Types of Transistors](<Electronics/Three Basic Types of Transistors.md>)
+    - [Instrument Amplifier Using Op Amp](<Electronics/Instrument Amplifier Using Op Amp.md>)
+    - [BJT's Terminal Resistances](<Electronics/BJT's Terminal Resistances.md>)<!--  -->
+    - [DC-DC TPS5430DDAR 输出异常记录](<Electronics/DC-DC TPS5430DDAR 输出异常记录.md>)<!--  -->
+    - [常见 NPN 三极管特性曲线测量](<Electronics/常见 NPN 三极管特性曲线测量.md>)<!--  -->
+    - [常见 NMOS 特性曲线测量](<Electronics/常见 NMOS 特性曲线测量.md>)
+    - [Negative VCVS Test](<Electronics/Negative VCVS Test.md>)
+    - [半屏蔽式贴片功率电感参数](Electronics/贴片功率电感相关参数.md)
+    - [Ideal and Nonideal Op Amp](<Electronics/Ideal and Nonideal Op Amp.md>)<!--  -->
+    - [Using Buck as an Inverting Converter](<Electronics/Using Buck Topology as an Inverting Converter.md>)<!--  -->
+    - [Op Amp Measurement Methods](<Electronics/Op Amp Measurement Methods.md>)<!--  -->
+    - [Mismatches of Basic Differential Pair](<Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)<!--  -->
+    - [Cascode stage with PMOS load](<Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>)<!--  -->
+    - [Gm Av calculation](<Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>)<!--  -->
+    - [MOSFET's Terminal Resistance](<Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>)<!--  -->
+    - [DC 母座的接线方法](<Electronics/DC 母座的接线方法.md>)
+    - [Frequency chara of mono cap](<Electronics/[Analog Comp] Frequency characteristics of monolithic capacitors (独石电容的频率响应).md>)<!-- x -->
+    - [纪念第一次炸电容](Electronics/纪念第一次炸电容.md)
+    - [用 Pi 型滤波器改善可调直流电源的输出纹波](Electronics/用Pi型滤波器改善可调直流电源的输出纹波.md)
+    - [一伟 D-30F12 开关电源测评](<Electronics/一伟 D-30F12 开关电源测评.md>)<!--  -->
     - 2024
-        - [LTspice](Blogs/Electronics/LTspice.md)
-        - [嘉立创免费下单教程](Blogs/Electronics/嘉立创免费下单教程.md)
-        - [手把手教你用 PWM 实现呼吸灯(标准库)](Blogs/Electronics/手把手教你用PWM实现呼吸灯(标准库).md)<!--  -->
+        - [LTspice](Electronics/LTspice.md)
+        - [嘉立创免费下单教程](Electronics/嘉立创免费下单教程.md)
+        - [手把手教你用 PWM 实现呼吸灯(标准库)](Electronics/手把手教你用PWM实现呼吸灯(标准库).md)<!--  -->
         - [新版 Keil MDK 中无 Compiler_V5](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
 
 
@@ -232,6 +232,7 @@
 
 - 🗓️ **Monthly Summary**
 
+    - [2025.04](<MonthlySummary/Monthly Summary (2025.04).md>)
     - [2025.03](<MonthlySummary/Monthly Summary (2025.03).md>)
 
 - 📝 **Projects**

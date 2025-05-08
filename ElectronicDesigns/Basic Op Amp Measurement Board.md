@@ -10,7 +10,7 @@ Initially published at 20:03 on 2025-02-12 in Lincang.
 - Time: 2025.02.13
 - Notes: suitable for [AD1](https://digilent.com/reference/test-and-measurement/analog-discovery/start) (Analog Discovery 1), [AD2](https://digilent.com/reference/test-and-measurement/analog-discovery-2/start), and [AD3](https://digilent.com/reference/test-and-measurement/analog-discovery-3/start)
 - Details: 可以直接测量包括失调电压 $V_{IO}$、偏置电流 $I_{B\pm}$、开环增益 $A_{OL}$ 在内的 8 种运放基本参数 (详见后文)
-- Relevant Resources: 原理 [Blog > *Op Amp Measurement Methods*](<./assets/Blogs/Electronics/Op Amp Measurement Methods.md>)，相关资料在 [https://www.123684.com/s/0y0pTd-ezuj3](https://www.123684.com/s/0y0pTd-ezuj3)
+- Relevant Resources: 原理 [Blog > *Op Amp Measurement Methods*](<./assets/Electronics/Op Amp Measurement Methods.md>)，相关资料在 [https://www.123684.com/s/0y0pTd-ezuj3](https://www.123684.com/s/0y0pTd-ezuj3)
 
 
 <div class='center'>
@@ -106,7 +106,7 @@ Then, we can start the measurement:
 
 ## Design Notes
 
-初始参考电路如图所示，其用法详见文章 [*Op Amp Measurement Methods*](<./assets/Blogs/Electronics/Op Amp Measurement Methods.md>)，现在我们来一步步实现电路图中的各项要求。
+初始参考电路如图所示，其用法详见文章 [*Op Amp Measurement Methods*](<./assets/Electronics/Op Amp Measurement Methods.md>)，现在我们来一步步实现电路图中的各项要求。
 <div class="center"><img width=400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-12-22-25-46_Basic Op Amp Measurement Board.png"/></div>
 
 
@@ -334,4 +334,4 @@ $$
 
 ## New Version (v2)
 
-在经过 NE5532P 运放的测量实验后 ([Op Amp Measurement of NE5532P](<./assets/Blogs/Electronics/Op Amp Measurement of NE5532P.md>))，我们对板子的设计进行了一些优化，同时更正了原设计存在的错误，详见 [Basic Op Amp Measurement Board V2](<./assets/ElectronicDesigns/Basic Op Amp Measurement Board v2.md>)。
+在经过 NE5532P 运放的测量实验后 ([Op Amp Measurement of NE5532P](<./assets/Electronics/Op Amp Measurement of NE5532P.md>))，我们对板子的设计进行了一些优化，同时更正了原设计存在的错误，详见 [Basic Op Amp Measurement Board V2](<./assets/ElectronicDesigns/Basic Op Amp Measurement Board v2.md>)。

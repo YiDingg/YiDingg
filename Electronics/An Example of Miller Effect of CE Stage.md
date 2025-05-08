@@ -5,7 +5,7 @@ Initially published at 23:13 on 2025-03-23 in Beijing.
 
 ## Intro 
 
-起因是线电作业 (week 10, 2025.04.28 ~ 2025.05.04) 中有一道题目需要计算 CE stage 的高频截止频率，我们使用了 Miller Approximation 进行计算，同时用 LTspice 对结果进行了验证，最终仿真结果与理论计算一致。关于频响分析和米勒定理的基本内容，详见 [Frequency Response of CE and CS Stages](<Blogs/Electronics/Frequency Response of CE and CS Stages.md>)，我们不再赘述。
+起因是线电作业 (week 10, 2025.04.28 ~ 2025.05.04) 中有一道题目需要计算 CE stage 的高频截止频率，我们使用了 Miller Approximation 进行计算，同时用 LTspice 对结果进行了验证，最终仿真结果与理论计算一致。关于频响分析和米勒定理的基本内容，详见 [Frequency Response of CE and CS Stages](<Electronics/Frequency Response of CE and CS Stages.md>)，我们不再赘述。
 
 下面记录了题目的理论分析与 LTspice 仿真结果。
 

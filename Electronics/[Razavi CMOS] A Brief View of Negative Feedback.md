@@ -1,4 +1,4 @@
-# A Brief View of Negative Feedback Analysis Method
+# [Razavi CMOS] A Brief View of Negative Feedback Analysis Method
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 15:56 on 2025-04-30 in Beijing.

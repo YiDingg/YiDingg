@@ -228,8 +228,8 @@
 
 ## 相关实验记录
 
-- 2025.03.14, 15:50, Beijing. 对 SS8050 (NPN) 进行了特性曲线测试，实验记录见 [BJT Measurement of SS8050](<Blogs/Electronics/[Analog Comp] Transistor Measurement of SS8050 (NPN).md>)
-- 2025.04.23, 21:37, Beijing. 对 2N7000 (NMOS) 进行了测量，实验记录见 [Transistor Measurement of 2N7000 (NMOS)](<Blogs/Electronics/Transistor Measurement of 2N7000 (N VDMOS).md>)
+- 2025.03.14, 15:50, Beijing. 对 SS8050 (NPN) 进行了特性曲线测试，实验记录见 [BJT Measurement of SS8050](<Electronics/[Analog Comp] Transistor Measurement of SS8050 (NPN).md>)
+- 2025.04.23, 21:37, Beijing. 对 2N7000 (NMOS) 进行了测量，实验记录见 [Transistor Measurement of 2N7000 (NMOS)](<Electronics/Transistor Measurement of 2N7000 (N VDMOS).md>)
 
 
 

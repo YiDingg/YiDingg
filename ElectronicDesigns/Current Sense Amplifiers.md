@@ -93,7 +93,7 @@ REF 引脚连接方法：
  | 6V\~36V (4V\~44V) | ±60uV (typ.) | ±0.8nA (typ.) |
 </div>
 
-参考 [Instrument Amplifier Using Op Amp](<Blogs/Electronics/Instrument Amplifier Using Op Amp.md>), 考虑如下设计目标：
+参考 [Instrument Amplifier Using Op Amp](<Electronics/Instrument Amplifier Using Op Amp.md>), 考虑如下设计目标：
 
 <div class='center'>
 

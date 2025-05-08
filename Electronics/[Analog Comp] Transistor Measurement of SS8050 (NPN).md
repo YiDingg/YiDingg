@@ -8,7 +8,7 @@
 
 本文测量了 SS8050 的常见特性曲线，测试结果大致符合理论预测，对认识 BJT 或其他类型晶体管有很大帮助。同时，我们保存了晶体管的实测数据，以便日后进行数据处理，求出 $g_m$, $\beta$, $r_O$ 等小信号参数，为小信号模型提供参考数据，
 
-2025.03.14, 15:50, Beijing. 对 SS8050 进行了特性曲线测试，具体测试原理见 [Transistor Measurement Methods](<Blogs/Electronics/Transistor Measurement Methods.md>), 下面是实验记录：
+2025.03.14, 15:50, Beijing. 对 SS8050 进行了特性曲线测试，具体测试原理见 [Transistor Measurement Methods](<Electronics/Transistor Measurement Methods.md>), 下面是实验记录：
 
 用三个 DC-DC module 分别输出 +12V, -12V 和 +5V (用于电流表供电)；若无特别说明, +12V 作为 VCC 和 VCC_OPA+, -12V 作为 VCC_OPA-
 

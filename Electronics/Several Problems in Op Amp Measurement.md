@@ -5,7 +5,7 @@
 
 ## Intro
 
-先前，我们对运放 NE5532P 作了详细的测试，记录了其包括 V_IO, I_B, A_OP, CMRR, PSRR 等参数的测量过程与结果，实验记录见 [Op Amp Measurement of NE5532P](<Blogs/Electronics/Op Amp Measurement of NE5532P.md>)。但是实验过程中，我们发现了一些问题，当时并没有能找到较合理的解释。因此，在这一篇文章中，我们将对这些问题进行分析与讨论。
+先前，我们对运放 NE5532P 作了详细的测试，记录了其包括 V_IO, I_B, A_OP, CMRR, PSRR 等参数的测量过程与结果，实验记录见 [Op Amp Measurement of NE5532P](<Electronics/Op Amp Measurement of NE5532P.md>)。但是实验过程中，我们发现了一些问题，当时并没有能找到较合理的解释。因此，在这一篇文章中，我们将对这些问题进行分析与讨论。
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-13-22-59-09_Several Problems in Op Amp Measurement.png"/></div>
 
