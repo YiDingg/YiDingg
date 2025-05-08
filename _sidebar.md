@@ -82,6 +82,7 @@
 
     - [**[Pinned] Roadmap for Analog ICer**](<Electronics/Roadmap for Analog ICer.md>)
     - [**[Pinned] Collections of Electronic Websites**](<Electronics/Collection of Electronic Websites.md>)
+    - [Design Procedure of Telescopic Op Amp](<Electronics/[Razavi CMOS] Design Procedure of Telescopic Op Amp.md>)
     - [An Example of Negative FB Amp](<Electronics/An Example of Negative FB Amp.md>)
     - [Constant Current Source using Transistors](<Electronics/Constant Current Source using Transistors.md>)
     - [A Brief View of Negative Feedback](<Electronics/[Razavi CMOS] A Brief View of Negative Feedback.md>)
