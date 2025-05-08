@@ -1,4 +1,4 @@
-# MOSFET's Terminal Resistance
+# [Razavi CMOS] MOSFET's Terminal Resistance
 
 > [!Note|style:callout|label:Infor]
 Initially published at 17:55 on 2025-01-29 in Lincang.

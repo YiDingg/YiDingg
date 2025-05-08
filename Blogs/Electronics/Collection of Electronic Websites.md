@@ -3,7 +3,7 @@
 > [!Note|style:callout|label:Infor]
 Initially published at 00:09 on 2025-04-22 in Beijing.
 
-- [Le Leivre.com](https://www.leleivre.com/) : 提供 RF 的常用在线计算工具，也分享一些 RF design 中的 "rules-of-thumb" and other quick go-to guides ，是非常实用的 RF 网站
+- [Le Leivre.com](https://www.leleivre.com/) : 提供常用 RF 在线计算工具，也分享一些 RF design 中的 "rules-of-thumb" and "other quick go-to guides"，是非常实用的 RF 网站；
 - [Circuit Cellar](https://circuitcellar.com/) : 电子电路设计杂志，提供了大量的电子电路知识讲解、设计实例和应用笔记，例如 [Circuit Cellar > Impedance Matching Fundamentals](https://circuitcellar.com/research-design-hub/basics-of-design/impedance-matching-fundamentals/) 简明易懂地讲解了阻抗匹配的基础知识；
 - [TI: Analog Circuits](https://www.ti.com/design-development/analog-circuits.html) : TI 官方的模拟电路设计网站，收集了大量的模拟电路设计实例和应用笔记；
 - [Learn About Electronics](https://www.learnabout-electronics.org/) : 提供了电子学习的基础和进阶知识，包括 Semiconductors, Amplifiers, Oscillators, Power Supplies 等，最令人惊喜的是几乎所有资料都提供了 PDF 下载，方便读者下载后自行学习；

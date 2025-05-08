@@ -28,61 +28,6 @@ Open-circuit time-constant (OCTC) method is an approximate analytical method to 
 
 The paper focuses on teaching and illustrating OCTC to senior undergraduate students. Two examples are presented to highlight the benefits gained by the approximate analysis technique and the perception of the students on the subject.
 </details>
-<div>
-
-
-
-
-
-<details>
-<summary>AI 全文总结 (DeepSeek, 2025.05.06)</summary>
-
-这篇论文介绍了如何向高年级本科生教授开环时间常数（OCTC）方法，用于电路分析中的带宽估计。以下是论文的核心内容总结：
-
-### 1. **背景与目的**
-- OCTC是一种近似分析方法，用于估计基带电路的3 dB带宽，避免了复杂的传递函数分析。
-- 论文旨在通过教学案例展示OCTC的优势，帮助学生理解电路带宽的限制因素。
-
-### 2. **OCTC方法原理**
-- **核心思想**：通过计算每个电容的开环时间常数 $R_{C_i} C_i$ 之和，估计电路的-3 dB频率（ $f_{-3\mathrm{dB}}$ ）。
-- **假设条件**：存在一个主导极点，且其他极点和零点频率远高于主导极点。
-- **公式**：总时间常数  $T = \sum R_{C_i} C_i$ ，带宽  $f_{-3\mathrm{dB}} \approx \frac{1}{2\pi T}$ 。
-
-### 3. **应用步骤**
-1. 选择电容  $C_i$ ，移除其他电容，短路耦合电容。
-2. 关闭独立电源。
-3. 计算电容  $C_i$  两端的等效电阻  $R_{C_i}$ 。
-4. 重复步骤1-3，计算所有电容的时间常数。
-5. 求和得到总时间常数  $T$ ，并估计带宽。
-
-### 4. **教学案例**
-- **案例1**：共发射极放大器电路。
-  - 学生通过OCTC计算带宽为298.62 kHz，与仿真结果327 kHz接近。
-  - 主要带宽限制来自Miller效应下的  $C_{\mu 1}$ 。
-- **案例2**：共射共基（Cascode）放大器电路。
-  - OCTC估计带宽为1.65 MHz，仿真结果为2.4 MHz，差异较大。
-  - 主要限制来自  $C_{\pi 1}$ ，Miller效应因Cascode结构减弱。
-
-### 5. **学生表现**
-- **案例1**：70%学生正确解答，主要错误为等效电阻计算错误。
-- **案例2**：50%学生正确解答，更多学生因电路复杂性遇到困难。
-- 使用常见等效电路形式（如论文图1）的学生更易成功。
-
-### 6. **结论与建议**
-- OCTC是一种有效的教学工具，帮助学生理解电路带宽的限制因素。
-- 结合理论讲解、仿真验证和课堂练习，能提升学生的分析与设计能力。
-- 近似方法的价值在于快速定位问题，仿真用于最终验证。
-
-### 7. **参考文献**
-- 引用了经典教材和教学资源，如Gray的《模拟集成电路分析与设计》和课程讲义。
-
-### 关键贡献
-- 通过具体案例展示了OCTC的教学应用。
-- 强调了近似方法在电路设计中的实用性，以及理论与仿真的互补性。
-
-这篇论文为工程教育提供了一种高效的教学方法，帮助学生掌握复杂电路分析的简化技巧。
-</details>
-</div>
 
 
 
@@ -235,21 +180,18 @@ $$
 \begin{cases}
 I_{C1} = 0.976023 \ \mathrm{mA} \\
 V_{B1} = 2.956079 \ \mathrm{V} \\
-V_{CB1} = 
+V_{CB1} = 5.1398 \ \mathrm{V}
 \end{cases}
 \Longrightarrow 
 \begin{cases}
 I_{C2} = 4.088394 \ \mathrm{mA} \\
-V_{B2} = 8.095905 \ \mathrm{V}
+V_{B2} = 8.095905 \ \mathrm{V} \\
+V_{CB2} = 3.9041 \ \mathrm{V}
 \end{cases}
 \end{gather}
 $$
 
-
-
-### AC Analysis
-
-由题意，用 two-cap model 对电路进行分析。先计算晶体管的小信号参数：
+有了静态工作点之后，便可以计算晶体管的小信号参数：
 
 $$
 \begin{gather}
@@ -265,7 +207,9 @@ r_{O1} \approx \infty,\quad r_{O2} \approx \infty
 \end{gather}
 $$
 
-然后计算寄生电容容值：
+### AC Analysis
+
+由题意，用 two-cap model 对电路进行分析。计算寄生电容容值：
 
 $$
 \begin{gather}
@@ -332,6 +276,7 @@ $$
  | Frequency $f$ | 0.3436 MHz | 9.0199 MHz | 3.5054 MHz | 32.6496 MHz |
 </div>
 
+### -3dB Frequency
 
 由 OCTC, 可以近似计算出电路的 -3dB 截止频率：
 $$
@@ -350,9 +295,92 @@ $$
 
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-07-16-44-34_Open-Circuit Time Constant Method.png"/></div> -->
 
+### MATLAB Code
+
+本例题的计算借助了 MATLAB 进行，下面是源代码：
+
+``` matlab
+if 1    % Problem conditions
+    V_CC = 12;
+    R_B1 = 30e3;
+    R_B2 = 6e3;
+    R_B3 = 12e3;
+    R_E1 = 2.3e3;
+    R_E2 = 1.8e3;
+    R_L = 1e3;
+    R_C = 4e3;
+    R_S = 1e3;
+    
+    C_jc0 = 8e-12;
+    C_je0 = 25e-12;
+    m = 0.3;
+    V_0C = 0.7;
+    tau_f = 400e-12;
+
+    beta = 200;
+    V_T = 25e-3;
+end
+
+% DC Analysis
+syms V_B1 V_B2 V_E1 V_E2 I_C
+
+eq = [
+(V_CC - V_B1)/(R_B1 + R_B2) - I_C/beta == V_B1 / R_B3
+(1 + 1/beta)*I_C*R_E1 == V_B1 - 0.7
+]
+[V_B1, I_C1] = solve(eq, [V_B1, I_C]);
+V_B1 = double(V_B1)
+I_C1 = double(I_C1)
+
+V_B2 = 12 - R_C*I_C1
+I_C2 = (V_B2 - 0.7)/R_E2 / (1 + 1/beta)
+
+V_CB1 = V_B2 - V_B1
+V_CB2 = 12 - V_B2
+
+% AC Analysis
+
+% Small signal quantities
+g_m1 = I_C1/V_T
+g_m2 = I_C2/V_T
+r_pi1 = beta/g_m1
+r_pi2 = beta/g_m2
+
+C_mu1 = C_jc0 / ( 1 + V_CB1/V_0C )^m*10^12  % unit: pF 
+C_mu2 = C_jc0 / ( 1 + V_CB2/V_0C )^m*10^12  % unit: pF 
+C_pi1 = ( g_m1*tau_f + 2*C_je0 )*10^12  % unit: pF 
+C_pi2 = ( g_m2*tau_f + 2*C_je0 )*10^12  % unit: pF 
+
+% resistance calculation
+R_base1 = r_pi1;
+R_base2 = r_pi2 + (beta + 1) * MyParallel(R_E2, R_L)
+R_A = MyParallel_n([R_S, R_B2, R_B3, R_base1]);   % 注意要并联 r_pi1
+R_B = MyParallel(R_C, R_base2);
+R_C_mu1 = R_A + R_B + g_m1*R_A*R_B
+R_C_mu2 = MyParallel(R_C, R_base2)
+R_C_pi1 = MyParallel_n([R_S, R_B2, R_B3, R_base1])
+%R_C_pi2 = MyParallel(R_C + MyParallel(R_E2, R_L), r_pi2)
+tv = 1 + (g_m2 - 1/R_C)*MyParallel_n([R_C, R_L, R_E2]);
+R_C_pi2 = MyParallel(R_C/tv, r_pi2)
+
+C = [C_mu1, C_mu2, C_pi1, C_pi2]';
+
+R = [R_C_mu1, R_C_mu2, R_C_pi1, R_C_pi2]';
+tau = R.*C/10^(12) * 10^9;
+omega = 1./(tau/10^9) / 10^6;
+f = omega/(2*pi);
+num2str(C, '%.4f')
+num2str(R, '%.4f')
+
+disp(' ')
+disp(num2str([R, C, tau, omega, f]', '%.4f'))
+
+MyParallel_n(f')*1000
+```
+
 ## Excise 2
 
-下面是第二个例题：
+第一个例题是 CE + CC 结构，由于 CE 中 Miller effect 对 $C_{\mu}$ 的放大作用，放大器截止频率较低。在第二个例题中，我们将 CS 换为了 Cascode 结构 (共射共基)，使得电路截止频率明显提高。下面是电路图：
 
 <!-- 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-07-01-05-55_Open-Circuit Time Constant Method.png"/></div>
@@ -360,14 +388,127 @@ $$
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-07-01-06-38_Open-Circuit Time Constant Method.png"/></div>
 
-## MATLAB Code
+### DC Analysis
 
-例题的计算借助了 MATLAB 进行，下面是源代码：
+计算静态工作点：
 
-``` matlab
-xx
-```
+$$
+\begin{gather}
+\begin{cases}
+I_{R_{B3}} = \frac{1}{R_{B3}}\left[\left(1 + \frac{1}{\beta}\right)^2 I_{C3} R_{E1} + 0.7 \ \mathrm{V}  \right]
+\\
+12 \ \mathrm{V} = I_{R_{B3}} (R_{B1} + R_{B2} + R_{B3}) + \left(\frac{\beta + 1}{\beta^2} I_{C3} + \frac{1}{\beta} I_{C3}\right)R_{B1} + \frac{\beta + 1}{\beta^2} I_{C3}R_{B2}
+\end{cases}
+\\
+\Longrightarrow
+\begin{cases}
+I_{R_{B3}} = 0.2434 \ \mathrm{mA}
+\\
+I_{C3} = 0.9560 \ \mathrm{mA}
+\end{cases}
+\\
+\begin{cases}
+I_{C1} = \left(1 + \frac{1}{\beta}\right)I_{C3} = 0.9608 \ \mathrm{mA}\\
+V_{CB1} = \left(I_1 + \frac{\beta + 1}{\beta^2}I_{C3}\right)R_{B2} - 0.7 \ \mathrm{V} = 0.7893 \ \mathrm{V}
+\end{cases}
+,\quad 
+\begin{cases}
+I_{C2} = 4.1326 \ \mathrm{mA}\\
+V_{CB2} = 3.8241 \ \mathrm{V}
+\end{cases}
+,\quad 
+\begin{cases}
+I_{C3} = 0.9560 \ \mathrm{mA}\\
+V_{CB3} = 3.7657 \ \mathrm{V}
+\end{cases}
+\end{gather}
+$$
 
+计算晶体管的小信号参数：
+
+$$
+\begin{gather}
+\begin{cases}
+g_{m1} = 0.0384\ \mathrm{S}\\
+r_{\pi 1} = 5.2039\ \mathrm{k}\Omega
+\end{cases}
+,\quad 
+\begin{cases}
+g_{m2} = 0.1653\ \mathrm{S}\\
+r_{\pi 2} = 1.2099\ \mathrm{k}\Omega
+\end{cases}
+,\quad 
+\begin{cases}
+g_{m3} = 0.0382\ \mathrm{S}\\
+r_{\pi 3} = 5.2300\ \mathrm{k}\Omega
+\end{cases}
+\end{gather}
+$$
+
+
+### AC Analysis
+
+
+计算寄生电容容值：
+
+$$
+\begin{gather}
+\begin{cases}
+C_{\mu 1} = 6.3786 \ \mathrm{pF} \\
+C_{\mu 2} = 4.5705 \ \mathrm{pF} \\
+C_{\mu 3} = 4.5883 \ \mathrm{pF}
+\end{cases}
+,\quad 
+\begin{cases}
+C_{\pi 1} =  65.3730 \ \mathrm{pF} \\
+C_{\pi 2} =  116.1217 \ \mathrm{pF} \\
+C_{\pi 3} =  65.2956\ \mathrm{pF}
+\end{cases}
+\end{gather}
+$$
+
+在计算各电容的等效电阻之前，我们先计算几个稍后会用到的电阻值：
+
+$$
+\begin{align}
+\begin{aligned}
+R_{base 1} &= r_{\pi 1} &= 5.2039 \ \mathrm{k}\Omega
+\\
+R_{base 2} &= r_{\pi 2} + (\beta + 1)(R_{E2} \parallel R_L) &= 1.3042 \ \mathrm{k}\Omega
+\\
+R_{emit 3} &= \frac{r_{\pi 3}}{\beta + 1} &= 26.0197 \ \Omega
+\\
+R_A &= R_S \parallel R_{B2} \parallel R_{B3} \parallel R_{base 1} &= 693.4034 \ \Omega
+\end{aligned}
+\end{align}
+$$
+
+$$
+\begin{align}
+\begin{aligned}
+R_{C_{\mu 1}} &= R_A + R_{emit3} + g_{m1}R_A R_{emit3} &= 1.4128 \ \mathrm{k}\Omega \\
+R_{C_{\mu 2}} &= R_C \parallel R_{base2} &= 3.8810 \ \mathrm{k}\Omega \\
+R_{C_{\mu 3}} &= R_C \parallel R_{base2} &= 3.8810 \ \mathrm{k}\Omega \\
+R_{C_{\pi 1}} &= R_A &= 693.4034 \ \Omega \\
+R_{C_{\pi 2}} &= r_{\pi 2} \parallel \frac{R_C}{1 + \left(g_{m2} - \frac{1}{R_C}\right)(R_C \parallel R_L \parallel R_{E2})} &= 41.7882 \ \Omega \\
+R_{C_{\pi 3}} &= R_{emit3} &= 26.0197 \ \Omega \\
+\end{aligned}
+\end{align}
+$$
+
+### -3dB Frequency
+
+这样，我们可以算出各个电容对应的时间常数，并由此估计 -3dB 带宽：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-07-21-33-28_Open-Circuit Time Constant Method.png"/></div>
+
+$$
+\begin{gather}
+f_{\mathrm{-3dB}}^{\mathrm{OCTC}} = f_1 \parallel \cdots \parallel f_6 = 1.6503 \ \mathrm{MHz}
+\end{gather}
+$$
+
+论文中指出, LTspice 仿真所得结果为 $f_{\mathrm{-3dB}}^{\mathrm{LTspice}} = 2.4 \ \mathrm{MHz}$，两者差距比较大，这是因为系统的两个高频极点比较接近, OCTC 的近似效果一般。
 
 ## Summary
 
