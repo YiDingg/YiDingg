@@ -1,5 +1,9 @@
 # WaveForms Insight
 
+> [!Note|style:callout|label:Infor]
+> Initially published at 14:59 on 2025-05-09 in Beijing.
+
+
 ## 
 
 ## Impedance

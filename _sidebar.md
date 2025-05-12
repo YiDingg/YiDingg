@@ -82,7 +82,8 @@
 
     - [**[Pinned] Roadmap for Analog ICer**](<Electronics/Roadmap for Analog ICer.md>)
     - [**[Pinned] Collections of Electronic Websites**](<Electronics/Collection of Electronic Websites.md>)
-    - [Design Procedure of Telescopic Op Amp](<Electronics/[Razavi CMOS] Design Procedure of Telescopic Op Amp.md>)
+    - [Digilent WaveForms](<Electronics/WaveForms Insight.md>)
+    - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)
     - [An Example of Negative FB Amp](<Electronics/An Example of Negative FB Amp.md>)
     - [Constant Current Source using Transistors](<Electronics/Constant Current Source using Transistors.md>)
     - [A Brief View of Negative Feedback](<Electronics/[Razavi CMOS] A Brief View of Negative Feedback.md>)
@@ -103,7 +104,7 @@
     - [Cascode Differential Amplifier](<Electronics/Cascode Differential Amplifier.md>)
     - [Definitions of SPICE Model Parameters](<Electronics/The Definitions of SPICE Model Parameters.md>)
     - [Basic Differential Circuit Simulation Report](<Electronics/Differential Circuit Simulation Report.md>)
-    - [主流锂电池充放一体芯片选型对比](<Electronics/主流锂电池充放一体芯片选型对比.md>)
+    - [主流锂电池充放一体芯片选型对比](<Electronics/主流锂电池充放一体芯片选型对比.md>)<!--  -->
     - [The Five-Transistor OTA](<Electronics/The Five-Transistor OTA.md>)<!--  -->
     - [How to Design a PCB Light Painting](<Electronics/How to Design a PCB Light Painting.md>)
     - [PCB 走线的温升与压降数据](<Electronics/PCB 走线的温升与压降数据.md>)<!--  -->
@@ -163,7 +164,7 @@
 - ⚒️ **Electronic Designs**
 
     - [**[Pinned] DC-DC Converter Modules**](<ElectronicDesigns/DC-DC Converter Modules.md>)
-    - [Basic Two-Stage Op Amp using Discrete MOSFETs](<ElectronicDesigns/Basic Two-Stage Op Amp using Discrete MOSFETs.md>)
+    - [Basic Two-Stage Op Amp using Discrete MOSFETs](<ElectronicDesigns/Basic CMOS Op Amp using Discrete MOSFETs.md>)
     - [μA741 using Discrete BJTs (SOT-23)](<ElectronicDesigns/μA741 using Discrete BJTs (SOT-23).md>)
     - [Basic Op Amp Measurement Board v2](<ElectronicDesigns/Basic Op Amp Measurement Board v2.md>)
     - [PCB Light Painting](<ElectronicDesigns/PCB Light Painting.md>)

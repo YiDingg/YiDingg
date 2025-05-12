@@ -293,6 +293,11 @@ $$
 
 <div class="center"><img width=400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-07-16-45-00_Open-Circuit Time Constant Method.png"/></div>
 
+我们已向论文作者 Nikolaos Voudoukis 提出反馈，并且得到了对方的回复：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-09-23-44-26_Open-Circuit Time Constant Method.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-09-23-44-52_Open-Circuit Time Constant Method.png"/></div>
+
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-07-16-44-34_Open-Circuit Time Constant Method.png"/></div> -->
 
 ### MATLAB Code

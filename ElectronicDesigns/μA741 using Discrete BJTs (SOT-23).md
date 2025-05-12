@@ -8,7 +8,7 @@
 - Time: 2025.04.30 00.12
 - Notes: 用分立贴片三极管实现运算放大器 μA741
 - Details: 三极管封装为 SOT-23, NPN 全部使用 MMBT3904, PNP 全部使用 MMBT3906
-- Relevant Resources: , 原理图参考了 [立创开源广场：全分立 μA741](https://oshwhub.com/eda_xrjwnnux/quan-fen-li-a741) 
+- Relevant Resources: https://www.123684.com/s/0y0pTd-E8Uj3, 原理图参考了 [立创开源广场：全分立 μA741](https://oshwhub.com/eda_xrjwnnux/quan-fen-li-a741) 
 
 
 <div class='center'>
@@ -23,3 +23,7 @@
 </div>
 
 ## LTspice Simulation
+
+## PCB Verification
+
+详见 [Basic CMOS Op Amp using Discrete MOSFETs](<ElectronicDesigns/Basic CMOS Op Amp using Discrete MOSFETs.md>) 的 PCB 验证部分。
