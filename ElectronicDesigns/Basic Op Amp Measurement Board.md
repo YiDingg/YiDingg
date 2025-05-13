@@ -73,9 +73,9 @@ Initially published at 20:03 on 2025-02-12 in Lincang.
 
 <div class='center'>
 
-| Switch | SW1 | SW2 | IN1+ | IN2+ | SW6 | DUTVCC | WP |
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
- | **Initial state** | `0R` | `0R` | `TP2` | `TP1` | `0 10K` | `WP+-` | `W` or `P` |
+| Switch | SW1 | SW2 | SW3 | IN1+ | IN2+ | SW6 | DUTVCC | WP |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+ | **Initial state** | `0R` | `0R` | `0 OFF` | `TP2` | `TP1` | `0 10K` | `WP+-` | `W` or `P` |
 
 </div>
 

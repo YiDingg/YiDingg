@@ -156,6 +156,9 @@ Voltage headroom under buffer configuration:
 
 ## 2025-05-06 PCB.1
 
+### Compensation Test
+
+
 - [Gerber_CMOS_+_uA741_(捷配打板用, 铺铜) 2025-05-06.zip](https://www.writebug.com/static/uploads/2025/5/12/79051f990f464928e3e20b6d65441796.zip)
 
 
@@ -175,7 +178,7 @@ Voltage headroom under buffer configuration:
 |:-:|:-:|:-:|:-:|
  | $C_c = 0.1 \ \mathrm{nF}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-20-46-48_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-20-44-52_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-20-43-08_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> |
  | $C_c = 1 \ \mathrm{nF}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-20-48-33_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-20-49-26_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-20-51-18_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> |
- | $C_c = 1 \ \mathrm{nF}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-21-18-36_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-21-17-21_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-21-18-00_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> |
+ | $C_c = 10 \ \mathrm{nF}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-21-18-36_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-21-17-21_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-21-18-00_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> |
 </div>
 
 <!-- <div class='center'>
@@ -201,6 +204,30 @@ Voltage headroom under buffer configuration:
 | uA741 | zero input | sine input 1 | sine input 2 |
 |:-:|:-:|:-:|:-:|
  | $C_c = 47 \ \mathrm{pF}$ (MLCC) | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-22-07-49_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-22-08-58_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-22-09-37_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> |
+</div>
+
+### Current Test
+
+在下面的测试中，我们默认 op amp 配置为 unit buffer 模式，$V_{CC} = \pm 12 \ \mathrm{V}$ 且 $C_c = 1\ \mathrm{nF\ (MLCC)},\ R_L = \infty$ (空载)。改变电流镜参考电流 $I_{REF}$, 得到不同电流下的输出性能。
+
+注意，由于我们在这里使用了 MLCC 电容，存在明显的偏压效应，因此实际补偿容值可能只有 400 pF ~ 700 pF.
+
+<div class='center'>
+
+| op amp 1 (CS) | zero input | sine input 1 | sine input 2 |
+|:-:|:-:|:-:|:-:|
+ | $R = 3.49 \ \mathrm{k\Omega},\ V_R = 1.276 \ \mathrm{V}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-24-05_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-25-45_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-26-27_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> |
+ | $R = 2.52\ \mathrm{k\Omega},\ V_R = 1.229\ \mathrm{V}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-30-26_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-31-03_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-31-36_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> |
+ | $R = 0.95\ \mathrm{k\Omega},\ V_R = 1.180\ \mathrm{V}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-35-43_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-36-12_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-36-42_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> |
+</div>
+
+
+<div class='center'>
+
+| op amp 2 (PP) | zero input | sine input 1 | sine input 2 |
+|:-:|:-:|:-:|:-:|
+ | $R = 2.77 \ \mathrm{k\Omega},\ V_R = 1.192 \ \mathrm{V}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-11-40_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-11-05_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-12-22_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> |
+ | $R = 0.97 \ \mathrm{k\Omega},\ V_{R} = 0.986 \ \mathrm{V}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-18-58_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-18-20_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-17-32_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> |
 </div>
 
 

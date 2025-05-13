@@ -33,7 +33,49 @@ Initially published at 23:43 on 2025-04-22 in Beijing.
 
 <div class='center'>
 
-| Demo (Top view) | Demo (Bottom view) | 
-|:-:|:-:|
- |  |  |
+| Demo (top view) | 
+|:-:|
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-15-57-32_Basic Op Amp Measurement Board v2.png"/></div> |
 </div>
+
+## Measurement Steps
+
+- Reset all the switches;
+- Connect the DUT (device under test) and AUX (auxiliary op amp);
+- Connect power supply to the DUT and AUX;
+- Connect [AD1](https://digilent.com/reference/test-and-measurement/analog-discovery/start).
+
+<div class='center'>
+
+| Switch | SW1 | SW2 | SW3 | IN1+ (CH1) | IN2+ (CH2) | SW6 | WP | DUTVCC |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+ | **Initial state** | `0R` | `0R` | `0 OFF` | `TP1` | `TP2` | `0 10K` | `W12` | `WP+-` or `AUX+-`  |
+
+</div>
+
+Note that if `DUTVCC` is connected to `WP+-`, the DUT is powered by the isolated supply, which is connected at the pin header of DUT. By contrast, if `DUTVCC` is connected to `AUX+-`, then DUT and AUX share the same power supply, i.e., the supply at the pin header of AUX.
+
+Then, we can start the measurement:
+
+<div class='center'> <span style='color:red'>
+
+**Assuming we reset all switches before measuring each parameter.**
+</span></div>
+
+<!-- <div class="center"><img width=400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-16-00-37-00_Basic Op Amp Measurement Board.png"/></div>
+ -->
+<div class='center'>
+
+| Num | Parameter | Steps | Formula |
+|:-:|:-:|:-:|:-:|
+ | 1 | $V_{IO}$ |record $V_{TP1}$ | $V_{IO} = \frac{V_{TP1}}{1001}$  | 
+ | 2 | $I_{B\pm}$ |S2 `0R`, S1 from `0R` to `R7`, write $(\Delta V_{TP1})_{1}$ <br> S1 `0R`, S2 from `0R` to `R6`, write $(\Delta V_{TP1})_{2}$ | $I_{B-} = - \frac{(\Delta V_{TP1})_1}{1001\,R7}$ <br> $I_{B+} = +\frac{(\Delta V_{TP1})_2}{1001\,R6}$ | - |
+ | 3 | DC Gain | S6 from `0 10K` to `1 +1V`, write $\Delta V_{TP2}$ and $\Delta V_{TP1}$ | $A_{OL} = \frac{1001\, \Delta V_{TP2}}{\Delta V_{TP1}}$  | - |
+ | 4 | AC Gain | S4 to `R9`, 'AD1 Impedance' inputs ac signal (500Hz ~ 5MHz), measure $v_{TH2}$ | $A_{OL} = \left(1 + \frac{R_9}{R_1}\right)\cdot \frac{v_{TP2, amp}}{v_{IN, amp}}$ |  |  |
+ | 5 | DC CMRR |W1 and W2 from ±4V to +5V and -3V, write $\Delta V_{TP1}$ | $\mathrm{CMRR} = \frac{1001\, \Delta V_{CM}}{\Delta V_{TP1}}$ |
+ | 6 | DC PSRR |W1 and W2 from ±4V to ±12V (or ±5V), write $\Delta V_{TP1}$ | $\mathrm{PSRR} = \frac{1001\, \Delta V_{PS,total}}{\Delta V_{TP1}}$ |
+ | 7 | AC CMRR | <span style='color:red'> S3 to 1</span>, configure W1 to sine wave (1V amplitude, +4V offset), W2 to sine wave (1V amplitude, -4V offset), ${\color{red}{\Delta \varphi = 0}}$ and measure $v_{TP1, amp}$ | $\mathrm{CMRR} = \frac{1001\, v_{W1, amp}}{v_{TP1,amp}}$ |
+ | 8 | AC PSRR |<span style='color:red'> S3 to 1</span>, configure W1 to sine wave (1V amplitude, +4V offset), W2 to sine wave (1V amplitude, -4V offset), ${\color{red}{\Delta \varphi = \pi}}$ and measure $v_{TP1, amp}$ | $\mathrm{CMRR} = \frac{2002\, v_{W1, amp}}{v_{TP1,amp}}$ |
+
+</div>
+

@@ -47,3 +47,24 @@ NEN (NPN, Darlington pair):
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-15-18-59-19_Compound BJT (Sziklai and Darlington).png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-15-18-43-01_Compound BJT (Sziklai and Darlington).png"/></div>
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-15-18-32-44_Compound BJT (Sziklai and Darlington).png"/></div> -->
+
+2025.05.14 01:03 重新计算 Darlington 的 $r_{O,eq}$, 结果如下：
+
+$$
+\begin{gather}
+r_{O,eq} = -\frac{r_{\textrm{O2}} \,{\left(r_{\textrm{O1}} -r_{\textrm{pi2}} +g_{\textrm{m1}} \,r_{\textrm{O1}} \,r_{\textrm{pi2}} \right)}}{r_{\textrm{O2}} -r_{\textrm{O1}} +r_{\textrm{pi2}} -g_{\textrm{m1}} \,r_{\textrm{O1}} \,r_{\textrm{pi2}} +g_{\textrm{m2}} \,r_{\textrm{O2}} \,r_{\textrm{pi2}} } \approx r_{O2} + \frac{g_{m1}r_{O1}}{g_{m2}} \approx 2 r_{O2}
+\end{gather}
+$$
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-01-04-13_Compound BJT (Sziklai and Darlington).png"/></div>
+
+``` matlab
+syms v_y v_x r_O1 r_O2 r_pi2 i_x g_m1 g_m2
+eq1 = (v_y - v_x) / r_O1 - g_m1*v_y == v_y/r_pi2
+eq2 = i_x == v_y/r_pi2 + g_m2*v_y + v_x/r_O2
+re_v_y = solve(eq1, v_y)
+eq2 = subs(eq2, v_y, re_v_y);
+re_i_x = solve(eq2, i_x);
+r_O_eq = simplify(re_i_x/v_x)^(-1);
+simplify(r_O_eq)
+```
