@@ -1,7 +1,7 @@
-# Miller Effect of Common-Emitter Stage
+# An Example of Miller Effect of Common-Emitter Stage
 
 > [!Note|style:callout|label:Infor]
-Initially published at 23:13 on 2025-03-23 in Beijing.
+Initially published at 23:13 on 2025-04-29 in Beijing.
 
 ## Intro 
 

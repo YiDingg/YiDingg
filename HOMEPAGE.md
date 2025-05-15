@@ -45,6 +45,7 @@ Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeature
 -   Link: use [C1N](https://www.c1n.cn/administrators.html)<span class='tinyscript'> or [Short](https://d.igdu.xyz/)</span> to create a short link for your file, and use [SINA](https://www.sina.lt/restore.html) to restore the short link.
 -   Git to video: use [Screen to GIF]() to convert video into gif if you need.
 -   Title: use [Capitalize](https://capitalizemytitle.com/style/APA/) <span class='tinyscript'>or [Wawa](https://www.iamwawa.cn/daxiaoxie.html)</span> to capitalize your titles, and use [Rewriter](https://capitalizemytitle.com/ai-title-rewriter/) to rewrite your title.
+- Questionnaire survey (问卷调查): [aidaform](https://aidaform.com/)
 
 ### Graphics
 

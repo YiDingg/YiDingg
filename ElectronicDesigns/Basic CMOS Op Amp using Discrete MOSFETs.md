@@ -1,4 +1,4 @@
-# Basic Two-Stage Op Amp using Discrete MOSFETs
+# Basic CMOS Op Amp using Discrete MOSFETs
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 16:15 on 2025-05-06 in Beijing.

@@ -82,6 +82,7 @@
 
     - [**[Pinned] Roadmap for Analog ICer**](<Electronics/Roadmap for Analog ICer.md>)
     - [**[Pinned] Collections of Electronic Websites**](<Electronics/Collection of Electronic Websites.md>)
+    - [Detailed Explanation of uA741](<Electronics/Detailed Explanation of uA741.md>)
     - [Digilent WaveForms](<Electronics/WaveForms Insight.md>)
     - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)
     - [An Example of Negative FB Amp](<Electronics/An Example of Negative FB Amp.md>)

@@ -40,9 +40,9 @@ The Five-Transistor OTA (Operational Transconductance Amplifier), 是一种差�
 
 $$
 \begin{gather}
-V_{out} \in \left[ V_{in,CM} + V_{TH},\ \ V_{DD} \right]
+V_{out} \in \left( V_{in,CM} - V_{TH},\ \ V_{DD} - V_{OV4} \right)
 \\
-V_{in, CM} \in \left[ V_{OV}(I_{SS}) + V_{GS}(\frac{1}{2}I_{SS}),\ \ V_{DD} - V_{OV}(\frac{1}{2}I_{SS}) \right]
+V_{in,CM} \in \left( V_{I_{SS}} + V_{OV1},\ V_{DD} - V_{GS3} + V_{TH1} \right)
 \end{gather}
 $$
 
