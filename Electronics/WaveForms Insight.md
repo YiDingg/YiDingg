@@ -62,5 +62,6 @@ Condition 3: W1-C1P-DUT-C1N-C2-R-GND
 
 V_1 = V_DUT = VRMS*sqrt(2)
 V_2 = IRMS*Resistor*sqrt(2)
+phase = phase_Vout - phase_Vin = angle
 ```
 

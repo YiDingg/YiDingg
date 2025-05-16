@@ -199,12 +199,6 @@ Voltage headroom under buffer configuration:
 </div>
 
 
-<div class='center'>
-
-| uA741 | zero input | sine input 1 | sine input 2 |
-|:-:|:-:|:-:|:-:|
- | $C_c = 47 \ \mathrm{pF}$ (MLCC) | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-22-07-49_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-22-08-58_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-22-09-37_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div> |
-</div>
 
 ### Current Test
 

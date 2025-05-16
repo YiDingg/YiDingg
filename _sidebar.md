@@ -82,6 +82,9 @@
 
     - [**[Pinned] Roadmap for Analog ICer**](<Electronics/Roadmap for Analog ICer.md>)
     - [**[Pinned] Collections of Electronic Websites**](<Electronics/Collection of Electronic Websites.md>)
+    - [Op Amp Measurement of LM412CN](<Electronics/Op Amp Measurement of LM412CN.md>)
+    - [Op Amp Measurement of Discrete uA741](<Electronics/Op Amp Measurement of Discrete uA741.md>)
+    - [Modeling the Non-Idealities of Op Amp](<Electronics/Modeling the Non-Idealities of Op Amp.md>)
     - [Detailed Explanation of uA741](<Electronics/Detailed Explanation of uA741.md>)
     - [Digilent WaveForms](<Electronics/WaveForms Insight.md>)
     - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)

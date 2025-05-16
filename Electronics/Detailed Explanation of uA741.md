@@ -268,7 +268,18 @@ B. A. Wooley and D. O. Pederson, "A computer-aided evaluation of the 741 amplifi
 
 ## PCB Verification
 
-我们设计的 PCB 版图在 [Electronic Designs > μA741 using Discrete BJTs (SOT-23)](<ElectronicDesigns/μA741 using Discrete BJTs (SOT-23).md>)，供读者参考。
+Demo 板实物图如下：
+
+<div class='center'>
+
+| Demo (top view) | Demo (bottom view) |
+|:-:|:-:|
+ |  |  |
+</div>
+
+PCB 版图可以到链接 [Electronic Designs > μA741 using Discrete BJTs (SOT-23)](<ElectronicDesigns/μA741 using Discrete BJTs (SOT-23).md>) 进行下载，供读者参考。
+
+
 
 ## Original Lab Report
 

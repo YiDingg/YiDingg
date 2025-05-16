@@ -160,6 +160,18 @@ $$
 
 例如分析 MOS 电容 $C_{GD}$ 的等效阻抗时，便可以直接利用上面的结论。
 
+另外一个常用的结论是从 GS 端看入的阻抗，结论为：
+
+$$
+\begin{gather}
+R_{GS} = \frac{R_G + R_S \parallel r_O}{1 + g_m (R_S \parallel r_O)}
+\end{gather}
+$$
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-16-00-17-55_Open-Circuit Time Constant Method.png"/></div>
+（图片来自知乎“模集王小桃”）
+
+
 ## Excise 1
 
 论文中给出了两个例题，我们现在就来完成它们，并给出详细的计算过程。下面是第一个例题：
