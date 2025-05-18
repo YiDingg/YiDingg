@@ -29,7 +29,7 @@ Self-designed apparatus for measurement:
 - <s> [General VCVS and VCCS (up to 5A)](<ElectronicDesigns/General VCVS and VCCS (up to 10 A).md>) </s>
 
 
-
+ 
 ## Op Amp Measurements
 
 - [Op Amp Measurement of LM412CN](<Electronics/Op Amp Measurement of LM412CN.md>)
