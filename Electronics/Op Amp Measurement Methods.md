@@ -15,6 +15,8 @@ Notes:
 - If the DUT’s input offset can exceed 10 mV, the 99.9-kΩ resistor, R3, will need to be reduced.
 - The supply voltages, +V and –V, of the DUT are of equal magnitude and opposite sign. For single supply op amps, the system ground reference is the midpoint of the supply.
 
+运放测量的实验结果都汇总在了 [The Collection of My Measurement Experiments](<Electronics/The Collection of My Measurement Experiments.md>).
+
 ## V_IO (Offset Voltage)
 
 An ideal op amp has zero offset voltage ($V_{IO}$), i.e., if both inputs are joined together and held at a voltage midway between the supplies, the output voltage should also be midway between the supplies.

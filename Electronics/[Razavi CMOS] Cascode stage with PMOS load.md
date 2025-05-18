@@ -35,9 +35,10 @@ $$
 
 
 由于中间 $V_{out}$ 接地，可以将其分为两部分来看。对于上半部分，我们先假设 $V_{Y} \ne 0$，对节点 Y 列 KCL 有：
+
 $$
 \begin{gather}
-- \frac{V_Y}{r_{O3} \parallel r_{O4}} = (g_{m3} + g_{mb3}) V_Y
+-\frac{V_Y}{r_{O3} \parallel r_{O4}} = (g_{m3} + g_{mb3}) V_Y
 \\
 \left( g_{m3} + g_{mb3} + r_{O3} \parallel r_{O4}\right) \cdot V_Y = 0
 \\

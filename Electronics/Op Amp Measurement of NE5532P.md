@@ -11,14 +11,15 @@
 
 ## 实验记录
 
+测量实验汇总: [The Collection of My Measurement Experiments](<Electronics/The Collection of My Measurement Experiments.md>).
+
 - Time: 2025.04.13 
 - Location: Beijing
 - Auxiliary device (辅助运放): NE5532P (absolute max supply range: ±22V or 44V)
 - Device under test (待测运放): NE5532P (absolute max supply range: ±22V or 44V)
 - Measurement board (测试板): [Basic Op Amp Measurement Board](<ElectronicDesigns/Basic Op Amp Measurement Board.md>)
-- 依次测量: V_IO, I_B; DC gain, DC CMRR, DC PSRR; AC gain, AC CMRR, AC PSRR
-- AUX: 始终由直流电源供电 (±12V)
-- DUT: 除了测试 AC CMRR 和 AC PSRR 时, DUT 的供电由信号发生器提供 (不超过 [-5V, +5V]), 其它参数测试时, DUT 均由直流电源供电 (±12V, 与 AUX 供电相同)。
+- Test conditions of AUX: 始终由直流电源供电 (±12V)
+- Test conditions of DUT: 除了测试 AC CMRR 和 AC PSRR 时, DUT 的供电由信号发生器提供 (不超过 [-5V, +5V]), 其它参数测试时, DUT 均由直流电源供电 (±12V, 与 AUX 供电相同)。
 
 
 <div class='center'>

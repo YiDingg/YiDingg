@@ -39,3 +39,5 @@
 |:-:|:-:|
  | <div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-13-02-33-28_Transistor Tester for ADx.png"/></div> | <div class="center"><img height = 250px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-13-02-33-46_Transistor Tester for ADx.png"/></div> |
 </div>
+
+晶体管的相关测试结果都汇总在了 [The Collection of My Measurement Experiments](<Electronics/The Collection of My Measurement Experiments.md>).

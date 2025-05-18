@@ -12,7 +12,7 @@
     - 自带（不同量程的）三通道电流采样，满足不同功率大小的测试需求
     - 可用于测试 TO-220, TO-263, SOT-23, TO-92, SOP-8 等常见封装
     - 测试 BJT 时，建议搭配 [Precision VCCS](<ElectronicDesigns/Precision Voltage-Controlled Current Source.md>) 使用（用于输入确定电流）
-- Interactive BOM:
+    - 晶体管的测试结果都汇总在了 [The Collection of My Measurement Experiments](<Electronics/The Collection of My Measurement Experiments.md>)
 - Relevant Resources:
 
 

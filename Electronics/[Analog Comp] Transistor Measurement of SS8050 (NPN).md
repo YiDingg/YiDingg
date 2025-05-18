@@ -6,6 +6,8 @@
 
 ## SS8050 实验记录
 
+测量实验汇总: [The Collection of My Measurement Experiments](<Electronics/The Collection of My Measurement Experiments.md>).
+
 本文测量了 SS8050 的常见特性曲线，测试结果大致符合理论预测，对认识 BJT 或其他类型晶体管有很大帮助。同时，我们保存了晶体管的实测数据，以便日后进行数据处理，求出 $g_m$, $\beta$, $r_O$ 等小信号参数，为小信号模型提供参考数据，
 
 2025.03.14, 15:50, Beijing. 对 SS8050 进行了特性曲线测试，具体测试原理见 [Transistor Measurement Methods](<Electronics/Transistor Measurement Methods.md>), 下面是实验记录：

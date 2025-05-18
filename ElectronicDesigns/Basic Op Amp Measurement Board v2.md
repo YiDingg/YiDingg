@@ -9,6 +9,7 @@ Initially published at 23:43 on 2025-04-22 in Beijing.
 
 - Time: 2025.04.22
 - Notes: 可以直接测量运放输入失调电压 $V_{IO}$、正负输入偏置电流 $I_{B\pm}$、 DC/AC 开环增益 $A_{OL}$、 DC/AC CMRR 、 DC/AC PSRR 共 8 种运放基本参数 (DC/AC 算两种)
+- Details: 全部测试结果都汇总在 [The Collection of My Measurement Experiments](<Electronics/The Collection of My Measurement Experiments.md>)
 - Relevant Resources: 测量原理 [Blog > *Op Amp Measurement Methods*](<Electronics/Op Amp Measurement Methods.md>)，相关资料在 [https://www.123684.com/s/0y0pTd-HsUj3](https://www.123684.com/s/0y0pTd-HsUj3)
 
 

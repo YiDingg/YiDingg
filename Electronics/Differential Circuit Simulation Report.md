@@ -202,6 +202,7 @@ However, in the differential circuit below, we can directly add the ac input sig
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-26-02-05-51_Differential Circuit Simulation Report.png"/></div>
 
 The simulation results give that:
+
 $$
 \begin{gather}
 A_{DM} = 44.7787 \ \mathrm{dB}
@@ -257,6 +258,7 @@ Then we obtain:
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-26-17-27-45_Differential Circuit Simulation Report.png"/></div>
 
 and the mean value of simulated $R_{out}$ is:
+
 $$
 \begin{gather}
 R_{out,simu} = 9.3294 \ \mathrm{k\Omega},\quad R_{out,theo} = 9.2745\ \mathrm{k\Omega},\quad 

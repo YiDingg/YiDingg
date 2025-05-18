@@ -6,6 +6,8 @@
 
 ## 实验记录
 
+测量实验汇总: [The Collection of My Measurement Experiments](<Electronics/The Collection of My Measurement Experiments.md>).
+
 - Time: 2025.04.13 
 - Location: Beijing
 - Auxiliary device (辅助运放): NE5532DR (absolute max supply range: ±22V or 44V)
