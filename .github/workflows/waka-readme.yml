@@ -16,7 +16,7 @@ jobs:
                   GH_TOKEN: ${{ secrets.GH_TOKEN }}
                   ### content
                   SHOW_LINES_OF_CODE: "True"
-                  SHOW_PROFILE_VIEWS: "False"
+                  SHOW_PROFILE_VIEWS: "True"
                   SHOW_SHORT_INFO: "False"
                   SYMBOL_VERSION: "1"
                   SHOW_LOC_CHART: "False"
@@ -29,6 +29,6 @@ jobs:
                   SHOW_LANGUAGE: "True"
                   SHOW_OS: "False"
                   ### commit
-                  COMMIT_BY_ME: "True"
+                  COMMIT_BY_ME: "False"
 #
 
