@@ -73,3 +73,4 @@ TEET
 NEET
 Folded-Cascode
 Non-Idealities
+Zout

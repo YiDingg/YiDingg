@@ -79,9 +79,21 @@
 
 - 💡 **Electronics Blogs**
 
+    - Razavi CMOS
+        - [Gain Boosting Techniques](<Electronics/[Razavi CMOS] Gain Boosting Techniques.md>)
+        - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)
+        - [A Brief View of Negative Feedback](<Electronics/[Razavi CMOS] A Brief View of Negative Feedback.md>)
+        - [Mismatches of Basic Differential Pair](<Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)<!--  -->
+        - [Cascode stage with PMOS load](<Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>)<!--  -->
+        - [Gm Av calculation](<Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>)<!--  -->
+        - [MOSFET's Terminal Resistance](<Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>)<!--  -->
 
     - [**[Pinned] Roadmap for Analog ICer**](<Electronics/Roadmap for Analog ICer.md>)
     - [**[Pinned] Collections of Electronic Websites**](<Electronics/Collection of Electronic Websites.md>)
+    - [**[Pinned] The Collection of My Measurement Experiments**](<Electronics/The Collection of My Measurement Experiments.md>)
+    - [Op Amp Measurement of Discrete CMOS Op Amp 1 (CS)](<Electronics/Op Amp Measurement of Discrete CMOS Op Amp 1 (CS).md>)
+    - [Op Amp Measurement of Discrete CMOS Op Amp 2 (PP)](<Electronics/Op Amp Measurement of Discrete CMOS Op Amp 2 (PP).md>)
+    - [Gain Boosting Techniques](<Electronics/[Razavi CMOS] Gain Boosting Techniques.md>)
     - [The Collection of My Measurement Experiments](<Electronics/The Collection of My Measurement Experiments.md>)
     - [Op Amp Measurement of LM412CN](<Electronics/Op Amp Measurement of LM412CN.md>)
     - [Op Amp Measurement of Discrete uA741](<Electronics/Op Amp Measurement of Discrete uA741.md>)

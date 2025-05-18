@@ -15,8 +15,8 @@
 
 - Time: 2025.04.13 
 - Location: Beijing
-- Auxiliary device (辅助运放): NE5532P (absolute max supply range: ±22V or 44V)
-- Device under test (待测运放): NE5532P (absolute max supply range: ±22V or 44V)
+- Auxiliary device (辅助运放): [NE5532P](https://www.ti.com/cn/lit/ds/symlink/ne5532.pdf) (absolute max supply range: ±22V or 44V)
+- Device under test (待测运放): [NE5532P](https://www.ti.com/cn/lit/ds/symlink/ne5532.pdf) (absolute max supply range: ±22V or 44V)
 - Measurement board (测试板): [Basic Op Amp Measurement Board](<ElectronicDesigns/Basic Op Amp Measurement Board.md>)
 - Test conditions of AUX: 始终由直流电源供电 (±12V)
 - Test conditions of DUT: 除了测试 AC CMRR 和 AC PSRR 时, DUT 的供电由信号发生器提供 (不超过 [-5V, +5V]), 其它参数测试时, DUT 均由直流电源供电 (±12V, 与 AUX 供电相同)。
@@ -75,7 +75,7 @@ AC CMRR (unit: dB):
 AC PSRR (unit: dB):
 ```
 
-注：在上面测量 PSRR 时，误将公式 $\mathrm{PSRR} = \frac{20002\, V_{W1, \mathrm{amp}}}{V_{TP2, \mathrm{amp}}}$ 写成 $\mathrm{PSRR} = \frac{10001\, V_{W1, \mathrm{amp}}}{V_{TP2, \mathrm{amp}}}$, 因此实际结果应在原图片的基础上加 6dB.
+注：在上面测量 AC PSRR 时，误将公式 $\mathrm{PSRR} = \frac{20002\, V_{W1, \mathrm{amp}}}{V_{TP2, \mathrm{amp}}}$ 写成 $\mathrm{PSRR} = \frac{10001\, V_{W1, \mathrm{amp}}}{V_{TP2, \mathrm{amp}}}$, 因此实际结果应在原图片 (AC PSRR) 的基础上加 6dB.
 
 ## 异常现象讨论
 
