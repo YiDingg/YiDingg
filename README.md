@@ -25,9 +25,9 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C148%20hrs%2034%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C153%20hrs%2043%20mins-blue)
 
-![Profile Views](http://img.shields.io/badge/Profile%20Views-65-blue)
+![Profile Views](http://img.shields.io/badge/Profile%20Views-58-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-789.8%20thousand%20lines%20of%20code-blue)
 
@@ -56,14 +56,15 @@ Sunday                   198 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 11 hrs 40 mins      ██████████████░░░░░░░░░░░   54.83 % 
-TeX                      9 hrs 36 mins       ███████████░░░░░░░░░░░░░░   45.13 % 
-Other                    0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.04 % 
+Markdown                 15 hrs 41 mins      ███████████████░░░░░░░░░░   60.13 % 
+TeX                      10 hrs 14 mins      ██████████░░░░░░░░░░░░░░░   39.27 % 
+YAML                     8 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.55 % 
+Other                    0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.06 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               11 hrs 40 mins      ██████████████░░░░░░░░░░░   54.87 % 
-GH.UCAS-LinearCircuitExpe9 hrs 3 mins        ███████████░░░░░░░░░░░░░░   42.55 % 
-GH.LatexNotes            33 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.59 % 
+GH.YiDingg               15 hrs 50 mins      ███████████████░░░░░░░░░░   60.73 % 
+GH.UCAS-LinearCircuitExpe9 hrs 5 mins        █████████░░░░░░░░░░░░░░░░   34.84 % 
+GH.LatexNotes            1 hr 9 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   04.43 % 
 ```
 
 **I Mostly Code in C** 
@@ -79,7 +80,7 @@ TypeScript               1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2025.05.18 18:43 UTC
+ Last Updated on 2025.05.19 18:46 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
