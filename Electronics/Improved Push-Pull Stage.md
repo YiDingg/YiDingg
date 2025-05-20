@@ -3,13 +3,10 @@
 > [!Note|style:callout|label:Infor]
 Initially published at 12:52 on 2025-03-27 in Beijing.
 
-## Emitter Follower as Output Stage
-
-## Basic Push-Pull Stage
 
 ## Improved Push-Pull Stage
 
-### Design Thought
+### Basic Idea
 
 从 Basic Push-Pull Stage 到 improved push-pull stage 的改进思路如下：
 

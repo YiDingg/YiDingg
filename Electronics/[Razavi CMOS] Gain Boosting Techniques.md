@@ -38,7 +38,7 @@ $$
 
 
 
-也就是说，无论是哪一种配置， supper-transistor 都可以近似等效为一个跨导被 boosting (从 $g_m$ 提升至 $A_1 g_m$) 的普通 transistor, 也称为 transconductance-boosting transistor. 这样，当配置为 CS (common-source) 结构时，等效输出电阻便被提高到原来的 $A_1$ 倍，从而将本征增益提高了  $A_1$ 倍；当配置为 CD (common-drain) 结构时, 则是等效跨导提高了 $A_1$ 倍。
+也就是说，无论是哪一种配置， supper-transistor 都可以近似等效为一个跨导被 boosting (从 $g_m$ 提升至 $A_1 g_m$) 的普通 transistor, 也称为 transconductance-boosted transistor. 这样，当配置为 CS (common-source) 结构时，等效输出电阻便被提高到原来的 $A_1$ 倍，从而将本征增益提高了  $A_1$ 倍；当配置为 CD (common-drain) 结构时, 则是等效跨导提高了 $A_1$ 倍 (等效输出电阻变为原来的 $\frac{1}{A_1}$)。
 
 举一个 single-ended cascode stage with ideal current source load 的例子，如下图：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-18-18-53-36_[Razavi CMOS] Gain Boosting Techniques.png"/></div>
@@ -171,6 +171,7 @@ $$
 上面的结果都与 *Design of Analog CMOS Integrated Circuits (Razavi) (Second Edition, 2015), Chapter 9 (Operational Amplifiers), Section 9.4 (Gain-Boosting)* 的结果一致 (page.364 ~ page.372). 
 
 另外，本小节的计算借助了 MATLAB 辅助进行，相关代码如下：
+
 ``` matlab
 %% 20250518 Section 9.4 Gain Boosting
 
@@ -200,3 +201,9 @@ stc = MyAnalysis_TransferFunction_Dominant_Pole_Approximation(A_v);
 stc.nume_coefficients_standard
 stc.deno_coefficients_standard
 ```
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-19-17-06-21_[Razavi CMOS] Gain Boosting Techniques.png"/></div>
+
+## Other Considerations
+
+当然，在实际电路中， gain-boosting amplifier 的设计还有很多需要考虑的部分，例如 CMFB (common-mode feedback), SR (slew rate), Swing (output swing) 等。其中, CMFB 在 high-gain differential op amp 中非常关键，是 op amp 能够稳定工作的必要条件。

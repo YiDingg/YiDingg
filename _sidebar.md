@@ -91,6 +91,10 @@
     - [**[Pinned] Roadmap for Analog ICer**](<Electronics/Roadmap for Analog ICer.md>)
     - [**[Pinned] Collections of Electronic Websites**](<Electronics/Collection of Electronic Websites.md>)
     - [**[Pinned] The Collection of My Measurement Experiments**](<Electronics/The Collection of My Measurement Experiments.md>)
+    - [Design Example of Folded-Cascode Stage](<Electronics/Design Example of Folded-Cascode Stage.md>)
+    - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
+    - [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
+    - [How to Install Cadence IC618 (Virtuoso)](<Electronics/How to Install Cadence IC618.md>)
     - [Op Amp Measurement of Discrete CMOS Op Amp 1 (CS)](<Electronics/Op Amp Measurement of Discrete CMOS Op Amp 1 (CS).md>)
     - [Op Amp Measurement of Discrete CMOS Op Amp 2 (PP)](<Electronics/Op Amp Measurement of Discrete CMOS Op Amp 2 (PP).md>)
     - [Gain Boosting Techniques](<Electronics/[Razavi CMOS] Gain Boosting Techniques.md>)
@@ -119,7 +123,7 @@
     - [Common-Emitter Amp Experiment](<Electronics/Common Emitter Amplifier Experiment.md>)
     - [Improved Push-Pull Stage](<Electronics/Improved Push-Pull Stage.md>)
     - [Cascode Differential Amplifier](<Electronics/Cascode Differential Amplifier.md>)
-    - [Definitions of SPICE Model Parameters](<Electronics/The Definitions of SPICE Model Parameters.md>)
+    - [Definitions of SPICE Model Parameters](<Electronics/The Definitions of SPICE Model Parameters.md>)<!--  -->
     - [Basic Differential Circuit Simulation Report](<Electronics/Differential Circuit Simulation Report.md>)<!-- x -->
     - [主流锂电池充放一体芯片选型对比](<Electronics/主流锂电池充放一体芯片选型对比.md>)<!--  -->
     - [The Five-Transistor OTA](<Electronics/The Five-Transistor OTA.md>)<!--  -->

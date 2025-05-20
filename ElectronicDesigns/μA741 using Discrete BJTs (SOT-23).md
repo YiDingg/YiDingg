@@ -109,6 +109,6 @@ $$
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-16-16-37-46_μA741 using Discrete BJTs (SOT-23).png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-16-16-33-30_μA741 using Discrete BJTs (SOT-23).png"/></div>
 
-## Measurement of Discrete uA741
+## Meas. of Discrete uA741
 
 详见 [Op Amp Measurement of Discrete uA741](<Electronics/Op Amp Measurement of Discrete uA741.md>).

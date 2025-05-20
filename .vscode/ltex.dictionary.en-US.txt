@@ -74,3 +74,5 @@ NEET
 Folded-Cascode
 Non-Idealities
 Zout
+CMFB
+folded-cascode
