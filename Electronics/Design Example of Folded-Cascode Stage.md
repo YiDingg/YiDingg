@@ -48,6 +48,9 @@
 
 ### 2. Choose the Biasing Circuit and Determine Aspect Ratios
 
+
+
+
 ### 3. Calculate the Small-Signal Gain and Determine Lengths
 
 ### 4. Compensation and Frequency Analysis
