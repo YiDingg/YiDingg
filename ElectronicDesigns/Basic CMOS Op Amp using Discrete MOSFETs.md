@@ -8,8 +8,20 @@
 - Time: 2025.05.05 23:12
 - Notes: 用分立贴片 MOSFET 实现典型两级运算放大器
 - Details: MOSFET 封装为 SOT-23, NMOS 全部使用 2N7002, PMOS 全部使用 BSS84
-- Relevant Resources: https://www.123684.com/s/0y0pTd-Q8Uj3
+- Relevant Resources: https://www.123684.com/s/0y0pTd-Q8Uj3, 与 [μA741 using Discrete BJTs (SOT-23)](<ElectronicDesigns/μA741 using Discrete BJTs (SOT-23).md>) 合并打板
 
+
+<div class='center'>
+
+
+| Demo (top view)| Demo (bottom view) | 
+|:-:|:-:|
+ |  |  |
+</div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-20-34-23_μA741 using Discrete BJTs (SOT-23).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-20-34-07_μA741 using Discrete BJTs (SOT-23).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-20-33-38_μA741 using Discrete BJTs (SOT-23).png"/></div>
 
 ### Op Amp 1 (CS Output)
 
@@ -154,7 +166,7 @@ Voltage headroom under buffer configuration:
 - $C_c = 100 \ \mathrm{pF}, R_L = 10 \ \mathrm{k}\Omega$
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-06-17-16-44_Basic Two-Stage Op Amp using Discrete MOSFETs.png"/></div>
 
-## 2025-05-06 PCB.1
+## 2025-05-06 PCB Verification
 
 ### Compensation Test
 
@@ -224,8 +236,67 @@ Voltage headroom under buffer configuration:
  | $R = 0.97 \ \mathrm{k\Omega},\ V_{R} = 0.986 \ \mathrm{V}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-18-58_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-18-20_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-14-17-32_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> |
 </div>
 
+### Final Test
 
-## 2025-05-12 PCB.2
+经过上面的测试，我们确定了两个 CMOS op amps 的最终参数：
+- CMOS Op Amp 1 (CS Output)
+  - Compensation Capacitor: $C_c = 4.7 \ \mathrm{nF}$ (MLCC)
+  - Reference Resistor: $R = 2.7 \ \mathrm{k\Omega}$
+- CMOS Op Amp 2 (PP Output)
+  - Compensation Capacitor: $C_c = 1 \ \mathrm{nF}$ (MLCC)
+  - Reference Resistor: $R = 2.7 \ \mathrm{k\Omega}$ 
+
+下面是它们的最终测试结果：
+<!-- 
+<div class='center'>
+
+| op amp 1 | zero input | sine input 1 | sine input 2 | sine input 3 |
+|:-:|:-:|:-:|:-:|:-:|
+ | $C_c = 4.7 \ \mathrm{nF}$ (MLCC), $R = 2.7 \mathrm{k}\Omega$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-22-10-58_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-22-13-04_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-22-13-22_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-22-14-48_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> |
+</div>
+ -->
+
+
+
+<div class='center'>
+
+| op amp 1 (num.1) | zero input | sine input 1 | sine input 2 | sine input 3 |
+|:-:|:-:|:-:|:-:|:-:|
+ | $C_c = 4.7 \ \mathrm{nF}$ (MLCC), $R = 2.7 \mathrm{k}\Omega$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-23-12-29_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-23-10-08_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-23-10-39_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-23-11-46_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> |
+</div>
+
+<div class='center'>
+
+| op amp 1 (num.2) | zero input | sine input 1 | sine input 2 | sine input 3 |
+|:-:|:-:|:-:|:-:|:-:|
+ | $C_c = 4.7 \ \mathrm{nF}$ (MLCC), $R = 2.7 \mathrm{k}\Omega$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-23-17-20_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-23-15-33_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-23-15-59_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-23-16-39_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> |
+</div>
+
+<!-- 
+<div class='center'>
+
+| op amp 2 | zero input | sine input 1 | sine input 2 | sine input 3 |
+|:-:|:-:|:-:|:-:|:-:|
+ | $C_c = 1 \ \mathrm{nF}$ (MLCC), $R = 2.7 \mathrm{k}\Omega$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-22-18-18_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-22-16-53_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-22-17-44_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-22-16-25_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> |
+</div>
+ -->
+
+<div class='center'>
+
+| op amp 2 (num.1) | zero input | sine input 1 | sine input 2 | sine input 3 |
+|:-:|:-:|:-:|:-:|:-:|
+ | $C_c = 1 \ \mathrm{nF}$ (MLCC), $R = 2.7 \mathrm{k}\Omega$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-23-25-50_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-23-24-44_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-23-24-56_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-23-25-13_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> |
+</div>
+
+<div class='center'>
+
+| op amp 2 (num.2) | zero input | sine input 1 | sine input 2 | sine input 3 |
+|:-:|:-:|:-:|:-:|:-:|
+ | $C_c = 1 \ \mathrm{nF}$ (MLCC), $R = 2.7 \mathrm{k}\Omega$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-23-21-47_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-23-20-20_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-23-20-45_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-23-21-08_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> |
+</div>
+
+<!-- ## 2025-05-12 PCB.2
 
 在 **2025-05-06 PCB.1** 的基础上，我们对电路作了如下改动：
-- 将两个 CMOS op amp 的补偿电容换为圆孔插件，方便更换不同容值的补偿
+将两个 CMOS op amp 的补偿电容换为圆孔插件，方便更换不同容值的补偿
+ -->
