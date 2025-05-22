@@ -102,28 +102,9 @@ Cadence IC 需要在 Linux 系统上安装，整体比较复杂。网络上别�
 
 如果不想按照上面的方法，也可以参考 [Bilibili: Cadence IC618 Virtuoso 虚拟机安装](https://www.bilibili.com/video/BV1Z14y197qF), 安装包到 https://pan.quark.cn/s/aac217e76e2f (提取码 `4ddb`) 下载
 
-## Add Process Library
+## Add New Process Library
 
-### How to Add a Process Library
+详见文章 [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>).
 
-暑期科研时间需要用到 tsmc28 (台积电 28nm) 工艺库，我们在上一小节安装的 Cadence IC 并不附带这个工艺库的相关文件。于是在淘宝又花几块钱买到 tsmc28 的压缩包，下面介绍工艺库添加流程。
-
-<span style='color:red'> 此部分待补充 </span>
-
-### More Process Libraries
-
-下面我们分享几个常见的工艺库，仅供学习参考，禁止商用！
-
-- 下载链接：[123 云盘链接 1](https://www.123684.com/s/0y0pTd-0uUj3), [123 云盘链接 2 (备用链接)](https://www.123912.com/s/0y0pTd-0uUj3)
-- 上面的链接包含以下工艺库：
-    - TSMC18RF_PDK_v13d: 台积电 18nm FinFET 射频工艺库
-    - SMIC_018_MMRF: 中芯国际 0.18μm CMOS 射频工艺库
-    - SMIC_13mmrf_1P6M_30k: 中芯国际 0.13μm CMOS 射频工艺库
-    - NCSU-FreePDK45-1.4: 北卡罗莱纳州立大学 (NCSU) 45nm CMOS 开源工艺库
-    - NCSU-FreePDK3D45-1.1: 北卡罗莱纳州立大学 (NCSU) 3D 45nm CMOS 开源工艺库
-    - NCSU-FreePDK15-1.2: 北卡罗莱纳州立大学 (NCSU) 15nm FinFET 开源工艺库
-    - CSU-LithoSim-FreePDK45-1: LithoSim for FreePDK45 (光刻仿真工具包)
-- 其它工艺库：[百度网盘链接 1](https://pan.baidu.com/s/1aQNJ6KGsq4raYPxRUwHEew?pwd=8888) (提取码 `8888`)
-    - TSMC28: 台积电 28nm CMOS 工艺库 (文件大小 164.59 GB)
 
 
