@@ -33,9 +33,9 @@ Self-designed apparatus for measurement:
 ## Op Amp Measurements
 
 - [Op Amp Measurement of LM412CN](<Electronics/Op Amp Measurement of LM412CN.md>)
+- [Op Amp Measurement of Discrete uA741](<Electronics/Op Amp Measurement of Discrete uA741.md>)
 - [Op Amp Measurement of Discrete CMOS Op Amp 1 (CS)](<Electronics/Op Amp Measurement of Discrete CMOS Op Amp 1 (CS).md>)
 - [Op Amp Measurement of Discrete CMOS Op Amp 2 (PP)](<Electronics/Op Amp Measurement of Discrete CMOS Op Amp 2 (PP).md>)
-- [Op Amp Measurement of Discrete uA741](<Electronics/Op Amp Measurement of Discrete uA741.md>)
 - [Op Amp Measurement of NE5532P](<Electronics/Op Amp Measurement of NE5532P.md>)
 
 ## Transistor Measurements

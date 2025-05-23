@@ -10,12 +10,18 @@
 - Details: 三极管封装为 SOT-23, NPN 全部使用 MMBT3904, PNP 全部使用 MMBT3906
 - Relevant Resources: https://www.123684.com/s/0y0pTd-E8Uj3, 设计思路详见 [Detailed Explanation of uA741](<Electronics/Detailed Explanation of uA741.md>), 与 [Basic CMOS Op Amp using Discrete MOSFETs](<ElectronicDesigns/Basic CMOS Op Amp using Discrete MOSFETs.md>) 合并打板
 
+| Demo |
+|:-:|
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-23-11-14-31_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | 
+</div>
+
 <div class='center'>
 
-
-| Demo (top view)| Demo (bottom view) | 
-|:-:|:-:|
- |  |  |
+| Rendering Image |
+|:-:|
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-20-34-23_μA741 using Discrete BJTs (SOT-23).png"/></div> |
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-20-34-07_μA741 using Discrete BJTs (SOT-23).png"/></div> |
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-20-33-38_μA741 using Discrete BJTs (SOT-23).png"/></div> |
 </div>
 
 <div class='center'>
@@ -34,9 +40,8 @@
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-15-02-28-16_μA741 using Discrete BJTs (SOT-23).png"/></div> -->
 
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-20-34-23_μA741 using Discrete BJTs (SOT-23).png"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-20-34-07_μA741 using Discrete BJTs (SOT-23).png"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-20-33-38_μA741 using Discrete BJTs (SOT-23).png"/></div>
+
+
 
 ## Detailed Explanation
 

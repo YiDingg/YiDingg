@@ -14,14 +14,23 @@
 <div class='center'>
 
 
-| Demo (top view)| Demo (bottom view) | 
-|:-:|:-:|
- |  |  |
+| Demo |
+|:-:|
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-23-11-14-31_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | 
 </div>
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-20-34-23_μA741 using Discrete BJTs (SOT-23).png"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-20-34-07_μA741 using Discrete BJTs (SOT-23).png"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-20-33-38_μA741 using Discrete BJTs (SOT-23).png"/></div>
+<div class='center'>
+
+| Rendering Image |
+|:-:|
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-20-34-23_μA741 using Discrete BJTs (SOT-23).png"/></div> |
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-20-34-07_μA741 using Discrete BJTs (SOT-23).png"/></div> |
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-20-33-38_μA741 using Discrete BJTs (SOT-23).png"/></div> |
+</div>
+
+
+
+
 
 ### Op Amp 1 (CS Output)
 

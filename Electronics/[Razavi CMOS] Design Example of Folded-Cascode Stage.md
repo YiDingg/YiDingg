@@ -39,7 +39,7 @@
 相关公式：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-20-17-51-32_Design Example of Folded-Cascode Stage.png"/></div>
 
-### Design Steps
+### Design Example
 
 <!-- 这一部分，我们用比例法来分配 overdrive voltages. 以普通 cascode stage 为例，可以设 M9 占 1 份, M1 ~ M4 占 1.4 份而 M5 ~ M8 占 1.8 份；回到 folded-cascode stage, 就是 $M_{5,6} = 1\times V_1$, $M_{1,2} = M_{3,4} = 1.4\times V_1$, $M_{7,8} = M_{9,10} = 1.8\times V_1$. 这样一共消耗 $V_{OV5,6} + V_{OV3,4} + V_{OV7,8} + V_{OV9,10} = 6 V_1$ 的 single-ended swing. $V_{DD} = 3 \ \mathrm{V}$, 要使 CM swing > 2.4 V, 需要 $6 V_1 < 1.8 \ \mathrm{V}$. 不妨设 $6 V_1 = 1.7 \ \mathrm{V} \Longrightarrow V_1 = 283.3 \ \mathrm{mV}$. 于是各个 overdrive voltage 分配如下：
 
@@ -49,8 +49,21 @@
 
 注，下图公式 $a = \left(\frac{W}{L}\right)$ 中的 $L$ 都是指 $L = L_{eff} = L_{total} - 2L_D$。并且，若无特别说明，均默认 $L = 0.5 \ \mathrm{um}$。
 
+完整过程如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-23-10-38-51_[Razavi CMOS] Design Example of Folded-Cascode Stage.webp"/></div>
+
+分步：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-23-10-34-59_[Razavi CMOS] Design Example of Folded-Cascode Stage.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-23-10-35-09_[Razavi CMOS] Design Example of Folded-Cascode Stage.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-23-10-35-24_[Razavi CMOS] Design Example of Folded-Cascode Stage.png"/></div>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-23-10-35-44_[Razavi CMOS] Design Example of Folded-Cascode Stage.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-23-10-36-52_[Razavi CMOS] Design Example of Folded-Cascode Stage.png"/></div>
 
 ## LTspice Simulation
+
+本文的 LTspice 仿真文件已上传到 [123 云盘](https://www.123684.com/s/0y0pTd-YUUj3), [123 云盘 (备用链接)](https://www.123912.com/s/0y0pTd-YUUj3)。
+
 
 ### CMFB and Frequency Response
 

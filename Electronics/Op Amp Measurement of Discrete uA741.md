@@ -21,7 +21,7 @@
 
 | 测试板 ([Basic Op Amp Measurement Board v2](<ElectronicDesigns/Basic Op Amp Measurement Board v2.md>)) | 待测运放 ([Discrete uA741](<ElectronicDesigns/μA741 using Discrete BJTs (SOT-23).md>)) |
 |:-:|:-:|
- |  |  
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-13-15-57-32_Basic Op Amp Measurement Board v2.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-23-11-14-31_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> |
 </div>
 
 
@@ -70,7 +70,7 @@
  | 3 | DC Gain | S6 from `0 10K` to `1 +1V`, write $\Delta V_{TP2}$ and $\Delta V_{TP1}$ | $A_{OL} = \frac{1001\, \Delta V_{TP2}}{\Delta V_{TP1}}$  | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-16-19-23-33_Op Amp Measurement of Discrete uA741.png"/></div><div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-16-19-32-53_Op Amp Measurement of Discrete uA741.png"/></div> |
  | 5 | DC CMRR |W1 and W2 from ±4V to +5V and -3V, write $\Delta V_{TP1}$, $\Delta V_{CM} = \frac{\Delta V_{CC+} + \Delta V_{CC-}}{2}$ | $\mathrm{CMRR} = \frac{1001\, \Delta V_{CM}}{\Delta V_{TP1}}$ |  |
  | 6 | DC PSRR |W1 and W2 from ±4V to ±12V (or ±5V), write $\Delta V_{TP1}$ | $\mathrm{PSRR} = \frac{1001\, \Delta V_{PS,total}}{\Delta V_{TP1}}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-16-19-37-10_Op Amp Measurement of Discrete uA741.png"/></div> |
- | 4 | AC Gain | S4 to `R9`, **AD1 Impedance** inputs ac signal (50Hz ~ 5MHz), measure $v_{TP2}$ | $A_{OL} = \left(1 + \frac{\frac{1}{2\pi f C_{in}} + R_9}{R_1}\right)\cdot \frac{v_{TP2, amp}}{v_{IN, amp}}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-16-20-06-59_Op Amp Measurement of Discrete uA741.png"/></div><div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-16-20-08-31_Op Amp Measurement of Discrete uA741.png"/></div><div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-16-20-10-02_Op Amp Measurement of Discrete uA741.png"/></div> |
+ | 4 | AC Gain | S4 to `R9`, **AD1 Impedance** inputs ac signal (50Hz ~ 5MHz), measure $v_{TP2}$ | $A_{OL} = \left(1 + \frac{\frac{1}{2\pi f C_{in}} + R_9}{R_1}\right)\cdot \left(- \frac{v_{TP2, amp}}{v_{IN, amp}}\right)$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-16-20-06-59_Op Amp Measurement of Discrete uA741.png"/></div><div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-16-20-08-31_Op Amp Measurement of Discrete uA741.png"/></div><div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-16-20-10-02_Op Amp Measurement of Discrete uA741.png"/></div> |
  | 7 | AC CMRR | <span style='color:red'> S3 to 1</span>, configure W1 to sine wave (1V amplitude, +4V offset), W2 to sine wave (1V amplitude, -4V offset), ${\color{red}{\Delta \varphi = 0}}$ and measure $v_{TP2, amp}$ | $\mathrm{CMRR} = \frac{10001\, V_{W1, \mathrm{amp}}}{V_{TP2, \mathrm{amp}}}$ |  |
  | 8 | AC PSRR |<span style='color:red'> S3 to 1</span>, configure W1 to sine wave (1V amplitude, +4V offset), W2 to sine wave (1V amplitude, -4V offset), ${\color{red}{\Delta \varphi = \pi}}$ and measure $v_{TP2, amp}$ | $\mathrm{PSRR} = \frac{20002\, V_{W1, \mathrm{amp}}}{V_{TP2, \mathrm{amp}}}$ |  |
 
@@ -89,7 +89,7 @@
  | 3 | DC Gain | S6 from `0 10K` to `1 +1V`, write $\Delta V_{TP2}$ and $\Delta V_{TP1}$ | $A_{OL} = \frac{1001\, \Delta V_{TP2}}{\Delta V_{TP1}}$  |  |
  | 5 | DC CMRR |W1 and W2 from ±4V to +5V and -3V, write $\Delta V_{TP1}$, $\Delta V_{CM} = \frac{\Delta V_{CC+} + \Delta V_{CC-}}{2}$ | $\mathrm{CMRR} = \frac{1001\, \Delta V_{CM}}{\Delta V_{TP1}}$ |  |
  | 6 | DC PSRR |W1 and W2 from ±4V to ±12V (or ±5V), write $\Delta V_{TP1}$ | $\mathrm{PSRR} = \frac{1001\, \Delta V_{PS,total}}{\Delta V_{TP1}}$ |  |
- | 4 | AC Gain | S4 to `R9`, **AD1 Impedance** inputs ac signal (50Hz ~ 5MHz), measure $v_{TP2}$ | $A_{OL} = \left(1 + \frac{\frac{1}{2\pi f C_{in}} + R_9}{R_1}\right)\cdot \frac{v_{TP2, amp}}{v_{IN, amp}}$ |  |
+ | 4 | AC Gain | S4 to `R9`, **AD1 Impedance** inputs ac signal (50Hz ~ 5MHz), measure $v_{TP2}$ | $A_{OL} = \left(1 + \frac{\frac{1}{2\pi f C_{in}} + R_9}{R_1}\right)\cdot \left(- \frac{v_{TP2, amp}}{v_{IN, amp}}\right)$ |  |
  | 7 | AC CMRR | <span style='color:red'> S3 to 1</span>, configure W1 to sine wave (1V amplitude, +4V offset), W2 to sine wave (1V amplitude, -4V offset), ${\color{red}{\Delta \varphi = 0}}$ and measure $v_{TP2, amp}$ | $\mathrm{CMRR} = \frac{10001\, V_{W1, \mathrm{amp}}}{V_{TP2, \mathrm{amp}}}$ |  |
  | 8 | AC PSRR |<span style='color:red'> S3 to 1</span>, configure W1 to sine wave (1V amplitude, +4V offset), W2 to sine wave (1V amplitude, -4V offset), ${\color{red}{\Delta \varphi = \pi}}$ and measure $v_{TP2, amp}$ | $\mathrm{PSRR} = \frac{20002\, V_{W1, \mathrm{amp}}}{V_{TP2, \mathrm{amp}}}$ |  |
 
