@@ -25,9 +25,9 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C184%20hrs%2024%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C192%20hrs%2022%20mins-blue)
 
-![Profile Views](http://img.shields.io/badge/Profile%20Views-60-blue)
+![Profile Views](http://img.shields.io/badge/Profile%20Views-72-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-795.5%20thousand%20lines%20of%20code-blue)
 
@@ -56,17 +56,17 @@ Sunday                   198 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 31 hrs 20 mins      ██████████████████████░░░   87.47 % 
-TeX                      4 hrs 19 mins       ███░░░░░░░░░░░░░░░░░░░░░░   12.06 % 
-YAML                     8 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.40 % 
+Markdown                 33 hrs 45 mins      ███████████████████████░░   90.12 % 
+TeX                      3 hrs 40 mins       ██░░░░░░░░░░░░░░░░░░░░░░░   09.83 % 
 Tcsh                     0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.03 % 
-Other                    0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.02 % 
+JSON                     0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.01 % 
+Perl                     0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               31 hrs 17 mins      ██████████████████████░░░   87.35 % 
-GH.LatexNotes            3 hrs 41 mins       ███░░░░░░░░░░░░░░░░░░░░░░   10.30 % 
-GH.UCAS-LinearCircuitExpe37 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   01.76 % 
-Unknown Project          12 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   00.58 % 
+GH.YiDingg               33 hrs 34 mins      ██████████████████████░░░   89.61 % 
+GH.LatexNotes            3 hrs 5 mins        ██░░░░░░░░░░░░░░░░░░░░░░░   08.24 % 
+GH.UCAS-LinearCircuitExpe35 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   01.59 % 
+Unknown Project          12 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   00.56 % 
 ```
 
 **I Mostly Code in C** 
@@ -82,7 +82,7 @@ TypeScript               1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2025.05.25 17:46 UTC
+ Last Updated on 2025.05.25 18:42 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
