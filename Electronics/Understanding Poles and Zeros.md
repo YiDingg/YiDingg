@@ -1,4 +1,4 @@
-# Understanding poles and zeros
+# MIT: Understanding poles and zeros (MIT 资料：什么是极点和零点？)
 
 > [!Note|style:callout|label:Infor]
 Initially published at 18:05 on 2025-04-08 in Beijing.

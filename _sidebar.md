@@ -93,16 +93,21 @@
         - [Gm Av calculation](<Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>)<!--  -->
         - [MOSFET's Terminal Resistance](<Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>)<!--  -->
 
-    - Cadence Tutorials
+    - Analog IC and Cadence Tutorials
         - [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
         - [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)
         - [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
         - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
+        - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
+        - [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Overdrive and Gm-Id Methods.md>)
+
 
     - 2025 (63 items)
+        - [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Overdrive and Gm-Id Methods.md>)
+        - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
         - [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
         - [Design Example of Folded-Cascode Stage](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>)
-        - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
+        - [Simu. CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
         - [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
         - [How to Install Cadence IC618 (Virtuoso)](<Electronics/How to Install Cadence IC618.md>)
         - [Op Amp Measurement of Discrete CMOS Op Amp 1 (CS)](<Electronics/Op Amp Measurement of Discrete CMOS Op Amp 1 (CS).md>)
@@ -129,8 +134,8 @@
         - [Understanding Poles and Zeros](<Electronics/Understanding Poles and Zeros.md>)
         - [Freq Response of CE and CS Stages](<Electronics/Frequency Response of CE and CS Stages.md>)<!-- x -->
         - [Roadmap for Analog ICer](<Electronics/Roadmap for Analog ICer.md>)
-        - [Compound BJT (Sziklai and Darlington)](<Electronics/Compound BJT (Sziklai and Darlington).md>)
-        - [Common-Emitter Amp Experiment](<Electronics/Common Emitter Amplifier Experiment.md>)
+        - [Compound BJT (Sziklai and Darlington)](<Electronics/Compound BJT (Sziklai and Darlington).md>)<!--  -->
+        - [Common-Emitter Amp Experiment](<Electronics/Common Emitter Amplifier Experiment.md>)<!--  -->
         - [Improved Push-Pull Stage](<Electronics/Improved Push-Pull Stage.md>)
         - [Cascode Differential Amplifier](<Electronics/Cascode Differential Amplifier.md>)
         - [Definitions of SPICE Model Parameters](<Electronics/The Definitions of SPICE Model Parameters.md>)<!--  -->
@@ -196,6 +201,7 @@
 - ⚒️ **Electronic Designs**
 
     - [**[Pinned] DC-DC Converter Modules**](<ElectronicDesigns/DC-DC Converter Modules.md>)
+    - [**[Pinned] μA741 using Discrete BJTs (SOT-23)**](<ElectronicDesigns/μA741 using Discrete BJTs (SOT-23).md>)
     - [Basic Two-Stage Op Amp using Discrete MOSFETs](<ElectronicDesigns/Basic CMOS Op Amp using Discrete MOSFETs.md>)
     - [μA741 using Discrete BJTs (SOT-23)](<ElectronicDesigns/μA741 using Discrete BJTs (SOT-23).md>)
     - [Basic Op Amp Measurement Board v2](<ElectronicDesigns/Basic Op Amp Measurement Board v2.md>)

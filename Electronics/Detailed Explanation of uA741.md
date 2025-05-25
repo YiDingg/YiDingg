@@ -1,4 +1,4 @@
-# Detailed Explanation of Classic Op Amp uA741 <br> 手把手带你学习经典运放 uA741
+# Detailed Explanation of Classic Op Amp uA741 (经典运放 uA741 原理详解)
 
 > [!Note|style:callout|label:Infor]
 Initially published at 16:00 on 2025-05-14 in Beijing.
@@ -8,7 +8,9 @@ Initially published at 16:00 on 2025-05-14 in Beijing.
 
 起因是“线性电路实验”课程的第六、七次实验 (2025.05.16, 2025.05.23) 的主题是用分立元件设计运算放大器，我们一共设计了三个运放电路，前两个是比较简单的 two-stage CMOS op amp (cs output 和 pp output), 第三个便是 discrete uA741, 也是设计过程最详细的一个（前两个只是简单验证了一下）。
 
-具体的实验报告见 [GitHub > YiDingg > UCAS-LinearCircuitExperiment](https://github.com/YiDingg/UCAS-LinearCircuitExperiment) 的 [LCE-06-07 (链接待填充)]()。由于报告的主要内容用了英文进行撰写，为了方便读者学习，我们在这里用中文重新讲解一遍 uA741 的具体原理，并将实验报告原文附在文末。
+运放设计结果详见 [μA741 using Discrete BJTs (SOT-23)](<ElectronicDesigns/μA741 using Discrete BJTs (SOT-23).md>) 和 [Basic CMOS Op Amp using Discrete MOSFETs](<ElectronicDesigns/Basic CMOS Op Amp using Discrete MOSFETs.md>)。具体的实验报告见 [GitHub > YiDingg > UCAS-LinearCircuitExperiment](https://github.com/YiDingg/UCAS-LinearCircuitExperiment) 的 [《LCE-06-07 运放设计》](https://github.com/YiDingg/UCAS-LinearCircuitExperiment/tree/main/LCE-06-07-%E8%BF%90%E6%94%BE%E8%AE%BE%E8%AE%A1)。
+
+由于报告的主要内容采用了英文进行撰写，为了方便读者学习，我们在这里用中文重新讲解一遍 uA741 的具体原理，并将实验报告原文（的部分截图）附在文末。
 
 
 ## Explanation of uA741
@@ -19,54 +21,6 @@ Initially published at 16:00 on 2025-05-14 in Beijing.
 
 
 
-
-### Reference Schematic
-
-
-
-下面是 uA741 原理图参考链接汇总：
-- [TI (德州仪器): Datasheet of µA741](https://www.ti.com/cn/lit/ds/symlink/ua741.pdf)
-- [TI (德州仪器): Datasheet of LM741](https://www.ti.com/cn/lit/ds/symlink/lm741.pdf)
-- [TI (德州仪器): Datasheet of LM741-MIL](https://www.ti.com/cn/lit/ds/symlink/lm741-mil.pdf)
-- [ST (意法半导体): Datasheet of uA741](https://item.szlcsc.com/datasheet/UA741CDT/7583.html)
-- [XINBOLE (芯伯乐): Datasheet of uA741](https://item.szlcsc.com/datasheet/UA741CP(XBLW)/24119502.html)
-- [HGSEMI (华冠): Datasheet of LM741](https://item.szlcsc.com/datasheet/LM741M%252FTR/331810.html)
-- [HTCSEMI (海天芯): Datasheet of uA741](https://item.szlcsc.com/datasheet/HT741ANZ/3217439.html)
-- [Rochester Electronics (罗彻斯特): Datasheet of uA741](https://item.szlcsc.com/datasheet/UA741MJ%252FB/4940946.html)
-
-
-
-下面是各参考链接给出的原理图：
-
-- [TI (德州仪器): Datasheet of µA741](https://www.ti.com/cn/lit/ds/symlink/ua741.pdf)
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-15-01-28-12_Detailed Explanation of uA741.png"/></div>
-
-- [TI (德州仪器): Datasheet of LM741](https://www.ti.com/cn/lit/ds/symlink/lm741.pdf)
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-16-47-43_Detailed Explanation of uA741.png"/></div>
-
-- [TI (德州仪器): Datasheet of LM741-MIL](https://www.ti.com/cn/lit/ds/symlink/lm741-mil.pdf)
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-16-51-27_Detailed Explanation of uA741.png"/></div>
-
-- [ST (意法半导体): Datasheet of uA741](https://item.szlcsc.com/datasheet/UA741CDT/7583.html)
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-16-46-26_Detailed Explanation of uA741.png"/></div>
-
-
-- [XINBOLE (芯伯乐): Datasheet of uA741](https://item.szlcsc.com/datasheet/UA741CP(XBLW)/24119502.html)
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-16-45-56_Detailed Explanation of uA741.png"/></div>
-
-
-
-
-- [HGSEMI (华冠): Datasheet of LM741](https://item.szlcsc.com/datasheet/LM741M%252FTR/331810.html?lcsc_vid=FFYKBl1UQVdXBVYAEwVcUFIARlQIUAdXRVddVFNVTgIxVlNSQFNfVV1eRFVXUztW)
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-16-48-50_Detailed Explanation of uA741.png"/></div>
-
-- [HTCSEMI (海天芯): Datasheet of uA741](https://item.szlcsc.com/datasheet/HT741ANZ/3217439.html)
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-16-57-11_Detailed Explanation of uA741.png"/></div>
-
-- [Rochester Electronics (罗彻斯特): Datasheet of uA741](https://item.szlcsc.com/datasheet/UA741MJ%252FB/4940946.html)
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-16-58-20_Detailed Explanation of uA741.png"/></div>
-
-值得一提的是，XINBOLE (芯伯乐), HGSEMI (华冠) 和 HTCSEMI (海天芯) 三家国产公司给出的图片与 TI (德州仪器) LM741 的图片完全一致（一模一样）。
 
 ### Discrete uA741
 
@@ -83,7 +37,7 @@ Initially published at 16:00 on 2025-05-14 in Beijing.
 
 下面，我们就来一步步剖析 uA741 的工作原理。第一步便是将电路图中的每个模块进行拆分，如下图：
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-17-12-58_Detailed Explanation of uA741.png"/></div>
+<div class="center"><img width=500px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-17-12-58_Detailed Explanation of uA741.png"/></div>
 
 ### Biasing Analysis 
 
@@ -199,7 +153,7 @@ $$
 
 上面的计算结果与数据手册 [(TI: The Datasheet of μA741)](https://www.ti.com/cn/lit/ds/symlink/ua741.pdf) 中的相近，数据手册中给出的是 $A_v = 200\ \mathrm{mV/V}\ (> 20 \ \mathrm{mV/V})$ 以及 $R_{in,DM} = 2 \ \mathrm{M}\Omega\ (> 0.3 \ \mathrm{M}\Omega)$.
 
-本小节的借助了 MATLAB 进行，源码如下：
+本小节的计算借助了 MATLAB 进行，源码如下：
 
 ``` matlab
 20250513 uA741 理论计算
@@ -268,20 +222,71 @@ B. A. Wooley and D. O. Pederson, "A computer-aided evaluation of the 741 amplifi
 
 ## PCB Verification
 
-Demo 板实物图如下：
-
-<div class='center'>
-
-| Demo (top view) | Demo (bottom view) |
-|:-:|:-:|
- |  |  |
+| Demo |
+|:-:|
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-23-11-14-31_Basic CMOS Op Amp using Discrete MOSFETs.png"/></div> | 
 </div>
 
 PCB 版图可以到链接 [Electronic Designs > μA741 using Discrete BJTs (SOT-23)](<ElectronicDesigns/μA741 using Discrete BJTs (SOT-23).md>) 进行下载，供读者参考。
 
 
 
-## Original Lab Report
+## Experiment Report
 
-以下是 2025.05 提交的实验报告原文，供读者参考：
+以下是 2025.05.24 提交的《LCE-06-07 分立运放设计》实验报告，原文链接在 [GitHub > YiDingg > UCAS-LinearCircuitExperiment (https://github.com/YiDingg/UCAS-LinearCircuitExperiment)](https://github.com/YiDingg/UCAS-LinearCircuitExperiment)。
 
+原文部分截图如下：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-24-00-13-54_Detailed Explanation of uA741.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-24-00-15-27_Detailed Explanation of uA741.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-24-00-15-37_Detailed Explanation of uA741.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-24-00-15-50_Detailed Explanation of uA741.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-24-00-16-04_Detailed Explanation of uA741.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-24-00-16-16_Detailed Explanation of uA741.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-24-00-17-00_Detailed Explanation of uA741.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-24-00-17-22_Detailed Explanation of uA741.png"/></div>
+
+## Reference Schematic
+
+下面是 uA741 原理图参考链接汇总：
+- [TI (德州仪器): Datasheet of µA741](https://www.ti.com/cn/lit/ds/symlink/ua741.pdf)
+- [TI (德州仪器): Datasheet of LM741](https://www.ti.com/cn/lit/ds/symlink/lm741.pdf)
+- [TI (德州仪器): Datasheet of LM741-MIL](https://www.ti.com/cn/lit/ds/symlink/lm741-mil.pdf)
+- [ST (意法半导体): Datasheet of uA741](https://item.szlcsc.com/datasheet/UA741CDT/7583.html)
+- [XINBOLE (芯伯乐): Datasheet of uA741](https://item.szlcsc.com/datasheet/UA741CP(XBLW)/24119502.html)
+- [HGSEMI (华冠): Datasheet of LM741](https://item.szlcsc.com/datasheet/LM741M%252FTR/331810.html)
+- [HTCSEMI (海天芯): Datasheet of uA741](https://item.szlcsc.com/datasheet/HT741ANZ/3217439.html)
+- [Rochester Electronics (罗彻斯特): Datasheet of uA741](https://item.szlcsc.com/datasheet/UA741MJ%252FB/4940946.html)
+
+
+
+下面是各参考链接给出的原理图：
+
+- [TI (德州仪器): Datasheet of µA741](https://www.ti.com/cn/lit/ds/symlink/ua741.pdf)
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-15-01-28-12_Detailed Explanation of uA741.png"/></div>
+
+- [TI (德州仪器): Datasheet of LM741](https://www.ti.com/cn/lit/ds/symlink/lm741.pdf)
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-16-47-43_Detailed Explanation of uA741.png"/></div>
+
+- [TI (德州仪器): Datasheet of LM741-MIL](https://www.ti.com/cn/lit/ds/symlink/lm741-mil.pdf)
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-16-51-27_Detailed Explanation of uA741.png"/></div>
+
+- [ST (意法半导体): Datasheet of uA741](https://item.szlcsc.com/datasheet/UA741CDT/7583.html)
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-16-46-26_Detailed Explanation of uA741.png"/></div>
+
+
+- [XINBOLE (芯伯乐): Datasheet of uA741](https://item.szlcsc.com/datasheet/UA741CP(XBLW)/24119502.html)
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-16-45-56_Detailed Explanation of uA741.png"/></div>
+
+
+
+
+- [HGSEMI (华冠): Datasheet of LM741](https://item.szlcsc.com/datasheet/LM741M%252FTR/331810.html?lcsc_vid=FFYKBl1UQVdXBVYAEwVcUFIARlQIUAdXRVddVFNVTgIxVlNSQFNfVV1eRFVXUztW)
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-16-48-50_Detailed Explanation of uA741.png"/></div>
+
+- [HTCSEMI (海天芯): Datasheet of uA741](https://item.szlcsc.com/datasheet/HT741ANZ/3217439.html)
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-16-57-11_Detailed Explanation of uA741.png"/></div>
+
+- [Rochester Electronics (罗彻斯特): Datasheet of uA741](https://item.szlcsc.com/datasheet/UA741MJ%252FB/4940946.html)
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-16-58-20_Detailed Explanation of uA741.png"/></div>
+
+值得一提的是，XINBOLE (芯伯乐), HGSEMI (华冠) 和 HTCSEMI (海天芯) 三家国产公司给出的图片与 TI (德州仪器) LM741 的图片完全一致（一模一样）。

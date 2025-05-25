@@ -3,12 +3,10 @@
 > [!Note|style:callout|label:Infor]
 Initially published at 22:23 on 2024-12-21 in Beijing.
 
-- [LTspice Official](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html)
-- [LTwiki](https://ltwiki.org/index.php?title=Main_Page)
-- [活学活用 LTspice 进行电路设计系列合集](https://www.cytech.com/technical-articles/learning-ltspice-circuit-design-series-collection)
+## Relevant Resources
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-22-15-51-16_How to Set a Varible in LTspice.png"/></div>
-
+- [LTspice Official](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html): the official page for LTspice, providing downloads, documentations, and other resources.
+- [LTwiki](https://ltwiki.org/index.php?title=Main_Page):  a collaborative knowledge base focusing on linear technology and electronics, offering technical documentation, application notes, and community-driven insights.
 - 快捷键：
     - [LTspice 快捷键： LTspice: Keyboard Shortcuts](https://www.analog.com/media/en/news-marketing-collateral/solutions-bulletins-brochures/ltspice-keyboard-shortcuts.pdf?modelType=spice-models)
     - [LTspice 非文档化快捷键： LTspice: Undocumented Shortcuts](https://www.analog.com/en/resources/technical-articles/ltspice-undocumented-shortcuts.html)
@@ -36,3 +34,15 @@ Relevant LTspice files or resources:
 
 
 
+## Tutorials Collection
+
+- [活学活用 LTspice 进行电路设计系列合集](https://www.cytech.com/technical-articles/learning-ltspice-circuit-design-series-collection)
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-24-19-45-43_LTspice.png"/></div>
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-03-22-15-51-16_How to Set a Varible in LTspice.png"/></div>
+ -->
+
+- [SPICE 语法基础与 LTspice 入门教程：教程目录](https://zhuanlan.zhihu.com/p/12121593136)
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-24-19-45-02_LTspice.png"/></div>

@@ -76,3 +76,4 @@ Non-Idealities
 Zout
 CMFB
 folded-cascode
+transconductance

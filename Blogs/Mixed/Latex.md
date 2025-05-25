@@ -6,6 +6,21 @@ Initially published at 22:43 on 2024-09-03 in Beijing.
 
 本文环境：Windows 11 + Texlive 2023 + VSCode
 
+## 调整公式字号大小
+
+``` latex
+\usepackage{graphicx} % Necessary to use \scalebox
+
+normal: $ x^2 + 2xy + y^2 $
+displaystyle: $ {\displaystyle x^2 + 2xy + y^2} $
+scriptstyle: $ {\scriptstyle x^2 + 2xy + y^2} $
+scriptscriptstyle: $ {\scriptscriptstyle x^2 + 2xy + y^2} $
+textstyle: $ {\textstyle x^2 + 2xy + y^2} $
+```
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-24-18-17-03_Latex.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-24-18-07-44_Latex.png"/></div>
 
 ## 多文档编译
 
