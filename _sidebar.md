@@ -99,11 +99,12 @@
         - [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
         - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
         - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
-        - [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Overdrive and Gm-Id Methods.md>)
-
+        - [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
+        - [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
 
     - 2025 (63 items)
-        - [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Overdrive and Gm-Id Methods.md>)
+        - [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
+        - [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
         - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
         - [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
         - [Design Example of Folded-Cascode Stage](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>)
@@ -131,7 +132,7 @@
         - [Several Problems in Op Amp Measurement](<Electronics/Several Problems in Op Amp Measurement.md>)
         - [Op Amp Meas. of NE5532P](<Electronics/Op Amp Measurement of NE5532P.md>)
         - [Calc CS Transfer Func using EET](<Electronics/Calculate CS Transfer Function using EET.md>)
-        - [Understanding Poles and Zeros](<Electronics/Understanding Poles and Zeros.md>)
+        - [Understanding Poles and Zeros](<Electronics/Understanding Poles and Zeros.md>)<!--  -->
         - [Freq Response of CE and CS Stages](<Electronics/Frequency Response of CE and CS Stages.md>)<!-- x -->
         - [Roadmap for Analog ICer](<Electronics/Roadmap for Analog ICer.md>)
         - [Compound BJT (Sziklai and Darlington)](<Electronics/Compound BJT (Sziklai and Darlington).md>)<!--  -->

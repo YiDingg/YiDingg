@@ -3,11 +3,15 @@
 > [!Note|style:callout|label:Infor]
 > Initially published at 17:05 on 2025-05-20 in Beijing.
 
-- Cadence 教程汇总：
-    - [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)
+- Cadence 相关文章汇总：
     - [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
+    - [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)
     - [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
     - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
+    - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
+    - [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
+
+
 
 ## Install Cadence IC618
 
@@ -15,9 +19,9 @@
 详见文章 [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>).
 
 
-## Setting Tips and Tricks
+## Setting Tips
 
-### Recommended Settings
+### 1. Recommended Settings
 
 - 修改字体、字号：`初始窗口 > Options > Fonts`
 - 修改快捷键：`初始窗口 > Options > Bindkeys`, 关于 `Bindkeys`, 下面是修改建议的一部分： **<span style='color:red'> 建议在 .cdsinit 文件中使用脚本语言来设置快捷键，详见后一小节 </span>**
@@ -40,10 +44,11 @@
 
 <!-- 修改完成后记得左下角 `Save Bindings for All > Save`，以免下次又要重新设置。也可以直接在 `.cdsinit` 文件中添加代码，详见后一小节。 -->
 
-### .cdsinit and .cdsenv
+### 2. file .cdsinit and .cdsenv
 
 本小节参考了以下资料：
 - [重要: Virtuoso® Schematic Editor SKILL Functions Reference](<https://picture.iczhiku.com/resource/eetop/sykRGZGTDTSiYmCv.pdf>)
+- [University of Southern California: Cadence Virtuoso Tutorial](https://ee.usc.edu/~redekopp/ee209/virtuoso/setup/USCVLSI-VirtuosoTutorial.pdf)
 - [.cdsenv Tips & Tricks](https://aselshim.github.io/blogposts/2019-03-21-cdsenv/)
 - [Cadence Tips and Tricks: Change Waveform Graph windows default settings](https://wikis.ece.iastate.edu/vlsi/index.php?title=Tips_%26_Tricks)
 - [Bilibili: Cadence IC ADE 仿真学习笔记- 配置文件](https://www.bilibili.com/video/BV15T42197PQ)
@@ -91,7 +96,7 @@ viva.graphFrame  background  string  "white"
 
 ; 设置仿真波形图的宽度和高度 (默认 1024x256)
 viva.graphFrame width string "1800"
-viva.graphFrame height string "600"
+viva.graphFrame height string "900"
 
 ; 设置仿真图的字体字号：
 viva.graph  titleFont  string  "roman,10,-1,5,45,0,0,0,0,0" ; 包括仿真结果上方的时间显示、左上角的 title
@@ -126,8 +131,8 @@ viva.referenceLineMarker	interceptStyle	string	"OnWhenHover"
 ; 其它设置
 auCore.misc    labelDigits int 6 ;设置仿真结果显示 6 位小数
 layout displayPinName boolean t ; ; 在布局中默认显示 pin name
-schematic	schWindowBBox	string	"((300 0) (2000 900))" ; 修改 schematic 打开时的默认窗口大小、位置
-layout	leWindowBBox	string	"((500 0) (2200 900))" ; 修改 layout 打开时的默认窗口大小、位置
+schematic	schWindowBBox	string	"((300 50) (2000 950))" ; 修改 schematic 打开时的默认窗口大小、位置
+layout	leWindowBBox	string	"((500 50) (2200 950))" ; 修改 layout 打开时的默认窗口大小、位置
 ui	ciwCmdInputLines	int	4 ; 设置 CIW 窗口 input area 的行数 (默认为 1)
 schematic	showUndoRedoHistoryInEditor	boolean	t ; 在 schematic 中显示撤销重做历史
 ```
@@ -139,7 +144,7 @@ schematic	showUndoRedoHistoryInEditor	boolean	t ; 在 schematic 中显示撤销�
 ; .cdsinit
 
 ; 设置初始 CIW 窗口的大小和位置, 其中 400:150 代表窗口左下角坐标，1200:600 代表窗口右上角坐标
-hiResizeWindow(window(1) list(400:150 1680:950))
+hiResizeWindow(window(1) list(400:0 1800:1000))
 
 ; 设置 Cadence 中默认文本编辑器为 gedit (script 和 verilog-A 的编辑器)
 ; 可选的通常有 vim, gedit, emacs, atom
@@ -161,12 +166,34 @@ hiSetBindKeys("Schematics" list(
     ; None<Btn2Down> 是中键
     list("None<Btn3Down>" "" "cancelEnterFun()") ; 鼠标右键用作 esc (esc 太远了)
     list("None<Btn3Down>(2)" "" "") ; 删除原有的冗余右键绑定
-    list("<Key>g" "schHiCreatePin(\"GND\" \"input\" \"schematic\" \"full\" nil nil nil \"roman\")") ; 按键 G 创建 GND pin, 默认是 schHiFindMarker()
+    ; list("<Key>g" "schHiCreatePin(\"GND\" \"input\" \"schematic\" \"full\" nil nil nil \"roman\")") ; 按键 G 创建 GND pin, 默认是 schHiFindMarker()
+    list("<Key>g" "schHiCreateInst(\"analogLib\" \"gnd\" \"symbol\")") ; 按键 G 创建 gnd
+    list("<Key>v" "schHiCreateInst(\"analogLib\" \"vdc\" \"symbol\")") ; 按键 v 创建 dc source
     list("<Key>r"  "schHiCreateInst(\"analogLib\" \"res\" \"symbol\")") ; 按键 R 创建理想电阻
     list("<Key>c"  "schHiCreateInst(\"analogLib\" \"cap\" \"symbol\")") ; 按键 C 创建理想电容 (默认是复制 schHiCopy())
     list("Ctrl<Key>c" "schHiCopy()") ; Ctrl + C 复制
     list("<Key>d" "schHiCreateNoteShape()") ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
     list("<Key>a" "schHiCreateInst()") ; 按键 A 添加 instance (默认功能是 geSingleSelectPoint()), 用于替代按键 I
+	)
+)
+
+hiSetBindKeys("Symbol" list(
+    list("None<Btn4Down>" "geScroll(nil \"n\" nil)") ; 鼠标滚轮上滑, 界面上移:
+    list("None<Btn5Down>" "geScroll(nil \"s\" nil)") ; 鼠标滚轮下滑, 界面下移:
+    list("Ctrl<Btn4Down>" "hiZoomInAtMouse()") ; Ctrl + 鼠标滚轮上滑, 放大界面:
+    list("Ctrl<Btn5Down>" "hiZoomOutAtMouse()") ; Ctrl + 鼠标滚轮下滑, 缩小界面:
+    list("Ctrl<Key>Z" "hiUndo()") ; Ctrl + Z, 撤销:
+    list("Ctrl<Key>Y" "hiRedo()") ; Ctrl + Y, 重做:
+    list("<Key>F5" "simulate") ; F5 仿真
+    list("<Key>space" "schSetEnv(\"rotate\" t)") ; 空格旋转
+    list("Ctrl<Key>s" "schHiVICAndSave()") ; Ctrl + S 检查与保存 (与 schematic 中的命令不同)
+    list("<Key>x" "schSetEnv(\"sideways\" t)") ; x 翻转
+    ; list("<Key>d" "cancelEnterFun()") ; d 取消, 用作 esc 的替代 (esc 太远了)
+    ; None<Btn2Down> 是中键
+    list("None<Btn3Down>" "" "cancelEnterFun()") ; 鼠标右键用作 esc (esc 太远了)
+    list("None<Btn3Down>(2)" "" "") ; 删除原有的冗余右键绑定
+    list("Ctrl<Key>c" "schHiCopy()") ; Ctrl + C 复制
+    list("<Key>d" "schHiCreateNoteShape()") ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
 	)
 )
 
@@ -176,7 +203,16 @@ hiSetFont( "ciw" ?name "monospace" ?size 18 ?bold nil ?italic nil )
 hiSetFont( "label" ?name  "roman" ?size 13 ?bold nil ?italic nil ) ; "label" 既是 toolbar 的字体, 也是打开某些设置界面的字体, 因此 "label" 字号不宜过大, 否则会导致表单文字重叠
 ; hiSetFont( "text" ?name "roman" ?size 18 ?bold nil ?italic nil ) ; 2025.05.25 暂时没找到 text 是对应哪个界面的字体
 
+; 设置 log filter 的默认输出
+; hiSetFilter() ; 此命令是打开 log filter 窗口
+hiSetFilterForm->accelInput->value= t   ; 将默认不输出的值全部勾选为输出
+; hiSetFilterForm->accelRetval->value= t ; 这个没啥必要
+hiSetFilterForm->promptOutput->value= t
+_hiFormApplyCB(hiSetFilterForm)     ; 应用已修改的 log filter 结构体
 
+
+; 其它设置
+ExportImageDialog->fileName->value = "/home/IC/a_Win_VM_shared/a_Misc/schematic.png" ; 设置 schematic 导出为 image 时的默认路径
 ```
 
 
@@ -197,8 +233,6 @@ hiSetFont( "label" ?name  "roman" ?size 13 ?bold nil ?italic nil ) ; "label" �
 也可以在 `.cdsinit` 文件中用 SKILL 语言修改上面的环境变量，语法为：
 
 ``` bash
-; .cdsinit
-
 envSetVal(list(
     list("auCore.misc" "labelDigits" 'int 6)
     list("schematic" "createLabelFontStyle" 'cyclic "roman")
@@ -238,7 +272,7 @@ envSetVal(“adexl.distribute” “defaultRunInParallel” 'boolean t)
 
 
 
-### Command Definitions
+### 3. Command Definitions
 
 再次强调参考资料 [Virtuoso® Schematic Editor SKILL Functions Reference](<https://picture.iczhiku.com/resource/eetop/sykRGZGTDTSiYmCv.pdf>)
 
@@ -294,7 +328,7 @@ schHiCreateInst("analogLib" "cap" "symbol")
 
 
 
-### Shared Folders
+### 4. Shared Folders
 
 要想在主机 (windows) 和虚拟机之间互传文件，最简单的方法就是在原机和虚拟机之间建立一个共享文件夹。具体步骤如下：
 
@@ -360,12 +394,12 @@ vmware-hgfsclient # 查看当前虚拟机的共享文件夹 (有无挂载都会�
 
 
 
-### Add New Process Library
+### 5. Add Process Library
 
 详见文章 [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>).
 
 
-### Screenshot Path and Keybindings
+### 6. Screenshot Path
 
 - 修改 screenshot path: 虚拟机界面找到 `Edit > Preferences > Workspace`, 然后修改路径  (参考 [Configuring the Default Locations for Virtual Machine Files and Screenshots](https://techdocs.broadcom.com/us/en/vmware-cis/desktop-hypervisors/workstation-pro/17-0/using-vmware-workstation-pro/changing-workstation-pro-preference-settings/configuring-workspace-preference-settings/configuring-the-default-locations-for-virtual-machine-files-and-screenshots.html))
 - 修改 screenshot keybindings: 虚拟机界面 `Applications > System Tools > Settings > Devices > Keyboard`, 然后搜索 `screenshot`, 进行修改即可
@@ -388,11 +422,13 @@ vmware-hgfsclient # 查看当前虚拟机的共享文件夹 (有无挂载都会�
 ## Simulation Tips
 
 
-### Collection of Simulation Examples
+### 0. Simulation Examples
 
 - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
 - [Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
-- [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Overdrive and Gm-Id Methods.md>)
+- [Design Example of F-OTA using Gm-Id Method](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
+
+
 
 ### 1. Config Wire Color
 
@@ -408,9 +444,62 @@ vmware-hgfsclient # 查看当前虚拟机的共享文件夹 (有无挂载都会�
 
 
 
+## Other Tips and Tricks
+
+### 1. Export Schematic Img
+
+参考资料：
+- [How to take a screen capture for complete schematic view in batch mode](https://community.cadence.com/cadence_technology_forums/f/custom-ic-skill/53283/how-to-take-a-screen-capture-for-complete-schematic-view-in-batch-mode-because-i-have-many-schematic-views-need-do-it)
+
+在 schematic 界面打开后，我们可以运行下面的代码以快速导出 image:
+
+``` bash
+; 以原样式导出 (已测试过无问题)
+    hiExportImageDialog(getCurrentWindow()) ; 打开 export image 窗口
+    ExportImageDialog->fileName->value = "/home/IC/a_Win_VM_shared/a_Misc/schematic.png" ; 设置导出为 image 时的路径
+    ExportImageDialog->entireDesign->value = t ; 设置导出整个 schematic
+    ExportImageDialog->save->value = t  ; 执行导出操作
+    ExportImageDialog->close->value = t ; 关闭 export image 窗口
+```
 
 
+``` bash
+; 以白底黑线导出, 带 dotting (已测试过无问题)
+    hiExportImageDialog(getCurrentWindow()) ; 打开 export image 窗口
+    ExportImageDialog->fileName->value = "/home/IC/a_Win_VM_shared/a_Misc/schematic.png" ; 设置导出为 image 时的路径
+    ExportImageDialog->entireDesign->value = t ; 设置导出整个 schematic
+    ExportImageDialog->biColor->value = t ; 设置颜色样式为 bi-color
+    ExportImageDialog->swapFgBgColors->value = nil ; 先重置 swap 选项 (因为重新 open 一个 schematic, 新 sch 的 value 没有被重置, 仍是 t, 本质是设置为 nil 或 t 时才会触发相关动作)
+    ExportImageDialog->swapFgBgColors->value = t ; 再开启 swap
+    ExportImageDialog->save->value = t  ; 执行导出操作
+    ExportImageDialog->close->value = t ; 关闭 export image 窗口
+```
 
+``` bash
+; 以白底黑线导出, 不带 dotting (已测试过无问题)
+    ; 先修改 dotting, 导出后再修改回来
+    schHiDisplayOptions() ; 打开 schematic display options 窗口
+    schDisplayOptionsForm->gridType->value="none" ; 设置网格类型为 none
+    _hiFormApplyCB(schDisplayOptionsForm) ; 应用已修改的 display options 结构体
+    hiFormDone(schDisplayOptionsForm) ; 关闭 schDisplayOptionsForm
+    ; 以白底黑线导出
+    hiExportImageDialog(getCurrentWindow()) ; 打开 export image 窗口
+    ExportImageDialog->fileName->value = "/home/IC/a_Win_VM_shared/a_Misc/schematic.png" ; 设置导出为 image 时的路径
+    ExportImageDialog->entireDesign->value = t ; 设置导出整个 schematic
+    ExportImageDialog->biColor->value = t ; 设置颜色样式为 bi-color
+    ExportImageDialog->swapFgBgColors->value = nil ; 先重置 swap 选项 (因为重新 open 一个 schematic, 新 sch 的 value 没有被重置, 仍是 t, 本质是设置为 nil 或 t 时才会触发相关动作)
+    ExportImageDialog->swapFgBgColors->value = t ; 再开启 swap
+    ExportImageDialog->save->value = t  ; 执行导出操作
+    ExportImageDialog->close->value = t ; 关闭 export image 窗口
+    ; 恢复 dotting 设置
+    schHiDisplayOptions() ; 打开 schematic display options 窗口
+    schDisplayOptionsForm->gridType->value="dotted" ; 恢复网格类型为 dotted
+    _hiFormApplyCB(schDisplayOptionsForm) ; 应用已修改的 display options 结构体
+    hiFormCancel(schDisplayOptionsForm) ; 关闭 schematic display options 窗口
+    hiFormDone(schDisplayOptionsForm) ; 关闭 schDisplayOptionsForm
+```
+
+但是，要如何实现打开 schematic 前就设置好默认导出路径，并且可以自定义导出的颜色？我们尝试了几个小时，仍未找到解决方案，只能作罢。
 
 
 
@@ -481,7 +570,7 @@ vmware-hgfsclient # 查看当前虚拟机的共享文件夹 (有无挂载都会�
 于是又继续尝试下面的方法：
 - [VMware 不可恢复错误 mks 解决方案](https://blog.csdn.net/Dark_Volcano/article/details/128658228)
 - [VMware Workstation 17 出現 mks ISBRendererComm: Lost connection to mksSandbox 該怎麼辦?](https://wordpress.cine.idv.tw/index.php/2022/11/20/vmware-workstation-17-hangs-with-isbrenderercomm-lost-connection-to-mkssandboxvmware-error/)
-- [VMware Worksation 虚拟机性能调优](https://www.yongz.fun/posts/516e2ab0.html)
+- [VMware Workstation 虚拟机性能调优](https://www.yongz.fun/posts/516e2ab0.html)
 
 于是，我们又作了如下修改：
 
@@ -505,6 +594,46 @@ mks.dx12.vendorID = "4318"
 | 测试条件 | 现象 | 结果一 | 结果二 |
 |:-:|:-:|:-:|:-:|
  | (2025.05.25 23:21) 按上面的条件进行测试 | 进入虚拟机和打开 virtuoso 软件的速度明显变快 | (2025.05.25 23:22) 刚开始测试时的进程如下 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-25-23-24-40_How to Use Cadence Efficiently.png"/></div> | (2025.05.26 01:25) 查看时仍正常工作 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-26-01-28-30_How to Use Cadence Efficiently.png"/></div>|
+ | (2025.05.26 17:57) 按上面的条件进行第二次测试，边设计 [F-OTA](<Electronics/Design Example of F-OTA using Gm-Id Method.md>) 边测试 | (无) | (2025.05.26 17:58) 刚开始测试时的进程如下 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-26-18-00-26_How to Use Cadence Efficiently.png"/></div> | (2025.05.26 19:25) 出现卡死现象  |
+</div>
+
+于是又加长上面代码中的 timeout 时间：
+
+``` .vmx
+mks.sandbox.socketTimeoutMS = "200000000"
+mks.dx12.vendorID = "4318"
+```
+
+<div class='center'>
+
+| 测试条件 | 结果 |
+|:-:|:-:|
+ | (2025.05.26 19:29) 按上面的条件进行第三次测试，静置不动 | (2025.05.26 20:34) 查看时发现已经卡死 |
 </div>
 
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-26-01-27-47_How to Use Cadence Efficiently.png"/></div> -->
+
+于是又继续调整设置，先在 `.vmx` 文件中添加以下代码 (来自 [GitHub](https://github.com/vmware/open-vm-tools/issues/624#issuecomment-2224017940)):
+
+``` bash
+svga.allowAsyncReadback = "FALSE"
+virtualHW.version = "17"
+```
+
+然后参考链接 [win11 系统下的 VMware 优化: 输入延迟、卡顿，大小核调度](https://blog.csdn.net/ArthurCai/article/details/130068796) 关闭内存完整性、关闭 hyper-v 和 windows 沙盒的相关服务、调整 `mksSandbox` 进程的 CPU 核心，具体情况如下：
+
+<div class='center'>
+
+| 修改 `.vmx` 文件 | 关闭内存完整性| 关闭 hyper-v 和 windows 沙盒的相关服务 | 调整 `mksSandbox` 进程的 CPU 核心 | 调整 ` vmware-vmx` 进程的 CPU 核心 |
+|:-:|:-:|:-:|:-:|:-:|
+ | 修改一行代码、添加一行代码 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-26-21-02-17_How to Use Cadence Efficiently.png"/></div><div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-26-21-01-38_How to Use Cadence Efficiently.png"/></div> | 我们暂时没有关闭这一项  | 我们没找到相关服务, 所以没有作出调整 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-26-20-59-22_How to Use Cadence Efficiently.png"/></div> | 在 [bitsum](https://bitsum.com/) 下载 Process Lasso 并打开; 搜索 vmw, 右键 `mksSandbox`, 打开 `触发 性能模式`, 打开 `更多 > 保持运行 (自动重启)`; 然后设置 CPU, 点击 `CPU 亲和性 > 总是 > 选择 CPU 亲和性 > 选择与虚拟机处理器个数相同的大核 (带 E 的是小核)`, 同理设置 `CPU 集合 > 总是` (我们给 `CPU 亲和性` 和 `CPU 集合` 选择的是 CPU0 ~ CPU7) <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-26-21-12-48_How to Use Cadence Efficiently.png"/></div>  | 与 `mksSandbox` 进程同理，进行调整  <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-26-21-15-53_How to Use Cadence Efficiently.png"/></div> |
+</div>
+
+然后打开 virtuoso 进行测试：
+
+<div class='center'>
+
+| 测试条件 | 结果 |
+|:-:|:-:|
+ | (2025.05.26 21:18) 按上面的条件进行第四次测试，静置不动 (使用时感觉明显变卡, 经过尝试, 是 CPU 过少导致的) | (2025.05.27 02:06) 我们一直使用到第二天得到 02:06, 并没有出现任何卡死现象，问题终于得到解决！！ |
+</div>

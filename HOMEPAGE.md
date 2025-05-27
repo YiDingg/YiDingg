@@ -46,6 +46,7 @@ Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeature
 -   Git to video: use [Screen to GIF]() to convert video into gif if you need.
 -   Title: use [Capitalize](https://capitalizemytitle.com/style/APA/) <span class='tinyscript'>or [Wawa](https://www.iamwawa.cn/daxiaoxie.html)</span> to capitalize your titles, and use [Rewriter](https://capitalizemytitle.com/ai-title-rewriter/) to rewrite your title.
 - Questionnaire survey (问卷调查): [aidaform](https://aidaform.com/)
+- Collection of e-books: [GitCode > Open-source-documentation-tutorial](https://gitcode.com/org/Open-source-documentation-tutorial/repos)
 
 ### Graphics
 
