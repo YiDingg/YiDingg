@@ -20,9 +20,17 @@
 
 可以看到，除了第一条曲线 (C = 1nF), 其它三条曲线基本没有差异，因此排除了 RC 低通网络导致输入衰减的可能性。第二至第四调曲线使用的电容分别是： 1uF 独石电容，正极指向开关的 220uF 绿金电解电容 (low ESR)，负极指向开关的 220uF 绿金电解电容 (low ESR)。
 
+
+### Possible Cause 3 (待验证): 修正 RC 低通网络带来的低频增益测量误差
+
+详见文章 [Correction of the AC Gain Equation in ADI's Op Amp Measurement Methods](<Electronics/Correction of the AC Gain Equation in the ADI Op Amp Measurement Methods.md>).
+
+
+
+
 ### Possible Cause 2 (待研究): 反馈网络导致的低频增益测量值下降
 
-参考 - [Bode 100 - Application Note: Operational Amplifier Measurements with Bode100](https://www.omicron-lab.com/fileadmin/assets/Bode_100/ApplicationNotes/Op-Amp_Analysis/App_Note_Op-AMP_FH_Regensburg_V1.2.pdf) 的 page 13 - page 16. 资料中指出，当运放通过一个低通滤波器将输出反馈到 inverting 输入端时，增益测量值与实际值的关系如下图所示：
+参考 [Bode 100 > Application Note: Operational Amplifier Measurements with Bode100](https://www.omicron-lab.com/fileadmin/assets/Bode_100/ApplicationNotes/Op-Amp_Analysis/App_Note_Op-AMP_FH_Regensburg_V1.2.pdf) 的 page 13 - page 16. 资料中指出，当运放通过一个低通滤波器将输出反馈到 inverting 输入端时，增益测量值与实际值的关系如下图所示：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-15-00-43-00_Several Problems in Op Amp Measurement.png"/></div>
 
@@ -30,6 +38,7 @@
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-04-15-00-57-04_Several Problems in Op Amp Measurement.png"/></div>
 
 其中，增益测量值“恢复”到实际值的频率与低通网络的截止频率有关。具体而言，设低通网络的截止频率为 $f_c$，则增益测量值会在 $f_c$ 处开始上升 (这表明 $f_c$ 是增益测量值的零点)。为什么我们说上面这个理论很可能就是导致低频增益测量值下降的原因呢？我们的电路看似并没有接入低通反馈网络呀？其实，我们的测量电路是存在低通反馈网络的，它由 AUX 辅助运放 > 100kOhm > 
+
 
 
 ## Problem 2: Abnormal Increasing of AC Gain at High Frequency (Solved)

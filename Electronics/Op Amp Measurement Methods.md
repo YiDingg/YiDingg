@@ -17,7 +17,7 @@ Notes:
 
 运放测量的实验结果都汇总在了 [The Collection of My Measurement Experiments](<Electronics/The Collection of My Measurement Experiments.md>).
 
-## V_IO (Offset Voltage)
+## V_IO 
 
 An ideal op amp has zero offset voltage ($V_{IO}$), i.e., if both inputs are joined together and held at a voltage midway between the supplies, the output voltage should also be midway between the supplies.
 
@@ -40,7 +40,7 @@ Noticing that TP2 and $V_{DUT, out}$ are at the same voltage, we abbreviate $V_{
 When S1 and S2 are closed, $I_{IO}$ still flows in the 100-Ω resistors and introduces an error in $V_{IO}$, but unless Ios is large enough to produce an error of greater than 1% of the measured $V_{IO}$, it may usually be ignored in this calculation.
 
 
-## I_B (Bias Current) and I_IO
+## I_B
 
 Figure 3 shows how $I_{B+}$ and $I_{B-}$ can be measured. 
 <div class="center"><img width=500px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-02-12-19-40-04_Op Amp Measurement Methods.png"/></div>
@@ -81,7 +81,7 @@ $$
 
 Note that for values of $I_B$ of the order of 5 pA or less, it becomes quite difficult to use this circuit because of the large resistors involved; other techniques may be required, probably involving the rate at which IB charges low-leakage capacitors (that replace RS).
 
-## Open-Loop DC Gain
+## DC Gain
 
 The open-loop dc gain is measured by switching R5 between the DUT output and a 1-V reference with S6. If R5 is at +1 V, then the DUT output must move to –1 V if the input of the auxiliary amplifier is to remain unchanged near zero.
 
@@ -95,7 +95,7 @@ A_{OL} = \frac{1 \ \mathrm{V}}{ \frac{\Delta V_{TP1}}{1000} } = \frac{1000}{\Del
 \end{gather}
 $$
 
-## Open-Loop AC Gain
+## AC Gain
 
 To measure the open-loop ac gain, it is necessary to inject a small ac signal of the desired frequency at the DUT input and measure the resulting signal at its output (TP2 in Figure 5). While this is being done, the auxiliary amplifier continues to stabilize the mean dc level at the DUT output.
 

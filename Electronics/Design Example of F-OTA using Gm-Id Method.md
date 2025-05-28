@@ -224,7 +224,7 @@ $$
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-27-00-31-15_Design Example of F-OTA using Gm-Id Method.png"/></div>
 
-### 6. simulation test
+### 6. summary and adjustment
 
 各管子参数汇总如下：
 
@@ -251,7 +251,72 @@ $$
 
 **<span style='color:red'> 注：实际的电路中, 用于生成 biasing 的 M6 应具有较小的电流, 在 I_ref 的基础上, 通过 multiplication 获得正常的 Iss.</span>** 比如实际中常选用 M5 : M6 = 10, 也就是 M6:M5 = 1/10, 简便起见，我们这里直接用 M5 = M6 了。
 
-#### 6.0 dc operating point
+
+结合仿真结果的理论计算过程借助了 MATLAB 进行，具体源码如下：
+
+``` matlab
+20250526 F-OTA 设计
+% 0. design goals
+C_L = 5e-12;
+GBW_obj = 60e6;
+SR_obj = 60e6;
+VDD = 1.8;
+I_suplly = 500e-6;
+Av_obj = 300;
+
+% 1. gm
+GBW_f = @(g_m1) g_m1 / (2*pi*C_L) - GBW_obj;
+g_m1 = fzero(GBW_f, [0 1]);
+disp(['Step.1    g_m1 = ', num2str(g_m1*10^3), ' mS'])
+
+% 2. (gm/Id)_M1_M2, L (gm*rO)_M1_M2
+Id_min = 0.5*SR_obj*C_L
+Id_max = 0.5*I_suplly
+
+gmId_max = g_m1/Id_min
+gmId_min = g_m1/Id_max
+
+self_gain_N = Av_obj;
+gm_Id = 11;
+L_M1_M2 = 1.152e-6;
+Id_W = 4.152;
+
+% 3. Id, W_M1_M2
+
+Id = g_m1/gm_Id;
+W_M1_M2 = Id/Id_W;
+a_M1_M2 = W_M1_M2/L_M1_M2;
+disp(['Id = ', num2str(Id*10^6), ' uA'])
+disp(['(W/L)_M1_M2 = ', num2str(W_M1_M2*10^6), ' um / ', num2str(L_M1_M2*10^6), ' um'])
+disp(['a_M1_M2 = ', num2str(a_M1_M2)])
+
+% 4. PMOS (M3, M4)
+
+L_M3_M4 = L_M1_M2;
+Id_W = 1.729;
+W_M3_M4 = Id/Id_W;
+a_M3_M4 = W_M3_M4/L_M3_M4;
+disp(['Id = ', num2str(Id*10^6), ' uA'])
+disp(['(W/L)_M3_M4 = ', num2str(W_M3_M4*10^6), ' um / ', num2str(L_M3_M4*10^6), ' um'])
+disp(['a_M3_M4 = ', num2str(a_M3_M4)])
+
+% 5. NMOS (M5, M6)
+
+Id_M5_M6 = 2*Id
+L_M5_M6 = 1.557e-6
+Id_W = 1.19;
+W_M5_M6 = Id_M5_M6/Id_W;
+a_M5_M6 = W_M5_M6/L_M5_M6;
+disp(['Id_M5_M6 = ', num2str(Id_M5_M6*10^6), ' uA'])
+disp(['(W/L)_M3_M4 = ', num2str(W_M5_M6*10^6), ' um / ', num2str(L_M5_M6*10^6), ' um'])
+disp(['a_M3_M4 = ', num2str(a_M5_M6)])
+```
+
+
+### 7. simulation test
+
+
+#### 7.0 dc operating point
 
 下面，我们就来搭建电路，稍后还需要创建 OTA 的 symbol 用于后续仿真。先搭建电路，检查 dc 工作点是否正常：
 
@@ -266,7 +331,7 @@ $$
  | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-27-01-08-51_Design Example of F-OTA using Gm-Id Method.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-27-01-07-44_Design Example of F-OTA using Gm-Id Method.png"/></div> |
 </div>
 
-#### 6.1 dc in-out curve
+#### 7.1 dc in-out curve
 
 在开始进一步的仿真之前，我们需要先创建电路的 symbol, 具体步骤为：在 schematic 界面，点击 `create > create cellview > from cellview`，无需改名，直接创建即可 (这里创建的是 symbol, 它会和 schematic 在同一 cellview 下) 
 
@@ -294,7 +359,7 @@ $$
 
 上面我们是在 $V_{in,CM} = 0.9 \ \mathrm{V}$ 时进行的仿真，观察到 $V_{out}|_{V_{in,CM} = 0} = 1.106 \ \mathrm{V} \ne 0.9 \ \mathrm{V}$，可以理解为差模输入有一定的 offset $V_{OS}$, 如果需要让 $V_{in,DM} = 0$ 时的输出电压恰好为 $\frac{VDD}{2} = 0.9 \ \mathrm{V}$，可以通过降低 PMOS 管的 $\frac{g_m}{I_D}$ 来实现，这会使 $V_{OV}$ 增大, 从而降低 $V_{out}|_{V_{in,CM} = 0}$.
 
-#### 6.2 input-output range
+#### 7.2 input-output range
 
 如图，设置 Vin_DM 为第一变量, Vin_CM 为第二变量，得到不同共模输入下的 in-out curve:
 
@@ -342,12 +407,14 @@ $$
 **事实上，像这样一个 output range 受 input 限制的 stage, 我们通常不会对电路的 output swing 提过多的要求，而是直接在其后加上轨到轨的输出级以获得 rail-to-rail output** (e.g., a CMOS inverter)。不过，某些实际应用中确实固定了 Vin_CM, 且 stage 数非常紧张 (比如只能有一级), 这时可能会对 output swing 有较高的要求。
 
 
-#### 6.3 frequency response
+#### 7.3 frequency response
 
-下面就来仿真开环增益的频响曲线，评估其增益带宽积是否达到设计指标。用负反馈建议直流工作点，以获得更真实的频响曲线：
+下面就来仿真开环增益的频响曲线，评估其增益带宽积是否达到设计指标。用负反馈建立直流工作点，以获得更真实的频响曲线：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-27-16-43-24_Design Example of F-OTA using Gm-Id Method.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-27-16-43-37_Design Example of F-OTA using Gm-Id Method.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-27-22-21-52_Design Example of F-OTA using Gm-Id Method.png"/></div>
+
 
 $$
 \begin{gather}
@@ -355,7 +422,7 @@ A_{v0} = 139.1 \ \mathrm{V/V} = 42.87 \ \mathrm{dB},\quad f_c = 421.3 \ \mathrm{
 \end{gather}
 $$
 
-#### 6.4 slew rate SR
+#### 7.4 slew rate SR
 
 设置 pulse 激励时上升/下降沿的时间不能为零，为零会报错，无法进行仿真，不妨设为 1ps.
 
@@ -369,7 +436,7 @@ $$
 $$
 
 
-### 7. design conclusion
+### 8. design conclusion
 
 下面是设计指标与仿真结果的对比：
 <div class='center'>
@@ -381,6 +448,9 @@ $$
 </div>
 
 GBW 原本是按 60MHz 设计的，但由于我们使用的 transistor 已经算非常大了 (width 和 length 都比较高), 受寄生电容的影响, GBW 稍有下降。另外，上面的 current consumption 并没有考虑 biasing current, 考虑 1:10 的 bias 后总 current 约为 377.0 uA 。
+
+
+这篇文章的主要目的有二，其一是借助一个简单的设计例子，学习 gm-Id 设计方法的流程和思路；其二便是进一步熟悉 cadence 的使用，尤其是如何利用 SKILL 语言修改设置、快速执行某些操作等，这对日后在 cadence 中进行更复杂的设计是非常有帮助的。总的来讲，本次设计在 design idea 上并没有花多少时间，时间主要消耗在了 cadence 的探索、配置文件的修改优化和 SKILL 语言的基本使用上，最终为文章 [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>) 贡献了相当多的内容。
 
 
 

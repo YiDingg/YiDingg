@@ -5,6 +5,9 @@ Initially published at 20:03 on 2025-02-12 in Lincang.
 
 ## Infor
 
+!> **<span style='color:red'>Attention:</span>**<br>
+本板因为存在设计缺陷已经弃用，建议使用 [Basic Op Amp Measurement Board v2](<ElectronicDesigns/Basic Op Amp Measurement Board v2.md>) 替代。
+
 本板用于测量运算放大器包括失调电压 $V_{IO}$、偏置电流 $I_{B\pm}$、开环增益 $A_{OL}$ 在内的 8 种运放基本参数。
 
 - Time: 2025.02.13
@@ -102,6 +105,10 @@ Then, we can start the measurement:
  | 8 | AC PSRR |<span style='color:red'> S3 to 1</span>, configure W1 to sine wave (1V amplitude, +4V offset), W2 to sine wave (1V amplitude, -4V offset), ${\color{red}{\Delta \varphi = \pi}}$ and measure $v_{TP1, amp}$ | $\mathrm{CMRR} = \frac{2002\, v_{W1, amp}}{v_{TP1,amp}}$ |
 
 </div>
+
+
+- 2025.05.28 注: 发现 AC CMRR 和 PSRR 的计算公式有误，已修正 v2 中的公式，但是未修正 v1 中的公式（因为 v1 已废弃）
+
 
 
 ## Design Notes

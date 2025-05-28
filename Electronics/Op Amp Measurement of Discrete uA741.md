@@ -184,3 +184,7 @@ disp(['GBWP = ', num2str(GBWP/10^6), ' MHz'])
 ```
 
 注：事实上，我们在数据处理时， phase 项少加了一个负号，在实验报告的图片中已修正这个错误。
+
+## 结果汇总
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-28-18-28-52_Op Amp Measurement of Discrete uA741.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-28-18-28-39_Op Amp Measurement of Discrete uA741.png"/></div>

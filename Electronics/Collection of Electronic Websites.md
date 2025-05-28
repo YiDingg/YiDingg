@@ -16,3 +16,4 @@ Initially published at 00:09 on 2025-04-22 in Beijing.
 - [Analysis and Design of Analog Integrated Circuits](https://cppsim.com/circuit_lectures.html) : 由 CppSim (System Simulator) 提供的 Lectures 之一, 
 - [EDN: Electronics Design Ideas and Projects](https://www.edn.com/category/design/design-idea)
 - [mbedded.ninja](https://blog.mbedded.ninja/)
+- [CrazyAmp.com](http://crazyamp.com/)

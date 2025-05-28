@@ -81,7 +81,7 @@
 
     - [**[Pinned] Roadmap for Analog ICer**](<Electronics/Roadmap for Analog ICer.md>)
     - [**[Pinned] Collections of Electronic Websites**](<Electronics/Collection of Electronic Websites.md>)
-    - [**[Pinned] The Collection of My Measurement Experiments**](<Electronics/The Collection of My Measurement Experiments.md>)
+    - [**[Pinned] Collection of My Measurement Experiments**](<Electronics/The Collection of My Measurement Experiments.md>)
 
     - Razavi CMOS
         - [Design Example of Folded-Cascode Stage](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>)
@@ -103,6 +103,7 @@
         - [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
 
     - 2025 (63 items)
+        - [Correction of the AC Gain Equation in ADI's Op Amp Measurement Methods](<Electronics/Correction of the AC Gain Equation in the ADI Op Amp Measurement Methods.md>)
         - [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
         - [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
         - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
@@ -114,12 +115,12 @@
         - [Op Amp Measurement of Discrete CMOS Op Amp 1 (CS)](<Electronics/Op Amp Measurement of Discrete CMOS Op Amp 1 (CS).md>)
         - [Op Amp Measurement of Discrete CMOS Op Amp 2 (PP)](<Electronics/Op Amp Measurement of Discrete CMOS Op Amp 2 (PP).md>)
         - [Gain Boosting Techniques](<Electronics/[Razavi CMOS] Gain Boosting Techniques.md>)
-        - [The Collection of My Measurement Experiments](<Electronics/The Collection of My Measurement Experiments.md>)
+        - [Collection of My Measurement Experiments](<Electronics/The Collection of My Measurement Experiments.md>)
         - [Op Amp Measurement of LM412CN](<Electronics/Op Amp Measurement of LM412CN.md>)
         - [Op Amp Measurement of Discrete uA741](<Electronics/Op Amp Measurement of Discrete uA741.md>)
         - [Modeling the Non-Idealities of Op Amp](<Electronics/Modeling the Non-Idealities of Op Amp.md>)
         - [Detailed Explanation of uA741](<Electronics/Detailed Explanation of uA741.md>)
-        - [Digilent WaveForms](<Electronics/WaveForms Insight.md>)
+        - [Exploring WaveForms](<Electronics/WaveForms Insight.md>)
         - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)
         - [An Example of Negative FB Amp](<Electronics/An Example of Negative FB Amp.md>)
         - [Constant Current Source using Transistors](<Electronics/Constant Current Source using Transistors.md>)

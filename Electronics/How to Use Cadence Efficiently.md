@@ -502,6 +502,13 @@ vmware-hgfsclient # 查看当前虚拟机的共享文件夹 (有无挂载都会�
 但是，要如何实现打开 schematic 前就设置好默认导出路径，并且可以自定义导出的颜色？我们尝试了几个小时，仍未找到解决方案，只能作罢。
 
 
+### 2. Export Simulation PDF
+
+
+
+经过测试, print 窗口为函数 `_ddtExecuteAction(awvGetCurrentWindow()->vivaSession "graphPrint")` 的内部进程，无法通过代码快速设置、调用。
+
+
 
 ## Frequently Asked Questions
 
@@ -624,7 +631,7 @@ virtualHW.version = "17"
 
 <div class='center'>
 
-| 修改 `.vmx` 文件 | 关闭内存完整性| 关闭 hyper-v 和 windows 沙盒的相关服务 | 调整 `mksSandbox` 进程的 CPU 核心 | 调整 ` vmware-vmx` 进程的 CPU 核心 |
+| 修改 `.vmx` 文件 | 关闭内存完整性| 关闭 hyper-v 和 windows 沙盒的相关服务 | 调整 `mksSandbox` 进程的 CPU 核心 | 调整 `vmware-vmx` 进程的 CPU 核心 |
 |:-:|:-:|:-:|:-:|:-:|
  | 修改一行代码、添加一行代码 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-26-21-02-17_How to Use Cadence Efficiently.png"/></div><div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-26-21-01-38_How to Use Cadence Efficiently.png"/></div> | 我们暂时没有关闭这一项  | 我们没找到相关服务, 所以没有作出调整 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-26-20-59-22_How to Use Cadence Efficiently.png"/></div> | 在 [bitsum](https://bitsum.com/) 下载 Process Lasso 并打开; 搜索 vmw, 右键 `mksSandbox`, 打开 `触发 性能模式`, 打开 `更多 > 保持运行 (自动重启)`; 然后设置 CPU, 点击 `CPU 亲和性 > 总是 > 选择 CPU 亲和性 > 选择与虚拟机处理器个数相同的大核 (带 E 的是小核)`, 同理设置 `CPU 集合 > 总是` (我们给 `CPU 亲和性` 和 `CPU 集合` 选择的是 CPU0 ~ CPU7) <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-26-21-12-48_How to Use Cadence Efficiently.png"/></div>  | 与 `mksSandbox` 进程同理，进行调整  <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-26-21-15-53_How to Use Cadence Efficiently.png"/></div> |
 </div>
@@ -637,3 +644,9 @@ virtualHW.version = "17"
 |:-:|:-:|
  | (2025.05.26 21:18) 按上面的条件进行第四次测试，静置不动 (使用时感觉明显变卡, 经过尝试, 是 CPU 过少导致的) | (2025.05.27 02:06) 我们一直使用到第二天得到 02:06, 并没有出现任何卡死现象，问题终于得到解决！！ |
 </div>
+
+2025.05.27 22:07 记录：今天又出现了卡死现象，仅打开虚拟机，在桌面挂机也会死机，唉 ε(´ο｀*)))。于是又尝试关闭了内存完整性，重启电脑进行测试：
+
+| 测试条件 | 结果 |
+|:-:|:-:|
+ | (2025.05.27 22:09) 关闭内存完整性，在 process lasso 中将 `mksSandbox` 和 `vmware-vmx` 从智能内存整理中排除，修改 IO 优先级为 `高`，`更多 > 停用空闲节能`；然后打开 virtuoso 进行挂机 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-27-22-12-33_How to Use Cadence Efficiently.png"/></div> | (2025.05.28 02:11) 查看时发现没有卡死，虚拟机正常运行，好像确实是解决了！ |

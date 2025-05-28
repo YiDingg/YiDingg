@@ -3,12 +3,7 @@
 > [!Note|style:callout|label:Infor]
 > Initially published at 14:59 on 2025-05-09 in Beijing.
 
-
-## 
-
-## Impedance
-
-### Formula inversion
+## Formula inversion
 
 Formula inversion: 
 $$
@@ -34,7 +29,9 @@ I_{DUT} = I_{Res} = \frac{V_{Res}}{R}
 \end{gather}
 $$
 
-### Coding Tips
+## Impedance Mode
+
+Impedance 模式不需要单独设置示波器为 ac coupling, 数字系统会自动计算其 offset 和 amplitude 量并将后者呈现在结果中。
 
 **Condition 1: `W1-C1-R-C2-DUT-GND`**
 
@@ -60,8 +57,8 @@ V_2 = V_DUT = VRMS*sqrt(2)
 ``` WaveForms
 Condition 3: W1-C1P-DUT-C1N-C2-R-GND
 
-V_1 = V_DUT = VRMS*sqrt(2)
-V_2 = IRMS*Resistor*sqrt(2)
-phase = phase_Vout - phase_Vin = angle
+|V_1| = V_DUT = VRMS*sqrt(2)
+|V_2| = IRMS*Resistor*sqrt(2)
+phase = phase_Vout - phase_Vin = phase_V2 - phase_V1 = angle
 ```
 
