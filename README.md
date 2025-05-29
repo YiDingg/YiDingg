@@ -25,9 +25,9 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C206%20hrs%2048%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C212%20hrs%2047%20mins-blue)
 
-![Profile Views](http://img.shields.io/badge/Profile%20Views-82-blue)
+![Profile Views](http://img.shields.io/badge/Profile%20Views-74-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-796.7%20thousand%20lines%20of%20code-blue)
 
@@ -56,17 +56,17 @@ Sunday                   198 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 40 hrs 37 mins      ██████████████████████░░░   88.73 % 
-TeX                      5 hrs 8 mins        ███░░░░░░░░░░░░░░░░░░░░░░   11.23 % 
+Markdown                 40 hrs 47 mins      ██████████████████████░░░   87.52 % 
+TeX                      5 hrs 45 mins       ███░░░░░░░░░░░░░░░░░░░░░░   12.36 % 
+Other                    2 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.08 % 
 Tcsh                     0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.03 % 
 JSON                     0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.01 % 
-Perl                     0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               40 hrs 26 mins      ██████████████████████░░░   88.31 % 
-GH.LatexNotes            2 hrs 43 mins       █░░░░░░░░░░░░░░░░░░░░░░░░   05.96 % 
-GH.UCAS-LinearCircuitExpe2 hrs 24 mins       █░░░░░░░░░░░░░░░░░░░░░░░░   05.27 % 
-Unknown Project          12 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   00.46 % 
+GH.YiDingg               40 hrs 38 mins      ██████████████████████░░░   87.19 % 
+GH.UCAS-LinearCircuitExpe3 hrs 1 min         ██░░░░░░░░░░░░░░░░░░░░░░░   06.50 % 
+GH.LatexNotes            2 hrs 43 mins       █░░░░░░░░░░░░░░░░░░░░░░░░   05.85 % 
+Unknown Project          12 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   00.45 % 
 ```
 
 **I Mostly Code in C** 
@@ -82,7 +82,7 @@ TypeScript               1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2025.05.28 18:46 UTC
+ Last Updated on 2025.05.29 18:46 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
