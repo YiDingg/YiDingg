@@ -1,7 +1,7 @@
 # Correction of the AC Gain Equation in the ADI Op Amp Measurement Methods
 
 > [!Note|style:callout|label:Infor]
-Initially published at 16:15 on 2025-05-18 in Beijing.
+Initially published at 16:13 on 2025-05-28 in Beijing.
 
 ## Introduction
 
@@ -55,4 +55,36 @@ $$
 
 最终结论就是，公式 $A_v = \left(1 + \frac{R_9}{R_1} + \frac{1}{j 2 \pi f R_1 C_3}\right) \times \left(- \frac{v_{TP2}}{v_{acin}}\right)$ 可以在相当宽的频率范围内有很高的精度，因此具有较大的实际价值。
 
+本文借助了 MATLAB 辅助推导公式，具体代码如下：
+
+``` matlab
+%% 20250528 ADI op amp 测量方法修正
+
+syms v_out1 A_1 v_out2 R_2 R_3 v_1 omega R_4 A_2 C_1 R_1 R_9 C_3 v_in s
+
+% 代入具体数值
+if 0
+C_3 = 10e-9;
+R_9 = 51e3;
+R_1 = 100;
+R_2 = 100;
+R_3 = 100e3;
+R_4 = MyParallel(20, 20);
+C_1 = 10e-6;
+end
+
+eq1 = v_1 == R_1 / (R_1 + R_9 + 1/(s*C_3)) * v_in
+eq2 = v_out1 == A_1 * ( v_out2/(1+R_3/R_2) - v_1 )
+eq3 = (v_out1 + v_out2/A_2) / R_4 == (-v_out2/A_2 - v_out2) / (1/s*C_1)
+re_v_out2 = solve(eq2, v_out2)
+eq3 = subs(eq3, v_out2, re_v_out2);
+re_v_out1 = solve(eq3, v_out1);
+re_v_out1 = simplifyFraction(re_v_out1)
+re_v_out1_dividedBy_v_1 = simplify(re_v_out1/v_1)
+
+limit(re_v_out1_dividedBy_v_1, A_2, inf)
+simplify(subs(re_v_out1_dividedBy_v_1, A_2, A_1))
+```
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-29-00-05-49_Correction of the AC Gain Equation in the ADI Op Amp Measurement Methods.png"/></div>
 

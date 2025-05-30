@@ -2,7 +2,7 @@
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 17:05 on 2025-05-20 in Beijing.
-
+<!-- 
 - Cadence 相关文章汇总：
     - [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
     - [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)
@@ -10,8 +10,9 @@
     - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
     - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
     - [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
+    - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<Electronics/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)
 
-
+ -->
 
 ## Install Cadence IC618
 
@@ -133,7 +134,7 @@ auCore.misc    labelDigits int 6 ;设置仿真结果显示 6 位小数
 layout displayPinName boolean t ; ; 在布局中默认显示 pin name
 schematic	schWindowBBox	string	"((300 50) (2000 950))" ; 修改 schematic 打开时的默认窗口大小、位置
 layout	leWindowBBox	string	"((500 50) (2200 950))" ; 修改 layout 打开时的默认窗口大小、位置
-ui	ciwCmdInputLines	int	4 ; 设置 CIW 窗口 input area 的行数 (默认为 1)
+ui	ciwCmdInputLines	int	12 ; 设置 CIW 窗口 input area 的行数 (默认为 1)
 schematic	showUndoRedoHistoryInEditor	boolean	t ; 在 schematic 中显示撤销重做历史
 ```
 
@@ -446,6 +447,15 @@ vmware-hgfsclient # 查看当前虚拟机的共享文件夹 (有无挂载都会�
 
 ## Other Tips and Tricks
 
+### 0. CIW Coding Tips
+
+下面是一些 CIW 界面的使用命令 (SKILL 语言):
+
+``` bash
+startFinde(); 打开 "Cadence SKILL API Finder", 用于查找函数及其定义
+```
+
+
 ### 1. Export Schematic Img
 
 参考资料：
@@ -507,6 +517,55 @@ vmware-hgfsclient # 查看当前虚拟机的共享文件夹 (有无挂载都会�
 
 
 经过测试, print 窗口为函数 `_ddtExecuteAction(awvGetCurrentWindow()->vivaSession "graphPrint")` 的内部进程，无法通过代码快速设置、调用。
+
+### 3. Export Simulation Data
+
+
+详见 [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<Electronics/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>).
+
+示例代码如下：
+``` bash
+; 2025.05.29: cadence virtuoso 快速导出 gm-Id 仿真数据
+
+    ; 设置数据导出路径和器件名称
+        ; 完整路径例如 "/home/IC/a_Win_VM_shared/a_Misc/Cadence_Data/tsmc18rf_gmIdData_nmos2v/tsmc18rf_gmIdData_nmos2v_test.txt"
+        export_path = "/home/IC/a_Win_VM_shared/a_Misc/Cadence_Data"
+        export_deviceName = "tsmc18rf_gmIdData_nmos2v"
+        export_fileFormat = ".txt"
+    ; 创建各个数据的 filePathAndName
+        path_selfGain = strcat(export_path, "/", export_deviceName, "/", export_deviceName, "_selfGain", export_fileFormat)
+        path_currentDensity = strcat(export_path, "/", export_deviceName, "/", export_deviceName, "_currentDensity", export_fileFormat)
+        path_transientFreq = strcat(export_path, "/", export_deviceName, "/", export_deviceName, "_transientFreq", export_fileFormat)
+        path_overdrive = strcat(export_path, "/", export_deviceName, "/", export_deviceName, "_overdrive", export_fileFormat)
+        path_vgs = strcat(export_path, "/", export_deviceName, "/", export_deviceName, "_vgs", export_fileFormat)
+    ; 导出数据
+        ocnPrint(   ; 1. 导出 self gain (gm*rO)
+            ?output path_selfGain
+            ?numberNotation 'scientific
+            waveVsWave(?x OS("/NMOS" "gmoverid") ?y OS("/NMOS" "self_gain"))
+        )
+        ocnPrint(   ; 2. 导出 current density (Id/W)
+            ?output path_currentDensity
+            ?numberNotation 'scientific
+            waveVsWave(?x OS("/NMOS" "gmoverid") ?y (OS("/NMOS" "id") / VAR("W")))
+        )
+        ocnPrint(   ; 3. transient freq (gm/2*pi*((Cgs+Cgd)))
+            ?output path_transientFreq
+            ?numberNotation 'scientific
+            waveVsWave(?x OS("/NMOS" "gmoverid") ?y (OS("/NMOS" "gm") / (2 * 3.1415926 * abs((OS("/NMOS" "cgs") + OS("/NMOS" "cgd"))))))
+        )
+        ocnPrint(   ; 4. 导出 minimum overdrive (Vdsat)
+            ?output path_overdrive
+            ?numberNotation 'scientific
+            waveVsWave(?x OS("/NMOS" "gmoverid") ?y OS("/NMOS" "vdsat"))
+        )
+        ocnPrint(   ; 5. gate-source voltage (Vgs)
+            ?output path_vgs
+            ?numberNotation 'scientific
+            waveVsWave(?x OS("/NMOS" "gmoverid") ?y OS("/NMOS" "vgs"))
+        )
+```
+
 
 
 
@@ -650,3 +709,6 @@ virtualHW.version = "17"
 | 测试条件 | 结果 |
 |:-:|:-:|
  | (2025.05.27 22:09) 关闭内存完整性，在 process lasso 中将 `mksSandbox` 和 `vmware-vmx` 从智能内存整理中排除，修改 IO 优先级为 `高`，`更多 > 停用空闲节能`；然后打开 virtuoso 进行挂机 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-27-22-12-33_How to Use Cadence Efficiently.png"/></div> | (2025.05.28 02:11) 查看时发现没有卡死，虚拟机正常运行，好像确实是解决了！ |
+
+- 2025.05.29 12:15 记录: 未更改任何设置，又卡死了。
+- 2025.05.30 01:36 记录：从 (2025.05.29 12:15) 重启虚拟机过后，一直用到现在（约 13 个小时），没有再出现卡死现象，看来是之前的设置确实有用。

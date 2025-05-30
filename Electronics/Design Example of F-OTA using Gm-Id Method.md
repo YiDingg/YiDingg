@@ -32,13 +32,13 @@ gm-Id 方法的基本设计步骤如下：
         - strong inversion: $\frac{g_m}{I_D} \in (0,\ 10)$
         - moderate inversion: $\frac{g_m}{I_D} \in (10,\ 20)$
         - weak inversion (subthreshold region): $\frac{g_m}{I_D} \in (20,\ 30)$
-    - 较小的 $\frac{g_m}{I_D}$: 
+    - 较小的 $\frac{g_m}{I_D}$ (strong inversion): 
         - 更快的响应速度: $V_{OV}$ 增大使 $C_{gs}$ 减小, 从而使 $f_T \approx \frac{g_m}{2\pi C_{gs}}$ 增大
         - 更好的匹配度: 在 strong inversion, 由于 $V_{OV}$ 较大，$V_{TH}$ 的失配对电流的影响相对较小
         - 更明显的 channel-length modulation: 在长沟道模型中 $r_O = \frac{1}{\lambda I_D} = \frac{\frac{g_m}{I_D}}{\lambda \,g_m}$
         - 缺点：需要更高的电源电压和电流、
         - 适合：高速电路（优先带宽）、高精度电路（优先线性度和匹配）、高驱动能力电路（如输出级）
-    - 较大的 $\frac{g_m}{I_D}$: 
+    - 较大的 $\frac{g_m}{I_D}$ (weak inversion):
         - 更低的功耗: 在 $g_m$ 不变的条件下 (由 GBW 确定), 可通过降低 $I_D$ 来获得更高的 $\frac{g_m}{I_D}$, 从而降低功耗
         - 更大的摆幅: 长沟道模型中 $\frac{g_m}{I_D} = \frac{2}{V_{OV}} \propto \frac{1}{V_{OV}}$, $\frac{g_m}{I_D}$ 的升高使得 $V_{OV}$ 降低
         - 更高的增益: 在长沟道模型中，$g_m r_O = \frac{\frac{g_m}{I_D}}{\lambda}$, 因此 $\frac{g_m}{I_D}$ 的升高使得 $g_m r_O$ 增大
@@ -435,6 +435,7 @@ $$
 \end{gather}
 $$
 
+下降沿出现指数衰减的原因见文章 [The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>).
 
 ### 8. design conclusion
 

@@ -1,7 +1,7 @@
 # An Introduction to gm-Id Methodology
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 17:05 on 2025-05-20 in Beijing.
+> Initially published at 18:05 on 2025-05-27 in Beijing.
 
 ## gm-Id Methodology
 
