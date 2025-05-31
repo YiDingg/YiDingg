@@ -33,7 +33,7 @@ Our self-designed apparatus for measurement:
 
 按时间先后排序，越下方的文章越早发布。
 
-
+- [Op Amp Measurement of LM741CN](<Electronics/Op Amp Measurement of LM741CN.md>)
 - [Correction of the AC Gain Equation in ADI's Op Amp Measurement Methods](<Electronics/Correction of the AC Gain Equation in the ADI Op Amp Measurement Methods.md>)
 - [Op Amp Measurement of LM412CN](<Electronics/Op Amp Measurement of LM412CN.md>)
 - [Op Amp Measurement of Discrete CMOS Op Amp 2 (PP)](<Electronics/Op Amp Measurement of Discrete CMOS Op Amp 2 (PP).md>)

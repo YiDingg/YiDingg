@@ -70,9 +70,9 @@ Then, we can start the measurement:
 | Num | Parameter | Steps | Formula |
 |:-:|:-:|:-:|:-:|
  | 1 | $V_{IO}$ |record $V_{TP1}$ | $V_{IO} = \frac{V_{TP1}}{1001}$  | 
- | 2 | $I_{B\pm}$ |S2 `0R`, S1 from `0R` to `R7`, write $(\Delta V_{TP1})_{1}$ <br> S1 `0R`, S2 from `0R` to `R6`, write $(\Delta V_{TP1})_{2}$ | $I_{B-} = - \frac{(\Delta V_{TP1})_1}{1001\,R7}$ <br> $I_{B+} = +\frac{(\Delta V_{TP1})_2}{1001\,R6}$ | - |
+ | 2 | $I_{B\pm}$ |S2 `0R`, S1 from `0R` to `R7`, write $(\Delta V_{TP1})_{1}$ <br> S1 `0R`, S2 from `0R` to `R6`, write $(\Delta V_{TP1})_{2}$ | $I_{B-} = - \frac{(\Delta V_{TP1})_1}{1001\,R7}$ <br> $I_{B+} = +\frac{(\Delta V_{TP1})_2}{1001\,R6}$ |
  | 3 | DC Gain | S6 from `0 10K` to `1 +1V`, write $\Delta V_{TP2}$ and $\Delta V_{TP1}$ | $A_{OL} = \frac{1001\, \Delta V_{TP2}}{\Delta V_{TP1}}$  | - |
- | 4 | AC Gain | S4 to `R9`, 'AD1 Impedance' inputs ac signal (10Hz ~ 1MHz), measure $v_{TH2}$ | $A_{OL} = \left(1 + \frac{R_9}{R_1}\right)\cdot \left(- \frac{v_{TP2, amp}}{v_{IN, amp}}\right)$ |  |  |
+ | 4 | AC Gain | S4 to `R9`, 'AD1 Impedance' inputs ac signal (10Hz ~ 1MHz), measure $v_{TH2}$ | $A_{OL} = \left(1 + \frac{R_9}{R_1} + \frac{1}{j 2 \pi f R_1 C_3}\right) \times \left(- \frac{v_{TP2}}{v_{acin}}\right)$ |
  | 5 | DC CMRR |W1 and W2 from ±4V to +5V and -3V, write $\Delta V_{TP1}$ | $\mathrm{CMRR} = \frac{1001\, \Delta V_{CM}}{\Delta V_{TP1}}$ |
  | 6 | DC PSRR |W1 and W2 from ±4V to ±12V (or ±5V), write $\Delta V_{TP1}$ | $\mathrm{PSRR} = \frac{1001\, \Delta V_{PS,total}}{\Delta V_{TP1}}$ |
  | 7 | AC CMRR | <span style='color:red'> S3 to 1</span>, configure W1 to sine wave (1V amplitude, +4V offset), W2 to sine wave (1V amplitude, -4V offset), ${\color{red}{\Delta \varphi = 0}}$ and measure $v_{TP1, amp}$ | $\mathrm{CMRR} = \left(101 + \frac{10^5}{j\, 2 \pi f}\right) \times \left(- \frac{v_{W1}}{v_{TP2}}\right)$ |
@@ -207,6 +207,8 @@ $$
 
 ### Input and Output Voltages
 
+**<span style='color:red'> 测试结果表明, `|V_TP2| = IRMS*Resistor*sqrt(2)` 仅在 Resistor 较小的时候成立。 </span>** 具体而言, Resistor = 10 Ohm 时, `IRMS*Resistor ≈ |V_TP2|`, Resistor = 1 MOhm 时, `IRMS*Resistor ≈ 2*|V_TP2|`。因此，实际使用时，为避免测量误差，**<span style='color:red'> 应设置 Resistor = 10 kOhm </span>**
+
 ``` bash
 # WaveForms > `Impedance` > `Mode 3: W1-C1P-DUT-C1N-C2-R-GND`
 
@@ -247,9 +249,9 @@ sqrt(10001*10001+pow(10, 14)/pow(2*PI*Frequency, 2)) * (IRMS*Resistor/VRMS)
 # AC CMRR, using 100nF + 10kOhm, CH1 = V_W1, CH2 = TP2
 
 # AC CMRR (unit: V/V)
-sqrt(101*101 + pow(10, 10)/pow(2*PI*Frequency, 2)) * (IRMS*Resistor/VRMS)
+sqrt(101*101 + pow(10, 10)/pow(2*PI*Frequency, 2)) * VRMS/(IRMS*Resistor)
 # AC CMRR (unit: dB)
-20*log10(sqrt(101*101 + pow(10, 10)/pow(2*PI*Frequency, 2)) * (IRMS*Resistor/VRMS))
+20*log10(sqrt(101*101 + pow(10, 10)/pow(2*PI*Frequency, 2)) * VRMS/(IRMS*Resistor))
 ```
 
 
@@ -259,9 +261,9 @@ sqrt(101*101 + pow(10, 10)/pow(2*PI*Frequency, 2)) * (IRMS*Resistor/VRMS)
 # AC PSRR, using 100nF + 10kOhm, 
 
 # AC PSRR (unit: V/V)
-2 * sqrt(101*101 + pow(10, 10)/pow(2*PI*Frequency, 2)) * (IRMS*Resistor/VRMS)
+  2  *  sqrt(101*101 + pow(10, 10)/pow(2*PI*Frequency, 2)) * VRMS/(IRMS*Resistor)
 # AC PSRR (unit: dB)
-20*log10(2 * sqrt(101*101 + pow(10, 10)/pow(2*PI*Frequency, 2)) * (IRMS*Resistor/VRMS))
+  20*log10(2  *  sqrt(101*101 + pow(10, 10)/pow(2*PI*Frequency, 2)) * VRMS/(IRMS*Resistor))
 ```
 
 

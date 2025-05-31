@@ -2,13 +2,13 @@
 
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 09:31 on 2025-03-15 in Beijing.
+> Initially published at 20:31 on 2025-05-17 in Beijing.
 
 ## 实验记录
 
 测量实验汇总: [The Collection of My Measurement Experiments](<Electronics/The Collection of My Measurement Experiments.md>)
 
-- Time: 2025.04.13 
+- Time: 2025.05.17 
 - Location: Beijing
 - Auxiliary device (辅助运放): NE5532DR (absolute max supply range: ±22V or 44V)
 - Device under test (待测运放): [TI: LM412CN](<https://www.ti.com/cn/lit/ds/symlink/lf412-n.pdf?ts=1747371346599&ref_url=https%253A%252F%252Fso.szlcsc.com%252F>) (absolute max supply range: ±18V or 36V)
@@ -76,3 +76,4 @@
 
 </div>
 
+注：部分计算公式有错误，最新的计算公式请参考文章 [Basic Op Amp Measurement Board v2](<ElectronicDesigns/Basic Op Amp Measurement Board v2.md>) 的 **Formula Derivations** 章节。

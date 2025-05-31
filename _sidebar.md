@@ -104,6 +104,7 @@
         - [Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>)
 
     - 2025 (63 items)
+        - [Op Amp Measurement of LM741CN](<Electronics/Op Amp Measurement of LM741CN.md>)
         - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<Electronics/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)
         - [Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>)
         - [Correction of the AC Gain Equation in ADI's Op Amp Measurement Methods](<Electronics/Correction of the AC Gain Equation in the ADI Op Amp Measurement Methods.md>)
@@ -119,7 +120,7 @@
         - [Op Amp Measurement of Discrete CMOS Op Amp 2 (PP)](<Electronics/Op Amp Measurement of Discrete CMOS Op Amp 2 (PP).md>)
         - [Gain Boosting Techniques](<Electronics/[Razavi CMOS] Gain Boosting Techniques.md>)
         - [Collection of My Measurement Experiments](<Electronics/The Collection of My Measurement Experiments.md>)
-        - [Op Amp Measurement of LM412CN](<Electronics/Op Amp Measurement of LM412CN.md>)
+        - [Op Amp Measurement of LM412CN](<Electronics/Op Amp Measurement of LF412CN.md>)
         - [Op Amp Measurement of Discrete uA741](<Electronics/Op Amp Measurement of Discrete uA741.md>)
         - [Modeling the Non-Idealities of Op Amp](<Electronics/Modeling the Non-Idealities of Op Amp.md>)
         - [Detailed Explanation of uA741](<Electronics/Detailed Explanation of uA741.md>)
@@ -135,7 +136,7 @@
         - [Collections of Electronic Websites](<Electronics/Collection of Electronic Websites.md>)
         - [Several Problems in Op Amp Measurement](<Electronics/Several Problems in Op Amp Measurement.md>)
         - [Op Amp Meas. of NE5532P](<Electronics/Op Amp Measurement of NE5532P.md>)
-        - [Calc CS Transfer Func using EET](<Electronics/Calculate CS Transfer Function using EET.md>)
+        - [Calc CS Transfer Func using EET](<Electronics/Calculate CS Transfer Function using EET.md>)<!--  -->
         - [Understanding Poles and Zeros](<Electronics/Understanding Poles and Zeros.md>)<!--  -->
         - [Freq Response of CE and CS Stages](<Electronics/Frequency Response of CE and CS Stages.md>)<!-- x -->
         - [Roadmap for Analog ICer](<Electronics/Roadmap for Analog ICer.md>)
