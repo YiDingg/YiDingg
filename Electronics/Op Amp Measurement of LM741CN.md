@@ -73,10 +73,204 @@
 | Data Num | Parameter | Steps | Formula | Figure |
 |:-:|:-:|:-:|:-:|:-:|
  | 9 | SR+, SR- | <span style='color:red'> (dc coupling) </span> 输入方波，测量上升、下降速率 | $\mathrm{SR} = \frac{\Delta V_{out}}{\Delta t}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-30-17-32-02_Op Amp Measurement of LM741CN.png"/></div> <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-30-17-34-04_Op Amp Measurement of LM741CN.png"/></div> |
- | 10 | $f_p$ | 输入正弦波，进行扫频，以 99 % nominal amplitude 为 $f_p$ | $f_p = f_{V_{out,amp} = 99\,\% \times V_0}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-30-17-50-05_Op Amp Measurement of LM741CN.png"/></div> |
+ | 10 | $f_p$ | 输入正弦波，进行扫频，以输出幅度降低到 99% nominal amplitude 的频率为 $f_p$ | $f_p = f_{V_{out,amp} = 99\,\% \times V_0}$ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-30-17-50-05_Op Amp Measurement of LM741CN.png"/></div> |
 
 </div>
 
 ## 数据处理
 
-## 结果展示
+### DC 数据处理
+
+
+``` matlab
+%% 20250530 LM741CN DC 数据处理
+
+%%% 运放测量板测量运放参数
+R_7 = 3.9e3;
+R_77 = 390e3;
+R_6 = 3.9e3;
+R_66 = 390e3;
+
+%%% 实验数据处理
+
+% 0. 示波器 dc 校准
+V_CH1_0 = -6.154e-3;
+V_CH2_0 = 7.863e-3;
+
+% 1. Vos
+Vos_TP1 = -420.55e-3;
+Vos_TP2 = 19.709e-3;
+Vos = (Vos_TP1 - V_CH1_0)/(1001);
+disp(['Vos = ', num2str(Vos*1000), ' mV'])
+
+% 2.1 Ib+ (R6) 
+Ib_pos_DeltaTP1 = (-187.59e-3) - (-420.5e-3);
+Ib_pos_Resistor = R_6;   % R_6 or R_66
+Ib_pos = +(Ib_pos_DeltaTP1)/(1001*Ib_pos_Resistor);
+disp(['Ib+ = ', num2str(Ib_pos*10^9), ' nA'])
+
+% 2.2 Ib- (R7)
+Ib_neg_DeltaTP1 = (-639.45e-3) - (-419.2e-3);
+Ib_neg_Resistor = R_7;   % R_7 or R_77
+Ib_neg = -(Ib_neg_DeltaTP1)/(1001*Ib_neg_Resistor);
+disp(['Ib- = ', num2str(Ib_neg*10^9), ' nA'])
+
+Ib = 0.5*(Ib_pos + Ib_neg);
+Ib_os = 0.5*(Ib_pos - Ib_neg);
+disp(['Ib    = ', num2str(Ib*10^9), ' nA'])
+disp(['Ib_os = ', num2str(Ib_os*10^9), ' nA'])
+
+% 3.1 DC Gain (1)
+DC_Gain_1_DeltaTP1 = (-421.35e-3) - (Vos_TP1);
+DC_Gain_1_DeltaTP2 = (-7.955) - (Vos_TP2);
+Av_dc_1 = 1001*DC_Gain_1_DeltaTP2/DC_Gain_1_DeltaTP1;
+disp(['DC Gain 1 = ', num2str(Av_dc_1, '%.2e'), ' = ', num2str(20*log(abs(Av_dc_1))/log(10)), ' dB'])
+
+% 3.2 DC Gain (2)
+DC_Gain_2_DeltaTP1 = (-419.65e-3) - (-420.35e-3);
+DC_Gain_2_DeltaTP2 = (-7.956) - (20.194e-3);
+Av_dc_2 = 1001*DC_Gain_2_DeltaTP2/DC_Gain_2_DeltaTP1;
+disp(['DC Gain 2 = ', num2str(Av_dc_2, '%.2e'), ' = ', num2str(20*log(abs(Av_dc_2))/log(10)), ' dB'])
+
+% DC PSRR
+PSRR_DeltaVs = 2*(15 - 5);
+PSRR_DeltaTP1 = (-445.7e-3) - (-364.14e-3);
+PSRR = 1001*PSRR_DeltaVs/PSRR_DeltaTP1;
+disp(['DC PSRR = ', num2str(PSRR), ' = ', num2str(20*log(abs(PSRR))/log(10)), ' dB'])
+
+% DC CMRR (1)
+CMRR_DeltaVcm = 0.5*(15 - 9) - 0.5*(12 - 12);
+CMRR_DeltaTP1 = (-424.3e-3) - (-423.3e-3);
+CMRR_1 = 1001*CMRR_DeltaVcm/CMRR_DeltaTP1;
+disp(['DC CMRR = ', num2str(CMRR_1), ' = ', num2str(20*log(abs(CMRR_1))/log(10)), ' dB'])
+
+% DC CMRR (2)
+CMRR_DeltaVcm = 0.5*(15 - 9) - 0.5*(9 - 15);
+CMRR_DeltaTP1 = (-425.05e-3) - (-423e-3);
+CMRR_2 = 1001*CMRR_DeltaVcm/CMRR_DeltaTP1;
+disp(['DC CMRR = ', num2str(CMRR_2), ' = ', num2str(20*log(abs(CMRR_2))/log(10)), ' dB'])
+
+disp('----------------------------- LM741CN DC 参数汇总 -----------------------------')
+disp(['Vos = ', num2str(Vos*1000), ' mV'])
+disp(['Ib+ = ', num2str(Ib_pos*10^9), ' nA'])
+disp(['Ib- = ', num2str(Ib_neg*10^9), ' nA'])
+disp(['Ib- = ', num2str(Ib_neg*10^9), ' nA'])
+disp(['Ib_os = ', num2str(Ib_os*10^9), ' nA'])
+disp(['DC Gain (1) = ', num2str(Av_dc_1, '%.2e'), ' = ', num2str(20*log(abs(Av_dc_1))/log(10)), ' dB'])
+disp(['DC Gain (2) = ', num2str(Av_dc_2, '%.2e'), ' = ', num2str(20*log(abs(Av_dc_2))/log(10)), ' dB'])
+disp(['DC PSRR = ', num2str(PSRR), ' = ', num2str(20*log(abs(PSRR))/log(10)), ' dB'])
+disp(['DC CMRR (1) = ', num2str(CMRR_1), ' = ', num2str(20*log(abs(CMRR_1))/log(10)), ' dB'])
+disp(['DC CMRR (2) = ', num2str(CMRR_2), ' = ', num2str(20*log(abs(CMRR_2))/log(10)), ' dB'])
+```
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-31-18-05-07_Op Amp Measurement of LM741CN.png"/></div>
+
+### AC Gain 数据处理
+
+``` bash
+"D:\aa_MyExperimentData\Raw data backup\[op amp] ac gain, LM741CN, input 250 mVamp, 10 nF + 51 kOhm, 10 Hz to 1 MHz.txt"
+"D:\aa_MyExperimentData\Raw data backup\[op amp] ac gain, LM741CN, input 1 Vamp, 10 nF + 51 kOhm, 100 Hz to 1 MHz.txt"
+"D:\aa_MyExperimentData\Raw data backup\[op amp] ac gain, LM741CN, input 5 Vamp, 1 nF + 1 MOhm, 10 Hz to 100 kHz.txt"
+"D:\aa_MyExperimentData\Raw data backup\[op amp] ac gain, LM741CN, input 5 Vamp, 1 nF + 1 MOhm, 100 Hz to 100 kHz.txt"
+"D:\aa_MyExperimentData\Raw data backup\[op amp] LM741CN, Full Power Frequency, input 5Vamp, 100 Hz to 100 kHz.txt"
+"D:\aa_MyExperimentData\Raw data backup\[op amp] LM741CN, PSRR, VCC = 4V + 1Vamp, 100 Hz to 100 kHz.txt"
+"D:\aa_MyExperimentData\Raw data backup\[op amp] LM741CN, CMRR, VCC = 4V + 1Vamp, 100 Hz to 100 kHz.txt"
+```
+
+
+``` matlab
+%% 20250530 LM741CN AC Gain 数据处理
+
+clc, clear
+data = readmatrix("D:\aa_MyExperimentData\Raw data backup\[op amp] ac gain, LM741CN, input 250 mVamp, 10 nF + 51 kOhm, 10 Hz to 1 MHz.txt");
+stc1 = MyDataProcessor_OpAmp_ACGain_10Hzto1MHz(data, 1);
+
+data = readmatrix("D:\aa_MyExperimentData\Raw data backup\[op amp] ac gain, LM741CN, input 1 Vamp, 10 nF + 51 kOhm, 100 Hz to 1 MHz.txt");
+stc2 = MyDataProcessor_OpAmp_ACGain_10Hzto1MHz(data, 1);
+stc2.axes.XLim(1) = 10;
+
+data = readmatrix("D:\aa_MyExperimentData\Raw data backup\[op amp] ac gain, LM741CN, input 5 Vamp, 1 nF + 1 MOhm, 10 Hz to 100 kHz.txt");
+stc3 = MyDataProcessor_OpAmp_ACGain_10Hzto1MHz(data, 0);
+
+data = readmatrix("D:\aa_MyExperimentData\Raw data backup\[op amp] ac gain, LM741CN, input 5 Vamp, 1 nF + 1 MOhm, 100 Hz to 100 kHz.txt");
+stc4 = MyDataProcessor_OpAmp_ACGain_10Hzto1MHz(data, 0);
+
+X_1 = [stc1.f; stc2.f; stc3.f; stc4.f];
+Y_1 = [stc1.A_v_dB; stc2.A_v_dB; stc3.A_v_dB; stc4.A_v_dB];
+X_2 = X_1;
+Y_2 = [stc1.A_v_phase; stc2.A_v_phase; stc3.A_v_phase; stc4.A_v_phase];
+
+stc = MyPlot_2window(X_1, Y_1, X_2, Y_2, 1);
+
+% 调整图像属性
+stc.ax1.XScale = 'log';
+stc.ax1.XTick = logspace(1, 6, 6);
+stc.ax1.XTickLabel = ["10 Hz", "100 Hz", "1 kHz", "10 kHz", "100 kHz", "1 MHz"];
+stc.ax1.YLim = [0 120];
+%xlim([2e2, 2e5])
+
+stc.ax2.XScale = 'log';
+stc.ax2.XTick = logspace(1, 6, 6);
+stc.ax1.XTickLabel = ["10 Hz", "100 Hz", "1 kHz", "10 kHz", "100 kHz", "1 MHz"];
+stc.ax2.YLim = [-180 0]; YTick = -180:22.5:0;
+stc.ax2.YTick = YTick;
+stc.ax2.YTickLabel =  num2str(YTick', '%.1f');
+
+stc.plot1.leg.String = [
+    "10 nF + 51 kOhm, input 250 mVamp"
+    "10 nF + 51 kOhm, input 1.0  Vamp"
+    "1\,\,\, nF + 1 \,MOhm, input 4.0  Vamp"
+    "1\,\,\, nF + 1 \,MOhm, input 5.0  Vamp"
+    ];
+stc.plot1.leg.Location = 'northeast';
+stc.plot2.leg.String = [
+    "10 nF + 51 kOhm, input 250 mVamp"
+    "10 nF + 51 kOhm, input 1.0  Vamp"
+    "1\,\,\, nF + 1 \,MOhm, input 4.0  Vamp"
+    "1\,\,\, nF + 1 \,MOhm, input 5.0  Vamp"
+    ];
+stc.plot2.leg.Visible = 'on';
+stc.plot2.leg.Location = 'northeast';
+
+stc.plot1.label.x.String = 'Frequency $f$';
+stc.plot1.label.y.String = 'Open-Loop Gain $A_v$ (dB)';
+stc.plot2.label.x.String = 'Frequency $f$';
+stc.plot2.label.y.String = 'Output Phase Shift $\varphi\ (^\circ)$';
+MyFigure_ChangeSize(512*[2.5, 1]);
+%MyFigure_ChangeSize_2048x512
+%stc.fig.WindowStyle = 'modal';
+%MyExport_pdf
+```
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-31-18-04-49_Op Amp Measurement of LM741CN.png"/></div>
+
+### AC CMRR 和 PSRR 数据处理
+
+``` matlab
+%% 20250530 LM741CN CMRR PSRR 数据处理
+clc, clear
+data = readmatrix("D:\aa_MyExperimentData\Raw data backup\[op amp] LM741CN, CMRR, VCC = 4V + 1Vamp, 100 Hz to 100 kHz.txt");
+data(:, 4) = 0.5*data(:, 4);
+stc1 = MyDataProcessor_OpAmp_ACCMRR_100Hzto100kHz(data);
+%stc1.leg.String = ["CMRR (dB)", "CMRR = 40 dB", "Phase"];
+%MyExport_pdf_modal
+
+data = readmatrix("D:\aa_MyExperimentData\Raw data backup\[op amp] LM741CN, PSRR, VCC = 4V + 1Vamp, 100 Hz to 100 kHz.txt");
+data(:, 4) = 0.5*data(:, 4);
+stc2 = MyDataProcessor_OpAmp_ACPSRR_100Hzto100kHz(data);
+%hold(stc2.axes, 'on')
+%MyExport_pdf_modal
+
+```
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-31-18-50-16_Op Amp Measurement of LM741CN.png"/></div>
+
+### SR 和 FPBW 数据处理
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-31-22-35-11_Op Amp Measurement of LM741CN.png"/></div>
+
+## 测试结果汇总
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-31-20-21-30_Op Amp Measurement of LM741CN.png"/></div>

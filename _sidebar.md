@@ -77,33 +77,71 @@
     Designs: 条目后跟有注释符号的表示已经发过微信公众号
     -->
 
+    <!-- 
+        - Razavi CMOS
+            - [Design Example of Folded-Cascode Stage](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>)
+            - [Gain Boosting Techniques](<Electronics/[Razavi CMOS] Gain Boosting Techniques.md>)
+            - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)
+            - [A Brief View of Negative Feedback](<Electronics/[Razavi CMOS] A Brief View of Negative Feedback.md>)
+            - [Mismatches of Basic Differential Pair](<Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)
+            - [Cascode stage with PMOS load](<Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>) 已发知乎
+            - [Gm Av calculation](<Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>) 已发知乎
+            - [MOSFET's Terminal Resistance](<Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>) 已发知乎
+    -->
+
+    <!-- 
+        - Analog IC and Cadence Tutorials
+            - [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
+            - [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)
+            - [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
+            - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
+            - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
+            - [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
+            - [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
+            - [Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>)
+    -->
+
+
 - 💡 **Electronics Blogs**
 
+    - [**[Pinned] How to Use Cadence Efficiently**](<Electronics/How to Use Cadence Efficiently.md>)
     - [**[Pinned] Roadmap for Analog ICer**](<Electronics/Roadmap for Analog ICer.md>)
     - [**[Pinned] Collections of Electronic Websites**](<Electronics/Collection of Electronic Websites.md>)
     - [**[Pinned] Collection of My Measurement Experiments**](<Electronics/The Collection of My Measurement Experiments.md>)
 
-    - Razavi CMOS
+    - Analog IC 
+        - [Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<Electronics/Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)
+        - [Biasing Circuits for Low-Voltage Cascode Current Mirror](<Electronics/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)
+        - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<Electronics/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)
+        - [Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>)
+        - [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
+        - [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
+        - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
+        - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
+        - [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
+        - [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)
+        - [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
         - [Design Example of Folded-Cascode Stage](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>)
         - [Gain Boosting Techniques](<Electronics/[Razavi CMOS] Gain Boosting Techniques.md>)
         - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)
         - [A Brief View of Negative Feedback](<Electronics/[Razavi CMOS] A Brief View of Negative Feedback.md>)
-        - [Mismatches of Basic Differential Pair](<Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)<!--  -->
-        - [Cascode stage with PMOS load](<Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>)<!--  -->
-        - [Gm Av calculation](<Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>)<!--  -->
-        - [MOSFET's Terminal Resistance](<Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>)<!--  -->
+        - [Mismatches of Basic Differential Pair](<Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)
+        - [Cascode stage with PMOS load](<Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>) <!-- 已发知乎 -->
+        - [Gm Av calculation](<Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>) <!-- 已发知乎 -->
+        - [MOSFET's Terminal Resistance](<Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>) <!-- 已发知乎 -->
 
-    - Analog IC and Cadence Tutorials
+    - Cadence Tutorials
         - [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
         - [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)
         - [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
         - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
         - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
         - [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
-        - [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
-        - [Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>)
 
-    - 2025 (63 items)
+
+    - 2025 (78 items)
+        - [Biasing Circuits for Low-Voltage Cascode Current Mirror](<Electronics/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)
+        - [Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<Electronics/Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)
         - [Op Amp Measurement of LM741CN](<Electronics/Op Amp Measurement of LM741CN.md>)
         - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<Electronics/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)
         - [Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>)
@@ -131,7 +169,7 @@
         - [A Brief View of Negative Feedback](<Electronics/[Razavi CMOS] A Brief View of Negative Feedback.md>)
         - [An Example of Miller Effect of CE Stage](<Electronics/An Example of Miller Effect of CE Stage.md>)
         - [Precision Full-Wave Rectifier](<Electronics/Precision Full-Wave Rectifier.md>)
-        - [Transistor Meas. of 2N7000 (N VDMOS)](<Electronics/Transistor Measurement of 2N7000 (N VDMOS).md>)
+        - [Transistor Meas. of 2N7000 (N VDMOS)](<Electronics/Transistor Measurement of 2N7000 (N VDMOS).md>)<!--  -->
         - [二端口“标准”级联方法中隐含的误差](<Electronics/二端口“标准”级联方法中隐含的误差.md>)
         - [Collections of Electronic Websites](<Electronics/Collection of Electronic Websites.md>)
         - [Several Problems in Op Amp Measurement](<Electronics/Several Problems in Op Amp Measurement.md>)

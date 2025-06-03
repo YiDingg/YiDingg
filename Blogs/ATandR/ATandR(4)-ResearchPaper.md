@@ -81,6 +81,9 @@ https://koofr.eu/blog/posts/koofr-with-zotero-via-webdav
 </div>
 
 Some free AIGC checkers:
+
+<div class='center'>
+
 | Name | free times per day |
 |:-:|:-:|
  | [Zerogpt](https://www.zerogpt.plus/en) (best) | $\infty$ |
@@ -89,13 +92,16 @@ Some free AIGC checkers:
  | [AI Checker](https://www.gptzero.wang/ai-content-detector) | $\infty$   |
  | [TTAI.LOVE](https://www.zerogpt.ren/) | $\infty$ |
  | [P*Pass AI Checker](https://www.gptzero.wang/ai-content-detector-paper) |  $\infty$ |
+</div>
 
 Here are official paid checkers:
+
+<div class='center'>
 
 | Name |
 |:-:|
 | [万方](https://cx.wanfangdata.com.cn/aigc-check/) |
-
+</div>
 
 ## Workflow
 

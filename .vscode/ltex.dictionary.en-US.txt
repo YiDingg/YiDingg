@@ -79,3 +79,5 @@ folded-cascode
 transconductance
 subthreshold
 triode
+PMOS-input
+Self-Cascode
