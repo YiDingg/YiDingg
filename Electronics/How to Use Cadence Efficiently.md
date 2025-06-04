@@ -163,11 +163,11 @@ hiSetBindKeys("Schematics" list(
     list("<Key>space" "schSetEnv(\"rotate\" t)") ; 空格旋转
     list("Ctrl<Key>s" "schHiCheckAndSave()") ; Ctrl + S 检查与保存
     list("<Key>x" "schSetEnv(\"sideways\" t)") ; x 翻转
-    ; list("<Key>d" "cancelEnterFun()") ; d 取消, 用作 esc 的替代 (esc 太远了)
-    ; None<Btn2Down> 是中键
+            ; list("<Key>d" "cancelEnterFun()") ; d 取消, 用作 esc 的替代 (esc 太远了)
+            ; None<Btn2Down> 是中键
     list("None<Btn3Down>" "" "cancelEnterFun()") ; 鼠标右键用作 esc (esc 太远了)
     list("None<Btn3Down>(2)" "" "") ; 删除原有的冗余右键绑定
-    ; list("<Key>g" "schHiCreatePin(\"GND\" \"input\" \"schematic\" \"full\" nil nil nil \"roman\")") ; 按键 G 创建 GND pin, 默认是 schHiFindMarker()
+            ; list("<Key>g" "schHiCreatePin(\"GND\" \"input\" \"schematic\" \"full\" nil nil nil \"roman\")") ; 按键 G 创建 GND pin, 默认是 schHiFindMarker()
     list("<Key>g" "schHiCreateInst(\"analogLib\" \"gnd\" \"symbol\")") ; 按键 G 创建 gnd
     list("<Key>v" "schHiCreateInst(\"analogLib\" \"vdc\" \"symbol\")") ; 按键 v 创建 dc source
     list("<Key>r"  "schHiCreateInst(\"analogLib\" \"res\" \"symbol\")") ; 按键 R 创建理想电阻
@@ -175,6 +175,14 @@ hiSetBindKeys("Schematics" list(
     list("Ctrl<Key>c" "schHiCopy()") ; Ctrl + C 复制
     list("<Key>d" "schHiCreateNoteShape()") ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
     list("<Key>a" "schHiCreateInst()") ; 按键 A 添加 instance (默认功能是 geSingleSelectPoint()), 用于替代按键 I
+    list("Ctrl<Key>1" "sevAnnotateResults('sevSession1 'dcNodeVoltages)") ; 在 schematic 中标出 dc voltages
+    list("Ctrl<Key>2" "sevAnnotateResults('sevSession1 'dcOpPoints)")     ; 在 schematic 中标出器件的 operation points
+    list("Ctrl<Key>3" "sevAnnotateResults('sevSession1 'componentParameters)") ; 在 schematic 中标出器件的尺寸信息
+    list("Ctrl<Key>4" "sevAnnotateResults('sevSession1 'modelParameters)") ; 在 schematic 中标出器件的模型信息 (例如阈值电压 vto)
+            ; list("Ctrl<Key>1" "AnnotationSlider->annDCVoltage->checked=t") ; 在 schematic 中标出 dc voltages
+            ; list("Ctrl<Key>2" "AnnotationSlider->annDCOpPoint->checked=t") ; 在 schematic 中标出器件的 operation points
+            ; list("Ctrl<Key>3" "AnnotationSlider->annparameter->checked=t") ; 在 schematic 中标出器件的尺寸信息
+            ; list("Ctrl<Key>4" "AnnotationSlider->annmodel->checked=t")     ; 在 schematic 中标出器件的模型信息 (例如阈值电压 vto)
 	)
 )
 
@@ -197,6 +205,7 @@ hiSetBindKeys("Symbol" list(
     list("<Key>d" "schHiCreateNoteShape()") ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
 	)
 )
+
 
 
 ; 设置 label, text, ciw 的字体和字号
@@ -712,6 +721,8 @@ virtualHW.version = "17"
 
 - 2025.05.29 12:15 记录: 未更改任何设置，又卡死了。
 - 2025.05.30 01:36 记录：从 (2025.05.29 12:15) 重启虚拟机过后，一直用到现在（约 13 个小时），没有再出现卡死现象，看来是之前的设置确实有用。
+- 2025.06.04 17:27 记录：这个卡死不卡死是真的玄学，昨天用了一整天，没卡死，今天四个小时已经卡死三次了
+- 2025.06.04 18:08 记录：今天已经第四次卡死了，检查时发现不知为何 `mksSandbox` 和 `vmware-vmx` 的设置都变为了默认设置，于是重新设置了一遍，重新打开虚拟机进行测试。
 
 
 ### 4. ERROR (PRINT-1032): Unable to write to output file

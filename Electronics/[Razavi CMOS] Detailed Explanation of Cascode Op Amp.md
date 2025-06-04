@@ -132,7 +132,10 @@ $$
 
 同样的，我们也需要分析折叠式 cascode op amp 结构中各电压之间的关系，结论如下：
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-23-44-59_[Razavi CMOS] Detailed Explanation of Cascode Op Amp.png"/></div>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-12-23-44-59_[Razavi CMOS] Detailed Explanation of Cascode Op Amp.png"/></div>
+ -->
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-17-20-35_[Razavi CMOS] Detailed Explanation of Cascode Op Amp.png"/></div>
 
 ### Voltage Gain
 

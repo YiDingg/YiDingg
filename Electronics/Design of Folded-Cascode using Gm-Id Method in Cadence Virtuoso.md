@@ -4,7 +4,7 @@
 > Initially published at 15:03 on 2025-06-02 in Beijing.
 
 
-## Introduction
+## 0. Introduction
 
 本文，我们基于 gm-Id 方法，在 MATLAB 的辅助下，使用台积电 180nm CMOS 工艺库 `tsmc18rf` 设计一个 **PMOS-input single-ended output folded-cascode stage**, 并进行比较充分的前仿验证。
 
@@ -23,9 +23,9 @@
 </div>
 
 
-## Design Considerations
+## 1. Design Considerations
 
-### 1. Export Transistor Data
+### 1.1 Export Transistor Data
 
 
 在 cadence 中进行仿真，设置 $V_{DS} = \frac{V_{DD}}{4} = 450 \ \mathrm{mV}$，第一变量为 $V_{gs}$，第二变量为 $L$，设置好 outputs, 运行仿真，结果如下：
@@ -182,12 +182,13 @@ early resistance (rout)          = waveVsWave(?x OS("/NMOS" "gmoverid") ?y OS("/
 - PMOS 的 `gm` 稍低，但 `rout` 高得更多一些, 使得 self gain (gm*rout) 相对更高
 - PMOS 的 curren density (Id/W), transient freq (gm/(Cgs+Cgd)) 更低
 
-### 2. Theoretical Formulas
+### 1.2 Theoretical Formulas
 
 运放架构和 voltage requirements 如下图（注意第一个图中的是全差分，第二个图才是我们的实际架构）：
 
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-03-17-16-13_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-03-17-16-13_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-17-21-04_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-03-20-51-42_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
 
 
@@ -203,7 +204,7 @@ early resistance (rout)          = waveVsWave(?x OS("/NMOS" "gmoverid") ?y OS("/
 
 
 
-### 3. Satisfying Specification
+### 1.3 Satisfying Specification
 
 
 
@@ -217,7 +218,7 @@ early resistance (rout)          = waveVsWave(?x OS("/NMOS" "gmoverid") ?y OS("/
     - 按照上面的考虑，我们的增益大约会有 $A_v = 300 \cdot (\frac{250}{2} \parallel 300 ) = 88 \ \mathrm{dB}$
 - `SR > 50 V/us` : 
     - $SR = \frac{I_{SS}}{C_L} = \frac{I_{D5}}{C_L} \Longrightarrow I_{SS} = I_{D5} > 250 \ \mathrm{uA}$
-    - 主电路需要消耗 $2I_{SS}$, 偏置电路 2 ~ 3 路 $I_{REF}$, 不妨令 $I_{REF} = 8 I_{SS}$ 以方便 layout 工作，总 600 uA 最大可以有 252.6316 uA 的 $I_{SS}$, 因此我们令 $I_{SS} = 250 \ \mathrm{uA}$
+    - 主电路需要消耗 $2\,I_{SS}$, 偏置电路需要 2 ~ 3 路 $I_{REF}$, 不妨令 $I_{REF} = 8 I_{SS}$ 以方便 layout 工作，总 600 uA 最大可以有 252.6316 uA 的 $I_{SS}$, 因此我们令 $I_{SS} = 250 \ \mathrm{uA}$
 - `GBW > 50 MHz` :
     - 从经验上来讲，我们说一个电路的 GBW 如果不高于晶体管截止频率的 1/50, 那么这个电路基本上是可以由当前工艺实现的。例如我们的指标要求 GBW = 50 MHz, 那么截止频率至少要达到 2.5 GHz. 在 TSMC 180nm 工艺中, NMOS 标准单元 (2u/180n) 的截止频率约 40 GHz, PMOS 标准单元 (2u/180n) 的截止频率约 13 GHz, 因此是可以实现的，但是 PMOS 的截止频率已经相对很低了，在设计中需要考虑到这一点（尺寸不能太大）
     - $GBW = \frac{g_{m1}}{2\pi C_L} > 50 \ \mathrm{MHz}$, 我们令 GBW = 55 MHz, 则 $g_{m1} = 1.5708 \ \mathrm{mS} = \frac{1}{636.6} \ \mathrm{k\Omega}$, 这里的 $g_{m1}$ 与下面 `SR` 中的 $I_{SS}$ 共同决定了 M1, M2 的 $\left(\frac{g_m}{I_D}\right)$
@@ -231,48 +232,423 @@ early resistance (rout)          = waveVsWave(?x OS("/NMOS" "gmoverid") ?y OS("/
 
 上面的考虑可汇总为以下几条：
 - $I_{D5} = I_{D11} = 250 \ \mathrm{uA}$
-- 所有 NMOS (M3 ~ M6) 的 bulk 连接 GND, 
-- M1, M2 : A = 300, gm/Id = 1.5708 mS / (0.5 * 0.25 mA) = 12.5664, bulk 接 source
-- M3, M4 : A = 250, 通过调整它们 (和 M5, M6) 的面积来控制 PM
-- M5, M6 : 高 L, 无 A 需求, 通过调整它们 (和 M3, M4) 的面积来控制 PM
-- M7, M8 : A = 300, 适当降低 overdrive, bulk 接 VDD
-- M9, M10 : W9/L9 = W7/2*L7, 适当降低 overdrive
-- M11 : 低 overdrive, 暂无其它要求
+- 所有 NMOS (M3 ~ M6) 的 bulk 连接 GND, PMOS bulk 默认连接 source
+- (P) M1, M2 : A = 300, gm/Id = 1.5708 mS / (0.5 * 0.25 mA) = 12.5664
+- (N) M3, M4 : A = 250, 通过调整它们 (和 M5, M6) 的面积来控制 PM
+- (N) M5, M6 : 高 L (高 rout), 无 A 需求, 通过调整它们 (和 M3, M4) 的面积来控制 PM
+- (P) M7, M8 : A = 300, 适当降低 overdrive, bulk 接 VDD
+- (P) M9, M10 : 如果可以的话, W9/L9 = W7/2*L7, 否则 M9, M10 = M7, M8
+- (P) M11 : 低 overdrive, 暂无其它要求
 
 
-### 4. Simul. without Biasing
 
+### 1.4 Biasing Generations
 
-### 5. Biasing Generations
-
-对于 $V_{b4}$ 和 $V_{b1}$, 
 
 
 $V_{b2}$ 的生成有多种方法，详见 [Biasing Circuits for Low-Voltage Cascode Current Mirror](<Electronics/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)，我们这里使用文中的第二种方法 **diode-connected series transistor**. 
 
+对于 $V_{b1}$, $V_{b3}$ 和 $V_{b4}$, 直接用 multiplier 作 biasing 即可。
+
+
+
+
+## 2. Design Example
+
+上面的几个 subsection 都是在做设计前的准备工作，从这一 subsection 开始，我们便来一步步地确定每一个晶体管的具体尺寸。把上面 **3. Satisfying Specification** 一节中主电路的晶体管要求搬下来：
+- $I_{D5} = I_{D11} = 250 \ \mathrm{uA}$
+- 所有 NMOS (M3 ~ M6) 的 bulk 连接 GND, PMOS bulk 默认连接 source
+- (P) M1, M2 : A = 300, gm/Id = 1.5708 mS / (0.5 * 0.25 mA) = 12.5664
+- (N) M3, M4 : A = 250, 通过调整它们 (和 M5, M6) 的面积来控制 PM
+- (N) M5, M6 : 高 L (高 rout), 无 A 需求, 通过调整它们 (和 M3, M4) 的面积来控制 PM
+- (P) M7, M8 : A = 300, 适当降低 overdrive, bulk 接 VDD
+- (P) M9, M10 : W9/L9 = W7/2*L7, 适当降低 overdrive
+- (P) M11 : 低 overdrive, 暂无其它要求
+
+### 2.1 determine sizes
+
+#### 2.1.1 (P) M1, M2
+
+**<span style='color:red'> 注意这是两个 PMOS </span>**, 设置 $A = 300$ 进行筛选，发现最小的 gm/Id 也要 15.42, 如下：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-03-23-51-53_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+太长的 L 并不是我们所希望的，因此这里降低一些增益要求，直接下面的尺寸，此时的 $(g_mr_O)_{1,2} \approx 250$：
+
+$$
+\begin{gather}
+\left(\frac{g_m}{I_D} \right)_{1, 2} = 12.5664,\quad L_{1,2} = 1.8 \ \mathrm{um}
+\end{gather}
+$$
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-03-23-59-20_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+ -->
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-00-17-59_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+``` bash
+Points satisfying objectives = 1/4221 = 0.0237 %
+Best point: gm/Id  = 12.6938, length = 1.8 um
+Parameters of the best point = 
+    "index"             "1428"      
+    "gm/Id"             "12.6938"   
+    "L"                 "1.8e-06"   
+    "selfGain"          "252.093"   
+    "currentDensity"    "0.51203"   
+    "transientFreq"     "77664700"  
+    "overdrive"         "0.16489"   
+    "vgs"               "0.603"     
+    "gm"                "1.0318e-05"
+    "rout"              "24432700"  
+```
+
+
+#### 2.1.2 (N) M3, M4
+
+这是两个 NMOS, 筛选结果如下：
+
+$$
+\begin{gather}
+\left(\frac{g_m}{I_D} \right)_{3, 4} = 13.4235,\quad L_{3,4} = 1.8 \ \mathrm{um}
+\end{gather}
+$$
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-03-23-57-02_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-00-19-19_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+``` bash
+Points satisfying objectives = 4/4221 = 0.0948 %
+Best point: gm/Id  = 13.4235, length = 1.8 um
+Parameters of the best point = 
+    "index"             "1386"      
+    "gm/Id"             "13.4235"   
+    "L"                 "1.8e-06"   
+    "selfGain"          "259.227"   
+    "currentDensity"    "2.2064"    
+    "transientFreq"     "439631000" 
+    "overdrive"         "0.16624"   
+    "vgs"               "0.585"     
+    "gm"                "5.1274e-05"
+    "rout"              "5055780"   
+```
+
+
+
+#### 2.1.3 (N) M5, M6
+
+$$
+\begin{gather}
+\left(\frac{g_m}{I_D} \right)_{5, 6} = 9.024,\quad L_{3,4} = 1.719 \ \mathrm{um}
+\end{gather}
+$$
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-00-03-18_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div> -->
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-00-20-36_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+``` bash
+Points satisfying objectives = 475/4221 = 11.2533 %
+Best point: gm/Id  = 9.024, length = 1.719 um
+Parameters of the best point = 
+    "index"             "1574"      
+    "gm/Id"             "9.024"     
+    "L"                 "1.719e-06" 
+    "selfGain"          "147.008"   
+    "currentDensity"    "5.0697"    
+    "transientFreq"     "704355000" 
+    "overdrive"         "0.23298"   
+    "vgs"               "0.666"     
+    "gm"                "8.3862e-05"
+    "rout"              "1752970"   
+```
+
+
+#### 2.1.4 (P) M7, M8
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-00-28-29_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+``` bash
+Points satisfying objectives = 12/4221 = 0.2843 %
+Best point: gm/Id  = 15.4172, length = 1.8 um
+Parameters of the best point = 
+    "index"             "1323"      
+    "gm/Id"             "15.4172"   
+    "L"                 "1.8e-06"   
+    "selfGain"          "307.04"    
+    "currentDensity"    "0.3098"    
+    "transientFreq"     "60360700"  
+    "overdrive"         "0.13293"   
+    "vgs"               "0.558"     
+    "gm"                "7.6498e-06"
+    "rout"              "40136700"  
+```
+
+#### 2.1.5 (P) M9, M10
+
+同 M7, M8.
+
+#### 2.1.6 (P) M11
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-00-33-03_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+``` bash
+Points satisfying objectives = 19/4221 = 0.4501 %
+Best point: gm/Id  = 13.2196, length = 0.342 um
+Parameters of the best point = 
+    "index"             "1389"      
+    "gm/Id"             "13.2196"   
+    "L"                 "3.42e-07"  
+    "selfGain"          "62.7729"   
+    "currentDensity"    "2.0662"    
+    "transientFreq"     "1552380000"
+    "overdrive"         "0.13836"   
+    "vgs"               "0.594"     
+    "gm"                "4.8143e-05"
+    "rout"              "1303900"   
+```
+
+
+### 2.2 sizes adjustment
+
+由于各支路的电路已经确定，$I_{D11} = I_{D5} = I_{D6} = I_{SS} = 250 \ \mathrm{uA}$, 其余的晶体管都是 $I_D = \frac{1}{2} I_{SS} = 125 \ \mathrm{uA}$, 因此，只要知道了晶体管的 gm/Id 和 L, 就可以计算出 Id/W, 进而计算出 W. 最终汇总为下面的表格：
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-00-57-31_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div> -->
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-02-10-11_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+可以看到有几个晶体管，由于 current density 太小导致 width 过大，达到了好几百 um, 这是我们不愿看到的。因此，这里重新调整 M1, M2, M7 ~ M10 的，设置 M1 ~ M2, M7 ~ M10 的 current density 至少为 1 (对应 width = 125 um), 结果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-02-14-02_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-02-16-15_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-02-17-23_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+``` bash
+# M1, M2
+# 注意 GBW 和 Id 共同决定了 M1 的 gm/Id, 需 > 12.5664 才能满足 GBW 要求
+# 为了提高 gm, 我们这里舍弃了一些 self gain
+Points satisfying objectives = 30/4221 = 0.7107 %
+Best point: gm/Id  = 13.2196, length = 0.666 um
+Parameters of the best point = 
+    "index"             "1393"     
+    "gm/Id"             "13.2196"  
+    "L"                 "6.66e-07" 
+    "selfGain"          "117.313"  
+    "currentDensity"    "1.1093"   
+    "transientFreq"     "455288000"
+    "overdrive"         "0.14838"  
+    "vgs"               "0.594"    
+    "gm"                "2.452e-05"
+    "rout"              "4784370"  
+```
+
+``` bash
+# M7, M8
+Points satisfying objectives = 6/4221 = 0.1421 %
+Best point: gm/Id  = 13.2196, length = 0.666 um
+Parameters of the best point = 
+    "index"             "1393"     
+    "gm/Id"             "13.2196"  
+    "L"                 "6.66e-07" 
+    "selfGain"          "117.313"  
+    "currentDensity"    "1.1093"   
+    "transientFreq"     "455288000"
+    "overdrive"         "0.14838"  
+    "vgs"               "0.594"    
+    "gm"                "2.452e-05"
+    "rout"              "4784370"  
+```
+
+``` bash
+# M9, M10
+Points satisfying objectives = 138/4221 = 3.2694 %
+Best point: gm/Id  = 10.3144, length = 1.314 um
+Parameters of the best point = 
+    "index"             "1527"      
+    "gm/Id"             "10.3144"   
+    "L"                 "1.314e-06" 
+    "selfGain"          "159.271"   
+    "currentDensity"    "1.0028"    
+    "transientFreq"     "167308000" 
+    "overdrive"         "0.19366"   
+    "vgs"               "0.648"     
+    "gm"                "1.7059e-05"
+    "rout"              "9336700"   
+```
+
+
+
+### 2.3 devices summary
+
+再作规整化调整，将 width 和 length 都调整为至多一位小数：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-02-22-46_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-01-17-55_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-01-23-22_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div> -->
+
+
+### 2.4 biasing generations
+
+对于 $V_{b2}$, 一种思路是 Mb7 = M7 且 Mb9 = 1/3 * M9. Mb9 的三分之一不妨缩减 width 达到, 取 multiplier 为 8, 则有：
+
+$$
+\begin{gather}
+W_7 = 110 \ \mathrm{um} = 8 \times 13.75 \ \mathrm{um},\quad W_{b7} = 13.75 \ \mathrm{um} 
+\\
+W_9 = 125 \ \mathrm{um} = 8 \times 15.625 \ \mathrm{um},\quad W_{b9} = \frac{1}{3} \times 15.625 \ \mathrm{um} = 5.2083 \ \mathrm{um}
+\end{gather}
+$$
+
+同理，对 $V_{b1},\ V_{b4}$ (M3 ~ M6) 和 $V_{b3}$ (M11), 直接用 multiplier = 8 作 biasing, 如下：
+
+$$
+\begin{gather}
+I_{REF} = I_{SS}/8 = 31.25 \ \mathrm{uA}
+,\quad 
+W_{3,4} = 55 \ \mathrm{um} = 8 \times 6.875 \ \mathrm{um}
+\\
+W_{5,6} = 50 \ \mathrm{um} = 8 \times 6.25 \ \mathrm{um}
+,\quad
+W_{11} = 120 \ \mathrm{um} = 8 \times 15 \ \mathrm{um}
+\end{gather}
+$$
+
+需要注意的是，由于我们没有在 biasing 中使用电阻，而是用 diode-connected 结构，一个晶体管便会消耗 0.6 ~ 0.7 的 voltage headroom, 因此需要分两或三路来做 biasing, 不能不管 voltage headroom 然后随意串接起来。具体而言, NMOS $V_{b1}$ 和 $V_{b4}$ 需要约 1.3 V, PMOS $V_{b2}$ 需要 0.5 V ~ 0.7 V, PMOS $V_{b3}$ 需要约 0.6 V. 需要注意， Mb7 的 bulk 要连接 VDD 以产生 body-effect, 减小对 M7 的偏置误差。
 
 
 
 
 
+设置 biasing circuit 和 main circuit, **<span style='color:red'> 我们直接用 variables 来设置各晶体管的尺寸，这在设计初期是非常有用的，便于后续的调整和修改 </span>** 。如下图：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-15-28-14_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
 
-## Design Example
 
+当然，如果对自己的设计有充分自信，直接填入尺寸也是可以的：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-12-37-50_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
 
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-02-44-08_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div> -->
 
-### 0.1 General Consideration
-
-### 1. Input Pair (M1, M2)
-
-上面的几个 subsection 都是在做设计前的准备工作，从这一 subsection 开始，我们便来一步步地确定每一个晶体管的具体尺寸。
-
-### 2. Load Transistors
-
-参考 [](<>), 我们直接取
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-02-31-17_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+ -->
 
 
 
 
-## Simulation Verification
+## 3. simulation verification
 
-## Design Conclusion
+### 3.0 dc operation point
+
+设置好端口 VDD, VSS 和 Vin+- 的值，依次设置 `Vin_CM = 0.9 V, 0.4 V, 0 V`, 运行 dc 仿真，结果如下：
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-15-34-18_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+ -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-16-01-39_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-16-02-22_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-16-03-11_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+
+在 `Vin_CM = 0.9 V` 和 `Vin_CM = 0.4 V` 时，通过 vds 和 vdsat 可以看出：所有的 MOSFET 都处于 saturation 区域 (NMOS vds > vdsat > 0, PMOS vds < vdsat < 0), 因此我们的设计整体是没有什么大问题的。但是 `Vin_CM = 0 V` 时，输入管进入 triode region, 这是因为我们在偏置电路中犯了一个典型错误，错误地设置了 M3, M4 的 gate voltage $V_{b1}$。在上面的几个图中，$V_{b1} \approx 1.5 \ \mathrm{V}$ 过高，应该按照本文开头就提高的 biasing voltage requirements 来设置 $V_{b1}$，具体示例见文章 [[Razavi CMOS] Design Example of Folded-Cascode Stage](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>)。下面就先解决这个问题。
+
+### 3.1 biasing correction
+
+
+从文章 [[Razavi CMOS] Design Example of Folded-Cascode Stage](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>) 中可以看到， **<span style='color:red'> $V_{b1}$ 应该与 $V_{b2}$ 一齐被设置，通常与 $V_{b2}$ 差别不大，并且要尽量降低 $V_{b1}$ (提高 $V_{b2}$) 以提高 output swing. </span>** 如果 swing 已经足够，或者不希望在电路中加入电阻，可以直接将 $V_{b1}$ 连接到 $V_{b2}$ (其实早晚得加入，毕竟 $I_{REF}$ 的生成一般都需要电阻)。对我们来讲，为了提高电路性能，还是对 $V_{b1}$ 和 $V_{b2}$ 作一些分析和调整比较好。
+
+先将各晶体管的 model parameters 列出，因为计算时需要用到 VTH (vto):
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-17-02-54_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+在 **1.2 Theoretical Formulas** 一节中我们知道，要使 Vin_CM 达到 - 0.1 V 时还正常工作，$V_{b1}$ 的绝对范围是：
+
+$$
+\begin{gather}
+V_{I_{SS1}} + V_{VO3} + V_{TH3} < V_{b1} < V_{in,CM} + V_{OV3} + V_{TH3} + |V_{TH1}|
+\\
+V_{OV5} + V_{VO3} + V_{TH3} < V_{b1} < (-0.1 \ \mathrm{V}) + V_{OV3} + V_{TH3} + |V_{TH1}|
+\\
+227 \ \mathrm{mV} + 166 \ \mathrm{mV} + 430\ \mathrm{mV} < V_{b1} < -100 \ \mathrm{mV} + 166 \ \mathrm{mV} + 430\ \mathrm{mV} + 452 \ \mathrm{mV}
+\\
+\Longrightarrow 
+V_{b1} \in (0.823 \ \mathrm{V}, 0.948 \ \mathrm{V})
+\end{gather}
+$$
+
+而 $V_{b2}$ 的范围是：
+
+$$
+\begin{gather}
+V_{b2} < V_{DD} - |V_{OV9}| - |V_{OV7}| - |V_{TH7}| = 1800 \ \mathrm{mV} - 185 \ \mathrm{mV} - 150 \ \mathrm{mV} - 452 \mathrm{mV} = 1.013 \ \mathrm{V}
+\end{gather}
+$$
+
+我们当前的 $V_{b1} = 1.474 \ \mathrm{V},\ \ V_{b2} = 0.743 \ \mathrm{V}$，仍有很多调整的空间。为了提高性能，我们希望将 $V_{b2}$ 提升至 0.95 V 左右，同时将 $V_{b1}$ 降低至 0.85 V 左右。此时，$V_{b1}$ 略低于 $ V_{b2}$，先调整 Vb2 至目标值 (修改 Mb9 的尺寸)，然后从 $V_{b2}$ 下方串联一个电阻来获得 $V_{b1}$。 250/8 = 31.25 uA 的 Iref, 要产生 0.1 V 的压差，需要电阻 3.2 kOhm。
+
+我们将 Mb9 的 fraction 从 1/3 调整为了 1，然后添加了电阻，参数和结果如下图所示：
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-17-36-58_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-18-02-16_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-17-39-03_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+可以发现 $V_{b1}$ 和 $V_{b2}$ 都较好地达到了预期值，并且所有的晶体管都位于饱和区，处在正常工作状态。此时，$V_{in,CM}$ 和 output swing 的范围大约是：
+
+$$
+\begin{align}
+V_{in,CM} &\in 
+\left(  
+    V_{b1} - V_{OV3} - V_{TH3} - |V_{TH1}|,\ \ 
+    V_{DD} - V_{I_{SS}} - |V_{OV1}| - |V_{TH1}|
+\right)
+\\
+& = \left(  
+    863 \ \mathrm{mV} - 152 \ \mathrm{mV} - 526 \mathrm{mV} - 460 \mathrm{mV},\ \ 
+    1800 \ \mathrm{mV} - 134 \ \mathrm{mV}  - 152 \mathrm{mV} - 460 \mathrm{mV}
+\right) 
+\\
+& = \left(  
+    -0.275 \ \mathrm{V},\ 1.054 \ \mathrm{V}
+\right)
+\\
+V_{out} &\in 
+\left(  
+    V_{b1} - V_{TH3},\ \ 
+    V_{b2} + |V_{TH7}|
+\right)
+\\
+& = \left(  
+    863 \ \mathrm{mV} - 526 \mathrm{mV},\ 
+    963 \ \mathrm{mV} + 522 \mathrm{mV}
+\right) 
+\\
+& = \left(  
+    337 \ \mathrm{mV},\ 1.485 \ \mathrm{V}
+\right)
+\end{align}
+$$
+
+
+
+后续我们会通过仿真来验证这个输入输出范围。现在不妨看一看其它 fraction 对应的电压状况：
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-17-41-13_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-17-42-06_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-17-44-31_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-17-45-51_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+
+
+### 3.1 create symbol
+
+在开始进一步的仿真之前，我们需要先创建电路的 symbol, 具体步骤为：在 schematic 界面，点击 `Create > Cellview > From Cellview`，无需改名，直接创建即可 (这里创建的是 symbol, 它会和 schematic 在同一 cellview 下), 创建好的 symbol 如图：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-12-51-00_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+我们这里把 `instanceName` 放在了运放正中间，这样，放置运放时所设置的 name (例如 `OPA1`) 就会显示在运放的正中间，便于识别。这里的 `partName` 就是 symbol 对应 schematic 的 cellview 名称。
+
+
+
+
+
+### 3.xxx Parameter Adjustment
+
+## 4. Design Conclusion
+
