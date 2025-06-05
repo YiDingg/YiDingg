@@ -25,6 +25,17 @@
 
 ## 1. Design Considerations
 
+### 1.0 Design Specifications
+
+
+<div class='center'>
+
+| DC Gain | GBW | Load | PM | SR | Input CM | Swing | Power Dissipation |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+ | 80 dB | 50 MHz | 5 pF | 60° | 50 V/us | - 0.1 V ~ + 1.2 V | 1 V | 600 uA @ 1.8V (1.08 mW) |
+</div>
+
+
 ### 1.1 Export Transistor Data
 
 
@@ -48,12 +59,12 @@ early resistance (rout)          = waveVsWave(?x OS("/NMOS" "gmoverid") ?y OS("/
 在 CIW 窗口输入下面代码，将数据导出为 `.txt` 格式 **<span style='color:red'> (注意修改导出路径) </span>** ：
 
 ``` bash
-; 快速导出 gm-Id 仿真数据
+; 快速导出 NMOS gm-Id 仿真数据
 
     ; 设置数据导出路径和器件名称
         ; 完整路径例如 "/home/IC/a_Win_VM_shared/a_Misc/Cadence_Data/tsmc18rf_gmIdData_nmos2v/tsmc18rf_gmIdData_nmos2v_test.txt"
         export_path = "/home/IC/a_Win_VM_shared/a_Misc/Cadence_Data"
-        export_deviceName = "tsmc18rf_gmIdData_nmos2v_450mVds"
+        export_deviceName = "export_deviceName_export_deviceName"
         export_fileFormat = ".txt"
     ; 检查文件夹是否存在, 若不存在则创建 (否则无法导出数据, 会报错 "ERROR (PRINT-1032): Unable to write to output file")
     ; 通过 `system` 调用系统 shell 命令
@@ -118,12 +129,12 @@ early resistance (rout)          = waveVsWave(?x OS("/NMOS" "gmoverid") ?y OS("/
 同理，对 PMOS 进行仿真扫描，输入代码导出数据，得到以下结果：
 
 ``` bash
-; 快速导出 gm-Id 仿真数据
+; 快速导出 PMOS gm-Id 仿真数据
 
     ; 设置数据导出路径和器件名称
         ; 完整路径例如 "/home/IC/a_Win_VM_shared/a_Misc/Cadence_Data/tsmc18rf_gmIdData_nmos2v/tsmc18rf_gmIdData_nmos2v_test.txt"
         export_path = "/home/IC/a_Win_VM_shared/a_Misc/Cadence_Data"
-        export_deviceName = "tsmc18rf_gmIdData_pmos2v_450mVds"
+        export_deviceName = "export_deviceName_export_deviceName"
         export_fileFormat = ".txt"
     ; 检查文件夹是否存在, 若不存在则创建 (否则无法导出数据, 会报错 "ERROR (PRINT-1032): Unable to write to output file")
     ; 通过 `system` 调用系统 shell 命令
@@ -146,7 +157,7 @@ early resistance (rout)          = waveVsWave(?x OS("/NMOS" "gmoverid") ?y OS("/
         ocnPrint(   ; 2. 导出 current density (Id/W)
             ?output path_currentDensity
             ?numberNotation 'scientific
-            waveVsWave(?x OS("/PMOS" "gmoverid") ?y (OS("/PMOS" "id") / VAR("W")))
+            waveVsWave(?x OS("/PMOS" "gmoverid") ?y (abs(OS("/PMOS" "id")) / VAR("W")))
         )
         ocnPrint(   ; 3. transient freq (gm/2*pi*((Cgs+Cgd)))
             ?output path_transientFreq
@@ -195,7 +206,7 @@ early resistance (rout)          = waveVsWave(?x OS("/NMOS" "gmoverid") ?y OS("/
 下面是各指标的理论公式，推导过程见文章 [[Razavi CMOS] Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)，这里直接给出结论：
 - `DC Gain > 80dB` : $A_v = g_{m1} \cdot \left( \left[ (g_{m3} + g_{mb3})r_{O3}  (r_{O1}\parallel r_{O5}) \right] \parallel \left[ (g_{m7} + g_{mb7})r_{O7} r_{O9} \right] \right)$
 - `GBW > 50 MHz` : $f_{p1} \approx \frac{1}{2\pi R_{out}C_L},\quad  \mathrm{GBW} = A_v \cdot f_{p1} = \frac{g_{m1}}{2\pi C_L}$
-- `PM > 60°` : $f_{p2} \approx \frac{1}{2 \pi (\frac{1}{g_{m4}\parallel r_{O2} \parallel r_{O6}}) C_{Y}} > f_{p2}|_{\mathrm{PM = 60^\circ}} \approx \sqrt{3} \,\mathrm{GBW}$,其中 $C_Y$ 是 Y 节点的等效总电容
+- `PM > 60°` : $f_{p2} \approx \frac{1}{2 \pi (\frac{1}{g_{m4}\parallel r_{O2} \parallel r_{O6}}) C_{Y}} > f_{p2}|_{\mathrm{PM = 60^\circ}} \approx 1.5 \,\mathrm{GBW}$,其中 $C_Y$ 是 Y 节点的等效总电容
 - `SR > 50 V/us` : $SR = \frac{\min \{I_{SS},\ I_{D9}\}}{C_L}$, 令 $I_{SS} = I_{D9}$, 则 $SR = \frac{I_{SS}}{C_L}$
 - `Input CM` : $(V_{in,CM})_{\max} = V_{DD} - |V_{OV11}| - |V_{OV1}| - |V_{TH1}| $, $(V_{in,CM})_{\min} = V_{OV5} - |V_{TH1}|$
 - `Swing > 1 V` : $\mathrm{swing} = |V_{TH5}| + V_{TH3} + (V_{b2} - V_{b1})$
@@ -534,7 +545,7 @@ $$
 
 
 
-## 3. simulation verification
+## 3. simul. verification 1
 
 ### 3.0 dc operation point
 
@@ -636,19 +647,318 @@ $$
 
 
 
-### 3.1 create symbol
+### 3.2 create symbol
 
-在开始进一步的仿真之前，我们需要先创建电路的 symbol, 具体步骤为：在 schematic 界面，点击 `Create > Cellview > From Cellview`，无需改名，直接创建即可 (这里创建的是 symbol, 它会和 schematic 在同一 cellview 下), 创建好的 symbol 如图：
+在开始进一步的仿真之前，我们需要先创建电路的 symbol, 但是注意，如果我们的 schematic 中存在 variables, 那么在添加这个 symbol 作为 instance 时，这些 design variables 也会被添加进来，需要在 `ADE L > Copy From Cellview` 并设置它们的值。
+
+
+创建 symbol 的具体步骤为：在 schematic 界面，点击 `Create > Cellview > From Cellview`，无需改名，直接创建即可 (这里创建的是 symbol, 它会和 schematic 在同一 cellview 下), 创建好的 symbol 如图：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-12-51-00_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
 
 我们这里把 `instanceName` 放在了运放正中间，这样，放置运放时所设置的 name (例如 `OPA1`) 就会显示在运放的正中间，便于识别。这里的 `partName` 就是 symbol 对应 schematic 的 cellview 名称。
 
 
+### 3.3 dc io-curve
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-20-30-52_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-20-31-38_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-20-31-10_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div> -->
+
+增益只有 60 dB, 需要重新调整 Vb1 和 Vb2. 我们通过修改电阻 $R$ 和参数 frac 来实现。经过迭代，将 Vb1 调整至高于 Vb2, 且 R = 2 kOhm, frac = 0.65, 此时的 IO-curve 为：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-20-50-12_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+### 3.4 dc gain correction
+
+大概有 76 dB 的最高增益，这仍然无法达到要求，这是为什么呢？参考文章 [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>) 中的 tip, 将晶体管的 self_gain 等静态工作点在 schematic 中直接标出，结果如下：
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-23-12-17_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+ -->
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-23-20-06_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div> -->
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-23-23-50_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+按照上面的工作点来计算直流增益，结果为 $A_v \approx 3210.6 = 70.13 \ \mathrm{dB}$ 确实是不够的。这说明我们在增益公式中作安排时，大概是存在不合理的地方，重新回顾增益公式：
+
+$$
+\begin{gather}
+A_v \approx g_{m1} \cdot \left( \left[ g_{m3}r_{O3}  (r_{O1}\parallel r_{O5}) \right] \parallel \left[ g_{m7}r_{O7} r_{O9} \right] \right)
+\end{gather}
+$$
+
+需要多大的 rout 才能满足增益要求？看下图：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-23-41-56_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+### 3.5 determine sizes
+
+从上面可以看出，我们直接令 `width = 2u, vds = 450 mV` 扫描得到的数据，其“可信度”非常有限。为了使扫描所得数据更贴近实际情况，我们令 `W = 50u, vdc = 300 mV`, **<span style='color:red'> 并且在晶体管的 drain 串联一个大小合适的电阻 </span>**，使晶体管在 strong inversion 时恰好进入 saturation. 
+
+NMOS: 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-00-01-35_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-00-11-01_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+PMOS: 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-00-18-15_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-00-17-32_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+然后重新确定 M1, M3, M5, M7 和 M9 的参数。需要说明的是，为了达到增益要求，我们不得不放宽 currentDensity, 也即消耗更大的面积
+
+``` bash
+# PMOS M1
+Points satisfying objectives = 1/4221 = 0.0237 %
+Best point: gm/Id  = 14.4471, length = 0.261 um
+Parameters of the best point = 
+    "index"             "1346"      
+    "gm/Id"             "14.4471"   
+    "L"                 "2.61e-07"  
+    "selfGain"          "30.6252"   
+    "currentDensity"    "2.1036"    
+    "transientFreq"     "2268630000"
+    "overdrive"         "0.11884"   
+    "vgs"               "0.576"     
+    "gm"                "0.0013918" 
+    "rout"              "22003.9"   
+
+
+# NMOS M3
+Points satisfying objectives = 9/4221 = 0.2132 %
+Best point: gm/Id  = 20.2074, length = 1.8 um
+Parameters of the best point = 
+    "index"             "1092"      
+    "gm/Id"             "20.2074"   
+    "L"                 "1.8e-06"   
+    "selfGain"          "256.525"   
+    "currentDensity"    "0.34678"   
+    "transientFreq"     "240092000" 
+    "overdrive"         "0.083721"  
+    "vgs"               "0.459"     
+    "gm"                "0.00032192"
+    "rout"              "796858"    
+
+
+# NMOS M5
+Points satisfying objectives = 68/4221 = 1.6110 %
+Best point: gm/Id  = 18.8674, length = 1.8 um
+Parameters of the best point = 
+    "index"             "1155"      
+    "gm/Id"             "18.8674"   
+    "L"                 "1.8e-06"   
+    "selfGain"          "231.787"   
+    "currentDensity"    "0.56202"   
+    "transientFreq"     "255555000" 
+    "overdrive"         "0.097471"  
+    "vgs"               "0.486"     
+    "gm"                "0.00048259"
+    "rout"              "480294"    
+
+# PMOS M7
+Points satisfying objectives = 4/4221 = 0.0948 %
+Best point: gm/Id  = 17.3621, length = 1.8 um
+Parameters of the best point = 
+    "index"             "1260"      
+    "gm/Id"             "17.3621"   
+    "L"                 "1.8e-06"   
+    "selfGain"          "209.316"   
+    "currentDensity"    "0.21477"   
+    "transientFreq"     "51118700"  
+    "overdrive"         "0.11231"   
+    "vgs"               "0.531"     
+    "gm"                "0.00015297"
+    "rout"              "1368360"   
+
+
+# PMOS M9
+Points satisfying objectives = 138/4221 = 3.2694 %
+Best point: gm/Id  = 13.2763, length = 1.638 um
+Parameters of the best point = 
+    "index"             "1405"     
+    "gm/Id"             "13.2763"  
+    "L"                 "1.638e-06"
+    "selfGain"          "109.23"   
+    "currentDensity"    "0.50623"  
+    "transientFreq"     "89218100" 
+    "overdrive"         "0.15439"  
+    "vgs"               "0.594"    
+    "gm"                "0.0002715"
+    "rout"              "402317"   
+
+```
 
 
 
-### 3.xxx Parameter Adjustment
 
-## 4. Design Conclusion
+这样得到的增益至少为 $A_v > 7.3727e+03 = 77.35 \ \mathrm{dB}$, 各晶体管参数如下：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-00-51-16_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
 
+
+## 4. simul. verification 2
+
+### 4.0 dc operation point
+
+注意 R 的位置改变了, 然后 M3 工作在 weak inversion 区域。
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-01-20-14_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+
+### 4.1 dc io-curve
+
+扫描 R 和 frac, 根据仿真结果调整它们的值：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-01-46-01_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-01-47-45_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-01-51-11_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+于是最终我们选择了：
+
+$$
+\begin{gather}
+R = 2000 \ \Omega,\quad \mathrm{frac} = 0.3 
+\end{gather}
+$$
+
+在这个参数下，我们看看不同共模输入对应的曲线：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-01-53-55_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+`Vin_CM` 从 - 0.1 V 至 + 1.2 V 都可正常工作，增益也足够，终于满足要求了！！！
+
+
+### 4.2 frequency response
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-02-06-15_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+GBW 约为 34.4 MHz, PM 大约在 38° 左右，这个相位裕度显然是不够的，需要作出调整。从频响曲线可以看出，这是一个三阶系统，具有三个极点和一个左半平面的零点，并且 $f_{p2}, f_{p3}, f_{z}$ 的频率相近。
+
+
+要改善性能，提高 PM, 一种思路是提高 $f_{p2}$ 至 1.5 GBW @ PM = 60°，或者 2.6 GBW @ PM = 70°, $f_{p2}$ 与 GBW 的关系见文章 [Relationship Between GBW and fp2 in a Tow-Order System](<Electronics/Relationship Between GBW and fp2 in a Tow-Order System.md>)；另一种思路是降低 $f_{z}$, 但是 $f_z$ 表达式的理论公式比较麻烦，需要我们完整地推导小信号模型。于是我们考虑对 $f_{p2}$ 和 $f_{p3}$ 作调整。
+
+
+### 4.3 improve PM and GBW
+
+下面就来调整其中几个晶体管，以期改善相位裕度。先记录改善前的晶体管尺寸、静态工作点与频率响应：
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-10-17-25_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-10-21-54_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+ -->
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-10-53-56_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-10-55-01_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-11-16-04_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-11-16-39_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-10-32-19_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-11-01-38_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-11-01-47_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-11-04-24_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-10-39-27_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div> -->
+
+在 Id 不变的情况下，有平方律参考公式：
+
+$$
+\begin{gather}
+r_O = \frac{1}{\lambda I_D} \propto L,\quad g_m = \sqrt{2 \beta \frac{W}{L} I_D} \propto \sqrt{\frac{W}{L}}
+,\quad 
+g_m r_O \propto \sqrt{W L}
+\end{gather}
+$$
+
+修改思路：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-10-18-50_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+先考虑 M3, 要在提高 gm 、降低电容的同时, 保持 gm*rO 不变, 且 width 尽量不变, 可以考虑减小 length, 扫描结果如下：
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-11-28-04_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-11-29-25_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+于是将 M3 的 length 修改为 `L3 = 1.8u > 1.38u`, 然后考虑 M9, 对其 width, length 进行扫描, 并不断迭代：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-11-41-34_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-11-46-06_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-11-46-21_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+上图中的绿色、青色和蓝色都具有较好的性能，也即 `width = (92u, 164u)`, 于是令 `W9/L9 = 130u/0.6u`。此时，不同 Vdc 对应的性能情况如图：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-11-54-42_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+继续调整 M7, 扫描结果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-12-06-27_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-12-09-55_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+根据结果，将 M7 修改为 `W7/L7 = 580u/1.8u > 600u/1.6u`, 然后对 M5 进行扫描：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-12-15-32_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+修改 M5 为 `W5/L5 = 445u/1.8u > 240u/1.8u`。到这里，对 GBW 和 PM 有明显影响的晶体管都已经调整完毕，最后看一下不同 Vdc 对应的性能情况：
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-12-18-53_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div> -->
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-12-22-40_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-12-23-38_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+
+至此，频率响应层面的优化终于完成。虽然没有完全达到指标要求，但暂时是没有特别大的拓展空间了。
+
+## 5. simul. verification 3
+
+### 5.0 dc operation point
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-14-10-23_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-14-09-52_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+### 5.1 dc io-curve
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-14-16-43_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-14-20-03_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+### 5.2 buffer dc range
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-12-32-35_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-12-38-45_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-14-00-10_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+### 5.3 buffer tran and SR
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-13-22-33_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-13-33-44_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+### 5.4 range of CM input
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-13-43-14_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
+
+
+
+## 6. Design Conclusion
+
+
+
+下表总结了上面各个小节的仿真结果：
+<div class='center'>
+
+| Parameter | Value |
+|:-:|:-:|
+ | DC Gain | 81.49 dB @ Vin = 0.9 V in unit buffer |
+ | GBW | 45.71 MHz @ Vin = 0.9 V in unit buffer |
+ | PM | 57.8° @ Vin = 0.9 V in unit buffer |
+ | Power dissipation | 590.3 uA @ 1.8V in unit buffer |
+ | Open-loop swing  | (0.442 V, 1.416 V) = 0.974 V @ 60dB <br> (0.532 V, 1.352 V) = 0.820 V @ 74dB |
+ | Buffer swing | (0.159 V, 1.416 V) = 1257 mV @ 0.900 slope in unit buffer <br> (0.450 V, 1.276 V) = 826 mV @ 0.999 slope in unit buffer <br> (0.450 V, 1.303 V) 850 mV @ 1e-4 error in unit buffer | 
+ | Slew rate | + 42.22 V/us, - 38.27 V/us @ (0.5 V, 1.2 V) step pulse in unit buffer |
+ | CM Input range | (0.027 V, 1.166 V) = 1.139 V @ -3dB drop at Vin_DM = 0 <br> (-0.154 V, 1.342 V) = 1.496 V @ -20dB drop at Vin_DM = 0 |
+</div>
+
+
+下表是仿真值与指标要求的对比：
+
+<div class='center'>
+
+<span style='font-size:12px'> 
+
+| Type | DC Gain | GBW | PM | Slew Rate | CM Input Range | Output Swing | Power Dissipation |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+ | Specifications | 80 dB | 50 MHz | 60° | 50 V/us | (-0.1 V, +1.2 V) | 1 V | 600 uA @ 1.8V (1.08 mW) |
+ | Simulation Results | 81.49 dB | 45.71 MHz | 57.8° | +42.22 V/us, -38.27 V/us | (-0.154 V, +1.342 V) | 0.82 V ~ 1.26 V | 590.3 uA @ 1.8V (1.06 mW) |
+
+</span>
+</div>
+
+总的来讲，

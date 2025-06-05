@@ -45,7 +45,7 @@
 
 <!-- 修改完成后记得左下角 `Save Bindings for All > Save`，以免下次又要重新设置。也可以直接在 `.cdsinit` 文件中添加代码，详见后一小节。 -->
 
-### 2. file .cdsinit and .cdsenv
+### 2. .cdsinit and .cdsenv settings
 
 本小节参考了以下资料：
 - [重要: Virtuoso® Schematic Editor SKILL Functions Reference](<https://picture.iczhiku.com/resource/eetop/sykRGZGTDTSiYmCv.pdf>)
@@ -124,10 +124,10 @@ viva.vertMarker significantDigits string "4"
 viva.horizMarker sigDigitsMode string "Manual"
 viva.horizMarker significantDigits string "4"
 
-; 设置仿真图中 marker 始终显示坐标点
-viva.vertMarker	interceptStyle	string	"OnWhenHover" ; 可设置为 "on", "off", "OnWhenHover"(默认), 建议 "OnWhenHover", 因为仿真时我们一般都有第二变量, 直接从左侧 legend 查看结果 (而不是在图上来看)
-viva.horizMarker	interceptStyle	string	"OnWhenHover"
-viva.referenceLineMarker	interceptStyle	string	"OnWhenHover"
+; 设置仿真图中 marker 始终显示坐标点, 可设置为 "on", "off", "OnWhenHover"(默认), 建议 "OnWhenHover"
+viva.vertMarker	interceptStyle	string	"on" ; 
+viva.horizMarker	interceptStyle	string	"on"
+viva.referenceLineMarker	interceptStyle	string	"on"
 
 ; 其它设置
 auCore.misc    labelDigits int 6 ;设置仿真结果显示 6 位小数
@@ -143,14 +143,6 @@ schematic	showUndoRedoHistoryInEditor	boolean	t ; 在 schematic 中显示撤销�
 
 ``` bash
 ; .cdsinit
-
-; 设置初始 CIW 窗口的大小和位置, 其中 400:150 代表窗口左下角坐标，1200:600 代表窗口右上角坐标
-hiResizeWindow(window(1) list(400:0 1800:1000))
-
-; 设置 Cadence 中默认文本编辑器为 gedit (script 和 verilog-A 的编辑器)
-; 可选的通常有 vim, gedit, emacs, atom
-; editor="gedit"
-
 
 hiSetBindKeys("Schematics" list(
     list("None<Btn4Down>" "geScroll(nil \"n\" nil)") ; 鼠标滚轮上滑, 界面上移:
@@ -175,14 +167,14 @@ hiSetBindKeys("Schematics" list(
     list("Ctrl<Key>c" "schHiCopy()") ; Ctrl + C 复制
     list("<Key>d" "schHiCreateNoteShape()") ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
     list("<Key>a" "schHiCreateInst()") ; 按键 A 添加 instance (默认功能是 geSingleSelectPoint()), 用于替代按键 I
-    list("Ctrl<Key>1" "sevAnnotateResults('sevSession1 'dcNodeVoltages)") ; 在 schematic 中标出 dc voltages
-    list("Ctrl<Key>2" "sevAnnotateResults('sevSession1 'dcOpPoints)")     ; 在 schematic 中标出器件的 operation points
-    list("Ctrl<Key>3" "sevAnnotateResults('sevSession1 'componentParameters)") ; 在 schematic 中标出器件的尺寸信息
-    list("Ctrl<Key>4" "sevAnnotateResults('sevSession1 'modelParameters)") ; 在 schematic 中标出器件的模型信息 (例如阈值电压 vto)
-            ; list("Ctrl<Key>1" "AnnotationSlider->annDCVoltage->checked=t") ; 在 schematic 中标出 dc voltages
-            ; list("Ctrl<Key>2" "AnnotationSlider->annDCOpPoint->checked=t") ; 在 schematic 中标出器件的 operation points
-            ; list("Ctrl<Key>3" "AnnotationSlider->annparameter->checked=t") ; 在 schematic 中标出器件的尺寸信息
-            ; list("Ctrl<Key>4" "AnnotationSlider->annmodel->checked=t")     ; 在 schematic 中标出器件的模型信息 (例如阈值电压 vto)
+    ; list("Ctrl<Key>1" "sevAnnotateResults('sevSession1 'dcOpPoints)")     ; 在 schematic 中标出器件的 operation points
+    ; list("Ctrl<Key>2" "sevAnnotateResults('sevSession1 'componentParameters)") ; 在 schematic 中标出器件的尺寸信息
+    ; list("Ctrl<Key>3" "sevAnnotateResults('sevSession1 'modelParameters)") ; 在 schematic 中标出器件的模型信息 (例如阈值电压 vto)
+    ; list("Ctrl<Key>4" "sevAnnotateResults('sevSession1 'dcNodeVoltages)") ; 在 schematic 中标出 dc voltages
+    list("Ctrl<Key>1" "AnnotationSlider->annDCOpPoint->checked=t") ; 在 schematic 中标出器件的 operation points
+    list("Ctrl<Key>2" "AnnotationSlider->annparameter->checked=t") ; 在 schematic 中标出器件的尺寸信息
+    list("Ctrl<Key>3" "AnnotationSlider->annmodel->checked=t")     ; 在 schematic 中标出器件的模型信息 (例如阈值电压 vto)
+    list("Ctrl<Key>4" "AnnotationSlider->annDCVoltage->checked=t") ; 在 schematic 中标出 dc voltages
 	)
 )
 
@@ -222,8 +214,13 @@ _hiFormApplyCB(hiSetFilterForm)     ; 应用已修改的 log filter 结构体
 
 
 ; 其它设置
+; editor="gedit" ; 设置 Cadence 中默认文本编辑器为 gedit (script 和 verilog-A 的编辑器), 可选的通常有 vim, gedit, emacs, atom
 ExportImageDialog->fileName->value = "/home/IC/a_Win_VM_shared/a_Misc/schematic.png" ; 设置 schematic 导出为 image 时的默认路径
+dbSetAutoSave(t 20) ; 设置自动保存时间, 单位是 second (秒)
+hiResizeWindow(window(1) list(400:0 1800:1000)) ; 设置初始 CIW 窗口的大小和位置, 其中 400:150 代表窗口左下角坐标，1200:600 代表窗口右上角坐标
+
 ```
+
 
 
 
@@ -254,6 +251,9 @@ envSetVal(list(
 envSetVal("schematic" "createLabelFontStyle" 'cyclic "roman")
 ```
 
+envSetVal("viva.vertMarker"	"interceptStyle"	'string	"on" )
+envSetVal("viva.horizMarker"	"interceptStyle"	'string	"on")
+envSetVal("viva.referenceLineMarker"	"interceptStyle"	'string	"on")
 
 当然，我们也可以通过修改 `display.drf` 文件来改变某些颜色、线条设置，这里不多赘述。
 
@@ -437,14 +437,80 @@ vmware-hgfsclient # 查看当前虚拟机的共享文件夹 (有无挂载都会�
 - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
 - [Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
 - [Design Example of F-OTA using Gm-Id Method](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
+- [Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<Electronics/Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)
+
+
+### 1. annotate self_gain
+
+如何在 schematic 上直接标出器件的直流工作点，包括 self_gain, r_out 等？只需在 `schematic > view > annotations > setup` 中进行调整，效果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-01-02-44_How to Use Cadence Efficiently.png"/></div>
+
+经过摸索，也可以先点击 schematic 界面，使主窗口定位于此，然后在 CIW 窗口中输入下面代码：
+
+``` bash
+; 快速设置 schematic 界面上的 dc annotation, 标出器件的 region, id, self_gain 等参数
+
+name_processLibrary = "tsmc18rf"; 设置工艺库名称
+name_nmos = "nmos2v" ; 设置器件名称
+name_pmos = "pmos2v" ; 设置器件名称
+schSingleSelectPt()
+asaEditCompDisplay()
+
+; 下面是 nmos
+_annInstanceChanged(annotationSetupForm->annNativeWidget name_processLibrary "*" "*")
+_annInstanceChanged(annotationSetupForm->annNativeWidget name_processLibrary name_nmos "*")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (4 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 4 3 "region")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (5 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 5 3 "id")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (6 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 6 3 "fug")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (7 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 7 3 "vdsat")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (8 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 8 3 "self_gain")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (9 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 9 3 "rout")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (10 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 10 3 "gm")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (11 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 11 3 "gmoverid")
+
+; 应用上面的设置
+_annApplyAndRedraw(hiGetCurrentWindow())
+
+; 下面是 pmos
+_annInstanceChanged(annotationSetupForm->annNativeWidget name_processLibrary "*" "*")
+_annInstanceChanged(annotationSetupForm->annNativeWidget name_processLibrary name_pmos "*")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (4 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 4 3 "region")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (5 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 5 3 "id")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (6 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 6 3 "fug")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (7 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 7 3 "vdsat")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (8 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 8 3 "self_gain")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (9 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 9 3 "rout")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (10 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 10 3 "gm")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (11 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 11 3 "gmoverid")
+
+; 应用上面的设置
+_annApplyAndRedraw(hiGetCurrentWindow())
+_annOKFormCB(hiGetCurrentWindow())
+
+```
 
 
 
-### 1. Config Wire Color
+### 2. output GBW and PM
 
-### 2. 
-
-
+参考 [知乎 > AC 仿真中直接打印 GBW 和 PM 的设置方法【cadence使用】](https://zhuanlan.zhihu.com/p/681899170)
 
 
 
@@ -575,8 +641,29 @@ startFinde(); 打开 "Cadence SKILL API Finder", 用于查找函数及其定义
         )
 ```
 
+### 4. Decorate Lib. Directory
+
+参考 [知乎 > 让你的 Cadence Library 更加美观](https://zhuanlan.zhihu.com/p/20739660), 文中的步骤同样适用于 Cadence IC618, 我们的调整效果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-19-31-21_How to Use Cadence Efficiently.png"/></div>
+
+### 5. Autosave Your Work
+
+参考 [Cadence Community > autosave option in 6.1.3 version](https://community.cadence.com/cadence_technology_forums/f/custom-ic-design/14627/autosave-option-in-6-1-3-version)
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-19-56-11_How to Use Cadence Efficiently.png"/></div>
+
+``` bash
+dbSetAutoSave(
+    t  ; 是否开启自动保存
+    20 ; 自动保存间隔时间 (unit: second)
+)
+```
 
 
+### 6. Backup Your Files
+
+参考 
 
 ## Frequently Asked Questions
 
@@ -723,6 +810,7 @@ virtualHW.version = "17"
 - 2025.05.30 01:36 记录：从 (2025.05.29 12:15) 重启虚拟机过后，一直用到现在（约 13 个小时），没有再出现卡死现象，看来是之前的设置确实有用。
 - 2025.06.04 17:27 记录：这个卡死不卡死是真的玄学，昨天用了一整天，没卡死，今天四个小时已经卡死三次了
 - 2025.06.04 18:08 记录：今天已经第四次卡死了，检查时发现不知为何 `mksSandbox` 和 `vmware-vmx` 的设置都变为了默认设置，于是重新设置了一遍，重新打开虚拟机进行测试。
+- 2025.06.04 18:09 记录：设置完成发现，虚拟机无法正常打开了，一直报错 `VMware Workstation 未能开启 "...\IC618.vmx"`, 即使还原设置并重启也不行。于是尝试了在 Process Lasso 中 “关闭并重启” `vmware.exe` 进程，然后虚拟机可以正常打开了。于是还原各项设置，继续测试是否会卡死。
 
 
 ### 4. ERROR (PRINT-1032): Unable to write to output file

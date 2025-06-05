@@ -110,6 +110,7 @@
     - [**[Pinned] Collection of My Measurement Experiments**](<Electronics/The Collection of My Measurement Experiments.md>)
 
     - Analog IC 
+        - [Relationship Between GBW and fp2 in a Tow-Order System](<Electronics/Relationship Between GBW and fp2 in a Tow-Order System.md>)
         - [Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<Electronics/Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)
         - [Biasing Circuits for Low-Voltage Cascode Current Mirror](<Electronics/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)
         - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<Electronics/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)
@@ -140,6 +141,7 @@
 
 
     - 2025 (78 items)
+        - [Relationship Between GBW and fp2 in a Tow-Order System](<Electronics/Relationship Between GBW and fp2 in a Tow-Order System.md>)
         - [Biasing Circuits for Low-Voltage Cascode Current Mirror](<Electronics/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)
         - [Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<Electronics/Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)
         - [Op Amp Measurement of LM741CN](<Electronics/Op Amp Measurement of LM741CN.md>)
