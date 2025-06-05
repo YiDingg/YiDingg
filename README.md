@@ -25,46 +25,11 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C227%20hrs%2036%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C249%20hrs%2042%20mins-blue)
 
-![Profile Views](http://img.shields.io/badge/Profile%20Views-52-blue)
+![Profile Views](http://img.shields.io/badge/Profile%20Views-87-blue)
 
-![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-801.2%20thousand%20lines%20of%20code-blue)
-
-**I'm a Night 🦉** 
-
-```text
-🌞 Morning                81 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   06.40 % 
-🌆 Daytime                418 commits         ████████░░░░░░░░░░░░░░░░░   33.04 % 
-🌃 Evening                401 commits         ████████░░░░░░░░░░░░░░░░░   31.70 % 
-🌙 Night                  365 commits         ███████░░░░░░░░░░░░░░░░░░   28.85 % 
-```
-📅 **I'm Most Productive on Friday** 
-
-```text
-Monday                   197 commits         ████░░░░░░░░░░░░░░░░░░░░░   15.57 % 
-Tuesday                  158 commits         ███░░░░░░░░░░░░░░░░░░░░░░   12.49 % 
-Wednesday                144 commits         ███░░░░░░░░░░░░░░░░░░░░░░   11.38 % 
-Thursday                 206 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.28 % 
-Friday                   214 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.92 % 
-Saturday                 146 commits         ███░░░░░░░░░░░░░░░░░░░░░░   11.54 % 
-Sunday                   200 commits         ████░░░░░░░░░░░░░░░░░░░░░   15.81 % 
-```
-
-
-📊 **This Week I Spent My Time On** 
-
-```text
-💬 Programming Languages: 
-Markdown                 38 hrs 32 mins      ██████████████████████░░░   89.21 % 
-TeX                      4 hrs 37 mins       ███░░░░░░░░░░░░░░░░░░░░░░   10.70 % 
-Other                    2 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.09 % 
-JSON                     0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
-
-🐱‍💻 Projects: 
-GH.YiDingg               38 hrs 34 mins      ██████████████████████░░░   89.30 % 
-GH.UCAS-LinearCircuitExpe4 hrs 37 mins       ███░░░░░░░░░░░░░░░░░░░░░░   10.70 % 
-```
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-802.7%20thousand%20lines%20of%20code-blue)
 
 **I Mostly Code in C** 
 
@@ -79,7 +44,7 @@ TypeScript               1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2025.06.01 18:44 UTC
+ Last Updated on 2025.06.05 12:02 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
