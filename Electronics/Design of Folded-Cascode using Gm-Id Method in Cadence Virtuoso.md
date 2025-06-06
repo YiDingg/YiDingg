@@ -203,10 +203,10 @@ early resistance (rout)          = waveVsWave(?x OS("/NMOS" "gmoverid") ?y OS("/
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-03-20-51-42_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
 
 
-下面是各指标的理论公式，推导过程见文章 [[Razavi CMOS] Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)，这里直接给出结论：
+下面是各指标的理论公式，推导过程见文章 [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)，这里直接给出结论：
 - `DC Gain > 80dB` : $A_v = g_{m1} \cdot \left( \left[ (g_{m3} + g_{mb3})r_{O3}  (r_{O1}\parallel r_{O5}) \right] \parallel \left[ (g_{m7} + g_{mb7})r_{O7} r_{O9} \right] \right)$
 - `GBW > 50 MHz` : $f_{p1} \approx \frac{1}{2\pi R_{out}C_L},\quad  \mathrm{GBW} = A_v \cdot f_{p1} = \frac{g_{m1}}{2\pi C_L}$
-- `PM > 60°` : $f_{p2} \approx \frac{1}{2 \pi (\frac{1}{g_{m4}\parallel r_{O2} \parallel r_{O6}}) C_{Y}} > f_{p2}|_{\mathrm{PM = 60^\circ}} \approx 1.5 \,\mathrm{GBW}$,其中 $C_Y$ 是 Y 节点的等效总电容
+- `PM > 60°` : $f_{p2} \approx \frac{1}{2 \pi (\frac{1}{g_{m4}}\parallel r_{O2} \parallel r_{O6}) C_{Y}} > f_{p2}|_{\mathrm{PM = 60^\circ}} \approx 1.5 \,\mathrm{GBW}$,其中 $C_Y$ 是 Y 节点的等效总电容
 - `SR > 50 V/us` : $SR = \frac{\min \{I_{SS},\ I_{D9}\}}{C_L}$, 令 $I_{SS} = I_{D9}$, 则 $SR = \frac{I_{SS}}{C_L}$
 - `Input CM` : $(V_{in,CM})_{\max} = V_{DD} - |V_{OV11}| - |V_{OV1}| - |V_{TH1}| $, $(V_{in,CM})_{\min} = V_{OV5} - |V_{TH1}|$
 - `Swing > 1 V` : $\mathrm{swing} = |V_{TH5}| + V_{TH3} + (V_{b2} - V_{b1})$
@@ -961,4 +961,4 @@ $$
 </span>
 </div>
 
-总的来讲，
+本文的篇幅已经相当长了，因此本次设计的总结将在另一篇文章 [this article]() 中进行。事实上，我们在本次设计 (以及上一次 [F-OTA](<Electronics/Design Example of F-OTA using Gm-Id Method.md>) 的设计) 中，都犯了一个非常根本的错误：使用了错误的 gm-Id 设计流程，

@@ -110,13 +110,16 @@
     - [**[Pinned] Collection of My Measurement Experiments**](<Electronics/The Collection of My Measurement Experiments.md>)
 
     - Analog IC 
-        - [Relationship Between GBW and fp2 in a Tow-Order System](<Electronics/Relationship Between GBW and fp2 in a Tow-Order System.md>)
+        - [! An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
+        - [! Design Sheet of Folded-Cascode Op Amp](<Electronics/Design Sheet of Folded-Cascode Op Amp.md>)
+        - [! Miller Compensation in Basic Two-Stage Op Amp](<Electronics/Miller Compensation in Basic Two-Stage Op Amp.md>)
+        - [! Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)
+        - [! Relationship Between GBW and fp2 in a Two-Order System](<Electronics/Relationship Between GBW and fp2 in a Two-Order System.md>)
         - [Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<Electronics/Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)
         - [Biasing Circuits for Low-Voltage Cascode Current Mirror](<Electronics/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)
         - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<Electronics/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)
         - [Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>)
-        - [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
-        - [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
+        - [Design Example of F-OTA using Gm-Id Methodology](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
         - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
         - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
         - [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
@@ -141,7 +144,8 @@
 
 
     - 2025 (78 items)
-        - [Relationship Between GBW and fp2 in a Tow-Order System](<Electronics/Relationship Between GBW and fp2 in a Tow-Order System.md>)
+        - [LCE 实验记录 (LCE-09 比较器)](<Electronics/LCE 实验记录 (LCE-09 比较器).md>)
+        - [Relationship Between GBW and fp2 in a Tow-Order System](<Electronics/Relationship Between GBW and fp2 in a Two-Order System.md>)
         - [Biasing Circuits for Low-Voltage Cascode Current Mirror](<Electronics/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)
         - [Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<Electronics/Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)
         - [Op Amp Measurement of LM741CN](<Electronics/Op Amp Measurement of LM741CN.md>)
