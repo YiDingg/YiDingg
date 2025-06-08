@@ -7,9 +7,11 @@
 
 - 参考教材: *Design of Analog CMOS Integrated Circuits (Razavi) (Second Edition, 2015)*, Chapter 9  (Operational Amplifiers), Section 9.2 (One-Stage Op Amps)
 
+
+本文介绍了经典的 telescopic op amp 和 folded-cascode op amp 的工作原理，给出两种结构偏置电压的详细要求，推导出开环小信号增益的具体公式，并给出传统 overdrive 方法的设计思路。另外， cascode 结构具有较好的频率响应，我们将在后续的文章中详细介绍。
 <div class='center'>
 <span style='color:red'> 
-若无特别说明，本文的讨论都忽略 body effect 对直流 biasing 和 small-signal 性能的影响。
+若无特别说明，本文的讨论都忽略 body effect 对 small-signal 性能的影响。
 </span>
 </div>
 

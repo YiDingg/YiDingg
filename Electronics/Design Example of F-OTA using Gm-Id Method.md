@@ -26,7 +26,7 @@
 gm-Id 方法的基本设计步骤如下：
 - 0. 基于经验，选择可以满足设计要求的运放架构，并推导出各个指标的理论公式 (与器件的具体模型公式无关)
 - 1. 由 $\mathrm{GBW}$ (or $BW$) 确定 $g_m$,  (通常所有器件同 length)
-- 2. 由 $A_v$ 和其它指标确定电流效率 $\frac{g_m}{I_D}$ 和器件长度 $L$ (这一步需要作相当明显的 trade-off)
+- 2. 由 $A_v$ 和其它指标确定跨导效率 $\frac{g_m}{I_D}$ 和器件长度 $L$ (这一步需要作相当明显的 trade-off)
     - 具体方法：作出 $g_m r_O$ 关于 $\frac{g_m}{I_D}$ 和 $L$ 的变化情况，选择合适的 $\frac{g_m}{I_D}$ 和 $L$
     - 范围选择: 
         - strong inversion: $\frac{g_m}{I_D} \in (0,\ 10)$
@@ -35,8 +35,7 @@ gm-Id 方法的基本设计步骤如下：
     - 较小的 $\frac{g_m}{I_D}$ (strong inversion): 
         - 更快的响应速度: $V_{OV}$ 增大使 $C_{gs}$ 减小, 从而使 $f_T \approx \frac{g_m}{2\pi C_{gs}}$ 增大
         - 更好的匹配度: 在 strong inversion, 由于 $V_{OV}$ 较大，$V_{TH}$ 的失配对电流的影响相对较小
-        - 更明显的 channel-length modulation: 在长沟道模型中 $r_O = \frac{1}{\lambda I_D} = \frac{\frac{g_m}{I_D}}{\lambda \,g_m}$
-        - 缺点：需要更高的电源电压和电流、
+        - 缺点：需要更高的电源电压和电流、更明显的 channel-length modulation: 在长沟道模型中 $r_O = \frac{1}{\lambda I_D} = \frac{\frac{g_m}{I_D}}{\lambda \,g_m}$
         - 适合：高速电路（优先带宽）、高精度电路（优先线性度和匹配）、高驱动能力电路（如输出级）
     - 较大的 $\frac{g_m}{I_D}$ (weak inversion):
         - 更低的功耗: 在 $g_m$ 不变的条件下 (由 GBW 确定), 可通过降低 $I_D$ 来获得更高的 $\frac{g_m}{I_D}$, 从而降低功耗

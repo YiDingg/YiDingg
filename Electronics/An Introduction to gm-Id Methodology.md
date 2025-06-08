@@ -8,32 +8,25 @@
 
 ### Design Parameters
 
-在我们的 gm-Id 方法中，三个关键设计变量是 $\frac{g_m}{I_D}$, $\frac{W}{L}$ 和 $L$，当然，也可以等价地理解为 $\frac{g_m}{I_D}$, $I_D$ 和 $L$ (原因见后一小节的 **Hypothesis 2**)。对速度敏感的场合，可以将 $f_T$ 作为关键设计指标。
-
-而最为关键的图像便是 $(x,\ y) = (\frac{g_m}{I_D},\ I_{nor})$, 其中 $I_{nor} = \frac{I_D}{\left(\frac{W}{L}\right)}$ 称为 normalized current.
+在我们的 gm-Id 方法中，三个关键设计变量是 $\frac{g_m}{I_D}$, $\frac{W}{L}$ 和 $L$。而最为关键的图像便是 $(x,\ y) = (\frac{g_m}{I_D},\ I_{nor})$, 其中 $I_{nor} = \frac{I_D}{\left(\frac{W}{L}\right)}$ 称为 normalized current.
 
 **<span style='color:red'> 注意，我们本文所讨论的 gm-Id 方法忽略了 body-effect 的影响，也就是默认不存在 (或可以忽略) body-effect. </span>**
 
 ### Key Hypotheses 
 
 对于一般性的设计 (general designs), gm/Id 的范围通常在 5 ~ 15 (or 3 ~ 18)。在此范围下，如果晶体管的特性满足如下几个假设，那么我们的方法便是可行的：
-- Hypothesis 0: 在给定 L 和 $V_{DS}$ 的情况下，$I_D$ 和 $W$ 满足非常好的正比例关系
+- **Hypothesis 0:** 在给定 L 和 $V_{DS}$ 的情况下，$I_D$ 和 $W$ 满足非常好的正比例关系
     - 这是利用小的偏置电流定义支路上大电流的基础，也就是 finger 和 multiplication 的基础
-- Hypothesis 1: 在合理的 $\frac{W}{L}$ 范围内 (通常 from 10 to 100, 甚至 from 2 to 1000), $\frac{g_m}{I_D}$ 关于 $V_{GS}$ 严格单调递减，具有良好的双射关系 (一一对应)，且基本不受其它各种参数影响
+- **Hypothesis 1:** 在合理的 $\frac{W}{L}$ 范围内 (通常 from 10 to 100, 甚至 from 2 to 1000), $\frac{g_m}{I_D}$ 关于 $V_{GS}$ 严格单调递减，具有良好的双射关系 (一一对应)，且基本不受其它各种参数影响
     - 这为 gm-Id 方法的第一个关键变量 $\frac{g_m}{I_D}$ 提供了基础
     - 事实上，$\frac{g_m}{I_D}$ 在 Vgs < 0 时一般是不单调。但是，目前绝大多数的 CMOS 工艺，$(V_{GS}, \frac{g_m}{I_D})$ 曲线在 $V_{GS} > 0$ 时都是严格单调的，此时的 $\frac{g_m}{I_D}$ 范围大约是 $(1,\ 30)$, 更别说我们这里只考察 $\frac{g_m}{I_D} < 18$ 的区间
-- Hypothesis 2: $\frac{I_D}{\left(\frac{W}{L}\right)}$ 主要由 $\frac{g_m}{I_D}$ 决定，基本不受 $L$ 和 $V_{DS}$ 参数影响
+- **Hypothesis 2:** $\frac{I_D}{\left(\frac{W}{L}\right)}$ 主要由 $\frac{g_m}{I_D}$ 决定，基本不受 $L$ 和 $V_{DS}$ 参数影响
     - 这为 gm-Id 方法的第二个关键变量 $I_D$ (或 $\frac{W}{L}$) 提供了基础
     - 是将 $I_D$ 和 $\frac{W}{L}$ 联系起来的根本条件。举个例子，当 $\frac{g_m}{I_D}$ 给定时，无论其它参数怎样，我们都可以得出 $\frac{I_D}{\left(\frac{W}{L}\right)}$ 的值，此时只要再敲定电流 $I_D$，便可以计算出 $\frac{W}{L}$
 
 ### Performance Parameters
 
-下面是一些我们在设计中可能关心的性能参数：
--  : 
--  : 
-- d
-
-
+下面是一些我们在设计中可能关心的（晶体管级）性能参数：
 
 <div class='center'>
 
@@ -43,8 +36,6 @@
  | self gain (intrinsic gain) | $g_m r_O$ | 最重要的参数之一，不多说 |
  | output resistance (early resistance) | $r_O$ | 通常没有前两个那么重要，因为能显著影响 $r_O$ 的参数太多，还有很多二级效应，对 $r_O$ 的精确预估比较困难，所以常常被设计者“抛弃” |
  | transient frequency | $f_T$ | 表征 MOS 速度 (或寄生电容大小) 的关键变量, 一般可以用 $f_T \approx \frac{g_m}{2 \pi (C_{gs} + C_{gd})}$ 近似计算 |
- |  |  |  |
- |  |  |  |
  | frequency efficiency | $\frac{f_T}{I_D}$ | 表明单位电流可以带来多少的 $f_T$，在低功耗高速设计中这个参数需要比较大。其实放大器也有类似的概念叫 "GBW efficiency", 定义为 $\frac{GBW}{I_D}$，并且 $\frac{GBW}{I_D} = \frac{GBW}{g_m \cdot \frac{I_D}{g_m}} = \frac{\frac{f_T}{FO}}{\frac{4 k T \gamma}{\overline{v_{n}^2}}} \cdot \frac{g_m}{I_D} \propto f_T \cdot \frac{g_m}{I_D}$，这个乘积通常在 gm/Id 中等偏低的时候取最大值 (5 ~ 10), 并且随着 L 的降低而升高 (见 [this slide](https://www.ieeetoronto.ca/wp-content/uploads/2020/06/20160226toronto_sscs.pdf) page 32) |
  |  |  |  |
  |  |  |  |
@@ -53,9 +44,11 @@
 
 </div>
 
+### Design Tips
 
+- $V_{ds}$ 对 $g_m$ 一般没有什么影响，但对 $r_O$ 影响很大，两者在一定电压范围内成正相关 (通常整个 1.8 V 都可视为正相关)
 
-## Verify Hypotheses
+## Hypotheses Verifications
 
 
 
@@ -133,18 +126,31 @@
 
 
 
-### Hypothesis 3
 
 ## gm-Id Design Steps
+
+
+gm-Id 方法的一般设计流程如下：
+
+0. 根据管子的工作环境，选择合适的 Vds 进行后续仿真 (比如 $\frac{1}{2}V_{DD}$ 或者 $\frac{1}{4}V_{DD}$)
+1. 依据最关键性能指标确定晶体管 $\frac{g_m}{I_D}$ 的值或范围
+2. 在 $(x,\ y) = (\frac{g_m}{I_D}, \ I_{nor})$ 曲线中，找到此 $\frac{g_m}{I_D}$ 对应的 $I_{nor}$ 值 (这一步可能需要考虑 length 是较大还是较小)
+3. 根据 $I_D$ 和 $I_{nor} = \frac{I_D}{\left(\frac{W}{L}\right)}$ 求出长宽比 $\frac{W}{L}$
+4. 根据其它性能指标，选择合适的 $L$
+5. 验证晶体管的静态工作点是否满足指标要求
+    - 若不满足指标或差距较大，返回第 1 步重新选择 $\frac{g_m}{I_D}$
+    - 若已达到指标要求，则完成了此晶体管的设计
+
+
 
 ## gm-Id Design Examples
 
 在一般性的设计中，晶体管基本可以分为以下几类：
 
-- Input transistor: 输入晶体管，$g_m$ 是最关键的参数，通常对 $r_O$ 也有要求
-- Current transistor: 用作电流源的晶体管，$V_{dsat}$ 和 $r_O$ 是最关键参数，并且常常希望 $g_m$ 小一些、管子速度快一些 
-- Load transistor: 用作负载的晶体管，$r_O$ 是最关键参数，常希望高 rout 的同时速度快一些
-- Gain transistor: 用作增益的晶体管，$g_mr_O$ 是最关键参数，通常对两者没有单独的要求
+- Input transistor: 输入晶体管，$g_m$ 是最关键的参数，通常对 $r_O$ 也有要求 (gm/Id 多为 11 ~ 14)
+- Current transistor: 用作电流源的晶体管，匹配性通常是最关键参数，但 $V_{dsat}$ 和 $r_O$ 也非常关键，并且常常希望 $g_m$ 小一些、管子速度快一些 (gm/Id 多为 7 ~ 10)
+- Load transistor: 用作负载的晶体管，$r_O$ 和 $f_T$ 是最关键参数，常希望高 rout 的同时速度快一些 (gm/Id 多为 7 ~ 11)
+- Gain transistor: 用作增益的晶体管，$g_mr_O$ 是最关键参数，通常对两者没有单独的要求 (gm/Id 多为 12 ~ 15)
 
 ### E1: Input Transistor
 
@@ -192,17 +198,19 @@ $$
 
 ### E2: Current Transistor
 
-**为上一小节的 folded-cascode stage 设计一个 current source transistor (nmos), 满足指标 $I_D = 250 \ \mathrm{uA},\ V_{dsat} = 100 \ \mathrm{mV} $ 且 $r_O > 500 \ \mathrm{k}\Omega$.**
+**为上一小节的 folded-cascode stage 设计一个 current source transistor (nmos), 满足指标 $I_D = 250 \ \mathrm{uA},\ V_{dsat} = 100 \ \mathrm{mV} $ 且 $r_O > 300 \ \mathrm{k}\Omega$.**
 
 **<span style='color:red'> 注意这里的 current source 最小可能工作在 Vds = 200 mV 左右，由于 rout 通常与 Vds 正相关, 要使 nmos 在宽 Vds 范围内满足要求，我们可以令 Vds = 225 mV 进行仿真。 </span>**
 
 
 
-作为一个 current source, 我们希望管子具有小的 $g_m,\ V_{OV}$ 和大的 $r_O$。注意小的 $g_m$ 和 小的 $V_{OV}$ 是互相矛盾的，前者需要较小的 $\frac{g_m}{I_D}$ 而后者需要较大的 $\frac{g_m}{I_D}$, 因此我们需要在这两者之间取得平衡。$(x,\ y) = (\frac{g_m}{I_D},\ V_{dsat})$ 曲线中找到满足要求的 $\frac{g_m}{I_D}$ 范围，注意 $r_{out}$ 要求很高，因此我们的 $L$ 会比较大 ($\frac{g_m}{I_D}$ 也需要偏大以获得更高的 rout)，在选择 $\frac{g_m}{I_D}$ 时需考虑这一点：
+作为一个 current source, 我们希望管子具有小的 $g_m,\ V_{dsat}$ 和大的 $r_O$。注意小的 $g_m$ 和 小的 $V_{dsat}$ 是互相矛盾的，减小 $\frac{g_m}{I_D}$ 可以降低管子的 $g_m$ 但是会使 $V_{dsat}$ 增大、$r_O$ 减小；相反，增大 $\frac{g_m}{I_D}$ 可以减小 $V_{dsat}$、增大 $r_O$, 但是匹配性会变差。因此我们需要在这之间取得平衡。
+
+先在 $(x,\ y) = (\frac{g_m}{I_D},\ V_{dsat})$ 曲线中找到满足 Vdsat 要求的 $\frac{g_m}{I_D}$ 范围，注意 $r_{out}$ 要求很高，因此我们的 $L$ 会比较大，$\frac{g_m}{I_D}$ 也需要偏大以获得更高的 rout, 在选择 $\frac{g_m}{I_D}$ 时需考虑到这两点：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-06-23-56-04_An Introduction to gm-Id Methodology.png"/></div>
 
-为满足 $V_{dsat}$ 要求，至少也需要 $\frac{g_m}{I_D} > 12.58$, 不妨先选择 $\frac{g_m}{I_D} = 13, 14$ 看看是否能满足指标。在 normalized current 图像中确定 $I_{nor}$ 的值：
+为满足 $V_{dsat}$ 要求，至少也需要 $\frac{g_m}{I_D} > 12.58$, 不妨先选择 $\frac{g_m}{I_D} = 13$ 和  $ \frac{g_m}{I_D} =14$ 两个值，看看是否能满足指标。在 normalized current 图像中确定 $I_{nor}$ 的值：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-07-00-03-54_An Introduction to gm-Id Methodology.png"/></div>
 
@@ -223,7 +231,13 @@ $$
 
 虽说对于 nmos-input 的 folded-cascode, Vin_CM 可以达到 VDD = 1.8 V, 此时我们正在设计的这个晶体管有 Vds = 1.8 V - 0.55 V = 1.25 V, 此时的 rout 应该会更高，但我们仍希望它在 Vin_CM 不太高时便可以达到 rout 要求。这便是 trade-off 了啊！
 
-一种思路是舍弃一些 voltage 来获得足够的 rout, 另一种思路是舍弃一些 rout 来保证较好的 voltage. 考虑这个 nmos 所扮演的角色，其 rout 大小基本上只对 CMRR 有影响，对整个电路的关键参数影响不大，因此这里我们选择后者：舍弃 rout 来保证较好的 voltage. <span style='color:red'> 如果是一个与增益直接相关的 load transistor, 那么我们一般会选择前者。 </span>
+现在的情况是，如果我们增大管子的 $\frac{g_m}{I_D}$, 会使 $V_{dsat}$ 降低和 $r_O$ 升高，可以满足我们的设计要求，但是管子的匹配性严重下降(因为管子逐渐向 weak inversion 靠近)！ 相反，如果我们减小 $\frac{g_m}{I_D}$, 管子的匹配性显著提高，但是会使 $V_{dsat}$ 升高和 $r_O$ 降低。
+
+
+
+<!-- 一种思路是舍弃一些 voltage 来获得足够的 rout, 另一种思路是舍弃一些 rout 来保证较好的 voltage. 考虑这个 nmos 所扮演的角色，其 rout 大小基本上只对 CMRR 有影响，对整个电路的关键参数影响不大，因此这里我们选择后者：舍弃 rout 来保证较好的 voltage. <span style='color:red'> 如果是一个与增益直接相关的 load transistor, 那么我们一般会选择前者。 </span> -->
+
+在这个例子中，我们还是取 $\frac{g_m}{I_D} = 13$，这样即保证了较好的性能，又不会使管子匹配性太差。接下来就是选择合适的 $L$：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-07-00-23-48_An Introduction to gm-Id Methodology.png"/></div>
 
@@ -245,9 +259,70 @@ $$
 
 可以看到，按我们的方法设计得到的晶体管参数是非常精确的。
 
+### E2: Supplementary Content
+
+作为 Example 2 的补充内容，我们不妨也看看选择更低的 $\frac{g_m}{I_D}$ 会怎样。在 $(y,\ x) = (V_{dsat},\ \frac{g_m}{I_D})$ 图中选择 $\frac{g_m}{I_D} = 10$, 对应大约 190 mV 的 $V_{dsat}$, 并且 normalized current $\frac{I_D}{\left(\frac{W}{L}\right)} = 5.6 \ \mathrm{uA}$ @ Vds = 225mV 。于是长宽比为：
+
+$$
+\begin{gather}
+a = \frac{W}{L} = \frac{I_D}{\left(\frac{I_D}{\left(\frac{W}{L}\right)}\right)} = \frac{250 \ \mathrm{uA}}{5.6 \ \mathrm{uA}} = 44.64 \approx 45
+\end{gather}
+$$
+
+在 schematic 的 design variable 中令 $a = 45$, 扫描 $L$ from 0.36u to 3.6u, 得到 $(y,\ x) = (r_O,\ \frac{g_m}{I_D})$ 图如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-16-50-49_An Introduction to gm-Id Methodology.png"/></div>
+
+图中只有不到 $10 \ \mathrm{k}\Omega$ 的 $r_O$，并且 $L$ 的变化对其基本没有影响，看来是晶体管大多在 the edge of saturation 导致的 (认为是 linear region 也可)。于是把 $V_{ds}$ 放宽到 450 mV 再看看：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-16-54-12_An Introduction to gm-Id Methodology.png"/></div>
+
+$L = 3.6 \ \mathrm{um}$ 时 $r_O = 128.8 \ \mathrm{k}\Omega$, 倒也不算很小，晶体管的最终参数确定为：
+
+$$
+\begin{gather}
+\frac{g_m}{I_D} = 10 ,\quad I_D = 250 \ \mathrm{uA},\quad \frac{W}{L} = 45 =  \frac{ 162 \ \mathrm{um}}{3.6 \ \mathrm{um}} \Longrightarrow g_m = 2.5 \ \mathrm{mS},\quad r_O = 128.8 \ \mathrm{k}\Omega \,@\, V_{ds} = 450 \ \mathrm{mV},\quad V_{dsat} = 190 \ \mathrm{mV}
+\end{gather}
+$$
+
+下图是静态工作点的验证，可以看到工作点参数与我们的预期基本一致：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-17-01-32_An Introduction to gm-Id Methodology.png"/></div>
+
+
 ### E3: Load Transistor
 
 ### E4: Gain Transistor
+
+## gm-Id Reference Data
+
+### tsmc18rf (180nm CMOS)
+
+
+#### Vds = 225 mV
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-16-40-36_An Introduction to gm-Id Methodology.png"/></div>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-16-43-16_An Introduction to gm-Id Methodology.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-16-44-27_An Introduction to gm-Id Methodology.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-17-15-28_An Introduction to gm-Id Methodology.png"/></div>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-17-20-04_An Introduction to gm-Id Methodology.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-17-20-36_An Introduction to gm-Id Methodology.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-17-26-02_An Introduction to gm-Id Methodology.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-17-29-13_An Introduction to gm-Id Methodology.png"/></div>
+
+#### Vds = 450 mV
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-16-39-27_An Introduction to gm-Id Methodology.png"/></div>
+
+
+#### Vds = 900 mV
+
+### smic18mmrf
+
+### smic13mmrf
+
+
+
 
 ## References
 
