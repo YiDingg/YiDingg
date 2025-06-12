@@ -1,10 +1,12 @@
 # Home Page
 
-**Pinned:**
+<!-- **Pinned:**
 
 -   "One Student One Chip" Initiative (“一生一芯”计划)
     -   Official website: [https://ysyx.oscc.cc/](https://ysyx.oscc.cc/)
     -   Project introduction: [中文.pptx](https://ysyx.oscc.cc/res/files/ysyx.pptx), [English.pdf](https://ysyx.oscc.cc/res/files/ysyx-en.pdf)
+ -->
+
 
 ## About The Site
 
@@ -47,6 +49,8 @@ Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeature
 -   Title: use [Capitalize](https://capitalizemytitle.com/style/APA/) <span class='tinyscript'>or [Wawa](https://www.iamwawa.cn/daxiaoxie.html)</span> to capitalize your titles, and use [Rewriter](https://capitalizemytitle.com/ai-title-rewriter/) to rewrite your title.
 - Questionnaire survey (问卷调查): [aidaform](https://aidaform.com/)
 - Collection of e-books: [GitCode > Open-source-documentation-tutorial](https://gitcode.com/org/Open-source-documentation-tutorial/repos)
+- PDF to JPG: [Smallpdf](https://smallpdf.com/cn/pdf-to-jpg)
+- PDF to PNG: [FreeConvert](https://www.freeconvert.com/zh/pdf-to-png/download) or [CDKM](https://cdkm.com/cn/pdf-to-png)
 
 ### Graphics
 

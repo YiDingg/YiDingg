@@ -81,3 +81,5 @@ subthreshold
 triode
 PMOS-input
 Self-Cascode
+LaTex
+UGF

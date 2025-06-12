@@ -2,17 +2,16 @@
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 17:05 on 2025-05-20 in Beijing.
-<!-- 
-- Cadence 相关文章汇总：
-    - [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
-    - [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)
-    - [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
-    - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
-    - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
-    - [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
-    - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<Electronics/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)
 
- -->
+
+Cadence 相关教程汇总：
+- [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
+- [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)
+- [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
+- [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
+- [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
+
+
 
 ## Install Cadence IC618
 
@@ -200,9 +199,9 @@ hiSetBindKeys("Symbol" list(
 
 
 
-; 设置 label, text, ciw 的字体和字号
-hiSetFont( "ciw" ?name "monospace" ?size 18 ?bold nil ?italic nil )
-hiSetFont( "label" ?name  "roman" ?size 13 ?bold nil ?italic nil ) ; "label" 既是 toolbar 的字体, 也是打开某些设置界面的字体, 因此 "label" 字号不宜过大, 否则会导致表单文字重叠
+; 设置 label, text, ciw 的字体和字号, 如果 "roman" 不起作用改为 "times" 即可
+hiSetFont( "ciw" ?name "mono" ?size 18 ?bold nil ?italic nil ) ; "mono" 即为 "monospace"
+hiSetFont( "label" ?name  "Open Sans" ?size 15 ?bold nil ?italic nil ) ; "label" 既是 toolbar 的字体, 也是打开某些设置界面的字体, 因此 "label" 字号不宜过大, 否则会导致表单文字重叠
 ; hiSetFont( "text" ?name "roman" ?size 18 ?bold nil ?italic nil ) ; 2025.05.25 暂时没找到 text 是对应哪个界面的字体
 
 ; 设置 log filter 的默认输出
@@ -394,13 +393,22 @@ sudo mount -t fuse.vmhgfs-fuse .host:/a_Win_VM_shared  /home/IC/a_Win_VM_shared 
 vmware-hgfsclient # 查看当前虚拟机的共享文件夹 (有无挂载都会显示)
 ```
 
-- 注意：到这个时候，共享文件夹的挂载仍是一次性的，重启虚拟机后需要重新挂载。为解决这个问题，我们在 `/etc/fstab` 文件中添加一行：
+- 注意：到这个时候，共享文件夹的挂载仍是一次性的，重启虚拟机后需要重新挂载。为解决这个问题，我们在虚拟机的 `/etc/fstab` 文件中添加一行 `.host:/a_Win_VM_shared /home/IC/a_Win_VM_shared fuse.vmhgfs-fuse allow_other,defaults 0 0`。但 `/etc/fstab` 通常是只读的，我们需要在 bash 中使用管理员权限编辑它：
 
 ```bash 
-.host:/a_Win_VM_shared /home/IC/a_Win_VM_shared fuse.vmhgfs-fuse allow_other,defaults 0 0
+tail -n 5 /etc/fstab  # 查看文件末尾 5 行内容
+printf '.host:/a_Win_VM_shared /home/IC/a_Win_VM_shared fuse.vmhgfs-fuse allow_other,defaults 0 0\n' | sudo tee -a /etc/fstab   # 将共享文件夹挂载信息添加到 /etc/fstab 文件末尾, 以实现重启后自动挂载
+tail -n 5 /etc/fstab  # 再次查看文件末尾 5 行内容, 检查是否添加成功
 ```
 
+如果想像 windows 的文本编辑器一样编辑 `/etc/fstab` 文件，可以使用 `gedit` 编辑器打开文件：
 
+``` bash
+# 使用 gedit 编辑器打开 /etc/fstab 文件
+sudo gedit /etc/fstab
+```
+
+修改完成后，`ctrl+s` 保存即可。
 
 
 
@@ -436,8 +444,6 @@ vmware-hgfsclient # 查看当前虚拟机的共享文件夹 (有无挂载都会�
 
 - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
 - [Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
-- [Design Example of F-OTA using Gm-Id Method](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
-- [Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<Electronics/Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)
 
 
 ### 1. annotate self_gain
@@ -515,10 +521,17 @@ _annOKFormCB(hiGetCurrentWindow())
 
 
 
+### 3. save simulation data
 
+在 `ADE L` 中，我们常常希望在仿真完成后保存相关仿真数据 (在软件中称为 results) ，以便后续重新查看或分析。但是，常规的 `ADE L > Save State` 只能保存当前仿真状态下的各项设置 (只能保存 state) ，而无法保存仿真数据本身。而仿真数据默认存放在了 `<current_schematic>/spectre/schematic` 目录下，一旦我们运行新的仿真，之前的仿真数据就会被覆盖，无法再被查看。例如我的一个仿真数据就默认保存在了 `/home/IC/simulation/gmId_nmos2v/spectre/schematic`.
 
+虽然其它的仿真器可能会自动保存的历史仿真记录 (包括了 state 和 results)，但历史记录也是有上限的，超过上限后会被自动删除，调整上限又太浪费硬盘空间。
 
+因此，我们的解决方案是：在仿真运行完成后，手动点击 `ADE L > Results > Save` 保存此次 results. 这样，下次在需要查看某一次的仿真数据时，我们只需在 `ADE L > Results > Select` 中选择之前保存的 results 即可。 
 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-11-20-17-05_How to Use Cadence Efficiently.png"/></div>
+
+需要注意的是，在保存所需数据前, 必须勾选 "output" 一栏中各数据的 `save` 选项，未勾选 `save` 的数据不会被保存。如果全部数据都没有勾选，那么 `Save Results` 操作将完全无效。
 
 ## Other Tips and Tricks
 
@@ -663,7 +676,19 @@ dbSetAutoSave(
 
 ### 6. Backup Your Files
 
-参考 
+毫无疑问，希望对虚拟机上的某些重要文件进行备份，以避免虚拟机损坏导致虚拟机内部数据丢失。一种思路就是将虚拟机的文件夹“挂载”到共享文件夹，然后在 windows 主机用“坚果云”等平台同步共享文件夹中的内容，以达到备份的效果。但是，经过我们的尝试，虚拟机中已有内容的文件夹，一旦挂载为共享，就会被 windows 主机的文件夹所“遮蔽”，就无法访问虚拟机中的文件夹内容了。
+
+因此，我们考虑另外一种方法，定期手动将需要备份的文件夹复制到共享文件夹中，然后在 windows 主机上进行备份。例如我们想备份 cadence 的仿真数据，这些数据默认存放在 `/home/IC/simulation` 目录下，只需定期将这个目录下的内容复制到共享文件夹中。但是，如果直接复制文件夹中的内容，由于 `simulation` 文件夹中含有符号链接 "link" ，但目标文件系统 (如 VMware 共享文件夹) 不支持 Linux 符号链接，因此会报错 `cp: cannot create symbolic link 'copy_target_path': Operation not supported`。解决方案是直接将 `simulation` 打包成 `.tar` 文件，然后再复制到共享文件夹中。具体代码如下：
+
+``` bash
+tar -cvf simulation_backup_20250610.tar simulation/ # 将 simulation 文件夹打包成 tar 文件
+mv simulation_backup_20250610.tar /home/IC/a_Win_VM_shared/Cadence_simulation_backup/   # 将 tar 文件移动到共享文件夹 a_Win_VM_shared 中
+# 顺便备份一下 .cdsinit 和 .cdsenv 文件
+cp /home/IC/.cdsinit /home/IC/a_Win_VM_shared/Cadence_simulation_backup/.cdsinit_backup_20250610
+cp /home/IC/.cdsenv /home/IC/a_Win_VM_shared/Cadence_simulation_backup/.cdsenv_backup_20250610
+```
+
+这样便可以在 windows 主机上，利用坚果云对 `a_Win_VM_shared/Cadence_simulation_backup/` 文件夹进行备份。
 
 ## Frequently Asked Questions
 

@@ -12,6 +12,20 @@
 
 **<span style='color:red'> 注意，我们本文所讨论的 gm-Id 方法忽略了 body-effect 的影响，也就是默认不存在 (或可以忽略) body-effect. </span>**
 
+### Physical Significance
+
+作为 gm-Id 方法的最关键变量，$\frac{g_m}{I_D}$ 有没有什么具体的物理意义呢？其实是有的：
+
+$$
+\begin{gather}
+\frac{g_m}{I_D} = \frac{1}{I_D}\, g_m = frac{1}{I_D} \frac{\partial I_D }{\partial V_{GS} } = \frac{\partial (\ln I_D) }{\partial V_{GS} } = \frac{\partial \left[\ln \frac{I_D}{(W/L)}\right] }{\partial V_{GS} }
+\end{gather}
+$$
+
+引用论文 [this paper](https://people.engr.tamu.edu/spalermo/ecen474/gm_ID_methodology_silveira_jssc_1996.pdf) 的原话说就是：
+>This derivative is maximum in the weak inversion region where the ID dependence versus VG is exponential while it is quadratic in strong inversion, becoming almost linear deeply in strong inversion because of the velocity saturation. The maximum is equal to l /(nU~) in the weakest inversion where n is the subthreshold slope factor and UT the thermal voltage. Therefore, the gm/Id ratio is also an indicator of the mode of operation of the transistor. 
+
+
 ### Key Hypotheses 
 
 对于一般性的设计 (general designs), gm/Id 的范围通常在 5 ~ 15 (or 3 ~ 18)。在此范围下，如果晶体管的特性满足如下几个假设，那么我们的方法便是可行的：
@@ -281,7 +295,9 @@ $L = 3.6 \ \mathrm{um}$ 时 $r_O = 128.8 \ \mathrm{k}\Omega$, 倒也不算很小
 
 $$
 \begin{gather}
-\frac{g_m}{I_D} = 10 ,\quad I_D = 250 \ \mathrm{uA},\quad \frac{W}{L} = 45 =  \frac{ 162 \ \mathrm{um}}{3.6 \ \mathrm{um}} \Longrightarrow g_m = 2.5 \ \mathrm{mS},\quad r_O = 128.8 \ \mathrm{k}\Omega \,@\, V_{ds} = 450 \ \mathrm{mV},\quad V_{dsat} = 190 \ \mathrm{mV}
+\frac{g_m}{I_D} = 10 ,\quad I_D = 250 \ \mathrm{uA},\quad \frac{W}{L} = 45 =  \frac{ 162 \ \mathrm{um}}{3.6 \ \mathrm{um}} 
+\\
+\Longrightarrow g_m = 2.5 \ \mathrm{mS},\quad r_O = 128.8 \ \mathrm{k}\Omega \,@\, V_{ds} = 450 \ \mathrm{mV},\quad V_{dsat} = 190 \ \mathrm{mV}
 \end{gather}
 $$
 
@@ -298,8 +314,10 @@ $$
 
 ### tsmc18rf (180nm CMOS)
 
+- `nmos2v`: L from 0.18u to 20u, W from 0.22u to 900u
+- `pmos2v`: 
 
-#### Vds = 225 mV
+#### nmos2v (Vds = 225 mV)
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-16-40-36_An Introduction to gm-Id Methodology.png"/></div>
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-16-43-16_An Introduction to gm-Id Methodology.png"/></div> -->
@@ -310,12 +328,15 @@ $$
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-17-26-02_An Introduction to gm-Id Methodology.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-17-29-13_An Introduction to gm-Id Methodology.png"/></div>
 
-#### Vds = 450 mV
+#### nmos2v (Vds = 450 mV)
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-16-39-27_An Introduction to gm-Id Methodology.png"/></div>
 
+#### pmos2v (Vds = 225 mV)
 
-#### Vds = 900 mV
+#### pmos2v (Vds = 450 mV)
+
+
 
 ### smic18mmrf
 
@@ -330,17 +351,28 @@ Methodology and theory:
 - [x] [Design of MOS Amplifiers Using gm/ID Methodology](https://designers-guide.org/forum/Attachments/Gm_BY_ID_Methodology.pdf)
     - 介绍了由 $\frac{g_m}{I_D}$ 和 normalized current $\frac{I_D}{\left(\frac{W}{L}\right)}$ 作为关键变量的设计方法，并给了一个简单的 CS amplifier 设计例子，但示例讲的并不是很清楚；
     - 给出了几个图像，可以帮助理解 **“在 general design 中 (gm/Id from 5 ~ 18), $\frac{g_m}{I_D}$ 由 $V_{OV} = V_{GS} - V_{TH}$ 唯一确定，而 $\frac{I_D}{\left(\frac{W}{L}\right)}$ 又由 $\frac{g_m}{I_D}$ 唯一确定”** 的思想。也就是说，在相同的 $\frac{W}{L}$ 下，给定 $\frac{g_m}{I_D}$ 就基本上完全确定了 $\frac{I_D}{\left(\frac{W}{L}\right)}$，$L$ 在 $L_0 \sim 10\, L_0$ 之间变化时所带来的影响基本可以忽略 (需要 gm/Id from 5 ~ 18), 这里的 $L_0$ 是工艺最小沟道长度。
-- [x] [Systematic Design of Analog Circuits Using Pre-Computed Lookup Tables](https://www.ieeetoronto.ca/wp-content/uploads/2020/06/20160226toronto_sscs.pdf)
+- [x] [Systematic Design of Analog Circuits Using Pre-Computed Lookup Tables](https://www.ieeetoronto.ca/wp-content/uploads/2020/06/20160226toronto_sscs.pdf): 这部分内容已经出版为一本书, 详见 [GitHub > bmurmann > Book-on-gm-ID-design](https://github.com/bmurmann/Book-on-gm-ID-design/tree/main) 或者 [this link](https://www.cambridge.org/core/books/systematic-design-of-analog-cmos-circuits/A07A705132E9DE52749F65EB63565CE0)
     - 提出了一种基于 pre-computed table 的方法，固定 $W$, 将 $L,\ V_{GS},\ V_{DS}$ 和 $V_{BS}$ 作为四个自变量进行仿真，得到数据，但我们关心的主要是他如何根据已有的数据来设计晶体管
-    - 以 $\frac{g_m}{I_D}$, $\frac{I_D}{W}$ 和 $L$ 作为关键设计变量 (曲线)，主要是举了很多例子来说明如何用他的 table 优化放大器的速度性能 (GBW, SR, setting time 等)
+    - 以 $\frac{g_m}{I_D}$, $\frac{I_D}{W}$ 和 $L$ 作为关键设计变量 (曲线)，主要是举了很多例子来说明如何用他的 table 优化放大器的速度性能 (GBW, SR, settling time 等)
 - [x] [Analog Design Using gm/Id and ft Metrics](https://people.eecs.berkeley.edu/~boser/presentations/2011-12%20OTA%20gm%20Id.pdf)
     - 以 $\frac{g_m}{I_D}$, $\frac{I_D}{W}$ 和 $f_T$ 作为关键设计变量 (曲线)，在提到的几个例子中 $L$ 都取了最小值 $L_0$ 以获得较低的功耗
     - 文末总结了 design flow: determine gm from specs > pick L > pick gm/Id > determine Id and W, 若不满足指标，回到 "pick L" 或 "pick gm/Id" 一步
-- [ ] [Stanford University: Chapter 5 gm/ID-Based Design](https://www.wangke007.com/wp-content/uploads/2024/01/ee214b_gmid.pdf)
-- [ ] [GitHub > bmurmann > Book-on-gm-ID-design](https://github.com/bmurmann/Book-on-gm-ID-design/tree/main)
-- [ ] [Paper: A gm/Id based Methodology for the Design of CMOS Analog Circuits and Its Application to the Synthesis of a Silicon-on-Insulator Micropower OTA](https://people.engr.tamu.edu/spalermo/ecen474/gm_ID_methodology_silveira_jssc_1996.pdf)
+- [x] [Stanford University: Chapter 5 gm/ID-Based Design](https://www.wangke007.com/wp-content/uploads/2024/01/ee214b_gmid.pdf): 和 [this article](https://www.ieeetoronto.ca/wp-content/uploads/2020/06/20160226toronto_sscs.pdf) 的内容差不多
+- [x] [Paper: A gm/Id based Methodology for the Design of CMOS Analog Circuits and Its Application to the Synthesis of a Silicon-on-Insulator Micropower OTA](https://people.engr.tamu.edu/spalermo/ecen474/gm_ID_methodology_silveira_jssc_1996.pdf): 早期使用 gm/Id 方法的论文，介绍了 gm/Id 的设计方法和在  Silicon-on-Insulator Micropower OTA 中的应用
 
-Design examples and discussions:
+
+## Relevant Resources
+
+下面是与 gm-Id 相关的一些资料/论文/书籍：
+
+- Paper: [Starting Over: gm/Id-Based MOSFET Modeling as a Basis for Modernized Analog Design Methodologies](https://www.researchgate.net/publication/228717878_Starting_Over_gmId-Based_MOSFET_Modeling_as_a_Basis_for_Modernized_Analog_Design_Methodologies)
+- Paper: [gm/ID Design Considerations for Subthreshold-Based CMOS Two-Stage Operational Amplifiers](https://ieeexplore.ieee.org/document/9180576)
+- Book: [The gm/ID Methodology, a sizing tool for low-voltage analog CMOS Circuits](https://link.springer.com/book/10.1007/978-0-387-47101-3)
+- Book: [Systematic Design of Analog CMOS Circuits (Using Pre-Computed Lookup Tables)](https://www.cambridge.org/core/books/systematic-design-of-analog-cmos-circuits/A07A705132E9DE52749F65EB63565CE0)
+- Slide: [gm/Id-Based MOSFET Modeling and Modern Analog Design](https://www.mos-ak.org/wroclaw/MOS-AK_DF.pdf)
+
+
+gm-Id design examples: 
 - [知乎 > (模集王小桃) 基于 gm/Id 的运放设计 (单端输出的两级运放设计)](https://zhuanlan.zhihu.com/p/18217441114)
 - [知乎 > 两级运放设计过程总结-Allen](https://zhuanlan.zhihu.com/p/631329993)
 - [知乎 > 5-T OTA 的设计与仿真](https://zhuanlan.zhihu.com/p/467542830)

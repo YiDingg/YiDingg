@@ -24,7 +24,7 @@ Initially published at 16:00 on 2025-05-14 in Beijing.
 
 ### Discrete uA741
 
-我们给出的 discrete uA741 与 TI (德州仪器) 的原理图基本一致，只是修改了部分电阻为常见阻值，同时在输入段添加了两个二极管以调整直流电压偏振。如下图所示：
+我们给出的 discrete uA741 与 TI (德州仪器) 的原理图基本一致，只是修改了部分电阻为常见阻值，同时在输入段添加了两个二极管以调整直流电压偏置。如下图所示：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-14-17-04-37_Detailed Explanation of uA741.png"/></div>
 
@@ -41,7 +41,7 @@ Initially published at 16:00 on 2025-05-14 in Beijing.
 
 ### Biasing Analysis 
 
-先分析运放的直流工作点，也就是偏振电路。 Q3、R1 和 Q19 是整个运放的基础偏置，产生的电流为 $ I_0 = \frac{V_{CC} - 1.4 \, \mathrm{V}}{R_1} = \frac{V_{CC} - 1.4 \, \mathrm{V}}{39 \, \mathrm{k}\Omega} $。利用生成的 $I_0$, R11, Q18 和 Q19 和构成微安电流源，所 copy 的电流满足以下方程：
+先分析运放的直流工作点，也就是偏置电路。 Q3、R1 和 Q19 是整个运放的基础偏置，产生的电流为 $ I_0 = \frac{V_{CC} - 1.4 \, \mathrm{V}}{R_1} = \frac{V_{CC} - 1.4 \, \mathrm{V}}{39 \, \mathrm{k}\Omega} $。利用生成的 $I_0$, R11, Q18 和 Q19 和构成微安电流源，所 copy 的电流满足以下方程：
 
 
 $$

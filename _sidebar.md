@@ -110,11 +110,12 @@
     - [**[Pinned] Collection of My Measurement Experiments**](<Electronics/The Collection of My Measurement Experiments.md>)
 
     - Analog IC 
-        - [! An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
-        - [! Design Sheet of Folded-Cascode Op Amp](<Electronics/Design Sheet of Folded-Cascode Op Amp.md>)
         - [! Miller Compensation in Basic Two-Stage Op Amp](<Electronics/Miller Compensation in Basic Two-Stage Op Amp.md>)
-        - [! Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)
-        - [! Relationship Between GBW and fp2 in a Two-Order System](<Electronics/Relationship Between GBW and fp2 in a Two-Order System.md>)
+        - [! Design Sheet of Basic Two-Stage Op Amp](<Electronics/Design Sheet of Basic Two-Stage Op Amp.md>)
+        - [Design Sheet of Folded-Cascode Op Amp](<Electronics/Design Sheet of Folded-Cascode Op Amp.md>)
+        - [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
+        - [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)
+        - [Relationship Between GBW and fp2 in a Two-Order System](<Electronics/Relationship Between GBW and fp2 in a Two-Order System.md>)
         - [Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<Electronics/Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)
         - [Biasing Circuits for Low-Voltage Cascode Current Mirror](<Electronics/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)
         - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<Electronics/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)
@@ -140,10 +141,14 @@
         - [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
         - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
         - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
-        - [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
 
 
     - 2025 (78 items)
+        - [Design Sheet of Basic Two-Stage Op Amp](<Electronics/Design Sheet of Basic Two-Stage Op Amp.md>)
+        - [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
+        - [Design Sheet of Folded-Cascode Op Amp](<Electronics/Design Sheet of Folded-Cascode Op Amp.md>)
+        - [Miller Compensation in Basic Two-Stage Op Amp](<Electronics/Miller Compensation in Basic Two-Stage Op Amp.md>)
+        - [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)
         - [LCE 实验记录 (LCE-09 比较器)](<Electronics/LCE 实验记录 (LCE-09 比较器).md>)
         - [Relationship Between GBW and fp2 in a Tow-Order System](<Electronics/Relationship Between GBW and fp2 in a Two-Order System.md>)
         - [Biasing Circuits for Low-Voltage Cascode Current Mirror](<Electronics/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)
@@ -248,10 +253,20 @@
         - [OCTC (Open-Circuit Time Constant Method)](<Papers/Transfer Function Analysis/Open-Circuit Time Constant Method.md>)
 
 
+- 📱 **Analog IC Designs**
+    - Op Amp
+
+        - [oneStage_single_folded-cascode__80dB_50MHz_50Vus](AnalogICDesigns/OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md)
+    - Op Amp
+        - [oneStage_single_folded-cascode__80dB_50MHz_50Vus](AnalogICDesigns/OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md)
+
+
+
 - ⚒️ **Electronic Designs**
 
     - [**[Pinned] DC-DC Converter Modules**](<ElectronicDesigns/DC-DC Converter Modules.md>)
     - [**[Pinned] μA741 using Discrete BJTs (SOT-23)**](<ElectronicDesigns/μA741 using Discrete BJTs (SOT-23).md>)
+    - [Adapter Board for Analog Discovery v2](<ElectronicDesigns/Adapter Board for Analog Discovery v2.md>)
     - [Basic Two-Stage Op Amp using Discrete MOSFETs](<ElectronicDesigns/Basic CMOS Op Amp using Discrete MOSFETs.md>)
     - [μA741 using Discrete BJTs (SOT-23)](<ElectronicDesigns/μA741 using Discrete BJTs (SOT-23).md>)
     - [Basic Op Amp Measurement Board v2](<ElectronicDesigns/Basic Op Amp Measurement Board v2.md>)

@@ -14,12 +14,14 @@ About Me:
 - ⚡ Fun fact: I used to be a semi-professional soccer player as a national level two athlete.
 
 My Technology Stack:
-- Latex
+- LaTex
 - Matlab
-- C Language
-- MCU 
-- Analog Design
+- C Programming
+- MCU (Micro-Controller Unit)
 - PCB Layout
+- Analog Circuit Design
+- LTspice 
+- Cadence Virtuoso
 
 
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
@@ -27,7 +29,8 @@ My Technology Stack:
 <!--START_SECTION:waka-->
 ![Code Time](http://img.shields.io/badge/Code%20Time-1%2C243%20hrs%2020%20mins-blue)
 
-![Profile Views](http://img.shields.io/badge/Profile%20Views-115-blue)
+<!-- ![Profile Views](http://img.shields.io/badge/Profile%20Views-115-blue)
+ -->
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-802.7%20thousand%20lines%20of%20code-blue)
 

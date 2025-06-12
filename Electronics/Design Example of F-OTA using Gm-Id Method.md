@@ -3,6 +3,10 @@
 > [!Note|style:callout|label:Infor]
 > Initially published at 00:42 on 2025-05-26 in Beijing.
 
+
+!> **<span style='color:red'>Attention:</span>**<br>
+注意：本文所使用的 gm-Id 方法是错误的，这会导致对晶体管静态工作点的估计有很大偏差（仅有部分参数基本准确），详见 [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)；正确的 gm-Id 方法请见 [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)。
+
 ## Design Specifications
 
 
@@ -436,7 +440,7 @@ $$
 
 下降沿出现指数衰减的原因见文章 [The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>).
 
-### 8. design conclusion
+## Design Conclusion
 
 下面是设计指标与仿真结果的对比：
 <div class='center'>
@@ -451,6 +455,35 @@ GBW 原本是按 60MHz 设计的，但由于我们使用的 transistor 已经算
 
 
 这篇文章的主要目的有二，其一是借助一个简单的设计例子，学习 gm-Id 设计方法的流程和思路；其二便是进一步熟悉 cadence 的使用，尤其是如何利用 SKILL 语言修改设置、快速执行某些操作等，这对日后在 cadence 中进行更复杂的设计是非常有帮助的。总的来讲，本次设计在 design idea 上并没有花多少时间，时间主要消耗在了 cadence 的探索、配置文件的修改优化和 SKILL 语言的基本使用上，最终为文章 [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>) 贡献了相当多的内容。
+
+
+### 8. 20250612: tran simul.
+
+下面两张图中左侧的那些参数无用，不用在意 (其实是仿其它运放时忘换 symbol, 不小心仿 F-OTA 了)。
+
+#### 8.1 tran: step response
+
+将 vout 和 vin- 短接，设置输入信号为 0.8 V ~ 1.0 V 的 step signal, 考察运放的 (small-signal) step response, 看看相位和增益裕度是不是“真的”, 并且计算运放的 settling time 和 overshoot:
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-15-27-42_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
+
+
+``` bash
+setting time @ 0.05% (rising) = cross(vout value(vout, 450n)*(1 + 0.05*0.01) 1 "falling" nil nil  nil ) - 200n
+setting time @ 0.05% (falling) = cross(vout value(vout, 900n)*(1 - 0.05*0.01) 1 "rising" nil nil  nil ) - 700n
+overshoot (%) (rising) = (ymax(vout)/value(vout, 450n) - 1)*100
+overshoot (%) (falling) = (ymin(vout)/value(vout, 900n) - 1)*100
+```
+
+
+
+
+#### 8.2 tran: slew rate
+
+SR 是 large-signal 下的非线性行为，将输入信号改为幅度较大的 step signal, 运行仿真，结果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-15-10-54_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
+
 
 
 
