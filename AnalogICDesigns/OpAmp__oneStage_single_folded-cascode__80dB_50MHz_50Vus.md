@@ -465,7 +465,10 @@ swing @ 60dB = (value(vout cross(dc_gain 60 2)) - value(vout cross(dc_gain 60 1)
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-13-39-24_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
 
-### 3.6 tran: slew rate
+<!-- ### 3.5 tran: slew rate
+
+注：这部分仿真的电路参数导入错了，导入成 PM 和 UGB 优化之前的晶体管尺寸，所以重新仿真。
+
 
 SR 是 large-signal 下的非线性行为，将输入信号改为幅度较大的 step signal, 运行仿真，结果如下：
 
@@ -480,7 +483,7 @@ SR- = slewRate(vout 7e-07 t 20e-07 t 20 80 nil "time")
 
 
 
-### 3.5 tran: step response
+### 3.6 tran: step response
 
 
 将 vout 和 vin- 短接，设置输入信号为 0.8 V ~ 1.0 V 的 step signal, 考察运放的 (small-signal) step response, 看看相位和增益裕度是不是“真的”, 并且计算运放的 settling time 和 overshoot:
@@ -506,14 +509,56 @@ overshoot (%) (falling) = (ymin(vout)/value(vout, 900n) - 1)*100 / (value(vout, 
 ```
 
 如果按 10 mV step 对应的 22 % overshoot 来计算，这样的 overshoot 量在两极点二阶系统中只有约 48° 的相位裕度。<span style='color:red'> 这究竟是 cascode 特有的输出特性，还是我们的 ac 仿真存在某些问题？我认为是前者，也许从 ac 仿真中的频响曲线可以解释，有待进一步探究。另外，为什么 SR 明显小于设计值？是输出节点实际 $C_L$ 约为 8.3 pF, 还是其它的什么原因？也有待进一步探究。 </span>
+ -->
 
 
+### 3.5 tran: slew rate
+
+SR 是 large-signal 下的非线性行为，将输入信号改为幅度较大的 step signal, 运行仿真，结果如下：
+
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-19-31-09_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-19-48-07_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-19-51-01_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
+
+``` bash
+SR+ = slewRate(vout 0 t 7e-07 t 20 80 nil "time")
+SR- = slewRate(vout 7e-07 t 20e-07 t 20 80 nil "time")
+```
+
+### 3.6 tran: step response
+
+
+将 vout 和 vin- 短接，设置输入信号为 0.8 V ~ 1.0 V 的 step signal, 考察运放的 (small-signal) step response, 看看相位和增益裕度是不是“真的”, 并且计算运放的 settling time 和 overshoot:
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-19-38-03_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-19-56-19_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
+
+``` bash
+# 注意 settlingTime 返回的是横坐标 (时间), 还需要减去 step 信号起始点才是 settling time
+setting time @ 0.05% (rising) = (settlingTime(vout 0 t 7e-07 t 0.05 nil "time") - 2e-07)
+setting time @ 0.05% (falling) = (settlingTime(vout 7e-07 t 20e-07 t 0.05 nil "time") - 7e-07)
+overshoot (%) (rising) = overshoot(vout 0 t 7e-07 t)
+overshoot (%) (falling) = overshoot(vout 7e-07 t 2e-06 t)
+```
+
+
+``` bash
+# 下面几个函数不好用, cadence calculator 有专门计算 settling time 和 overshoot 的函数
+settling time @ 0.05% (rising) = cross(vout value(vout, 450n)*(1 + 0.05*0.01) 1 "falling" nil nil  nil ) - 200n
+settling time @ 0.05% (falling) = cross(vout value(vout, 900n)*(1 - 0.05*0.01) 1 "rising" nil nil  nil ) - 700n
+overshoot (%) (rising) = (ymax(vout)/value(vout, 450n) - 1)*100 / (value(vout, 0) - value(vout, 700n))
+overshoot (%) (falling) = (ymin(vout)/value(vout, 900n) - 1)*100 / (value(vout, 700n) - value(vout, 900n))
+```
+
+<span style='color:red'> 为什么 SR 明显小于设计值？是输出节点实际 $C_L$ 约为 8.3 pF, 还是其它的什么原因？也有待进一步探究。 </span>
 
 
 
 ## 5. Design Summary
 
-本文设计的 **pmos-input single-ended output folded-cascode op amp** 大致满足了指标要求，其主要性能如下：
+本文设计的 **pmos-input single-ended output folded-cascode op amp** 基本满足了指标要求，其主要性能如下：
 
 <div class='center'>
 
@@ -525,9 +570,10 @@ overshoot (%) (falling) = (ymin(vout)/value(vout, 900n) - 1)*100 / (value(vout, 
  | GM | 15.03 dB @ Vin = 0.8 V in unit buffer |
  | Output swing | 0.569 V @ -3dB drop <br> 0.895 V @ 60dB gain |
  | CM Input range | 1.120 V @ -3dB drop <br> 1.489 V @ 60dB gain |
- | Settling time | 194.8 ns @ 0.05% (rising) <br> 194.5 ns @ 0.05% (falling) |
- | Slew rate | +30.2 V/us, -28.5 V/us |
- | Power dissipation | 590.252 uA @ 1.8V |
+ | Overshoot (r, f) | (3.415 %, 2.979 %) @ 10 mV step <br> (2.939 %, 0.957 %) @ 50 mV step |
+ | Settling time (r, f) | (39.08 ns, 40.13 ns) @ 0.05% (50 mV step) |
+ | Slew rate | +32.58 V/us, -35.22 V/us |
+ | Power dissipation | 586 uA @ 1.8V (1.05 mW) |
 </div>
 
 下表是仿真值与指标要求的对比：
@@ -540,7 +586,7 @@ overshoot (%) (falling) = (ymin(vout)/value(vout, 900n) - 1)*100 / (value(vout, 
 | Type | DC Gain | GBW | PM | Slew Rate | CM Input Range | Output Swing | Power Dissipation |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
  | Specifications | 80 dB | 50 MHz | 60° | 50 V/us | (-0.1 V, +1.2 V) | 1 V | 600 uA @ 1.8V (1.08 mW) |
- | Simulation Results | 81.33 dB | 51.59 MHz | 61.20° | +30.2 V/us <br> -28.5 V/us | 1.120 V @ -3dB drop <br> 1.489 V @ 60dB gain |  0.569 V @ -3dB drop <br> 0.895 V @ 60dB gain | 590.252 uA @ 1.8V (1.06 mW) |
+ | Simulation Results | 81.33 dB | 51.59 MHz | 61.20° | +32.58 V/us <br> -35.22 V/us | 1.120 V @ -3dB drop <br> 1.489 V @ 60dB gain |  0.569 V @ -3dB drop <br> 0.895 V @ 60dB gain | 586 uA @ 1.8V (1.05 mW) |
 
 </span>
 </div>

@@ -51,6 +51,8 @@ Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeature
 - Collection of e-books: [GitCode > Open-source-documentation-tutorial](https://gitcode.com/org/Open-source-documentation-tutorial/repos)
 - PDF to JPG: [Smallpdf](https://smallpdf.com/cn/pdf-to-jpg)
 - PDF to PNG: [FreeConvert](https://www.freeconvert.com/zh/pdf-to-png/download) or [CDKM](https://cdkm.com/cn/pdf-to-png)
+- SVG to PDF: [PDF24 Tools](https://tools.pdf24.org/zh/svg-to-pdf)
+
 
 ### Graphics
 

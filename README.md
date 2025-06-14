@@ -29,12 +29,8 @@ My Technology Stack:
 <!--START_SECTION:waka-->
 ![Code Time](http://img.shields.io/badge/Code%20Time-1%2C271%20hrs%2013%20mins-blue)
 
-<<<<<<< HEAD
 <!-- ![Profile Views](http://img.shields.io/badge/Profile%20Views-115-blue)
  -->
-=======
-![Profile Views](http://img.shields.io/badge/Profile%20Views-89-blue)
->>>>>>> 17b19731523d263af5ad1827ae044dd16932d9e2
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-806.8%20thousand%20lines%20of%20code-blue)
 

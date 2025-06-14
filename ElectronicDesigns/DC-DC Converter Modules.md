@@ -6,12 +6,12 @@
 
 ## Infor
 
-- Time: 
+- Time: 2025.03.02
 - Notes: 输入 VCC 和 GND, 每个模块输出一路 Vout (截至 2025-03-08 共 8 种模块)
 - Details: 
     - 采用模块化可拆卸设计（排针排母），即插即用，方便快速安装不同的 DC-DC 转换器
     - 包括但不限于下面几个模块：TPS54331 (buck), RY8310 (buck), MT2492 (buck), MT3608 (boost) 以及 MC34063ADR (buck-boost)
-- Relevant Resources: 
+- Relevant Resources: https://www.123684.com/s/0y0pTd-5zUj3
 
 
 
