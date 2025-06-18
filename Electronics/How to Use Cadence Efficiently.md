@@ -510,6 +510,11 @@ _annSetData(annotationSetupForm->annNativeWidget 11 3 "gmoverid")
 _annApplyAndRedraw(hiGetCurrentWindow())
 _annOKFormCB(hiGetCurrentWindow())
 
+; 选中并关闭提示窗
+hiiSetCurrentForm('notifyStarLevelSettingsNotAppliedToAll)
+notifyStarLevelSettingsNotAppliedToAll->dontShowStarLevelSettingsWarning->value= t
+notifyStarLevelSettingsNotAppliedToAll->applyStarLevelSettingsToAll->value= t
+hiFormDone(notifyStarLevelSettingsNotAppliedToAll)
 ```
 
 
@@ -532,6 +537,12 @@ _annOKFormCB(hiGetCurrentWindow())
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-11-20-17-05_How to Use Cadence Efficiently.png"/></div>
 
 需要注意的是，在保存所需数据前, 必须勾选 "output" 一栏中各数据的 `save` 选项，未勾选 `save` 的数据不会被保存。如果全部数据都没有勾选，那么 `Save Results` 操作将完全无效。
+
+
+### 4. output the cur/vol inside the symbol
+
+
+以运放为例，在打开了只有运放 symbol 的 schematic 中，对着运放 `shift + e` 可以打开其运放内部的原理图，然后 `Calculator > It` 点击刚刚打开的运放原理图，即可进行选择，将晶体管级的信息加入到 output 栏。
 
 ## Other Tips and Tricks
 
@@ -680,6 +691,7 @@ dbSetAutoSave(
 
 因此，我们考虑另外一种方法，定期手动将需要备份的文件夹复制到共享文件夹中，然后在 windows 主机上进行备份。例如我们想备份 cadence 的仿真数据，这些数据默认存放在 `/home/IC/simulation` 目录下，只需定期将这个目录下的内容复制到共享文件夹中。但是，如果直接复制文件夹中的内容，由于 `simulation` 文件夹中含有符号链接 "link" ，但目标文件系统 (如 VMware 共享文件夹) 不支持 Linux 符号链接，因此会报错 `cp: cannot create symbolic link 'copy_target_path': Operation not supported`。解决方案是直接将 `simulation` 打包成 `.tar` 文件，然后再复制到共享文件夹中。具体代码如下：
 
+<!-- 
 ``` bash
 tar -cvf simulation_backup_20250610.tar simulation/ # 将 simulation 文件夹打包成 tar 文件
 mv simulation_backup_20250610.tar /home/IC/a_Win_VM_shared/Cadence_simulation_backup/   # 将 tar 文件移动到共享文件夹 a_Win_VM_shared 中
@@ -687,8 +699,29 @@ mv simulation_backup_20250610.tar /home/IC/a_Win_VM_shared/Cadence_simulation_ba
 cp /home/IC/.cdsinit /home/IC/a_Win_VM_shared/Cadence_simulation_backup/.cdsinit_backup_20250610
 cp /home/IC/.cdsenv /home/IC/a_Win_VM_shared/Cadence_simulation_backup/.cdsenv_backup_20250610
 ```
+ -->
+
+``` bash
+tar -cvf simulation_backup_20250610.tar simulation/ # 将 simulation (仿真数据) 文件夹打包成 tar 文件
+tar -cvf Cadence_Projects_backup_20250610.tar Cadence_Projects/ # 将 Cadence_Projects (项目文件) 文件夹打包成 tar 文件
+mkdir -p /home/IC/a_Win_VM_shared/Cadence_backup # 确保备份目录存在
+mkdir -p /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610 # 创建备份文件夹
+mv simulation_backup_20250610.tar /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610/   # 将 tar 文件移动到共享文件夹 a_Win_VM_shared 中
+mv Cadence_Projects_backup_20250610.tar /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610/   # 将 tar 文件移动到共享文件夹 a_Win_VM_shared 中
+cp /home/IC/.cdsinit /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610/.cdsinit_backup_20250610 # 顺便备份一下 .cdsinit 和 .cdsenv 文件
+cp /home/IC/.cdsenv /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610/.cdsenv_backup_20250610 # 顺便备份一下 .cdsinit 和 .cdsenv 文件
+# rm 
+```
 
 这样便可以在 windows 主机上，利用坚果云对 `a_Win_VM_shared/Cadence_simulation_backup/` 文件夹进行备份。
+
+
+
+
+
+
+
+
 
 ## Frequently Asked Questions
 
@@ -850,3 +883,28 @@ mkdir -p /home/IC/a_Win_VM_shared/a_Misc/Cadence_Data/tsmc18rf_gmIdData_nmos2v
 - `-p`：如果上级目录不存在，则创建上级目录，但即使上级目录已存在也不会报错
 - `-v`：显示创建目录的详细信息
 - `-m`：设置新目录的权限 (例如 `-m 755` 设置为 rwxr-xr-x)
+
+### 5. Could not open "xxx" for edit
+
+报错如下：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-18-18-51-42_How to Use Cadence Efficiently.png"/></div>
+
+解决方法：到工程目录的 Cadence_Projects 文件夹下找到 `sch.oa.cdslck` 和 `sch.oa.cdslck.RHEL30.IC.6615` 两个文件，删除后即可恢复正常。
+因为后缀带 lck 的文件会在你打开 schematic 的时候出现，正确关闭 schematic 该文件会消失。如果你错误的关闭了 schematic, 这个文件将会被保留，在你下次打开的时候就无法编辑。
+
+
+<!-- 
+- 方法 1:
+    - 删掉 `cds.log.cdslck` 文件
+    - 在相应电路图的目录下找到 schematic 中会看到一个带有 lck 的文件，删掉它
+    -
+- 方法 2: 如果你的文件放在/mnt/hdfs共享文件夹中，请把他放到虚拟机内。
+- 方法 3: 电路图如果只能 read 不能 edit, 在 Virtuso Schematic 原理图对话框显示界面，左边的工具栏就显示灰色，无法点击。解决办法是，点击 `Design > Make Editable` 即可，此时你就可以编辑电路图了。 -->
+
+
+
+
+
+
+
+

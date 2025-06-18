@@ -126,6 +126,33 @@ $$
  | 71° | $3.00$ | $2.85$ |
 </div>
 
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-16-23-09-42_Relationship Between GBW and fp2 in a Two-Order System.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-16-23-14-49_Relationship Between GBW and fp2 in a Two-Order System.png"/></div>
+
+``` matlab
+k = linspace(0, 10, 1000);
+co = k.^2./sqrt(1+k.^2);
+PM = atand(k);
+stc = MyPlot(co, PM);
+stc = MyYYPlot(co, co, PM, k);
+yyaxis('left')
+stc.label.x.String = "$k' = \frac{\omega_{p2}}{\mathrm{GBW}_{\omega}}$";
+stc.label.y_left.String = '$\mathrm{PM} = \arctan\,(k)$';
+stc.label.y_right.String = '$k = \frac{\omega_{p2}}{\omega_{u}}$';
+stc.axes.XLim = [0 10];
+stc.axes.YLim = [40 90];
+stc.axes.YTick = 40:5:90;
+stc.axes.YTickLabel = stc.axes.YTickLabel + "$^\circ$";
+stc.leg.String = ["PM"; "$k = \frac{\omega_{p2}}{\omega_{u}}$"]
+
+yyaxis('right')
+stc.axes.YLim = [0 10];
+stc.axes.YTick = 0:1:10;
+stc.axes.XTick = 0:1:10;
+MyFigure_ChangeSize([1.3 1]*512*1.5)
+```
+
+
 ## PM and Overshoot
 
 在两极点二阶系统中, PM 与 overshoot 的关系如下图 (from [this slide](https://pallen.ece.gatech.edu/Academic/ECE_6412/Spring_2003/L240-Sim&MeasofOpAmps(2UP).pdf)):

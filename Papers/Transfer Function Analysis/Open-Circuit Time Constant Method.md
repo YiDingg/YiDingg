@@ -15,6 +15,8 @@ Initially published at 17:25 on 2025-05-05 in Beijing.
 >**Full Citation:**
 N. F. Voudoukis, D. Baxevanakis, K. Papafotis, C. Dimas, C. Oustoglou and P. P. Sotiriadis, "Introducing Senior Undergraduate Students to the Open-Circuit Time-Constant Method for Circuit Analysis," 2019 8th International Conference on Modern Circuits and Systems Technologies (MOCAST), Thessaloniki, Greece, 2019, pp. 1-4, doi: 10.1109/MOCAST.2019.8741560.
 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-18-20-53-32_Open-Circuit Time Constant Method.png"/></div>
+
 ## Abstract
 
 
@@ -172,7 +174,7 @@ $$
 （图片来自知乎“模集王小桃”）
 
 
-## Excise 1
+## Exercise 1
 
 论文中给出了两个例题，我们现在就来完成它们，并给出详细的计算过程。下面是第一个例题：
 
@@ -395,7 +397,7 @@ disp(num2str([R, C, tau, omega, f]', '%.4f'))
 MyParallel_n(f')*1000
 ```
 
-## Excise 2
+## Exercise 2
 
 第一个例题是 CE + CC 结构，由于 CE 中 Miller effect 对 $C_{\mu}$ 的放大作用，放大器截止频率较低。在第二个例题中，我们将 CS 换为了 Cascode 结构 (共射共基)，使得电路截止频率明显提高。下面是电路图：
 

@@ -33,7 +33,7 @@
 
 ### 1.1 theoretical formulas
 
-理论参考公式如下 (2025.06.11), 后续如有更新会放在 [Design Sheet of Folded-Cascode Op Amp](<Electronics/Design Sheet of Folded-Cascode Op Amp.md>):
+理论参考公式如下 (2025.06.11), 后续如有更新会放在 [Design Sheet of Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet of Folded-Cascode Op Amp.md>):
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-10-17-31-39_Design Sheet of Folded-Cascode Op Amp.png"/></div>
 
 
@@ -465,51 +465,9 @@ swing @ 60dB = (value(vout cross(dc_gain 60 2)) - value(vout cross(dc_gain 60 1)
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-13-39-24_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
 
-<!-- ### 3.5 tran: slew rate
+顺便看一下运放在不同负载电容下的频率响应，结果如下：
 
-注：这部分仿真的电路参数导入错了，导入成 PM 和 UGB 优化之前的晶体管尺寸，所以重新仿真。
-
-
-SR 是 large-signal 下的非线性行为，将输入信号改为幅度较大的 step signal, 运行仿真，结果如下：
-
-``` bash
-SR+ = slewRate(vout 0 t 7e-07 t 20 80 nil "time")
-SR- = slewRate(vout 7e-07 t 20e-07 t 20 80 nil "time")
-```
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-15-55-07_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-16-45-11_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-16-45-56_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
-
-
-
-### 3.6 tran: step response
-
-
-将 vout 和 vin- 短接，设置输入信号为 0.8 V ~ 1.0 V 的 step signal, 考察运放的 (small-signal) step response, 看看相位和增益裕度是不是“真的”, 并且计算运放的 settling time 和 overshoot:
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-16-15-18_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-16-55-22_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
-
-``` bash
-# 注意 settlingTime 返回的是横坐标 (时间), 还需要减去 step 信号起始点才是 settling time
-setting time @ 0.05% (rising) = (settlingTime(vout 0 t 7e-07 t 0.05 nil "time") - 2e-07)
-setting time @ 0.05% (falling) = (settlingTime(vout 7e-07 t 20e-07 t 0.05 nil "time") - 7e-07)
-overshoot (%) (rising) = overshoot(vout 0 t 7e-07 t nil "time")
-overshoot (%) (falling) = overshoot(vout 7e-07 t 2e-06 t nil "time")
-```
-
-
-``` bash
-# 下面几个函数不好用, cadence calculator 有专门计算 settling time 和 overshoot 的函数
-settling time @ 0.05% (rising) = cross(vout value(vout, 450n)*(1 + 0.05*0.01) 1 "falling" nil nil  nil ) - 200n
-settling time @ 0.05% (falling) = cross(vout value(vout, 900n)*(1 - 0.05*0.01) 1 "rising" nil nil  nil ) - 700n
-overshoot (%) (rising) = (ymax(vout)/value(vout, 450n) - 1)*100 / (value(vout, 0) - value(vout, 700n))
-overshoot (%) (falling) = (ymin(vout)/value(vout, 900n) - 1)*100 / (value(vout, 700n) - value(vout, 900n))
-```
-
-如果按 10 mV step 对应的 22 % overshoot 来计算，这样的 overshoot 量在两极点二阶系统中只有约 48° 的相位裕度。<span style='color:red'> 这究竟是 cascode 特有的输出特性，还是我们的 ac 仿真存在某些问题？我认为是前者，也许从 ac 仿真中的频响曲线可以解释，有待进一步探究。另外，为什么 SR 明显小于设计值？是输出节点实际 $C_L$ 约为 8.3 pF, 还是其它的什么原因？也有待进一步探究。 </span>
- -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-14-18-17-58_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
 
 
 ### 3.5 tran: slew rate
@@ -527,10 +485,12 @@ SR+ = slewRate(vout 0 t 7e-07 t 20 80 nil "time")
 SR- = slewRate(vout 7e-07 t 20e-07 t 20 80 nil "time")
 ```
 
+图中可以看到，运放的 SR 为 +32.58 V/us 和 -35.22 V/us, 这与设计的 50 V/us 相差较大。具体的原因探究我们单独放在了文章 
+
 ### 3.6 tran: step response
 
 
-将 vout 和 vin- 短接，设置输入信号为 0.8 V ~ 1.0 V 的 step signal, 考察运放的 (small-signal) step response, 看看相位和增益裕度是不是“真的”, 并且计算运放的 settling time 和 overshoot:
+将 vout 和 vin- 短接，设置输入信号为幅度足够小的 step signal, 考察运放的 small-signal step response, 看看相位和增益裕度是不是“真的”, 并且计算运放的 settling time 和 overshoot:
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-19-38-03_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-19-56-19_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
@@ -554,6 +514,9 @@ overshoot (%) (falling) = (ymin(vout)/value(vout, 900n) - 1)*100 / (value(vout, 
 
 <span style='color:red'> 为什么 SR 明显小于设计值？是输出节点实际 $C_L$ 约为 8.3 pF, 还是其它的什么原因？也有待进一步探究。 </span>
 
+注：在两极点二阶系统中, PM 与 overshoot 的关系如下图 (from [this slide](https://pallen.ece.gatech.edu/Academic/ECE_6412/Spring_2003/L240-Sim&MeasofOpAmps(2UP).pdf)):
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-14-51-55_Relationship Between GBW and fp2 in a Two-Order System.png"/></div>
 
 
 ## 5. Design Summary

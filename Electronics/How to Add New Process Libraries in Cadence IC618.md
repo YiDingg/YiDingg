@@ -1,4 +1,4 @@
-# How to Add New Process Libraries in Cadence IC618
+# How to Add New Process Libraries in Cadence IC618 <br> Cadence Virtuoso 教程 (二)：开源工艺库分享以及 Cadence IC618 工艺库添加教程
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 13:25 on 2025-05-22 in Beijing.
@@ -9,30 +9,29 @@
 
 ## 脚本安装 PDK 工艺库
 
-!> **<span style='color:red'>Attention:</span>**<br>
-注：此方法在笔者的虚拟机上安装失败，暂时没有成功的例子，建议跳转至第二种方法“手动安装 PDK 工艺库”
+**注：此方法在笔者的虚拟机上安装失败，暂时没有成功的例子，建议跳转至第二种方法“手动安装 PDK 工艺库”**
 
 以自带安装脚本的  `tsmc18_pdk` 工艺库为例 (台积电 CMOS 180nm), 工艺库文件名称 `tsmc18rf_pdk_v13d.zip`, 其中的 "pdk" 是 "process design kit" 的缩写，"rf" 是 "radio frequency" 的缩写，"v13d" 是版本号。下载链接在 
 
-- 在主机 (windows) 下载并解压 `tsmc18rf_pdk_v13d.zip`，得到 `tsmc18rf_pdk_v13d` 文件夹，包含以下文件：
+1. 在主机 (windows) 下载并解压 `tsmc18rf_pdk_v13d.zip`，得到 `tsmc18rf_pdk_v13d` 文件夹，包含以下文件：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-12-15-42_How to Use Cadence Efficiently.png"/></div>
 
-- 将文件夹 `tsmc18rf_pdk_v13d` 移动或复制到共享文件夹中，以便在虚拟机中访问
-- 在虚拟机中打开刚刚解压好的文件夹，如下图：
+2. 将文件夹 `tsmc18rf_pdk_v13d` 移动或复制到共享文件夹中，以便在虚拟机中访问
+3. 在虚拟机中打开刚刚解压好的文件夹，如下图：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-13-40-25_How to Add New Process Libraries in Cadence IC618.png"/></div>
 
-- 右键打开 terminal, 输入 `perl pdkInstall.pl` 以运行自动安装脚本 (linux 系统一般都默认装有 perl 语言):
+4. 右键打开 terminal, 输入 `perl pdkInstall.pl` 以运行自动安装脚本 (linux 系统一般都默认装有 perl 语言):
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-13-41-36_How to Add New Process Libraries in Cadence IC618.png"/></div>
 
-- 脚本给了我们三个选择，它们的区别仅在于 Metal Layer 不同，即 `1P6M`, `1P5M` 和 `1P4M`, Metal Layer 层数越高，布线时可选的金属层数就越多。不同金属层数的 PDK 可能不兼容，需根据工艺库文档确认。
-- 这里我们选择安装第一个 `1P6M`，输入 `1`，然后按回车键：
+5. 脚本给了我们三个选择，它们的区别仅在于 Metal Layer 不同，即 `1P6M`, `1P5M` 和 `1P4M`, Metal Layer 层数越高，布线时可选的金属层数就越多。不同金属层数的 PDK 可能不兼容，需根据工艺库文档确认。
+6. 这里我们选择安装第一个 `1P6M`，输入 `1`，然后按回车键：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-13-47-05_How to Add New Process Libraries in Cadence IC618.png"/></div>
 
-- 接下来输入安装目录，我们选择安装在 `/home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_1P6M` 下:
+7. 接下来输入安装目录，我们选择安装在 `/home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_1P6M` 下:
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-14-07-25_How to Add New Process Libraries in Cadence IC618.png"/></div>
 
@@ -48,17 +47,17 @@
 ### 1. 解压文件夹
 
 
-- 还是以上面的 `tsmc18_pdk` 工艺库为例，下载链接 [123 云盘 (主链接)](https://www.123684.com/s/0y0pTd-0uUj3)
-- 解压下载好的 `tsmc18rf_pdk_v13d.zip` 文件夹，解压后得到文件夹 `tsmc18rf_pdk_v13d`，内容如下：
+1. 还是以上面的 `tsmc18_pdk` 工艺库为例，下载链接 [123 云盘 (主链接)](https://www.123684.com/s/0y0pTd-0uUj3)
+2. 解压下载好的 `tsmc18rf_pdk_v13d.zip` 文件夹，解压后得到文件夹 `tsmc18rf_pdk_v13d`，内容如下：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-12-15-42_How to Use Cadence Efficiently.png"/></div>
 
-- 继续解压全部压缩包，得到以下内容：
+3. 继续解压全部压缩包，得到以下内容：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-14-26-07_How to Add New Process Libraries in Cadence IC618.png"/></div>
 
-- 将文件夹 `tsmc18rf_pdk_v13d` 移动到共享文件夹中，共享文件夹教程见 [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>).
-- 打开虚拟机，在共享文件夹中找到刚刚解压好的总文件夹 `tsmc18rf_pdk_v13d`，例如我的路径为 `<Original_Path> = /home/IC/a_Win_VM_shared/Cadence_Process_Library_Backup/tsmc18rf_pdk_v13d`
+4. 将文件夹 `tsmc18rf_pdk_v13d` 移动到共享文件夹中，共享文件夹教程见 [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>).
+5. 打开虚拟机，在共享文件夹中找到刚刚解压好的总文件夹 `tsmc18rf_pdk_v13d`，例如我的路径为 `<Original_Path> = /home/IC/a_Win_VM_shared/Cadence_Process_Library_Backup/tsmc18rf_pdk_v13d`
 
 ### 2. 调整文件夹为合适的格式
 
@@ -67,8 +66,8 @@
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-14-54-50_How to Add New Process Libraries in Cadence IC618.png"/></div>
 
 
-- 在一个合适的位置新建文件夹，如 `<Installed_Path> = /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d`，稍后我们便要将工艺库的四个小文件夹合并到这里
-- 将所有的工艺库文件复制到 `<Installed_Path>` 中，具体而言，执行以下命令：
+1. 在一个合适的位置新建文件夹，如 `<Installed_Path> = /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d`，稍后我们便要将工艺库的四个小文件夹合并到这里
+2. 将所有的工艺库文件复制到 `<Installed_Path>` 中，具体而言，执行以下命令：
 
 ``` bash
 su root  # 切换到 root 用户 (需要输入密码)'
@@ -78,13 +77,13 @@ cp -r /home/IC/a_Win_VM_shared/Cadence_Process_Library_Backup/tsmc18rf_pdk_v13d/
 cp -r /home/IC/a_Win_VM_shared/Cadence_Process_Library_Backup/tsmc18rf_pdk_v13d/tsmc18rf_techfiles/TechFiles/* .
 ```
 
-- **确认必要的文件/文件夹都存在：** 
-    - 路径配置文件：`cds.lib`
-    - display 配置文件：`display.drf`
-    - tech 配置文件：`techfile.tf` 或 `techfile.m4`, `techfile.m5` 之类的，有就可以
-    - 工艺模型文件夹：`models`
-    - 设计规则文件夹：`calibre`
-    - 工艺信息文件夹：`tsmc18rf` (通常与工艺库名称直接相同)
+3. **确认必要的文件/文件夹都存在：** 
+    - (1) 路径配置文件：`cds.lib`
+    - (2) display 配置文件：`display.drf`
+    - (3) tech 配置文件：`techfile.tf` 或 `techfile.m4`, `techfile.m5` 之类的，有就可以
+    - (4) 工艺模型文件夹：`models`
+    - (5) 设计规则文件夹：`calibre`
+    - (6) 工艺信息文件夹：`tsmc18rf` (通常与工艺库名称直接相同)
 
 
 ### CDB to OA (Method 1)
@@ -109,25 +108,25 @@ sudo mv /Cadence_Process_Library/TSMC18RF_PDK_v13d /home/IC/Cadence_Process_Libr
 
 工艺库不能位于 virtuoso 的打开路径下，本质只是路径冲突。换句话说，如果我们换一个地方打开 virtuoso, 完成格式转换之后，再将转化后的 OA 格式文件夹复制回 `<Installed_Path>`，是不是就可以完成 CDB to OA 转换呢？事实证明，这种方法是可行的，具体步骤如下：
 
-- 现在，我们整合好的工艺库仍在 `<Installed_Path> = /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d` 下
-- 在 `/home/IC/` 下新建一个文件夹 `Cadence_CDB_to_OA`，专门用于 CDB to OA 转换
-- 在 `/home/IC/Cadence_CDB_to_OA` 下新建一个文件夹 `TSMC18RF_PDK_v13d`, 用于存放 virtuoso 转换后的 OA 格式文件
-- 在 `/home/IC/Cadence_CDB_to_OA/TSMC18RF_PDK_v13d` 中右键打开 terminal, 输入 `virtuoso` 启动 virtuoso
-- 在 virtuoso 中，打开 `初始界面 > Tools > Conversion Toolbox > CDB to OpenAccess Translator`，如下图所示：
+1. 现在，我们整合好的工艺库仍在 `<Installed_Path> = /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d` 下
+2. 在 `/home/IC/` 下新建一个文件夹 `Cadence_CDB_to_OA`，专门用于 CDB to OA 转换
+3. 在 `/home/IC/Cadence_CDB_to_OA` 下新建一个文件夹 `TSMC18RF_PDK_v13d`, 用于存放 virtuoso 转换后的 OA 格式文件
+4. 在 `/home/IC/Cadence_CDB_to_OA/TSMC18RF_PDK_v13d` 中右键打开 terminal, 输入 `virtuoso` 启动 virtuoso
+5. 在 virtuoso 中，打开 `初始界面 > Tools > Conversion Toolbox > CDB to OpenAccess Translator`，如下图所示：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-16-01-06_How to Add New Process Libraries in Cadence IC618.png"/></div>
 
-- 选择 `<Installed_Path>/cds.lib` 文件
+6. 选择 `<Installed_Path>/cds.lib` 文件
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-17-00-34_How to Add New Process Libraries in Cadence IC618.png"/></div>
 
-- 点击 `OK`, "Libraries to convert" 一栏会自动显示 `tsmc18rf`，点击 `OK` 开始转换
-- 转换结束，检查是否转换成功：有 `ERROR` 表示不成功，有 `WARNING` 不影响转换结果
+7. 点击 `OK`, "Libraries to convert" 一栏会自动显示 `tsmc18rf`，点击 `OK` 开始转换
+8. 转换结束，检查是否转换成功：有 `ERROR` 表示不成功，有 `WARNING` 不影响转换结果
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-17-03-09_How to Add New Process Libraries in Cadence IC618.png"/></div>
 
-- 转换成功之后，由于我们刚刚是在 `/home/IC/Cadence_CDB_to_OA/TSMC18RF_PDK_v13d` 下打开的 virtuoso, 所有转换所得文件都放在了 `/home/IC/Cadence_CDB_to_OA/TSMC18RF_PDK_v13d/` 下，下面对这些文件作处理
-- 关闭 virtuoso, 打开 `<Installed_Path> = /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d` 文件夹，右键打开终端，输入以下代码：
+9. 转换成功之后，由于我们刚刚是在 `/home/IC/Cadence_CDB_to_OA/TSMC18RF_PDK_v13d` 下打开的 virtuoso, 所有转换所得文件都放在了 `/home/IC/Cadence_CDB_to_OA/TSMC18RF_PDK_v13d/` 下，下面对这些文件作处理
+10. 关闭 virtuoso, 打开 `<Installed_Path> = /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d` 文件夹，右键打开终端，输入以下代码：
 
 ``` bash
 su root # 切换到 root 用户 (需要输入密码)
@@ -140,13 +139,13 @@ cp -rf /home/IC/Cadence_CDB_to_OA/TSMC18RF_PDK_v13d/* .  # 将转换后的 OA �
 rm -i /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA/tsmc18rf/prop.xx   # (交互式) 删除 prop.xx 文件, 否则导入到 virtuoso 时会被识别为 CDB 格式, 删除后才会识别为 OA 格式
 ```
 
-- 现在，我们的工艺库已经完成了所有的转换工作，已经可以按 OA 格式的标准操作进行导入了：
-- 关闭终端，返回 Cadence IC618 的安装目录 `/home/IC/`，右键打开 terminal, 输入 `virtuoso` 启动 virtuoso (也就是我们平时启动 virtuoso 的地方)
-- 打开 `初始界面 > Tools > Library Path Editor > Edit > Add Library Path`，选择 `TSMC18RF_PDK_v13d_OA` 文件夹 (路径 `/home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA`), 此时右侧会自动跳出 `tsmc18rf` 这个工艺库名称，如下图所示：
+11. 现在，我们的工艺库已经完成了所有的转换工作，已经可以按 OA 格式的标准操作进行导入了：
+12. 关闭终端，返回 Cadence IC618 的安装目录 `/home/IC/`，右键打开 terminal, 输入 `virtuoso` 启动 virtuoso (也就是我们平时启动 virtuoso 的地方)
+13. 打开 `初始界面 > Tools > Library Path Editor > Edit > Add Library Path`，选择 `TSMC18RF_PDK_v13d_OA` 文件夹 (路径 `/home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA`), 此时右侧会自动跳出 `tsmc18rf` 这个工艺库名称，如下图所示：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-17-35-49_How to Add New Process Libraries in Cadence IC618.png"/></div>
 
-- 点击 `OK` 进行导入，如下图, log 界面没有任何 warning 和 error 提示，表示导入成功：
+14. 点击 `OK` 进行导入，如下图, log 界面没有任何 warning 和 error 提示，表示导入成功：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-17-53-16_How to Add New Process Libraries in Cadence IC618.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-17-54-34_How to Add New Process Libraries in Cadence IC618.png"/></div>
@@ -187,16 +186,16 @@ rm -i /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA/tsmc18rf/prop.xx   #
 ### Simulation Verification
 
 下面，我们利用导入的工艺库进行一个简单的 inverter 仿真，以验证工艺库导入成功。此部分步骤没有详细说明，因为我们已经出过仿真教程 [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)，下面是仿真步骤的简要总结：
-- 在任意 Library 中新建一个 Cellview, 命名为 `inverter_tsmc18rf`，表示我们使用的是 `tsmc18rf` 工艺库
-- 打开原理图，使用 `tsmc18rf` 工艺库中的 `nmos` 和 `pmos` 组件搭建 inverter 电路
-- 如果出现原理图器件一片黄的问题，大概是 attach 时出现了某些错误，将工艺库的 `display.drf` 文件复制到 virtuoso 的启动目录 `/home/IC/`，然后重启 virtuoso 即可 
-- 调整仿真设置，运行仿真
-- 如果仿真报错：<span style='color:red'> The instance 'NMOS1' is referencing an undefined model or subcircuit, 'nch'. Either include the file containing the definition of 'nch', or define 'nch' before running the simulation. </span> 这是工艺信息文件设置错误导致的，因为一般都是默认用中芯科技 smic18 工艺库的工艺信息文件，但是台积电 tsmc18 的工艺信息文件与其不同。
-- 解决办法： `ADE L > Setup > Model Libraries`，添加 model file `/home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA/models/spectre/cor_std_mos.scs`，然后 <span style='color:red'> 记得在 section 一栏填入 tt 表示标准等级</span> (如果仍未解决，可参考 [this article](https://blog.csdn.net/coocoock/article/details/128053280))。
-- 重新运行仿真，仿真结果正常弹出，如下图所示：
+1. 在任意 Library 中新建一个 Cellview, 命名为 `inverter_tsmc18rf`，表示我们使用的是 `tsmc18rf` 工艺库
+2. 打开原理图，使用 `tsmc18rf` 工艺库中的 `nmos` 和 `pmos` 组件搭建 inverter 电路
+3. 如果出现原理图器件一片黄的问题，大概是 attach 时出现了某些错误，将工艺库的 `display.drf` 文件复制到 virtuoso 的启动目录 `/home/IC/`，然后重启 virtuoso 即可 
+4. 调整仿真设置，运行仿真
+5. 如果仿真报错：<span style='color:red'> The instance 'NMOS1' is referencing an undefined model or subcircuit, 'nch'. Either include the file containing the definition of 'nch', or define 'nch' before running the simulation. </span> 这是工艺信息文件设置错误导致的，因为一般都是默认用中芯科技 smic18 工艺库的工艺信息文件，但是台积电 tsmc18 的工艺信息文件与其不同。
+6. 解决办法： `ADE L > Setup > Model Libraries`，添加 model file `/home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA/models/spectre/cor_std_mos.scs`，然后 <span style='color:red'> 记得在 section 一栏填入 tt 表示标准等级</span> (如果仍未解决，可参考 [this article](https://blog.csdn.net/coocoock/article/details/128053280))。
+7. 重新运行仿真，仿真结果正常弹出，如下图所示：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-19-28-50_How to Add New Process Libraries in Cadence IC618.png"/></div>
 
-- 当然，也可以调整一下背景图的颜色、线条的颜色和粗细（详见文章 [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>) 的 Color Preferences 部分）：
+7. 当然，也可以调整一下背景图的颜色、线条的颜色和粗细（详见文章 [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>) 的 Color Preferences 部分）：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-20-31-56_How to Add New Process Libraries in Cadence IC618.png"/></div>
 
 
@@ -221,19 +220,22 @@ rm -i /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA/tsmc18rf/prop.xx   #
 
 我们在这里分享几个常见的工艺库，仅供学习参考，禁止商用！
 
-- 下载链接：[123 云盘 (主链接)](https://www.123684.com/s/0y0pTd-0uUj3), [123 云盘链接 2 (备用链接)](https://www.123912.com/s/0y0pTd-0uUj3)
-- 上面的链接包含以下工艺库：
-    - TSMC18RF_PDK_v13d: 台积电 0.18μm CMOS 射频工艺库 <span style='color:red'> (本文所导入的工艺库) </span>
-    - SMIC_018_MMRF: 中芯国际 0.18μm CMOS 射频工艺库
-    - SMIC_13mmrf_1P6M_30k: 中芯国际 0.13μm CMOS 射频工艺库
-    - NCSU-FreePDK45-1.4: 北卡罗莱纳州立大学 (NCSU) 45nm CMOS 开源工艺库
-    - NCSU-FreePDK3D45-1.1: 北卡罗莱纳州立大学 (NCSU) 3D 45nm CMOS 开源工艺库
-    - NCSU-FreePDK15-1.2: 北卡罗莱纳州立大学 (NCSU) 15nm FinFET 开源工艺库
-    - CSU-LithoSim-FreePDK45-1: LithoSim for FreePDK45 (光刻仿真工具包)
-- 其它工艺库：
-    - TSMC28: 台积电 28nm CMOS 工艺库 (文件大小 164.59 GB), [百度网盘链接 1](https://pan.baidu.com/s/1aQNJ6KGsq4raYPxRUwHEew?pwd=8888) (提取码 `8888`)
-    - ASAP5: 5nm FinFET 开源工艺库, [GitHub > The-OpenROAD-Project > ASAP5](https://github.com/The-OpenROAD-Project/asap5)
-    - ASAP7: 7nm FinFET 开源工艺库, [GitHub > The-OpenROAD-Project > ASAP7](https://github.com/The-OpenROAD-Project/asap7)
+下载链接：[123 云盘 (主链接)](https://www.123684.com/s/0y0pTd-0uUj3), [123 云盘链接 2 (备用链接)](https://www.123912.com/s/0y0pTd-0uUj3)
+
+上面的链接包含以下工艺库：
+- TSMC18RF_PDK_v13d: 台积电 0.18μm CMOS 射频工艺库 <span style='color:red'> (本文所导入的工艺库) </span>
+- SMIC_018_MMRF: 中芯国际 0.18μm CMOS 射频工艺库
+- SMIC_13mmrf_1P6M_30k: 中芯国际 0.13μm CMOS 射频工艺库
+- NCSU-FreePDK45-1.4: 北卡罗莱纳州立大学 (NCSU) 45nm CMOS 开源工艺库
+- NCSU-FreePDK3D45-1.1: 北卡罗莱纳州立大学 (NCSU) 3D 45nm CMOS 开源工艺库
+- NCSU-FreePDK15-1.2: 北卡罗莱纳州立大学 (NCSU) 15nm FinFET 开源工艺库
+- CSU-LithoSim-FreePDK45-1: LithoSim for FreePDK45 (光刻仿真工具包)
+
+其它工艺库：
+
+- TSMC28: 台积电 28nm CMOS 工艺库 (文件大小 164.59 GB), [百度网盘链接 1](https://pan.baidu.com/s/1aQNJ6KGsq4raYPxRUwHEew?pwd=8888) (提取码 `8888`)
+- ASAP5: 5nm FinFET 开源工艺库, [GitHub > The-OpenROAD-Project > ASAP5](https://github.com/The-OpenROAD-Project/asap5)
+- ASAP7: 7nm FinFET 开源工艺库, [GitHub > The-OpenROAD-Project > ASAP7](https://github.com/The-OpenROAD-Project/asap7)
 
 
 ## Reference

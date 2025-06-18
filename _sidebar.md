@@ -5,114 +5,40 @@
 <!-- - [📰 **To Be Dealing With**](ToBeDealingWith.md) -->
 
 
-- 📖 **Notes**
 
-    - [Design of Analog CMOS Integrated Circuits](<Notes/MajorCourses/Design of Analog CMOS Integrated Circuits.md>)
-    - [Fundamentals of Microelectronics](<Notes/MajorCourses/Fundamentals of Microelectronics.md>)
-    - [Other Courses](Notes/Else/OtherCourses.md)
-    - Major Courses
-        - [Design of Analog CMOS Integrated Circuits](<Notes/MajorCourses/Design of Analog CMOS Integrated Circuits.md>)
-        - [Fundamentals of Microelectronics](<Notes/MajorCourses/Fundamentals of Microelectronics.md>)
-        - [Signals and Systems](<Notes/MajorCourses/Signals and Systems.md>)
-        - [Probability and Statistics](<Notes/MajorCourses/Probability and Statistics.md>)
-        - [Principles of Electric Circuits](Notes/MajorCourses/CircuitTheoryNotes.md)
-    - C
-        - [C 语言 (!): bug 解决](<Notes/C/CNotes(!)-FixProblems.md>)
-        - [C 语言 (0): 准备](<Notes/C/CNotes(0)-Preparation.md>)
-        - [C 语言 (1): 开始编程之前](<Notes/C/CNotes(1)-BeforeStarting.md>)
-        - [C 语言 (2): 关键字](<Notes/C/CNotes(2)-MemoryAndKeywords.md>)
-        - [C 语言 (3): 基本数据类型](<Notes/C/CNotes(3)-DataTypes.md>)
-        - [C 语言 (4): 数组与字符串](<Notes/C/CNotes(4)-ArrayAndString.md>)
-        - [C 语言 (5): 内存管理](<Notes/C/CNotes(5)-MemoryManagement.md>)
-        - [C 语言 (6): 特殊数据类型](<Notes/C/CNotes(6)-SpecialDataTypes.md>)
-        - [C 语言 (7): 预处理](<Notes/C/CNotes(7)-Preproccess.md>)
-        - [C 语言 (8): 输入输出函数](<Notes/C/CNotes(8)-IOFunctions.md>)
-    - Math
-        - [Calculus 1](Notes/Math/Calculus1Notes.md)
-        - [Calculus 2](Notes/Math/Calculus2Notes.md)
-        - [Linear Algebra 1](Notes/Math/LinearAlgebra1Notes.md)
-        - [Linear Algebra 2](Notes/Math/LinearAlgebra2Notes.md)
-        - [Numerical Methods for PDE](Notes/Math/NumericalMethodsForPDE.md)
-        - [Mathematical Physics Methods](Notes/Math/MathematicalPhysicsMathods.md)
-        - [Probability and Statistics](<Notes/MajorCourses/Probability and Statistics.md>)
-    - Physics
-
-        - [Mechanics](Notes/Phisics/Mecanics%20notes.md)
-        - [Electromagnetism](Notes/Phisics/Electromegnetism%20Notes.md)
-        - [Thermodynamics](Notes/Phisics/Thermodynamics%20notes.md)
-        - [Optics](Notes/Phisics/OpticsNotes.md)
-        - [Basic Physics Experiment](Notes/Phisics/BasicPhysicsExperiment.md)
-    - Cpp
-        - [Cpp (0)：准备](<Notes/Cpp/CppNotes(0)-Preparation.md>)
-    - Matlab
-        - [Matlab (0): Preparation](<Notes/Matlab/MatlabNotes(0)-Preparation.md>)
-        - [Matlab (1): Graphics](<Notes/Matlab/MatlabNotes(1)-Graphics.md>)
-        - [Matlab (2): Mathematics](<Notes/Matlab/MatlabNotes(2)-Mathematics.md>)
-        - [Matlab (3): Symbolic Math](<Notes/Matlab/MatlabNotes(3)-SymbolicMath.md>)
-        - [Matlab (4): Animations](<Notes/Matlab/MatlabNotes(4)-Animations.md>)
-    - Mathematical Modeling
-        - [MM (!): Skills](<Notes/MathematicalModeling/MM(!)-Skills.md>)
-        - [MM (1): Papers](<Notes/MathematicalModeling/MM(1)-Papers.md>)
-        - [MM (2): Optimization](<Notes/MathematicalModeling/MM(2)-Optimization.md>)
-        - [MM (3): PDE](<Notes/MathematicalModeling/MM(3)-PDE.md>)
-        - [MM (4): Data Processing](<Notes/MathematicalModeling/MM(4)-DataProcessing.md>)
-        - [MM (5): Problem B](<Notes/MathematicalModeling/MM(5)-ProblemB.md>)
-        - [MM (1.1): CUMCM 2020-A](<Notes/MathematicalModeling/MM(1.1)-CUMCM2020A.md>)
-        - [MM (1.2): CUMCM 2023-A](<Notes/MathematicalModeling/MM(1.2)-CUMCM2023A.md>)
-        - [MM (1.3): CUMCM 2023-B](<Notes/MathematicalModeling/MM(1.3)-CUMCM2023B.md>)
-        - [MM (1.4): CUMCM 2022-A](<Notes/MathematicalModeling/MM(1.4)-CUMCM2022A.md>)
-        - [MM (1.5): CUMCM 2024-A](<Notes/MathematicalModeling/MM(1.5)-CUMCM2024A.md>)
-    - MCU
-        - [MCU (0): Preparations](<Notes/MCU/MCUNotes(0)-Preparations.md>)
-        - [MCU (1): Keil Debug (STM32)](<Notes/MCU/MCUNotes(1)-KeilDebug(STM32).md>)
-        - [MCU (2): Timer (STM32)](<Notes/MCU/MCUNotes(2)-Timer(STM32).md>)
-        - [MCU (3): DMA (STM32)](<Notes/MCU/MCUNotes(3)-DMA(STM32).md>)
-        - [MCU (4): WiFi (ESP8266)](<Notes/MCU/MCUNotes(4)-WiFi(ESP8266).md>)
-        - [MCU (!): Tips and Tricks (STM32)](<Notes/MCU/MCUNotes(!)-TipsAndTricks(STM32).md>)
-
-
-    <!-- (这里的缩进不能省略, 否则会影响 sidebar 的 css 效果)
+    <!-- (注释这里的缩进不能省略, 否则会影响 sidebar 的 css 效果)
     Papers, Blogs: 条目后跟有注释符号的表示已经发过知乎，注释内标有 x 的表示公众号也发过了。
                 另外，有部分标有注释和 x 的文章并没有发在知乎，是因为文章表格中具有多个图片，不方便直接转载到知乎
     Designs: 条目后跟有注释符号的表示已经发过微信公众号
-    -->
-
-    <!-- 
-        - Razavi CMOS
-            - [Design Example of Folded-Cascode Stage](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>)
-            - [Gain Boosting Techniques](<Electronics/[Razavi CMOS] Gain Boosting Techniques.md>)
-            - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)
-            - [A Brief View of Negative Feedback](<Electronics/[Razavi CMOS] A Brief View of Negative Feedback.md>)
-            - [Mismatches of Basic Differential Pair](<Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)
-            - [Cascode stage with PMOS load](<Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>) 已发知乎
-            - [Gm Av calculation](<Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>) 已发知乎
-            - [MOSFET's Terminal Resistance](<Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>) 已发知乎
-    -->
-
-    <!-- 
-        - Analog IC and Cadence Tutorials
-            - [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
-            - [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)
-            - [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
-            - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
-            - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
-            - [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
-            - [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
-            - [Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>)
+    Analog IC: 与 Electric Blogs 同级别的条目, 单独放在一个文件夹, 并且具有年份统计
+                部分难以区分的 blog 可以放在 Analog IC 文件夹, 并且同时被两个条目收录
     -->
 
 
-- 💡 **Electronics Blogs**
+
+
+
+- 💡 **My Blogs**
 
     - [**[Pinned] How to Use Cadence Efficiently**](<Electronics/How to Use Cadence Efficiently.md>)
-    - [**[Pinned] Roadmap for Analog ICer**](<Electronics/Roadmap for Analog ICer.md>)
+    <!-- - [**[Pinned] Roadmap for Analog ICer**](<Electronics/Roadmap for Analog ICer.md>) -->
     - [**[Pinned] Collections of Electronic Websites**](<Electronics/Collection of Electronic Websites.md>)
     - [**[Pinned] Collection of My Measurement Experiments**](<Electronics/The Collection of My Measurement Experiments.md>)
 
-    - Analog IC 
-        - [! Miller Compensation in Basic Two-Stage Op Amp](<Electronics/Miller Compensation in Basic Two-Stage Op Amp.md>)
-        - [! Design Sheet of Basic Two-Stage Op Amp](<Electronics/Design Sheet of Basic Two-Stage Op Amp.md>)
-        - [Design Sheet of Folded-Cascode Op Amp](<Electronics/Design Sheet of Folded-Cascode Op Amp.md>)
+    - Cadence Tutorials
+        - [0. How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
+        - [1. How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)<!--  -->
+        - [2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
+        - [3. How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
+        - [4. Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
+
+
+    - Analog IC (2025, 22 items)
+        - [Reference Current Generation Methods](<AnalogIC/Reference Current Generation Methods.md>)
+        - [! Design Sheet of Basic Two-Stage Op Amp](<AnalogICDesigns/Design Sheet of Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>)
+        - [Miller Compensation in Basic Two-Stage Op Amp](<AnalogIC/Miller Compensation in Basic Two-Stage Op Amp.md>)
+        - [Why Is the Simulated SR Lower Than the Theoretical Value](<AnalogIC/Why Is the Simulated SR Lower Than the Theoretical Value.md>)
+        - [Design Sheet of Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet of Folded-Cascode Op Amp.md>)
         - [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
         - [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)
         - [Relationship Between GBW and fp2 in a Two-Order System](<Electronics/Relationship Between GBW and fp2 in a Two-Order System.md>)
@@ -124,51 +50,26 @@
         - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
         - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
         - [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
-        - [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)
+        - [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)<!--  -->
         - [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
-        - [Design Example of Folded-Cascode Stage](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>)
+        - [Design Example of Folded-Cascode Stage using LTspice](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>)
         - [Gain Boosting Techniques](<Electronics/[Razavi CMOS] Gain Boosting Techniques.md>)
-        - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)
+        - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)<!--  -->
         - [A Brief View of Negative Feedback](<Electronics/[Razavi CMOS] A Brief View of Negative Feedback.md>)
-        - [Mismatches of Basic Differential Pair](<Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)
+        - [Mismatches of Basic Differential Pair](<Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)<!--  -->
         - [Cascode stage with PMOS load](<Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>) <!-- 已发知乎 -->
         - [Gm Av calculation](<Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>) <!-- 已发知乎 -->
         - [MOSFET's Terminal Resistance](<Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>) <!-- 已发知乎 -->
 
-    - Cadence Tutorials
-        - [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
-        - [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)
-        - [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
-        - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
-        - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
-
-
-    - 2025 (78 items)
+    - Electronic Blogs (2025, 78 items)
         - [Test Experiment of The DC-DC Converter Modules](<Electronics/Test Experiment of The DC-DC Converter Modules.md>)
-        - [Design Sheet of Basic Two-Stage Op Amp](<Electronics/Design Sheet of Basic Two-Stage Op Amp.md>)
-        - [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
-        - [Design Sheet of Folded-Cascode Op Amp](<Electronics/Design Sheet of Folded-Cascode Op Amp.md>)
-        - [Miller Compensation in Basic Two-Stage Op Amp](<Electronics/Miller Compensation in Basic Two-Stage Op Amp.md>)
-        - [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)
+        - [Miller Compensation in Basic Two-Stage Op Amp](<AnalogIC/Miller Compensation in Basic Two-Stage Op Amp.md>)
         - [LCE 实验记录 (LCE-09 比较器)](<Electronics/LCE 实验记录 (LCE-09 比较器).md>)
         - [Relationship Between GBW and fp2 in a Tow-Order System](<Electronics/Relationship Between GBW and fp2 in a Two-Order System.md>)
-        - [Biasing Circuits for Low-Voltage Cascode Current Mirror](<Electronics/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)
-        - [Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<Electronics/Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)
         - [Op Amp Measurement of LM741CN](<Electronics/Op Amp Measurement of LM741CN.md>)
-        - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<Electronics/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)
-        - [Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>)
         - [Correction of the AC Gain Equation in ADI's Op Amp Measurement Methods](<Electronics/Correction of the AC Gain Equation in the ADI Op Amp Measurement Methods.md>)
-        - [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
-        - [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
-        - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
-        - [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
-        - [Design Example of Folded-Cascode Stage](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>)
-        - [Simu. CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
-        - [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
-        - [How to Install Cadence IC618 (Virtuoso)](<Electronics/How to Install Cadence IC618.md>)
         - [Op Amp Measurement of Discrete CMOS Op Amp 1 (CS)](<Electronics/Op Amp Measurement of Discrete CMOS Op Amp 1 (CS).md>)
         - [Op Amp Measurement of Discrete CMOS Op Amp 2 (PP)](<Electronics/Op Amp Measurement of Discrete CMOS Op Amp 2 (PP).md>)
-        - [Gain Boosting Techniques](<Electronics/[Razavi CMOS] Gain Boosting Techniques.md>)
         - [Collection of My Measurement Experiments](<Electronics/The Collection of My Measurement Experiments.md>)
         - [Op Amp Measurement of LM412CN](<Electronics/Op Amp Measurement of LF412CN.md>)
         - [Op Amp Measurement of Discrete uA741](<Electronics/Op Amp Measurement of Discrete uA741.md>)
@@ -233,33 +134,21 @@
         - [用 Pi 型滤波器改善可调直流电源的输出纹波](Electronics/用Pi型滤波器改善可调直流电源的输出纹波.md)
         - [一伟 D-30F12 开关电源测评](<Electronics/一伟 D-30F12 开关电源测评.md>)<!--  -->
     
-    - 2024 (4 items)
+    - Electronic Blogs (2024, 4 items)
         - [LTspice](Electronics/LTspice.md)
         - [嘉立创免费下单教程](Electronics/嘉立创免费下单教程.md)
         - [手把手教你用 PWM 实现呼吸灯(标准库)](Electronics/手把手教你用PWM实现呼吸灯(标准库).md)<!--  -->
         - [新版 Keil MDK 中无 Compiler_V5](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
 
-
-- 📃 **Paper Reading**
-
-    - Op Amp Measurement Methods
-        - [Meas. of OpAmp in the Freq. Domain](<Papers/Op Amp Measurement Methods/Measurement of Operational Amplifier Characteristics in the Frequency Domain.md>)
-
-    - Transfer Function Analysis
-
-
-        - [Navi. Page of Transfer Function Analysis](<Papers/Transfer Function Analysis/Navigation Page of Transfer Function Analysis.md>)
-        - [EET (The Extra Element Theorem)](<Papers/Transfer Function Analysis/The Extra Element Theorem.md>)<!-- x -->
-        - [TEET (The Two Extra Element Theorem)](<Papers/Transfer Function Analysis/The Two Extra Element Theorem.md>)
-        - [OCTC (Open-Circuit Time Constant Method)](<Papers/Transfer Function Analysis/Open-Circuit Time Constant Method.md>)
-
-
-- 📱 **Analog IC Designs**
+- 📱 **Analog IC Designs** <!-- 新的 design 放在前面 -->
     - Op Amp
 
+        - [twoStage_single_Nulling-Miller__80dB_50MHz_50Vus](AnalogICDesigns/OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md)
         - [oneStage_single_folded-cascode__80dB_50MHz_50Vus](AnalogICDesigns/OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md)
-    - Op Amp
-        - [oneStage_single_folded-cascode__80dB_50MHz_50Vus](AnalogICDesigns/OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md)
+    - Design Sheets
+        - [Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogICDesigns/Design Sheet of Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>)
+        - [One-Stage Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet of Folded-Cascode Op Amp.md>)
+
 
 
 
@@ -288,6 +177,19 @@
     - [ESP12-F Adapter Board](<ElectronicDesigns/ESP12-F Adapter Board.md>)
     - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)<!--  -->
     - [Other Circuit Boards](<ElectronicDesigns/Other Circuit Boards.md>)
+
+
+- 📃 **Paper Reading**
+
+    - Op Amp Measurement Methods
+        - [Meas. of OpAmp in the Freq. Domain](<Papers/Op Amp Measurement Methods/Measurement of Operational Amplifier Characteristics in the Frequency Domain.md>)
+
+    - Transfer Function Analysis
+
+        - [Navi. Page of Transfer Function Analysis](<Papers/Transfer Function Analysis/Navigation Page of Transfer Function Analysis.md>)
+        - [EET (The Extra Element Theorem)](<Papers/Transfer Function Analysis/The Extra Element Theorem.md>)<!-- x -->
+        - [! TEET (The Two Extra Element Theorem)](<Papers/Transfer Function Analysis/The Two Extra Element Theorem.md>)
+        - [OCTC (Open-Circuit Time Constant Method)](<Papers/Transfer Function Analysis/Open-Circuit Time Constant Method.md>)
 
 
 - 📓 **Other Blogs**
@@ -328,11 +230,78 @@
         - [ATandR(3): Drawing](<Blogs/ATandR/ATandR(3)-Drawing.md>)
         - [ATandR(4): Research Paper](<Blogs/ATandR/ATandR(4)-ResearchPaper.md>)
     - Fix Problem
+        - [英文输入法在复制后输入第一个字符为中文的解决方案](<Blogs/FixProblem/英文输入法在复制后输入第一个字符为中文的解决方案.md>)
         - [VSCode 中按键失灵](Blogs/FixProblem/KeypadFailureInVSCode.md)
         - [文件夹无权访问或访问被拒绝](Blogs/FixProblem/FolderPermissionProblem.md)
         - [VScode-Latex 反向搜索失灵](Blogs/FixProblem/VScode-Latex中反向搜索失灵的解决方案.md)
+        - [新版 Keil MDK 中无 Compiler_V5 的解决方案](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
     - Reprinted Articles 
         - [Circuit Cellar - Impedance Matching Fundamentals](<Blogs/Reprint/Circuit Cellar - Impedance Matching Fundamentals.md>)
+
+- 📖 **Notes**
+
+    - [Design of Analog CMOS Integrated Circuits](<Notes/MajorCourses/Design of Analog CMOS Integrated Circuits.md>)
+    - [Fundamentals of Microelectronics](<Notes/MajorCourses/Fundamentals of Microelectronics.md>)
+    - [Other Courses](Notes/Else/OtherCourses.md)
+    - Major Courses
+        - [Design of Analog CMOS Integrated Circuits](<Notes/MajorCourses/Design of Analog CMOS Integrated Circuits.md>)
+        - [Fundamentals of Microelectronics](<Notes/MajorCourses/Fundamentals of Microelectronics.md>)
+        - [Signals and Systems](<Notes/MajorCourses/Signals and Systems.md>)
+        - [Probability and Statistics](<Notes/MajorCourses/Probability and Statistics.md>)
+        - [Principles of Electric Circuits](Notes/MajorCourses/CircuitTheoryNotes.md)
+    - C
+        - [C 语言 (!): bug 解决](<Notes/C/CNotes(!)-FixProblems.md>)
+        - [C 语言 (0): 准备](<Notes/C/CNotes(0)-Preparation.md>)
+        - [C 语言 (1): 开始编程之前](<Notes/C/CNotes(1)-BeforeStarting.md>)
+        - [C 语言 (2): 关键字](<Notes/C/CNotes(2)-MemoryAndKeywords.md>)
+        - [C 语言 (3): 基本数据类型](<Notes/C/CNotes(3)-DataTypes.md>)
+        - [C 语言 (4): 数组与字符串](<Notes/C/CNotes(4)-ArrayAndString.md>)
+        - [C 语言 (5): 内存管理](<Notes/C/CNotes(5)-MemoryManagement.md>)
+        - [C 语言 (6): 特殊数据类型](<Notes/C/CNotes(6)-SpecialDataTypes.md>)
+        - [C 语言 (7): 预处理](<Notes/C/CNotes(7)-Preproccess.md>)
+        - [C 语言 (8): 输入输出函数](<Notes/C/CNotes(8)-IOFunctions.md>)
+    - Math
+        - [Calculus 1](Notes/Math/Calculus1Notes.md)
+        - [Calculus 2](Notes/Math/Calculus2Notes.md)
+        - [Linear Algebra 1](Notes/Math/LinearAlgebra1Notes.md)
+        - [Linear Algebra 2](Notes/Math/LinearAlgebra2Notes.md)
+        - [Numerical Methods for PDE](Notes/Math/NumericalMethodsForPDE.md)
+        - [Mathematical Physics Methods](Notes/Math/MathematicalPhysicsMathods.md)
+        - [Probability and Statistics](<Notes/MajorCourses/Probability and Statistics.md>)
+    - Physics
+
+        - [Mechanics](Notes/Phisics/Mecanics%20notes.md)
+        - [Electromagnetism](Notes/Phisics/Electromegnetism%20Notes.md)
+        - [Thermodynamics](Notes/Phisics/Thermodynamics%20notes.md)
+        - [Optics](Notes/Phisics/OpticsNotes.md)
+        - [Basic Physics Experiment](Notes/Phisics/BasicPhysicsExperiment.md)
+    - Cpp
+        - [Cpp (0)：准备](<Notes/Cpp/CppNotes(0)-Preparation.md>)
+    - Matlab
+        - [Matlab (0): Preparation](<Notes/Matlab/MatlabNotes(0)-Preparation.md>)
+        - [Matlab (1): Graphics](<Notes/Matlab/MatlabNotes(1)-Graphics.md>)
+        - [Matlab (2): Mathematics](<Notes/Matlab/MatlabNotes(2)-Mathematics.md>)
+        - [Matlab (3): Symbolic Math](<Notes/Matlab/MatlabNotes(3)-SymbolicMath.md>)
+        - [Matlab (4): Animations](<Notes/Matlab/MatlabNotes(4)-Animations.md>)
+    - Mathematical Modeling
+        - [MM (!): Skills](<Notes/MathematicalModeling/MM(!)-Skills.md>)
+        - [MM (1): Papers](<Notes/MathematicalModeling/MM(1)-Papers.md>)
+        - [MM (2): Optimization](<Notes/MathematicalModeling/MM(2)-Optimization.md>)
+        - [MM (3): PDE](<Notes/MathematicalModeling/MM(3)-PDE.md>)
+        - [MM (4): Data Processing](<Notes/MathematicalModeling/MM(4)-DataProcessing.md>)
+        - [MM (5): Problem B](<Notes/MathematicalModeling/MM(5)-ProblemB.md>)
+        - [MM (1.1): CUMCM 2020-A](<Notes/MathematicalModeling/MM(1.1)-CUMCM2020A.md>)
+        - [MM (1.2): CUMCM 2023-A](<Notes/MathematicalModeling/MM(1.2)-CUMCM2023A.md>)
+        - [MM (1.3): CUMCM 2023-B](<Notes/MathematicalModeling/MM(1.3)-CUMCM2023B.md>)
+        - [MM (1.4): CUMCM 2022-A](<Notes/MathematicalModeling/MM(1.4)-CUMCM2022A.md>)
+        - [MM (1.5): CUMCM 2024-A](<Notes/MathematicalModeling/MM(1.5)-CUMCM2024A.md>)
+    - MCU
+        - [MCU (0): Preparations](<Notes/MCU/MCUNotes(0)-Preparations.md>)
+        - [MCU (1): Keil Debug (STM32)](<Notes/MCU/MCUNotes(1)-KeilDebug(STM32).md>)
+        - [MCU (2): Timer (STM32)](<Notes/MCU/MCUNotes(2)-Timer(STM32).md>)
+        - [MCU (3): DMA (STM32)](<Notes/MCU/MCUNotes(3)-DMA(STM32).md>)
+        - [MCU (4): WiFi (ESP8266)](<Notes/MCU/MCUNotes(4)-WiFi(ESP8266).md>)
+        - [MCU (!): Tips and Tricks (STM32)](<Notes/MCU/MCUNotes(!)-TipsAndTricks(STM32).md>)
 
 
 

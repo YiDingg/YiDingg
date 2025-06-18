@@ -1,1 +1,0 @@
-# Miller Compensation in Basic Two-Stage Op Amp

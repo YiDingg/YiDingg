@@ -83,3 +83,5 @@ PMOS-input
 Self-Cascode
 LaTex
 UGF
+Nulling-Miller
+nulling
