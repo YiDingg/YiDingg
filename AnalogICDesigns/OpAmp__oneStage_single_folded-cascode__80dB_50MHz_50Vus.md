@@ -1,4 +1,4 @@
-# A Single-Ended Output Folded-Cascode Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR
+# A Single-Ended Output Folded-Cascode Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR (Simulated 81.33 dB, 51.59 MHz and +32.58/-35.22 V/us)
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 17:12 on 2025-06-11 in Beijing.

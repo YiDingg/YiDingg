@@ -197,11 +197,27 @@ hiSetBindKeys("Symbol" list(
 	)
 )
 
-
+; 前面有冒号注释的，要么是还未验证是否可行，要么是暂时不用
+hiSetBindKeys("Layout" list(
+    list("None<Btn4Down>" "geScroll(nil \"n\" nil)") ; 鼠标滚轮上滑, 界面上移:
+    list("None<Btn5Down>" "geScroll(nil \"s\" nil)") ; 鼠标滚轮下滑, 界面下移:
+    list("Ctrl<Btn4Down>" "hiZoomInAtMouse()") ; Ctrl + 鼠标滚轮上滑, 放大界面:
+    list("Ctrl<Btn5Down>" "hiZoomOutAtMouse()") ; Ctrl + 鼠标滚轮下滑, 缩小界面:
+    list("Ctrl<Key>Z" "hiUndo()") ; Ctrl + Z, 撤销:
+    list("Ctrl<Key>Y" "hiRedo()") ; Ctrl + Y, 重做:
+    list("<Key>space" "leSetEnv(\"rotate\" t)") ; 空格旋转
+    list("Ctrl<Key>s" "leHiSave()") ; Ctrl + S 保存
+    list("<Key>x" "leSetEnv(\"sideways\" t)") ; x 翻转
+    list("None<Btn3Down>" "" "cancelEnterFun()") ; 鼠标右键用作 esc (esc 太远了)
+    list("Ctrl<Key>c" "leHiCopy()") ; Ctrl + C 复制
+    ; list("<Key>d" "leHiCreateNoteShape()") ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
+    list("<Key>a" "leHiCreateInst()") ; 按键 A 添加 instance (默认功能是 geSingleSelectPoint()), 用于替代按键 I
+	)
+)
 
 ; 设置 label, text, ciw 的字体和字号, 如果 "roman" 不起作用改为 "times" 即可
 hiSetFont( "ciw" ?name "mono" ?size 18 ?bold nil ?italic nil ) ; "mono" 即为 "monospace"
-hiSetFont( "label" ?name  "Open Sans" ?size 15 ?bold nil ?italic nil ) ; "label" 既是 toolbar 的字体, 也是打开某些设置界面的字体, 因此 "label" 字号不宜过大, 否则会导致表单文字重叠
+hiSetFont( "label" ?name  "Open Sans" ?size 14 ?bold nil ?italic nil ) ; "label" 既是 toolbar 的字体, 也是打开某些设置界面的字体, 因此 "label" 字号不宜过大, 否则会导致表单文字重叠
 ; hiSetFont( "text" ?name "roman" ?size 18 ?bold nil ?italic nil ) ; 2025.05.25 暂时没找到 text 是对应哪个界面的字体
 
 ; 设置 log filter 的默认输出
@@ -543,6 +559,20 @@ hiFormDone(notifyStarLevelSettingsNotAppliedToAll)
 
 
 以运放为例，在打开了只有运放 symbol 的 schematic 中，对着运放 `shift + e` 可以打开其运放内部的原理图，然后 `Calculator > It` 点击刚刚打开的运放原理图，即可进行选择，将晶体管级的信息加入到 output 栏。
+
+
+### 5. accelerate the simulation speed
+
+如何加快仿真速度？ ADE L 和 ADE XL 都有相应的设置可以调节。
+
+对于 ADE L, xxx...
+
+
+对于 ADE XL, 一种方法是 `ADE XL > Data View > 双击 "Tests" 下方的 cellview name > Setup > High-Performance Simulation > APS > Processor affinity` 修改“处理器亲和度”；另一种方法是多个仿真并行 (同时进行)，点击 `ADE XL > Option > Job Setup > Max Jobs` 修改最大并行仿真数量，然后 点击 `ADE XL > Option > Run Options > Parallel`
+
+### 6. more schematics in one cellview
+
+很多时候，为了测试一个已经搭建好的模块 (例如 op amp) ，我们需要多种不同的外围仿真电路来测试它的性能。此时，我们可以在同一个 cellview 中添加多个 schematic, 而不需要新建多个 cellview. 类似地，如果一个模块在不同的测试环境下会有所改动，那么我们也可以在同一个 cellview 中添加多个 schematic, 以便于测试。
 
 ## Other Tips and Tricks
 
@@ -889,18 +919,16 @@ mkdir -p /home/IC/a_Win_VM_shared/a_Misc/Cadence_Data/tsmc18rf_gmIdData_nmos2v
 报错如下：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-18-18-51-42_How to Use Cadence Efficiently.png"/></div>
 
+出现这种情况，通常是在上一次编辑 cellview 时软件异常关闭导致的。因为后缀带 lck 的文件会在你打开 schematic 的时候出现，正确关闭 schematic 该文件会消失。如果你错误的关闭了 schematic, 这个文件将会被保留，在你下次打开的时候就无法编辑。
+
 解决方法：到工程目录的 Cadence_Projects 文件夹下找到 `sch.oa.cdslck` 和 `sch.oa.cdslck.RHEL30.IC.6615` 两个文件，删除后即可恢复正常。
-因为后缀带 lck 的文件会在你打开 schematic 的时候出现，正确关闭 schematic 该文件会消失。如果你错误的关闭了 schematic, 这个文件将会被保留，在你下次打开的时候就无法编辑。
 
 
-<!-- 
-- 方法 1:
-    - 删掉 `cds.log.cdslck` 文件
-    - 在相应电路图的目录下找到 schematic 中会看到一个带有 lck 的文件，删掉它
-    -
-- 方法 2: 如果你的文件放在/mnt/hdfs共享文件夹中，请把他放到虚拟机内。
-- 方法 3: 电路图如果只能 read 不能 edit, 在 Virtuso Schematic 原理图对话框显示界面，左边的工具栏就显示灰色，无法点击。解决办法是，点击 `Design > Make Editable` 即可，此时你就可以编辑电路图了。 -->
+如果软件异常关闭，导致多个 schematic 下存在 lck 文件，一个个删除太过繁琐，该怎么办呢？参考 [Bilibili > 模拟 IC 设计中的软件操作: Cadence Virtuoso Library Manager 库的管理与工程移植](https://www.bilibili.com/video/BV1Xd4y147ZG) 的第 21 分 05 秒，我们可以在工作目录打开 terminal, 输入以下代码：
 
+``` bash
+find . -name "*.cdslck" -exec rm -f {} \;   # 递归搜索并删除当前目录下所有名称结尾是 ".cdslck" 字符的文件
+```
 
 
 

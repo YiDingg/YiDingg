@@ -2,7 +2,8 @@
 - [🔎 **Navigation Page**](_sidebar.md)
 - [📃 **Timeline**](TimeLine.md)
 - [👋 **About** 🎓](README.md)
-<!-- - [📰 **To Be Dealing With**](ToBeDealingWith.md) -->
+
+    <!-- - [📰 **To Be Dealing With**](ToBeDealingWith.md) -->
 
 
 
@@ -26,14 +27,18 @@
     - [**[Pinned] Collection of My Measurement Experiments**](<Electronics/The Collection of My Measurement Experiments.md>)
 
     - Cadence Tutorials
+
         - [0. How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
         - [1. How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)<!--  -->
         - [2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
         - [3. How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
-        - [4. Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
-
+        - [4. Simulate Chara. of MOSFETs in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
+        - [!  Cadence Virtuoso Layout Tutorials](<AnalogIC/Cadence Virtuoso Layout Tutorials.md>)
+        - [!  Cadence Layout Example of The Basic Two-Stage Op Amp](<AnalogIC/Cadence Layout Example of The Basic Two-Stage Op Amp.md>)
+        
 
     - Analog IC (2025, 22 items)
+
         - [Reference Current Generation Methods](<AnalogIC/Reference Current Generation Methods.md>)
         - [! Design Sheet of Basic Two-Stage Op Amp](<AnalogICDesigns/Design Sheet of Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>)
         - [Miller Compensation in Basic Two-Stage Op Amp](<AnalogIC/Miller Compensation in Basic Two-Stage Op Amp.md>)

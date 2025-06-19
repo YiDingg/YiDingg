@@ -1,4 +1,4 @@
-# How to Add New Process Libraries in Cadence IC618 <br> Cadence Virtuoso 教程 (二)：开源工艺库分享以及 Cadence IC618 工艺库添加教程
+# How to Add New Process Libraries in Cadence IC618 
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 13:25 on 2025-05-22 in Beijing.
@@ -7,11 +7,13 @@
 
 本文的手动导入方法可以使用绝大多数的工艺库：包括 CDB 格式 (未标有 OA 字样的一般都是 CDB) 和 OA 格式，对于“非散装”工艺库，我们也给出了解决办法。本文的示例便是导入操作最繁琐的 “非散装” CDB 格式工艺库，读者可以对号入座，直接从对应的步骤开始即可。
 
-## 脚本安装 PDK 工艺库
+
+
+## 一、脚本安装 PDK 工艺库
 
 **注：此方法在笔者的虚拟机上安装失败，暂时没有成功的例子，建议跳转至第二种方法“手动安装 PDK 工艺库”**
 
-以自带安装脚本的  `tsmc18_pdk` 工艺库为例 (台积电 CMOS 180nm), 工艺库文件名称 `tsmc18rf_pdk_v13d.zip`, 其中的 "pdk" 是 "process design kit" 的缩写，"rf" 是 "radio frequency" 的缩写，"v13d" 是版本号。下载链接在 
+以自带安装脚本的  `tsmc18_pdk` 工艺库为例 (台积电 CMOS 180nm), 工艺库文件名称 `tsmc18rf_pdk_v13d.zip`, 其中的 "pdk" 是 "process design kit" 的缩写，"rf" 是 "radio frequency" 的缩写，"v13d" 是版本号。下载链接在 https://www.123684.com/s/0y0pTd-0uUj3
 
 1. 在主机 (windows) 下载并解压 `tsmc18rf_pdk_v13d.zip`，得到 `tsmc18rf_pdk_v13d` 文件夹，包含以下文件：
 
@@ -42,7 +44,7 @@
 
 
 
-## 手动安装 PDK 工艺库
+## 二、手动安装 PDK 工艺库
 
 ### 1. 解压文件夹
 
@@ -86,7 +88,7 @@ cp -r /home/IC/a_Win_VM_shared/Cadence_Process_Library_Backup/tsmc18rf_pdk_v13d/
     - (6) 工艺信息文件夹：`tsmc18rf` (通常与工艺库名称直接相同)
 
 
-### CDB to OA (Method 1)
+### 3. CDB to OA (Method 1)
 
 !> **<span style='color:red'>Attention:</span>**<br>
 注：此方法有一个缺点：转换后的文件/文件夹会直接堆在我们的工作文件夹下，容易造成混乱。因此，我们考虑下面的 Method 2 (不用看 Method 1 了，没必要)
@@ -104,7 +106,7 @@ sudo mv /Cadence_Process_Library/TSMC18RF_PDK_v13d /home/IC/Cadence_Process_Libr
 ```
 
 
-### CDB to OA (Method 2)
+### 4. CDB to OA (Method 2)
 
 工艺库不能位于 virtuoso 的打开路径下，本质只是路径冲突。换句话说，如果我们换一个地方打开 virtuoso, 完成格式转换之后，再将转化后的 OA 格式文件夹复制回 `<Installed_Path>`，是不是就可以完成 CDB to OA 转换呢？事实证明，这种方法是可行的，具体步骤如下：
 
@@ -150,7 +152,7 @@ rm -i /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA/tsmc18rf/prop.xx   #
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-17-53-16_How to Add New Process Libraries in Cadence IC618.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-17-54-34_How to Add New Process Libraries in Cadence IC618.png"/></div>
 
-至此，导入工作全部结束，可以愉快地使用新工艺库咯！
+**<span style='color:red'> 至此，导入工作全部结束，可以愉快地使用新工艺库咯！ </span>**
 
 如果嫌工艺库所占空间太大，可以删除工艺库原始文件 (未整合的 CDB 工艺库) `<Original_Path> = /home/IC/a_Win_VM_shared/Cadence_Process_Library_Backup/tsmc18rf_pdk_v13d`，删除整合过的 CDB 工艺库 `<Installed_Path> = /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d`，**但是不能删除 OA 格式工艺库**（我们导入到 virtuoso 里的就是它）。
 
@@ -183,7 +185,7 @@ rm -i /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA/tsmc18rf/prop.xx   #
  -->
 
 
-### Simulation Verification
+### 5. 仿真验证
 
 下面，我们利用导入的工艺库进行一个简单的 inverter 仿真，以验证工艺库导入成功。此部分步骤没有详细说明，因为我们已经出过仿真教程 [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)，下面是仿真步骤的简要总结：
 1. 在任意 Library 中新建一个 Cellview, 命名为 `inverter_tsmc18rf`，表示我们使用的是 `tsmc18rf` 工艺库
@@ -201,7 +203,7 @@ rm -i /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA/tsmc18rf/prop.xx   #
 
 
 
-## 导入方式总结
+## 三、导入方式总结
 
 - 事实上，我们在本文导入的是操作最复杂的一个工艺库：
     - CDB 格式：需要我们手动转换为 OA 格式
@@ -216,9 +218,9 @@ rm -i /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA/tsmc18rf/prop.xx   #
 
 
 
-## More Process Libraries
+## 四、常见工艺库分享
 
-我们在这里分享几个常见的工艺库，仅供学习参考，禁止商用！
+我们在这里分享几个常见的工艺库, **仅供学习交流使用，请在下载 24 小时后彻底删除，禁止商用！**
 
 下载链接：[123 云盘 (主链接)](https://www.123684.com/s/0y0pTd-0uUj3), [123 云盘链接 2 (备用链接)](https://www.123912.com/s/0y0pTd-0uUj3)
 

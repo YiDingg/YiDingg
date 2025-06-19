@@ -1,4 +1,4 @@
-# A Basic Two-Stage Nulling-Miller Compensation Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR at 5pF Load
+# A Basic Two-Stage Nulling-Miller Compensation Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR at 5pF Load (Simulated 84.35 dB, 55.75 MHz and +56.31/-45.35 V/us)
 
 > [!Note|style:callout|label:Infor]
 Initially published at 10:32 on 2025-06-17 in Beijing.
@@ -652,8 +652,26 @@ $$
 ADL XL 会自动保存最近几次 (默认 10 次) 的仿真数据，要查看之前的数据，只需在左侧 `Data View > 右键某次数据 > View Results` 即可。 
 
 
+## 5. Conner Simulation
+
+这一小节进行运放 ac frequency response 的工艺角仿真。
+
+工艺角中的 ss, tt, ff 分别是指左下角、中心、右上角的 corner. 它们的含有如下：
+
+| **工艺角** | **NMOS** | **PMOS** | **主要影响** | **典型用途** |
+|------------|---------|---------|-------------|-------------|
+| **tt** | 典型 | 典型 | 基准性能 | 标准验证 |
+| **ss** | 慢 | 慢 | 高延迟、低功耗 | 最坏时序分析 |
+| **ff** | 快 | 快 | 低延迟、高功耗 | 信号完整性 |
+| **sf** | 慢 | 快 | NMOS 弱、PMOS 强 | 电平转换问题 |
+| **fs** | 快 | 慢 | NMOS 强、PMOS 弱 | 竞争条件分析 |
 
 
+打开 `ADE XL > Data View > Corners > Add Model Files > Import From Tests > Add New Corner (温度计) > choose corner (可以多点几次温度计) > rename corner test` 进行设置。设置完成后，点击 `Run Simulation` 开始仿真，结果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-18-23-53-43_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.png"/></div>
+
+可以看到，除了 dc gain 在 ff 工艺角下只有 79.7 dB, 其他指标都很好地满足了 specs 要求。
 
 ## 6. Design Summary
 
@@ -663,7 +681,7 @@ ADL XL 会自动保存最近几次 (默认 10 次) 的仿真数据，要查看�
 
 | Parameter | Value |
 |:-:|:-:|
- | DC gain              |  84.3461 dB @ Vin_CM = 0.9 V |
+ | DC gain              |  84.35 dB @ Vin_CM = 0.9 V |
  | Output swing         | 0.881 V @ -3dB drop <br> 0.985 V @ 80dB gain <br> 1.38 V @ 60dB gain |
  | IMCR                 | (0.481 V, 1.568 V) =  1.087 V @ 80dB gain <br> (0.456 V, 1.697 V) = 1.242 V @ 60dB gain |
  | UGF                  | 55.75 MHz @ Vin_CM = 0.9 V |
