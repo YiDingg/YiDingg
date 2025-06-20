@@ -454,7 +454,7 @@ $$
 GBW 原本是按 60MHz 设计的，但由于我们使用的 transistor 已经算非常大了 (width 和 length 都比较高), 受寄生电容的影响, GBW 稍有下降。另外，上面的 current consumption 并没有考虑 biasing current, 考虑 1:10 的 bias 后总 current 约为 377.0 uA 。
 
 
-这篇文章的主要目的有二，其一是借助一个简单的设计例子，学习 gm-Id 设计方法的流程和思路；其二便是进一步熟悉 cadence 的使用，尤其是如何利用 SKILL 语言修改设置、快速执行某些操作等，这对日后在 cadence 中进行更复杂的设计是非常有帮助的。总的来讲，本次设计在 design idea 上并没有花多少时间，时间主要消耗在了 cadence 的探索、配置文件的修改优化和 SKILL 语言的基本使用上，最终为文章 [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>) 贡献了相当多的内容。
+这篇文章的主要目的有二，其一是借助一个简单的设计例子，学习 gm-Id 设计方法的流程和思路；其二便是进一步熟悉 cadence 的使用，尤其是如何利用 SKILL 语言修改设置、快速执行某些操作等，这对日后在 cadence 中进行更复杂的设计是非常有帮助的。总的来讲，本次设计在 design idea 上并没有花多少时间，时间主要消耗在了 cadence 的探索、配置文件的修改优化和 SKILL 语言的基本使用上，最终为文章 [How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>) 贡献了相当多的内容。
 
 
 ### 8. 20250612: tran simul.

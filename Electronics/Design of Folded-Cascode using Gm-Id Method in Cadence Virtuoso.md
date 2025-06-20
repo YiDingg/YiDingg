@@ -674,7 +674,7 @@ $$
 
 ### 3.4 dc gain correction
 
-大概有 76 dB 的最高增益，这仍然无法达到要求，这是为什么呢？参考文章 [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>) 中的 tip, 将晶体管的 self_gain 等静态工作点在 schematic 中直接标出，结果如下：
+大概有 76 dB 的最高增益，这仍然无法达到要求，这是为什么呢？参考文章 [How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>) 中的 tip, 将晶体管的 self_gain 等静态工作点在 schematic 中直接标出，结果如下：
 
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-23-12-17_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
  -->

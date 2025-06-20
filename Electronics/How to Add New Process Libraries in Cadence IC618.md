@@ -58,7 +58,7 @@
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-14-26-07_How to Add New Process Libraries in Cadence IC618.png"/></div>
 
-4. 将文件夹 `tsmc18rf_pdk_v13d` 移动到共享文件夹中，共享文件夹教程见 [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>).
+4. 将文件夹 `tsmc18rf_pdk_v13d` 移动到共享文件夹中，共享文件夹教程见 [How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>).
 5. 打开虚拟机，在共享文件夹中找到刚刚解压好的总文件夹 `tsmc18rf_pdk_v13d`，例如我的路径为 `<Original_Path> = /home/IC/a_Win_VM_shared/Cadence_Process_Library_Backup/tsmc18rf_pdk_v13d`
 
 ### 2. 调整文件夹为合适的格式
@@ -197,7 +197,7 @@ rm -i /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA/tsmc18rf/prop.xx   #
 7. 重新运行仿真，仿真结果正常弹出，如下图所示：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-19-28-50_How to Add New Process Libraries in Cadence IC618.png"/></div>
 
-7. 当然，也可以调整一下背景图的颜色、线条的颜色和粗细（详见文章 [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>) 的 Color Preferences 部分）：
+7. 当然，也可以调整一下背景图的颜色、线条的颜色和粗细（详见文章 [How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>) 的 Color Preferences 部分）：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-20-31-56_How to Add New Process Libraries in Cadence IC618.png"/></div>
 
 

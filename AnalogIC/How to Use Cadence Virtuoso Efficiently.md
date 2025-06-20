@@ -5,8 +5,8 @@
 
 
 Cadence 相关教程汇总：
-- [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
-- [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)
+- [How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)
+- [How to Install Cadence IC618](<AnalogIC/Virtuoso Tutorials - 1. How to Install Cadence IC618.md>)
 - [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
 - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
 - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
@@ -16,7 +16,7 @@ Cadence 相关教程汇总：
 ## Install Cadence IC618
 
 
-详见文章 [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>).
+详见文章 [How to Install Cadence IC618](<AnalogIC/Virtuoso Tutorials - 1. How to Install Cadence IC618.md>).
 
 
 ## Setting Tips
@@ -57,7 +57,7 @@ Cadence 相关教程汇总：
 
 我们可以利用 `.cdsinit` (cadence software initialization) 和 `.cdsenv` (cadence software environment parameters) 文件来配置一些每次启动 virtuoso 都生效的默认设置，这两个文件需要与 `cds.lib` 在同一目录。
 
-- 按教程 [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>) 安装的 cadence, 其安装路径 `<Cadence_Install_Directory>` 为 `/opt/eda/cadence/IC618`
+- 按教程 [How to Install Cadence IC618](<AnalogIC/Virtuoso Tutorials - 1. How to Install Cadence IC618.md>) 安装的 cadence, 其安装路径 `<Cadence_Install_Directory>` 为 `/opt/eda/cadence/IC618`
 - 找到 `<Cadence_Install_Directory>/tools/dfII/samples/.cdsenv` 文件，将其复制到工作目录 (virtuoso 启动目录) 下，例如 `/home/IC/.cdsenv` 
 - 找到 `<Cadence_Install_Directory>/tools/dfII/samples/local.cdsinit` 文件，将其复制到工作目录 (virtuoso 启动目录) 下，例如 `/home/IC/.cdsinit`。然后需要做修改：<span style='color:red'> 搜索 `LOAD USER CUSTOMIZATION` (文件的最后几行), 在其下每一行添加一个分号 `;`, 将这一部分的内容全部注释掉，否则 virtuoso 不能正常启动</span>
 
@@ -931,8 +931,8 @@ find . -name "*.cdslck" -exec rm -f {} \;   # 递归搜索并删除当前目录�
 ```
 
 
-
-
+<!-- AnalogIC/How to Use Cadence Virtuoso Efficiently.md
+AnalogIC/How to Use Cadence Virtuoso Efficiently.md -->
 
 
 

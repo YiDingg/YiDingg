@@ -21,21 +21,26 @@
 
 - 💡 **My Blogs**
 
-    - [**[Pinned] How to Use Cadence Efficiently**](<Electronics/How to Use Cadence Efficiently.md>)
+    - [**[Pinned] How to Use Cadence Efficiently**](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)
     <!-- - [**[Pinned] Roadmap for Analog ICer**](<Electronics/Roadmap for Analog ICer.md>) -->
     - [**[Pinned] Collections of Electronic Websites**](<Electronics/Collection of Electronic Websites.md>)
     - [**[Pinned] Collection of My Measurement Experiments**](<Electronics/The Collection of My Measurement Experiments.md>)
 
-    - Cadence Tutorials
+    - Virtuoso Tutorials
 
-        - [0. How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
-        - [1. How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)<!--  -->
+        - [0. How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)
+        - [1. How to Install Cadence IC618](<AnalogIC/Virtuoso Tutorials - 1. How to Install Cadence IC618.md>)<!--  -->
         - [2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
         - [3. How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
         - [4. Simulate Chara. of MOSFETs in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
         - [!  Cadence Virtuoso Layout Tutorials](<AnalogIC/Cadence Virtuoso Layout Tutorials.md>)
         - [!  Cadence Layout Example of The Basic Two-Stage Op Amp](<AnalogIC/Cadence Layout Example of The Basic Two-Stage Op Amp.md>)
-        
+
+    - Virtuoso ADE Assembler Tutorials
+        - [0. Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)
+        - [1. Getting Started with Virtuoso ADE Assembler](<AnalogIC/ADE Assembler - 1. Getting Started with Virtuoso ADE Assembler.md>)
+
+
 
     - Analog IC (2025, 22 items)
 
@@ -52,11 +57,6 @@
         - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<Electronics/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)
         - [Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>)
         - [Design Example of F-OTA using Gm-Id Methodology](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
-        - [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
-        - [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
-        - [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
-        - [How to Install Cadence IC618](<Electronics/How to Install Cadence IC618.md>)<!--  -->
-        - [How to Use Cadence Efficiently](<Electronics/How to Use Cadence Efficiently.md>)
         - [Design Example of Folded-Cascode Stage using LTspice](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>)
         - [Gain Boosting Techniques](<Electronics/[Razavi CMOS] Gain Boosting Techniques.md>)
         - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)<!--  -->
