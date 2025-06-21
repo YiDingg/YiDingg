@@ -27,9 +27,9 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C323%20hrs%207%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C332%20hrs%2048%20mins-blue)
 
-![Profile Views](http://img.shields.io/badge/Profile%20Views-31-blue)
+![Profile Views](http://img.shields.io/badge/Profile%20Views-30-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-814.3%20thousand%20lines%20of%20code-blue)
 
@@ -58,18 +58,18 @@ Sunday                   203 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 32 hrs 36 mins      █████████████████████░░░░   85.37 % 
-TeX                      5 hrs 33 mins       ████░░░░░░░░░░░░░░░░░░░░░   14.57 % 
-Other                    1 min               ░░░░░░░░░░░░░░░░░░░░░░░░░   00.05 % 
+Markdown                 37 hrs 50 mins      ███████████████████████░░   92.33 % 
+TeX                      3 hrs 7 mins        ██░░░░░░░░░░░░░░░░░░░░░░░   07.64 % 
+Other                    0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.02 % 
 BibTeX                   0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.01 % 
 Objective-C              0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               32 hrs 14 mins      █████████████████████░░░░   84.44 % 
-GH.UCAS-LinearCircuitExpe3 hrs 51 mins       ███░░░░░░░░░░░░░░░░░░░░░░   10.08 % 
-大英四期末论文                  1 hr 55 mins        █░░░░░░░░░░░░░░░░░░░░░░░░   05.04 % 
-Unknown Project          9 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.42 % 
+GH.YiDingg               37 hrs 28 mins      ███████████████████████░░   91.44 % 
+大英四期末论文                  1 hr 55 mins        █░░░░░░░░░░░░░░░░░░░░░░░░   04.69 % 
+GH.UCAS-LinearCircuitExpe1 hr 34 mins        █░░░░░░░░░░░░░░░░░░░░░░░░   03.85 % 
 GH.LatexNotes            0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.01 % 
+GH.MatlabCodes           0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
 ```
 
 **I Mostly Code in C** 
@@ -85,7 +85,7 @@ TypeScript               1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2025.06.20 18:46 UTC
+ Last Updated on 2025.06.21 18:43 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
