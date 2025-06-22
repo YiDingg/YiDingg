@@ -118,6 +118,7 @@
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-19-01-37-29_Cadence Layout Example of The Basic Two-Stage Op Amp.png"/></div>
 
+注：事实上，将近 100 um 的 unit width 仍然是非常大的，我们在实际中可能需要更多的 multiplier 以降低 width. 但是，作为一个 "layout example", 我们只需给出 layout 的基本思路和方法，因此便不进一步增大 multiplier 了。
 
 ### 1.4 create layout
 
@@ -134,8 +135,110 @@
 
 
 
-## 2. Layout Steps
+## 2. Layout Details
 
-Layout 时用到的各种快捷键详见文章 [Cadence Virtuoso Layout Tutorials](<AnalogIC/Cadence Virtuoso Layout Tutorials.md>)。
 
-### 2.1 
+
+Layout 时用到的各种快捷键详见文章 [Cadence Virtuoso Layout Tutorials](<AnalogIC/Cadence Virtuoso Layout Tutorials.md>)，下面是几个最基本的快捷键：
+- `f`: 适合窗口 (Fit to View) 
+- `Shift + f`: 显示器件详细样式
+- `Ctrl + f`: 不显示器件详细样式
+- `r`：绘制矩形 (Rectangle) 
+- `p`：绘制路径 (Path) 
+- `c`：复制 (Copy) 
+- `m`：移动 (Move) 
+- `q`：属性编辑 (Property) 
+- `k`：直尺 (Ruler) 
+- `shift + k`: 删除所有 ruler
+- `shift + o`: rotate
+
+下面参考 [this video](https://www.bilibili.com/video/BV1r24y1f7kP) 进行基本的 layout 操作。
+
+### 2.0 Add Dummy
+
+添加 dummy 管, nmos dummy 端口都连接 VSS, pmos dummy 端口都连接 VDD. 
+
+### 2.1 器件布局
+
+`Connectivity > Generate > Place As in Schematic` (按原理图结构排布所有器件)。可以适当修改 display style, 使得 layout 界面更清晰：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-20-15-50-32_Cadence Layout Example of The Basic Two-Stage Op Amp.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-20-15-49-42_Cadence Layout Example of The Basic Two-Stage Op Amp.png"/></div>
+
+在我们的工艺库 (tsmc18rf), align 对齐时所设置的距离就是外边界的距离 (unit: um), 有的工艺库可能是有源区的距离。
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-20-16-00-17_Cadence Layout Example of The Basic Two-Stage Op Amp.png"/></div>
+
+依次对各组晶体管进行 “对齐 + 组合” 操作：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-20-18-48-56_Cadence Layout Example of The Basic Two-Stage Op Amp.png"/></div>
+
+一些细节的东西，像如何摆放晶体管可以提高匹配性 (ABAB 之类的)，比较进阶且繁琐，我们在本文不涉及。等后续专门写一篇/几篇文章来介绍。
+
+### 2.2 金属连接
+
+
+这一步包括各种 via, guard ring 和 metal connection 等，关于如何创建 guard ring template, 参考文章 [Cadence Virtuoso Layout Tutorials](<AnalogIC/Cadence Virtuoso Layout Tutorials.md>)
+
+1. Gate to `METAL1`: 
+    - (1) 点击工具栏中的 `Transparent Group`, 暂时隐藏所有 group 关系，然后在各 mos 的 gate 处添加 M1_POLY1 的 via, 将 gate 连接到 M1 (metal 1) 金属层
+    - (2) 这一步可以利用阵列复制来提高效率
+    - (3) 对于 gate 两端较长的晶体管 (width 较长), 可以考虑在两端都添加 via 连接到 M1
+
+
+
+2. 金属连线
+    - 依据“奇数层 (M1, M3, ...) 走竖线，偶数层 (M2, M4, ...) 走横线”的原则，对电路进行连接
+    - 走线时需注意尽量减少寄生电容和电感，并且大电流支路的走线不能太窄
+
+
+
+
+3. Add guard ring: 对每一组 nmos/pmos 都添加一个 guard ring, 注意 nmos guard ring 连接到 VSS, pmos guard ring 连接到 VDD. 
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-20-19-54-46_Cadence Layout Example of The Basic Two-Stage Op Amp.png"/></div>
+
+
+### 2.3 衬底与阱
+
+
+
+### 2.4 IO Pad and ESD
+
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-20-15-30-32_Cadence Layout Example of The Basic Two-Stage Op Amp.png"/></div> -->
+
+
+## 3. DRC and LVS
+
+
+### 3.1 DRC 
+
+
+将 Calibre 集成到 Cadence Virtuoso 工具栏：
+``` bash
+; 将 Calibre 集成到 Cadence Virtuoso 工具栏
+skillPath=getSkillPath();
+setSkillPath(append(skillPath list("/opt/eda/mentor/calibre2019/aoj_cal_2019.3_15.11/lib"))); the installing path of your Calibre
+load("calibre.OA.skl");
+```
+
+重新打开 layout 界面，点击工具栏上的 `Calibre`，选择 design rule check file, 然后 `Run DRC`。如果 inputs 一栏中的 `Layout File` 和 `Top Cell` 没有正确显示，关闭并重新打开 `Calibre` 即可。
+
+如果遇到报错：
+
+``` bash
+ERROR: Specified primary cell xxx is not located within the input layout database.
+```
+
+大概率是 cellview 的名称中使用了小数点 `.` 或连字符 `-`，将 cellview 重命名之后即可解决 (from [this article](https://bbs.eetop.cn/thread-616018-3-1.html))。我们一开始就是因为 cellview 的名称中含有连字符 `-` 从而报错，修改后即可正常 Run DRC.
+
+双击错误可以高亮，如果觉得高亮不明显，可以随便选择一个 layer 然后 `NV` 隐藏其它层。
+
+如果只想看 DRC 的错误，点击左上角的 `filter > show unresolved`。可以到 design rule 的文档中搜索错误代码具体是指哪些错误，下面是几个常见的 DRC 错误：
+- `NW.S.1 { @ Minimum different potential NWEL space < 1.40`: 报错说不同电位的 nwell 距离小于了 1.40 um, 通常是一组 pmos 直接 nwell 间距过小导致的，用一个大的 nwell 包含整个 pmos 组 (包括 guard ring) 即可解决
+- `PP.R.1_NP.R.1 { @ PP and NP not allowed to overlap`
+
+2025.06.21 00:52, layout 暂时到这里吧，没有人带真的太慢了。 
+
+file:///opt/eda/mentor/calibre2019/aoj_cal_2019.3_15.11/docs/pdfdocs/calbr_admin_gd.pdf

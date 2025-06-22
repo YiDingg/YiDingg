@@ -187,7 +187,7 @@ rm -i /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA/tsmc18rf/prop.xx   #
 
 ### 5. 仿真验证
 
-下面，我们利用导入的工艺库进行一个简单的 inverter 仿真，以验证工艺库导入成功。此部分步骤没有详细说明，因为我们已经出过仿真教程 [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)，下面是仿真步骤的简要总结：
+下面，我们利用导入的工艺库进行一个简单的 inverter 仿真，以验证工艺库导入成功。此部分步骤没有详细说明，因为我们已经出过仿真教程 [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)，下面是仿真步骤的简要总结：
 1. 在任意 Library 中新建一个 Cellview, 命名为 `inverter_tsmc18rf`，表示我们使用的是 `tsmc18rf` 工艺库
 2. 打开原理图，使用 `tsmc18rf` 工艺库中的 `nmos` 和 `pmos` 组件搭建 inverter 电路
 3. 如果出现原理图器件一片黄的问题，大概是 attach 时出现了某些错误，将工艺库的 `display.drf` 文件复制到 virtuoso 的启动目录 `/home/IC/`，然后重启 virtuoso 即可 

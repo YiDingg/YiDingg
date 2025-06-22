@@ -38,3 +38,10 @@ Cadence 安装教程、实用技巧和仿真示例等详见 [How to Use Cadence 
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-25-14-18-50_Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-25-14-29-07_Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).png"/></div>
+
+## Relevant Resources
+
+下面是与 Cadence Virtuoso 相关的一些资料/教程：
+
+- [西安交通大学 Cadence 入门教程 (2006.07.19)](https://picture.iczhiku.com/resource/eetop/whiRzEWyJywsSmBc.pdf)
+

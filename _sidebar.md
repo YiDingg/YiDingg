@@ -21,29 +21,30 @@
 
 - 💡 **My Blogs**
 
-    - [**[Pinned] How to Use Cadence Efficiently**](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)
-    <!-- - [**[Pinned] Roadmap for Analog ICer**](<Electronics/Roadmap for Analog ICer.md>) -->
-    - [**[Pinned] Collections of Electronic Websites**](<Electronics/Collection of Electronic Websites.md>)
-    - [**[Pinned] Collection of My Measurement Experiments**](<Electronics/The Collection of My Measurement Experiments.md>)
+
 
     - Virtuoso Tutorials
 
-        - [0. How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)
         - [1. How to Install Cadence IC618](<AnalogIC/Virtuoso Tutorials - 1. How to Install Cadence IC618.md>)<!--  -->
-        - [2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
-        - [3. How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
-        - [4. Simulate Chara. of MOSFETs in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
-        - [!  Cadence Virtuoso Layout Tutorials](<AnalogIC/Cadence Virtuoso Layout Tutorials.md>)
-        - [!  Cadence Layout Example of The Basic Two-Stage Op Amp](<AnalogIC/Cadence Layout Example of The Basic Two-Stage Op Amp.md>)
+        - [2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
+        - [3. How to Add New Process Libraries in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 3. How to Add New Process Libraries in Cadence IC618.md>)
+        - [4. Simulate Chara. of MOSFETs in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 4. Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
+        - [! 5. Cadence Layout Example of The Basic Two-Stage Op Amp](<AnalogIC/Cadence Layout Example of The Basic Two-Stage Op Amp.md>)
+        - [! 6. Cadence Virtuoso Layout Tutorials](<AnalogIC/Cadence Virtuoso Layout Tutorials.md>)
 
-    - Virtuoso ADE Assembler Tutorials
-        - [0. Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)
-        - [1. Getting Started with Virtuoso ADE Assembler](<AnalogIC/ADE Assembler - 1. Getting Started with Virtuoso ADE Assembler.md>)
+    - ADE Assembler Tutorials
+        - [0. Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/ADE Assembler - 0. How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)
+        - [! 1. Getting Started with Virtuoso ADE Assembler](<AnalogIC/ADE Assembler - 1. Getting Started with Virtuoso ADE Assembler.md>)
+
+    - How to Use Virtuoso Efficiently
+        - [! 0. How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)
 
 
 
-    - Analog IC (2025, 22 items)
+    - Analog IC Blogs (2025, 22 items)
 
+        - [An Introduction to Noise](<AnalogIC/An Introduction to Noise.md>)
+        - [The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogIC/The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation.md>)
         - [Reference Current Generation Methods](<AnalogIC/Reference Current Generation Methods.md>)
         - [! Design Sheet of Basic Two-Stage Op Amp](<AnalogICDesigns/Design Sheet of Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>)
         - [Miller Compensation in Basic Two-Stage Op Amp](<AnalogIC/Miller Compensation in Basic Two-Stage Op Amp.md>)
@@ -144,6 +145,21 @@
         - [嘉立创免费下单教程](Electronics/嘉立创免费下单教程.md)
         - [手把手教你用 PWM 实现呼吸灯(标准库)](Electronics/手把手教你用PWM实现呼吸灯(标准库).md)<!--  -->
         - [新版 Keil MDK 中无 Compiler_V5](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
+
+    - [**[Pinned] How to Use Cadence Efficiently**](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)
+    <!-- - [**[Pinned] Roadmap for Analog ICer**](<Electronics/Roadmap for Analog ICer.md>) -->
+    - [**[Pinned] Collections of Electronic Websites**](<Electronics/Collection of Electronic Websites.md>)
+    - [**[Pinned] Collection of My Measurement Experiments**](<Electronics/The Collection of My Measurement Experiments.md>)
+
+
+
+
+
+
+
+
+
+
 
 - 📱 **Analog IC Designs** <!-- 新的 design 放在前面 -->
     - Op Amp

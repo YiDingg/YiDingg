@@ -104,6 +104,6 @@ Cadence IC 的完整安装需要在 Linux 系统 (或虚拟机) 上进行，并�
 ## Add New Process Library
 
 
-详见 [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)。另外, Cadence 的相关教程已经全部汇总在了 [知乎专栏: Cadence Tutorials](https://www.zhihu.com/column/c_1917022837237081134), 读者可移步专栏查看更多内容。
+详见 [How to Add New Process Libraries in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 3. How to Add New Process Libraries in Cadence IC618.md>)。另外, Cadence 的相关教程已经全部汇总在了 [知乎专栏: Cadence Tutorials](https://www.zhihu.com/column/c_1917022837237081134), 读者可移步专栏查看更多内容。
 
 

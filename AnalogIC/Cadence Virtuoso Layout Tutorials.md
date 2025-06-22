@@ -39,7 +39,7 @@ Layout (版图设计) 是 IC 设计的核心环节，主要包括 layout, DRC/LV
 
 最基本的几个快捷键：
 
-- **快捷键**：
+<!-- - **快捷键**：
   - `Shift + F`：适合窗口 (Fit to View) 
   - `F3`：调出当前工具的选项面板
   - `r`：绘制矩形 (Rectangle) 
@@ -48,7 +48,7 @@ Layout (版图设计) 是 IC 设计的核心环节，主要包括 layout, DRC/LV
   - `m`：移动 (Move) 
   - `q`：属性编辑 (Property) 
   - `k`：标尺 (Ruler) 
-  - `Ctrl + D`：取消选择
+  - `Ctrl + D`：取消选择 -->
 
 其它快捷键 (from [this article](https://adityamuppala.github.io/assets/Notes_YouTube/Cadence_Hotkeys.pdf))：
 
@@ -70,9 +70,42 @@ Layout 可能用到的一些图标如下 (from [this article](https://people.eec
 
 参考 [Cadence Layout Tips_1](https://zhuanlan.zhihu.com/p/471942740) 和 xxx...
 
-### 
+### xxx
 
-## Layout Tips
+### guard ring template
+
+要想在 layout 时添加 guard ring, 首先库中要具有 guard ring 的模板，否则会报错 `*WARNING* (LE-103399): leHiCreateGuardRing: The create guard ring command requires MPP guard ring templates to exist in the technology file.` 导致命令无效。我们参考 [this video](https://www.bilibili.com/video/BV17t4y1N7nK), 给出创建 guard ring template 的步骤：
+
+1. 任意选择一个 pmos, `Efit Parameter > bodytie_typeL > Integred`, 测量以下几个间距：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-20-17-29-08_Cadence Virtuoso Layout Tutorials.png"/></div>
+
+2. 先来创建 pmos 的 guard ring (将 nwell 连接到 VDD 或其他 Net)
+  - (1) `Layout > Create > Multipart Path > 键盘 F3 > Subpart > 选择 Offset Subpath`
+  - (2) 添加 `NIWP` 层：按照上图所得的 0.18 um, 我们依次修改 `Layer > NIMP drw`, `Begin Offset > 0.18`, `End Offset > 0.18`, 点击中间的 `Add` 和下方的 `Apply`
+  - (3) 添加 `NWELL` 层：类似地，保持 0.18 um, width 是 2 * 0.43 um + 0.44 um = 1.30 um, 点击 `Add` 和 `Apply`
+  - (4) 添加 `METAL1` 层和 `DIFF` 层
+  - (5) 刚刚是在 `Offset Subpath` 中添加了 `NIWP`, `NWELL` 和 `METAL1`; 现在在 `Subrectangle` 中添加 `CONT` 层 (通孔)
+  - (6) 保存, save template 到 tech library
+
+
+这样，最后弄好的 guard ring 效果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-20-18-38-38_Cadence Virtuoso Layout Tutorials.png"/></div>
+
+3. 类似地，创建 nmos 的 guard ring (将 psubstrate 连接到 VSS):
+  - (1) `Layout > Create > Multipart Path > 键盘 F3 > Subpart > 选择 Offset Subpath`
+  - (2) 依次添加 `PIWP` 层, `METAL1` 层, `DIFF` 层
+  - (3) 在 `Subrectangle` 中添加 `CONT` 层 (通孔)
+  - (4) 保存, save template 到 tech library
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-20-18-36-23_Cadence Virtuoso Layout Tutorials.png"/></div>
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-20-17-57-53_Cadence Virtuoso Layout Tutorials.png"/></div> -->
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-20-17-35-26_Cadence Virtuoso Layout Tutorials.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-20-17-43-13_Cadence Virtuoso Layout Tutorials.png"/></div>
+-->
+
 
 ## Frequently Asked Questions
 
@@ -152,6 +185,12 @@ Layout 可能用到的一些图标如下 (from [this article](https://people.eec
 | 团队协作或混合信号设计  | Layout GXL  | 协同功能和数字/模拟集成更强大        |
 </div>
 
-## Reference
+## Relevant Resources
 
+### Official Resources
+
+
+### Other Resources
 - [Bilibili > 模拟 IC 设计中的软件操作: Cadence Virtuoso Layout 电路版图绘制技巧及其相关快捷键](https://www.bilibili.com/video/BV1Ue4y127Hb)
+- [模拟 IC 版图设计](https://picture.iczhiku.com/resource/eetop/sYIFgLAoTwTuDBMv.pdf)
+

@@ -7,10 +7,13 @@ Initially published at 10:26 on 2025-06-17 in Beijing.
 
 ### Reference Formulas 
 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-22-14-42-24_Design Sheet of Basic Two-Stage Op Amp with Nulling-Miller Compensation.png"/></div>
 
 ### Generation of I_ref
 
-详见文章 ...
+详见文章 [Reference Current Generation Methods](<AnalogIC/Reference Current Generation Methods.md>), 下面是一个设计参考：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-22-14-44-11_Design Sheet of Basic Two-Stage Op Amp with Nulling-Miller Compensation.png"/></div>
 
 ## Formula Derivations
 

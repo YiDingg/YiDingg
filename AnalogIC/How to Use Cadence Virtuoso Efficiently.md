@@ -7,9 +7,9 @@
 Cadence 相关教程汇总：
 - [How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)
 - [How to Install Cadence IC618](<AnalogIC/Virtuoso Tutorials - 1. How to Install Cadence IC618.md>)
-- [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>)
-- [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
-- [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
+- [How to Add New Process Libraries in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 3. How to Add New Process Libraries in Cadence IC618.md>)
+- [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
+- [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 4. Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
 
 
 
@@ -143,82 +143,85 @@ schematic	showUndoRedoHistoryInEditor	boolean	t ; 在 schematic 中显示撤销�
 ``` bash
 ; .cdsinit
 
+; None<Btn2Down> 是中键
 hiSetBindKeys("Schematics" list(
-    list("None<Btn4Down>" "geScroll(nil \"n\" nil)") ; 鼠标滚轮上滑, 界面上移:
-    list("None<Btn5Down>" "geScroll(nil \"s\" nil)") ; 鼠标滚轮下滑, 界面下移:
-    list("Ctrl<Btn4Down>" "hiZoomInAtMouse()") ; Ctrl + 鼠标滚轮上滑, 放大界面:
-    list("Ctrl<Btn5Down>" "hiZoomOutAtMouse()") ; Ctrl + 鼠标滚轮下滑, 缩小界面:
-    list("Ctrl<Key>Z" "hiUndo()") ; Ctrl + Z, 撤销:
-    list("Ctrl<Key>Y" "hiRedo()") ; Ctrl + Y, 重做:
-    list("<Key>F5" "simulate") ; F5 仿真
-    list("<Key>space" "schSetEnv(\"rotate\" t)") ; 空格旋转
-    list("Ctrl<Key>s" "schHiCheckAndSave()") ; Ctrl + S 检查与保存
-    list("<Key>x" "schSetEnv(\"sideways\" t)") ; x 翻转
-            ; list("<Key>d" "cancelEnterFun()") ; d 取消, 用作 esc 的替代 (esc 太远了)
-            ; None<Btn2Down> 是中键
-    list("None<Btn3Down>" "" "cancelEnterFun()") ; 鼠标右键用作 esc (esc 太远了)
-    list("None<Btn3Down>(2)" "" "") ; 删除原有的冗余右键绑定
-            ; list("<Key>g" "schHiCreatePin(\"GND\" \"input\" \"schematic\" \"full\" nil nil nil \"roman\")") ; 按键 G 创建 GND pin, 默认是 schHiFindMarker()
-    list("<Key>g" "schHiCreateInst(\"analogLib\" \"gnd\" \"symbol\")") ; 按键 G 创建 gnd
-    list("<Key>v" "schHiCreateInst(\"analogLib\" \"vdc\" \"symbol\")") ; 按键 v 创建 dc source
-    list("<Key>r"  "schHiCreateInst(\"analogLib\" \"res\" \"symbol\")") ; 按键 R 创建理想电阻
-    list("<Key>c"  "schHiCreateInst(\"analogLib\" \"cap\" \"symbol\")") ; 按键 C 创建理想电容 (默认是复制 schHiCopy())
-    list("Ctrl<Key>c" "schHiCopy()") ; Ctrl + C 复制
-    list("<Key>d" "schHiCreateNoteShape()") ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
-    list("<Key>a" "schHiCreateInst()") ; 按键 A 添加 instance (默认功能是 geSingleSelectPoint()), 用于替代按键 I
-    ; list("Ctrl<Key>1" "sevAnnotateResults('sevSession1 'dcOpPoints)")     ; 在 schematic 中标出器件的 operation points
-    ; list("Ctrl<Key>2" "sevAnnotateResults('sevSession1 'componentParameters)") ; 在 schematic 中标出器件的尺寸信息
-    ; list("Ctrl<Key>3" "sevAnnotateResults('sevSession1 'modelParameters)") ; 在 schematic 中标出器件的模型信息 (例如阈值电压 vto)
-    ; list("Ctrl<Key>4" "sevAnnotateResults('sevSession1 'dcNodeVoltages)") ; 在 schematic 中标出 dc voltages
+    list("None<Btn4Down>" "geScroll(nil \"n\" nil)")        ; 鼠标滚轮上滑, 界面上移:
+    list("None<Btn5Down>" "geScroll(nil \"s\" nil)")        ; 鼠标滚轮下滑, 界面下移:
+    list("Ctrl<Btn4Down>" "hiZoomInAtMouse()")              ; Ctrl + 鼠标滚轮上滑, 放大界面:
+    list("Ctrl<Btn5Down>" "hiZoomOutAtMouse()")             ; Ctrl + 鼠标滚轮下滑, 缩小界面:
+    list("Ctrl<Key>Z" "hiUndo()")                           ; Ctrl + Z, 撤销:
+    list("Ctrl<Key>Y" "hiRedo()")                           ; Ctrl + Y, 重做:
+    list("<Key>F5" "simulate")                              ; F5 仿真
+    list("<Key>space" "schSetEnv(\"rotate\" t)")            ; 空格旋转
+    list("Ctrl<Key>s" "schHiCheckAndSave()")                ; Ctrl + S 检查与保存
+    list("<Key>x" "schSetEnv(\"sideways\" t)")              ; x 翻转
+        ; list("<Key>d" "cancelEnterFun()")                     ; d 取消, 用作 esc 的替代 (esc 太远了)
+    list("None<Btn3Down>" "" "cancelEnterFun()")            ; 鼠标右键用作 esc (esc 太远了)
+    list("None<Btn3Down>(2)" "" "")                         ; 删除原有的冗余右键绑定
+    list("Ctrl<Key>c" "schHiCopy()")                        ; Ctrl + C 复制
+    list("<Key>d" "schHiCreateNoteShape()")                 ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
+    list("<Key>a" "schHiCreateInst()")                      ; 按键 A 添加 instance (默认功能是 geSingleSelectPoint()), 用于替代按键 I
     list("Ctrl<Key>1" "AnnotationSlider->annDCOpPoint->checked=t") ; 在 schematic 中标出器件的 operation points
     list("Ctrl<Key>2" "AnnotationSlider->annparameter->checked=t") ; 在 schematic 中标出器件的尺寸信息
     list("Ctrl<Key>3" "AnnotationSlider->annmodel->checked=t")     ; 在 schematic 中标出器件的模型信息 (例如阈值电压 vto)
     list("Ctrl<Key>4" "AnnotationSlider->annDCVoltage->checked=t") ; 在 schematic 中标出 dc voltages
+        ; list("<Key>g" "schHiCreatePin(\"GND\" \"input\" \"schematic\" \"full\" nil nil nil \"roman\")")       ; 按键 G 创建 GND pin, 默认是 schHiFindMarker()
+    list("<Key>g" "schHiCreateInst(\"analogLib\" \"gnd\" \"symbol\")")                                      ; 按键 G 创建 gnd
+    list("<Key>v" "schHiCreateInst(\"analogLib\" \"vdc\" \"symbol\")")                                      ; 按键 v 创建 dc source
+    list("<Key>r"  "schHiCreateInst(\"analogLib\" \"res\" \"symbol\")")                                     ; 按键 R 创建理想电阻
+    list("<Key>c"  "schHiCreateInst(\"analogLib\" \"cap\" \"symbol\")")                                     ; 按键 C 创建理想电容 (默认是复制 schHiCopy())
+        ; list("Ctrl<Key>1" "sevAnnotateResults('sevSession1 'dcOpPoints)")                                     ; 在 schematic 中标出器件的 operation points
+        ; list("Ctrl<Key>2" "sevAnnotateResults('sevSession1 'componentParameters)")                            ; 在 schematic 中标出器件的尺寸信息
+        ; list("Ctrl<Key>3" "sevAnnotateResults('sevSession1 'modelParameters)")                                ; 在 schematic 中标出器件的模型信息 (例如阈值电压 vto)
+        ; list("Ctrl<Key>4" "sevAnnotateResults('sevSession1 'dcNodeVoltages)")                                 ; 在 schematic 中标出 dc voltages
 	)
 )
 
 hiSetBindKeys("Symbol" list(
-    list("None<Btn4Down>" "geScroll(nil \"n\" nil)") ; 鼠标滚轮上滑, 界面上移:
-    list("None<Btn5Down>" "geScroll(nil \"s\" nil)") ; 鼠标滚轮下滑, 界面下移:
-    list("Ctrl<Btn4Down>" "hiZoomInAtMouse()") ; Ctrl + 鼠标滚轮上滑, 放大界面:
-    list("Ctrl<Btn5Down>" "hiZoomOutAtMouse()") ; Ctrl + 鼠标滚轮下滑, 缩小界面:
-    list("Ctrl<Key>Z" "hiUndo()") ; Ctrl + Z, 撤销:
-    list("Ctrl<Key>Y" "hiRedo()") ; Ctrl + Y, 重做:
-    list("<Key>F5" "simulate") ; F5 仿真
-    list("<Key>space" "schSetEnv(\"rotate\" t)") ; 空格旋转
-    list("Ctrl<Key>s" "schHiVICAndSave()") ; Ctrl + S 检查与保存 (与 schematic 中的命令不同)
-    list("<Key>x" "schSetEnv(\"sideways\" t)") ; x 翻转
-    ; list("<Key>d" "cancelEnterFun()") ; d 取消, 用作 esc 的替代 (esc 太远了)
-    ; None<Btn2Down> 是中键
-    list("None<Btn3Down>" "" "cancelEnterFun()") ; 鼠标右键用作 esc (esc 太远了)
-    list("None<Btn3Down>(2)" "" "") ; 删除原有的冗余右键绑定
-    list("Ctrl<Key>c" "schHiCopy()") ; Ctrl + C 复制
-    list("<Key>d" "schHiCreateNoteShape()") ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
+    list("None<Btn4Down>" "geScroll(nil \"n\" nil)")    ; 鼠标滚轮上滑, 界面上移:
+    list("None<Btn5Down>" "geScroll(nil \"s\" nil)")    ; 鼠标滚轮下滑, 界面下移:
+    list("Ctrl<Btn4Down>" "hiZoomInAtMouse()")          ; Ctrl + 鼠标滚轮上滑, 放大界面:
+    list("Ctrl<Btn5Down>" "hiZoomOutAtMouse()")         ; Ctrl + 鼠标滚轮下滑, 缩小界面:
+    list("Ctrl<Key>Z" "hiUndo()")                       ; Ctrl + Z, 撤销:
+    list("Ctrl<Key>Y" "hiRedo()")                       ; Ctrl + Y, 重做:
+    list("<Key>space" "schSetEnv(\"rotate\" t)")        ; 空格旋转
+    list("Ctrl<Key>s" "schHiVICAndSave()")              ; Ctrl + S 检查与保存 (与 schematic 中的命令不同)
+    list("<Key>x" "schSetEnv(\"sideways\" t)")          ; x 翻转
+        ; list("<Key>d" "cancelEnterFun()")                 ; d 取消, 用作 esc 的替代 (esc 太远了)
+        ; None<Btn2Down> 是中键 
+    list("None<Btn3Down>" "" "cancelEnterFun()")        ; 鼠标右键用作 esc (esc 太远了)
+    list("None<Btn3Down>(2)" "" "")                     ; 删除原有的冗余右键绑定
+    list("Ctrl<Key>c" "schHiCopy()")                    ; Ctrl + C 复制
+    list("<Key>d" "schHiCreateNoteShape()")             ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
 	)
 )
 
-; 前面有冒号注释的，要么是还未验证是否可行，要么是暂时不用
 hiSetBindKeys("Layout" list(
-    list("None<Btn4Down>" "geScroll(nil \"n\" nil)") ; 鼠标滚轮上滑, 界面上移:
-    list("None<Btn5Down>" "geScroll(nil \"s\" nil)") ; 鼠标滚轮下滑, 界面下移:
-    list("Ctrl<Btn4Down>" "hiZoomInAtMouse()") ; Ctrl + 鼠标滚轮上滑, 放大界面:
-    list("Ctrl<Btn5Down>" "hiZoomOutAtMouse()") ; Ctrl + 鼠标滚轮下滑, 缩小界面:
-    list("Ctrl<Key>Z" "hiUndo()") ; Ctrl + Z, 撤销:
-    list("Ctrl<Key>Y" "hiRedo()") ; Ctrl + Y, 重做:
-    list("<Key>space" "leSetEnv(\"rotate\" t)") ; 空格旋转
-    list("Ctrl<Key>s" "leHiSave()") ; Ctrl + S 保存
-    list("<Key>x" "leSetEnv(\"sideways\" t)") ; x 翻转
-    list("None<Btn3Down>" "" "cancelEnterFun()") ; 鼠标右键用作 esc (esc 太远了)
-    list("Ctrl<Key>c" "leHiCopy()") ; Ctrl + C 复制
-    ; list("<Key>d" "leHiCreateNoteShape()") ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
-    list("<Key>a" "leHiCreateInst()") ; 按键 A 添加 instance (默认功能是 geSingleSelectPoint()), 用于替代按键 I
+    list("None<Btn4Down>" "geScroll(nil \"n\" nil)")            ; 鼠标滚轮上滑, 界面上移:
+    list("None<Btn5Down>" "geScroll(nil \"s\" nil)")            ; 鼠标滚轮下滑, 界面下移:
+    list("Ctrl<Btn4Down>" "hiZoomInAtMouse()")                  ; Ctrl + 鼠标滚轮上滑, 放大界面:
+    list("Ctrl<Btn5Down>" "hiZoomOutAtMouse()")                 ; Ctrl + 鼠标滚轮下滑, 缩小界面:
+    list("Ctrl<Key>Z" "hiUndo()")                               ; Ctrl + Z, 撤销:
+    list("Ctrl<Key>Y" "hiRedo()")                               ; Ctrl + Y, 重做:
+    list("<Key>space" "leHiRotate()")                           ; 空格旋转
+    list("Ctrl<Key>s" "leHiSave()")                             ; Ctrl + S 保存
+    list("None<Btn3Down>" "" "cancelEnterFun()")                ; 鼠标右键用作 esc (esc 太远了)
+    list("Ctrl<Key>c" "leHiCopy()")                             ; Ctrl + C 复制
+    list("<Key>w" "leAlign(\"top\")")                           ; 按键 W 按照 top 进行 align
+    list("<Key>c" "leAlign(\"vertical\")")                      ; 按键 C 按照 vertical (center) 进行 align
+    list("<Key>a" "leAlign(\"left\")")                          ; 按键 A 按照 left 进行 align
+    list("<Key>d" "leAlign(\"right\")")                         ; 按键 D 按照 right 进行 align
+    list("<Key>g" "_leCreateQuickFigGroup(getCurrentWindow())") ; 按键 G 进行 group
+    list("Shift<Key>g" "leHiUngroup()")                         ; Shift + G 进行 ungroup
+    list("Ctrl<Key>g" "leHiCreateGuardRing()")                  ; Ctrl + G 以创建 guard ring
+    list("<Key>s" "leHiQuickAlign")                             ; 按键 s 进行快速对齐 (边界对齐)
 	)
 )
 
 ; 设置 label, text, ciw 的字体和字号, 如果 "roman" 不起作用改为 "times" 即可
 hiSetFont( "ciw" ?name "mono" ?size 18 ?bold nil ?italic nil ) ; "mono" 即为 "monospace"
 hiSetFont( "label" ?name  "Open Sans" ?size 14 ?bold nil ?italic nil ) ; "label" 既是 toolbar 的字体, 也是打开某些设置界面的字体, 因此 "label" 字号不宜过大, 否则会导致表单文字重叠
-; hiSetFont( "text" ?name "roman" ?size 18 ?bold nil ?italic nil ) ; 2025.05.25 暂时没找到 text 是对应哪个界面的字体
+hiSetFont( "text" ?size 15 ?bold nil ?italic nil ) ; text 是各表单内部白色背景里的文字
 
 ; 设置 log filter 的默认输出
 ; hiSetFilter() ; 此命令是打开 log filter 窗口
@@ -240,7 +243,34 @@ hiResizeWindow(window(1) list(400:0 1800:1000)) ; 设置初始 CIW 窗口的大�
 
 
 
-
+<!-- hiSetBindKeys(
+    list("&Hierarchy Editor" "ADE Assembler" "ADE Explorer" "ADE State" "BBTEditor"
+        "Command Interpreter" "Concurrent Layout" "Debug Abutment" "Debug CDF" "Diva"
+        "Dracula Interactive" "EAD" "Graphics Browser" "Hman-Schematic" "Innovus"
+        "Layout" "   PcellIDE Layout" "   VLS-GXL" "   Virtuoso XL" "   adegxl-maskLayout"
+        "   adexl-maskLayout" "   assembler-maskLayout" "   explorer-maskLayout" "ModelWriter" "NC-Test-HDL"
+        "NC-Verilog" "Other" "Palette" "Pcell" "Read HDL"
+        "Read spectre" "Read veriloga" "SDR" "SMG" "SMGIpInfoEditor"
+        "Sche-Migrate" "Schematic Test Generator (STG)" "Schematics" "   PcellIDE Schematic" "   Power Manager"
+        "   Schematics XL" "   adegxl-schematic" "   adexl-schematic" "   assembler-schematic" "   explorer-schematic"
+        "Show File" "SkillIDE" "   TechfileIDE" "Spectre-Plugin" "Symbol"
+        "   PcellIDE Symbol" "   Symbol XL" "Text" "Text Editor" "UltraSim-Plugin"
+        "VHDL" "VHDL Toolbox" "VHDLAMS" "VLS-CPH-Editor" "VLS-EAD"
+        "Verilog-AMS" "Virtuoso ADE Verifier" "adegxl" "adexl" "amsArtist-Schematic"
+        "amsCreateConfigArtist-Schematic" "amsDmv" "analogArtist-Layout" "analogArtist-MaskLayout" "analogArtist-Schematic"
+        "analogArtist-Simulation" "assembler" "encap" "explorer" "maskLayoutVFIL"
+        "maskLayoutVPS" "maskLayoutVSA" "ncSystemVerilog" "parasitics-MaskLayout" "parasitics-Schematic"
+        "systemVerilog" "systemVerilogPackage" "vivaBrowser" "vivaCalculator" "vivaGraph"
+    )
+    list(
+        list("None<Btn4Down>" "geScroll(nil \"n\" nil)")            ; , :
+        list("None<Btn5Down>" "geScroll(nil \"s\" nil)")            ; , :
+        list("Ctrl<Btn4Down>" "hiZoomInAtMouse()")                  ; Ctrl + , :
+        list("Ctrl<Btn5Down>" "hiZoomOutAtMouse()")                 ; Ctrl + , :
+        list("Ctrl<Key>Z" "hiUndo()")                               ; Ctrl + Z, :
+        list("Ctrl<Key>Y" "hiRedo()")                               ; Ctrl + Y, :
+	)
+) -->
 
 
 
@@ -430,7 +460,7 @@ sudo gedit /etc/fstab
 
 ### 5. Add Process Library
 
-详见文章 [How to Add New Process Libraries in Cadence IC618](<Electronics/How to Add New Process Libraries in Cadence IC618.md>).
+详见文章 [How to Add New Process Libraries in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 3. How to Add New Process Libraries in Cadence IC618.md>).
 
 
 ### 6. Screenshot Path
@@ -458,8 +488,8 @@ sudo gedit /etc/fstab
 
 ### 0. Simulation Examples
 
-- [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<Electronics/Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
-- [Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso)](<Electronics/Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
+- [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
+- [Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 4. Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
 
 
 ### 1. annotate self_gain
