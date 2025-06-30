@@ -12,15 +12,16 @@ About Me:
 - 🔭 I'm currently studying EE (Electronic Engineering) at [UCAS](https://www.ucas.ac.cn/)
 - 📫 How to reach me: dingyi233@mails.ucas.ac.cn
 - ⚡ Fun fact: I used to be a semi-professional soccer player as a national level two athlete.
+- 🌱 I am currently learning about tranceivers, with a particular focus on key components such as VCO, PLL, and CDR.
 
-My Technology Stack:
+My Technology Stack: 
 - LaTex
 - Matlab
 - C Programming
 - MCU (Micro-Controller Unit)
 - PCB Layout
 - Analog Circuit Design
-- LTspice 
+- LTspice (ANALOG DEVICES)
 - Cadence Virtuoso
 
 

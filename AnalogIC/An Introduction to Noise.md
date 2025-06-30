@@ -1,4 +1,4 @@
-# An Introduction to Noise
+# [Razavi CMOS] An Introduction to Noise
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 15:34 on 2025-06-22 in Beijing.
@@ -118,6 +118,9 @@ $$
 
 需要注意的是，由于 $P_{noise,av} = \int_0^{\inf} S_x(f) \ \mathrm{d}f$, 所以电路的带宽必须始终被限制在可接受的最小值以内，以最大程度降低噪声功率，带宽可以通过放大器内部的处理或者通过后续放置的低通滤波器来降低。
 
+### 1.6 Analysis Procedure
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-22-18-12-23_An Introduction to Noise.png"/></div>
 
 ## 2. Types of Noise
 
@@ -231,6 +234,9 @@ $$
 ## 3. Noise in Circuits
 
 ### 3.1 Output Noise
+
+考虑一个具有一个输入端口和一个输出端口的通用电路。我们如何量化此处噪声的影响呢？自然的方法是将输入端设置为零，然后计算电路中各种噪声源导致的输出端噪声总值。这正是在实验室或仿真电路中测量噪声的方式。依照我们在 **1.6 Analysis Procedure** 一节中给出的方法，可以很容易求出一个电路的 output noise.
+
 
 
 ### 3.2 Input-Referred Noise

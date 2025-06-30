@@ -87,3 +87,5 @@ Nulling-Miller
 nulling
 ADE
 Ohmic
+Barkhausen
+Colpitts

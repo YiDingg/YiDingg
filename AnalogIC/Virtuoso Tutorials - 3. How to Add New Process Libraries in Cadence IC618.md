@@ -87,6 +87,7 @@ cp -r /home/IC/a_Win_VM_shared/Cadence_Process_Library_Backup/tsmc18rf_pdk_v13d/
     - (5) 设计规则文件夹：`calibre`
     - (6) 工艺信息文件夹：`tsmc18rf` (通常与工艺库名称直接相同)
 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-24-21-49-10_Virtuoso Tutorials - 3. How to Add New Process Libraries in Cadence IC618.png"/></div>
 
 ### 3. CDB to OA (Method 1)
 
@@ -108,7 +109,7 @@ sudo mv /Cadence_Process_Library/TSMC18RF_PDK_v13d /home/IC/Cadence_Process_Libr
 
 ### 4. CDB to OA (Method 2)
 
-工艺库不能位于 virtuoso 的打开路径下，本质只是路径冲突。换句话说，如果我们换一个地方打开 virtuoso, 完成格式转换之后，再将转化后的 OA 格式文件夹复制回 `<Installed_Path>`，是不是就可以完成 CDB to OA 转换呢？事实证明，这种方法是可行的，具体步骤如下：
+工艺库不能位于 virtuoso 的打开路径下 (工作目录)，本质是路径冲突。换句话说，如果我们换一个地方打开 virtuoso, 完成格式转换之后，再将转化后的 OA 格式文件夹复制回 `<Installed_Path>`，是不是就可以完成 CDB to OA 转换呢？事实证明，这种方法是可行的，具体步骤如下：
 
 1. 现在，我们整合好的工艺库仍在 `<Installed_Path> = /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d` 下
 2. 在 `/home/IC/` 下新建一个文件夹 `Cadence_CDB_to_OA`，专门用于 CDB to OA 转换
@@ -122,7 +123,7 @@ sudo mv /Cadence_Process_Library/TSMC18RF_PDK_v13d /home/IC/Cadence_Process_Libr
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-17-00-34_How to Add New Process Libraries in Cadence IC618.png"/></div>
 
-7. 点击 `OK`, "Libraries to convert" 一栏会自动显示 `tsmc18rf`，点击 `OK` 开始转换
+7. "Libraries to convert" 一栏会自动显示 `tsmc18rf`，点击 `OK` 开始转换
 8. 转换结束，检查是否转换成功：有 `ERROR` 表示不成功，有 `WARNING` 不影响转换结果
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-22-17-03-09_How to Add New Process Libraries in Cadence IC618.png"/></div>
@@ -217,7 +218,6 @@ rm -i /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA/tsmc18rf/prop.xx   #
 
 
 
-
 ## 四、常见工艺库分享
 
 我们在这里分享几个常见的工艺库, **仅供学习交流使用，请在下载 24 小时后彻底删除，禁止商用！**
@@ -248,4 +248,9 @@ rm -i /home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA/tsmc18rf/prop.xx   #
 - [模拟IC版图设计学习问题——CDB-OA工艺库转换](https://zhuanlan.zhihu.com/p/673473052)
 - [CSDN: cadence 617 cdb转oa格式、工艺库安装以及相关问题解决](https://blog.csdn.net/weixin_43026197/article/details/124520378)
 - [IC617手动添加工艺库（OA格式）](https://zhuanlan.zhihu.com/p/585261304)
+
+## 其它成功例子
+
+- 2025.06.24 22:03: 成功导入 tsmc28n 工艺库 (台积电 28nm CMOS 工艺库), 文件夹大小 3.86 GB
+    - 刚导入时出现了 `display.drf` 异常的问题，原因是我们的工作目录下存在一个 `tsmc18rf` 工艺库的 `display.drf` 文件，两者冲突了。解决方案：将工作目录下的 `display.drf` 文件移回原工艺库，重启 virtuoso 即可。
 

@@ -141,6 +141,7 @@ schematic	showUndoRedoHistoryInEditor	boolean	t ; 在 schematic 中显示撤销�
 另外，在 `.cdsinit` 文件中，我们也有一些实用的设置：
 
 ``` bash
+
 ; .cdsinit
 
 ; None<Btn2Down> 是中键
@@ -214,7 +215,8 @@ hiSetBindKeys("Layout" list(
     list("<Key>g" "_leCreateQuickFigGroup(getCurrentWindow())") ; 按键 G 进行 group
     list("Shift<Key>g" "leHiUngroup()")                         ; Shift + G 进行 ungroup
     list("Ctrl<Key>g" "leHiCreateGuardRing()")                  ; Ctrl + G 以创建 guard ring
-    list("<Key>s" "leHiQuickAlign")                             ; 按键 s 进行快速对齐 (边界对齐)
+    list("<Key>s" "leHiQuickAlign()")                           ; 按键 s 进行快速对齐 (边界对齐), 默认是 leHiStretch()
+    list("Shift<Key>s" "leHiStretch()")                       ; Shift + s 进行拉伸
 	)
 )
 
@@ -231,10 +233,15 @@ hiSetFilterForm->promptOutput->value= t
 _hiFormApplyCB(hiSetFilterForm)     ; 应用已修改的 log filter 结构体
 
 
+; 将 Calibre 集成到 Cadence Virtuoso 工具栏
+skillPath=getSkillPath();
+setSkillPath(append(skillPath list("/opt/eda/mentor/calibre2019/aoj_cal_2019.3_15.11/lib"))); the installing path of your Calibre
+load("calibre.OA.skl");
+
 ; 其它设置
 ; editor="gedit" ; 设置 Cadence 中默认文本编辑器为 gedit (script 和 verilog-A 的编辑器), 可选的通常有 vim, gedit, emacs, atom
 ExportImageDialog->fileName->value = "/home/IC/a_Win_VM_shared/a_Misc/schematic.png" ; 设置 schematic 导出为 image 时的默认路径
-dbSetAutoSave(t 20) ; 设置自动保存时间, 单位是 second (秒)
+dbSetAutoSave(t 20) ; 设置自动保存时间, 单位是 second (秒), 但是这行好像没有什么作用
 hiResizeWindow(window(1) list(400:0 1800:1000)) ; 设置初始 CIW 窗口的大小和位置, 其中 400:150 代表窗口左下角坐标，1200:600 代表窗口右上角坐标
 
 ```
@@ -762,11 +769,11 @@ cp /home/IC/.cdsenv /home/IC/a_Win_VM_shared/Cadence_simulation_backup/.cdsenv_b
  -->
 
 ``` bash
-tar -cvf simulation_backup_20250610.tar simulation/ # 将 simulation (仿真数据) 文件夹打包成 tar 文件
-tar -cvf Cadence_Projects_backup_20250610.tar Cadence_Projects/ # 将 Cadence_Projects (项目文件) 文件夹打包成 tar 文件
+# tar -czvf simulation_backup_20250610.tar simulation/ # 将 simulation (仿真数据) 文件夹打包成 tar 文件
+tar -czvf Cadence_Projects_backup_20250610.tar Cadence_Projects/ # 将 Cadence_Projects (项目文件) 文件夹打包成 tar 文件
 mkdir -p /home/IC/a_Win_VM_shared/Cadence_backup # 确保备份目录存在
 mkdir -p /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610 # 创建备份文件夹
-mv simulation_backup_20250610.tar /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610/   # 将 tar 文件移动到共享文件夹 a_Win_VM_shared 中
+# mv simulation_backup_20250610.tar /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610/   # 将 tar 文件移动到共享文件夹 a_Win_VM_shared 中
 mv Cadence_Projects_backup_20250610.tar /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610/   # 将 tar 文件移动到共享文件夹 a_Win_VM_shared 中
 cp /home/IC/.cdsinit /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610/.cdsinit_backup_20250610 # 顺便备份一下 .cdsinit 和 .cdsenv 文件
 cp /home/IC/.cdsenv /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610/.cdsenv_backup_20250610 # 顺便备份一下 .cdsinit 和 .cdsenv 文件
@@ -778,7 +785,7 @@ cp /home/IC/.cdsenv /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250
 
 
 
-
+tar -cvf tsmc28n.tar /home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5/ # 将 Cadence_Projects (项目文件) 文件夹打包成 tar 文件
 
 
 

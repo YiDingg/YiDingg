@@ -23,26 +23,12 @@
 
 
 
-    - Virtuoso Tutorials
-
-        - [1. How to Install Cadence IC618](<AnalogIC/Virtuoso Tutorials - 1. How to Install Cadence IC618.md>)<!--  -->
-        - [2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
-        - [3. How to Add New Process Libraries in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 3. How to Add New Process Libraries in Cadence IC618.md>)
-        - [4. Simulate Chara. of MOSFETs in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 4. Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
-        - [! 5. Cadence Layout Example of The Basic Two-Stage Op Amp](<AnalogIC/Cadence Layout Example of The Basic Two-Stage Op Amp.md>)
-        - [! 6. Cadence Virtuoso Layout Tutorials](<AnalogIC/Cadence Virtuoso Layout Tutorials.md>)
-
-    - ADE Assembler Tutorials
-        - [0. Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/ADE Assembler - 0. How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)
-        - [! 1. Getting Started with Virtuoso ADE Assembler](<AnalogIC/ADE Assembler - 1. Getting Started with Virtuoso ADE Assembler.md>)
-
-    - How to Use Virtuoso Efficiently
-        - [! 0. How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)
-
 
 
     - Analog IC Blogs (2025, 22 items)
-
+        - [An Introduction to Oscillators](<AnalogIC/An Introduction to Oscillators.md>)
+        - [TSMC 28nm Process Library Basic Information](<AnalogIC/Basic Information of TSMC 28nm Process Library.md>)
+        - [An Introduction to Layout](<AnalogIC/An Introduction to Layout.md>)
         - [An Introduction to Noise](<AnalogIC/An Introduction to Noise.md>)
         - [The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogIC/The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation.md>)
         - [Reference Current Generation Methods](<AnalogIC/Reference Current Generation Methods.md>)
@@ -63,9 +49,28 @@
         - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)<!--  -->
         - [A Brief View of Negative Feedback](<Electronics/[Razavi CMOS] A Brief View of Negative Feedback.md>)
         - [Mismatches of Basic Differential Pair](<Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)<!--  -->
-        - [Cascode stage with PMOS load](<Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>) <!-- 已发知乎 -->
-        - [Gm Av calculation](<Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>) <!-- 已发知乎 -->
-        - [MOSFET's Terminal Resistance](<Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>) <!-- 已发知乎 -->
+        - [Cascode stage with PMOS load](<Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>) <!--  -->
+        - [Gm Av calculation](<Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>) <!--  -->
+        - [MOSFET's Terminal Resistance](<Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>) <!--  -->
+
+    - Virtuoso Tutorials
+
+        - [1. How to Install Cadence IC618](<AnalogIC/Virtuoso Tutorials - 1. How to Install Cadence IC618.md>)<!--  -->
+        - [2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)<!--  -->
+        - [3. How to Add New Process Libraries in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 3. How to Add New Process Libraries in Cadence IC618.md>)<!--  -->
+        - [4. Simulate Chara. of MOSFETs in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 4. Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
+        - [! 5. Cadence Layout Example of The Basic Two-Stage Op Amp](<AnalogIC/Cadence Layout Example of The Basic Two-Stage Op Amp.md>)
+        - [! 6. Cadence Virtuoso Layout Tutorials](<AnalogIC/Cadence Virtuoso Layout Tutorials.md>)
+
+    - ADE Assembler Tutorials
+        - [0. Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/ADE Assembler - 0. How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)
+        - [! 1. Getting Started with Virtuoso ADE Assembler](<AnalogIC/ADE Assembler - 1. Getting Started with Virtuoso ADE Assembler.md>)
+
+    - How to Use Virtuoso Efficiently
+        - [! 0. How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)
+        - [! 1. Use Virtuoso Efficiently - Part 1: xxx](<>)
+        - [! 2. Use Virtuoso Efficiently - Part 2: xxx](<>)
+
 
     - Electronic Blogs (2025, 78 items)
         - [Test Experiment of The DC-DC Converter Modules](<Electronics/Test Experiment of The DC-DC Converter Modules.md>)
@@ -216,6 +221,7 @@
 - 📓 **Other Blogs**
 
     - Mixed <!-- empty line is necessary to avoid the error -->
+        - [如何通过 SSH 远程连接实验室服务器](<Blogs/Mixed/如何通过 SSH 远程连接实验室服务器.md>)
         - [Markdown 转微信公众号或知乎](<Blogs/Mixed/Markdown 转微信公众号或知乎.md>)
         - [关于国科大本科部电子信息工程专业课程安排的一些思考](Blogs/Mixed/关于国科大本科部电子信息工程专业课程安排的一些思考.md)
         - [LTeX – grammar/spell checking](Blogs/Mixed/LTEX.md)

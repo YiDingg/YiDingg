@@ -38,23 +38,29 @@ Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeature
 
 ### Frequently Used Tools 
 
-- Text comparing tool: [diffing_tool](https://csacademy.com/app/diffing_tool/)
--   Img, gif: use [Resize](https://bulkresizephotos.com/zh?preset=true&type=filesize&filesize=80000) (img) and [Docsmall](https://docsmall.com/gif-compress) (img, gif) <span class='tinyscript'>or [imgdiet](https://www.imgdiet.com/zh-CN/compress) (compress the entire folder),  [i2img](https://www.i2img.com/image-compressor), [Tiomg](https://tiomg.org/compress-image), [Oplimize LLA](https://imagecompressor.com), [TinyPNG](https://tinypng.com/), [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
+Frequently used tools for my workflow:
+- Img, gif: use [Resize](https://bulkresizephotos.com/zh?preset=true&type=filesize&filesize=80000) (img) and [Docsmall](https://docsmall.com/gif-compress) (img, gif) <span class='tinyscript'>or [imgdiet](https://www.imgdiet.com/zh-CN/compress) (compress the entire folder),  [i2img](https://www.i2img.com/image-compressor), [Tiomg](https://tiomg.org/compress-image), [Oplimize LLA](https://imagecompressor.com), [TinyPNG](https://tinypng.com/), [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
 - Image inversion: [LZL tool](https://lzltool.cn/batch-img-color-reverse)
--   Video: use [FreeCompress](https://freecompress.com/) <span class='tinyscript'>or [Video To Edit](https://www.video2edit.com), [FCO](https://compress-video.file-converter-online.com/#google_vignette)</span> to compress the video.
--   Audio: use [YouCompress](https://www.youcompress.com/) <span class='tinyscript'>or [MP3Smaller](https://www.mp3smaller.com/)</span> to compress the audio.
--   PDF: use [PDF24 Tolls](https://tools.pdf24.org/zh/compress-pdf) <span class='tinyscript'> or [hipdf](https://www.hipdf.cn/), [i2pdf](https://www.i2pdf.com/compress-pdf), [I Love PDF](https://www.ilovepdf.com/), [PDF IO](https://pdf.io/compress/), [FreeConvert](https://www.freeconvert.com/epub-to-pdf)</span> to compress pdf. Use [topdf](https://topdf.com/) to convert other file to pdf. Use [pdfux](https://pdfux.com/flip-pages-pdf/) to flip pdf.
--   Link: use [C1N](https://www.c1n.cn/administrators.html)<span class='tinyscript'> or [Short](https://d.igdu.xyz/)</span> to create a short link for your file, and use [SINA](https://www.sina.lt/restore.html) to restore the short link.
--   Git to video: use [Screen to GIF]() to convert video into gif if you need.
--   Title: use [Capitalize](https://capitalizemytitle.com/style/APA/) <span class='tinyscript'>or [Wawa](https://www.iamwawa.cn/daxiaoxie.html)</span> to capitalize your titles, and use [Rewriter](https://capitalizemytitle.com/ai-title-rewriter/) to rewrite your title.
-- Questionnaire survey (问卷调查): [aidaform](https://aidaform.com/)
-- Collection of e-books: 
-    - [GitCode > Open-source-documentation-tutorial](https://gitcode.com/org/Open-source-documentation-tutorial/repos)
-    - **iczhiku.com**, for example, type `ADE XL User Guide - iczhiku.com` in the search bar, and you will find https://picture.iczhiku.com/resource/eetop/syIfptILiLPyrvCB.pdf
+- Video: use [FreeCompress](https://freecompress.com/) <span class='tinyscript'>or [Video To Edit](https://www.video2edit.com), [FCO](https://compress-video.file-converter-online.com/#google_vignette)</span> to compress the video.
+- Audio: use [YouCompress](https://www.youcompress.com/) <span class='tinyscript'>or [MP3Smaller](https://www.mp3smaller.com/)</span> to compress the audio.
+- PDF: use [PDF24 Tolls](https://tools.pdf24.org/zh/compress-pdf) <span class='tinyscript'> or [hipdf](https://www.hipdf.cn/), [i2pdf](https://www.i2pdf.com/compress-pdf), [I Love PDF](https://www.ilovepdf.com/), [PDF IO](https://pdf.io/compress/), [FreeConvert](https://www.freeconvert.com/epub-to-pdf)</span> to compress pdf. Use [topdf](https://topdf.com/) to convert other file to pdf. Use [pdfux](https://pdfux.com/flip-pages-pdf/) to flip pdf.
+- Link: use [C1N](https://www.c1n.cn/administrators.html)<span class='tinyscript'> or [Short](https://d.igdu.xyz/)</span> to create a short link for your file, and use [SINA](https://www.sina.lt/restore.html) to restore the short link.
+- GIF to video: use [Screen to GIF](https://www.screentogif.com/) to convert video into gif.
 - PDF to JPG: [Smallpdf](https://smallpdf.com/cn/pdf-to-jpg)
 - PDF to PNG: [FreeConvert](https://www.freeconvert.com/zh/pdf-to-png/download) or [CDKM](https://cdkm.com/cn/pdf-to-png)
 - SVG to PDF: [PDF24 Tools](https://tools.pdf24.org/zh/svg-to-pdf)
 - PDF to EXCEL: [I Love PDF](https://www.ilovepdf.com/pdf_to_excel)
+
+
+Other tools:
+- Text comparing tool: [diffing_tool](https://csacademy.com/app/diffing_tool/)
+- Title: use [Capitalize](https://capitalizemytitle.com/style/APA/) <span class='tinyscript'>or [Wawa](https://www.iamwawa.cn/daxiaoxie.html)</span> to capitalize your titles, and use [Rewriter](https://capitalizemytitle.com/ai-title-rewriter/) to rewrite your title.
+- Questionnaire survey (问卷调查): [aidaform](https://aidaform.com/)
+- Collection of e-books: 
+    - (1) [GitCode > Open-source-documentation-tutorial](https://gitcode.com/org/Open-source-documentation-tutorial/repos)
+    - (2) **`- iczhiku.com`**: for example, type `ADE XL User Guide - iczhiku.com` in the search bar, and you will find https://picture.iczhiku.com/resource/eetop/syIfptILiLPyrvCB.pdf
+    - (3) [**<span style='color:red'> Academic resource library of UIUC (伊利诺伊大学学术资源库) </span>**](https://www.ideals.illinois.edu/search)
+
 
 ### Graphics
 
