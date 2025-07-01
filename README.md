@@ -28,42 +28,7 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C352%20hrs%201%20min-blue)
-
-![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-816.6%20thousand%20lines%20of%20code-blue)
-
-**I'm a Night 🦉** 
-
-```text
-🌞 Morning                81 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   06.27 % 
-🌆 Daytime                429 commits         ████████░░░░░░░░░░░░░░░░░   33.23 % 
-🌃 Evening                410 commits         ████████░░░░░░░░░░░░░░░░░   31.76 % 
-🌙 Night                  371 commits         ███████░░░░░░░░░░░░░░░░░░   28.74 % 
-```
-📅 **I'm Most Productive on Friday** 
-
-```text
-Monday                   197 commits         ████░░░░░░░░░░░░░░░░░░░░░   15.26 % 
-Tuesday                  162 commits         ███░░░░░░░░░░░░░░░░░░░░░░   12.55 % 
-Wednesday                149 commits         ███░░░░░░░░░░░░░░░░░░░░░░   11.54 % 
-Thursday                 209 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.19 % 
-Friday                   217 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.81 % 
-Saturday                 151 commits         ███░░░░░░░░░░░░░░░░░░░░░░   11.70 % 
-Sunday                   206 commits         ████░░░░░░░░░░░░░░░░░░░░░   15.96 % 
-```
-
-
-📊 **This Week I Spent My Time On** 
-
-```text
-💬 Programming Languages: 
-Markdown                 14 hrs 23 mins      █████████████████████████   99.88 % 
-HTML                     0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.08 % 
-BibTeX                   0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.04 % 
-
-🐱‍💻 Projects: 
-GH.YiDingg               14 hrs 24 mins      █████████████████████████   100.00 % 
-```
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.6%20million%20lines%20of%20code-blue)
 
 **I Mostly Code in C** 
 
@@ -78,7 +43,7 @@ TypeScript               1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2025.06.30 18:48 UTC
+ Last Updated on 2025.07.01 18:47 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
