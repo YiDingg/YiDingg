@@ -7,6 +7,15 @@
 
 本章主要探讨了 CMOS Oscillators (振荡器) 的分析与设计，更具体地说是压控振荡器 (VCO, voltage-controlled oscillator)。我们先回顾反馈系统中的振荡现象，然后介绍 ring oscillator (环形振荡器) 和 LC 振荡器，并讨论改变振荡频率的方法 (VCO)。最后给出 VCO 的数学模型，该模型将在第 16 章中用于锁相环 (PLL) 的分析。
 
+## References
+
+Razavi 一书中，本章的参考文献如下：
+- [1] ([link 1](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=133172), [link 2](https://ieeexplore.ieee.org/document/133172)) N. M. Nguyen and R. G. Meyer, “Start-up and Frequency Stability in High-Frequency Oscillators,” IEEE J. of Solid-State Circuits, vol. 27, pp. 810–820, May 1992. 
+- [2] ([link 1](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=165341), [link 2](https://ieeexplore.ieee.org/document/165341)) I. A. Young, J. K. Greason, and K. L. Wong, “A PLL Clock Generator with 5 to 110 MHz of Lock Range for Microprocessors,” IEEE J. of Solid-State Circuits, vol. SC-27, pp. 1599–1607, November 1992. 
+- [3] ([link 1](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1414941), [link 2](https://ieeexplore.ieee.org/document/1414941)) B. Lai and R. C. Walker, “A Monolithic 622 Mb/sec Clock Extraction and Data Retiming Circuit,” ISSCC Dig. of Tech. Papers, pp. 144–145, February 1991. 
+- [4] ([link 1](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=173103), [link 2](https://ieeexplore.ieee.org/document/173103)) S. K. Enam and A. A. Abidi, “NMOS ICs for Clock and Data Regeneration in Gigabit-per-Second Optical-Fiber Receivers,” IEEE J. of Solid-State Circuits, vol. SC-27, pp. 1763–1774, December 1992. 
+- [5] B. Razavi, RF Microelectronics, 2nd ed. (Upper Saddle River, NJ: Prentice-Hall, 2012).
+
 ## 1. General Considerations
 
 
@@ -192,7 +201,7 @@ $$
 
 ### 4.1 Tuning in Ring Osci.
 
-#### (1) Basic Tuning Technique
+#### (1) Basic Tuning Tech.
 
 我们前面已经介绍过，一个 N-stage ring oscillator 的振荡频率为 $f_{osc} = \frac{1}{2NT_D}$, 因此，只要调节 每个 stage 的 delay time $T_D$，就可以实现振荡频率的调节。下图是 differential pair 作为 stage 的一个例子，其中 $M_3$ 和 $M_4$ 工作一直在 deep triode region:
 
@@ -235,7 +244,7 @@ f_{osc} \approx \propto \frac{I_{SS}}{(V_{DD} - V_{REF})C_L}
 \end{gather}
 $$
 
-#### (2) Tuning by Positive Feedback (XCP)
+#### (2) Tuning by XCP
 
 也可以考虑用 XCP 结构 (利用了 Positive Feedback) 来实现频率调节。
 
@@ -267,10 +276,76 @@ $$
 
 虽然大大降低了 headroom consumption, 但控制路径中的器件会产生大量噪声，从而影响振荡频率。
 
-#### (3) Tuning by Interpolation (插值)
+#### (3) Tuning by Interpolation
+
+另一种 tuning 的方法是利用 “interpolation” (插值) [3, 4]。如图 15.48(a) 所示，每个阶段都包含一条快速路径和一条慢速路径，这两条路径的输出相加，并且其增益 (路径的通断程度) 通过 Vcont 在相反方向上进行调整。在 Vcont 的一个极端情况下，只有快速路径处于工作状态，而慢速路径被禁用，从而产生最大振荡频率 [图 15.48(b)]。相反，在另一个极端情况下，只有慢速路径处于工作状态，而快速路径关闭，从而提供最小振荡频率 [图 15.48(c)]。如果 Vcont 位于这两个极端值之间，则每条路径部分处于工作状态，总延迟是它们延迟的加权和。
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-01-19-36-11_An Introduction to Oscillators.png"/></div>
+
+为了更好地理解插值的概念，让我们在晶体管层面实现图 15.48(a) 所示的拓扑结构。每个阶段都可以简单地实现为一个差分对，其增益由其尾电流控制。但两个输出是如何相加的呢？由于差分对中的两个晶体管提供输出电流，因此两个对的输出可以在电流域中相加。如图 15.49(a) 所示, **<span style='color:red'> 直接短接两个差分对的输出即可完成电流相加 </span>** 。例如小信号 $I_{out} = g_{m1,2}V_{in1} + g_{m3,4}V_{in2}$。因此，整个插值阶段采用了如图 15.49(b) 所示的配置，其中 $V_{cont}^+$ 和 $V_{cont}^-$ 表示方向相反的电压 (这样当一条路径导通时，另一条路径就会关闭)。 M1-M2 和 M3-M4 的输出电流在 X 和 Y 处相加，并流过 R1 和 R2 从而产生 Vout.
 
 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-01-19-38-44_An Introduction to Oscillators.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-01-19-38-52_An Introduction to Oscillators.png"/></div>
 
+在 Figure 15.50 的情况下，慢路径比快路径多了一个 stage, 因此 VCO 的调谐范围大约为 2:1 (f_max : f_min = 2 : 1). 对于 low supply voltage 的情况, M7-M8 的电流控制可以用图 15.47(a) 中的结构来替代。
+
+
+在上面结构的基础上，可以再加入 XCP (交叉耦合对) 来进一步提高振荡器的 tuning range, 如下图所示：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-01-19-53-14_An Introduction to Oscillators.png"/></div>
+
+
+#### (4) Wide-Range Tuning
+
+除了图 15.43(b) 所示的电路外，到目前为止所介绍的三种 tuning techniques 能达到的 tuning ratio (调谐比) 通常不超过 3 (仅使用一种 tech 的情况下). 在频率必须按数量级变化的应用中，可以考虑图 15.52 所示的拓扑结构。
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-01-19-55-50_An Introduction to Oscillators.png"/></div>
+
+在输入信号的驱动下，额外的 PMOS 晶体管 (M5, M6) 将每个输出节点拉至 VDD 电压，从而即使在 ISS 有较大变化的情况下 (Vcont 幅度较大) 也能形成相对稳定的输出摆幅。通常情况下，采用此结构的振荡频率可以达到 $10^4$ (10^4:1) 的 tuning ratio, 而输出幅度的变化比则小于 2:1 
+
+#### (5) Conclusions 
+
+通常情况下，实际应用时只使用其中一种 tuning technique 即可达到所需的性能。对于一些特殊设计，可以考虑将两种或更多的 tuning techniques 结合起来，以获得更好的性能。
 
 ### 4.2 Tuning in LC Osci.
+
+## 5. VCO Models
+
+### 5.1 Definition of Frequency
+
+由公式 $\omega_{out} = \omega_{out0} + K_{VCO} V_{cont}$ 给出的定义指出了控制电压与输出频率之间的关系。这种关系是“无记忆的”，因为控制电压的变化会立即导致输出频率的变化。但从时域的角度来讲，在 Vcont 变化时, VCO 的输出信号是如何随时间变化的呢？要回答这个问题，我们必须回顾一下相位和频率的概念。
+
+考虑正弦波 $V_0(t) = V_m \sin \phi (t) = V_m \sin (\omega_0 t)$，这里的幅角 $\phi (t)$ 被称为信号的“总相位”。在本例中，相位 $\phi (t) = \omega_0 t$ 随时间呈线性变化，其斜率等于 $\omega_0$ 。现在考虑两个不同频率的正弦波：
+
+$$
+\begin{gather}
+V_1(t) = V_m \sin(\phi_1(t)) = V_m \sin (\omega_1 t),\quad V_2(t) = V_m \sin(\phi_2(t)) = V_m \sin (\omega_2 t)
+\end{gather}
+$$
+
+其中 $\omega_2 > \omega_1$. 如图 15.61 所示，$\phi_2(t)$ 比 $\phi_1(t)$ 增长得更快，使 $V_2(t)$ 变化得更快。我们称 “$V_2(t)$ 积累相位的速度更快”。上述例子说明，波形变化的速度越快，波形的 (角) 频率就越高，这意味着 (角) 频率可以定义为相位随时间的变化率：
+
+$$
+\begin{gather}
+\omega := \frac{\mathrm{d} \phi }{\mathrm{d} t }
+\end{gather}
+$$
+
+这种定义极大地简化了“频率”这一概念，使我们能够更直观地理解频率与相位之间的关系。下图就是一个例子：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-01-20-11-47_An Introduction to Oscillators.png"/></div>
+
+根据这一定义，我们容易理解：如果一个波形的频率 $\omega = \omega(t)$ 已知，那么波形的相位可以表达为：
+
+$$
+\begin{gather}
+\phi = \phi(t) = \phi_0 + \int \omega(t)\ \mathrm{d} t,\quad \omega_{out} = \omega_0 + K_{VCO} V_{cont}
+\\
+\Longrightarrow 
+V_{out}(t) = V_m \sin(\phi(t)) = V_m \sin\left(\phi_0 + \omega_0 t + \int K_{VCO} V_{cont}\ \mathrm{d} t\right)
+\end{gather}
+$$
+
+### 5.2 Mathematical Model
 

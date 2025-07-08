@@ -15,7 +15,7 @@ Layout (版图设计) 是 IC 设计的核心环节，主要包括 layout, DRC/LV
 
 
 
-## Basic Procedure
+## 1. Basic Procedure
 
 
 
@@ -33,9 +33,9 @@ Layout (版图设计) 是 IC 设计的核心环节，主要包括 layout, DRC/LV
 
 </div>
 
-## Keyboard Shortcuts
+## 2. Keyboard Shortcuts
 
-### Default Shortcuts
+### 2.1 default shortcuts
 
 最基本的几个默认快捷键：
 
@@ -50,7 +50,7 @@ Layout (版图设计) 是 IC 设计的核心环节，主要包括 layout, DRC/LV
     - `k`：标尺 (Ruler) 
     - `Ctrl + D`：取消选择
     - `shift + m`：合并同层金属连线 (显著提高布局可读性)
-    - 
+
 
 其它快捷键 (from [this article](https://adityamuppala.github.io/assets/Notes_YouTube/Cadence_Hotkeys.pdf))：
 
@@ -65,16 +65,15 @@ Layout 可能用到的一些图标如下 (from [this article](https://people.eec
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-19-12-49-52_Cadence Virtuoso Layout Tutorials.png"/></div>
 
 
-### Customize Shortcuts
+### 2.2 customize shortcuts
 
 
-## Layout Tips
+## 3. Layout Tips
 
 参考 [Cadence Layout Tips_1](https://zhuanlan.zhihu.com/p/471942740) 和 xxx...
 
-### xxx
 
-### guard ring template
+### 3.1 guard ring template
 
 要想在 layout 时添加 guard ring, 首先库中要具有 guard ring 的模板，否则会报错 `*WARNING* (LE-103399): leHiCreateGuardRing: The create guard ring command requires MPP guard ring templates to exist in the technology file.` 导致命令无效。我们参考 [this video](https://www.bilibili.com/video/BV17t4y1N7nK), 给出创建 guard ring template 的步骤：
 
@@ -109,13 +108,16 @@ Layout 可能用到的一些图标如下 (from [this article](https://people.eec
 -->
 
 
-## Frequently Asked Questions
+## 4. Common Questions
 
 下面是 layout 部分常见问题的解答，部分回答参考了 AI 的解答，部分回答参考了网上别人的博客、文章等。
 
-### 1. layout 时的各个 layer 是什么意思，一般情况下会用到哪几层？
+### 4.1 Question 1
 
-2025.06.19 由 DeepSeek 生成：
+**问题 1: layout 时的各个 layer 是什么意思，一般情况下会用到哪几层？**
+
+**回答 1 (2025.06.19 由 DeepSeek 生成):**
+
 
 按功能划分：
 <div class='center'>
@@ -156,9 +158,11 @@ Layout 可能用到的一些图标如下 (from [this article](https://people.eec
 
 更具体的概念可以参考 [知乎 > Cadence layout 概念知识--版图图层和物理图层之间的关系](https://zhuanlan.zhihu.com/p/610274845)。
 
-### 2. layout XL 和 layout GXL 的区别是什么，哪一个更实用、高效？
+### 4.2 Question 2
 
-2025.06.19 由 DeepSeek 生成：
+**问题 2: layout XL 和 layout GXL 的区别是什么，哪一个更实用、高效？**
+
+**回答 2 (2025.06.19 由 DeepSeek 生成):**
 
 核心区别对比：
 
@@ -187,12 +191,12 @@ Layout 可能用到的一些图标如下 (from [this article](https://people.eec
 | 团队协作或混合信号设计  | Layout GXL  | 协同功能和数字/模拟集成更强大        |
 </div>
 
-## Relevant Resources
+## 5. Relevant Resources
 
-### Official Resources
+### 5.1 official resources
 
 
-### Other Resources
+### 5.2 other resources
 - [Bilibili > 模拟 IC 设计中的软件操作: Cadence Virtuoso Layout 电路版图绘制技巧及其相关快捷键](https://www.bilibili.com/video/BV1Ue4y127Hb)
 - [模拟 IC 版图设计](https://picture.iczhiku.com/resource/eetop/sYIFgLAoTwTuDBMv.pdf)
 

@@ -1,4 +1,4 @@
-# [Razavi CMOS] A Brief View of Negative Feedback Analysis Method
+# [Razavi CMOS] A Brief View of Negative Feedback Analysis Methods
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 15:56 on 2025-04-30 in Beijing.
@@ -15,18 +15,18 @@
 - The second difficulty is that some circuits cannot be clearly decomposed into a forward amplifier and a feedback network.
 - The third difficulty in feedback analysis is that some circuits do not readily map to the four canonical topologies studied in the previous sections.
 - The fourth difficulty is that the general feedback system analyzed thus far assumes unilateral stages, i.e., signal propagation in only one direction around the loop.
-- The fifth difficulty arises in circuits containing multiple feedback mechanisms (loosely called “multiloop” circuits).
+- The fifth difficulty arises in circuits containing multiple feedback mechanisms (loosely called “multi-loop” circuits).
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-06-21-11-08_A Brief View of Negative Feedback.png"/></div>
 
 
-## Tow-Port Method
+## Two-Port Method
 
 <span style='color:red'> 必须强调，以下结论默认了 forward system 和 feedback network 的 $\mathbf{G}$ 参数满足 $G_{12} = \left(\frac{I_1}{I_2}\right)_{V_1 = 0} = 0$ </span>，这表明：将 input 短接 (virtual ground), 然后在 forward system 的 output 处加一个电流源 $I_{2}$，无论 $I_2$ 的值是多少，都有 $I_1 = 0$，也就是 input 端不会流入任何电流。
 
-只要验证了这一点，我们便可用“标准的” amplifier model 来描述 forward system, 例如用 $(Z_{in}, A_v, Z_{out})$ 表示 voltage-to-voltage amp, 用 $(Z_{in}, G_m, Z_{out})$ 表示 voltage-to-current amp. 不考虑寄生电容等动态元件时，大多数从 MOS Gate 输入的 forward system 都满足这个要求 ($G_{12} = 0$)；特别地，对于 BJT 器件，由于 $I_B$ 的变化量通常远小于电路中其它电流的变化量 (即小信号模型中 $i_B \ll i_C$ 等)，我们可以近似地认为 $G_{12} = \left(\frac{I_1}{I_2}\right)_{V_1 = 0}$ 为零，称为 "Tow-Port Approximation"。
+只要验证了这一点，我们便可用“标准的” amplifier model 来描述 forward system, 例如用 $(Z_{in}, A_v, Z_{out})$ 表示 voltage-to-voltage amp, 用 $(Z_{in}, G_m, Z_{out})$ 表示 voltage-to-current amp. 不考虑寄生电容等动态元件时，大多数从 MOS Gate 输入的 forward system 都满足这个要求 ($G_{12} = 0$)；特别地，对于 BJT 器件，由于 $I_B$ 的变化量通常远小于电路中其它电流的变化量 (即小信号模型中 $i_B \ll i_C$ 等)，我们可以近似地认为 $G_{12} = \left(\frac{I_1}{I_2}\right)_{V_1 = 0}$ 为零，称为 "Two-Port Approximation"。
 
-下面便可以介绍 Tow-Port Method 如何分析反馈环路。我们直接考虑非理想反馈的情形，也就是 feedback network 对 forward system 有 loading 作用。 In this case, 我们对 feedback network 作一个 duplication, 将其“并入”原来的 forward system, 得到一个新的 forward system 。
+下面便可以介绍 Two-Port Method 如何分析反馈环路。我们直接考虑非理想反馈的情形，也就是 feedback network 对 forward system 有 loading 作用。 In this case, 我们对 feedback network 作一个 duplication, 将其“并入”原来的 forward system, 得到一个新的 forward system 。
 
 这样，原来的非理想反馈便可以替换为理想反馈（需要事先计算反馈系数 $K$），此时的 forward system 是包含了 loading effect 的 new forward system 。再按理想反馈的方法，计算开环增益 $A_{OL}$, 输入输出阻抗 $Z_{in},\ Z_{out}$ 和 loop gain $KA_{OL}$, 便可以得到：
 
@@ -44,7 +44,7 @@ $$
 类似地，对于其它类型的 forward system, 其增益也被 scaled down by $(1 + KA_{OL})$, 输入输出阻抗被 scaled up or down by $(1 + KA_{OL})$.
 
 
-## Universal Analysis (Tow-Port Method)
+## Universal Analysis (Two-Port Method)
 
 *Razavi CMOS* 在 page 多次强调，利用反馈网络的 duplication 进行计算，是默认了原二端口网络 $\mathbf{G}$ 参数中的 $G_{12}$ 和 $g_{12}$ 为零，也即 forward system 的 $G_{12} = 0$ 和 feedback network 的 $g_{12} = 0$。在大多数情况下，这个假设是成立的，得到的结果也是精确解。但是，在某些情况下，这个假设并不成立，因此有必要对普遍情况进行分析。
 

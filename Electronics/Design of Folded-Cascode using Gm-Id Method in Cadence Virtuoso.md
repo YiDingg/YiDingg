@@ -836,7 +836,7 @@ $$
 GBW 约为 34.4 MHz, PM 大约在 38° 左右，这个相位裕度显然是不够的，需要作出调整。从频响曲线可以看出，这是一个三阶系统，具有三个极点和一个左半平面的零点，并且 $f_{p2}, f_{p3}, f_{z}$ 的频率相近。
 
 
-要改善性能，提高 PM, 一种思路是提高 $f_{p2}$ 至 1.5 GBW @ PM = 60°，或者 2.6 GBW @ PM = 70°, $f_{p2}$ 与 GBW 的关系见文章 [Relationship Between GBW and fp2 in a Tow-Order System](<Electronics/Relationship Between GBW and fp2 in a Tow-Order System.md>)；另一种思路是降低 $f_{z}$, 但是 $f_z$ 表达式的理论公式比较麻烦，需要我们完整地推导小信号模型。于是我们考虑对 $f_{p2}$ 和 $f_{p3}$ 作调整。
+要改善性能，提高 PM, 一种思路是提高 $f_{p2}$ 至 1.5 GBW @ PM = 60°，或者 2.6 GBW @ PM = 70°, $f_{p2}$ 与 GBW 的关系见文章 [Relationship Between GBW and fp2 in a Two-Order System](<Electronics/Relationship Between GBW and fp2 in a Two-Order System.md>)；另一种思路是降低 $f_{z}$, 但是 $f_z$ 表达式的理论公式比较麻烦，需要我们完整地推导小信号模型。于是我们考虑对 $f_{p2}$ 和 $f_{p3}$ 作调整。
 
 
 ### 4.3 improve PM and GBW
