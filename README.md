@@ -28,42 +28,9 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C357%20hrs%2025%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C359%20hrs%2044%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.6%20million%20lines%20of%20code-blue)
-
-**I'm a Night 🦉** 
-
-```text
-🌞 Morning                81 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   06.26 % 
-🌆 Daytime                430 commits         ████████░░░░░░░░░░░░░░░░░   33.23 % 
-🌃 Evening                412 commits         ████████░░░░░░░░░░░░░░░░░   31.84 % 
-🌙 Night                  371 commits         ███████░░░░░░░░░░░░░░░░░░   28.67 % 
-```
-📅 **I'm Most Productive on Friday** 
-
-```text
-Monday                   197 commits         ████░░░░░░░░░░░░░░░░░░░░░   15.22 % 
-Tuesday                  164 commits         ███░░░░░░░░░░░░░░░░░░░░░░   12.67 % 
-Wednesday                150 commits         ███░░░░░░░░░░░░░░░░░░░░░░   11.59 % 
-Thursday                 209 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.15 % 
-Friday                   217 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.77 % 
-Saturday                 151 commits         ███░░░░░░░░░░░░░░░░░░░░░░   11.67 % 
-Sunday                   206 commits         ████░░░░░░░░░░░░░░░░░░░░░   15.92 % 
-```
-
-
-📊 **This Week I Spent My Time On** 
-
-```text
-💬 Programming Languages: 
-Markdown                 51 mins             ███████████████████████░░   92.93 % 
-TeX                      3 mins              ██░░░░░░░░░░░░░░░░░░░░░░░   07.07 % 
-
-🐱‍💻 Projects: 
-GH.YiDingg               51 mins             ███████████████████████░░   92.93 % 
-GH.LatexNotes            3 mins              ██░░░░░░░░░░░░░░░░░░░░░░░   07.07 % 
-```
 
 **I Mostly Code in C** 
 
@@ -78,7 +45,7 @@ TypeScript               1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2025.07.12 18:46 UTC
+ Last Updated on 2025.07.13 18:46 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
