@@ -26,10 +26,12 @@
 
 
     - Analog IC Blogs (2025, 22 items)
-        - [An Introduction to Oscillators](<AnalogIC/An Introduction to Oscillators.md>)
-        - [TSMC 28nm Process Library Basic Information](<AnalogIC/Basic Information of TSMC 28nm Process Library.md>)
-        - [An Introduction to Layout](<AnalogIC/An Introduction to Layout.md>)
-        - [An Introduction to Noise](<AnalogIC/An Introduction to Noise.md>)
+        - [tsmc18rf (TSMC 180nm RF CMOS Process Library)](<AnalogIC/Basic Information of tsmc18rf (TSMC 180nm RF CMOS Process Library).md>)
+        - [An Introduction to Bandgap References](<AnalogIC/Razavi CMOS - Chapter 12. Bandgap References.md>)
+        - [An Introduction to Oscillators](<AnalogIC/Razavi CMOS - Chapter 15. Oscillators.md>)
+        - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogIC/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
+        - [An Introduction to Layout](<AnalogIC/Razavi CMOS - Chapter 19. Layout and Packaging.md>)
+        - [An Introduction to Noise](<AnalogIC/Razavi CMOS - Chapter 7. Noise.md>)
         - [The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogIC/The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation.md>)
         - [Reference Current Generation Methods](<AnalogIC/Reference Current Generation Methods.md>)
         - [Design Sheet of Basic Two-Stage Op Amp](<AnalogICDesigns/Design Sheet of Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>)
@@ -44,10 +46,10 @@
         - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<Electronics/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)
         - [Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>)
         - [Design Example of F-OTA using Gm-Id Methodology](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
-        - [Design Example of Folded-Cascode Stage using LTspice](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>)
+        - [Design Example of Folded-Cascode Stage using LTspice](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>)<!--  -->
         - [Gain Boosting Techniques](<Electronics/[Razavi CMOS] Gain Boosting Techniques.md>)<!--  -->
         - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)<!--  -->
-        - [A Brief View of Negative Feedback](<Electronics/[Razavi CMOS] A Brief View of Negative Feedback.md>)<!--  -->
+        - [A Brief View of Negative Feedback](<AnalogIC/Razavi CMOS - Chapter 8. Negative Feedback.md>)<!--  -->
         - [Mismatches of Basic Differential Pair](<Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)<!--  -->
         - [Cascode stage with PMOS load](<Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>) <!--  -->
         - [Gm Av calculation](<Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>) <!--  -->
@@ -64,11 +66,11 @@
 
     - ADE Assembler Tutorials
         - [0. Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/ADE Assembler - 0. How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)
-        - [! 1. Getting Started with Virtuoso ADE Assembler](<AnalogIC/ADE Assembler - 1. Getting Started with Virtuoso ADE Assembler.md>)
+        - [! 1. Getting Started with Virtuoso ADE Assembler](<AnalogIC/ADE Asjsembler - 1. Getting Started with Virtuoso ADE Assembler.md>)
 
     - How to Use Virtuoso Efficiently
-        - [! 0. How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)<!-- 这一篇不发在知乎或公众号上, 而是拆分为多篇文章来发 (相当于汇总) -->
-        - [! 1. Use Virtuoso Efficiently - Part 1: xxx](<>)
+        - [0. How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)<!-- 这一篇不发在知乎或公众号上, 而是拆分为多篇文章来发 (相当于汇总) -->
+        - [! 1. Shortcuts and Initialization](<AnalogIC/Use Virtuoso Efficiently - 1. Shortcuts and Initialization.md>)
         - [! 2. Use Virtuoso Efficiently - Part 2: xxx](<>)
 
 
@@ -90,7 +92,7 @@
         - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)
         - [An Example of Negative FB Amp](<Electronics/An Example of Negative FB Amp.md>)
         - [Constant Current Source using Transistors](<Electronics/Constant Current Source using Transistors.md>)
-        - [A Brief View of Negative Feedback](<Electronics/[Razavi CMOS] A Brief View of Negative Feedback.md>)
+        - [A Brief View of Negative Feedback](<AnalogIC/Razavi CMOS - Chapter 8. Negative Feedback.md>)
         - [An Example of Miller Effect of CE Stage](<Electronics/An Example of Miller Effect of CE Stage.md>)<!--  -->
         - [Precision Full-Wave Rectifier](<Electronics/Precision Full-Wave Rectifier.md>)<!--  -->
         - [Transistor Meas. of 2N7000 (N VDMOS)](<Electronics/Transistor Measurement of 2N7000 (N VDMOS).md>)<!--  -->
@@ -167,10 +169,15 @@
 
 
 - 📱 **Analog IC Designs** <!-- 新的 design 放在前面 -->
-    - Op Amp
 
-        - [twoStage_single_Nulling-Miller__80dB_50MHz_50Vus](AnalogICDesigns/OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md)
-        - [oneStage_single_folded-cascode__80dB_50MHz_50Vus](AnalogICDesigns/OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md)
+    - tsmcN28
+        - [op amp: twoStage_single_Nulling-Miller__70dB_500MHz](AnalogICDesigns/tsmcN28_OpAmp__twoStage_single_Nulling-Miller__70dB_500MHz.md)
+        - [BGR: low-voltage (scientific research practice 1)](<AnalogICDesigns/tsmcN28_BGR__scientific_research_practice_1.md>)
+
+    - tsmc18rf
+
+        - [op amp: twoStage_single_Nulling-Miller__80dB_50MHz_50Vus](AnalogICDesigns/tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md)
+        - [op amp: oneStage_single_folded-cascode__80dB_50MHz_50Vus](AnalogICDesigns/tsmc18rf_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md)
     - Design Sheets
         - [Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogICDesigns/Design Sheet of Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>)
         - [One-Stage Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet of Folded-Cascode Op Amp.md>)
@@ -340,7 +347,8 @@
 
 - 📝 **Projects**
 
-    - [Gomoku](Projects/Gomoku.md)
+    - [Scientific Research Practice 1 (BGR)](<Projects/Scientific Research Practice 1 (BGR).md>)
+    - [Gomoku (The Final Assignment of C Programming)](Projects/Gomoku.md)
     - [HDofDF (Humidity Detection of Diabetic Foot)](Projects/HDofDF.md)
     - [MuMeStar (Multiple Menu Star for OLED)](Projects/MuMeStar.md)
     - [OLEDSD (OLED Software Driver)](Projects/OLEDSD.md)

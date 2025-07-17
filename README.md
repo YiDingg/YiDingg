@@ -16,7 +16,7 @@ About Me:
 
 My Technology Stack: 
 - LaTex
-- Matlab
+- MATLAB
 - C Programming
 - MCU (Micro-Controller Unit)
 - PCB Layout

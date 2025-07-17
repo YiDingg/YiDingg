@@ -89,3 +89,6 @@ ADE
 Ohmic
 Barkhausen
 Colpitts
+Bandgap
+Bandgap
+bandgap

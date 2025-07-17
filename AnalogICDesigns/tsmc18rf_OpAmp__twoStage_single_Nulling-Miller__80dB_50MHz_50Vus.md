@@ -15,7 +15,7 @@ Initially published at 10:32 on 2025-06-17 in Beijing.
 
 | DC Gain | UGF | Load | PM | SR | ICMR | Swing | Power Dissipation |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
- | 80 dB | 100 MHz | 5 pF | 60° | 50 V/us | 0.5 V to 1.5 V | 1.0 V | 1 mA @ 1.8V (1.8 mW) |
+ | 80 dB | 50 MHz | 5 pF | 60° | 50 V/us | 0.5 V to 1.5 V | 1.0 V | 1 mA @ 1.8V (1.8 mW) |
 </div>
 
 主要优化方向为 dc gain, 齐次是 UGF 和 PM.
@@ -658,6 +658,8 @@ ADL XL 会自动保存最近几次 (默认 10 次) 的仿真数据，要查看�
 
 工艺角中的 ss, tt, ff 分别是指左下角、中心、右上角的 corner. 它们的含有如下：
 
+<div class='center'>
+
 | **工艺角** | **NMOS** | **PMOS** | **主要影响** | **典型用途** |
 |------------|---------|---------|-------------|-------------|
 | **tt** | 典型 | 典型 | 基准性能 | 标准验证 |
@@ -683,7 +685,7 @@ ADL XL 会自动保存最近几次 (默认 10 次) 的仿真数据，要查看�
 |:-:|:-:|
  | DC gain              |  84.35 dB @ Vin_CM = 0.9 V |
  | Output swing         | 0.881 V @ -3dB drop <br> 0.985 V @ 80dB gain <br> 1.38 V @ 60dB gain |
- | IMCR                 | (0.481 V, 1.568 V) =  1.087 V @ 80dB gain <br> (0.456 V, 1.697 V) = 1.242 V @ 60dB gain |
+ | ICMR                 | (0.481 V, 1.568 V) =  1.087 V @ 80dB gain <br> (0.456 V, 1.697 V) = 1.242 V @ 60dB gain |
  | UGF                  | 55.75 MHz @ Vin_CM = 0.9 V |
  | PM                   | 64.46° @ Vin_CM = 0.9 V |
  | GM                   | 19.31 dB @ Vin_CM = 0.9 V |
@@ -707,7 +709,7 @@ ADL XL 会自动保存最近几次 (默认 10 次) 的仿真数据，要查看�
 
 | Type | DC Gain | GBW | PM | Slew Rate | CM Input Range | Output Swing | Power Dissipation |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
- | Specifications     | 80 dB | 100 MHz | 60° | 50 V/us | 0.5 V to 1.5 V | 1.0 V |  1 mA @ 1.8V (1.8 mW) |
+ | Specifications     | 80 dB | 50 MHz | 60° | 50 V/us | 0.5 V to 1.5 V | 1.0 V |  1 mA @ 1.8V (1.8 mW) |
  | Simulation Results | 84.3461 dB | 55.75 MHz | 64.46° | +56.31 V/us, -45.35 V/us | 0.481 V to 1.568 V @ 80dB <br> 0.456 V to 1.697 V @ 60dB | 0.881 V @ -3dB <br> 0.985 V @ 80dB <br> 1.38 V @ 60dB | 690.2 uA @ 1.8V (1.242 mW) |
 
 </span>

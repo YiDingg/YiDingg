@@ -50,7 +50,7 @@ Frequently used tools for my workflow:
 - PDF to PNG: [FreeConvert](https://www.freeconvert.com/zh/pdf-to-png/download) or [CDKM](https://cdkm.com/cn/pdf-to-png)
 - SVG to PDF: [PDF24 Tools](https://tools.pdf24.org/zh/svg-to-pdf)
 - PDF to EXCEL: [I Love PDF](https://www.ilovepdf.com/pdf_to_excel)
-
+- EPUB to PDF (9pt or 10pt): [FreeConvert](https://www.freeconvert.com/epub-to-pdf)
 
 Other tools:
 - Text comparing tool: [diffing_tool](https://csacademy.com/app/diffing_tool/)

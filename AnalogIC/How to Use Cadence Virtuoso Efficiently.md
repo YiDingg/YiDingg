@@ -4,12 +4,7 @@
 > Initially published at 17:05 on 2025-05-20 in Beijing.
 
 
-Cadence 相关教程汇总：
-- [How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)
-- [How to Install Cadence IC618](<AnalogIC/Virtuoso Tutorials - 1. How to Install Cadence IC618.md>)
-- [How to Add New Process Libraries in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 3. How to Add New Process Libraries in Cadence IC618.md>)
-- [Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)
-- [Simulate Chara. of MOSFET in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 4. Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)
+Cadence 相关教程见 [知乎 > YiDingg > Cadence Virtuoso (IC618) 教程汇总](https://zhuanlan.zhihu.com/p/1923539215657959730).
 
 
 
@@ -29,6 +24,8 @@ Cadence 相关教程汇总：
 
 
 <div class='center'>
+<span style='font-size:11px'> 
+
 
 | 快捷键 | 默认设置及其效果 | 修改建议与修改后的效果 |
 |:-:|:-:|:-:|
@@ -39,7 +36,7 @@ Cadence 相关教程汇总：
  | `Schematic -> Ctrl<Key>Z` Ctrl + Z | `hiZoomOut()` 缩小界面 | `hiUndo()` undo (撤销) |
  | `Schematic -> Ctrl<Key>Y` Ctrl + Y | - (无) | `hiRedo()` redo (重做) |
 
-
+</span>
 </div>
 
 <!-- 修改完成后记得左下角 `Save Bindings for All > Save`，以免下次又要重新设置。也可以直接在 `.cdsinit` 文件中添加代码，详见后一小节。 -->
@@ -80,8 +77,11 @@ Cadence 相关教程汇总：
 可以根据不同的需要，在两个文件中设置不同的内容。相对而言，我更喜欢在 `.cdsenv` 文件里做设置 (不涉及 SKILL 语言的相关语法, 通常更简洁一些)
 
 ``` bash
-; .cdsenv
-; 直接将本段代码复制到 .cdsenv 文件的末尾, 后加载的 env 便可覆盖原始值, 不需要一个一个搜索然后修改
+; 下面是 .cdsenv 配置内容 (截至 2025.07.14)
+; 来源于知乎作者 https://www.zhihu.com/people/YiDingg
+; 直接将本段代码粘贴到 .cdsenv 文件末尾, 后加载的 env (环境变量) 便可覆盖原始值, 不需要一个一个搜索然后修改 (直接覆盖 .cdsenv 文件也是可以的)
+
+
 
 ;设置lable字体：将原理图和版图中的 lable 字体都改为 roman, 这样看起来会更清晰一些
 ;其它可选字体还有 "stick", "Helvetica" "Open Sans", "monospace", "euroStyle", "gothic", "math", "script", "fixed", "swedish", "milSpec" 等等
@@ -141,8 +141,9 @@ schematic	showUndoRedoHistoryInEditor	boolean	t ; 在 schematic 中显示撤销�
 另外，在 `.cdsinit` 文件中，我们也有一些实用的设置：
 
 ``` bash
-
 ; .cdsinit
+; 下面是 .cdsinit 配置内容 (截至 2025.07.14)
+; 来源于知乎作者 https://www.zhihu.com/people/YiDingg
 
 ; None<Btn2Down> 是中键
 hiSetBindKeys("Schematics" list(
@@ -303,14 +304,10 @@ envSetVal(list(
 envSetVal("schematic" "createLabelFontStyle" 'cyclic "roman")
 ```
 
-envSetVal("viva.vertMarker"	"interceptStyle"	'string	"on" )
-envSetVal("viva.horizMarker"	"interceptStyle"	'string	"on")
-envSetVal("viva.referenceLineMarker"	"interceptStyle"	'string	"on")
-
 当然，我们也可以通过修改 `display.drf` 文件来改变某些颜色、线条设置，这里不多赘述。
 
 
-可选的字体 family 汇总（大小写不能错）：
+可选的字体种类 fontfamily 汇总 (大小写不能错):
 ``` bash
 "roman", "monospace", "stick", "Helvetica" "Open Sans"
 ```
@@ -809,11 +806,20 @@ tar -cvf tsmc28n.tar /home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5/ # 将 Cadence_Pr
 
 ### 2. is referencing an undefined model
 
-仿真报错：<span style='color:red'> The instance 'NMOS1' is referencing an undefined model or subcircuit, 'nch'. Either include the file containing the definition of 'nch', or define 'nch' before running the simulation. </span> 这是工艺信息文件设置错误导致的，因为一般都是默认用中芯科技 smic18 工艺库的工艺信息文件，但是台积电 tsmc18 的工艺信息设置与其不同。
+仿真报错：<span style='color:red'> The instance 'NMOS1' is referencing an undefined model or subcircuit, 'nch'. Either include the file containing the definition of 'nch', or define 'nch' before running the simulation. </span> 这是工艺信息文件设置错误导致的，因为一般都是默认用中芯科技 smic18 工艺库的工艺模型文件，但是台积电 tsmc18 的工艺模型与其不同 (通常每一个工艺库都有自己对应的模型文件)。
 
 解决办法： `ADE L > Setup > Model Libraries`，添加 model file `/home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA/models/spectre/cor_std_mos.scs`，然后 <span style='color:red'> 记得在 section 一栏填入 tt 表示标准等级</span>。重新运行仿真即可。
 
 如果仍未解决，可参考 [this article](https://blog.csdn.net/coocoock/article/details/128053280)
+
+
+另外，在面对一个新的工艺库时，我们通常难以猜到到底应该添加哪一个 model file. 此时可以打开 ADE XL 然后直接运行仿真, ADE XL 会根据 schematic 中的器件，自动选择所需要的 model files (及其 section). 下面是一个 tsmcN28 工艺库的例子：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-00-38-12_How to Use Cadence Virtuoso Efficiently.png"/></div>
+
+
+
+
 
 ### 3. Virtual machine has crashed
 

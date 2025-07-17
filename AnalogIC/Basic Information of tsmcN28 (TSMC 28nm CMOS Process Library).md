@@ -1,4 +1,4 @@
-# Basic Information of TSMC 28nm Process Library (台积电 28nm CMOS 工艺库基本信息)
+# Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library) (台积电 tsmcN28 工艺库基本信息)
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 00:01 on 2025-06-25 in Beijing.
@@ -523,7 +523,7 @@ parasitic_rc_3T      : Parasitic RC device, Please refer to parasitic_rc_UserGui
 
 ```
 
-## Common Devices
+## Main Devices
 
 下面是一些普通设计中常用的 devices:
 - MOSFET:
@@ -595,3 +595,32 @@ parasitic_rc_3T      : Parasitic RC device, Please refer to parasitic_rc_UserGui
 在 TSMC 28nm 工艺库中, MOSFETs (macro device) 和 RF_MOSFETs 的主要区别在于它们的优化目标和适用场景。常规 MOSFETs 是针对通用数字和模拟电路设计的，注重面积、功耗和速度的平衡，适用于大多数标准逻辑电路、存储器和低频模拟模块。它们提供多种阈值电压选项 (如 LVT, RVT, HVT)，但在高频性能 (如噪声、线性度) 方面未做特殊优化。相比之下, RF_MOSFETs 专门针对射频应用 (如 LNA, PA, 混频器等) 优化，通过降低寄生参数 (如栅极电阻和漏源电容) 来提高高频性能，并包含更精确的射频模型 (如 S 参数和噪声系数) 。  
 
 在常规设计中，如果电路工作频率较低 (如数字逻辑或低频模拟电路) ，应优先使用标准 MOSFETs, 因为它们面积更小、成本更低且设计流程成熟。然而，如果设计涉及高频或射频应用 (如 5G、Wi-Fi 或毫米波电路) ，则必须使用 RF_MOSFETs, 以确保性能指标 (如噪声、增益和线性度) 满足要求。选择错误的器件类型可能导致仿真结果与流片实测严重不符，因此在设计初期就应根据应用需求明确选用哪种器件。建议参考 TSMC 的 PDK 文档或与 Foundry 支持团队沟通，以确认具体器件的设计规范。
+
+## Simulated MOSFET
+
+- `nch_mac`: 
+    - vgs_max = 990 mV
+    - vgb_max = 990 mV
+    - L_range = (27 nm, 900.1 nm)
+    - W_range = (90 nm, 2700.1 nm)
+    - a_max = 100
+- `pch_mac`:
+    - vgs_max = 990 mV
+    - vgb_max = 990 mV
+    - L_range = 
+    - W_range = 
+
+
+
+### nch_mac (Vds = 225 mV)
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-19-27-50_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-19-16-54_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-19-17-45_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-19-21-59_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-19-24-10_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-19-25-13_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-19-26-26_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-19-27-03_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
+
+### pch_mac (Vds = 225 mV)

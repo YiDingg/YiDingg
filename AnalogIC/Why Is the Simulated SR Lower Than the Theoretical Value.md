@@ -6,7 +6,7 @@
 
 ## Introduction
 
-在前两天的运放设计中 [(A Single-Ended Output Folded-Cascode Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR)](<AnalogICDesigns/OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md>), 我们依照理论公式 $\mathrm{SR} = \frac{\min \{I_{SS},\ I_{D5}\}}{C_L}$ 来指导运放的设计 (确定了各支路的电流)，但是最终仿真得到的 $\mathrm{SR}$ 却只有 +32.58 V/us 和 -35.22 V/us, 这与设计的 50 V/us 相差较大。
+在前两天的运放设计中 [(A Single-Ended Output Folded-Cascode Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR)](<AnalogICDesigns/tsmc18rf_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md>), 我们依照理论公式 $\mathrm{SR} = \frac{\min \{I_{SS},\ I_{D5}\}}{C_L}$ 来指导运放的设计 (确定了各支路的电流)，但是最终仿真得到的 $\mathrm{SR}$ 却只有 +32.58 V/us 和 -35.22 V/us, 这与设计的 50 V/us 相差较大。
 
 因此，在这篇文章，我们便对此现象背后的原因进行探讨。最可能的原因有两种：
 - **Possible cause 1**: 输出节点的寄生电容较大，导致实际的负载电容比 $5 \ \mathrm{pF}$ 要大

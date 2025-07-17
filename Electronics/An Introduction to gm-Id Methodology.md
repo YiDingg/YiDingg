@@ -338,10 +338,6 @@ $$
 
 
 
-### smic18mmrf
-
-### smic13mmrf
-
 
 
 
