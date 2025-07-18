@@ -15,9 +15,9 @@ Initially published at 18:48 on 2025-07-14 in Beijing.
 
 本次科研实践的主要目标是完整地设计一个带隙参考电压源 (bandgap reference, BGR), 完成前仿、版图和后仿工作。初步计划如下:
 
-- [ ] 1\. 确定 BGR 架构
-- [ ] 2\. 设计并前仿 BGR 的核心电路 (如运算放大器)
-- [ ] 3\. 对完整的 BGR 进行前仿
+- [x] 1\. 确定 BGR 架构
+- [ ] 2\. 设计用于 BGR 的运算放大器
+- [ ] 3\. 对完整 BGR 进行前仿
 - [ ] 4\. 进行版图设计
 - [ ] 5\. 完成版图后仿
 - [ ] 6\. 根据后仿结果进行 schematic 和 layout 层面的迭代优化
@@ -27,3 +27,6 @@ Initially published at 18:48 on 2025-07-14 in Beijing.
 
 
 ## 3. 
+
+## References
+

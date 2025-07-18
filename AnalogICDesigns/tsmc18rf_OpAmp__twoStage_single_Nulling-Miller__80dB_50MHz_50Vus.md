@@ -31,7 +31,7 @@ Initially published at 10:32 on 2025-06-17 in Beijing.
 
 
 
-<span style='color:red'> 这里放图 </span>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-22-14-42-24_Design Sheet of Basic Two-Stage Op Amp with Nulling-Miller Compensation.png"/></div>
 
 
 ### 1.2 biasing circuits
@@ -668,6 +668,7 @@ ADL XL 会自动保存最近几次 (默认 10 次) 的仿真数据，要查看�
 | **sf** | 慢 | 快 | NMOS 弱、PMOS 强 | 电平转换问题 |
 | **fs** | 快 | 慢 | NMOS 强、PMOS 弱 | 竞争条件分析 |
 
+</div>
 
 打开 `ADE XL > Data View > Corners > Add Model Files > Import From Tests > Add New Corner (温度计) > choose corner (可以多点几次温度计) > rename corner test` 进行设置。设置完成后，点击 `Run Simulation` 开始仿真，结果如下：
 
@@ -677,7 +678,23 @@ ADL XL 会自动保存最近几次 (默认 10 次) 的仿真数据，要查看�
 
 ## 6. Design Summary
 
-本文设计的运放非常好地满足了各项指标要求，其主要性能如下：
+本文设计的运放非常好地满足了各项指标要求，其器件参数和主要性能指标如下：
+
+<div class='center'>
+
+| MOSFET | W/L (um) | a (um/um) | gm/Id |
+|:-:|:-:|:-:|:-:| 
+ | M1, M2 | 26/1.65  | 15.78  | 12.5 |
+ | M3, M4 | 48/0.78  | 61.54  | 11.0 |
+ | M5     | 33/2.00  | 16.50  | 10.0 |
+ | M6     | 370/0.78 | 474.36 | 11.0 |
+ | M7     | 400/3.06 | 130.72 | 10.0 |
+ |  ---   |    ---   |   ---  |  --- |
+ | Mb1, Mb2 | 33u/2u | Mb3 | 528u/2u |
+ | Mb4 | 132u/2u | Mb5 | 0.36u/5u |
+ | Cc     |  1.67 pF |  Rz, Rs    | 1.3 kOhm |
+</div>
+
 
 <div class='center'>
 

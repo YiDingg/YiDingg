@@ -978,4 +978,21 @@ find . -name "*.cdslck" -exec rm -f {} \;   # 递归搜索并删除当前目录�
 AnalogIC/How to Use Cadence Virtuoso Efficiently.md -->
 
 
+### 6. Error: argument #1 should be either a string or a symbol
 
+在 ADE XL 中加载之前的仿真数据时报错：
+
+``` bash
+WARNING (OCN-6040): The specified directory does not exist, or the directory does not contain valid PSF results.
+        Ensure that the path to the directory is correct and the directory has a logFile and PSF result files.
+WARNING (ADE-1065): No simulation results are available.
+*Error* ("strcat" 0 t nil ("*Error* strcat: argument #1 should be either a string or a symbol (type template = \"S\")" nil))
+```
+
+<!-- 参考 [this article](), 只需重新生成一下 netlist 即可。于是打开 schematic 并点击 `Save and Netlist` -->
+
+是因为导入了错误的仿真数据文件，正确的数据文件都是在 `adexl` 文件夹下面，例如：
+
+``` bash
+/home/IC/simulation/MyLib_tsmcN28/simu_MOSFET_nch_mac/adexl/results/data/gmId_nch_mac_125mV/psf/tsmcN28__nch_mac
+```

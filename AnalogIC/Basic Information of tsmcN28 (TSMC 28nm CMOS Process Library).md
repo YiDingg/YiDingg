@@ -598,21 +598,20 @@ parasitic_rc_3T      : Parasitic RC device, Please refer to parasitic_rc_UserGui
 
 ## Simulated MOSFET
 
-- `nch_mac`: 
+- `nch_mac`, `pch_mac`:
     - vgs_max = 990 mV
     - vgb_max = 990 mV
-    - L_range = (27 nm, 900.1 nm)
-    - W_range = (90 nm, 2700.1 nm)
-    - a_max = 100
-- `pch_mac`:
-    - vgs_max = 990 mV
-    - vgb_max = 990 mV
-    - L_range = 
-    - W_range = 
+    - L_range = (27.001 nm, 900.1 nm)
+    - W_range = (90.000 nm, 2700.1 nm)
+    - a_range = (0.1, 100)
+
 
 
 
 ### nch_mac (Vds = 225 mV)
+
+- L from 60n to 600n (19 steps)
+- a from 2 to 22 (5 steps)
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-19-27-50_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-19-16-54_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
@@ -622,5 +621,9 @@ parasitic_rc_3T      : Parasitic RC device, Please refer to parasitic_rc_UserGui
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-19-25-13_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-19-26-26_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-19-27-03_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
+
+### using ADE XL
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-23-14-14_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
 
 ### pch_mac (Vds = 225 mV)

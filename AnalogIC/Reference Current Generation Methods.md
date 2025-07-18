@@ -12,7 +12,22 @@ Initially published at 22:36 on 2025-06-17 in Beijing.
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-17-23-51-34_Reference Current Generation Methods.png"/></div>
 
+$$
+\begin{gather}
+I_{out} = \frac{2}{\mu_n C_{ox}\left(\frac{W}{L}\right)_N}\cdot \frac{1}{R_S^2}\left(1 - \frac{1}{\sqrt{K}}\right)^2,\quad 
+I_D =  \mu_n C_{ox}\left(\frac{W}{L}\right) \cdot \frac{4}{\left(\frac{g_m}{I_D}\right)^2}
+\\
+\Longrightarrow I_{out} = \frac{2\sqrt{2}}{\left(\frac{g_m}{I_D}\right)_N }\cdot \frac{1 - \frac{1}{\sqrt{K}} }{R_S} \quad 
+\mathrm{(square\ low)},\quad \mathrm{let\ } K = 4,\ \mathrm{we\ have:}
+\\
+I_{out} = \frac{\sqrt{2}}{\left(\frac{g_m}{I_D}\right)_N }\cdot \frac{1}{R_S},\quad 
+R_S = \frac{\sqrt{2}}{I_{out}\left(\frac{g_m}{I_D}\right)_N } =  \frac{\sqrt{2}}{g_{mN}}
+\end{gather}
+$$
+
 图中的 $I_{out}$ 即为我们所需的 biasing current. 要作 nmos current mirror, 令 Figure 12.3 (b) 的 M2 为"相同"尺寸后从 gate of M2 取出 biasing voltage 即可；类似，要作 pmos current mirror 时，令 Figure 12.3 (1) 的 M3 为"相同"尺寸后从 gate of M3 取出 biasing voltage 即可。
+
+
 
 此结构关于 VDD 的 sensitivity 为：
 
@@ -86,6 +101,18 @@ $$
 - 选择合适的 (W/L)_P, 例如选择 (W/L)_P = 4 (W/L)_N 作为 initial guess
 - 调整 R_S 使 I_out 达到预期值
 - 选择合适的 M5 作为 start-up 电路
+
+### design example
+
+下面是 Figure 12.5 (a) 中一组比较常用的设计考量：
+
+$$
+\begin{gather}
+\left(\frac{W}{L}\right)_P = 4 \left(\frac{W}{L}\right)_N,\quad \left(\frac{W}{L}\right)_{5} < \frac{1}{10}
+,\quad 
+K = 4,\quad R_S = \frac{\sqrt{2}}{I_{out}\left(\frac{g_m}{I_D}\right)_N } =  \frac{\sqrt{2}}{g_{mN}}
+\end{gather}
+$$
 
 
 ## Cascode Beta Multiplier

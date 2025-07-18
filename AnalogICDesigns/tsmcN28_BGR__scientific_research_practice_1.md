@@ -97,18 +97,28 @@ $$
 
 <div class='center'>
 
-| DC Gain | UGF | Load | PM | SR | ICMR | Swing | Power Dissipation |
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
- | 70 dB | 500 MHz | 1 pF | 60° | - | (600 mV, 800 mV) | (400 mV, 700 mV) | 100 uA @ 0.9V (0.09 mW) |
+| DC Gain | UGF | Load | PM | SR | ICMR | Swing | Power Dissipation | Process Corner |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+ | - | - | - | 60° | - | (600 mV, 800 mV) | (400 mV, 700 mV) | 100 uA @ 0.9V (0.09 mW) | TT, SS, FF, SF, FS |
 </div>
 
 主要优化方向为 UGF, 其次是 DC Gain 和 ICMR.
+
+除了上面的 specifications, 还有一个需要注意的问题是：运放的 reference current 由谁提供？是像完全模块化的运放一样，由额外的 current reference circuit 提供，还是利用现有的 BGR 提供？如果是后者，如何确保接入电源时整个 BGR 可以正常进入工作状态？
+
+
+
+关于这个问题, Razavi 在 [Paper [1]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9523469) 中所使用的是后者 (运放单独含有一个 reference current circuit), [Paper [2]](https://doi.org/10.1007/s10470-009-9352-4) 中给出的众多例子也没有明确指出运放的 reference current 从哪里来，猜测都是运放内部单独含有参考电路。除此之外,  [Paper [3]](http://ieeexplore.ieee.org/document/4734888/) 则是用一个电阻替代了位于底部的 current transistor. 
+
+因此，我们运放的 reference current 也将由运放内部的 biasing circuit 来提供，独立于 BGR 之外。
+
+
 
 ## 2. Design of Op Amp
 
 详见文章 [A Basic Two-Stage Nulling-Miller Compensation Op Amp aiming 80 dB Gain, 500 MHz UGF at 1pF Load](<AnalogICDesigns/tsmcN28_OpAmp__twoStage_single_Nulling-Miller__70dB_500MHz.md>).
 
-## 3. Temp-Compensation
+## 3. Start-Up Circuit
 
 
 
@@ -117,4 +127,11 @@ $$
 ## 5. Layout of BGR
 
 ## 6. Post-Simulation
+
+## References
+
+
+- [1] [(this link)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9523469) RAZAVI B. The Design of a Low-Voltage Bandgap Reference \[The Analog Mind]\[J/OL]. IEEE Solid-State Circuits Magazine, 2021, 13(3): 6-16. DOI:10.1109/mssc.2021.3088963. 
+- [2] [(this link)](https://doi.org/10.1007/s10470-009-9352-4) DONG-OK HAN, JEONG-HOON KIM, NAM-HEUNG KIM. Design of bandgap reference and current reference generator with low supply voltage[C/OL]//2008 9th International Conference on Solid-State and Integrated-Circuit Technology. Beijing, China: IEEE, 2008: 1733-1736[2025-07-14]. http://ieeexplore.ieee.org/document/4734888/. DOI:10.1109/icsict.2008.4734888.
+- [3] [(this link)](http://ieeexplore.ieee.org/document/4734888/) FAYOMI C J B, WIRTH G I, ACHIGUI H F, 等. Sub 1 V CMOS bandgap reference design techniques: a survey[J/OL]. Analog Integrated Circuits and Signal Processing, 2010, 62(2): 141-157. DOI:10.1007/s10470-009-9352-4.
 

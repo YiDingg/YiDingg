@@ -347,7 +347,7 @@
 
 - 📝 **Projects**
 
-    - [Scientific Research Practice 1 (BGR)](<Projects/Scientific Research Practice 1 (BGR).md>)
+    - [Scientific Research Practice 1 (BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
     - [Gomoku (The Final Assignment of C Programming)](Projects/Gomoku.md)
     - [HDofDF (Humidity Detection of Diabetic Foot)](Projects/HDofDF.md)
     - [MuMeStar (Multiple Menu Star for OLED)](Projects/MuMeStar.md)
