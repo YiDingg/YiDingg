@@ -28,7 +28,7 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C389%20hrs%2024%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C398%20hrs%201%20min-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.6%20million%20lines%20of%20code-blue)
 
@@ -57,16 +57,15 @@ Sunday                   206 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 29 hrs 29 mins      █████████████████████████   99.44 % 
-JSON                     9 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.52 % 
-TeX                      0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.03 % 
+Markdown                 37 hrs 36 mins      █████████████████████████   99.56 % 
+JSON                     9 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.41 % 
+TeX                      0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.02 % 
 Other                    0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.01 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               29 hrs 29 mins      █████████████████████████   99.39 % 
-GH.UCAS-LinearCircuitExpe8 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.50 % 
-Paper                    1 min               ░░░░░░░░░░░░░░░░░░░░░░░░░   00.08 % 
-GH.LatexNotes            0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.03 % 
+GH.YiDingg               37 hrs 36 mins      █████████████████████████   99.59 % 
+GH.UCAS-LinearCircuitExpe8 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.39 % 
+GH.LatexNotes            0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.02 % 
 ```
 
 **I Mostly Code in C** 
@@ -82,7 +81,7 @@ TypeScript               1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2025.07.20 18:47 UTC
+ Last Updated on 2025.07.21 18:51 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
