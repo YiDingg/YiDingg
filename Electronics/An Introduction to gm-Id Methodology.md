@@ -3,16 +3,20 @@
 > [!Note|style:callout|label:Infor]
 > Initially published at 22:14 on 2025-06-05 in Beijing.
 
-## gm-Id Methodology
+## Intruduction
+
+本文以台积电 180nm CMOS 工艺库 `tsmc18rf` 为例，详细介绍了 gm/Id 方法的由来、基本假设、具体原理以及应用方法，并在最后给出 gm/Id 设计示例和其他参考资料的链接。
+
+## 1. gm-Id Methodology
 
 
-### Design Parameters
+### 1.1 Design Parameters
 
 在我们的 gm-Id 方法中，三个关键设计变量是 $\frac{g_m}{I_D}$, $\frac{W}{L}$ 和 $L$。而最为关键的图像便是 $(x,\ y) = (\frac{g_m}{I_D},\ I_{nor})$, 其中 $I_{nor} = \frac{I_D}{\left(\frac{W}{L}\right)}$ 称为 normalized current.
 
 **<span style='color:red'> 注意，我们本文所讨论的 gm-Id 方法忽略了 body-effect 的影响，也就是默认不存在 (或可以忽略) body-effect. </span>**
 
-### Physical Significance
+### 1.2 Physical Significance
 
 作为 gm-Id 方法的最关键变量，$\frac{g_m}{I_D}$ 有没有什么具体的物理意义呢？其实是有的：
 
@@ -26,19 +30,19 @@ $$
 >This derivative is maximum in the weak inversion region where the ID dependence versus VG is exponential while it is quadratic in strong inversion, becoming almost linear deeply in strong inversion because of the velocity saturation. The maximum is equal to l /(nU~) in the weakest inversion where n is the subthreshold slope factor and UT the thermal voltage. Therefore, the gm/Id ratio is also an indicator of the mode of operation of the transistor. 
 
 
-### Key Hypotheses 
+### 1.3 Key Hypotheses 
 
 对于一般性的设计 (general designs), gm/Id 的范围通常在 5 ~ 15 (or 3 ~ 18)。在此范围下，如果晶体管的特性满足如下几个假设，那么我们的方法便是可行的：
-- **Hypothesis 0:** 在给定 L 和 $V_{DS}$ 的情况下，$I_D$ 和 $W$ 满足非常好的正比例关系
+- **Hypothesis 1:** 在给定 L 和 $V_{DS}$ 的情况下，$I_D$ 和 $W$ 满足非常好的正比例关系
     - 这是利用小的偏置电流定义支路上大电流的基础，也就是 finger 和 multiplication 的基础
-- **Hypothesis 1:** 在合理的 $\frac{W}{L}$ 范围内 (通常 from 10 to 100, 甚至 from 2 to 1000), $\frac{g_m}{I_D}$ 关于 $V_{GS}$ 严格单调递减，具有良好的双射关系 (一一对应)，且基本不受其它各种参数影响
+- **Hypothesis 2:** 在合理的 $\frac{W}{L}$ 范围内 (通常 from 10 to 100, 甚至 from 2 to 1000), $\frac{g_m}{I_D}$ 关于 $V_{GS}$ 严格单调递减，具有良好的双射关系 (一一对应)，且基本不受其它各种参数影响
     - 这为 gm-Id 方法的第一个关键变量 $\frac{g_m}{I_D}$ 提供了基础
     - 事实上，$\frac{g_m}{I_D}$ 在 Vgs < 0 时一般是不单调。但是，目前绝大多数的 CMOS 工艺，$(V_{GS}, \frac{g_m}{I_D})$ 曲线在 $V_{GS} > 0$ 时都是严格单调的，此时的 $\frac{g_m}{I_D}$ 范围大约是 $(1,\ 30)$, 更别说我们这里只考察 $\frac{g_m}{I_D} < 18$ 的区间
-- **Hypothesis 2:** $\frac{I_D}{\left(\frac{W}{L}\right)}$ 主要由 $\frac{g_m}{I_D}$ 决定，基本不受 $L$ 和 $V_{DS}$ 参数影响
+- **Hypothesis 3:** $\frac{I_D}{\left(\frac{W}{L}\right)}$ 主要由 $\frac{g_m}{I_D}$ 决定，基本不受 $L$ 和 $V_{DS}$ 参数影响
     - 这为 gm-Id 方法的第二个关键变量 $I_D$ (或 $\frac{W}{L}$) 提供了基础
     - 是将 $I_D$ 和 $\frac{W}{L}$ 联系起来的根本条件。举个例子，当 $\frac{g_m}{I_D}$ 给定时，无论其它参数怎样，我们都可以得出 $\frac{I_D}{\left(\frac{W}{L}\right)}$ 的值，此时只要再敲定电流 $I_D$，便可以计算出 $\frac{W}{L}$
 
-### Performance Parameters
+### 1.4 Performance Parameters
 
 下面是一些我们在设计中可能关心的（晶体管级）性能参数：
 
@@ -51,28 +55,24 @@ $$
  | output resistance (early resistance) | $r_O$ | 通常没有前两个那么重要，因为能显著影响 $r_O$ 的参数太多，还有很多二级效应，对 $r_O$ 的精确预估比较困难，所以常常被设计者“抛弃” |
  | transient frequency | $f_T$ | 表征 MOS 速度 (或寄生电容大小) 的关键变量, 一般可以用 $f_T \approx \frac{g_m}{2 \pi (C_{gs} + C_{gd})}$ 近似计算 |
  | frequency efficiency | $\frac{f_T}{I_D}$ | 表明单位电流可以带来多少的 $f_T$，在低功耗高速设计中这个参数需要比较大。其实放大器也有类似的概念叫 "GBW efficiency", 定义为 $\frac{GBW}{I_D}$，并且 $\frac{GBW}{I_D} = \frac{GBW}{g_m \cdot \frac{I_D}{g_m}} = \frac{\frac{f_T}{FO}}{\frac{4 k T \gamma}{\overline{v_{n}^2}}} \cdot \frac{g_m}{I_D} \propto f_T \cdot \frac{g_m}{I_D}$，这个乘积通常在 gm/Id 中等偏低的时候取最大值 (5 ~ 10), 并且随着 L 的降低而升高 (见 [this slide](https://www.ieeetoronto.ca/wp-content/uploads/2020/06/20160226toronto_sscs.pdf) page 32) |
- |  |  |  |
- |  |  |  |
- |  |  |  |
- |  |  |  |
 
 </div>
 
-### Design Tips
+### 1.5 Design Tips
 
 - $V_{ds}$ 对 $g_m$ 一般没有什么影响，但对 $r_O$ 影响很大，两者在一定电压范围内成正相关 (通常整个 1.8 V 都可视为正相关)
 
-## Hypotheses Verifications
+## 2. Hypotheses Verifications
 
 
 
 下面，我们就以台积电 180nm CMOS 工艺库 `tsmc18rf` 为例，考察其工艺库中的 NMOS 模型 `nmos2v` 是否满足上面的几个假设。
 
-### Hypothesis 0 (Verified)
+### 2.1 Hypothesis 1 (Verified)
 
-见 **Hypothesis 1** 验证结论的第一条。
+见 **Hypothesis 2** 验证结论的第一条。
 
-### Hypothesis 1 (Verified)
+### 2.2 Hypothesis 2 (Verified)
 
 <!-- 结果如下：
 
@@ -81,7 +81,7 @@ $$
 上面涵盖的范围太宽了，看起来并没有那么好，我们不妨固定 W = 18u, 扫描 L from 0.18u to 1.8u 看看情况：
  -->
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-06-21-09-58_An Introduction to gm-Id Methodology.png"/></div> -->
-- Hypothesis 1: $\frac{g_m}{I_D}$ 关于 $V_{GS}$ 严格单调递减，具有良好的一一对应关系，且基本不受其它各种参数影响
+- Hypothesis 2: $\frac{g_m}{I_D}$ 关于 $V_{GS}$ 严格单调递减，具有良好的一一对应关系，且基本不受其它各种参数影响
 
 <span style='color:red'> 若无特别说明，下面所有 $(x,\ y) = (\frac{g_m}{I_D},\ V_{GS})$ 的曲线都已检查过，确保 $\frac{g_m}{I_D} \in (5,\ 15)$ 时晶体管处于 region 2 (饱和区) </span>
 
@@ -108,14 +108,14 @@ $$
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-06-21-53-50_An Introduction to gm-Id Methodology.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-06-21-57-03_An Introduction to gm-Id Methodology.png"/></div>
 
-其中 region 值的含义是： 0 (off), 1 (triode), 2 (saturation), 3 (subthreshold), 4 (damaged). 综合上面的几个图像，我们可以说已经验证了 Hypothesis 1.
+其中 region 值的含义是： 0 (off), 1 (triode), 2 (saturation), 3 (subthreshold), 4 (damaged). 综合上面的几个图像，我们可以说已经验证了 Hypothesis 2.
 
 
 
 
-### Hypothesis 2 (Verified)
+### 2.3 Hypothesis 3 (Verified)
 
-- Hypothesis 2: $\frac{I_D}{\left(\frac{W}{L}\right)}$ 主要由 $\frac{g_m}{I_D}$ 决定，基本不受 $L$ 和 $V_{DS}$ 参数影响
+- Hypothesis 3: $\frac{I_D}{\left(\frac{W}{L}\right)}$ 主要由 $\frac{g_m}{I_D}$ 决定，基本不受 $L$ 和 $V_{DS}$ 参数影响
 
 
 类似的验证思路，我们令 Vds = 450 mV, 扫描 L from <span style='color:red'> 0.36u </span> to 3.6u, W/L from 5 ~ 250 的结果。 L 为最小沟道长度 0.18u 时，其特性通常有比较明显的偏移，我们在设计时也通常不用它，于是这里不做仿真，直接从 0.36 u 开始。
@@ -128,12 +128,12 @@ $$
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-06-22-54-30_An Introduction to gm-Id Methodology.png"/></div>
 
 上面两个图可以推出以下结论：
-- 在所有的 $\frac{g_m}{I_D}$ 范围内，长宽比 $\frac{W}{L}$ 的变化完全不会影响 $\frac{I_D}{\left(\frac{W}{L}\right)}$ 的值 <span style='color:red'> (这相当于验证了 Hypothesis 0) </span>
+- 在所有的 $\frac{g_m}{I_D}$ 范围内，长宽比 $\frac{W}{L}$ 的变化完全不会影响 $\frac{I_D}{\left(\frac{W}{L}\right)}$ 的值 <span style='color:red'> (这相当于验证了 Hypothesis 1) </span>
 - 在 $\frac{g_m}{I_D}$ 稍低的区域 (5 ~ 10), $\frac{I_D}{\left(\frac{W}{L}\right)}$ 的值会随着 $L$ 的增加而略微增加，但这种影响在 $L$ 足够大 (达到 $5 L_0 = 0.9 \ \mathrm{u}$) 时便可以忽略了
 - 在 $\frac{g_m}{I_D}$ 稍高的区域 (10 ~ 15), $L$ 对 $\frac{I_D}{\left(\frac{W}{L}\right)}$ 的影响可以忽略了
 - $\frac{I_D}{\left(\frac{W}{L}\right)}$ 的值会随着 $V_{ds}$ 的增大而略微增大，但是这种影响比较小，通常也可以忽略
 
-综合上面几条结论， Hypothesis 2 和 Hypothesis 0 得到了验证。
+综合上面几条结论， Hypothesis 3 和 Hypothesis 1 得到了验证。
 
 <!-- 第一个图在 $\frac{g_m}{I_D} = 5$ 附近出现了较大的误差，是因为这时沟道长度较短的晶体管处在较深的 strong inversion, 其 $r_O$ 非常小的同时 
  -->
@@ -141,7 +141,7 @@ $$
 
 
 
-## gm-Id Design Steps
+## 3. gm-Id Design Steps
 
 
 gm-Id 方法的一般设计流程如下：
@@ -157,7 +157,7 @@ gm-Id 方法的一般设计流程如下：
 
 
 
-## gm-Id Design Examples
+## 4. gm-Id Design Examples
 
 在一般性的设计中，晶体管基本可以分为以下几类：
 
@@ -183,7 +183,7 @@ I_D = \frac{1}{2}C_L \cdot \mathrm{SR} = 125 \ \mathrm{uA}
 \end{gather}
 $$
 
-输入管 (NMOS) 的 gm/Id = 12.57 已经确定，且在 10 ~ 15 区间，因此 Hypothesis 2 可以符合得很好。我们先通过 $\frac{I_D}{\left(\frac{W}{L}\right)}$ 的值来确定 $\frac{W}{L}$: 作为一个 1.8 V 下的 folded-cascode, 输入管一般需要承受 $1.8 \ \mathrm{V} - 2 \times 0.3 \ \mathrm{V} = 1.2 \ \mathrm{V}$ 的 Vds, 因此不妨用 Vds = 900 mV 所得曲线来确定 $\frac{I_D}{\left(\frac{W}{L}\right)}$ 。
+输入管 (NMOS) 的 gm/Id = 12.57 已经确定，且在 10 ~ 15 区间，因此 Hypothesis 3 可以符合得很好。我们先通过 $\frac{I_D}{\left(\frac{W}{L}\right)}$ 的值来确定 $\frac{W}{L}$: 作为一个 1.8 V 下的 folded-cascode, 输入管一般需要承受 $1.8 \ \mathrm{V} - 2 \times 0.3 \ \mathrm{V} = 1.2 \ \mathrm{V}$ 的 Vds, 因此不妨用 Vds = 900 mV 所得曲线来确定 $\frac{I_D}{\left(\frac{W}{L}\right)}$ 。
 
 查看曲线可知 $\frac{g_m}{I_D} = 12.57$ 时 $\frac{I_D}{\left(\frac{W}{L}\right)} = 3.161 \ \mathrm{uA}$, 而我们的电流 $I_D = 125 \ \mathrm{uA}$, 因此有：
 
@@ -310,14 +310,17 @@ $$
 
 ### E4: Gain Transistor
 
-## gm-Id Reference Data
+## 5. Simulated Data for gm-Id
 
-### tsmc18rf (180nm CMOS)
+<!-- ### tsmc18rf (180nm CMOS)
+ -->
 
-- `nmos2v`: L from 0.18u to 20u, W from 0.22u to 900u
-- `pmos2v`: 
+- `tsmc18rf` (180nm RF CMOS) 中的器件 `nmos2v`, `pmos2v` 尺寸范围: L from 0.18u to 20u, W from 0.22u to 900u
 
-#### nmos2v (Vds = 225 mV)
+下面的仿真数据在 Vds = 225 mV 的情况下扫描 Vgs from 0 V to 1.8 V 得到：
+
+<!-- #### nmos2v ()
+ -->
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-16-40-36_An Introduction to gm-Id Methodology.png"/></div>
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-16-43-16_An Introduction to gm-Id Methodology.png"/></div> -->
@@ -328,20 +331,23 @@ $$
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-17-26-02_An Introduction to gm-Id Methodology.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-17-29-13_An Introduction to gm-Id Methodology.png"/></div>
 
-#### nmos2v (Vds = 450 mV)
+
+<!-- #### nmos2v (Vds = 450 mV)
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-08-16-39-27_An Introduction to gm-Id Methodology.png"/></div>
 
 #### pmos2v (Vds = 225 mV)
 
 #### pmos2v (Vds = 450 mV)
-
+ -->
 
 
 
 
 
 ## References
+
+### gm-Id Methodology and Theory
 
 Methodology and theory:
 - [x] [Design of MOS Amplifiers Using gm/ID Methodology](https://designers-guide.org/forum/Attachments/Gm_BY_ID_Methodology.pdf)
@@ -357,7 +363,7 @@ Methodology and theory:
 - [x] [Paper: A gm/Id based Methodology for the Design of CMOS Analog Circuits and Its Application to the Synthesis of a Silicon-on-Insulator Micropower OTA](https://people.engr.tamu.edu/spalermo/ecen474/gm_ID_methodology_silveira_jssc_1996.pdf): 早期使用 gm/Id 方法的论文，介绍了 gm/Id 的设计方法和在  Silicon-on-Insulator Micropower OTA 中的应用
 
 
-## Relevant Resources
+### Relevant Resources
 
 下面是与 gm-Id 相关的一些资料/论文/书籍：
 
@@ -367,6 +373,7 @@ Methodology and theory:
 - Book: [Systematic Design of Analog CMOS Circuits (Using Pre-Computed Lookup Tables)](https://www.cambridge.org/core/books/systematic-design-of-analog-cmos-circuits/A07A705132E9DE52749F65EB63565CE0)
 - Slide: [gm/Id-Based MOSFET Modeling and Modern Analog Design](https://www.mos-ak.org/wroclaw/MOS-AK_DF.pdf)
 
+### gm-Id Design Examples
 
 gm-Id design examples: 
 - [知乎 > (模集王小桃) 基于 gm/Id 的运放设计 (单端输出的两级运放设计)](https://zhuanlan.zhihu.com/p/18217441114)

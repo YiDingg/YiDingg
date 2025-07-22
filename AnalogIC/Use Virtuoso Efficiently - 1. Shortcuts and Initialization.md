@@ -32,13 +32,257 @@ Cadence Virtuoso 的很多默认快捷键和初始化设置都不符合日常使
 
 
 
-下面直接给出我个人目前在用的 `.cdsinit` 和 `.cdsenv` 的文件内容，读者只需将其分别覆盖到自己的 `/home/.cdsinit` 和 `/home/.cdsenv` 文件 (复制代码后，在相应文件处 `Ctrl + A` 全选，然后 `Ctrl + V` 粘贴)。考虑到知乎的代码块不会自动折叠，我们先给出两个配置文件的下载地址，再给出源码 (代码行数比较多，影响观感)。
+下面直接给出我个人目前在用的 `.cdsinit` 和 `.cdsenv` 的文件内容，读者只需将其分别覆盖到自己的 `/home/.cdsinit` 和 `/home/.cdsenv` 文件 (复制代码后，在相应文件处 `Ctrl + A` 全选，然后 `Ctrl + V` 粘贴)。考虑到知乎代码块不会自动折叠，我们先给出两个配置文件的下载地址，在文末给出源码 (代码行数较多，非常影响观感)。
 
 两个配置文件 `.cdsinit` 和 `.cdsenv` 已经上传到 [123 云盘分享: Virtuoso 配置文件](https://www.123684.com/s/0y0pTd-i9Sj3).
 
 
 
-**下面是 .cdsenv 文件的内容：**
+
+
+
+文末给出的 `.cdsinit` 代码，看似很长，但大部分都是示例文件中自带的代码，真正起作用的是文件的后半部分，如下：
+
+``` bash
+/*
+下面是 .cdsinit 配置内容 (截至 2025.07.14), 来源于知乎作者 https://www.zhihu.com/people/YiDingg
+直接将本段代码粘贴到 .cdsinit 文件 即可 (覆盖全部原内容), 另外, 后加载的代码可覆盖先加载的代码
+
+本配置代码前半部分来自示例文件 <Cadence_Install_Directory>/tools/dfII/samples/local.cdsinit>, 后半部分是我们的自定义配置, 另外还注释了几行示例部分的代码以避免无限循环导致软件卡死
+*/
+
+; None<Btn2Down> 是中键
+hiSetBindKeys("Schematics" list(
+    list("None<Btn4Down>" "geScroll(nil \"n\" nil)")        ; 鼠标滚轮上滑, 界面上移:
+    list("None<Btn5Down>" "geScroll(nil \"s\" nil)")        ; 鼠标滚轮下滑, 界面下移:
+    list("Ctrl<Btn4Down>" "hiZoomInAtMouse()")              ; Ctrl + 鼠标滚轮上滑, 放大界面:
+    list("Ctrl<Btn5Down>" "hiZoomOutAtMouse()")             ; Ctrl + 鼠标滚轮下滑, 缩小界面:
+    list("Ctrl<Key>Z" "hiUndo()")                           ; Ctrl + Z, 撤销:
+    list("Ctrl<Key>Y" "hiRedo()")                           ; Ctrl + Y, 重做:
+    list("<Key>F5" "simulate")                              ; F5 仿真
+    list("<Key>space" "schSetEnv(\"rotate\" t)")            ; 空格旋转
+    list("Ctrl<Key>s" "schHiCheckAndSave()")                ; Ctrl + S 检查与保存
+    list("<Key>x" "schSetEnv(\"sideways\" t)")              ; x 翻转
+        ; list("<Key>d" "cancelEnterFun()")                     ; d 取消, 用作 esc 的替代 (esc 太远了)
+    list("None<Btn3Down>" "" "cancelEnterFun()")            ; 鼠标右键用作 esc (esc 太远了)
+    list("None<Btn3Down>(2)" "" "")                         ; 删除原有的冗余右键绑定
+    list("Ctrl<Key>c" "schHiCopy()")                        ; Ctrl + C 复制
+    list("<Key>d" "schHiCreateNoteShape()")                 ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
+    list("<Key>a" "schHiCreateInst()")                      ; 按键 A 添加 instance (默认功能是 geSingleSelectPoint()), 用于替代按键 I
+    list("Ctrl<Key>1" "AnnotationSlider->annDCOpPoint->checked=t") ; 在 schematic 中标出器件的 operation points
+    list("Ctrl<Key>2" "AnnotationSlider->annparameter->checked=t") ; 在 schematic 中标出器件的尺寸信息
+    list("Ctrl<Key>3" "AnnotationSlider->annmodel->checked=t")     ; 在 schematic 中标出器件的模型信息 (例如阈值电压 vto)
+    list("Ctrl<Key>4" "AnnotationSlider->annDCVoltage->checked=t") ; 在 schematic 中标出 dc voltages
+        ; list("<Key>g" "schHiCreatePin(\"GND\" \"input\" \"schematic\" \"full\" nil nil nil \"roman\")")       ; 按键 G 创建 GND pin, 默认是 schHiFindMarker()
+    list("<Key>g" "schHiCreateInst(\"analogLib\" \"gnd\" \"symbol\")")                                      ; 按键 G 创建 gnd
+    list("<Key>v" "schHiCreateInst(\"analogLib\" \"vdc\" \"symbol\")")                                      ; 按键 v 创建 dc source
+    list("<Key>r"  "schHiCreateInst(\"analogLib\" \"res\" \"symbol\")")                                     ; 按键 R 创建理想电阻
+    list("<Key>c"  "schHiCreateInst(\"analogLib\" \"cap\" \"symbol\")")                                     ; 按键 C 创建理想电容 (默认是复制 schHiCopy())
+        ; list("Ctrl<Key>1" "sevAnnotateResults('sevSession1 'dcOpPoints)")                                     ; 在 schematic 中标出器件的 operation points
+        ; list("Ctrl<Key>2" "sevAnnotateResults('sevSession1 'componentParameters)")                            ; 在 schematic 中标出器件的尺寸信息
+        ; list("Ctrl<Key>3" "sevAnnotateResults('sevSession1 'modelParameters)")                                ; 在 schematic 中标出器件的模型信息 (例如阈值电压 vto)
+        ; list("Ctrl<Key>4" "sevAnnotateResults('sevSession1 'dcNodeVoltages)")                                 ; 在 schematic 中标出 dc voltages
+	)
+)
+
+hiSetBindKeys("Symbol" list(
+    list("None<Btn4Down>" "geScroll(nil \"n\" nil)")    ; 鼠标滚轮上滑, 界面上移:
+    list("None<Btn5Down>" "geScroll(nil \"s\" nil)")    ; 鼠标滚轮下滑, 界面下移:
+    list("Ctrl<Btn4Down>" "hiZoomInAtMouse()")          ; Ctrl + 鼠标滚轮上滑, 放大界面:
+    list("Ctrl<Btn5Down>" "hiZoomOutAtMouse()")         ; Ctrl + 鼠标滚轮下滑, 缩小界面:
+    list("Ctrl<Key>Z" "hiUndo()")                       ; Ctrl + Z, 撤销:
+    list("Ctrl<Key>Y" "hiRedo()")                       ; Ctrl + Y, 重做:
+    list("<Key>space" "schSetEnv(\"rotate\" t)")        ; 空格旋转
+    list("Ctrl<Key>s" "schHiVICAndSave()")              ; Ctrl + S 检查与保存 (与 schematic 中的命令不同)
+    list("<Key>x" "schSetEnv(\"sideways\" t)")          ; x 翻转
+        ; list("<Key>d" "cancelEnterFun()")                 ; d 取消, 用作 esc 的替代 (esc 太远了)
+        ; None<Btn2Down> 是中键 
+    list("None<Btn3Down>" "" "cancelEnterFun()")        ; 鼠标右键用作 esc (esc 太远了)
+    list("None<Btn3Down>(2)" "" "")                     ; 删除原有的冗余右键绑定
+    list("Ctrl<Key>c" "schHiCopy()")                    ; Ctrl + C 复制
+    list("<Key>d" "schHiCreateNoteShape()")             ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
+	)
+)
+
+hiSetBindKeys("Layout" list(
+    list("None<Btn4Down>" "geScroll(nil \"n\" nil)")            ; 鼠标滚轮上滑, 界面上移:
+    list("None<Btn5Down>" "geScroll(nil \"s\" nil)")            ; 鼠标滚轮下滑, 界面下移:
+    list("Ctrl<Btn4Down>" "hiZoomInAtMouse()")                  ; Ctrl + 鼠标滚轮上滑, 放大界面:
+    list("Ctrl<Btn5Down>" "hiZoomOutAtMouse()")                 ; Ctrl + 鼠标滚轮下滑, 缩小界面:
+    list("Ctrl<Key>Z" "hiUndo()")                               ; Ctrl + Z, 撤销:
+    list("Ctrl<Key>Y" "hiRedo()")                               ; Ctrl + Y, 重做:
+    list("<Key>space" "leHiRotate()")                           ; 空格旋转
+    list("Ctrl<Key>s" "leHiSave()")                             ; Ctrl + S 保存
+    list("None<Btn3Down>" "" "cancelEnterFun()")                ; 鼠标右键用作 esc (esc 太远了)
+    list("Ctrl<Key>c" "leHiCopy()")                             ; Ctrl + C 复制
+    list("<Key>w" "leAlign(\"top\")")                           ; 按键 W 按照 top 进行 align
+    list("<Key>c" "leAlign(\"vertical\")")                      ; 按键 C 按照 vertical (center) 进行 align
+    list("<Key>a" "leAlign(\"left\")")                          ; 按键 A 按照 left 进行 align
+    list("<Key>d" "leAlign(\"right\")")                         ; 按键 D 按照 right 进行 align
+    list("<Key>g" "_leCreateQuickFigGroup(getCurrentWindow())") ; 按键 G 进行 group
+    list("Shift<Key>g" "leHiUngroup()")                         ; Shift + G 进行 ungroup
+    list("Ctrl<Key>g" "leHiCreateGuardRing()")                  ; Ctrl + G 以创建 guard ring
+    list("<Key>s" "leHiQuickAlign()")                           ; 按键 s 进行快速对齐 (边界对齐), 默认是 leHiStretch()
+    list("Shift<Key>s" "leHiStretch()")                       ; Shift + s 进行拉伸
+	)
+)
+
+; 设置 label, text, ciw 的字体和字号, 如果 "roman" 不起作用改为 "times" 即可
+hiSetFont( "ciw" ?name "mono" ?size 18 ?bold nil ?italic nil ) ; "mono" 即为 "monospace"
+hiSetFont( "label" ?name  "Open Sans" ?size 14 ?bold nil ?italic nil ) ; "label" 既是 toolbar 的字体, 也是打开某些设置界面的字体, 因此 "label" 字号不宜过大, 否则会导致表单文字重叠
+hiSetFont( "text" ?size 15 ?bold nil ?italic nil ) ; text 是各表单内部白色背景里的文字
+
+; 设置 log filter 的默认输出
+; hiSetFilter() ; 此命令是打开 log filter 窗口
+hiSetFilterForm->accelInput->value= t   ; 将默认不输出的值全部勾选为输出
+; hiSetFilterForm->accelRetval->value= t ; 这个没啥必要
+hiSetFilterForm->promptOutput->value= t
+_hiFormApplyCB(hiSetFilterForm)     ; 应用已修改的 log filter 结构体
+
+
+; 将 Calibre 集成到 Cadence Virtuoso 工具栏
+skillPath=getSkillPath();
+setSkillPath(append(skillPath list("/opt/eda/mentor/calibre2019/aoj_cal_2019.3_15.11/lib"))); the installing path of your Calibre
+load("calibre.OA.skl");
+
+; 其它设置
+; editor="gedit" ; 设置 Cadence 中默认文本编辑器为 gedit (script 和 verilog-A 的编辑器), 可选的通常有 vim, gedit, emacs, atom
+ExportImageDialog->fileName->value = "/home/IC/a_Win_VM_shared/a_Misc/schematic.png" ; 设置 schematic 导出为 image 时的默认路径
+dbSetAutoSave(t 20) ; 设置自动保存时间, 单位是 second (秒), 但是这行好像没有什么作用
+hiResizeWindow(window(1) list(400:0 1800:1000)) ; 设置初始 CIW 窗口的大小和位置, 其中 400:150 代表窗口左下角坐标，1200:600 代表窗口右上角坐标
+
+```
+
+
+
+### 2.2 基本语法
+
+Cadence Virtuoso 使用 SKILL 语言进行配置和扩展，要自行修改 `.cdsinit` 和 `.cdsenv` 文件，需要先知道一些基本语法规则：
+
+``` bash
+; 分号是单行注释符号，可以单独使用 ; 或多写几个 ;;; 增强可读性
+
+/*
+这是类似 C 语言的多行注释符号
+多行注释符号
+多行注释符号
+*/ 
+
+hiSetBindKeys("Layout"  "None<Btn4Down>" "geScroll(nil \"n\" nil)")
+```
+
+
+
+
+也可以在 `.cdsinit` 文件中用 SKILL 语言修改上面的环境变量，语法为：
+
+``` bash
+envSetVal(list(
+    list("auCore.misc" "labelDigits" 'int 6)
+    list("schematic" "createLabelFontStyle" 'cyclic "roman")
+    list("layout" "labelFontStyle" 'cyclic "roman")
+    list("viva.graphFrame" "background" 'string "white")
+	)
+)
+
+envSetVal("schematic" "createLabelFontStyle" 'cyclic "roman")
+```
+
+当然，我们也可以通过修改 `display.drf` 文件来改变某些颜色、线条设置，这里不多赘述。
+
+
+可选的字体种类 fontfamily 汇总 (大小写不能错):
+``` bash
+"roman", "monospace", "stick", "Helvetica" "Open Sans"
+```
+
+可选的 .cdsinit 文件代码：
+
+``` bash
+envSetVal("asimenv.startup" "simulator" 'string "THE NAME FOR THE SIMULATOR YOU WANT AT START UP OF CADENCE VIRTUOSO")
+envSetVal("asimenv.startup" "projectDir" 'string "PATH YOU WANT TO SAVE SIMULATION RESULTS")
+envSetVal("layout" "xSnapSpacing" 'float 0.05)
+envSetVal(“adexl.distribute” “defaultRunInParallel” 'boolean t) 
+```
+
+
+### 2.3 命令定义
+
+
+再次强调参考资料 [Virtuoso® Schematic Editor SKILL Functions Reference](<https://picture.iczhiku.com/resource/eetop/sykRGZGTDTSiYmCv.pdf>)
+
+以下是 cadence 中部分常用 commands 的定义和用法：
+
+- `schHiCreatePin`
+
+``` bash
+schHiCreatePin(
+    [ t_terminalName ]
+    [ t_direction ]
+    [ t_usage ]
+    [ t_interpret ] member, full (default)
+    [ t_mode ]      array, single (default)
+    [ t_netExpr ]
+    [ t_justify ]
+    [ t_fontStyle ]
+    [ n_fontHeight ]
+    )
+schHiCreatePin("GND" "input" "schematic" "full" nil nil nil "roman")
+```
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-25-01-44-41_How to Use Cadence Efficiently.png"/></div>
+
+
+- ` schHiCreateInst`
+
+``` bash
+ schHiCreateInst(
+ [ t_libraryName ]
+ [ t_cellName ]
+ [ t_viewName ]
+ [ t_instanceName ]
+ [ x_rows ]
+ [ x_columns ]
+ )
+schHiCreateInst("analogLib" "res" "symbol")
+schHiCreateInst("analogLib" "cap" "symbol")
+```
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-25-02-01-14_How to Use Cadence Efficiently.png"/></div>
+
+
+
+
+
+## 3. 配置效果一览
+
+最明显的效果就是波形界面的美观性和可读性得到了显著提升，如下：
+
+修改前：
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-14-16-51-20_Use Virtuoso Efficiently - 1. Shortcuts and Initialization.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-14-16-54-59_Use Virtuoso Efficiently - 1. Shortcuts and Initialization.png"/></div>
+
+
+修改后：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-14-16-57-04_Use Virtuoso Efficiently - 1. Shortcuts and Initialization.png"/></div>
+
+
+## 4. 参考资料
+
+如果读者想要自行配置 Cadence Virtuoso, 或者在上文的基础上进行修改, 可以参考以下资料：
+- [Virtuoso® Schematic Editor SKILL Functions Reference](<https://picture.iczhiku.com/resource/eetop/sykRGZGTDTSiYmCv.pdf>)
+- [University of Southern California: Cadence Virtuoso Tutorial](https://ee.usc.edu/~redekopp/ee209/virtuoso/setup/USCVLSI-VirtuosoTutorial.pdf)
+- [.cdsenv Tips & Tricks](https://aselshim.github.io/blogposts/2019-03-21-cdsenv/)
+- [Cadence Tips and Tricks: Change Waveform Graph windows default settings](https://wikis.ece.iastate.edu/vlsi/index.php?title=Tips_%26_Tricks)
+- [Bilibili: Cadence IC ADE 仿真学习笔记- 配置文件](https://www.bilibili.com/video/BV15T42197PQ)
+- [Setting Bind Keys in Cadence Virtuoso Using SKILL Code](https://analoghub.ie/category/skill/article/skillBindkeysSetup)
+
+## 5. 配置源码
+
+### 5.1 文件 .cdsenv 源码
+
+下面是 `.cdsenv` 文件的内容：
+
 ``` bash
 /*
 下面是 .cdsenv 配置内容 (截至 2025.07.14), 来源于知乎作者 https://www.zhihu.com/people/YiDingg
@@ -99,7 +343,10 @@ ui ciwCmdInputLines	int	12                              ; 设置 CIW 窗口 inpu
 schematic showUndoRedoHistoryInEditor boolean t         ; 在 schematic 中显示撤销重做历史
 ```
 
-**下面是 .cdsinit 文件内容：**
+### 5.2 文件 .cdsinit 源码
+
+下面是 `.cdsinit` 文件内容：
+
 ``` bash
 /*
 下面是 .cdsinit 配置内容 (截至 2025.07.14), 来源于知乎作者 https://www.zhihu.com/people/YiDingg
@@ -686,239 +933,3 @@ load("calibre.OA.skl");
 dbSetAutoSave(t 20) ; 设置自动保存时间, 单位是 second (秒), 但是这行好像没有什么作用
 hiResizeWindow(window(1) list(400:0 1800:1000)) ; 设置初始 CIW 窗口的大小和位置, 其中 400:150 代表窗口左下角坐标，1200:600 代表窗口右上角坐标
 ```
-
-上面给出的 `.cdsinit` 代码，看似很长，但大部分都是示例文件中自带的代码，真正起作用的是文件的后半部分：
-
-``` bash
-/*
-下面是 .cdsinit 配置内容 (截至 2025.07.14), 来源于知乎作者 https://www.zhihu.com/people/YiDingg
-直接将本段代码粘贴到 .cdsinit 文件 即可 (覆盖全部原内容), 另外, 后加载的代码可覆盖先加载的代码
-
-本配置代码前半部分来自示例文件 <Cadence_Install_Directory>/tools/dfII/samples/local.cdsinit>, 后半部分是我们的自定义配置, 另外还注释了几行示例部分的代码以避免无限循环导致软件卡死
-*/
-
-; None<Btn2Down> 是中键
-hiSetBindKeys("Schematics" list(
-    list("None<Btn4Down>" "geScroll(nil \"n\" nil)")        ; 鼠标滚轮上滑, 界面上移:
-    list("None<Btn5Down>" "geScroll(nil \"s\" nil)")        ; 鼠标滚轮下滑, 界面下移:
-    list("Ctrl<Btn4Down>" "hiZoomInAtMouse()")              ; Ctrl + 鼠标滚轮上滑, 放大界面:
-    list("Ctrl<Btn5Down>" "hiZoomOutAtMouse()")             ; Ctrl + 鼠标滚轮下滑, 缩小界面:
-    list("Ctrl<Key>Z" "hiUndo()")                           ; Ctrl + Z, 撤销:
-    list("Ctrl<Key>Y" "hiRedo()")                           ; Ctrl + Y, 重做:
-    list("<Key>F5" "simulate")                              ; F5 仿真
-    list("<Key>space" "schSetEnv(\"rotate\" t)")            ; 空格旋转
-    list("Ctrl<Key>s" "schHiCheckAndSave()")                ; Ctrl + S 检查与保存
-    list("<Key>x" "schSetEnv(\"sideways\" t)")              ; x 翻转
-        ; list("<Key>d" "cancelEnterFun()")                     ; d 取消, 用作 esc 的替代 (esc 太远了)
-    list("None<Btn3Down>" "" "cancelEnterFun()")            ; 鼠标右键用作 esc (esc 太远了)
-    list("None<Btn3Down>(2)" "" "")                         ; 删除原有的冗余右键绑定
-    list("Ctrl<Key>c" "schHiCopy()")                        ; Ctrl + C 复制
-    list("<Key>d" "schHiCreateNoteShape()")                 ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
-    list("<Key>a" "schHiCreateInst()")                      ; 按键 A 添加 instance (默认功能是 geSingleSelectPoint()), 用于替代按键 I
-    list("Ctrl<Key>1" "AnnotationSlider->annDCOpPoint->checked=t") ; 在 schematic 中标出器件的 operation points
-    list("Ctrl<Key>2" "AnnotationSlider->annparameter->checked=t") ; 在 schematic 中标出器件的尺寸信息
-    list("Ctrl<Key>3" "AnnotationSlider->annmodel->checked=t")     ; 在 schematic 中标出器件的模型信息 (例如阈值电压 vto)
-    list("Ctrl<Key>4" "AnnotationSlider->annDCVoltage->checked=t") ; 在 schematic 中标出 dc voltages
-        ; list("<Key>g" "schHiCreatePin(\"GND\" \"input\" \"schematic\" \"full\" nil nil nil \"roman\")")       ; 按键 G 创建 GND pin, 默认是 schHiFindMarker()
-    list("<Key>g" "schHiCreateInst(\"analogLib\" \"gnd\" \"symbol\")")                                      ; 按键 G 创建 gnd
-    list("<Key>v" "schHiCreateInst(\"analogLib\" \"vdc\" \"symbol\")")                                      ; 按键 v 创建 dc source
-    list("<Key>r"  "schHiCreateInst(\"analogLib\" \"res\" \"symbol\")")                                     ; 按键 R 创建理想电阻
-    list("<Key>c"  "schHiCreateInst(\"analogLib\" \"cap\" \"symbol\")")                                     ; 按键 C 创建理想电容 (默认是复制 schHiCopy())
-        ; list("Ctrl<Key>1" "sevAnnotateResults('sevSession1 'dcOpPoints)")                                     ; 在 schematic 中标出器件的 operation points
-        ; list("Ctrl<Key>2" "sevAnnotateResults('sevSession1 'componentParameters)")                            ; 在 schematic 中标出器件的尺寸信息
-        ; list("Ctrl<Key>3" "sevAnnotateResults('sevSession1 'modelParameters)")                                ; 在 schematic 中标出器件的模型信息 (例如阈值电压 vto)
-        ; list("Ctrl<Key>4" "sevAnnotateResults('sevSession1 'dcNodeVoltages)")                                 ; 在 schematic 中标出 dc voltages
-	)
-)
-
-hiSetBindKeys("Symbol" list(
-    list("None<Btn4Down>" "geScroll(nil \"n\" nil)")    ; 鼠标滚轮上滑, 界面上移:
-    list("None<Btn5Down>" "geScroll(nil \"s\" nil)")    ; 鼠标滚轮下滑, 界面下移:
-    list("Ctrl<Btn4Down>" "hiZoomInAtMouse()")          ; Ctrl + 鼠标滚轮上滑, 放大界面:
-    list("Ctrl<Btn5Down>" "hiZoomOutAtMouse()")         ; Ctrl + 鼠标滚轮下滑, 缩小界面:
-    list("Ctrl<Key>Z" "hiUndo()")                       ; Ctrl + Z, 撤销:
-    list("Ctrl<Key>Y" "hiRedo()")                       ; Ctrl + Y, 重做:
-    list("<Key>space" "schSetEnv(\"rotate\" t)")        ; 空格旋转
-    list("Ctrl<Key>s" "schHiVICAndSave()")              ; Ctrl + S 检查与保存 (与 schematic 中的命令不同)
-    list("<Key>x" "schSetEnv(\"sideways\" t)")          ; x 翻转
-        ; list("<Key>d" "cancelEnterFun()")                 ; d 取消, 用作 esc 的替代 (esc 太远了)
-        ; None<Btn2Down> 是中键 
-    list("None<Btn3Down>" "" "cancelEnterFun()")        ; 鼠标右键用作 esc (esc 太远了)
-    list("None<Btn3Down>(2)" "" "")                     ; 删除原有的冗余右键绑定
-    list("Ctrl<Key>c" "schHiCopy()")                    ; Ctrl + C 复制
-    list("<Key>d" "schHiCreateNoteShape()")             ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
-	)
-)
-
-hiSetBindKeys("Layout" list(
-    list("None<Btn4Down>" "geScroll(nil \"n\" nil)")            ; 鼠标滚轮上滑, 界面上移:
-    list("None<Btn5Down>" "geScroll(nil \"s\" nil)")            ; 鼠标滚轮下滑, 界面下移:
-    list("Ctrl<Btn4Down>" "hiZoomInAtMouse()")                  ; Ctrl + 鼠标滚轮上滑, 放大界面:
-    list("Ctrl<Btn5Down>" "hiZoomOutAtMouse()")                 ; Ctrl + 鼠标滚轮下滑, 缩小界面:
-    list("Ctrl<Key>Z" "hiUndo()")                               ; Ctrl + Z, 撤销:
-    list("Ctrl<Key>Y" "hiRedo()")                               ; Ctrl + Y, 重做:
-    list("<Key>space" "leHiRotate()")                           ; 空格旋转
-    list("Ctrl<Key>s" "leHiSave()")                             ; Ctrl + S 保存
-    list("None<Btn3Down>" "" "cancelEnterFun()")                ; 鼠标右键用作 esc (esc 太远了)
-    list("Ctrl<Key>c" "leHiCopy()")                             ; Ctrl + C 复制
-    list("<Key>w" "leAlign(\"top\")")                           ; 按键 W 按照 top 进行 align
-    list("<Key>c" "leAlign(\"vertical\")")                      ; 按键 C 按照 vertical (center) 进行 align
-    list("<Key>a" "leAlign(\"left\")")                          ; 按键 A 按照 left 进行 align
-    list("<Key>d" "leAlign(\"right\")")                         ; 按键 D 按照 right 进行 align
-    list("<Key>g" "_leCreateQuickFigGroup(getCurrentWindow())") ; 按键 G 进行 group
-    list("Shift<Key>g" "leHiUngroup()")                         ; Shift + G 进行 ungroup
-    list("Ctrl<Key>g" "leHiCreateGuardRing()")                  ; Ctrl + G 以创建 guard ring
-    list("<Key>s" "leHiQuickAlign()")                           ; 按键 s 进行快速对齐 (边界对齐), 默认是 leHiStretch()
-    list("Shift<Key>s" "leHiStretch()")                       ; Shift + s 进行拉伸
-	)
-)
-
-; 设置 label, text, ciw 的字体和字号, 如果 "roman" 不起作用改为 "times" 即可
-hiSetFont( "ciw" ?name "mono" ?size 18 ?bold nil ?italic nil ) ; "mono" 即为 "monospace"
-hiSetFont( "label" ?name  "Open Sans" ?size 14 ?bold nil ?italic nil ) ; "label" 既是 toolbar 的字体, 也是打开某些设置界面的字体, 因此 "label" 字号不宜过大, 否则会导致表单文字重叠
-hiSetFont( "text" ?size 15 ?bold nil ?italic nil ) ; text 是各表单内部白色背景里的文字
-
-; 设置 log filter 的默认输出
-; hiSetFilter() ; 此命令是打开 log filter 窗口
-hiSetFilterForm->accelInput->value= t   ; 将默认不输出的值全部勾选为输出
-; hiSetFilterForm->accelRetval->value= t ; 这个没啥必要
-hiSetFilterForm->promptOutput->value= t
-_hiFormApplyCB(hiSetFilterForm)     ; 应用已修改的 log filter 结构体
-
-
-; 将 Calibre 集成到 Cadence Virtuoso 工具栏
-skillPath=getSkillPath();
-setSkillPath(append(skillPath list("/opt/eda/mentor/calibre2019/aoj_cal_2019.3_15.11/lib"))); the installing path of your Calibre
-load("calibre.OA.skl");
-
-; 其它设置
-; editor="gedit" ; 设置 Cadence 中默认文本编辑器为 gedit (script 和 verilog-A 的编辑器), 可选的通常有 vim, gedit, emacs, atom
-ExportImageDialog->fileName->value = "/home/IC/a_Win_VM_shared/a_Misc/schematic.png" ; 设置 schematic 导出为 image 时的默认路径
-dbSetAutoSave(t 20) ; 设置自动保存时间, 单位是 second (秒), 但是这行好像没有什么作用
-hiResizeWindow(window(1) list(400:0 1800:1000)) ; 设置初始 CIW 窗口的大小和位置, 其中 400:150 代表窗口左下角坐标，1200:600 代表窗口右上角坐标
-
-```
-
-
-
-### 2.2 基本语法
-
-Cadence Virtuoso 使用 SKILL 语言进行配置和扩展，要自行修改 `.cdsinit` 和 `.cdsenv` 文件，需要先知道一些基本语法规则：
-
-``` bash
-; 分号是单行注释符号，可以单独使用 ; 或多写几个 ;;; 增强可读性
-
-/*
-这是类似 C 语言的多行注释符号
-多行注释符号
-多行注释符号
-*/ 
-
-hiSetBindKeys("Layout"  "None<Btn4Down>" "geScroll(nil \"n\" nil)")
-```
-
-
-
-
-也可以在 `.cdsinit` 文件中用 SKILL 语言修改上面的环境变量，语法为：
-
-``` bash
-envSetVal(list(
-    list("auCore.misc" "labelDigits" 'int 6)
-    list("schematic" "createLabelFontStyle" 'cyclic "roman")
-    list("layout" "labelFontStyle" 'cyclic "roman")
-    list("viva.graphFrame" "background" 'string "white")
-	)
-)
-
-envSetVal("schematic" "createLabelFontStyle" 'cyclic "roman")
-```
-
-当然，我们也可以通过修改 `display.drf` 文件来改变某些颜色、线条设置，这里不多赘述。
-
-
-可选的字体种类 fontfamily 汇总 (大小写不能错):
-``` bash
-"roman", "monospace", "stick", "Helvetica" "Open Sans"
-```
-
-可选的 .cdsinit 文件代码：
-
-``` bash
-envSetVal("asimenv.startup" "simulator" 'string "THE NAME FOR THE SIMULATOR YOU WANT AT START UP OF CADENCE VIRTUOSO")
-envSetVal("asimenv.startup" "projectDir" 'string "PATH YOU WANT TO SAVE SIMULATION RESULTS")
-envSetVal("layout" "xSnapSpacing" 'float 0.05)
-envSetVal(“adexl.distribute” “defaultRunInParallel” 'boolean t) 
-```
-
-
-### 2.3 命令定义
-
-
-再次强调参考资料 [Virtuoso® Schematic Editor SKILL Functions Reference](<https://picture.iczhiku.com/resource/eetop/sykRGZGTDTSiYmCv.pdf>)
-
-以下是 cadence 中部分常用 commands 的定义和用法：
-
-- `schHiCreatePin`
-
-``` bash
-schHiCreatePin(
-    [ t_terminalName ]
-    [ t_direction ]
-    [ t_usage ]
-    [ t_interpret ] member, full (default)
-    [ t_mode ]      array, single (default)
-    [ t_netExpr ]
-    [ t_justify ]
-    [ t_fontStyle ]
-    [ n_fontHeight ]
-    )
-schHiCreatePin("GND" "input" "schematic" "full" nil nil nil "roman")
-```
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-25-01-44-41_How to Use Cadence Efficiently.png"/></div>
-
-
-- ` schHiCreateInst`
-
-``` bash
- schHiCreateInst(
- [ t_libraryName ]
- [ t_cellName ]
- [ t_viewName ]
- [ t_instanceName ]
- [ x_rows ]
- [ x_columns ]
- )
-schHiCreateInst("analogLib" "res" "symbol")
-schHiCreateInst("analogLib" "cap" "symbol")
-```
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-25-02-01-14_How to Use Cadence Efficiently.png"/></div>
-
-
-
-
-
-## 3. 配置效果一览
-
-最明显的效果就是波形界面的美观性和可读性得到了显著提升，如下：
-
-修改前：
-<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-14-16-51-20_Use Virtuoso Efficiently - 1. Shortcuts and Initialization.png"/></div> -->
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-14-16-54-59_Use Virtuoso Efficiently - 1. Shortcuts and Initialization.png"/></div>
-
-
-修改后：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-14-16-57-04_Use Virtuoso Efficiently - 1. Shortcuts and Initialization.png"/></div>
-
-
-## 4. 参考资料
-
-如果读者想要自行配置 Cadence Virtuoso, 或者在上文的基础上进行修改, 可以参考以下资料：
-- [Virtuoso® Schematic Editor SKILL Functions Reference](<https://picture.iczhiku.com/resource/eetop/sykRGZGTDTSiYmCv.pdf>)
-- [University of Southern California: Cadence Virtuoso Tutorial](https://ee.usc.edu/~redekopp/ee209/virtuoso/setup/USCVLSI-VirtuosoTutorial.pdf)
-- [.cdsenv Tips & Tricks](https://aselshim.github.io/blogposts/2019-03-21-cdsenv/)
-- [Cadence Tips and Tricks: Change Waveform Graph windows default settings](https://wikis.ece.iastate.edu/vlsi/index.php?title=Tips_%26_Tricks)
-- [Bilibili: Cadence IC ADE 仿真学习笔记- 配置文件](https://www.bilibili.com/video/BV15T42197PQ)
-- [Setting Bind Keys in Cadence Virtuoso Using SKILL Code](https://analoghub.ie/category/skill/article/skillBindkeysSetup)

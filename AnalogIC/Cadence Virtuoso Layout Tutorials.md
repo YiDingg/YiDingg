@@ -15,9 +15,9 @@ Layout (版图设计) 是 IC 设计的核心环节，主要包括 layout, DRC/LV
 
 
 
-## 1. Basic Procedure
+## 1. Procedure and Example
 
-
+### 1.1 basic procedure
 
 
 <div class='center'>
@@ -33,6 +33,11 @@ Layout (版图设计) 是 IC 设计的核心环节，主要包括 layout, DRC/LV
 
 </div>
 
+### 1.3 layout example
+
+关于 layout 的具体步骤和示例，包括后续 DRC, LVS, PEX 和 Post-Layout Simulation (后仿) 等操作，详见教程 [Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)。
+
+
 ## 2. Keyboard Shortcuts
 
 ### 2.1 default shortcuts
@@ -40,7 +45,7 @@ Layout (版图设计) 是 IC 设计的核心环节，主要包括 layout, DRC/LV
 最基本的几个默认快捷键：
 
 - **快捷键**：
-    - `Shift + F`：适合窗口 (Fit to View) 
+    - `F`：适合窗口 (Fit to View) 
     - `F3`：调出当前工具的选项面板
     - `r`：绘制矩形 (Rectangle) 
     - `p`：绘制路径 (Path) 
@@ -67,11 +72,82 @@ Layout 可能用到的一些图标如下 (from [this article](https://people.eec
 
 ### 2.2 customize shortcuts
 
+下面是我们利用 `.cdsinit` 文件所修改的快捷键：
+
+- 未修改：
+    - `F`: 适合窗口 (fit to view) 
+    - `p`: 绘制路径 (path) 
+    - `q`: 属性编辑 (property)
+    - `o`: 绘制过孔 (via) 
+    - `k`: 创建标尺 (ruler) 
+    - `shift + k`: 删除所有标尺 (delete all rulers)
+    - `shift + m`: 合并同层金属连线 (显著提高布局可读性)
+- 已修改：
+    - `space`: 空格旋转 (rotate)
+    - `鼠标右键`: 用作 esc (esc 太远了)
+    - `a`: 按键 A 按照 left 进行 align
+    - `w`: 按键 W 按照 top 进行 align
+    - `d`: 按键 D 按照 right 进行 align
+    - `c`: 按键 C 按照 vertical (center) 进行 align
+    - `s`: 按键 S 进行快速对齐 (边界对齐), 默认是 leHiStretch()
+    - `g`: 按键 G 进行 group
+    - `shift + g`: 进行 ungroup
+    - `ctrl + g`: 创建 guard ring
+    - `m`: 添加金属连线
+
+
+下面的代码更新于 2025.07.19, 最新源码见 [How to Use Cadence Virtuoso Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>).
+``` bash
+hiSetBindKeys("Layout" list(
+    list("None<Btn4Down>" "geScroll(nil \"n\" nil)")            ; 鼠标滚轮上滑, 界面上移:
+    list("None<Btn5Down>" "geScroll(nil \"s\" nil)")            ; 鼠标滚轮下滑, 界面下移:
+    list("Ctrl<Btn4Down>" "hiZoomInAtMouse()")                  ; Ctrl + 鼠标滚轮上滑, 放大界面:
+    list("Ctrl<Btn5Down>" "hiZoomOutAtMouse()")                 ; Ctrl + 鼠标滚轮下滑, 缩小界面:
+    list("Ctrl<Key>Z" "hiUndo()")                               ; Ctrl + Z, 撤销:
+    list("Ctrl<Key>Y" "hiRedo()")                               ; Ctrl + Y, 重做:
+    list("<Key>space" "leHiRotate()")                           ; 空格旋转
+    list("Ctrl<Key>s" "leHiSave()")                             ; Ctrl + S 保存
+    list("None<Btn3Down>" "" "cancelEnterFun()")                ; 鼠标右键用作 esc (esc 太远了)
+    list("Ctrl<Key>c" "leHiCopy()")                             ; Ctrl + C 复制
+    list("<Key>w" "leAlign(\"top\")")                           ; 按键 W 按照 top 进行 align
+    list("<Key>c" "leAlign(\"vertical\")")                      ; 按键 C 按照 vertical (center) 进行 align
+    list("<Key>a" "leAlign(\"left\")")                          ; 按键 A 按照 left 进行 align
+    list("<Key>d" "leAlign(\"right\")")                         ; 按键 D 按照 right 进行 align
+    list("<Key>g" "_leCreateQuickFigGroup(getCurrentWindow())") ; 按键 G 进行 group
+    list("Shift<Key>g" "leHiUngroup()")                         ; Shift + G 进行 ungroup
+    list("Ctrl<Key>g" "leHiCreateGuardRing()")                  ; Ctrl + G 以创建 guard ring
+    list("<Key>s" "leHiQuickAlign()")                           ; 按键 s 进行快速对齐 (边界对齐), 默认是 leHiStretch()
+    list("Shift<Key>s" "leHiStretch()")                         ; Shift + s 进行拉伸
+	)
+)
+```
+
+### 2.3 other practical functions
+
+
+**(1) 将原理图器件导入到版图：**
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-19-22-33-34_Cadence Virtuoso Layout Tutorials.png"/></div>
+
+`Place > Analog > Automatic Placement`, 效果比 `place as in schematic` 好很多。
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-20-01-59-58_Cadence Virtuoso Layout Tutorials.png"/></div>
+
+**(2) 自动添加 guard ring:**
+
+选中器件后 `Place > Modgen > Guard Ring > Add MPP Guard Ring` <span style='color:red'> (注：一次只能选一个晶体管，否则会卡住很久才生成出来，因此实用性不高，不如手动添加) </span>:
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-20-02-17-50_Cadence Virtuoso Layout Tutorials.png"/></div>
+
+但是可以通过这一招推断 DRC 所需的 spacing, 由此设置 `enclose by` 的值：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-20-02-27-46_Cadence Virtuoso Layout Tutorials.png"/></div>
+
+**(3) 自动添加 dummy:**
+
+选中器件后 `Place > Modgen > Dummies > Add Dummy` (其中 )。同样的，这个操作也是一次只能选择一个器件 (一个管子)，否则会卡住很久才生成出来。
 
 ## 3. Layout Tips
 
-参考 [Cadence Layout Tips_1](https://zhuanlan.zhihu.com/p/471942740) 和 xxx...
-
+<!-- 参考 [Cadence Layout Tips_1](https://zhuanlan.zhihu.com/p/471942740) 和 xxx...
+ -->
 
 ### 3.1 guard ring template
 
@@ -108,7 +184,14 @@ Layout 可能用到的一些图标如下 (from [this article](https://people.eec
 -->
 
 
-## 4. Common Questions
+### 3.2 auto abutment
+
+参考 [Cadence Virtuoso Layout Suite XL User Guide.pdf](https://picture.iczhiku.com/resource/eetop/WYifYSQEuQhIQVBv.pdf) 的 page 185. 
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-20-01-39-44_Cadence Virtuoso Layout Tutorials.png"/></div>
+
+
+## 4. Q and A
 
 下面是 layout 部分常见问题的解答，部分回答参考了 AI 的解答，部分回答参考了网上别人的博客、文章等。
 
@@ -194,6 +277,8 @@ Layout 可能用到的一些图标如下 (from [this article](https://people.eec
 ## 5. Relevant Resources
 
 ### 5.1 official resources
+
+- [Cadence Virtuoso Layout Suite XL User Guide.pdf](https://picture.iczhiku.com/resource/eetop/WYifYSQEuQhIQVBv.pdf)
 
 
 ### 5.2 other resources

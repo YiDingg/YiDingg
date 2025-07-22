@@ -147,6 +147,7 @@ schematic	showUndoRedoHistoryInEditor	boolean	t ; 在 schematic 中显示撤销�
 
 ; None<Btn2Down> 是中键
 hiSetBindKeys("Schematics" list(
+    ; 下面是通用操作
     list("None<Btn4Down>" "geScroll(nil \"n\" nil)")        ; 鼠标滚轮上滑, 界面上移:
     list("None<Btn5Down>" "geScroll(nil \"s\" nil)")        ; 鼠标滚轮下滑, 界面下移:
     list("Ctrl<Btn4Down>" "hiZoomInAtMouse()")              ; Ctrl + 鼠标滚轮上滑, 放大界面:
@@ -157,11 +158,13 @@ hiSetBindKeys("Schematics" list(
     list("<Key>space" "schSetEnv(\"rotate\" t)")            ; 空格旋转
     list("Ctrl<Key>s" "schHiCheckAndSave()")                ; Ctrl + S 检查与保存
     list("<Key>x" "schSetEnv(\"sideways\" t)")              ; x 翻转
-        ; list("<Key>d" "cancelEnterFun()")                     ; d 取消, 用作 esc 的替代 (esc 太远了)
+        ; list("<Key>d" "cancelEnterFun()")                 ; d 取消, 用作 esc 的替代 (esc 太远了)
     list("None<Btn3Down>" "" "cancelEnterFun()")            ; 鼠标右键用作 esc (esc 太远了)
     list("None<Btn3Down>(2)" "" "")                         ; 删除原有的冗余右键绑定
     list("Ctrl<Key>c" "schHiCopy()")                        ; Ctrl + C 复制
     list("<Key>d" "schHiCreateNoteShape()")                 ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
+    list("Ctrl Shift<Key>f" "leZoomToSelSet()")                   ; Ctrl Shift + f 缩放到选中区域
+    ; 下面是特殊操作
     list("<Key>a" "schHiCreateInst()")                      ; 按键 A 添加 instance (默认功能是 geSingleSelectPoint()), 用于替代按键 I
     list("Ctrl<Key>1" "AnnotationSlider->annDCOpPoint->checked=t") ; 在 schematic 中标出器件的 operation points
     list("Ctrl<Key>2" "AnnotationSlider->annparameter->checked=t") ; 在 schematic 中标出器件的尺寸信息
@@ -180,6 +183,7 @@ hiSetBindKeys("Schematics" list(
 )
 
 hiSetBindKeys("Symbol" list(
+    ; 下面是通用操作
     list("None<Btn4Down>" "geScroll(nil \"n\" nil)")    ; 鼠标滚轮上滑, 界面上移:
     list("None<Btn5Down>" "geScroll(nil \"s\" nil)")    ; 鼠标滚轮下滑, 界面下移:
     list("Ctrl<Btn4Down>" "hiZoomInAtMouse()")          ; Ctrl + 鼠标滚轮上滑, 放大界面:
@@ -189,16 +193,19 @@ hiSetBindKeys("Symbol" list(
     list("<Key>space" "schSetEnv(\"rotate\" t)")        ; 空格旋转
     list("Ctrl<Key>s" "schHiVICAndSave()")              ; Ctrl + S 检查与保存 (与 schematic 中的命令不同)
     list("<Key>x" "schSetEnv(\"sideways\" t)")          ; x 翻转
-        ; list("<Key>d" "cancelEnterFun()")                 ; d 取消, 用作 esc 的替代 (esc 太远了)
+        ; list("<Key>d" "cancelEnterFun()")             ; d 取消, 用作 esc 的替代 (esc 太远了)
         ; None<Btn2Down> 是中键 
     list("None<Btn3Down>" "" "cancelEnterFun()")        ; 鼠标右键用作 esc (esc 太远了)
     list("None<Btn3Down>(2)" "" "")                     ; 删除原有的冗余右键绑定
     list("Ctrl<Key>c" "schHiCopy()")                    ; Ctrl + C 复制
+    list("Ctrl Shift<Key>f" "leZoomToSelSet()")              ; Ctrl Shift + f 缩放到选中区域
+    ; 下面是特殊操作
     list("<Key>d" "schHiCreateNoteShape()")             ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
 	)
 )
 
 hiSetBindKeys("Layout" list(
+    ; 下面是通用操作
     list("None<Btn4Down>" "geScroll(nil \"n\" nil)")            ; 鼠标滚轮上滑, 界面上移:
     list("None<Btn5Down>" "geScroll(nil \"s\" nil)")            ; 鼠标滚轮下滑, 界面下移:
     list("Ctrl<Btn4Down>" "hiZoomInAtMouse()")                  ; Ctrl + 鼠标滚轮上滑, 放大界面:
@@ -209,6 +216,8 @@ hiSetBindKeys("Layout" list(
     list("Ctrl<Key>s" "leHiSave()")                             ; Ctrl + S 保存
     list("None<Btn3Down>" "" "cancelEnterFun()")                ; 鼠标右键用作 esc (esc 太远了)
     list("Ctrl<Key>c" "leHiCopy()")                             ; Ctrl + C 复制
+    list("Ctrl Shift<Key>f" "leZoomToSelSet()")                      ; Ctrl Shift + f 缩放到选中区域
+    ; 下面是特殊操作
     list("<Key>w" "leAlign(\"top\")")                           ; 按键 W 按照 top 进行 align
     list("<Key>c" "leAlign(\"vertical\")")                      ; 按键 C 按照 vertical (center) 进行 align
     list("<Key>a" "leAlign(\"left\")")                          ; 按键 A 按照 left 进行 align
@@ -216,8 +225,9 @@ hiSetBindKeys("Layout" list(
     list("<Key>g" "_leCreateQuickFigGroup(getCurrentWindow())") ; 按键 G 进行 group
     list("Shift<Key>g" "leHiUngroup()")                         ; Shift + G 进行 ungroup
     list("Ctrl<Key>g" "leHiCreateGuardRing()")                  ; Ctrl + G 以创建 guard ring
+    list("<Key>m" "_weHiInteractiveRouting()")                  ; 按键 m 进行交互式布线 (默认按键是 p)
     list("<Key>s" "leHiQuickAlign()")                           ; 按键 s 进行快速对齐 (边界对齐), 默认是 leHiStretch()
-    list("Shift<Key>s" "leHiStretch()")                       ; Shift + s 进行拉伸
+    list("Shift<Key>s" "leHiStretch()")                         ; Shift + s 进行拉伸
 	)
 )
 
@@ -230,7 +240,7 @@ hiSetFont( "text" ?size 15 ?bold nil ?italic nil ) ; text 是各表单内部白�
 ; hiSetFilter() ; 此命令是打开 log filter 窗口
 hiSetFilterForm->accelInput->value= t   ; 将默认不输出的值全部勾选为输出
 ; hiSetFilterForm->accelRetval->value= t ; 这个没啥必要
-hiSetFilterForm->promptOutput->value= t
+hiSetFilterForm->promptOutput->value= t ; 
 _hiFormApplyCB(hiSetFilterForm)     ; 应用已修改的 log filter 结构体
 
 
@@ -244,7 +254,9 @@ load("calibre.OA.skl");
 ExportImageDialog->fileName->value = "/home/IC/a_Win_VM_shared/a_Misc/schematic.png" ; 设置 schematic 导出为 image 时的默认路径
 dbSetAutoSave(t 20) ; 设置自动保存时间, 单位是 second (秒), 但是这行好像没有什么作用
 hiResizeWindow(window(1) list(400:0 1800:1000)) ; 设置初始 CIW 窗口的大小和位置, 其中 400:150 代表窗口左下角坐标，1200:600 代表窗口右上角坐标
-
+schViewMenu->NetHighlights->checked=t ; 打开 shcematic 界面的 net highlight (鼠标放上去就会高亮对应网络)
+geNetNameDisplayOptionForm->drawOnTop->value= t ; layout pin names: draw on top
+geNetNameDisplayOptionForm->userColor->value= list(ptrnum@0x55f25f30 106 26 "yellow") ; layout pin name color: pink
 ```
 
 
@@ -502,14 +514,14 @@ sudo gedit /etc/fstab
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-05-01-02-44_How to Use Cadence Efficiently.png"/></div>
 
-经过摸索，也可以先点击 schematic 界面，使主窗口定位于此，然后在 CIW 窗口中输入下面代码：
+对于 `tsmc18rf` 工艺库，经过摸索，也可以先点击 schematic 界面，使主窗口定位于此，然后在 CIW 窗口中输入下面代码：
 
 ``` bash
 ; 快速设置 schematic 界面上的 dc annotation, 标出器件的 region, id, self_gain 等参数
 
-name_processLibrary = "tsmc18rf"; 设置工艺库名称
-name_nmos = "nmos2v" ; 设置器件名称
-name_pmos = "pmos2v" ; 设置器件名称
+name_processLibrary = "tsmcN28"; 设置工艺库名称
+name_nmos = "nch_mac" ; 设置 NMOS 器件名称
+name_pmos = "pch_mac" ; 设置 PMOS 器件名称
 schSingleSelectPt()
 asaEditCompDisplay()
 
@@ -521,17 +533,17 @@ _annSetData(annotationSetupForm->annNativeWidget 4 3 "region")
 _annSelectItem(annotationSetupForm->annNativeWidget "'(  (5 3)  )")
 _annSetData(annotationSetupForm->annNativeWidget 5 3 "id")
 _annSelectItem(annotationSetupForm->annNativeWidget "'(  (6 3)  )")
-_annSetData(annotationSetupForm->annNativeWidget 6 3 "fug")
+_annSetData(annotationSetupForm->annNativeWidget 6 3 "gm/(2*3.1415926*cgg)")
 _annSelectItem(annotationSetupForm->annNativeWidget "'(  (7 3)  )")
 _annSetData(annotationSetupForm->annNativeWidget 7 3 "vdsat")
 _annSelectItem(annotationSetupForm->annNativeWidget "'(  (8 3)  )")
-_annSetData(annotationSetupForm->annNativeWidget 8 3 "self_gain")
+_annSetData(annotationSetupForm->annNativeWidget 8 3 "gm/gds")
 _annSelectItem(annotationSetupForm->annNativeWidget "'(  (9 3)  )")
-_annSetData(annotationSetupForm->annNativeWidget 9 3 "rout")
+_annSetData(annotationSetupForm->annNativeWidget 9 3 "1/gds")
 _annSelectItem(annotationSetupForm->annNativeWidget "'(  (10 3)  )")
 _annSetData(annotationSetupForm->annNativeWidget 10 3 "gm")
 _annSelectItem(annotationSetupForm->annNativeWidget "'(  (11 3)  )")
-_annSetData(annotationSetupForm->annNativeWidget 11 3 "gmoverid")
+_annSetData(annotationSetupForm->annNativeWidget 11 3 "gm/id")
 
 ; 应用上面的设置
 _annApplyAndRedraw(hiGetCurrentWindow())
@@ -544,18 +556,17 @@ _annSetData(annotationSetupForm->annNativeWidget 4 3 "region")
 _annSelectItem(annotationSetupForm->annNativeWidget "'(  (5 3)  )")
 _annSetData(annotationSetupForm->annNativeWidget 5 3 "id")
 _annSelectItem(annotationSetupForm->annNativeWidget "'(  (6 3)  )")
-_annSetData(annotationSetupForm->annNativeWidget 6 3 "fug")
+_annSetData(annotationSetupForm->annNativeWidget 6 3 "gm/(2*3.1415926*cgg)")
 _annSelectItem(annotationSetupForm->annNativeWidget "'(  (7 3)  )")
 _annSetData(annotationSetupForm->annNativeWidget 7 3 "vdsat")
 _annSelectItem(annotationSetupForm->annNativeWidget "'(  (8 3)  )")
-_annSetData(annotationSetupForm->annNativeWidget 8 3 "self_gain")
+_annSetData(annotationSetupForm->annNativeWidget 8 3 "gm/gds")
 _annSelectItem(annotationSetupForm->annNativeWidget "'(  (9 3)  )")
-_annSetData(annotationSetupForm->annNativeWidget 9 3 "rout")
+_annSetData(annotationSetupForm->annNativeWidget 9 3 "1/gds")
 _annSelectItem(annotationSetupForm->annNativeWidget "'(  (10 3)  )")
 _annSetData(annotationSetupForm->annNativeWidget 10 3 "gm")
 _annSelectItem(annotationSetupForm->annNativeWidget "'(  (11 3)  )")
-_annSetData(annotationSetupForm->annNativeWidget 11 3 "gmoverid")
-
+_annSetData(annotationSetupForm->annNativeWidget 11 3 "gm/id")
 ; 应用上面的设置
 _annApplyAndRedraw(hiGetCurrentWindow())
 _annOKFormCB(hiGetCurrentWindow())
@@ -567,7 +578,69 @@ notifyStarLevelSettingsNotAppliedToAll->applyStarLevelSettingsToAll->value= t
 hiFormDone(notifyStarLevelSettingsNotAppliedToAll)
 ```
 
+类似地，对于 `tsmcN28` 工艺库，代码如下：
 
+``` bash
+; 快速设置 schematic 界面上的 dc annotation, 标出器件的 region, id, self_gain 等参数
+
+name_processLibrary = "tsmcN28"; 
+name_nmos = "nch_mac" ;  NMOS 
+name_pmos = "pch_mac" ;  PMOS 
+schSingleSelectPt()
+asaEditCompDisplay()
+
+;  nmos
+_annInstanceChanged(annotationSetupForm->annNativeWidget name_processLibrary "*" "*")
+_annInstanceChanged(annotationSetupForm->annNativeWidget name_processLibrary name_nmos "*")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (4 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 4 3 "region")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (5 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 5 3 "id")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (6 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 6 3 "gm/(2*3.14*cgg)")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (7 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 7 3 "vdsat")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (8 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 8 3 "gm/gds")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (9 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 9 3 "1/gds")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (10 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 10 3 "gm")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (11 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 11 3 "gm/id")
+
+; 
+_annApplyAndRedraw(hiGetCurrentWindow())
+
+;  pmos
+_annInstanceChanged(annotationSetupForm->annNativeWidget name_processLibrary "*" "*")
+_annInstanceChanged(annotationSetupForm->annNativeWidget name_processLibrary name_pmos "*")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (4 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 4 3 "region")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (5 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 5 3 "(-id)")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (6 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 6 3 "gm/(2*3.14*cgg)")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (7 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 7 3 "(-vdsat)")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (8 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 8 3 "gm/gds")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (9 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 9 3 "1/gds")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (10 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 10 3 "gm")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (11 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 11 3 "gm/(-id)")
+; 
+_annApplyAndRedraw(hiGetCurrentWindow())
+_annOKFormCB(hiGetCurrentWindow())
+
+; 
+hiiSetCurrentForm('notifyStarLevelSettingsNotAppliedToAll)
+notifyStarLevelSettingsNotAppliedToAll->dontShowStarLevelSettingsWarning->value= t
+notifyStarLevelSettingsNotAppliedToAll->applyStarLevelSettingsToAll->value= t
+hiFormDone(notifyStarLevelSettingsNotAppliedToAll)
+```
 
 ### 2. output GBW and PM
 
@@ -787,7 +860,7 @@ tar -cvf tsmc28n.tar /home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5/ # 将 Cadence_Pr
 
 
 
-## Frequently Asked Questions
+## Fix Bugs and Errors
 
 ### 1. wrong schematic colors
 
@@ -996,3 +1069,30 @@ WARNING (ADE-1065): No simulation results are available.
 ``` bash
 /home/IC/simulation/MyLib_tsmcN28/simu_MOSFET_nch_mac/adexl/results/data/gmId_nch_mac_125mV/psf/tsmcN28__nch_mac
 ```
+
+### 7. ".../toplevel.scs" No section found with name 'fs_res_bip_dio_disres' defined in file ".../crn28ull_2d5_elk_v1d0_2p1_shrink0d9_embedded_usage.scs"
+
+最近在用 `tsmcN28` 工艺库仿真运放 [(this design)](<AnalogICDesigns/tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md>) 时出现了 FS 和 SF 工艺角模型缺失导致的仿真报错，具体情况如下：
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-19-14-50-58_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__55dB_75MHz_120uA.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-19-14-50-05_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__55dB_75MHz_120uA.png"/></div>
+
+参考 [this blog](https://blog.eetop.cn/blog-1780399-6952706.html), 我们知道报错是因为 model file `crn28ull_2d5_elk_v1d0_2p1_shrink0d9_embedded_usage.scs` 里并没有包含 resistor, capacitor 和 inductor 的 FS 和 SF 工艺角模型。而 TT, FF 和 SS 能正常仿真，就是因为文件中包含了这些工艺角：
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-19-14-54-28_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__55dB_75MHz_120uA.png"/></div>
+ -->
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-19-14-54-52_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__55dB_75MHz_120uA.png"/></div>
+
+依上图，找到 `cln28ull_2d5_elk_v1d0_2.scs` 文件，查看一下其中是否有阻容器件的 FS 和 SF 工艺角模型：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-19-14-57-55_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__55dB_75MHz_120uA.png"/></div>
+
+可以看到确实是没有的。那么如何 “间接” 地解决 FS, SF 的工艺角仿真问题呢？我们不妨将阻容器件的 FS, SF 模型设置为对应的 TT 模型 (相当于只有晶体管的 FS, SF 模型起作用)，这样就可以避免报错了 (聊胜于无)。
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-19-15-05-00_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__55dB_75MHz_120uA.png"/></div>
+
+修改后再仿真一次 (ac) frequency response, 仿真正常完成：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-19-15-08-22_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__55dB_75MHz_120uA.png"/></div>

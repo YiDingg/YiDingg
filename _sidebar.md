@@ -25,7 +25,10 @@
 
 
 
-    - Analog IC Blogs (2025, 22 items)
+    - Analog IC Blogs (2025, 31 items)
+        - [Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA)](<AnalogIC/Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
+        - [Use Virtuoso Efficiently - 2. File Transfer using Shared Folders](<AnalogIC/Use Virtuoso Efficiently - 2. File Transfer using Shared Folders.md>)
+        - [Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
         - [tsmc18rf (TSMC 180nm RF CMOS Process Library)](<AnalogIC/Basic Information of tsmc18rf (TSMC 180nm RF CMOS Process Library).md>)
         - [An Introduction to Bandgap References](<AnalogIC/Razavi CMOS - Chapter 12. Bandgap References.md>)
         - [An Introduction to Oscillators](<AnalogIC/Razavi CMOS - Chapter 15. Oscillators.md>)
@@ -45,7 +48,7 @@
         - [Biasing Circuits for Low-Voltage Cascode Current Mirror](<Electronics/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)
         - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<Electronics/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)
         - [Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>)
-        - [Design Example of F-OTA using Gm-Id Methodology](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
+        - [Design Example of F-OTA using Gm-Id Methodology](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)<!--  -->
         - [Design Example of Folded-Cascode Stage using LTspice](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>)<!--  -->
         - [Gain Boosting Techniques](<Electronics/[Razavi CMOS] Gain Boosting Techniques.md>)<!--  -->
         - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)<!--  -->
@@ -57,12 +60,13 @@
 
     - Virtuoso Tutorials
 
-        - [1. How to Install Cadence IC618](<AnalogIC/Virtuoso Tutorials - 1. How to Install Cadence IC618.md>)<!--  -->
-        - [2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)<!--  -->
-        - [3. How to Add New Process Libraries in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 3. How to Add New Process Libraries in Cadence IC618.md>)<!--  -->
-        - [4. Simulate Chara. of MOSFETs in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 4. Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)<!--  -->
-        - [! 5. Cadence Layout Example of The Basic Two-Stage Op Amp](<AnalogIC/Cadence Layout Example of The Basic Two-Stage Op Amp.md>)
-        - [! 6. Cadence Virtuoso Layout Tutorials](<AnalogIC/Cadence Virtuoso Layout Tutorials.md>)
+        - [1. How to Install Cadence IC618](<AnalogIC/Virtuoso Tutorials - 1. How to Install Cadence IC618.md>)<!-- x -->
+        - [2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)<!-- x -->
+        - [3. How to Add New Process Libraries in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 3. How to Add New Process Libraries in Cadence IC618.md>)<!-- x -->
+        - [4. Simulate Chara. of MOSFETs in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 4. Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)<!-- x -->
+        - [5. Cadence Virtuoso Layout Tutorials](<AnalogIC/Cadence Virtuoso Layout Tutorials.md>)
+        - [6. Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
+        - [! 7. Cadence Layout Example of the Basic Two-Stage Op Amp](<AnalogIC/Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
 
     - ADE Assembler Tutorials
         - [0. Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/ADE Assembler - 0. How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)
@@ -70,11 +74,11 @@
 
     - How to Use Virtuoso Efficiently
         - [0. How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)<!-- 这一篇不发在知乎或公众号上, 而是拆分为多篇文章来发 (相当于汇总) -->
-        - [! 1. Shortcuts and Initialization](<AnalogIC/Use Virtuoso Efficiently - 1. Shortcuts and Initialization.md>)
-        - [! 2. Use Virtuoso Efficiently - Part 2: xxx](<>)
+        - [1. Shortcuts and Initialization](<AnalogIC/Use Virtuoso Efficiently - 1. Shortcuts and Initialization.md>)<!-- x -->
+        - [2. Use Virtuoso Efficiently - Part 2: File Transfer using Shared Folders](<AnalogIC/Use Virtuoso Efficiently - 2. File Transfer using Shared Folders.md>)
 
 
-    - Electronic Blogs (2025, 78 items)
+    - Electronic Blogs (2025, 69 items)
         - [Test Experiment of The DC-DC Converter Modules](<Electronics/Test Experiment of The DC-DC Converter Modules.md>)
         - [Miller Compensation in Basic Two-Stage Op Amp](<AnalogIC/Miller Compensation in Basic Two-Stage Op Amp.md>)
         - [LCE 实验记录 (LCE-09 比较器)](<Electronics/LCE 实验记录 (LCE-09 比较器).md>)
@@ -122,7 +126,7 @@
         - [The Polarity of Input Offset Voltage of Op Amps](<Electronics/The Polarity of Input Offset Voltage of Op Amps.md>)<!-- x -->
         - [Features of Cascading Op Amp Stages](<Electronics/Features of Cascading Op Amp Stages.md>)<!--  -->
         - [Op Amp using Discrete MOSFETs](<Electronics/Op Amp using Discrete MOSFETs.md>)
-        - [Discrete Op Amp Design Reference](<Electronics/Discrete Op Amp Design Reference.md>)
+        - [Discrete Op Amp Design Reference](<Electronics/Discrete Op Amp Design Reference.md>)<!--  -->
         - [Transistor Meas. of SS8050 (NPN)](<Electronics/[Analog Comp] Transistor Measurement of SS8050 (NPN).md>)<!-- x -->
         - [Transistor Measurement Methods](<Electronics/Transistor Measurement Methods.md>)
         - [BJT 三种基本放大器的增益、跨导与输出阻抗](<Electronics/Three Basic Types of BJT Amplifiers.md>)<!-- x -->
@@ -171,7 +175,7 @@
 - 📱 **Analog IC Designs** <!-- 新的 design 放在前面 -->
 
     - tsmcN28
-        - [op amp: twoStage_single_Nulling-Miller__70dB_500MHz](AnalogICDesigns/tsmcN28_OpAmp__twoStage_single_Nulling-Miller__70dB_500MHz.md)
+        - [op amp: tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA](AnalogICDesigns/tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md)
         - [BGR: low-voltage (scientific research practice 1)](<AnalogICDesigns/tsmcN28_BGR__scientific_research_practice_1.md>)
 
     - tsmc18rf

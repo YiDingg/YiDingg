@@ -17,12 +17,16 @@ BGR 的主要优化方向是 PSRR (Power Supply Rejection Ratio) 和温度系数
 - [Razavi CMOS - Chapter 12. Bandgap References](<AnalogIC/Razavi CMOS - Chapter 12. Bandgap References.md>)
 - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogIC/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
 
+
+
 本文所用 BGR 架构及主要参考公式如下：
 
 <!-- <div class="center"><img width=400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-00-46-15_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
  -->
 
- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-00-50-12_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-18-17-45-51_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+
+<!--  <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-00-50-12_tsmcN28_BGR__scientific_research_practice_1.png"/></div> -->
 
 
 $$
@@ -99,7 +103,7 @@ $$
 
 | DC Gain | UGF | Load | PM | SR | ICMR | Swing | Power Dissipation | Process Corner |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
- | - | - | - | 60° | - | (600 mV, 800 mV) | (400 mV, 700 mV) | 100 uA @ 0.9V (0.09 mW) | TT, SS, FF, SF, FS |
+ | - | - | - | 60° | - | (600 mV, 800 mV) | (400 mV, 700 mV) | 100 uA @ 0.9V (0.090 mW) | TT, SS, FF, SF, FS |
 </div>
 
 主要优化方向为 UGF, 其次是 DC Gain 和 ICMR.
@@ -116,7 +120,7 @@ $$
 
 ## 2. Design of Op Amp
 
-详见文章 [A Basic Two-Stage Nulling-Miller Compensation Op Amp aiming 80 dB Gain, 500 MHz UGF at 1pF Load](<AnalogICDesigns/tsmcN28_OpAmp__twoStage_single_Nulling-Miller__70dB_500MHz.md>).
+详见文章 [this design](<AnalogICDesigns/tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md>).
 
 ## 3. Start-Up Circuit
 

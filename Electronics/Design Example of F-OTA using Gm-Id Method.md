@@ -7,7 +7,7 @@
 !> **<span style='color:red'>Attention:</span>**<br>
 注意：本文所使用的 gm-Id 方法是错误的，这会导致对晶体管静态工作点的估计有很大偏差（仅有部分参数基本准确），详见 [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)；正确的 gm-Id 方法请见 [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)。
 
-## Design Specifications
+## 1. Design Specifications
 
 
 
@@ -24,32 +24,32 @@
 
 
 
-## Gm-Id Design Steps
+## 2. Gm-Id Design Steps
 
 
 gm-Id 方法的基本设计步骤如下：
-- 0. 基于经验，选择可以满足设计要求的运放架构，并推导出各个指标的理论公式 (与器件的具体模型公式无关)
-- 1. 由 $\mathrm{GBW}$ (or $BW$) 确定 $g_m$,  (通常所有器件同 length)
-- 2. 由 $A_v$ 和其它指标确定跨导效率 $\frac{g_m}{I_D}$ 和器件长度 $L$ (这一步需要作相当明显的 trade-off)
-    - 具体方法：作出 $g_m r_O$ 关于 $\frac{g_m}{I_D}$ 和 $L$ 的变化情况，选择合适的 $\frac{g_m}{I_D}$ 和 $L$
-    - 范围选择: 
+- (0) 基于经验，选择可以满足设计要求的运放架构，并推导出各个指标的理论公式 (与器件的具体模型公式无关)
+- (1) 由 $\mathrm{GBW}$ (or $BW$) 确定 $g_m$,  (通常所有器件同 length)
+- (2) 由 $A_v$ 和其它指标确定跨导效率 $\frac{g_m}{I_D}$ 和器件长度 $L$ (这一步需要作相当明显的 trade-off)
+    - (2.1) 具体方法：作出 $g_m r_O$ 关于 $\frac{g_m}{I_D}$ 和 $L$ 的变化情况，选择合适的 $\frac{g_m}{I_D}$ 和 $L$
+    - (2.2) 范围选择: 
         - strong inversion: $\frac{g_m}{I_D} \in (0,\ 10)$
         - moderate inversion: $\frac{g_m}{I_D} \in (10,\ 20)$
         - weak inversion (subthreshold region): $\frac{g_m}{I_D} \in (20,\ 30)$
-    - 较小的 $\frac{g_m}{I_D}$ (strong inversion): 
+    - (2.3) 较小的 $\frac{g_m}{I_D}$ (strong inversion): 
         - 更快的响应速度: $V_{OV}$ 增大使 $C_{gs}$ 减小, 从而使 $f_T \approx \frac{g_m}{2\pi C_{gs}}$ 增大
         - 更好的匹配度: 在 strong inversion, 由于 $V_{OV}$ 较大，$V_{TH}$ 的失配对电流的影响相对较小
         - 缺点：需要更高的电源电压和电流、更明显的 channel-length modulation: 在长沟道模型中 $r_O = \frac{1}{\lambda I_D} = \frac{\frac{g_m}{I_D}}{\lambda \,g_m}$
         - 适合：高速电路（优先带宽）、高精度电路（优先线性度和匹配）、高驱动能力电路（如输出级）
-    - 较大的 $\frac{g_m}{I_D}$ (weak inversion):
+    - (2.4) 较大的 $\frac{g_m}{I_D}$ (weak inversion):
         - 更低的功耗: 在 $g_m$ 不变的条件下 (由 GBW 确定), 可通过降低 $I_D$ 来获得更高的 $\frac{g_m}{I_D}$, 从而降低功耗
         - 更大的摆幅: 长沟道模型中 $\frac{g_m}{I_D} = \frac{2}{V_{OV}} \propto \frac{1}{V_{OV}}$, $\frac{g_m}{I_D}$ 的升高使得 $V_{OV}$ 降低
         - 更高的增益: 在长沟道模型中，$g_m r_O = \frac{\frac{g_m}{I_D}}{\lambda}$, 因此 $\frac{g_m}{I_D}$ 的升高使得 $g_m r_O$ 增大
         - 缺点：载流子迁移率 $\mu$ 降低、寄生电容更大，导致 $f_T$ 大幅降低 (可能仅 $\mathrm{MHz}$ 量级)；匹配度也有所下降 (失配更明显)
         - 适合：低功耗电路（生物医疗）、高增益电路（优先增益）、低频电路（优先摆幅和功耗）、低电压电路（电源电压较低）
-- 3. 由 $g_m$ 和 $\frac{g_m}{I_D}$ 确定 $I_D$, 由 $\frac{g_m}{I_D}$ 和 $L$ 求出电流密度 $\frac{I_D}{W}$, 由此得出 $W$
-- 4. 搭建实际电路进行仿真，检查是否满足各项指标
-- 5. 微调 $W$ 和 $L$ 以满足设计要求（优化性能）
+- (3) 由 $g_m$ 和 $\frac{g_m}{I_D}$ 确定 $I_D$, 由 $\frac{g_m}{I_D}$ 和 $L$ 求出电流密度 $\frac{I_D}{W}$, 由此得出 $W$
+- (4) 搭建实际电路进行仿真，检查是否满足各项指标
+- (5) 微调 $W$ 和 $L$ 以满足设计要求（优化性能）
 
 从以上步骤可以看出，我们这里的 gm-Id 设计方法共有三个独立变量 $g_m$, $\frac{g_m}{I_D}$ 和 $L$。当然，也有一种思路是把第三变量 $L$ 用 $\frac{I_D}{a} = \frac{I_D}{\left(\frac{W}{L}\right)}$ 来替代，称为 normalized current; 又或者是引入 $\omega_T = \frac{g_m}{C_{gs}}$ 作为 figure of merit (例如 [this article](https://designers-guide.org/forum/Attachments/Gm_BY_ID_Methodology.pdf)).
 
@@ -57,12 +57,12 @@ gm-Id 方法的基本设计步骤如下：
 有关 gm-Id 方法的详细介绍，请参见 [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)。
 
 
-## Gm-Id Design Example
+## 3. Gm-Id Design Example
 
 
 
 
-### 0. op amp architecture
+### 3.0 op amp architecture
 
 
 架构选择：
@@ -85,7 +85,7 @@ gm-Id 方法的基本设计步骤如下：
 
 设计指标中，共模输入范围和输出摆幅的 margin 还是比较宽的，因此我们不必用 weak inversion 来设计，考虑 moderate 或 strong inversion 即可。另外，为简化分析过程，本次设计中我们不考虑噪声性能。
 
-### 1. determine gm
+### 3.1 determine gm
 
 指标要求 $\mathrm{GBW}_f > 50 \ \mathrm{MHz}$, 我们令：
 $$
@@ -98,7 +98,7 @@ $$
 
 
 
-### 2. choose gm/Id and L
+### 3.2 choose gm/Id and L
 
 小信号增益 $A_v = g_{m1}(r_{O2}\parallel r_{O4}) \approx \frac{1}{2} g_{m1}r_{O1}$，现在 $g_m$ 已经确定，我们选用 `tsmc18rf` 库中的 `nmos2v` 和 `pmos2v` 模型，先按下图对 NMOS 进行仿真：
 
@@ -147,7 +147,7 @@ $$
 
 
 
-### 3. determine Id and W
+### 3.3 determine Id and W
 
 $$
 \begin{gather}
@@ -165,7 +165,7 @@ $$
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-26-19-12-13_Design Example of F-OTA using Gm-Id Method.png"/></div>
 
-### 4. determine PMOS 
+### 3.4 determine PMOS 
 
 上面我们只求解了两个 NMOS 输入管的尺寸，还需要求解 PMOS 和 tail NMOS. 它们的求解思路为：
 - PMOS load: 
@@ -205,7 +205,7 @@ $$
 
 
 
-### 5. determine tail NMOS
+### 3.5 determine tail NMOS
 
 - tail current source M5 和电流镜 M6 求解思路 (M5 = M6): 
     - $I_D$ 已经确定 (由 input NMOS 给出)
@@ -227,7 +227,7 @@ $$
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-27-00-31-15_Design Example of F-OTA using Gm-Id Method.png"/></div>
 
-### 6. summary and adjustment
+### 3.6 summary and adjustment
 
 各管子参数汇总如下：
 
@@ -316,10 +316,10 @@ disp(['a_M3_M4 = ', num2str(a_M5_M6)])
 ```
 
 
-### 7. simulation test
+## 4. simulation test
 
 
-#### 7.0 dc operating point
+### 4.1 dc operating point
 
 下面，我们就来搭建电路，稍后还需要创建 OTA 的 symbol 用于后续仿真。先搭建电路，检查 dc 工作点是否正常：
 
@@ -334,7 +334,7 @@ disp(['a_M3_M4 = ', num2str(a_M5_M6)])
  | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-27-01-08-51_Design Example of F-OTA using Gm-Id Method.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-27-01-07-44_Design Example of F-OTA using Gm-Id Method.png"/></div> |
 </div>
 
-#### 7.1 dc in-out curve
+### 4.2 dc in-out curve
 
 在开始进一步的仿真之前，我们需要先创建电路的 symbol, 具体步骤为：在 schematic 界面，点击 `create > create cellview > from cellview`，无需改名，直接创建即可 (这里创建的是 symbol, 它会和 schematic 在同一 cellview 下) 
 
@@ -362,7 +362,7 @@ disp(['a_M3_M4 = ', num2str(a_M5_M6)])
 
 上面我们是在 $V_{in,CM} = 0.9 \ \mathrm{V}$ 时进行的仿真，观察到 $V_{out}|_{V_{in,CM} = 0} = 1.106 \ \mathrm{V} \ne 0.9 \ \mathrm{V}$，可以理解为差模输入有一定的 offset $V_{OS}$, 如果需要让 $V_{in,DM} = 0$ 时的输出电压恰好为 $\frac{VDD}{2} = 0.9 \ \mathrm{V}$，可以通过降低 PMOS 管的 $\frac{g_m}{I_D}$ 来实现，这会使 $V_{OV}$ 增大, 从而降低 $V_{out}|_{V_{in,CM} = 0}$.
 
-#### 7.2 input-output range
+### 4.3 input-output range
 
 如图，设置 Vin_DM 为第一变量, Vin_CM 为第二变量，得到不同共模输入下的 in-out curve:
 
@@ -410,7 +410,7 @@ $$
 **事实上，像这样一个 output range 受 input 限制的 stage, 我们通常不会对电路的 output swing 提过多的要求，而是直接在其后加上轨到轨的输出级以获得 rail-to-rail output** (e.g., a CMOS inverter)。不过，某些实际应用中确实固定了 Vin_CM, 且 stage 数非常紧张 (比如只能有一级), 这时可能会对 output swing 有较高的要求。
 
 
-#### 7.3 frequency response
+### 4.4 frequency response
 
 下面就来仿真开环增益的频响曲线，评估其增益带宽积是否达到设计指标。用负反馈建立直流工作点，以获得更真实的频响曲线：
 
@@ -425,7 +425,7 @@ A_{v0} = 139.1 \ \mathrm{V/V} = 42.87 \ \mathrm{dB},\quad f_c = 421.3 \ \mathrm{
 \end{gather}
 $$
 
-#### 7.4 slew rate SR
+### 4.5 slew rate SR
 
 设置 pulse 激励时上升/下降沿的时间不能为零，为零会报错，无法进行仿真，不妨设为 1ps.
 
@@ -440,28 +440,7 @@ $$
 
 下降沿出现指数衰减的原因见文章 [The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>).
 
-## Design Conclusion
-
-下面是设计指标与仿真结果的对比：
-<div class='center'>
-
-| Parameter | Current | Open-Loop Gain| GBW | Slew Rate | CM input | Output Swing |
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
- | Design Goals | $500 \ \mathrm{uA}$ | $40 \ \mathrm{dB}\ (100 \ \mathrm{V/V})$  | $50 \ \mathrm{MHz}$ | $60 \ \mathrm{V/us}$ | $(0.7 \ \mathrm{V},\ 1.3 \ \mathrm{V})$ | $1 \ \mathrm{V}$ |
- | Simulation Results | $342.7 \ \mathrm{uA}$ | $42.9 \ \mathrm{dB}\ (139 \ \mathrm{V/V})$  | $54.9 \ \mathrm{MHz}$ | $+ 63.16 \ \mathrm{V/us}\\ - 54.55 \ \mathrm{V/us}$  | $(0.72 \ \mathrm{V},\ 1.54\ \mathrm{V})$ | $1.07 \ \mathrm{V}$ |
-</div>
-
-GBW 原本是按 60MHz 设计的，但由于我们使用的 transistor 已经算非常大了 (width 和 length 都比较高), 受寄生电容的影响, GBW 稍有下降。另外，上面的 current consumption 并没有考虑 biasing current, 考虑 1:10 的 bias 后总 current 约为 377.0 uA 。
-
-
-这篇文章的主要目的有二，其一是借助一个简单的设计例子，学习 gm-Id 设计方法的流程和思路；其二便是进一步熟悉 cadence 的使用，尤其是如何利用 SKILL 语言修改设置、快速执行某些操作等，这对日后在 cadence 中进行更复杂的设计是非常有帮助的。总的来讲，本次设计在 design idea 上并没有花多少时间，时间主要消耗在了 cadence 的探索、配置文件的修改优化和 SKILL 语言的基本使用上，最终为文章 [How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>) 贡献了相当多的内容。
-
-
-### 8. 20250612: tran simul.
-
-下面两张图中左侧的那些参数无用，不用在意 (其实是仿其它运放时忘换 symbol, 不小心仿 F-OTA 了)。
-
-#### 8.1 tran: step response
+### 4.6 step response
 
 将 vout 和 vin- 短接，设置输入信号为 0.8 V ~ 1.0 V 的 step signal, 考察运放的 (small-signal) step response, 看看相位和增益裕度是不是“真的”, 并且计算运放的 settling time 和 overshoot:
 
@@ -478,13 +457,37 @@ overshoot (%) (falling) = (ymin(vout)/value(vout, 900n) - 1)*100
 
 
 
-#### 8.2 tran: slew rate
+### 4.7 slew rate
 
 SR 是 large-signal 下的非线性行为，将输入信号改为幅度较大的 step signal, 运行仿真，结果如下：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-15-10-54_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
 
 
+
+
+
+## 5. Design Conclusion
+
+下面是设计指标与仿真结果的对比：
+<div class='center'>
+
+| Parameter | Current | Open-Loop Gain| GBW | Slew Rate | CM input | Output Swing |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+ | Design Goals | $500 \ \mathrm{uA}$ | $40 \ \mathrm{dB}\ (100 \ \mathrm{V/V})$  | $50 \ \mathrm{MHz}$ | $60 \ \mathrm{V/us}$ | $(0.7 \ \mathrm{V},\ 1.3 \ \mathrm{V})$ | $1 \ \mathrm{V}$ |
+ | Simulation Results | $342.7 \ \mathrm{uA}$ | $42.9 \ \mathrm{dB}\ (139 \ \mathrm{V/V})$  | $54.9 \ \mathrm{MHz}$ | $+ 63.16 \ \mathrm{V/us}\\ - 54.55 \ \mathrm{V/us}$  | $(0.72 \ \mathrm{V},\ 1.54\ \mathrm{V})$ | $1.07 \ \mathrm{V}$ |
+</div>
+
+GBW 原本是按 60MHz 设计的，但由于我们使用的 transistor 已经算非常大了 (width 和 length 都比较高), 受寄生电容的影响, GBW 稍有下降。另外，上面的 current consumption 并没有考虑 biasing current, 考虑 1:10 的 bias 后总 current 约为 377.0 uA 。
+
+
+这篇文章的主要目的有二，其一是借助一个简单的设计例子，学习 gm-Id 设计方法的流程和思路；其二便是进一步熟悉 cadence 的使用，尤其是如何利用 SKILL 语言修改设置、快速执行某些操作等，这对日后在 cadence 中进行更复杂的设计是非常有帮助的。总的来讲，本次设计在 design idea 上并没有花多少时间，时间主要消耗在了 cadence 的探索、配置文件的修改优化和 SKILL 语言的基本使用上，最终为文章 [How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>) 贡献了相当多的内容。
+
+
+<!-- ### 5.1  simul.
+
+下面两张图中左侧的那些参数无用，不用在意 (其实是仿其它运放时忘换 symbol, 不小心仿 F-OTA 了)。
+ -->
 
 
 ## References
