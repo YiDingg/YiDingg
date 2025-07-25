@@ -551,8 +551,23 @@ parasitic_rc_3T      : Parasitic RC device, Please refer to parasitic_rc_UserGui
     - ndio_18ll: 1.8V Low Leakage N+/PWell diode
     - nwdio: : Nwell/PSUB diode, 带有 Psubstrate + Nwell 隔离噪声的二极管
 
-下面是 RF 设计中常用的器件：
 
+几种主要电阻的具体参数：
+<div class='center'>
+
+| Resistor | Type | (n-type) minimum value (Ohm) | (n-type) maximum value (Ohm) | Square resistor (Ohm) |
+|:-:|:-:|:-:|:-:|:-:|
+ | rnmg/rpmg | N+/P+ metal gate resistor                    | 59.9223 @ 0.14u/0.1u | 12.7891K @ 29.88u/0.1u | 42.80 |
+ | rnod/rpod | N+/P+ diffusion resistor with salicide       | 1.30726 @ 0.14u/2u | 887.071 @ 95u/2u | 18.68 |
+ | rnodwo/rpodwo | N+ diffusion resistor without salicide   | 151.916 @ 2u/2u | 6.80481K @ 95u/2u | 0.14K |
+ | rnwod/rpwod | NWell/PWell resistor under OD              | 561.622 @ 1.8u/2u | 2.5978K @ 95u/2u | 54.69 |
+ | rnwsti | NWell resistor under STI                        | 2.12502K @ 1.8u/2u | 100.123K @ 95u/2u | 2.11K |
+ | rupolym | P+ poly resistor without salicide              | 594.805 @ 2u/2u | 7.19K @ 24.64u/2u | 0.58K |
+ | rupolym_rf_110g | mmWave (RF) High-R resistor            | 662.509 @ 1u/1u | 6.11098K @ 1u/0.1u | 0.61K |
+</div>
+
+<!-- 下面是 RF 设计中常用的器件：
+ -->
 
 
 ## Devices Models

@@ -159,22 +159,22 @@ $$
     \left(\frac{g_m}{I_D}\right) = 16 \ \mathrm{S/A},\ 
     I_{D} = 10 \ \mathrm{uA},\ 
     a = \frac{1365 \ \mathrm{nm}}{210 \ \mathrm{nm}} = 6.5,\ 
-    g_{m} = 0.1674 \ \mathrm{mS},\
-    r_{out} = 312.6 \ \mathrm{k\Omega}
+    g_m = 0.1674 \ \mathrm{mS},\ 
+    r_{out} = 312.6 \ \mathrm{k}\Omega
 \\
 \mathrm{M5:}&\quad
     \left(\frac{g_m}{I_D}\right) = 12 \ \mathrm{S/A},\ 
     I_{D} = 20 \ \mathrm{uA},\ 
     a = \frac{1440 \ \mathrm{nm}}{240 \ \mathrm{nm}} = 6,\ 
     f_t = 9.488 \ \mathrm{GHz},\ 
-    r_{out} = 106.3 \ \mathrm{k\Omega}
+    r_{out} = 106.3 \ \mathrm{k}\Omega
 \\
 \mathrm{M7:}&\quad
     \left(\frac{g_m}{I_D}\right) = 12 \ \mathrm{S/A},\ 
     I_{D} = 80 \ \mathrm{uA},\ 
-    a = 24\ \mathrm{(2\ series \times 8\ multiplier = 16\times M5)},\ 
+    a = 24\ \mathrm{(2\ series \times 8 = 16\times M5)},\ 
     f_t = 0.593 \ \mathrm{GHz},\ 
-    r_{out} = 50 \ \mathrm{k\Omega}
+    r_{out} = 50 \ \mathrm{k}\Omega
 \end{align}
 $$
 
@@ -216,14 +216,14 @@ $$
     \left(\frac{g_m}{I_D}\right) = 14 \ \mathrm{S/A},\ 
     I_{D} = 10 \ \mathrm{uA},\ 
     a = \frac{2025 \ \mathrm{nm}}{450 \ \mathrm{nm}} = 4.5,\ 
-    r_{out} = 612.3 \ \mathrm{k\Omega}
+    r_{out} = 612.3 \ \mathrm{k}\Omega
 \\
 \mathrm{M6:} &\quad
     \left(\frac{g_m}{I_D}\right) = 16 \ \mathrm{S/A},\ 
     I_{D} = 80 \ \mathrm{uA},\ 
-    a = 10 \times \frac{750 \ \mathrm{nm}}{150 \ \mathrm{nm}} = 50 \ \mathrm{(multiplier = 10)},\ 
-    g_{m} = 1.335 \ \mathrm{mS},\
-    r_{out} = 23.1 \ \mathrm{k\Omega}
+    a = 10 \times \frac{750 \ \mathrm{nm}}{150 \ \mathrm{nm}} = 50,\ 
+    g_m = 1.335 \ \mathrm{mS},\ 
+    r_{out} = 23.1 \ \mathrm{k}\Omega
 \end{align}
 $$
 

@@ -64,18 +64,15 @@
 DRC 通过之后，就可以进行 LVS (layout versus schematic) 检查了，主要步骤为：
 
 - (1) 在版图中点击 `Run nmLVS`, 选择此工艺库的 LVS 文件，例如 `/home/IC/Cadence_Process_Library/tsmc28n_2v5_OA/Calibre_new/lvs/calibre.lvs`
-- (2) 设置 LVS Run Directory, 及 LVS 输出结果保存的文件夹
-- (3) 开启 `Inputs > Netlist > Export from schematic viewer`, 这样就不用手动导出并设置 netlist 了
+- (2) 在 `Inputs` 中设置 LVS Rules File 和 run directory
+- (3) 开启 `Inputs > Netlist > Export from schematic viewer`
 - (4) 在 `Setup > LVS Options` 中设置好电源网络和地网络，我们这里设置的是 VDD 和 VSS
-- (5) 点击 `Run LVS`, 等待结果
+- (5) 勾选 `LVS Options > Gate Recognition > Turn off` (这一步是为了避免 `WARNING: XDB Database not available`)
+- (6) 点击 `Run LVS`, 等待结果
 
-其实 LVS 这一步是非常容易出现或大或小的问题的，比如报错 "WARNING: XDB Database not available: No comparison was made", 又比如报错 "source primary cell not found in source database", 以及一些其它问题，详见 [6. Common Problems in LVS](#6-common-problems-in-lvs) 一节。
+其实 LVS 这一步是非常容易出现或大或小的问题的，比如报错 "WARNING: XDB Database not available: No comparison was made", 又比如报错 "source primary cell not found in source database", 以及一些其它问题，详见 **6. Common Problems in LVS** 一节。
 
-下面是一个示例：
-- 在 `Calibre > Run nmLVS` 中打开 LVS 界面，设置好 LVS Rules File 和 run directory
-- 在 `LVS Options > Supply` 中输入 Power nets = VDD 和 Ground nets = VSS
-- 勾选 `LVS Options > Gate Recognition > Turn off` (这一步是为了避免 `WARNING: XDB Database not available`)
-- 点击 `Run LVS` 运行 LVS 检查
+
 
 输出结果如下：
 
@@ -95,7 +92,7 @@ DRC 通过之后，就可以进行 LVS (layout versus schematic) 检查了，主
 LVS 给出了笑脸，说明检查成功通过，与原理图完全一致。
 
 
-**<span style='color:red'> 上面的错误告诉我们，以后在版图 generate from source 时，应该将 Pin 的属性设置为 M1-pin 而不是 M1-drw. </span>**
+**<span style='color:red'> 上面的错误告诉我们，以后在版图 generate from source 时，应该将 Pin label 的属性设置为 M1-pin 而不是 M1-drw. </span>**
 
 
 ## 4. PEX Example
@@ -207,6 +204,54 @@ LUP.6 { @ Any point inside NMOS source/drain space to the nearest PW STRAP in th
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-22-00-57-11_DRC-LVS-PEX Example in tsmcN28.png"/></div>
 
+### 6.2 Source netlist references but does not define subckts:
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-15-16-21_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+报错 `Source netlist references but does not define 2 subckts`，可以参考这两篇博客来解决：
+- [CSDN > 版图 LVS 验证出现未定义问题](https://blog.csdn.net/qq_36686804/article/details/117249268)
+- [EETOP > 求助 LVS 的时候 Source netlist references but does not define 1 subckt: mom_2t_ckt](https://bbs.eetop.cn/thread-860774-1-1.html)
+
+我们尝试了在 `Inputs > Netlist > Spice Files` 中添加文件 `/home/IC/Cadence_Process_Library/tsmc28n_2v5_OA/Calibre/lvs/source.added`, 但是此时出现了新的报错 `Syntax Error in file "/home/IC/OpAmp_LVS_20250721/OpAmp_Check_LVS.src.net" at line 14.`。
+
+打开文件一看，发现是不知道哪里冒出来的 Rs, Cc 和 Rz 三个参数：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-16-38-29_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+将它们删除，将 `Export from schematic viewer` 取消 (否则会重新生成)，然后重新运行 LVS, 终于成功运行：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-16-40-10_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+至于出现的警告 `WARNING: XDB Database not available: No comparison was made.`, 可以参考下面几个链接来解决：
+
+- [EETOP > LVS 出现 warning：XDB Database not available: No comparison was made](https://bbs.eetop.cn/thread-890385-1-1.html): 可能是电源或地没有打 label 造成的
+- [CSDN > WARNING : XDB Database not available. No comparison was  made.](https://blog.csdn.net/2301_81250487/article/details/134505683): 原理图和版图的 label 打的不一致
+- [EDA Board > XDB Database not available Error (Cadence Virtuoso, Calibre LVS)](https://www.edaboard.com/threads/xdb-database-not-available-error-cadence-virtuoso-calibre-lvs.397303/): 提出了 in the "LVS Options" open the "Gates" tab and select "Turn off" in the "Gate Recognition" section 的解决方案
+
+按照上面最后一条提到的 in the "LVS Options" open the "Gates" tab and select "Turn off" in the "Gate Recognition" section, 修改后重新运行 LVS, warning 确实不见了，此时的结果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-17-02-25_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+### 6.3 source primary cell not found in source database
+
+名称字符问题或名称太长
+
+### 6.4 ERROR: Supply error detected. ABORT ON SUPPLY ERROR is specified - aborting
+
+
+### 6.5 WARNING:  Stamping conflict in SCONNECT - Multiple source nets stamp one target net.
+
+``` bash
+WARNING:  Stamping conflict in SCONNECT - Multiple source nets stamp one target net.
+Use LVS REPORT OPTION S or LVS SOFTCHK statement to obtain detailed information.
+```
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-03-34-57_Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).png"/></div>
+
+
+大多是因为 Guard ring 没有全部连到 VDD 或者 VSS 上。
+
+
 
 ## 7. Common Problems in PEX
 
@@ -265,6 +310,24 @@ Error while compiling rules file /home/IC/Cadence_Process_Library/tsmc28n_2v5_OA
 Error INCL1 on line 126 of /home/IC/Cadence_Process_Library/tsmc28n_2v5_OA/Calibre_new/rcx/rules - problem with access, file type, or file open of this include file: /home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5/Calibre_new/rcx/xrc_mapping.
 ```
 
+### 7.2 导出的晶体管尺寸正常却在后仿中报错
 
+导出寄生参数后进行仿真，晶体管的尺寸明明在正常范围内，仿真器却仍然报错说尺寸不符合范围要求，下面是在 [this design](<AnalogIC/Cadence Layout (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>) 中遇到的一个例子：
+
+``` bash
+Error found by spectre during initial setup.
+    ERROR (CMI-2440): "/home/IC/Cadence_Process_Library/tsmc28n_2v5_OA/tsmcN28/../models/spectre/./cln28ull_2d5_elk_v1d0_2.scs" 23247: MMb4@10:  The length, width, or area of the instance does not fit the given lmax-lmin, wmax-wmin, or areamax-areamin range for any model in the `MMb4@10.pch' group. The channel width is 7.200000e-07 and length is 2.400000e-07. Specify channel width and length that do not exceed the referenced maximal area Lmax=9.001000e-07, Lmin=2.700000e-08, Wmax=2.700100e-06,and Wmin=9.000000e-08. You can choose the nearest model by setting the value of `soft_bin' option to `allmodels'.
+    ERROR (CMI-2440): "/home/IC/Cadence_Process_Library/tsmc28n_2v5_OA/tsmcN28/../models/spectre/./cln28ull_2d5_elk_v1d0_2.scs" 23247: MM8:  The length, width, or area of the instance does not fit the given lmax-lmin, wmax-wmin, or areamax-areamin range for any model in the `MM8.pch' group. The channel width is 1.000000e-07 and length is 3.000000e-08. Specify channel width and length that do not exceed the referenced maximal area Lmax=9.001000e-07, Lmin=2.700000e-08, Wmax=2.700100e-06,and Wmin=9.000000e-08. You can choose the nearest model by setting the value of `soft_bin' option to `allmodels'.
+    ERROR (CMI-2440): "/home/IC/Cadence_Process_Library/tsmc28n_2v5_OA/tsmcN28/../models/spectre/./cln28ull_2d5_elk_v1d0_2.scs" 23247: MMb4:  The length, width, or area of the instance does not fit the given lmax-lmin, wmax-wmin, or areamax-areamin range for any model in the `MMb4.pch' group. The channel width is 7.200000e-07 and length is 2.400000e-07. Specify channel width and length that do not exceed the referenced maximal area Lmax=9.001000e-07, Lmin=2.700000e-08, Wmax=2.700100e-06,and Wmin=9.000000e-08. You can choose the nearest model by setting the value of `soft_bin' option to `allmodels'.
+```
+
+参考 [this answer](https://community.cadence.com/cadence_technology_forums/f/custom-ic-design/28893/soft_bin-allmodels/1332428#1332428), 我们在 ADE L (或 ADE XL Test Editor) 中找到 `Simulation > Options > Analog > Miscellaneous > Additional arguments`, 然后输入下面这一行：
+
+``` bash
+soft_bin = allmodels
+```
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-19-25-31_Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).png"/></div>
 
 ## 8. Summary 

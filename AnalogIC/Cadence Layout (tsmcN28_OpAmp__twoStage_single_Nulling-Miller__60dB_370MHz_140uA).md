@@ -19,6 +19,7 @@
 ### 1.1 Configure Settings
 
 在 Layout GXL 中打开版图，点击 `Options > Display`, 修改以下设置：
+- DRC 显示: `Options > DRD Edit` 中 enable `Notify`
 - `Grid Controls`: `X/Y Snap Spacing` = 0.005 (这是根据 DRC 中的最小网格规则设置的)
 - `Display Controls`: 在 `Option > Display` 中 Enable `Pin Names` and `Show Name Of > both`，然后打开 `Option > Net Name Display > Draw labels on top`, 并调整合适的颜色 (例如将白色改为黄色)
 - `Dimming`: Enable `Dimming` (选中器件时会高亮对应器件，同时暗化其它器件)
@@ -310,7 +311,7 @@ PDK
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-02-42-33_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
 
-接下来就是为每一组 PMOS 添加一个大的 N-Well, 将它们包在里面 (建议 enclose by 0.1 um), 添加 NW 后将每一组再 group 起来：
+接下来就是为每一组 PMOS 添加一个大的 N-Well, 将它们包在里面, 添加 NW 后再将每一组 group 起来：
 
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-03-14-41_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
@@ -318,17 +319,29 @@ PDK
 
 ### 3.5 DRC Test
 
-不妨 Run 一下 DRC 以确定没有什么奇奇怪怪的问题：
+在布线之前，不妨进行一下 DRC 以确定没有什么奇奇怪怪的问题。关于 DRC/LVS/PEX 和后仿的详细教程见 [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>), 这里直接给出 DRC 结果：
+
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-03-15-10_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
 
 其中的 M1.A.1 和 M1.A.3 暂时不用管，它们是晶体管 gate contact 上的 M1 面积太小导致的，后续会通过添加 M1 来解决。
 
+我们先解决一下 SR.DPO.S.5, 这是部分晶体管之间 poly 间距不够造成的，适当增加间距即可：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-22-19-51-29_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+把五个 IO 端口的 M1 层改为 drw (drawing) 属性，否则会导致后续的 LVS 报错 (但 pin label 仍为 M1-pin 不变)。
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-22-20-15-57_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
 ### 3.6 LVS Test
 
-在开始走线之前，我们不妨再运行一下 LVS 测试，确保版图除网络连接外的各参数与原始 schematic 一致。大致步骤如下：
+不妨再运行一下 LVS 测试，确保版图除网络连接外的各参数与原始 schematic 一致。
+
+由于我们的 cellview 名称太长，会导致 LVS 报错，所以直接将整个 cellview 复制为另一个名为 `OpAmp_Check_LVS` 的 cellview 来进行 LVS 检查即可。详细步骤参考这篇教程 [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>).
 
 
+<!-- 大致步骤如下：
 - (1) 在版图中点击 `Run nmLVS`, 选择此工艺库的 LVS 文件，例如 `/home/IC/Cadence_Process_Library/tsmc28n_2v5_OA/Calibre_new/lvs/calibre.lvs`
 - (2) 设置 LVS Run Directory, 及 LVS 输出结果保存的文件夹
 - (3) 开启 `Inputs > Netlist > Export from schematic viewer`, 这样就不用手动导出并设置 netlist 了
@@ -337,35 +350,7 @@ PDK
 
 这里如果报错 `source primary cell not found in source database`，通常是 top cell name 设置错误，一种可能是 cellview 名称里有斜杠 (减号) `-` 或小数点 `.` 导致报错，另一种可能是名字超过了 60 个字符 (大白话：名字太长了)。我们的就属于后者：
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-15-09-11_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
-
-将整个 cellview 复制为另一个名为 `OpAmp_Check_LVS` 的 cellview, 按照上面方法重新进行 LVS 检查：
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-15-16-21_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
-
-报错 `Source netlist references but does not define 2 subckts`，可以参考这两篇博客来解决：
-- [CSDN > 版图 LVS 验证出现未定义问题](https://blog.csdn.net/qq_36686804/article/details/117249268)
-- [EETOP > 求助 LVS 的时候 Source netlist references but does not define 1 subckt: mom_2t_ckt](https://bbs.eetop.cn/thread-860774-1-1.html)
-
-我们尝试了在 `Inputs > Netlist > Spice Files` 中添加文件 `/home/IC/Cadence_Process_Library/tsmc28n_2v5_OA/Calibre/lvs/source.added`, 但是此时出现了新的报错 `Syntax Error in file "/home/IC/OpAmp_LVS_20250721/OpAmp_Check_LVS.src.net" at line 14.`。
-
-打开文件一看，发现是不知道哪里冒出来的 Rs, Cc 和 Rz 三个参数：
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-16-38-29_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
-
-将它们删除，将 `Export from schematic viewer` 取消 (否则会重新生成)，然后重新运行 LVS, 终于成功运行：
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-16-40-10_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
-
-至于出现的警告 `WARNING: XDB Database not available: No comparison was made.`, 可以参考下面几个链接来解决：
-
-- [EETOP > LVS 出现 warning：XDB Database not available: No comparison was made](https://bbs.eetop.cn/thread-890385-1-1.html): 可能是电源或地没有打 label 造成的
-- [CSDN > WARNING : XDB Database not available. No comparison was  made.](https://blog.csdn.net/2301_81250487/article/details/134505683): 原理图和版图的 label 打的不一致
-- [EDA Board > XDB Database not available Error (Cadence Virtuoso, Calibre LVS)](https://www.edaboard.com/threads/xdb-database-not-available-error-cadence-virtuoso-calibre-lvs.397303/): 提出了 in the "LVS Options" open the "Gates" tab and select "Turn off" in the "Gate Recognition" section 的解决方案
-
-按照上面最后一条提到的 in the "LVS Options" open the "Gates" tab and select "Turn off" in the "Gate Recognition" section, 修改后重新运行 LVS, warning 确实不见了，此时的结果如下：
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-17-02-25_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-15-09-11_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div> -->
 
 
 
@@ -379,13 +364,42 @@ PDK
 (2) 在版图中点击 `Run nmLVS`, 选择此工艺库的 LVS 文件，然后在 Input > Spice File 中选择刚刚导出的 `.cdl` 文件
  -->
 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-22-20-27-25_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
 
+和预料中的报错差不多，可以开始金属布线了。
 
 ### 3.6 Metal Routing
 
-一切准备工作就绪后，可以开始进行金属走线了。按组里师兄的说法，我们目前用 `tsmcN28` 工艺库，走线基本上都可以用到 M7 ~ M8, 因此不必担心走线层数不足的问题。另外，一些电流较大的走线一般要用过孔连接到更高的金属层，这是因为 M1, M2 等金属层的厚度和最大宽度都不如上层金属，其方块电阻和发热量也更大。
+一切准备工作就绪后，我们开始进行金属走线。按组里师兄的说法，我们目前用的 `tsmcN28` 工艺库，流片时基本上都支持用到 M7 ~ M8, 因此不必担心走线层数不足的问题。另外，一些电流较大的走线一般要用过孔连接到更高的金属层，这是因为 M1, M2 等金属层的厚度和最大宽度都不如上层金属，其方块电阻和发热量也更大。
+
+一般来讲先用布线时的自适应宽度，全部布线完成之后再用特殊宽度来调整，这是因为截至 2025.07.23 我们暂时没有找到调整布线宽度后再调回宽度自适应的方法。
+
+差不多把偏置电路连接完成，先 DRC 试试水：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-01-12-18_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-01-15-01_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+四个 via 的间距有些小了，我们再添加两个 via 并将宽 M1 改为多条窄 M1, 此项 DRC 消失后继续布线。边布线可以边检查 DRC, 以免出现问题但未及时发现，导致后续修改困难。
+
+
+除 VDD 和 VSS 主线路外，其它所有走线都已经完成 (已经过 schematic 手动核对)，效果如下：
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-03-25-32_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-03-25-26_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+
+然后就是连接 VDD/VSS 主线路，另外还需要对大电流支路的走线进行优化，确保走线不会过窄。
+
+
+连接完的效果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-16-52-56_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
 
 ## 3. DRC Check 
+
 
 注意, cellview 的名称里不能有小横杠 (减号) `-` 或小数电 `.`, 否则会导致 DRC 报错，下面是一个名称中含有小横杠 `-` 导致报错的例子：
 
@@ -393,10 +407,135 @@ PDK
 Specified primary cell OpAmp__twoStage_single_basic-nulling-Miller__60dB_370MHz_140uA__layout-v1-20250718 is not located within the input layout database.
 ```
 
+运行 DRC 检查，顺利通过，可以进入 LVS:
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-16-53-08_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+
+
+
+
+
 ## 4. LVS Check
 
-并且 cellview 的名称不能过长 (最高好像是 60 字符)，否则
 
-## 5. PEX
 
-## 6. Post-layout Simulation
+检查 LVS 时出现了一些问题，下面就来修复它们：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-17-20-38_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+输出总览告诉我们 layout 中少了一个 net (net63) 和一个 instance (NMOS, Mb2), 这是为什么呢？考虑到 Mb2 的 gate 就是 net63, 这俩条应该是同一个错误点。
+
+经过检查，发现是 net63 在 M5 的 gate 处短路到了 VSS, 所以才会报错。但是 extraction results 里却没有报错，而是把 net63 和 VSS 归到同一个网络去了，真是奇怪。
+
+修改之后还剩下两个报错，如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-17-47-55_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+经过检查，发现问题在于 Mb4 的 bulk (n-well) 连接的是 net67, 而与之匹配的 Mb3 的 bulk (n-well) 连接的是 VDD. 这两个晶体管在同一 n-well 中，自然应该连接到同一个 n-well 上。
+
+所以在 schematic 中修改一下，将 Mb4 的 bulk 改为 VDD 即可。另外别忘了 `Update Components and Nets`, 否则 layout 中的 Mb4 还是连接到 net67 上。
+
+重新运行 LVS, 终于完全通过了：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-18-21-26_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+顺手再检查一遍 DRC, 也是通过的：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-18-22-14_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+## 5. PEX Details
+
+下面提取寄生参数，准备进行后仿。与 LVS 类似, PEX 需要提取 netlist 文件，文件名称也不能太长，所以我们还是在复制得到的 cellview `OpAmp_Check_LVS` 中操作。整体步骤和 LVS 是类似的，为了之后方便找到导出的寄生参数文件，我们将 Run Directory 设置为 `/home/IC/tsmcN28_OpAmp_v2_202507__PEX`。
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-18-40-46_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+导出完成后有 warning 是正常的 (不能有 error), 
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-18-42-27_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+然后在 cellmap file 处选择 `tsmc18rf` 工艺库的 cellmap:
+
+``` bash
+/home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA/Calibre/calview.cellmap
+```
+
+生成的寄生参数原理图如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-18-50-20_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+也可以点击 `Start RVE` 来查看各网络的寄生参数：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-18-45-40_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+可以看到，其中部分网络的 C + CC 总电容已经比较大了：
+
+<div class='center'>
+
+| Net | C + CC Total |
+|:-:|:-:|
+| net73 | 94.5 fF |
+| net77 | 91.4 fF |
+| VDD | 16.3 fF |
+</div>
+
+
+所有网络对地的寄生电容都比较低，但某些忘了走线之间的电容比较大。
+
+
+## 5. Pre-Layout Simulation
+
+在 ADE XL 或其它仿真器中进行前仿时, **<span style='color:red'> 一定注意在每一个 test 中选择正确的 design. </span>** 因为直接复制过来的 adexl 其 test 是绑定着原先的 schematic.
+
+
+
+## 6. Post-Layout Simulation
+
+### 6.1 (dc) operation point
+
+**若无特别说明，下面的仿真都默认 Vin_CM = 700 mV.**
+
+在默认环境 (27 °C @ 0.9 V) 下的静态工作点仿真：
+
+``` bash
+后仿的 output expression 设置：
+Iss2 = abs((OP("/MM6" "id") + OP("/MM6@2" "id") + OP("/MM6@3" "id") + OP("/MM6@4" "id") + OP("/MM6@5" "id") + OP("/MM6@6" "id") + OP("/MM6@7" "id") + OP("/MM6@8" "id") + OP("/MM6@9" "id") + OP("/MM6@10" "id")))
+
+```
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-20-15-37_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+然后考察运放在 T = (-40 °C, 125 °C) 和 VDD = (0.6 V, 1.2 V) 下的静态工作点：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-20-54-49_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+
+### 6.2 (ac) frequency response
+
+为了在仿真时 symbol 指向 calibre 而不是 schematic, 我们需要用到名为 config 的 view. 
+
+在当前 cell 下创建一个 config, 设置 `view > schematic`, `Use Template > spectre`。创建完成后将运放 symbol 对应的 view 从 schematic 改为 calibre 并保存，如下：
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-21-21-50_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-21-24-11_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-21-25-43_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+设置完成后，还需要在 ADE L 或 ADE XL Test Editor 中设置 `Setup > Design > config` (改之前是 schematic). 然后便可以进行后仿了，结果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-21-53-45_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-21-52-56_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+
+<!-- 为 calibre 创建名为 symbol_calibre 的 symbol 后，替换仿真原理图中的原 symbol, 然后进行仿真：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-21-17-19_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div> -->
+
+
+
+
+<!-- ### 6.3 (tran) start-up response-->
+
+

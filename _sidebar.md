@@ -26,9 +26,9 @@
 
 
     - Analog IC Blogs (2025, 31 items)
-        - [Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA)](<AnalogIC/Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
+        - [Cadence Layout (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA)](<AnalogIC/Cadence Layout (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
         - [Use Virtuoso Efficiently - 2. File Transfer using Shared Folders](<AnalogIC/Use Virtuoso Efficiently - 2. File Transfer using Shared Folders.md>)
-        - [Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
+        - [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
         - [tsmc18rf (TSMC 180nm RF CMOS Process Library)](<AnalogIC/Basic Information of tsmc18rf (TSMC 180nm RF CMOS Process Library).md>)
         - [An Introduction to Bandgap References](<AnalogIC/Razavi CMOS - Chapter 12. Bandgap References.md>)
         - [An Introduction to Oscillators](<AnalogIC/Razavi CMOS - Chapter 15. Oscillators.md>)
@@ -36,6 +36,7 @@
         - [An Introduction to Layout](<AnalogIC/Razavi CMOS - Chapter 19. Layout and Packaging.md>)
         - [An Introduction to Noise](<AnalogIC/Razavi CMOS - Chapter 7. Noise.md>)
         - [The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogIC/The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation.md>)
+        - [Cadence Layout (tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus)](<AnalogIC/Cadence Layout (tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus).md>)
         - [Reference Current Generation Methods](<AnalogIC/Reference Current Generation Methods.md>)
         - [Design Sheet of Basic Two-Stage Op Amp](<AnalogICDesigns/Design Sheet of Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>)
         - [Miller Compensation in Basic Two-Stage Op Amp](<AnalogIC/Miller Compensation in Basic Two-Stage Op Amp.md>)
@@ -66,7 +67,6 @@
         - [4. Simulate Chara. of MOSFETs in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 4. Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)<!-- x -->
         - [5. Cadence Virtuoso Layout Tutorials](<AnalogIC/Cadence Virtuoso Layout Tutorials.md>)
         - [6. Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
-        - [! 7. Cadence Layout Example of the Basic Two-Stage Op Amp](<AnalogIC/Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
 
     - ADE Assembler Tutorials
         - [0. Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/ADE Assembler - 0. How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)

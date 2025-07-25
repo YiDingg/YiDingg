@@ -1096,3 +1096,37 @@ WARNING (ADE-1065): No simulation results are available.
 修改后再仿真一次 (ac) frequency response, 仿真正常完成：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-19-15-08-22_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__55dB_75MHz_120uA.png"/></div>
+
+
+### 8. output current in the dc-sweep simulation
+
+在 TT (typical-typical) 工艺角下，仿真带隙电压 V_BG 在不同温度下 (-40 °C, 0 °C, 27 °C, 75 °C, 125 °C) 随供电电压 VDD 的变化情况，结果如下：
+
+
+室温 27 °C 时：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-26-00-33-40_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-26-00-38-34_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+
+<span style='color:red'> 上面仿真 op amp 的总电流时出现了一些挫折，后面靠手动添加 `oppoint > /I0 > VDD` 解决了。 </span>
+
+### 9. pending QUESTION (ADEXL-1921)
+
+<span style='color:red'> 同时仿真多个温度时，出现了一直 pending 而不进行仿真的情况，等待一段时间后报错如下： </span>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-26-00-51-35_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+
+尝试过重启虚拟机，也试过用 root 权限进入软件，但是没有效果。最终是参考 [this blog](https://bbs.eetop.cn/thread-945221-1-1.html), 在 `/home/.bashrc` 中加了下面两行代码解决的：
+
+``` bash
+export CDS_XVNC_TENBASE=9 # 端口号的十位 (本地的话无所谓, 随便写一个数字)
+export CDS_XVNC_OFFSET=9  # 端口号的个位 (本地的话无所谓, 随便写一个数字)
+```
+
+
+下面是与本问题相关的其它资料，有多种不同的解决方案成功过：
+- [edaboard > IC 616: ADE-XL 1921 error](https://www.edaboard.com/threads/ic-616-ade-xl-1921-error.394350/)
+- [edaboard > Compatibility question Cadence](https://www.edaboard.com/threads/compatibility-question-cadence.383369/#post-1645399)
+- [知乎 > Cadence 跑 adexl 多个 corner 卡 pending 的问题?](https://www.zhihu.com/question/505839455)
+- [EETOP > ADE XL 多 corner 一直 PENDING](https://bbs.eetop.cn/thread-967362-1-1.html)
+- [CSDN > 解决在高版本系统中 IC617 无法使用 ADE XL Explorer 等进行多线程仿真 Pending 的问题](https://blog.csdn.net/qq_42761840/article/details/127625571)
+- [EETOP > 请问 corners 仿真报错__ADEXL Message1921 如何解？](https://bbs.eetop.cn/thread-870417-1-1.html): 认为是文件夹写入权限的问题 (个人虚拟机有权限的状态下也会出现这个)
+
