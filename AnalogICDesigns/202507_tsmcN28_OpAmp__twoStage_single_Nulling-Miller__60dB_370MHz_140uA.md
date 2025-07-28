@@ -5,13 +5,13 @@ Initially published at 02:01 on 2025-07-17 in Beijing.
 
 ## 0. Introduction
 
->注：本文所设计的运放将用于 [科研实践一](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>) 的 [low-voltage bandgap reference (BGR)](<AnalogICDesigns/tsmcN28_BGR__scientific_research_practice_1.md>) 中。
+>注：本文所设计的运放将用于 [科研实践一](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>) 的 [low-voltage bandgap reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>) 中。
 
-本文，我们借助 [gm-Id](<Electronics/An Introduction to gm-Id Methodology.md>) 方法，使用台积电 28nm CMOS 工艺库 `tsmcN28` 来完整地设计一个 **basic two-stage op amp with nulling-Miller compensation**, 需要根据工艺性能自行确定一部分关键指标， **<span style='color:red'> 并完成前仿、版图和后仿工作。 </span>** 
 
-设计流程参考上次 180nm CMOS 中所设计的运放： [A Basic Two-Stage Nulling-Miller Compensation Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR at 5pF Load (Simulated 84.35 dB, 55.75 MHz and +56.31/-45.35 V/us)](<AnalogICDesigns/tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md>)
 
-在文章 [low-voltage bandgap reference (BGR)](<AnalogICDesigns/tsmcN28_BGR__scientific_research_practice_1.md>) 中给出了部分 specs 内容：
+本文，我们借助 [gm-Id](<Electronics/An Introduction to gm-Id Methodology.md>) 方法，使用台积电 28nm CMOS 工艺库 `tsmcN28` 来完整地设计一个 **basic two-stage op amp with nulling-Miller compensation**, 需要根据工艺性能自行确定一部分关键指标， **<span style='color:red'> 并完成前仿、版图、验证和后仿工作。 </span>** 设计流程参考上次 180nm CMOS 中所设计的运放： [A Basic Two-Stage Nulling-Miller Compensation Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR at 5pF Load (Simulated 84.35 dB, 55.75 MHz and +56.31/-45.35 V/us)](<AnalogICDesigns/tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md>)
+
+在文章 [low-voltage bandgap reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>) 中给出了部分 specs 内容：
 
 <div class='center'>
 
@@ -30,6 +30,16 @@ Initially published at 02:01 on 2025-07-17 in Beijing.
 </div>
 
 主要优化方向为 UGF, 其次是 DC Gain 和 ICMR.
+
+
+相关链接如下：
+- [Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
+    - [Design of the Low-Voltage Bandgap Reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
+        - [(本文) Design of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md>)
+        - [Layout of the Op Amp for Low-Voltage BGR](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
+    - [Layout of  the Low-Voltage Bandgap Reference (BGR)](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>)
+
+
 
 ## 1. Design Considerations
 
@@ -332,7 +342,7 @@ $$
  -->
 
 
-### 3.3 iteration 3 (UGF and PM)
+### 3.3 iteration 3 (UGF PM)
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-18-21-51-38_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__55dB_75MHz_120uA.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-18-21-51-23_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__55dB_75MHz_120uA.png"/></div>
@@ -349,7 +359,7 @@ $$
 
 **后注：我们在 4.4 (ac) frequency response 一节才发现这里在仿真时使用了错误的电源电压 VDD = 1.8 V (从 schematic 中可以看出).** 因此重新进行 Cc 和 Rz 的迭代 (不影响 **4. Pre-Post Simulation** 的 dc 仿真结果)，也即下面的 iteration 4.
 
-### 3.4 iteration 4 (UGF and PM)
+### 3.4 iteration 4 (UGF PM)
 
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-19-01-52-40_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__55dB_75MHz_120uA.png"/></div>
  -->
@@ -501,7 +511,7 @@ $$
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-20-22-27-51_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.png"/></div>
 
-### 5.2 iteration 2 (UGF and PM)
+### 5.2 iteration 2 (UGF PM)
 
 这一步通过调整 Cc 和 Rz 使得 UGF 和 PM 性能得到提高。
 
@@ -614,7 +624,7 @@ PM 在 65° ~ 70° 以内的最佳参数有两组：
  | Rz | 8.0 kOhm |
 </div>
 
-## 6. Corner-Simulation
+## 6. Pre-Simul (Corner)
 
 将阻容替换为实际阻容，然后仿真。
 
@@ -626,6 +636,7 @@ PM 在 65° ~ 70° 以内的最佳参数有两组：
 ### 6.2 (dc) io-range and gain
 ### 6.3 (dc) CM input range
 ### 6.4 (ac) UGF and PM
+### 6.5 simulation summary
 
 
 <!-- ### 6.5 (tran) slew rate
@@ -634,7 +645,7 @@ PM 在 65° ~ 70° 以内的最佳参数有两组：
 ### 6.8 (noise) input noise
 ### 6.9 (mc) input offset -->
 
-## 7. Temp-Simulation
+## 7. Pre-Simul (Temp)
 
 本小节仿真不同温度下的 TT (Nominal) 工艺角，观察不同温度下的性能表现。
 
@@ -670,6 +681,11 @@ PM 在 65° ~ 70° 以内的最佳参数有两组：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-19-21-51-16_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__55dB_75MHz_120uA.png"/></div>
 
+### 7.5 simulation summary
+
+
+
+
 ## 8. Layout Details
 
 ``` bash
@@ -688,11 +704,114 @@ hiFormDone(leDisplayOptionsForm)
 然后为每一组晶体管添加适当的 dummy 管，并将 schematic 中的器件导入到 layout 中。一个小技巧是 dummy 管的 fingerwidth 和原始管一致，但是 length 可以不同 (比如 dummy 管的 length 都取 30nm 以节省面积)，添加 dummy 管后如下图：
 
 
+详细的 layout 及版图验证工作见文章 [Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA)](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)。
 
-然后添加 guard ring:
 
 
 
 
 
 ## 9. Post-Simulation
+
+
+To be completed...
+
+
+## 10. Design Summary
+
+本文设计的运放较好地满足了各项指标要求，可以用于后续的 BGR 设计。其全部器件参数和详细仿真 (pre-layout simulation) 结果如下：
+
+<div class='center'>
+
+| MOSFET | W/L (nm) | a | gm/Id |
+|:-:|:-:|:-:|:-:| 
+ | M1, M2   | 1365/210 = 1.365u/210n | 6.5 | 16.0 |
+ | M3, M4   | 2025/450 = 2.025u/450n | 4.5 | 14.0 |
+ | M5       | 1440/240 = 1.44u/240n | 6.0 | 12.0 |
+ | M6       | (10\*750)/150 = 7.5u/150n | 10\*5.0 = 50.0 | 16.0 |
+ | M7       | (8\*1440)/(2\*240) = 11.52u/(2\*240n) | 8*6.0/2 =  24.0 | 12.0 |
+ | Mb1, Mb2 | 1440/240 = 1.44u/240n | 6.0 | 12.0 |
+ | Mb3      | (4\*720)/240 = 2.88u/240n | 4*3.0 = 12.0 | - |
+ | Mb4      | (16\*720)/240 = 11.52u/240n | 16*3.0 = 48.0 | - |
+ | Mb5      | 90/900 = 90n/900n | 0.1 | - |
+</div>
+
+<div class='center'>
+
+| Parameter | Value |
+|:-:|:-:|
+ | Rs | 3.6 kOhm |
+ | Cc | 0.1 pF |
+ | Rz | 8.0 kOhm |
+</div>
+
+若无特别说明，下面数据均在 27 °C 的 TT 工艺角下仿真得到：
+
+<div class='center'>
+
+| Parameter | Value |
+|:-:|:-:|
+ | DC gain              |  xxx dB @ Vin_CM = 0.7 V |
+ | Output swing         | xxx V @ -3dB drop <br> xxx V @ -20dB drop <br> xxx V @ 40dB gain |
+ | ICMR                 | (xxx V, xxx V) =  xxx V @ -3dB drop <br> (xxx V, xxx V) = xxx V @ 40dB gain |
+ | UGF                  | 206.7 MHz @ Vin_CM = 0.7 V |
+ | GBW                  | 210.5 MHz @ Vin_CM = 0.7 V |
+ | PM                   | 74.27° @ Vin_CM = 0.7 V |
+ | GM                   | 27.95 dB @ Vin_CM = 0.7 V |
+ | Slew rate            | +xxx V/us, -xxx V/us |
+ | Overshoot (r, f)     | < 2.0 % @ 20 mV ~ 100 mV step |
+ | Settling time (r, f) | < 10 ns @ 0.05% (20 mV ~ 100 mV step) |
+ | CMRR_dc              |  xxx dB @ Vin_CM = 0.7 V |
+ | PSRR_dc              |  xxx dB @ Vin_CM = 0.7 V |
+ | Input-referred noise | xxx nV/√Hz @ 1 kHz |
+ | RMS noise            | xxx uV @ 10 Hz to 10 GHz |
+ | Input offset voltage | +xxx uV, sigma = xxx mV |
+ | Power dissipation    | 143.6 uA @ Vin_CM = 0.7 V (0.12924 mW, VDD = 0.9 V) |
+</div>
+
+<!-- 
+<div class='center'>
+
+| Parameter | Value |
+|:-:|:-:|
+ | DC gain              |  xxx dB @ Vin_CM = 0.7 V |
+ | Output swing         | xxx V @ -3dB drop <br> xxx V @ -20dB drop <br> xxx V @ 40dB gain |
+ | ICMR                 | (xxx V, xxx V) =  xxx V @ -3dB drop <br> (xxx V, xxx V) = xxx V @ 40dB gain |
+ | UGF                  | 206.7 MHz @ Vin_CM = 0.7 V |
+ | GBW                  | 210.5 MHz @ Vin_CM = 0.7 V |
+ | PM                   | 74.27° @ Vin_CM = 0.7 V |
+ | GM                   | 27.95 dB @ Vin_CM = 0.7 V |
+ | Slew rate            | +xxx V/us, -xxx V/us |
+ | Overshoot (r, f)     | < 2.0 % @ 20 mV ~ 100 mV step |
+ | Settling time (r, f) | < 10 ns @ 0.05% (20 mV ~ 100 mV step) |
+ | CMRR_dc              |  xxx dB @ Vin_CM = 0.7 V |
+ | PSRR_dc              |  xxx dB @ Vin_CM = 0.7 V |
+ | Input-referred noise | xxx nV/√Hz @ 1 kHz |
+ | RMS noise            | xxx uV @ 10 Hz to 10 GHz |
+ | Input offset voltage | +xxx uV, sigma = xxx mV |
+ | Power dissipation    | 143.6 uA @ Vin_CM = 0.7 V (0.12924 mW, VDD = 0.9 V) |
+</div>
+ -->
+
+
+<!-- <div class='center'>
+
+| Parameter | Value |
+|:-:|:-:|
+ | DC gain              |  59 dB @ Vin_CM = 0.7 V |
+ | Output swing         | 0.881 V @ -3dB drop <br> 0.985 V @ 80dB gain <br> 1.38 V @ 60dB gain |
+ | ICMR                 | (0.481 V, 1.568 V) =  1.087 V @ 80dB gain <br> (0.456 V, 1.697 V) = 1.242 V @ 60dB gain |
+ | UGF                  | 55.75 MHz @ Vin_CM = 0.7 V |
+ | PM                   | 64.46° @ Vin_CM = 0.7 V |
+ | GM                   | 19.31 dB @ Vin_CM = 0.7 V |
+ | Slew rate            | +56.31 V/us, -45.35 V/us |
+ | Overshoot (r, f)     | (5.40 %, 6.17 %) @ 100 mV step <br> (3.23 %, 3.90 %) @ 200 mV step |
+ | Settling time (r, f) | (53.48 ns, 57.07 ns) @ 0.05% (100 mV step) |
+ | CMRR_dc              |  86.02 dB @ Vin_CM = 0.7 V |
+ | PSRR_dc              |  81.25 dB @ Vin_CM = 0.7 V |
+ | Input-referred noise | 60.68 nV/√Hz @ 1 kHz |
+ | RMS noise            | 108.69 uV @ 10 Hz to 10 GHz |
+ | Input offset voltage | +643.98 uV, sigma = 1.249 mV |
+ | Power dissipation    | 690.2 uA @ Vin_CM = 0.7 V (1.242 mW) |
+</div>
+ -->

@@ -1,13 +1,13 @@
-# Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA)
+# Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA)
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 18:52 on 2025-07-22 in Beijing.
 
 
-## 1. Preparations
+## 1. General Considerations
 
 
-本文，我们将对 `tsmcN28` 工艺下设计的运放 [A Basic Two-Stage Op Amp with Nulling-Miller Compensation for Low-Voltage BGR in 28nm CMOS Technology](<AnalogICDesigns/tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md>) 进行版图设计，并完成后续一系列工作，这包括：
+本文，我们将对 `tsmcN28` 工艺下设计的运放 [A Basic Two-Stage Op Amp with Nulling-Miller Compensation for Low-Voltage BGR in 28nm CMOS Technology](<AnalogICDesigns/202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md>) 进行版图设计，并完成后续一系列工作，这包括：
 - Layout (版图设计)
 - DRC (设计规则检查)
 - LVS (版图与原理图比对)
@@ -262,11 +262,26 @@ PDK
 
 新创建一个 cellview 进行 layout iteration 2, 以便于对比和修改。
 
-### 3.1 Add Dummy Devices
+### 2.1 add dummy devices
 
-在 **2.1 Add Dummy Devices** 一节中已经完成，将原 schematic 复制过来即可。
+在 shcematic 中手动添加 dummy devices, 通常一对管子 (或一个单独的管子至少有左右两个 dummy), 小面积电容和小面积电阻也可以考虑添加 dummy.
 
-### 3.2 Generate Layout
+对 MOS 管而言，其 dummy 器件的 fingerwidth 必须与原器件相同，但 length 和 fingers 可以不同，比较不错的经验做法是 length 取工艺最小值，然后 fingers = 2, 在本次的 `tsmcN28` 工艺库也就是 length = 30nm, finger = 2. 这里有一个调整 dummy length 的小技巧是，选中 dummy 器件后，`Edit Properties > Apply to > all selected`, 修改 length 的值并点击 apply 即可。
+
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-20-14-53-10_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+
+在导入到版图之前，检查 schematic 中的所有器件参数是否正确：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-20-15-09-46_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-20-15-09-11_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+
+检查完成后进入下一步。
+
+
+### 2.2 generate layout
 
 与之前的步骤类似，在复制得到的 schematic 中点击 `Generate All from Source` 并 `Place as in schematic`，得到的版图如下： 
 
@@ -275,9 +290,9 @@ PDK
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-20-22-15-13_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
  -->
 
-### 3.3 Align and Contact
+### 2.3 align, contact and group
 
-利用 align 功能分离出每一组器件, NW 间距无需考虑 (后续会用大 NW 包住小 NW), 考虑 PO (poly) 的间距，也即 DRC 中的 **PO.S.3 (Poly Minimum Spacing Rule) > 0.08 um**, 我们设置 align 间距为 0.05 um (此时 dummy poly 的间距为 0.11 um), 效果如下：
+利用 align 功能分离出每一组器件, NW 间距无需考虑 (后续会用大 NW 包住小 NW), 考虑 PO (poly) 的间距，也即 DRC 中的 **PO.S.3 (Poly Minimum Spacing Rule) > 0.08 um**, 我们设置 align 间距为 0.5 um (此时 dummy poly 的间距为 0.11 um), 效果如下：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-20-22-42-45_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
 
@@ -285,8 +300,7 @@ PDK
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-20-22-47-35_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
 
-
-### 3.4 Add Guard Ring and N-Well
+### 2.4 add guard ring and n-well
 
 
 添加 guard ring 时无需考虑 NW 间距 (因为我们会用大 NW 包住整组 PMOS 管)，但是要注意 guard ring 的边界与内部晶体管各区域之间的间距，如下图：
@@ -317,7 +331,7 @@ PDK
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-03-14-41_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
 
 
-### 3.5 DRC Test
+### 2.5 DRC test
 
 在布线之前，不妨进行一下 DRC 以确定没有什么奇奇怪怪的问题。关于 DRC/LVS/PEX 和后仿的详细教程见 [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>), 这里直接给出 DRC 结果：
 
@@ -334,41 +348,18 @@ PDK
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-22-20-15-57_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
 
-### 3.6 LVS Test
+### 2.6 LVS test
 
 不妨再运行一下 LVS 测试，确保版图除网络连接外的各参数与原始 schematic 一致。
 
 由于我们的 cellview 名称太长，会导致 LVS 报错，所以直接将整个 cellview 复制为另一个名为 `OpAmp_Check_LVS` 的 cellview 来进行 LVS 检查即可。详细步骤参考这篇教程 [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>).
 
 
-<!-- 大致步骤如下：
-- (1) 在版图中点击 `Run nmLVS`, 选择此工艺库的 LVS 文件，例如 `/home/IC/Cadence_Process_Library/tsmc28n_2v5_OA/Calibre_new/lvs/calibre.lvs`
-- (2) 设置 LVS Run Directory, 及 LVS 输出结果保存的文件夹
-- (3) 开启 `Inputs > Netlist > Export from schematic viewer`, 这样就不用手动导出并设置 netlist 了
-- (4) 在 `Setup > LVS Options` 中设置好电源网络和地网络，我们这里设置的是 VDD 和 VSS
-- (5) 点击 `Run LVS`, 等待结果
-
-这里如果报错 `source primary cell not found in source database`，通常是 top cell name 设置错误，一种可能是 cellview 名称里有斜杠 (减号) `-` 或小数点 `.` 导致报错，另一种可能是名字超过了 60 个字符 (大白话：名字太长了)。我们的就属于后者：
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-15-09-11_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div> -->
-
-
-
-<!-- 下面是一个示例：
-
-(1) 导出 schematic 的 `.cdl` 文件 (CIW > Export > CDL 然后选择对应的 schematic)
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-14-41-56_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-14-42-33_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
-
-(2) 在版图中点击 `Run nmLVS`, 选择此工艺库的 LVS 文件，然后在 Input > Spice File 中选择刚刚导出的 `.cdl` 文件
- -->
-
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-22-20-27-25_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
 
 和预料中的报错差不多，可以开始金属布线了。
 
-### 3.6 Metal Routing
+### 2.7 metal routing
 
 一切准备工作就绪后，我们开始进行金属走线。按组里师兄的说法，我们目前用的 `tsmcN28` 工艺库，流片时基本上都支持用到 M7 ~ M8, 因此不必担心走线层数不足的问题。另外，一些电流较大的走线一般要用过孔连接到更高的金属层，这是因为 M1, M2 等金属层的厚度和最大宽度都不如上层金属，其方块电阻和发热量也更大。
 

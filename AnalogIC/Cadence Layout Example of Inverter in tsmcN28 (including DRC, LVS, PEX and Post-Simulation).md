@@ -64,7 +64,7 @@
 DRC 通过之后，就可以进行 LVS (layout versus schematic) 检查了，主要步骤为：
 
 - (1) 在版图中点击 `Run nmLVS`, 选择此工艺库的 LVS 文件，例如 `/home/IC/Cadence_Process_Library/tsmc28n_2v5_OA/Calibre_new/lvs/calibre.lvs`
-- (2) 在 `Inputs` 中设置 LVS Rules File 和 run directory
+- (2) 在 `Rules` 中设置 LVS Rules File 和 run directory
 - (3) 开启 `Inputs > Netlist > Export from schematic viewer`
 - (4) 在 `Setup > LVS Options` 中设置好电源网络和地网络，我们这里设置的是 VDD 和 VSS
 - (5) 勾选 `LVS Options > Gate Recognition > Turn off` (这一步是为了避免 `WARNING: XDB Database not available`)
@@ -312,7 +312,7 @@ Error INCL1 on line 126 of /home/IC/Cadence_Process_Library/tsmc28n_2v5_OA/Calib
 
 ### 7.2 导出的晶体管尺寸正常却在后仿中报错
 
-导出寄生参数后进行仿真，晶体管的尺寸明明在正常范围内，仿真器却仍然报错说尺寸不符合范围要求，下面是在 [this design](<AnalogIC/Cadence Layout (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>) 中遇到的一个例子：
+导出寄生参数后进行仿真，晶体管的尺寸明明在正常范围内，仿真器却仍然报错说尺寸不符合范围要求，下面是在 [this design](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>) 中遇到的一个例子：
 
 ``` bash
 Error found by spectre during initial setup.

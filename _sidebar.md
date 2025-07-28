@@ -26,7 +26,8 @@
 
 
     - Analog IC Blogs (2025, 31 items)
-        - [Cadence Layout (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA)](<AnalogIC/Cadence Layout (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
+        - [Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1)](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>)
+        - [Cadence Layout (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA)](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
         - [Use Virtuoso Efficiently - 2. File Transfer using Shared Folders](<AnalogIC/Use Virtuoso Efficiently - 2. File Transfer using Shared Folders.md>)
         - [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
         - [tsmc18rf (TSMC 180nm RF CMOS Process Library)](<AnalogIC/Basic Information of tsmc18rf (TSMC 180nm RF CMOS Process Library).md>)
@@ -65,7 +66,7 @@
         - [2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)<!-- x -->
         - [3. How to Add New Process Libraries in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 3. How to Add New Process Libraries in Cadence IC618.md>)<!-- x -->
         - [4. Simulate Chara. of MOSFETs in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 4. Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)<!-- x -->
-        - [5. Cadence Virtuoso Layout Tutorials](<AnalogIC/Cadence Virtuoso Layout Tutorials.md>)
+        - [5. Cadence Layout Tutorials](<AnalogIC/Virtuoso Tutorials - 5. Cadence Layout Tutorials.md>)
         - [6. Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
 
     - ADE Assembler Tutorials
@@ -175,13 +176,13 @@
 - 📱 **Analog IC Designs** <!-- 新的 design 放在前面 -->
 
     - tsmcN28
-        - [op amp: tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA](AnalogICDesigns/tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md)
-        - [BGR: low-voltage (scientific research practice 1)](<AnalogICDesigns/tsmcN28_BGR__scientific_research_practice_1.md>)
+        - [202507 BGR: low voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
+        - [202507 Op Amp: op amp for BGR (scientific_research_practice_1)](AnalogICDesigns/202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md)
 
     - tsmc18rf
 
-        - [op amp: twoStage_single_Nulling-Miller__80dB_50MHz_50Vus](AnalogICDesigns/tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md)
-        - [op amp: oneStage_single_folded-cascode__80dB_50MHz_50Vus](AnalogICDesigns/tsmc18rf_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md)
+        - [202506 Op Amp: twoStage_single_Nulling-Miller__80dB_50MHz_50Vus](AnalogICDesigns/tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md)
+        - [202506 Op Amp: oneStage_single_folded-cascode__80dB_50MHz_50Vus](AnalogICDesigns/tsmc18rf_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md)
     - Design Sheets
         - [Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogICDesigns/Design Sheet of Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>)
         - [One-Stage Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet of Folded-Cascode Op Amp.md>)

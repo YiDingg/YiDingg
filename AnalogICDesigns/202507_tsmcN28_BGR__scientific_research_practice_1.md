@@ -124,7 +124,7 @@ $$
 
 ## 2. Design of Op Amp
 
-详见文章 [this design](<AnalogICDesigns/tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md>).
+详见文章 [this design](<AnalogICDesigns/202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md>).
 
 
 ## 3. Deisgn of BGR Core
@@ -464,7 +464,7 @@ include "./crn28ull_2d5_elk_v1d0_2p1_shrink0d9_embedded_usage.scs" section=tt_r_
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-25-18-08-21_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-25-18-08-57_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
 
-### 4.2 (dc) lowest supply voltage (all-temp, TT, all-supply)
+### 4.2 (dc) minimum supply voltage (all-temp, TT, all-supply)
 
 在 TT (typical-typical) 工艺角下，仿真带隙电压 V_BG 在不同温度下 (-40 °C, 0 °C, 27 °C, 75 °C, 125 °C) 随供电电压 VDD 的变化情况，结果如下：
 
@@ -502,7 +502,7 @@ export CDS_XVNC_OFFSET=9  # 端口号的个位 (本地的话无所谓, 随便写
 
 ### 4.3 (tran) start-up response (27 °C, TT, 1.2 V)
 
-在 VDD = 1.2 V 条件下，仿真 BGR 在室温下的的上电瞬态响应 (分别设置 VDD 的上升时间为 1us 和 100us), 结果如下：
+在 VDD = 1.2 V 的 TT 工艺角下，仿真 BGR 在室温下的上电瞬态响应 (分别设置 VDD 的上升时间为 1us 和 100us), 结果如下：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-26-02-09-24_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
 
@@ -531,23 +531,39 @@ export CDS_XVNC_OFFSET=9  # 端口号的个位 (本地的话无所谓, 随便写
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-26-02-53-25_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
 
 
-## 5. Layout and Verification
+### 4.6 simulation summary
 
-详见文章 
 
-## 6. Post-Simulation
 
-### 6.1 (dc) temp-curve (all-temp, TT)
-### 6.2 (dc) lowest supply voltage (all-temp, TT)
-### 6.3 (tran) start-up response (all-temp, TT)
-### 6.4 (ac) PSRR (27 °C, TT)
-### 6.5 (mc) bandgap voltage/current (27 °C, TT)
+<span style='font-size:12px'>
+<div class='center'>
+
+| Parameter | Definition | Pre-simulation Results | Simulation Conditions |
+|:-:|:-:|:-:|:-:|
+ | Idd | total supply current | 351.1 uA | (dc) TT, VDD = 1.2 V |
+ | VDD_min | minimum supply voltage | 0.984 V | (dc) TT, 27 °C |
+ | TC (ppm/°C) | temperature coefficient | 3.757 ppm/°C | (dc) TT, VDD = 1.2 V |
+ | TC (ppm/°C) | temperature coefficient | (min, max) <br> (3.757 ppm/°C, 25.17 ppm/°C)  | (dc) all corners, VDD = 1.2 V |
+ | V_BG | bandgap voltage | V_mean ± sigma <br> 517.587 mV ± 22.9332 mV (± 4.43 %) | (mc) 27 °C, VDD = 1.2 V, samples = 300 |
+ | Delta_t | settling time | < 0.5 us | (tran) TT, 27 °C, VDD from 0 to 1.2 V (SR = 1V/us) |
+ | PSRR | power supply rejection ratio | to be simulated | (dc) TT, 27°C, VDD = 1.2 V |
+</div>
+</span>
+
+## 5. Layout and Post-Simulation
+
+详见文章 [Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1)](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>).
 
 
 ## References
-
 
 - [1] [(this link)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9523469) RAZAVI B. The Design of a Low-Voltage Bandgap Reference \[The Analog Mind]\[J/OL]. IEEE Solid-State Circuits Magazine, 2021, 13(3): 6-16. DOI:10.1109/mssc.2021.3088963. 
 - [2] [(this link)](https://doi.org/10.1007/s10470-009-9352-4) DONG-OK HAN, JEONG-HOON KIM, NAM-HEUNG KIM. Design of bandgap reference and current reference generator with low supply voltage[C/OL]//2008 9th International Conference on Solid-State and Integrated-Circuit Technology. Beijing, China: IEEE, 2008: 1733-1736[2025-07-14]. http://ieeexplore.ieee.org/document/4734888/. DOI:10.1109/icsict.2008.4734888.
 - [3] [(this link)](http://ieeexplore.ieee.org/document/4734888/) FAYOMI C J B, WIRTH G I, ACHIGUI H F, 等. Sub 1 V CMOS bandgap reference design techniques: a survey[J/OL]. Analog Integrated Circuits and Signal Processing, 2010, 62(2): 141-157. DOI:10.1007/s10470-009-9352-4.
 
+本次科研实践相关链接：
+- [Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
+    - [Design of the Low-Voltage Bandgap Reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
+        - [(本文) Design of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md>)
+        - [Layout of the Op Amp for Low-Voltage BGR](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
+    - [Layout of  the Low-Voltage Bandgap Reference (BGR)](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>)

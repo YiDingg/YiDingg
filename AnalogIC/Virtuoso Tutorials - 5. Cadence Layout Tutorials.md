@@ -1,4 +1,4 @@
-# Cadence Virtuoso Layout Tutorials
+# Cadence Layout Tutorials
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 00:13 on 2025-06-19 in Beijing.

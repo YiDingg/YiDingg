@@ -20,11 +20,11 @@ Initially published at 18:48 on 2025-07-14 in Beijing.
 
 - [x] 1\. 学习理论知识，确定 BGR 架构 (2025.07.14 ~ 2025.07.17)
 - [x] 2\. 设计用于 BGR 的运算放大器，包括运放的版图、验证和后仿 (2025.07.18 ~ 2025.07.22)
-- [ ] 3\. 完成整个 BGR 的设计并进行前仿  (2025.07.23 ~ 2025.07.xx)
-- [ ] 4\. 进行 BGR 版图设计和验证
-- [ ] 5\. 完成 BGR 的完整后仿
-- [ ] 7\. 开始撰写报告和幻灯片
-- [ ] 8\. 撰写 slides 准备答辩
+- [x] 3\. 完成整个 BGR 的设计并进行前仿  (2025.07.23 ~ 2025.07.24)
+- [x] 4\. 进行 BGR 版图设计和验证 (2025.07.25 ~ 2025.07.27)
+- [x] 5\. 完成 BGR 的完整后仿 (2025.07.27 ~ 2025.07.28)
+- [ ] 7\. 撰写科研实践报告
+- [ ] 8\. 撰写 slides 并准备答辩
 
 ### 2.2 Report and Paper
 
@@ -33,10 +33,29 @@ Initially published at 18:48 on 2025-07-14 in Beijing.
 下面是一些可以借鉴的报告/论文内容：
 - 加入不同文献中 BGR 的设计对比 [(example)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7527288)
 - 仿真 Vref vs. VDD for different parameter corners and temperatures. [(example)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=4641493)
-- 
 
 
-## 3. 
+
+## 3. Design Results
+
+
+
 
 ## References
 
+- [1] T. V. Cao, D. T. Wisland, T. S. Lande, F. Moradi, and Y. H. Kim, “Novel start-up circuit with enhanced power-up characteristic for bandgap references,” in 2008 IEEE International SOC Conference, Sep. 2008, pp. 123–126. doi: 10.1109/SOCC.2008.4641493.
+- [2] H. Shrimali and V. Liberali, “The start-up circuit for a low voltage bandgap reference,” in 2014 21st IEEE International Conference on Electronics, Circuits and Systems (ICECS), Dec. 2014, pp. 92–95. doi: 10.1109/ICECS.2014.7049929.
+- [3] H. Banba et al., “A CMOS bandgap reference circuit with sub-1-V operation,” IEEE Journal of Solid-State Circuits, vol. 34, no. 5, pp. 670–674, May 1999, doi: 10.1109/4.760378.
+- [4] C. J. B. Fayomi, G. I. Wirth, H. F. Achigui, and A. Matsuzawa, “Sub 1 V CMOS bandgap reference design techniques: a survey,” Analog Integr Circ Sig Process, vol. 62, no. 2, pp. 141–157, Feb. 2010, doi: 10.1007/s10470-009-9352-4. [(this link)](http://ieeexplore.ieee.org/document/4734888/) 
+- [5] N. Gupta and P. Pirya, “Design and Implementation of Bandgap Reference Circuits,” vol. 5, no. 2, 2017.
+- [6] Dong-Ok Han, Jeong-Hoon Kim, and Nam-Heung Kim, “Design of bandgap reference and current reference generator with low supply voltage,” in 2008 9th International Conference on Solid-State and Integrated-Circuit Technology, Beijing, China: IEEE, Oct. 2008, pp. 1733–1736. doi: 10.1109/icsict.2008.4734888. [(this link)](https://doi.org/10.1007/s10470-009-9352-4) 
+- [7] B. Razavi, “The Design of a Low-Voltage Bandgap Reference [The Analog Mind],” IEEE Solid-State Circuits Mag., vol. 13, no. 3, pp. 6–16, 2021, doi: 10.1109/mssc.2021.3088963. [(this link)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9523469)
+- [8] B. Razavi, Design of analog CMOS integrated circuits, Second edition. New York, NY: McGraw-Hill Education, 2017.
+
+
+本次科研实践相关链接：
+- [Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
+    - [Design of the Low-Voltage Bandgap Reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
+        - [(本文) Design of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md>)
+        - [Layout of the Op Amp for Low-Voltage BGR](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
+    - [Layout of  the Low-Voltage Bandgap Reference (BGR)](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>)

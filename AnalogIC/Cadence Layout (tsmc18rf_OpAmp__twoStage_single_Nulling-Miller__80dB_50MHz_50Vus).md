@@ -141,7 +141,7 @@
 
 
 
-Layout 时用到的各种快捷键详见文章 [Cadence Virtuoso Layout Tutorials](<AnalogIC/Cadence Virtuoso Layout Tutorials.md>)，下面是几个最基本的快捷键：
+Layout 时用到的各种快捷键详见文章 [Cadence Virtuoso Layout Tutorials](<AnalogIC/Virtuoso Tutorials - 5. Cadence Layout Tutorials.md>)，下面是几个最基本的快捷键：
 - `f`: 适合窗口 (Fit to View) 
 - `Shift + f`: 显示器件详细样式
 - `Ctrl + f`: 不显示器件详细样式
@@ -180,7 +180,7 @@ Layout 时用到的各种快捷键详见文章 [Cadence Virtuoso Layout Tutorial
 ### 2.2 金属连接
 
 
-这一步包括各种 via, guard ring 和 metal connection 等，关于如何创建 guard ring template, 参考文章 [Cadence Virtuoso Layout Tutorials](<AnalogIC/Cadence Virtuoso Layout Tutorials.md>)
+这一步包括各种 via, guard ring 和 metal connection 等，关于如何创建 guard ring template, 参考文章 [Cadence Virtuoso Layout Tutorials](<AnalogIC/Virtuoso Tutorials - 5. Cadence Layout Tutorials.md>)
 
 1. Gate to `METAL1`: 
     - (1) 点击工具栏中的 `Transparent Group`, 暂时隐藏所有 group 关系，然后在各 mos 的 gate 处添加 M1_POLY1 的 via, 将 gate 连接到 M1 (metal 1) 金属层
