@@ -1,4 +1,4 @@
-# DRC and LVS Example in tsmcN28
+# Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 17:30 on 2025-07-21 in Beijing.
@@ -14,10 +14,38 @@
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-17-45-05_DRC-LVS-PEX Example in tsmcN28.png"/></div>
 
-然后完成版图工作，具体的版图教程见 [here (待补充)]()。简洁起见，我们就不添加什么 dummy 了，最终效果如下：
+然后完成版图工作。版图设计的主要流程与操作如下，其中 (1) ~ (5) 属于 **step 1: layout** 部分，算上后续的 DRC, LVS, PEX 和后仿，一共有五个部分：
+- (1) Add Dummy Devices
+    - (1.1) 在 schematic 中添加 dummy 器件 (length = 30nm, fingers = 2)
+    - (1.2) 分别选中 NMOS 和 PMOS, 编辑属性 <span style='color:red'> 添加 gate contacts </span>
+    - (1.2) 检查所有器件参数是否正确
+- (2) Generate layout
+    - (2.1) 点击 `Generate All from Source`
+    - (2.2) 选择 `Place as in schematic`
+- (3) Add Gate Contacts
+    - (3.1) 利用 align 功能分离每一组器件 (这一步要注意 DRC)
+    - (3.2) 将每一组晶体管 group 起来
+- (4) Add Guard Ring and N-Well
+    - (4.1) 手动添加 guard ring (这一步要注意 DRC)
+    - (4.2) 手动添加 n-well (这一步要注意 DRC)
+- (5) Metal Routing
+    - (5.1) 进行整体布局 (这一步要注意 DRC)
+    - (5.2) 开始金属连线，遵循 "奇竖偶横" 原则 (奇数层尽量走竖线, 偶数层尽量走横线), 并且优先连接每一组晶体管的内部网络
+- (6) DRC Check
+    - (6.1) 运行 DRC 检查并修复所有报错
+    - (6.2) 除个别可忽略的规则外，通过其它所有 design rules 以确保版图符合设计规范
+- (7) LVS Check
+    - (7.1) 运行 LVS 检查并修复所有报错
+    - (7.2) 完全通过 LVS 检查以确保版图与原理图一致
+- (8) PEX (parasitic extraction)
+- (9) Post-Layout Simulation (后仿)
+
 
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-18-12-34_DRC-LVS-PEX Example in tsmcN28.png"/></div>
  -->
+
+
+具体的版图教程见 [here (待补充)]()。简洁起见，我们就不添加什么 dummy 了，最终效果如下：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-18-17-21_DRC-LVS-PEX Example in tsmcN28.png"/></div>
 
 
@@ -324,7 +352,7 @@ Error found by spectre during initial setup.
 参考 [this answer](https://community.cadence.com/cadence_technology_forums/f/custom-ic-design/28893/soft_bin-allmodels/1332428#1332428), 我们在 ADE L (或 ADE XL Test Editor) 中找到 `Simulation > Options > Analog > Miscellaneous > Additional arguments`, 然后输入下面这一行：
 
 ``` bash
-soft_bin = allmodels
+soft_bin=allmodels
 ```
 
 

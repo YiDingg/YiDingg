@@ -165,6 +165,12 @@ overshoot (%) (falling) = overshoot(vout 7e-07 t 2e-06 t)
 <div class="center"><img width=500px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-14-51-55_Relationship Between GBW and fp2 in a Two-Order System.png"/></div>
 
 
+### 3.7 (noise) input-referred noise
+
+### 3.8 (mc) Monte Carlo Simulation
+
+
+
 ## 5. Design Summary
 
 本文设计的 **xxx** 基本满足了指标要求，其主要性能如下：

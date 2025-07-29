@@ -6,7 +6,7 @@
 本次科研实践相关链接：
 - [Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
     - [Design of the Low-Voltage Bandgap Reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
-        - [Design of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md>)
+        - [Design of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)
         - [Layout of the Op Amp for Low-Voltage BGR](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
     - [(本文) Layout of  the Low-Voltage Bandgap Reference (BGR)](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>)
 
@@ -81,7 +81,7 @@
 
 
 
-如果对版图设计和验证的全流程还不太熟悉，建议先完成一次简单的反相器版图设计，详见文章 [Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)。
+如果对版图设计和验证的全流程还不太熟悉，建议先完成一次简单的反相器版图设计，详见文章 [Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)。
 
 
 
@@ -124,10 +124,7 @@
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-26-21-39-37_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
 
 
-<span style='color:red'> 
-
-注意：由于电阻比值 $\frac{R_2}{R_1}$ 对温度曲线的影响很大，我们在基本完成版图工作后，需要不断根据后仿的结果调整 $R_1$ 与 $R_2$ 的导线，从而间接地调整 $R_2$ 与 $R_1$ 的比值，直到 zero-TC point 和 TC (temperature coefficient) 都达到最佳 (比如 zero-TC point 在 27℃ 附近, 且 TC 约为 3.5 ppm/°C).
-</span>
+<span style='color:red'> 注意：由于电阻比值 $\frac{R_2}{R_1}$ 对温度曲线的影响很大，我们在基本完成版图工作后，需要不断根据后仿的结果调整 $R_1$ 与 $R_2$ 的导线，从而间接地调整 $R_2$ 与 $R_1$ 的比值，直到 zero-TC point 和 TC (temperature coefficient) 都达到最佳 (比如 zero-TC point 在 27℃ 附近, 且 TC 约为 3.5 ppm/°C).</span>
 
 
 ### 2.1 add dummy devices
@@ -186,7 +183,7 @@
 
 ### 2.5 DRC test
 
-在布线之前，先进行一下 DRC 以确定没有什么奇奇怪怪的问题。关于 DRC/LVS/PEX 和后仿的详细教程见 [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>), 这里直接给出 DRC 结果：
+在布线之前，先进行一下 DRC 以确定没有什么奇奇怪怪的问题。关于 DRC/LVS/PEX 和后仿的详细教程见 [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>), 这里直接给出 DRC 结果：
 
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-27-00-02-32_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
@@ -428,12 +425,15 @@ SF 工艺角对应的阈值电压为 444.9 mV, 按理来说能够保证 V_BG > 4
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-28-16-05-27_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
 
 
-### 4.1 (dc) temp-curve (all-temp, TT, 1.2 V)
+### 4.1 (dc) temp-curve (all-temp, all-corner, 1.2 V)
 
 在 VDD = 1.2 V 条件下，仿真 TT (Nominal) 工艺角的温度曲线 (-40 °C ~ 125 °C)，结果如下：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-28-17-29-38_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
 
+然后仿真不同工艺角下的温度曲线，结果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-29-22-10-23_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
 
 ### 4.2 (dc) minimum supply voltage (all-temp, TT, all-supply)
 
@@ -461,6 +461,24 @@ stand-by current = 351.1 uA, maximum current = 464.3 uA.
 ### 4.4 (ac) PSRR (27 °C, TT, 1.2 V)
 
 
+注意 config 文件配置 symbol 为 calibre, 同时 ADE XL Test 中要选择 Design > config:
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-29-22-43-05_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-29-22-44-39_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
+
+为了避免 dc opt 与 tran 仿真得到的直流工作点不一致 ，我们不采用普通 dc opt 作为 ac 仿真的直流工作点，而是先进行 tran 仿真，待电路完全启动后，保存此时刻的直流工作点，在此点基础上进行 ac 小信号仿真。具体操作参考 [xxx](xxx)，我们这里直接给出结果：
+
+先进行一个 tran 仿真查看一下电路要多久才能达到稳态：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-30-00-04-53_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-29-23-50-34_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
+
+
+然后加上基于瞬态工作点的 ac 仿真 (TT + 27 °C, VDD = 1.2 V)，设置瞬态工作点在 2.5 us 处，结果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-30-00-07-30_Virtuoso Tutorials - 7. Using Tran Result as the DC Operation Point for AC Simulation.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-30-00-15-36_Virtuoso Tutorials - 7. Using Tran Result as the DC Operation Point for AC Simulation.png"/></div>
+
+
 
 ### 4.5 (mc) average and TC (all-temps, all-corners, 1.2 V)
 
@@ -474,7 +492,11 @@ stand-by current = 351.1 uA, maximum current = 464.3 uA.
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-28-19-28-43_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
 
-有部分 V_BG 为 408 mV 左右的数据是因为工艺角接近 SF 导致输出异常，去掉这部分异常数据后的蒙卡结果如下 (以 450 mV 为界限)：
+有部分 V_BG 为 408 mV 左右的数据是因为工艺角接近 SF 导致输出异常，这依旧是我们在 **4.4 (ac) PSRR (27 °C, TT, 1.2 V)** 中提到过的 “dc opt 得到的直流工作点与实际的 tran 得到的瞬态工作点不同” 导致的。在 SF 工艺角验证电路是否能正常启动，如下图，显然是可以正常工作的：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-30-00-29-19_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
+
+因此我们有充分的理由去掉这部分异常数据，筛选后的蒙卡结果如下 (以 450 mV 为界限)：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-28-19-35-13_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
 
@@ -485,3 +507,20 @@ stand-by current = 351.1 uA, maximum current = 464.3 uA.
 
 ### 4.6 simulation summary
 
+默认 VDD = 1.2 V.
+
+<span style='font-size:12px'>
+<div class='center'>
+
+| Parameter | Definition | Post-Simulation Results | Simulation Conditions |
+|:-:|:-:|:-:|:-:|
+ | VDD_min | minimum supply voltage | 0.984 V | (dc) TT, 27 °C |
+ | IDD | total supply current | 351.1 uA (0.42132 mW @ 1.2 V) | (dc) TT, 27 °C |
+ | average V_BG | average bandgap voltage <br> @ (-40 °C, 125 °C) | 522.2 mV <br> 521.2 mV ~ 525.1 mV <br> 517.587 mV ± 22.9332 mV (± 4.43 %) | (dc) TT <br> (dc) all-corner <br> (mc) samples = 200 |
+ | TC of V_BG (ppm/°C) | V_BG temperature coefficient <br> @ (-40 °C, 125 °C) | 14.82 ppm/°C <br> 2.146 ppm/°C ~ 39.55 ppm/°C <br> -17.3894 ppm/°C ± 55.1812 ppm/°C | (dc) TT <br> (dc) all-corner <br> (mc) samples = 200 |
+ | I_REF | reference current | 53.24 uA <br> 46.57 uA ~ 62.48 uA <br> 53.4288 uA ± 3.64341 uA (± 6.82 %) |  (dc) TT <br> (dc) all-corner <br> (mc) VDD = 1.2 V, samples = 200 |
+ | TC of I_REF (ppm/°C) | I_REF temperature coefficient <br> (-40 °C, 125 °C) | -36.38 ppm/°C <br> -50.99 ppm/°C ~ -22.78 ppm/°C <br> -34.2794 ppm/°C ± 44.0326 ppm/°C | (dc) TT <br> (dc) all-corner <br> (mc) TT |
+ | Delta_t | settling time | < 0.05 us | (tran) TT, 27 °C, VDD from 0 to 1.2 V (SR = 1 V/us) |
+ | PSRR | power supply rejection ratio | 36.9 dB @ DC, BW = 31.51 MHz, UGF = 834.5 MHz <br> 36.5 dB @ 10 MHz, 26.1 dB @ 100 MHz | (ac) TT, 27°C |
+</div>
+</span>

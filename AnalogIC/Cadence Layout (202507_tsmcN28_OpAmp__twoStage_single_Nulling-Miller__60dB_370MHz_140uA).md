@@ -6,15 +6,15 @@
 本次科研实践相关链接：
 - [Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
     - [Design of the Low-Voltage Bandgap Reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
-        - [Design of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md>)
+        - [Design of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)
         - [(本文) Layout of the Op Amp for Low-Voltage BGR](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
-    - [Layout of  the Low-Voltage Bandgap Reference (BGR)](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>)
+    - [Layout of the Low-Voltage Bandgap Reference (BGR)](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>)
 
 
 ## 1. General Considerations
 
 
-本文，我们将对 `tsmcN28` 工艺下设计的运放 [A Basic Two-Stage Op Amp with Nulling-Miller Compensation for Low-Voltage BGR in 28nm CMOS Technology](<AnalogICDesigns/202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md>) 进行版图设计，并完成后续一系列工作，这包括：
+本文，我们将对 `tsmcN28` 工艺下设计的运放 [A Basic Two-Stage Op Amp with Nulling-Miller Compensation for Low-Voltage BGR in 28nm CMOS Technology](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>) 进行版图设计，并完成后续一系列工作，这包括：
 - Layout (版图设计)
 - DRC (设计规则检查)
 - LVS (版图与原理图比对)
@@ -232,7 +232,7 @@ PDK
 
 
 
-另外，假设这是我们第一次接触此工艺库的版图，对 design rules 和其他流程还不那么熟悉 (甚至完全未知)，那么完全有必要先完成一次简单的反相器版图设计，详见文章 [Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
+另外，假设这是我们第一次接触此工艺库的版图，对 design rules 和其他流程还不那么熟悉 (甚至完全未知)，那么完全有必要先完成一次简单的反相器版图设计，详见文章 [Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
 
 
 
@@ -340,7 +340,7 @@ PDK
 
 ### 2.5 DRC test
 
-在布线之前，不妨进行一下 DRC 以确定没有什么奇奇怪怪的问题。关于 DRC/LVS/PEX 和后仿的详细教程见 [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>), 这里直接给出 DRC 结果：
+在布线之前，不妨进行一下 DRC 以确定没有什么奇奇怪怪的问题。关于 DRC/LVS/PEX 和后仿的详细教程见 [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>), 这里直接给出 DRC 结果：
 
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-03-15-10_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
@@ -359,7 +359,7 @@ PDK
 
 不妨再运行一下 LVS 测试，确保版图除网络连接外的各参数与原始 schematic 一致。
 
-由于我们的 cellview 名称太长，会导致 LVS 报错，所以直接将整个 cellview 复制为另一个名为 `OpAmp_Check_LVS` 的 cellview 来进行 LVS 检查即可。详细步骤参考这篇教程 [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>).
+由于我们的 cellview 名称太长，会导致 LVS 报错，所以直接将整个 cellview 复制为另一个名为 `OpAmp_Check_LVS` 的 cellview 来进行 LVS 检查即可。详细步骤参考这篇教程 [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>).
 
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-22-20-27-25_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
@@ -452,15 +452,15 @@ Specified primary cell OpAmp__twoStage_single_basic-nulling-Miller__60dB_370MHz_
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-18-42-27_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
 
-然后在 cellmap file 处选择 `tsmc18rf` 工艺库的 cellmap:
+然后在 cellmap file 处选择 `tsmcN28` 工艺库的 cellmap 文件:
 
 ``` bash
-/home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA/Calibre/calview.cellmap
+/home/IC/Cadence_Process_Library/tsmc28n_2v5_OA/Calibre_new/rcx/icellmap.yaml_calibre
 ```
 
 生成的寄生参数原理图如下：
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-18-50-20_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-29-02-37-19_Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
 
 也可以点击 `Start RVE` 来查看各网络的寄生参数：
 
@@ -485,6 +485,7 @@ Specified primary cell OpAmp__twoStage_single_basic-nulling-Miller__60dB_370MHz_
 
 在 ADE XL 或其它仿真器中进行前仿时, **<span style='color:red'> 一定注意在每一个 test 中选择正确的 design. </span>** 因为直接复制过来的 adexl 其 test 是绑定着原先的 schematic.
 
+前仿结果详见 [202507_tsmcN28_OpAmp__nulling-Miller](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>) 的 **4. Pre-Layout Simulation** 一节。
 
 
 ## 6. Post-Layout Simulation

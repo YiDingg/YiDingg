@@ -1,17 +1,30 @@
-# A Basic Two-Stage Op Amp with Nulling-Miller Compensation (simulated xxx) for Low-Voltage BGR in 28nm CMOS Technology
+# A Basic Two-Stage Op Amp with Nulling-Miller Compensation for Low-Voltage BGR in 28nm CMOS Technology
 
 > [!Note|style:callout|label:Infor]
 Initially published at 02:01 on 2025-07-17 in Beijing.
 
+本次科研实践相关链接：
+- [Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
+    - [Design of the Low-Voltage Bandgap Reference (BGR)](AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md)
+        - [(本文) Design of the Op Amp for Low-Voltage BGR](AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md)
+        - [Layout and Post-Layout Simulation of the Op Amp for Low-Voltage BGR](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
+    - [Layout and Post-Layout Simulation of the Low-Voltage BGR](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>)
+
+
+>注：本文所设计的运放将用于科研实践一，也即 [ Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>) 中的 [low-voltage bandgap reference (BGR)](AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md)。
+
+
 ## 0. Introduction
 
->注：本文所设计的运放将用于 [科研实践一](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>) 的 [low-voltage bandgap reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>) 中。
+本文，我们借助 [gm-Id](<Electronics/An Introduction to gm-Id Methodology.md>) 方法，使用台积电 28nm CMOS 工艺库 `tsmcN28` 来完整地设计一个 **basic two-stage op amp with nulling-Miller compensation**, 需要根据工艺性能自行确定一部分关键指标， **<span style='color:red'> 并完成前仿、版图、验证和后仿工作。 </span>** 设计流程参考上次 180nm CMOS 中所设计的运放： [A Basic Two-Stage Nulling-Miller Compensation Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR at 5pF Load (Simulated 84.35 dB, 55.75 MHz and +56.31/-45.35 V/us)](AnalogICDesigns/tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md)
 
 
 
-本文，我们借助 [gm-Id](<Electronics/An Introduction to gm-Id Methodology.md>) 方法，使用台积电 28nm CMOS 工艺库 `tsmcN28` 来完整地设计一个 **basic two-stage op amp with nulling-Miller compensation**, 需要根据工艺性能自行确定一部分关键指标， **<span style='color:red'> 并完成前仿、版图、验证和后仿工作。 </span>** 设计流程参考上次 180nm CMOS 中所设计的运放： [A Basic Two-Stage Nulling-Miller Compensation Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR at 5pF Load (Simulated 84.35 dB, 55.75 MHz and +56.31/-45.35 V/us)](<AnalogICDesigns/tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md>)
 
-在文章 [low-voltage bandgap reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>) 中给出了部分 specs 内容：
+
+## 1. Design Considerations
+
+在文章 [low-voltage bandgap reference (BGR)](AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md) 中，我们已经给出了部分 specs 内容：
 
 <div class='center'>
 
@@ -30,19 +43,6 @@ Initially published at 02:01 on 2025-07-17 in Beijing.
 </div>
 
 主要优化方向为 UGF, 其次是 DC Gain 和 ICMR.
-
-
-相关链接如下：
-- [Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
-    - [Design of the Low-Voltage Bandgap Reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
-        - [(本文) Design of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md>)
-        - [Layout of the Op Amp for Low-Voltage BGR](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
-    - [Layout of  the Low-Voltage Bandgap Reference (BGR)](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>)
-
-
-
-## 1. Design Considerations
-
 
 ### 1.1 theoretical formulas
 

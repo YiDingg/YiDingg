@@ -29,7 +29,7 @@
         - [Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1)](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>)
         - [Cadence Layout (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA)](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
         - [Use Virtuoso Efficiently - 2. File Transfer using Shared Folders](<AnalogIC/Use Virtuoso Efficiently - 2. File Transfer using Shared Folders.md>)
-        - [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
+        - [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
         - [tsmc18rf (TSMC 180nm RF CMOS Process Library)](<AnalogIC/Basic Information of tsmc18rf (TSMC 180nm RF CMOS Process Library).md>)
         - [An Introduction to Bandgap References](<AnalogIC/Razavi CMOS - Chapter 12. Bandgap References.md>)
         - [An Introduction to Oscillators](<AnalogIC/Razavi CMOS - Chapter 15. Oscillators.md>)
@@ -67,7 +67,8 @@
         - [3. How to Add New Process Libraries in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 3. How to Add New Process Libraries in Cadence IC618.md>)<!-- x -->
         - [4. Simulate Chara. of MOSFETs in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 4. Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)<!-- x -->
         - [5. Cadence Layout Tutorials](<AnalogIC/Virtuoso Tutorials - 5. Cadence Layout Tutorials.md>)
-        - [6. Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
+        - [6. Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
+        - [7. Using Tran Result as the DC Operation Point for AC Simulation](<>)
 
     - ADE Assembler Tutorials
         - [0. Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/ADE Assembler - 0. How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)
@@ -177,7 +178,7 @@
 
     - tsmcN28
         - [202507 BGR: low voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
-        - [202507 Op Amp: op amp for BGR (scientific_research_practice_1)](AnalogICDesigns/202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md)
+        - [202507 Op Amp: op amp for BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)
 
     - tsmc18rf
 

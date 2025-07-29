@@ -1072,7 +1072,7 @@ WARNING (ADE-1065): No simulation results are available.
 
 ### 7. ".../toplevel.scs" No section found with name 'fs_res_bip_dio_disres' defined in file ".../crn28ull_2d5_elk_v1d0_2p1_shrink0d9_embedded_usage.scs"
 
-最近在用 `tsmcN28` 工艺库仿真运放 [(this design)](<AnalogICDesigns/202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA.md>) 时出现了 FS 和 SF 工艺角模型缺失导致的仿真报错，具体情况如下：
+最近在用 `tsmcN28` 工艺库仿真运放 [(this design)](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>) 时出现了 FS 和 SF 工艺角模型缺失导致的仿真报错，具体情况如下：
 
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-19-14-50-58_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__55dB_75MHz_120uA.png"/></div>

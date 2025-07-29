@@ -7,9 +7,13 @@
 
 ## Introduction
 
-Layout (版图设计) 是 IC 设计的核心环节，主要包括 layout, DRC/LVS 和寄生参数提取等步骤。
+Layout (版图设计) 是 IC 设计的核心环节，主要包括下面几个步骤：
+- Layout: 版图设计
+- DRC: design rule check, 设计规则检查
+- LVS: layout vs. schematic, 版图原理图对比
+- PEX: parasitic extraction, 寄生参数提取
 
-在绘制版图之前，我们需要先确保完成了 schematic 层面的全部设计工作，并且完成所有的前仿工作 (pre-layout simulation), 包括但不限于 op, dc, ac, tran, noise 等基本仿真，以及 corner, monte carlo 等鲁棒性仿真。因为一旦开始绘制版图，就意味着我们将进入后仿阶段 (post-layout simulation)，原理图中的任何更改都需要重新绘制版图并重新进行后仿。
+在绘制版图之前，我们需要先确保完成了 schematic 层面的全部设计工作，并且完成所有的前仿工作 (pre-layout simulation), 包括但不限于 op, dc, ac, tran, noise 等基本仿真，以及 temp, corner, monte carlo 等鲁棒性仿真。因为一旦开始绘制版图，就意味着我们将进入后仿阶段 (post-layout simulation)，原理图中的任何更改都需要重新绘制版图并重新进行后仿。
 
 **<span style='color:red'> 注意: 绘制板图之前，原理图中所有元器件的模型必须来自目标工艺库 (不能是理想工艺库之类的)，并且元器件的所有参数必须为确定的值 (而不能是 variables)。 </span>**
 
@@ -20,7 +24,36 @@ Layout (版图设计) 是 IC 设计的核心环节，主要包括 layout, DRC/LV
 ### 1.1 basic procedure
 
 
-<div class='center'>
+版图设计的主要流程与操作如下，其中 (1) ~ (5) 属于 **step 1: layout** 部分，算上后续的 DRC, LVS, PEX 和后仿，一共有五个部分：
+- (1) Add Dummy Devices
+    - (1.1) 在 schematic 中添加 dummy 器件 (length = 30nm, fingers = 2)
+    - (1.2) 分别选中 NMOS 和 PMOS, 编辑属性 <span style='color:red'> 添加 gate contacts </span>
+    - (1.2) 检查所有器件参数是否正确
+- (2) Generate layout
+    - (2.1) 点击 `Generate All from Source`
+    - (2.2) 选择 `Place as in schematic`
+- (3) Add Gate Contacts
+    - (3.1) 利用 align 功能分离每一组器件 (这一步要注意 DRC)
+    - (3.2) 将每一组晶体管 group 起来
+- (4) Add Guard Ring and N-Well
+    - (4.1) 手动添加 guard ring (这一步要注意 DRC)
+    - (4.2) 手动添加 n-well (这一步要注意 DRC)
+- (5) Metal Routing
+    - (5.1) 进行整体布局 (这一步要注意 DRC)
+    - (5.2) 开始金属连线，遵循 "奇竖偶横" 原则 (奇数层尽量走竖线, 偶数层尽量走横线), 并且优先连接每一组晶体管的内部网络
+- (6) DRC Check
+    - (6.1) 运行 DRC 检查并修复所有报错
+    - (6.2) 除个别可忽略的规则外，通过其它所有 design rules 以确保版图符合设计规范
+- (7) LVS Check
+    - (7.1) 运行 LVS 检查并修复所有报错
+    - (7.2) 完全通过 LVS 检查以确保版图与原理图一致
+- (8) PEX (parasitic extraction)
+- (9) Post-Layout Simulation (后仿)
+- (10) 全部仿真和检查都结束之后，进入流片工序，生成流片文件提供给厂家，并根据厂家回复不断修改
+
+
+
+<!-- <div class='center'>
 
 | **步骤** | **操作** | **关键命令/工具** |
 |----------|----------|------------------|
@@ -31,11 +64,11 @@ Layout (版图设计) 是 IC 设计的核心环节，主要包括 layout, DRC/LV
 | **5. PEX 提取** | 提取寄生参数 | `Verify → PEX` |
 | **6. 导出 GDSII** | 生成流片文件 | `File → Export → Stream` |
 
-</div>
+</div> -->
 
-### 1.3 layout example
+### 1.2 layout example
 
-关于 layout 的具体步骤和示例，包括后续 DRC, LVS, PEX 和 Post-Layout Simulation (后仿) 等操作，详见教程 [Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)。
+关于 layout 的具体步骤和示例，包括后续 DRC, LVS, PEX 和 Post-Layout Simulation (后仿) 等操作，详见教程 [Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)。
 
 
 ## 2. Keyboard Shortcuts
@@ -151,7 +184,9 @@ hiSetBindKeys("Layout" list(
 
 ### 3.1 guard ring template
 
-要想在 layout 时添加 guard ring, 首先库中要具有 guard ring 的模板，否则会报错 `*WARNING* (LE-103399): leHiCreateGuardRing: The create guard ring command requires MPP guard ring templates to exist in the technology file.` 导致命令无效。我们参考 [this video](https://www.bilibili.com/video/BV17t4y1N7nK), 给出创建 guard ring template 的步骤：
+绝大多数完整的工艺库都会提供自带的 guard ring template, 若遇到没有模版的情况，可按下面步骤手动创建模板。
+
+在 layout 时添加 guard ring 时, 首先库中要有 guard ring 的模板，否则会报错 `*WARNING* (LE-103399): leHiCreateGuardRing: The create guard ring command requires MPP guard ring templates to exist in the technology file.` 导致命令无效。我们参考 [this video](https://www.bilibili.com/video/BV17t4y1N7nK), 给出创建 guard ring template 的步骤：
 
 1. 任意选择一个 pmos, `Efit Parameter > bodytie_typeL > Integred`, 测量以下几个间距：
 
@@ -178,10 +213,6 @@ hiSetBindKeys("Layout" list(
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-20-18-36-23_Cadence Virtuoso Layout Tutorials.png"/></div>
 
-<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-20-17-57-53_Cadence Virtuoso Layout Tutorials.png"/></div> -->
-<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-20-17-35-26_Cadence Virtuoso Layout Tutorials.png"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-20-17-43-13_Cadence Virtuoso Layout Tutorials.png"/></div>
--->
 
 
 ### 3.2 auto abutment
@@ -195,7 +226,7 @@ hiSetBindKeys("Layout" list(
 
 下面是 layout 部分常见问题的解答，部分回答参考了 AI 的解答，部分回答参考了网上别人的博客、文章等。
 
-### 4.1 Question 1
+### 4.1 layer definitions
 
 **问题 1: layout 时的各个 layer 是什么意思，一般情况下会用到哪几层？**
 
@@ -241,7 +272,7 @@ hiSetBindKeys("Layout" list(
 
 更具体的概念可以参考 [知乎 > Cadence layout 概念知识--版图图层和物理图层之间的关系](https://zhuanlan.zhihu.com/p/610274845)。
 
-### 4.2 Question 2
+### 4.2 layout XL vs. layout GXL
 
 **问题 2: layout XL 和 layout GXL 的区别是什么，哪一个更实用、高效？**
 
@@ -279,9 +310,12 @@ hiSetBindKeys("Layout" list(
 ### 5.1 official resources
 
 - [Cadence Virtuoso Layout Suite XL User Guide.pdf](https://picture.iczhiku.com/resource/eetop/WYifYSQEuQhIQVBv.pdf)
-
+- [Cadence Course Learning Maps](https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/training/learning-maps.pdf)
+- [Virtuoso Schematic Editor Training](https://www.cadence.com/en_US/home/training/all-courses/84443.html)
+- [Virtuoso Analog Design Environment XL User Guide (Product Version 6.1.6 August 2014)](https://picture.iczhiku.com/resource/eetop/syIfptILiLPyrvCB.pdf)
+- [Virtuoso® Spectre® Circuit Simulator and Accelerated Parallel Simulator User Guide (Product Version 10.1.1 June 2011)](https://picture.iczhiku.com/resource/eetop/wYkfLuEsZIWWJBVC.pdf)
+- [Virtuoso Visualization and Analysis XL User Guide (Product Version 6.1.5 January 2012)](https://home.engineering.iastate.edu/~hmeng/EE501lab/TAHelp/wavescanug.pdf)
 
 ### 5.2 other resources
 - [Bilibili > 模拟 IC 设计中的软件操作: Cadence Virtuoso Layout 电路版图绘制技巧及其相关快捷键](https://www.bilibili.com/video/BV1Ue4y127Hb)
-- [模拟 IC 版图设计](https://picture.iczhiku.com/resource/eetop/sYIFgLAoTwTuDBMv.pdf)
-
+- [Slides: 模拟 IC 版图设计](https://picture.iczhiku.com/resource/eetop/sYIFgLAoTwTuDBMv.pdf)
