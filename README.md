@@ -28,41 +28,7 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C431%20hrs%2036%20mins-blue)
-
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.6%20million%20lines%20of%20code-blue)
-
-**I'm a Night 🦉** 
-
-```text
-🌞 Morning                81 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   06.20 % 
-🌆 Daytime                432 commits         ████████░░░░░░░░░░░░░░░░░   33.08 % 
-🌃 Evening                419 commits         ████████░░░░░░░░░░░░░░░░░   32.08 % 
-🌙 Night                  374 commits         ███████░░░░░░░░░░░░░░░░░░   28.64 % 
-```
-📅 **I'm Most Productive on Friday** 
-
-```text
-Monday                   200 commits         ████░░░░░░░░░░░░░░░░░░░░░   15.31 % 
-Tuesday                  166 commits         ███░░░░░░░░░░░░░░░░░░░░░░   12.71 % 
-Wednesday                151 commits         ███░░░░░░░░░░░░░░░░░░░░░░   11.56 % 
-Thursday                 211 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.16 % 
-Friday                   219 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.77 % 
-Saturday                 153 commits         ███░░░░░░░░░░░░░░░░░░░░░░   11.72 % 
-Sunday                   206 commits         ████░░░░░░░░░░░░░░░░░░░░░   15.77 % 
-```
-
-
-📊 **This Week I Spent My Time On** 
-
-```text
-💬 Programming Languages: 
-Markdown                 33 hrs 35 mins      █████████████████████████   100.00 % 
-Other                    0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
-
-🐱‍💻 Projects: 
-GH.YiDingg               33 hrs 35 mins      █████████████████████████   100.00 % 
-```
 
 **I Mostly Code in C** 
 
@@ -77,7 +43,7 @@ TypeScript               1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2025.07.28 18:52 UTC
+ Last Updated on 2025.07.30 18:52 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
