@@ -518,8 +518,63 @@ stand-by current = 351.1 uA, maximum current = 464.3 uA.
  | IDD | total supply current | 351.1 uA (0.42132 mW @ 1.2 V) | (dc) TT, 27 °C |
  | average V_BG | average bandgap voltage <br> @ (-40 °C, 125 °C) | 522.2 mV <br> 521.2 mV ~ 525.1 mV <br> 517.587 mV ± 22.9332 mV (± 4.43 %) | (dc) TT <br> (dc) all-corner <br> (mc) samples = 200 |
  | TC of V_BG (ppm/°C) | V_BG temperature coefficient <br> @ (-40 °C, 125 °C) | 14.82 ppm/°C <br> 2.146 ppm/°C ~ 39.55 ppm/°C <br> -17.3894 ppm/°C ± 55.1812 ppm/°C | (dc) TT <br> (dc) all-corner <br> (mc) samples = 200 |
- | I_REF | reference current | 53.24 uA <br> 46.57 uA ~ 62.48 uA <br> 53.4288 uA ± 3.64341 uA (± 6.82 %) |  (dc) TT <br> (dc) all-corner <br> (mc) VDD = 1.2 V, samples = 200 |
- | TC of I_REF (ppm/°C) | I_REF temperature coefficient <br> (-40 °C, 125 °C) | -36.38 ppm/°C <br> -50.99 ppm/°C ~ -22.78 ppm/°C <br> -34.2794 ppm/°C ± 44.0326 ppm/°C | (dc) TT <br> (dc) all-corner <br> (mc) TT |
+ | average I_REF | reference current <br> @ (-40 °C, 125 °C) | 53.24 uA <br> 46.57 uA ~ 62.48 uA <br> 53.4288 uA ± 3.64341 uA (± 6.82 %) |  (dc) TT <br> (dc) all-corner <br> (mc) VDD = 1.2 V, samples = 200 |
+ | TC of I_REF (ppm/°C) | I_REF temperature coefficient <br> @ (-40 °C, 125 °C) | -36.38 ppm/°C <br> -50.99 ppm/°C ~ -22.78 ppm/°C <br> -34.2794 ppm/°C ± 44.0326 ppm/°C | (dc) TT <br> (dc) all-corner <br> (mc) samples = 200 |
+ | Delta_t | settling time | < 0.05 us | (tran) TT, 27 °C, VDD from 0 to 1.2 V (SR = 1 V/us) |
+ | PSRR | power supply rejection ratio | 36.9 dB @ DC, BW = 31.51 MHz, UGF = 834.5 MHz <br> 36.5 dB @ 10 MHz, 26.1 dB @ 100 MHz | (ac) TT, 27°C |
+</div>
+</span>
+
+
+### 4.7 postscript: mc simul after dc opt correction
+
+发现 dc opt 得到的工作状态与 tran 得到的工作状态不一致，于是按文章 [Resolving Discrepancies Between DC and Transient Simulation Results](<AnalogIC/Virtuoso Tutorials - 8. Resolving Discrepancies Between DC and Transient Simulation Results.md>) 中的方法设置初始状态后重新运行蒙卡仿真，结果如下：
+
+
+设置 `Vx = MM3_d = VDD` 和 `Vy = MM4_d = 0`, 结果可以正确收敛，进行 samples = 20 的蒙卡测试：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-31-00-17-36_202507_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-31-00-13-14_202507_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-31-00-06-20_202507_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+
+设置 `Vx = MM3_d = VDD`, `Vy = MM4_d = 0` 和 `V_BG = MM5_d = 0`, 结果不能正确收敛：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-31-00-15-10_202507_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-31-00-12-58_202507_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-31-00-12-20_202507_tsmcN28_BGR__scientific_research_practice_1.png"/></div> -->
+
+设置 `Vx = MM3_d = VDD`, `Vy = MM4_d = 0` 和 `V_BG = MM5_d = VDD`, 结果可以正确收敛，进行 samples = 20 的蒙卡测试：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-31-00-19-03_202507_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-31-00-32-39_202507_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-31-00-31-57_202507_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+
+第一种初始状态设置要稍微好一些。选用第一种设置 先看一下不同工艺角的工作点：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-31-00-39-33_202507_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+
+SF 工艺角仍不能收敛到正确工作状态 (我们在 tran 仿真中试过，是可以正常收敛的)。我们又尝试了多种初始状态设置，也尝试过将 tran 仿真收敛前一刻/后一刻的电压状态输入进去，都没能收敛到正确的工作状态 (SF 工艺角)。
+
+无奈，仍选用第一种设置 (`Vx = MM3_d = VDD` 和 `Vy = MM4_d = 0`) 进行 samples = 200 的蒙卡仿真，结果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-31-01-48-49_202507_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-31-01-51-13_202507_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-31-01-52-29_202507_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+
+将工作点明显异常的数据清除后 (以 vbg = 450 mV 为界), 结果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-31-01-56-14_202507_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
+
+更新蒙卡数据后的 simulation summary 如下：
+
+<span style='font-size:12px'>
+<div class='center'>
+
+| Parameter | Definition | Post-Simulation Results | Simulation Conditions |
+|:-:|:-:|:-:|:-:|
+ | VDD_min | minimum supply voltage | 0.984 V | (dc) TT, 27 °C |
+ | IDD | total supply current | 351.1 uA (0.42132 mW @ 1.2 V) | (dc) TT, 27 °C |
+ | average V_BG | average bandgap voltage <br> @ (-40 °C, 125 °C) <br> mean ± sigma | 522.2 mV <br> 521.2 mV ~ 525.1 mV <br> 521.771 mV ± 23.2498 mV (± 4.456 %) | (dc) TT <br> (dc) all-corner <br> (mc) samples = 170 |
+ | TC of V_BG (ppm/°C) | V_BG temperature coefficient <br> @ (-40 °C, 125 °C) <br> mean ± sigma | 14.82 ppm/°C <br> 2.146 ppm/°C ~ 39.55 ppm/°C <br> -12.6862 ppm/°C ± 53.9893 ppm/°C | (dc) TT <br> (dc) all-corner <br> (mc) samples = 170 |
+ | average I_REF | reference current <br>  @ (-40 °C, 125 °C) <br>  mean ± sigma | 53.24 uA <br> 46.57 uA ~ 62.48 uA <br> 53.5068 uA ± 3.66081 uA (± 6.842 %) |  (dc) TT <br> (dc) all-corner <br> (mc) VDD = 1.2 V, samples = 170 |
+ | TC of I_REF (ppm/°C) | I_REF temperature coefficient <br> @ (-40 °C, 125 °C) <br> mean ± sigma | -36.38 ppm/°C <br> -50.99 ppm/°C ~ -22.78 ppm/°C <br> -31.7456 ppm/°C ± 43.3075 ppm/°C | (dc) TT <br> (dc) all-corner <br> (mc) samples = 170 |
  | Delta_t | settling time | < 0.05 us | (tran) TT, 27 °C, VDD from 0 to 1.2 V (SR = 1 V/us) |
  | PSRR | power supply rejection ratio | 36.9 dB @ DC, BW = 31.51 MHz, UGF = 834.5 MHz <br> 36.5 dB @ 10 MHz, 26.1 dB @ 100 MHz | (ac) TT, 27°C |
 </div>

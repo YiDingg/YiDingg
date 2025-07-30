@@ -17,6 +17,22 @@
 
 
 
+- 📱 **Analog IC Designs** <!-- 新的 design 放在前面 -->
+
+    - tsmcN28
+        - [202507 BGR: low voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
+        - [202507 Op Amp: op amp for BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)
+
+    - tsmc18rf
+
+        - [202506 Op Amp: twoStage_single_Nulling-Miller__80dB_50MHz_50Vus](AnalogICDesigns/tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md)
+        - [202506 Op Amp: oneStage_single_folded-cascode__80dB_50MHz_50Vus](AnalogICDesigns/tsmc18rf_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md)
+    - Design Sheets
+        - [Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogICDesigns/Design Sheet of Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>)
+        - [One-Stage Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet of Folded-Cascode Op Amp.md>)
+
+
+
 
 
 - 💡 **My Blogs**
@@ -68,7 +84,7 @@
         - [4. Simulate Chara. of MOSFETs in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 4. Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)<!-- x -->
         - [5. Cadence Layout Tutorials](<AnalogIC/Virtuoso Tutorials - 5. Cadence Layout Tutorials.md>)
         - [6. Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
-        - [7. Using Tran Result as the DC Operation Point for AC Simulation](<>)
+        - [7. Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 7. Using Tran Result as the DC Operation Point for AC Simulation.md>)
 
     - ADE Assembler Tutorials
         - [0. Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/ADE Assembler - 0. How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)
@@ -171,22 +187,6 @@
 
 
 
-
-
-
-- 📱 **Analog IC Designs** <!-- 新的 design 放在前面 -->
-
-    - tsmcN28
-        - [202507 BGR: low voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
-        - [202507 Op Amp: op amp for BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)
-
-    - tsmc18rf
-
-        - [202506 Op Amp: twoStage_single_Nulling-Miller__80dB_50MHz_50Vus](AnalogICDesigns/tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md)
-        - [202506 Op Amp: oneStage_single_folded-cascode__80dB_50MHz_50Vus](AnalogICDesigns/tsmc18rf_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md)
-    - Design Sheets
-        - [Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogICDesigns/Design Sheet of Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>)
-        - [One-Stage Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet of Folded-Cascode Op Amp.md>)
 
 
 

@@ -6,7 +6,7 @@
 
 ## 1. 背景
 
-起因是在最近的 [Low-Voltage BGR](<>) 设计中，发现后仿结果中 dc opt 与 tran 得到的直流工作点不一致。具体而言, dc opt 得到的 V_BG ≈ 430 mV, 而 tran 得到的 V_BG ≈ 520 mV, 如下图所示：
+起因是在最近 “科研实践一” 的 [Low-Voltage BGR](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>) 设计中，发现后仿结果中 dc opt 与 tran 得到的直流工作点不一致。具体而言, dc opt 得到的 V_BG ≈ 430 mV, 而 tran 得到的 V_BG ≈ 520 mV, 如下图所示：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-29-23-36-41_Virtuoso Tutorials - 7. Using Tran Result as the DC Operation Point for AC Simulation.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-29-23-32-00_Virtuoso Tutorials - 7. Using Tran Result as the DC Operation Point for AC Simulation.png"/></div>

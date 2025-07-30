@@ -529,7 +529,7 @@ export CDS_XVNC_OFFSET=9  # 端口号的个位 (本地的话无所谓, 随便写
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-26-02-53-25_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
 
 
-### 4.6 simulation summary
+<!-- ### 4.6 simulation summary
 
 
 
@@ -546,6 +546,7 @@ export CDS_XVNC_OFFSET=9  # 端口号的个位 (本地的话无所谓, 随便写
  | PSRR | power supply rejection ratio | to be simulated | (dc) TT, 27°C, VDD = 1.2 V |
 </div>
 </span>
+ -->
 
 ## 5. Layout and Post-Simulation
 
