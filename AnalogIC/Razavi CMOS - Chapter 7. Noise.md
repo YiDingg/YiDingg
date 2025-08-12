@@ -1,4 +1,4 @@
-# [Razavi CMOS] An Introduction to Noise
+# Razavi CMOS - Chapter 7. Noise
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 15:34 on 2025-06-22 in Beijing.
@@ -286,6 +286,23 @@ $$
 
 ### 4.2 Common-Drain Stage 
 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-08-12-26-25_Razavi CMOS - Chapter 7. Noise.png"/></div>
 
 ### 4.3 Common-Gate Stage
 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-08-12-25-58_Razavi CMOS - Chapter 7. Noise.png"/></div>
+
+### 4.4 Cascode Stage
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-08-12-26-48_Razavi CMOS - Chapter 7. Noise.png"/></div>
+
+
+<!-- 
+## 5. Noise in Current Mirrors
+
+## 6. Noise in Differential Pairs
+
+## 7. Noise-Power Trade-off
+
+## 8. Noise Bandwidth
+ -->

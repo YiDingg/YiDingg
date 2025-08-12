@@ -8,7 +8,7 @@
 
 
     <!-- (注释这里的缩进不能省略, 否则会影响 sidebar 的 css 效果)
-    Papers, Blogs: 条目后跟有注释符号的表示已经发过知乎，注释内标有 x 的表示公众号也发过了。
+    Papers, Blogs: 条目后跟有注释符号的表示已经发过知乎，注释内标有 x 的表示公众号也发过了，标注 no 的表示不会发在微信公众号
                 另外，有部分标有注释和 x 的文章并没有发在知乎，是因为文章表格中具有多个图片，不方便直接转载到知乎
     Designs: 条目后跟有注释符号的表示已经发过微信公众号
     Analog IC: 与 Electric Blogs 同级别的条目, 单独放在一个文件夹, 并且具有年份统计
@@ -20,8 +20,10 @@
 - 📱 **Analog IC Designs** <!-- 新的 design 放在前面 -->
 
     - tsmcN28
-        - [202507 BGR: low voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
-        - [202507 Op Amp: op amp for BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)
+        - [202507 BGR (layout): low-voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1__layout.md>)
+        - [202507 BGR: low-voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
+        - [202507 Op Amp (layout): op amp for the BGR in scientific_research_practice_1](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller__layout.md>)
+        - [202507 Op Amp: op amp for the BGR in scientific_research_practice_1](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)
 
     - tsmc18rf
 
@@ -41,17 +43,47 @@
 
 
 
-    - Analog IC Blogs (2025, 31 items)
-        - [Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1)](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>)
-        - [Cadence Layout (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA)](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
+
+    - Cadence Virtuoso Tutorials
+
+        - [1. How to Install Cadence IC618](<AnalogIC/Virtuoso Tutorials - 1. How to Install Cadence IC618.md>)<!-- x -->
+        - [2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)<!-- x -->
+        - [3. How to Add New Process Libraries in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 3. How to Add New Process Libraries in Cadence IC618.md>)<!-- x -->
+        - [4. Simulate Chara. of MOSFETs in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 4. Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)<!-- x -->
+        - [5. Detailed Explanation of the gm/Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)<!-- x -->
+        - [6. Design Example of F-OTA using Gm-Id Methodology](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)<!--  -->
+        - [7. Cadence Layout Tutorials](<AnalogIC/Virtuoso Tutorials - 5. Cadence Layout Tutorials.md>)<!--  -->
+        - [8. Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
+        - [9. Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 7. Using Tran Result as the DC Operation Point for AC Simulation.md>)
+
+
+    - How to Use Virtuoso Efficiently
+        - [0. How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)<!-- 这一篇不发在知乎或公众号上, 而是拆分为多篇文章来发 (相当于汇总) -->
+        - [1. Shortcuts and Initialization](<AnalogIC/Use Virtuoso Efficiently - 1. Shortcuts and Initialization.md>)<!-- x -->
+        - [2. File Transfer using Shared Folders](<AnalogIC/Use Virtuoso Efficiently - 2. File Transfer using Shared Folders.md>)<!--  -->
+        - [3. ]()
+
+    - ADE Assembler Tutorials
+        - [0. Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/ADE Assembler - 0. How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)
+        - [! 1. Getting Started with Virtuoso ADE Assembler](<AnalogIC/ADE Asjsembler - 1. Getting Started with Virtuoso ADE Assembler.md>)
+
+
+
+
+
+
+
+    - Analog IC Blogs (2025, 33 items)
+        - [Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.2 Charge-Pump PLL](<AnalogIC/Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.2 CP-PLL ~ 16.5 Applications.md>)
+        - [Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.1 Simple PLL](<AnalogIC/Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.1 Simple PLL.md>)
         - [Use Virtuoso Efficiently - 2. File Transfer using Shared Folders](<AnalogIC/Use Virtuoso Efficiently - 2. File Transfer using Shared Folders.md>)
         - [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
         - [tsmc18rf (TSMC 180nm RF CMOS Process Library)](<AnalogIC/Basic Information of tsmc18rf (TSMC 180nm RF CMOS Process Library).md>)
-        - [An Introduction to Bandgap References](<AnalogIC/Razavi CMOS - Chapter 12. Bandgap References.md>)
-        - [An Introduction to Oscillators](<AnalogIC/Razavi CMOS - Chapter 15. Oscillators.md>)
+        - [Razavi CMOS - Chapter 12. Bandgap References](<AnalogIC/Razavi CMOS - Chapter 12. Bandgap References.md>)
+        - [Razavi CMOS - Chapter 15. Oscillators](<AnalogIC/Razavi CMOS - Chapter 15. Oscillators.md>)
         - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogIC/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
-        - [An Introduction to Layout](<AnalogIC/Razavi CMOS - Chapter 19. Layout and Packaging.md>)
-        - [An Introduction to Noise](<AnalogIC/Razavi CMOS - Chapter 7. Noise.md>)
+        - [Razavi CMOS - Chapter 19. Layout and Packaging](<AnalogIC/Razavi CMOS - Chapter 19. Layout and Packaging.md>)
+        - [Razavi CMOS - Chapter 7. Noise](<AnalogIC/Razavi CMOS - Chapter 7. Noise.md>)
         - [The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogIC/The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation.md>)
         - [Cadence Layout (tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus)](<AnalogIC/Cadence Layout (tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus).md>)
         - [Reference Current Generation Methods](<AnalogIC/Reference Current Generation Methods.md>)
@@ -62,38 +94,19 @@
         - [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
         - [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)
         - [Relationship Between GBW and fp2 in a Two-Order System](<Electronics/Relationship Between GBW and fp2 in a Two-Order System.md>)
-        - [Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<Electronics/Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)
-        - [Biasing Circuits for Low-Voltage Cascode Current Mirror](<Electronics/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)
+        - [Design of Folded-Cascode Stage using Gm-Id Method in Cadence Virtuoso](<Electronics/Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)
         - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<Electronics/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)
-        - [Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>)
+        - [Biasing Circuits for Low-Voltage Cascode Current Mirror](<Electronics/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)<!--  -->
+        - [Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>)<!-- no -->
         - [Design Example of F-OTA using Gm-Id Methodology](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)<!--  -->
         - [Design Example of Folded-Cascode Stage using LTspice](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>)<!--  -->
         - [Gain Boosting Techniques](<Electronics/[Razavi CMOS] Gain Boosting Techniques.md>)<!--  -->
         - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)<!--  -->
-        - [A Brief View of Negative Feedback](<AnalogIC/Razavi CMOS - Chapter 8. Negative Feedback.md>)<!--  -->
-        - [Mismatches of Basic Differential Pair](<Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)<!--  -->
-        - [Cascode stage with PMOS load](<Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>) <!--  -->
-        - [Gm Av calculation](<Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>) <!--  -->
+        - [Razavi CMOS - Chapter 8. Negative Feedback](<AnalogIC/Razavi CMOS - Chapter 8. Negative Feedback.md>)<!--  -->
+        - [Mismatches of Basic Differential Pair](<Electronics/[Razavi CMOS] Mismatches of Basic Differential Pair.md>)<!-- no -->
+        - [Cascode stage with PMOS load](<Electronics/[Razavi CMOS] Cascode stage with PMOS load.md>) <!-- no -->
+        - [Gm and Av Calculations of Basic Stages](<Electronics/[Razavi CMOS] Single Stage Gm Av calculation.md>) <!--  -->
         - [MOSFET's Terminal Resistance](<Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>) <!--  -->
-
-    - Virtuoso Tutorials
-
-        - [1. How to Install Cadence IC618](<AnalogIC/Virtuoso Tutorials - 1. How to Install Cadence IC618.md>)<!-- x -->
-        - [2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)<!-- x -->
-        - [3. How to Add New Process Libraries in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 3. How to Add New Process Libraries in Cadence IC618.md>)<!-- x -->
-        - [4. Simulate Chara. of MOSFETs in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 4. Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)<!-- x -->
-        - [5. Cadence Layout Tutorials](<AnalogIC/Virtuoso Tutorials - 5. Cadence Layout Tutorials.md>)
-        - [6. Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
-        - [7. Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 7. Using Tran Result as the DC Operation Point for AC Simulation.md>)
-
-    - ADE Assembler Tutorials
-        - [0. Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/ADE Assembler - 0. How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)
-        - [! 1. Getting Started with Virtuoso ADE Assembler](<AnalogIC/ADE Asjsembler - 1. Getting Started with Virtuoso ADE Assembler.md>)
-
-    - How to Use Virtuoso Efficiently
-        - [0. How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)<!-- 这一篇不发在知乎或公众号上, 而是拆分为多篇文章来发 (相当于汇总) -->
-        - [1. Shortcuts and Initialization](<AnalogIC/Use Virtuoso Efficiently - 1. Shortcuts and Initialization.md>)<!-- x -->
-        - [2. Use Virtuoso Efficiently - Part 2: File Transfer using Shared Folders](<AnalogIC/Use Virtuoso Efficiently - 2. File Transfer using Shared Folders.md>)
 
 
     - Electronic Blogs (2025, 69 items)
@@ -114,7 +127,7 @@
         - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)
         - [An Example of Negative FB Amp](<Electronics/An Example of Negative FB Amp.md>)
         - [Constant Current Source using Transistors](<Electronics/Constant Current Source using Transistors.md>)
-        - [A Brief View of Negative Feedback](<AnalogIC/Razavi CMOS - Chapter 8. Negative Feedback.md>)
+        - [Razavi CMOS - Chapter 8. Negative Feedback](<AnalogIC/Razavi CMOS - Chapter 8. Negative Feedback.md>)
         - [An Example of Miller Effect of CE Stage](<Electronics/An Example of Miller Effect of CE Stage.md>)<!--  -->
         - [Precision Full-Wave Rectifier](<Electronics/Precision Full-Wave Rectifier.md>)<!--  -->
         - [Transistor Meas. of 2N7000 (N VDMOS)](<Electronics/Transistor Measurement of 2N7000 (N VDMOS).md>)<!--  -->
@@ -270,6 +283,7 @@
         - [ATandR(3): Drawing](<Blogs/ATandR/ATandR(3)-Drawing.md>)
         - [ATandR(4): Research Paper](<Blogs/ATandR/ATandR(4)-ResearchPaper.md>)
     - Fix Problem
+        - [VSCode 突然变得很卡.md](<Blogs/FixProblem/VSCode 变得很卡.md>)
         - [英文输入法在复制后输入第一个字符为中文的解决方案](<Blogs/FixProblem/英文输入法在复制后输入第一个字符为中文的解决方案.md>)
         - [VSCode 中按键失灵](Blogs/FixProblem/KeypadFailureInVSCode.md)
         - [文件夹无权访问或访问被拒绝](Blogs/FixProblem/FolderPermissionProblem.md)
@@ -347,6 +361,8 @@
 
 - 🗓️ **Monthly Summary**
 
+    - [2025.07](<MonthlySummary/Monthly Summary (2025.07).md>)
+    - [2025.06](<MonthlySummary/Monthly Summary (2025.06).md>)
     - [2025.05](<MonthlySummary/Monthly Summary (2025.05).md>)
     - [2025.04](<MonthlySummary/Monthly Summary (2025.04).md>)
     - [2025.03](<MonthlySummary/Monthly Summary (2025.03).md>)

@@ -1,4 +1,4 @@
-# [Razavi CMOS] A Brief View of Negative Feedback Analysis Methods
+# Razavi CMOS - Chapter 8. Negative Feedback
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 15:56 on 2025-04-30 in Beijing.

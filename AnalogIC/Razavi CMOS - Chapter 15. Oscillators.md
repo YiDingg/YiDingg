@@ -1,4 +1,4 @@
-# [Razavi CMOS] An Introduction to Oscillators
+# Razavi CMOS - Chapter 15. Oscillators
 
 
 > [!Note|style:callout|label:Infor]
@@ -348,4 +348,9 @@ V_{out}(t) = V_m \sin(\phi(t)) = V_m \sin\left(\phi_0 + \omega_0 t + \int K_{VCO
 $$
 
 ### 5.2 Mathematical Model
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-07-22-14-21_Razavi CMOS - Chapter 15. Oscillators.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-07-22-10-13_Razavi CMOS - Chapter 15. Oscillators.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-08-15-09-45_Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.1 Simple PLL.png"/></div>
+
 

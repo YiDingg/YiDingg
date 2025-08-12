@@ -1,4 +1,4 @@
-# A Low-Voltage Bandgap Reference (BGR) achieving xxx ppm/°C in 28nm CMOS Technology
+# A 1.2 V-Supply (Minimum 0.984 V) Low-Voltage Bandgap Reference (BGR) in 28 nm CMOS Technology
 
 > [!Note|style:callout|label:Infor]
 Initially published at 18:56 on 2025-07-14 in Beijing.
@@ -529,32 +529,30 @@ export CDS_XVNC_OFFSET=9  # 端口号的个位 (本地的话无所谓, 随便写
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-26-02-53-25_tsmcN28_BGR__scientific_research_practice_1.png"/></div>
 
 
+
 <!-- ### 4.6 simulation summary
 
-
+下面表格是直接后仿搬过来的，还未填入前仿结果
 
 <span style='font-size:12px'>
 <div class='center'>
 
-| Parameter | Definition | Pre-Simulation Results | Simulation Conditions |
+| Parameter | Definition | Post-Simulation Results | Simulation Conditions |
 |:-:|:-:|:-:|:-:|
- | VDD_min | minimum supply voltage | xxx V | (dc) TT, 27 °C |
- | Idd | total supply current | xxx uA (0.42132 mW @ 1.2 V) | (dc) TT, VDD = 1.2 V |
- | TC (ppm/°C) | temperature coefficient <br> (-40 °C, 125 °C) | typically 3.757 ppm/°C <br> (min, max) = (3.757 ppm/°C, 25.17 ppm/°C)  | (dc) TT, VDD = 1.2 V <br> (dc) all corners, VDD = 1.2 V |
- | V_BG | bandgap voltage | V_mean ± sigma <br> 517.587 mV ± 22.9332 mV (± 4.43 %) | (mc) 27 °C, VDD = 1.2 V, samples = 300 |
- | Delta_t | settling time | < 0.5 us | (tran) TT, 27 °C, VDD from 0 to 1.2 V (SR = 1V/us) |
- | PSRR | power supply rejection ratio | to be simulated | (dc) TT, 27°C, VDD = 1.2 V |
+ | VDD_min | minimum supply voltage | 0.984 V | (dc) TT, 27 °C |
+ | IDD | total supply current | 351.1 uA (0.42132 mW @ 1.2 V) | (dc) TT, 27 °C |
+ | average V_BG | average bandgap voltage <br> @ (-40 °C, 125 °C) <br> mean ± sigma | 522.2 mV <br> 521.2 mV ~ 525.1 mV <br> 521.771 mV ± 23.2498 mV (± 4.456 %) | (dc) TT <br> (dc) all-corner <br> (mc) samples = 170 |
+ | TC of V_BG (ppm/°C) | V_BG temperature coefficient <br> @ (-40 °C, 125 °C) <br> mean ± sigma | 14.82 ppm/°C <br> 2.146 ppm/°C ~ 39.55 ppm/°C <br> -12.6862 ppm/°C ± 53.9893 ppm/°C | (dc) TT <br> (dc) all-corner <br> (mc) samples = 170 |
+ | average I_REF | reference current <br>  @ (-40 °C, 125 °C) <br>  mean ± sigma | 53.24 uA <br> 46.57 uA ~ 62.48 uA <br> 53.5068 uA ± 3.66081 uA (± 6.842 %) |  (dc) TT <br> (dc) all-corner <br> (mc) VDD = 1.2 V, samples = 170 |
+ | TC of I_REF (ppm/°C) | I_REF temperature coefficient <br> @ (-40 °C, 125 °C) <br> mean ± sigma | -36.38 ppm/°C <br> -50.99 ppm/°C ~ -22.78 ppm/°C <br> -31.7456 ppm/°C ± 43.3075 ppm/°C | (dc) TT <br> (dc) all-corner <br> (mc) samples = 170 |
+ | Delta_t | settling time | < 0.05 us | (tran) TT, 27 °C, VDD from 0 to 1.2 V (SR = 1 V/us) |
+ | PSRR | power supply rejection ratio | 36.9 dB @ DC, BW = 31.51 MHz, UGF = 834.5 MHz <br> 36.5 dB @ 10 MHz, 26.1 dB @ 100 MHz | (ac) TT, 27°C |
 </div>
-</span>
- -->
+</span> -->
 
 ## 5. Layout and Post-Simulation
 
-详见文章 [Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1)](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>).
-
-## 6. Results Summary
-
-将前仿和后仿结果的表格汇总在一起，结果如下：
+详见文章 [Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1__layout.md>).
 
 
 
@@ -572,6 +570,6 @@ export CDS_XVNC_OFFSET=9  # 端口号的个位 (本地的话无所谓, 随便写
 - [Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
     - [(本文) Design of the Low-Voltage Bandgap Reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
         - [Design of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)
-        - [Layout of the Op Amp for Low-Voltage BGR](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
-    - [Layout of the Low-Voltage Bandgap Reference (BGR)](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>)
+        - [Layout of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller__layout.md>)
+    - [Layout of the Low-Voltage Bandgap Reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1__layout.md>)
 

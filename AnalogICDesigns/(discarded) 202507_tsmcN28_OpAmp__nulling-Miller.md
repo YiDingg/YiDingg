@@ -7,8 +7,8 @@ Initially published at 02:01 on 2025-07-17 in Beijing.
 - [Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
     - [Design of the Low-Voltage Bandgap Reference (BGR)](AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md)
         - [(本文) Design of the Op Amp for Low-Voltage BGR](AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md)
-        - [Layout and Post-Layout Simulation of the Op Amp for Low-Voltage BGR](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
-    - [Layout and Post-Layout Simulation of the Low-Voltage BGR](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>)
+        - [Layout and Post-Layout Simulation of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller__layout.md>)
+    - [Layout and Post-Layout Simulation of the Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1__layout.md>)
 
 
 >注：本文所设计的运放将用于科研实践一，也即 [ Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>) 中的 [low-voltage bandgap reference (BGR)](AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md)。
@@ -704,7 +704,7 @@ hiFormDone(leDisplayOptionsForm)
 然后为每一组晶体管添加适当的 dummy 管，并将 schematic 中的器件导入到 layout 中。一个小技巧是 dummy 管的 fingerwidth 和原始管一致，但是 length 可以不同 (比如 dummy 管的 length 都取 30nm 以节省面积)，添加 dummy 管后如下图：
 
 
-详细的 layout 及版图验证工作见文章 [Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA)](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)。
+详细的 layout 及版图验证工作见文章 [202507_tsmcN28_OpAmp__nulling-Miller__layout](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller__layout.md>)。
 
 
 

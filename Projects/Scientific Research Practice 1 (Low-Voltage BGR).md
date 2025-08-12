@@ -1,4 +1,4 @@
-# Scientific Research Practice 1 (Design of Bandgap Reference)
+# Scientific Research Practice 1 (Design of A Low-Voltage Bandgap Reference)
 
 > [!Note|style:callout|label:Infor]
 Initially published at 18:48 on 2025-07-14 in Beijing.
@@ -16,8 +16,8 @@ Initially published at 18:48 on 2025-07-14 in Beijing.
 - [(本文) Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
     - [Design of the Low-Voltage Bandgap Reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
         - [Design of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)
-        - [Layout and Post-Layout Simulation of the Op Amp for Low-Voltage BGR](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
-    - [Layout and Post-Layout Simulation of the Low-Voltage BGR](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>)
+        - [Layout and Post-Layout Simulation of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller__layout.md>)
+    - [Layout and Post-Layout Simulation of the Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1__layout.md>)
 
 ## 2. General Considerations
 
@@ -29,9 +29,9 @@ Initially published at 18:48 on 2025-07-14 in Beijing.
 - [x] 2\. 设计用于 BGR 的运算放大器，包括运放的版图、验证和后仿 (2025.07.18 ~ 2025.07.22)
 - [x] 3\. 完成整个 BGR 的设计并进行前仿  (2025.07.23 ~ 2025.07.24)
 - [x] 4\. 进行 BGR 版图设计和验证 (2025.07.25 ~ 2025.07.27)
-- [x] 5\. 完成 BGR 的完整后仿 (2025.07.27 ~ 2025.07.28)
-- [ ] 7\. 撰写科研实践报告
-- [ ] 8\. 撰写 slides 并准备答辩
+- [x] 5\. 完成 BGR 的完整后仿 (2025.07.27 ~ 2025.07.29)
+- [x] 7\. 撰写科研实践报告 (2025.08.05 ~ 2025.08.07)
+- [x] 8\. 准备答辩 slides (2025.08.07 ~ 2025.08.08)
 
 ### 2.2 report and paper
 
@@ -45,7 +45,8 @@ Initially published at 18:48 on 2025-07-14 in Beijing.
 
 ## 3. Design Summary
 
-本小节展示了此次设计的 BGR 结构与主要成果 (关键性能指标)，摘自项目总览的 PPT [(this link) 待上传](xxx)
+本小节展示了此次设计的 BGR 结构与主要成果 (关键性能指标)，图片摘自项目总览的 PPT [科研实践一-成果总览 (丁毅, 2025.08.03).pptx](https://www.writebug.com/static/uploads/2025/8/5/6903e0d4c0922bfeb167773ddf1498a3.pptx).
+
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-30-00-38-04_Scientific Research Practice 1 (Low-Voltage BGR).png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-30-00-38-20_Scientific Research Practice 1 (Low-Voltage BGR).png"/></div>
@@ -79,5 +80,5 @@ Initially published at 18:48 on 2025-07-14 in Beijing.
 - [(本文) Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
     - [Design of the Low-Voltage Bandgap Reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
         - [Design of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)
-        - [Layout and Post-Layout Simulation of the Op Amp for Low-Voltage BGR](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
-    - [Layout and Post-Layout Simulation of the Low-Voltage BGR](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>)
+        - [Layout and Post-Layout Simulation of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller__layout.md>)
+    - [Layout and Post-Layout Simulation of the Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1__layout.md>)

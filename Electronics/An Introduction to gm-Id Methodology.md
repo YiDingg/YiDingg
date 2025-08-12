@@ -22,7 +22,7 @@
 
 $$
 \begin{gather}
-\frac{g_m}{I_D} = \frac{1}{I_D}\, g_m = frac{1}{I_D} \frac{\partial I_D }{\partial V_{GS} } = \frac{\partial (\ln I_D) }{\partial V_{GS} } = \frac{\partial \left[\ln \frac{I_D}{(W/L)}\right] }{\partial V_{GS} }
+\frac{g_m}{I_D} = \frac{1}{I_D}\, g_m = \frac{1}{I_D} \frac{\partial I_D }{\partial V_{GS} } = \frac{\partial (\ln I_D) }{\partial V_{GS} } = \frac{\partial \left[\ln \frac{I_D}{(W/L)}\right] }{\partial V_{GS} }
 \end{gather}
 $$
 
@@ -70,7 +70,7 @@ $$
 
 ### 2.1 Hypothesis 1 (Verified)
 
-见 **Hypothesis 2** 验证结论的第一条。
+见 **Hypothesis 3** 验证结论的第一条。
 
 ### 2.2 Hypothesis 2 (Verified)
 

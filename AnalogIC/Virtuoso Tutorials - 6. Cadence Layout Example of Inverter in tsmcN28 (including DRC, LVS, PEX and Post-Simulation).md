@@ -52,7 +52,7 @@
 
 
 
-## 2. DRC Example
+## 2. DRC Check
 
 在 `Calibre > Run nmDRC` 中打开 DRC 界面，主要步骤为：
 - (1) 设置 DRC 文件和 Run Directory
@@ -86,7 +86,7 @@
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-20-07-31_DRC-LVS-PEX Example in tsmcN28.png"/></div>
 
-## 3. LVS Example
+## 3. LVS Check
 
 
 DRC 通过之后，就可以进行 LVS (layout versus schematic) 检查了，主要步骤为：
@@ -123,17 +123,17 @@ LVS 给出了笑脸，说明检查成功通过，与原理图完全一致。
 **<span style='color:red'> 上面的错误告诉我们，以后在版图 generate from source 时，应该将 Pin label 的属性设置为 M1-pin 而不是 M1-drw. </span>**
 
 
-## 4. PEX Example
+## 4. PEX Details
 
 接下来我们提取版图参数 (PEX, Parasitic Extraction), 主要步骤如下：
-- 在 `Calibre > Run PEX` 中打开 PEX 界面，设置好 PEX Rules File 和 run directory
-- 在 `Input > Netlist` 一栏勾选 `Export from schematic viewer`
-- 在 `Output > Extraction Type` 中选择 Transistor Level, (R + C + CC), No Inductance
-- 在 `Output > Netlist` 中选择 `Format > CALIBREVIEW`
-- 在 `PEX Options > Netlis > Format` 中勾选 Ground node name 并输入 VSS (点击 `PEX Options` 时可能出现报错，详见 **7.1 problem with file access** 一节)
-- 在 `PEX Options > LVS Options` 中输入 power nets = VDD, ground nets = VSS
-- 点击 `RUN PEX` 运行 PEX, 等待结果 (R + C + CC 通常会比较慢，因为要导出走线之间的电容) 
-- 点击 `Run PEX`，等待结果
+- (1) 在 `Calibre > Run PEX` 中打开 PEX 界面，设置好 PEX Rules File 和 run directory
+- (2) 在 `Input > Netlist` 一栏勾选 `Export from schematic viewer`
+- (3) 在 `Output > Extraction Type` 中选择 Transistor Level, (R + C + CC), No Inductance
+- (4) 在 `Output > Netlist` 中选择 `Format > CALIBREVIEW`
+- (5) 在 `PEX Options > Netlis > Format` 中勾选 Ground node name 并输入 VSS (点击 `PEX Options` 时可能出现报错，详见 **7.1 problem with file access** 一节)
+- (6) 在 `PEX Options > LVS Options` 中输入 power nets = VDD, ground nets = VSS
+- (7) 点击 `RUN PEX` 运行 PEX, 等待结果 (R + C + CC 通常会比较慢，因为要导出走线之间的电容) 
+- (8) 点击 `Run PEX`，等待结果
 
 导出完成后，又弹出来两个窗口 (一共三个)：
 
@@ -141,11 +141,14 @@ LVS 给出了笑脸，说明检查成功通过，与原理图完全一致。
 
 右边窗口是导出的 PEX netlist file, 里面包含了所有的原始元件和 parasitic 元件 (电阻、电容等)，中间窗口是 PEX 的结果，左边是预览带寄生参数原理图的设置。这里还可以打开 RVE 来观察每一个网络对应的总寄生参数，详见 [this video (16 分 10 秒)](https://www.bilibili.com/video/BV1By4y1A7zC)，我们略过。
 
-左边的 `Cellmap File` 一栏要选择工艺库对应的 `.cellmap` 文件，通常也在 `rcx` 文件夹下。但是我们的 `tsmcN28` 库却没有给这个文件，无奈拿 `tsmc18rf` 工艺库的 `.cellmap` 文件来凑合用，路径是：
+左边的 `Cellmap File` 一栏要选择工艺库对应的 `.cellmap` 文件，通常也在 `rcx` 文件夹下。在 cellmap file 处选择 `tsmcN28` 工艺库对应的 cellmap 文件，路径为：
 
 ``` bash
-/home/IC/Cadence_Process_Library/TSMC18RF_PDK_v13d_OA/Calibre/calview.cellmap
+/home/IC/Cadence_Process_Library/tsmc28n_2v5_OA/Calibre_new/rcx/icellmap.yaml_calibre
 ```
+
+一般不能选择其它工艺库的，否则会导致 PEX 导出错误，影响后仿结果。我们之前就是不知道这一点，吃了一个小亏，浪费好几天。
+
 
 设置好路径后选择 `Calibre View Type > schematic`, 勾选 `Open Calibre CellView > Read-mode`, 点击 OK 打开，效果如下：
 
@@ -176,13 +179,15 @@ LVS 给出了笑脸，说明检查成功通过，与原理图完全一致。
 网表确实带寄生参数的，说明后仿是成功的。至此，我们完成了一个完整的 DRC, LVS, PEX 和后仿流程。
 
 
-## 5. Common Problems in DRC
+## 6. Common Problems in DRC
 
-### 5.1 Design Rule Reference
+### 6.1 Design Rule Reference
 
 以下是 `tsmcN28` 工艺库 (台积电 28nm CMOS 工艺库) 的 **Cadence Virtuoso 版图 DRC 报错规则** 详细解释，包含 **缩写全称**、**规则全称** 及 **含义说明**：
 
 
+<span style='font-size:10px'>
+<div class='center'>
 
 | **DRC Rule** | **缩写全称** | **规则全称** | **含义解释** |
 |-------------|-------------|-------------|-------------|
@@ -207,7 +212,10 @@ LVS 给出了笑脸，说明检查成功通过，与原理图完全一致。
 | **M1.A.4** | **M1 Area 4** | **M1 Enclosed Area Rule** | M1 封闭区域的最小面积必须 **≥ 0.2 µm²**。 |
 | **LUP.6** | **Latch-Up 6** | **NMOS/PMOS Substrate Tap Proximity Rule** | **NMOS 源/漏区** 到同 **PW (P-Well) STRAP** 的距离 **≤ 33 µm**，**PMOS 源/漏区** 到同 **NW (N-Well) STRAP** 的距离 **≤ 33 µm**，防止闩锁效应（Latch-Up）。 |
 
-### 5.2 Error LUP.6 (STRAP Error)
+</div>
+</span>
+
+### 6.2 Error LUP.6 (STRAP Error)
 
 DRC 的 LUP.6 错误详情：
 ``` bash
@@ -220,19 +228,19 @@ LUP.6 { @ Any point inside NMOS source/drain space to the nearest PW STRAP in th
 
 这是 N-Well 和 P-Sub 没有正确连接 VDD/VSS 导致的，我们需要添加 guard ring 和大 NW 来解决。对于 NMOS 这一块, PP 也是 p-sub 的一种, guard ring 上的 VSS 连到 PP, 也就相当于连到了 p-sub, 所以啥也不用加；而对 PMOS 这一块，需要加一个大的 NW 将 guard ring 连带内部的小 NW 包裹住, 这样才能把 PMOS 的 NW 接到 guard ring 上的 VDD.
 
-### 5.3 
 
 
 
-## 6. Common Problems in LVS
 
-### 6.1 missing port
+## 7. Common Problems in LVS
+
+### 7.1 missing port
 
 我们在 **3. LVS Example** 一节已经说明了如何处理：将各 port (pin) 的原始 label 从 M1-drw 改为 M1-pin, 重新运行 LVS 即可：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-22-00-57-11_DRC-LVS-PEX Example in tsmcN28.png"/></div>
 
-### 6.2 Source netlist references but does not define subckts:
+### 7.2 Source netlist references but does not define subckts:
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-15-16-21_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
 
@@ -260,14 +268,14 @@ LUP.6 { @ Any point inside NMOS source/drain space to the nearest PW STRAP in th
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-17-02-25_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
 
-### 6.3 source primary cell not found in source database
+### 7.3 source primary cell not found in source database
 
 名称字符问题或名称太长
 
-### 6.4 ERROR: Supply error detected. ABORT ON SUPPLY ERROR is specified - aborting
+### 7.4 ERROR: Supply error detected. ABORT ON SUPPLY ERROR is specified - aborting
 
 
-### 6.5 WARNING:  Stamping conflict in SCONNECT - Multiple source nets stamp one target net.
+### 7.5 WARNING:  Stamping conflict in SCONNECT - Multiple source nets stamp one target net.
 
 ``` bash
 WARNING:  Stamping conflict in SCONNECT - Multiple source nets stamp one target net.
@@ -281,9 +289,9 @@ Use LVS REPORT OPTION S or LVS SOFTCHK statement to obtain detailed information.
 
 
 
-## 7. Common Problems in PEX
+## 8. Common Problems in PEX
 
-### 7.1 problem with file access
+### 8.1 problem with file access
 
 在点击 PEX Option 按钮时，软件会先编译一遍刚刚设置好的 PEX Rules File, 这是可能会报错找不到某个文件：
 ``` bash
@@ -338,9 +346,9 @@ Error while compiling rules file /home/IC/Cadence_Process_Library/tsmc28n_2v5_OA
 Error INCL1 on line 126 of /home/IC/Cadence_Process_Library/tsmc28n_2v5_OA/Calibre_new/rcx/rules - problem with access, file type, or file open of this include file: /home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5/Calibre_new/rcx/xrc_mapping.
 ```
 
-### 7.2 导出的晶体管尺寸正常却在后仿中报错
+### 8.2 导出的晶体管尺寸正常却在后仿中报错
 
-导出寄生参数后进行仿真，晶体管的尺寸明明在正常范围内，仿真器却仍然报错说尺寸不符合范围要求，下面是在 [this design](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>) 中遇到的一个例子：
+导出寄生参数后进行仿真，晶体管的尺寸明明在正常范围内，仿真器却仍然报错说尺寸不符合范围要求，下面是在 [this design](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller__layout.md>) 中遇到的一个例子：
 
 ``` bash
 Error found by spectre during initial setup.
@@ -358,4 +366,3 @@ soft_bin=allmodels
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-23-19-25-31_Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).png"/></div>
 
-## 8. Summary 

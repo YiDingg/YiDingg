@@ -1,4 +1,4 @@
-# Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA)
+# Layout and Post-Simulation for 202507_tsmcN28_OpAmp__nulling-Miller
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 18:52 on 2025-07-22 in Beijing.
@@ -7,8 +7,8 @@
 - [Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
     - [Design of the Low-Voltage Bandgap Reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
         - [Design of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)
-        - [(本文) Layout of the Op Amp for Low-Voltage BGR](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
-    - [Layout of the Low-Voltage Bandgap Reference (BGR)](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>)
+        - [(本文) Layout of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller__layout.md>)
+    - [Layout of the Low-Voltage Bandgap Reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1__layout.md>)
 
 
 ## 1. General Considerations
@@ -460,7 +460,7 @@ Specified primary cell OpAmp__twoStage_single_basic-nulling-Miller__60dB_370MHz_
 
 生成的寄生参数原理图如下：
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-29-02-37-19_Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-29-02-37-19_202507_tsmcN28_OpAmp__nulling-Miller__layout.png"/></div>
 
 也可以点击 `Start RVE` 来查看各网络的寄生参数：
 

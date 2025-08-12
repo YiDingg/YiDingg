@@ -1,4 +1,4 @@
-# [Razavi CMOS] An Introduction to Layout (Chapter 19. Layout and Packaging)
+# Razavi CMOS - Chapter 19. Layout and Packaging
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 23:30 on 2025-06-24 in Beijing.

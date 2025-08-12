@@ -1,4 +1,4 @@
-# Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1)
+# Layout and Post-Simulation for 202507_tsmcN28_BGR__scientific_research_practice_1
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 20:15 on 2025-07-26 in Beijing.
@@ -7,7 +7,7 @@
 - [Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
     - [Design of the Low-Voltage Bandgap Reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
         - [Design of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)
-        - [Layout of the Op Amp for Low-Voltage BGR](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
+        - [Layout of the Op Amp for Low-Voltage BGR](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller__layout.md>)
     - [(本文) Layout of  the Low-Voltage Bandgap Reference (BGR)](<AnalogIC/Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).md>)
 
 
@@ -23,7 +23,7 @@
 - PEX (寄生参数提取)
 - Post-Layout Simulation (后仿真)
 
-整个 layout 过程可以参考 [Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA)](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>).
+整个 layout 过程可以参考 [202507_tsmcN28_OpAmp__nulling-Miller__layout](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller__layout.md>).
 
 ### 1.1 Configure Settings
 
@@ -40,7 +40,7 @@
 
 开始版图设计之前，得先确定此工艺库下的各个 layer 简称代表什么意思，以及阅读工艺库下的 DRC 文件，确定几个基本 DRC 规则的数值。
 
-我们已经在文章 [Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA)](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>) 中介绍过 `tsmcN28` 工艺库各个 layer 的含义，这里不再赘述。
+我们已经在文章 [202507_tsmcN28_OpAmp__nulling-Miller__layout](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller__layout.md>) 中介绍过 `tsmcN28` 工艺库各个 layer 的含义，这里不再赘述。
 
 ### 1.3 Basic Design Rules
 
@@ -77,7 +77,7 @@
 </div>
 
 
-关于如何找到工艺库对应的 DRC 文件，同样参考文章 [Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA)](<AnalogIC/Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).md>)
+关于如何找到工艺库对应的 DRC 文件，同样参考文章 [202507_tsmcN28_OpAmp__nulling-Miller__layout](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller__layout.md>)
 
 
 
@@ -164,7 +164,7 @@
 注意调整 dummy 器件位置的同时，合理设置 align 间距使组内管子之间的 spacing 与自带的 dummy poly 间距相同 (默认 0.10um 或 0.18um)。
 
 下面是部分细节展示：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-26-22-41-22_Cadence Layout (202507_tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-26-22-41-22_202507_tsmcN28_OpAmp__nulling-Miller__layout.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-26-22-44-11_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-26-22-49-29_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
 

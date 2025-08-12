@@ -86,7 +86,7 @@ scp dy2025@182.48.105.253:/home/dy2025/Cadence_Data/tsmc28n.tar D:/a_Win_VM_shar
 
 等待文件传输完成即可。
 
-### 问题日志
+### 2. 报错 “系统找不到指定路径”
 
 2025.06.24 21:00 注：我们这里解压时，出现了大量 “系统找不到指定路径” 的报错，暂未解决。
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-24-21-01-35_如何通过 SSH 远程连接实验室服务器.png"/></div>
@@ -113,45 +113,32 @@ scp -r dy2025@182.48.105.253:/home/library/TSMC/tsmc28n/1p9m6x1z1u/PDK_doc D:/a_
 
 
 
-### 2. 个性化设置
+### 3. 个性化设置
 
 个性化设置，设置终端字体，右键复制、文件保存路径等：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-24-19-40-05_如何通过 SSH 远程连接实验室服务器.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-24-19-40-11_如何通过 SSH 远程连接实验室服务器.png"/></div>
 
 
-<!-- ## Tips: 如何传输文件
 
-如何在服务器与自己的电脑之间互传文件？利用 
- -->
-<!-- ## Solution 1: RealVNC
-
-然后到 [https://www.realvnc.com/en/connect/download/viewer/](https://www.realvnc.com/en/connect/download/viewer/) 下载 RealVNC Viewer 客户端，安装后打开。
+### 4. 创建新用户
 
 
-接下来就可以用 RealVNC Viewer 连接实验室的服务器，也不需创建 RealVNC 账号什么的 (想创建也无妨)。右键点击 `new connection`, 输入你的服务器端口和用户名，如下图：
+`su root` 切换到 root 用户，成功切换后，输入下面的命令创建新用户：
 
+``` bash
+sudo adduser [username]    # 语法
+sudo adduser henry         # 示例: 创建一个名为 henry 的新用户
+```
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-24-00-24-45_如何通过 SSH 远程连接实验室服务器.png"/></div>
+这个命令后命令行会自动引导你输入各项信息，比如密码 (mandatory)，姓名 (optional)，电话 (optional) 等等。
 
-其它选项不用设置，点击 `OK` 即可。
+这样就添加了一个新的用户，且自动新建了账户目录 (类似建立了 windows 里的 C 盘 user 文件夹下的 henry 文件夹) 。这个时候你可以使用 henry 的账密，使用 CMD 或者 MobaXterm 新建 session 的方式，验证下是否可以成功登录 Ubuntu.
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-24-00-25-50_如何通过 SSH 远程连接实验室服务器.png"/></div>
+还可以把账户加入到 sudo 组里 (管理员组)。
 
-
-
-我们这里出现了 `authentication failed` 的错误 (2025.05.24 00:37)，有待解决。
-
-## Solution 2: UltraVNC
-
-
-参考 [知乎 > 快速上手免费内网远程工具 UltraVNC](https://zhuanlan.zhihu.com/p/709512820), 到 [UltraVNC Official](https://uvnc.com/) 下载 UltraVNC. 如果觉得太卡 (下载太慢)，也可以到 [alternative link 1](https://www.techspot.com/downloads/5181-ultravnc.html) or [alternative link 2](https://www.softpedia.com/get/Internet/Remote-Utils/UltraVNC.shtml#download) 进行下载。我们就是在官网下载时太慢导致下载失败，从而选择在 alternative link 1 下载了 **ultravnc 1610 msi X64** (UltraVNC 1.6.1.0 distribution for 64-bit operating systems) 。
-
-
-注意，上面需要下载合适的操作系统版本，有 32 位 (X86) 和 64 位 (X64), 系统版本是指安装 VNC Serve 电脑的操作系统，也就是那台需要被远程的服务器，而不是你下载 UltraVNC 的计算机。
-
-下载完成后，打开进行安装，注意安装环境建议全选：
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-24-01-03-00_如何通过 SSH 远程连接实验室服务器.png"/></div>
-
-安装完成后，打开 **UltraVNC Viewer**, 输入服务器的 IP 地址和端口号 (默认是 5900)，如下图： - > 
-
+```bash
+sudo usermod -a -G [groupname] [username]   # 语法
+sudo usermod -a -G sudo henry               # 示例: 将 henry 加入到 sudo 组
+getent group sudo                           # 显示所有 sudo 权限用户
+```
