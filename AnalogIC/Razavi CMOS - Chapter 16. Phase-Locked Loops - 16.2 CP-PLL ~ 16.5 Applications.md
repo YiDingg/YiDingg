@@ -1,6 +1,6 @@
 # Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.2 CP-PLL ~ 16.5 Applications
 
->- [!Note|style:callout|label:Infor]
+> [!Note|style:callout|label:Infor]
 > Initially published at 15:31 on 2025-08-08 in Lincang.
 
 参考教材：[*Design of Analog CMOS Integrated Circuits (Behzad Razavi) (2nd edition, 2015)*](https://www.zhihu.com/question/452068235/answer/95164892409)
@@ -135,7 +135,7 @@ QB 驱动 M3 (NMOS) 是高开低关没错 (高电平开，低电平关)，但是
 
 如 Figure 16.44 (b) 所示，由于 NOT gate 的存在，$\overline{\mathrm{Q_A}}$ 在时域上落后于 $\mathrm{Q_B}$ 一个 NOT 门延迟时间 $T_D$. 这会导致即便在锁定状态下，振荡器的控制电压 $V_{cont}$ 也会出现周期性的 ripple (可以理解为毛刺)，影响锁相环的抖动性能 (jitter performance). 
 
-为了缓解这个问题，可以在 QB 的输出端添加一个或多个互补型传输门，也即 complementary transmission gate, 又称 pass gate. 并且 pass gate 中 gate of PMOS 接 GND, gate of NMOS 接 VDD (使传输门恒开启). 关于 CMOS 传输门的具体原理，详见这篇文章- [BuzzTech > CMOS Transmission Gate (Pass Gates)](https://buzztech.in/cmos-transmission-gate/)
+为了缓解这个问题，可以在 QB 的输出端添加一个或多个互补型传输门，也即 complementary transmission gate, 又称 pass gate. 并且 pass gate 中 gate of PMOS 接 GND, gate of NMOS 接 VDD (使传输门恒开启). 关于 CMOS 传输门的具体原理，详见这篇文章 [BuzzTech > CMOS Transmission Gate (Pass Gates)](https://buzztech.in/cmos-transmission-gate/)
 
 **(2) mismatch between UP and DOWN currents.**
 
@@ -162,9 +162,6 @@ QB 驱动 M3 (NMOS) 是高开低关没错 (高电平开，低电平关)，但是
 
 在 S1/S2 断开时, S3/S4 闭合，利用 unit buffer 将 Vx 和 Vy 拉到 Vcont 附近。而当 S1/S2 开启时, S3/S4 断开以避免引入更大的 drain capacitances.
 
-关于 "bootstrapping" 技术的应用实例，可以看下面这篇论文- [[3]](https://ieeexplore.ieee.org/document/5947)：
-
->[3] M. G. Johnson and E. L. Hudson, “A variable delay line PLL for CPU-coprocessor synchronization,” IEEE J. Solid-State Circuits, vol. 23, no. 5, pp. 1218–1223, Oct. 1988,- [doi: 10.1109/4.5947](https://ieeexplore.ieee.org/document/5947).
 
 
 ### 5.3 Jitter in PLL
@@ -187,15 +184,34 @@ $$
 
 ## 6. Delayed-Locked Loop (DLL)
 
+与 PLL 相比, DLL (Delayed-Locked Loop) 是用 "压控延迟线 (voltage-controlled delay line, VCDL)" 替换了 VCO, 以实现低抖动且固定频率的时钟对齐。 DLL 最典型的应用便是 "多相位时钟信号生成"，例如将一路原有的时钟信号通过 DLL (PDF/CP/LPF + Delay Line) 输出为两两相位差为 $\frac{\pi}{2}$ 的四路时钟信号。
 
+下面是几种典型 DLL 结构示例：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-12-21-34-42_Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.2 CP-PLL ~ 16.5 Applications.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-12-21-35-17_Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.2 CP-PLL ~ 16.5 Applications.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-12-21-35-40_Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.2 CP-PLL ~ 16.5 Applications.png"/></div>
+
+关于 DLL 的设计实例，可以看下面这篇论文 [[3]](https://ieeexplore.ieee.org/document/5947)：
+>[3] M. G. Johnson and E. L. Hudson, “A variable delay line PLL for CPU-coprocessor synchronization,” IEEE J. Solid-State Circuits, vol. 23, no. 5, pp. 1218–1223, Oct. 1988, [doi: 10.1109/4.5947](https://ieeexplore.ieee.org/document/5947).
+
+
+
+与 PLL 相比，由于不存在 VCO 这一模块, DLL 的抖动一般要小得多。但相应地，不存在 VCO 就意味着不能产生输入频率之外的时钟信号，无法用于频率合成/倍频/分频。
 
 ## 7. Applications of PLL
 
 ### 7.1 Frequency Multiplication/Division/Synthesis
 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-12-21-45-17_Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.2 CP-PLL ~ 16.5 Applications.png"/></div>
+
 ### 7.2 Skew Reduction
 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-12-21-46-09_Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.2 CP-PLL ~ 16.5 Applications.png"/></div>
+
 ### 7.3 Jitter Reduction
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-12-21-47-26_Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.2 CP-PLL ~ 16.5 Applications.png"/></div>
 
 ## 8. Summary of Type-II PLL
 
@@ -220,7 +236,7 @@ H_CL = simplifyFraction(H_OL/(1 + H_OL))
 - [2] F. M. Gardner, Phaselock Techniques, 2nd ed. (New York: John Wiley & Sons, 1979).
 - [[3]](https://ieeexplore.ieee.org/document/5947) M. G. Johnson and E. L. Hudson, “A Variable Delay Line PLL for CPU-Coprocessor Synchronization,” IEEE
  J. of Solid-State Circuits, vol. 23, pp. 1218–1223, October 1988.
-- [4] F. M. Gardner, “Charge-Pump Phase-Locked Loops,” IEEE Trans. Comm., vol. COM-28, pp. 1849–1858,
+- [[4]](https://u.dianyuan.com/bbs/u/29/1116306785.pdf) F. M. Gardner, “Charge-Pump Phase-Locked Loops,” IEEE Trans. Comm., vol. COM-28, pp. 1849–1858,
  November 1980.
 - [5] F. Herzel and B. Razavi, “A Study of Oscillator Jitter Due to Supply and Substrate Noise,” IEEE Transactions
  on Circuits and Systems, Part II, vol. 46, pp. 56–62, January 1999.
