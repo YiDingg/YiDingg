@@ -81,7 +81,7 @@
 
 
 
-如果对版图设计和验证的全流程还不太熟悉，建议先完成一次简单的反相器版图设计，详见文章 [Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)。
+如果对版图设计和验证的全流程还不太熟悉，建议先完成一次简单的反相器版图设计，详见文章 [Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 8. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)。
 
 
 
@@ -183,7 +183,7 @@
 
 ### 2.5 DRC test
 
-在布线之前，先进行一下 DRC 以确定没有什么奇奇怪怪的问题。关于 DRC/LVS/PEX 和后仿的详细教程见 [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>), 这里直接给出 DRC 结果：
+在布线之前，先进行一下 DRC 以确定没有什么奇奇怪怪的问题。关于 DRC/LVS/PEX 和后仿的详细教程见 [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 8. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>), 这里直接给出 DRC 结果：
 
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-27-00-02-32_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
@@ -528,7 +528,7 @@ stand-by current = 351.1 uA, maximum current = 464.3 uA.
 
 ### 4.7 postscript: mc simul after dc opt correction
 
-发现 dc opt 得到的工作状态与 tran 得到的工作状态不一致，于是按文章 [Resolving Discrepancies Between DC and Transient Simulation Results](<AnalogIC/Virtuoso Tutorials - 8. Resolving Discrepancies Between DC and Transient Simulation Results.md>) 中的方法设置初始状态后重新运行蒙卡仿真，结果如下：
+发现 dc opt 得到的工作状态与 tran 得到的工作状态不一致，于是按文章 [Resolving Discrepancies Between DC and Transient Simulation Results](<AnalogIC/Virtuoso Tutorials - 10. Resolving Discrepancies Between DC and Transient Simulation Results.md>) 中的方法设置初始状态后重新运行蒙卡仿真，结果如下：
 
 
 设置 `Vx = MM3_d = VDD` 和 `Vy = MM4_d = 0`, 结果可以正确收敛，进行 samples = 20 的蒙卡测试：

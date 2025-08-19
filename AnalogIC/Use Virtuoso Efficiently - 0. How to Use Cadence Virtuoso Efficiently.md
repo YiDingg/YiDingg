@@ -142,7 +142,7 @@ schematic	showUndoRedoHistoryInEditor	boolean	t ; 在 schematic 中显示撤销�
 
 ``` bash
 ; .cdsinit
-; 下面是 .cdsinit 配置内容 (截至 2025.07.14)
+; 下面是 .cdsinit 配置内容 (截至 2025.08.17)
 ; 来源于知乎作者 https://www.zhihu.com/people/YiDingg
 
 ; None<Btn2Down> 是中键
@@ -162,7 +162,7 @@ hiSetBindKeys("Schematics" list(
     list("None<Btn3Down>" "" "cancelEnterFun()")            ; 鼠标右键用作 esc (esc 太远了)
     list("None<Btn3Down>(2)" "" "")                         ; 删除原有的冗余右键绑定
     list("Ctrl<Key>c" "schHiCopy()")                        ; Ctrl + C 复制
-    list("<Key>d" "schHiCreateNoteShape()")                 ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
+    list("<Key>d" "schHiDelete()")                          ; 按键 D 用于删除 (delete 按键太远了)
     list("Ctrl Shift<Key>f" "leZoomToSelSet()")                   ; Ctrl Shift + f 缩放到选中区域
     ; 下面是特殊操作
     list("<Key>a" "schHiCreateInst()")                      ; 按键 A 添加 instance (默认功能是 geSingleSelectPoint()), 用于替代按键 I
@@ -200,7 +200,7 @@ hiSetBindKeys("Symbol" list(
     list("Ctrl<Key>c" "schHiCopy()")                    ; Ctrl + C 复制
     list("Ctrl Shift<Key>f" "leZoomToSelSet()")              ; Ctrl Shift + f 缩放到选中区域
     ; 下面是特殊操作
-    list("<Key>d" "schHiCreateNoteShape()")             ; 按键 D 创建注释和 drawing (原本是按键 n 的默认功能)
+    list("<Key>d" "schHiDelete()")                          ; 按键 D 用于删除 (delete 按键太远了)
 	)
 )
 
@@ -757,7 +757,7 @@ startFinde(); 打开 "Cadence SKILL API Finder", 用于查找函数及其定义
 ### 3. Export Simulation Data
 
 
-详见 [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<Electronics/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>).
+详见 [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<AnalogIC/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>).
 
 示例代码如下：
 ``` bash
@@ -847,7 +847,7 @@ mkdir -p /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610 # 创�
 mv Cadence_Projects_backup_20250610.tar /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610/   # 将 tar 文件移动到共享文件夹 a_Win_VM_shared 中
 cp /home/IC/.cdsinit /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610/.cdsinit_backup_20250610 # 顺便备份一下 .cdsinit 和 .cdsenv 文件
 cp /home/IC/.cdsenv /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610/.cdsenv_backup_20250610 # 顺便备份一下 .cdsinit 和 .cdsenv 文件
-# rm 
+# rm -r <directory>
 ```
 
 这样便可以在 windows 主机上，利用坚果云对 `a_Win_VM_shared/Cadence_simulation_backup/` 文件夹进行备份。
@@ -855,8 +855,8 @@ cp /home/IC/.cdsenv /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250
 
 
 
-tar -cvf tsmc28n.tar /home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5/ # 将 Cadence_Projects (项目文件) 文件夹打包成 tar 文件
-
+<!-- tar -cvf tsmc28n.tar /home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5/ # 将 Cadence_Projects (项目文件) 文件夹打包成 tar 文件
+ -->
 
 
 
@@ -914,14 +914,14 @@ tar -cvf tsmc28n.tar /home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5/ # 将 Cadence_Pr
 | 测试条件 | 现象 | 结果一 | 结果二 |
 |:-:|:-:|:-:|:-:|
  | (2025.05.25 16:21) 仅打开 virtuoso, 然后静置不动 | (2025.05.25 16:48) 查看时仍正常 <br> (2025.05.25 17:01) 查看时仍正常 | 刚打开时 (2025.05.25 16:21) <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-25-16-24-30_How to Use Cadence Efficiently.png"/></div> | 第二次查看 (2025.05.25 17:01) <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-25-17-04-23_How to Use Cadence Efficiently.png"/></div> |
- | 打开 virtuoso, ADE L, run simulation + plot results, 然后静置不动 | 一段时间后 (约四十分钟), 虚拟机 IC618 卡死，点击无反应 (但 VMWare Workstation 正常) | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-25-16-22-39_How to Use Cadence Efficiently.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-25-16-19-32_How to Use Cadence Efficiently.png"/></div> |
+ | 打开 virtuoso, ADE L, run simulation + plot results, 然后静置不动 | 一段时间后 (约四十分钟), 虚拟机 IC618 卡死，点击无反应 (但 VMware Workstation 正常) | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-25-16-22-39_How to Use Cadence Efficiently.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-25-16-19-32_How to Use Cadence Efficiently.png"/></div> |
  |(2025.05.25 17:05) 打开 virtuoso, ADE L, run simulation + plot results, 然后静置不动 | (2025.05.25 17:28) 查看时仍正常 <br> (2025.05.25 17:50) 查看时发现已经闪退, 虚拟机 IC618 已关机, 故重新打开 <br> (2025.05.25 18:15) 正常使用突现卡死 | 刚打开时 (2025.05.25 17:05) <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-25-17-06-27_How to Use Cadence Efficiently.png"/></div> | (2025.05.25 18:15) 卡死后虚拟机 IC618 自动关机, 未来得及记录当时的任务管理器 |
  | (2025.05.25 18:25) 尝试用我们的 `.cdsenv` 代码覆盖原 `.cdsenv` 文件的全部内容, 启动 ADE L + load state + plot 进行测试 | (2025.05.25 20:11) 查看时发现已经卡死, 19:30 左右都还正常 | (无图片) | (2025.05.25 20:11) 卡死时 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-25-20-11-39_How to Use Cadence Efficiently.png"/></div> |
 </div>
 
 
 从上面的测试结果来看，卡死的原因就出在 VMware mksSandbox 这个进程上，于是又去搜索：
-- [GitHub > vmware > open-vm-tools > issue > mksSandbox error on VMWare Workstation 17.0 #624](https://github.com/vmware/open-vm-tools/issues/624), 表示这就是 VMware Workstation 的 bug, 
+- [GitHub > vmware > open-vm-tools > issue > mksSandbox error on VMware Workstation 17.0 #624](https://github.com/vmware/open-vm-tools/issues/624), 表示这就是 VMware Workstation 的 bug, 
 - [知乎: 电脑打开 VMware 虚拟机出现 VMware workstation 不可恢复错误 mks 的原因及解决方法](https://zhuanlan.zhihu.com/p/589135132), 给出了一种解决方法是关闭虚拟机设置中的 `加速 3D 图形`, 主机不支持 3D 支持的话，开启此项会导致错误；于是继续进行我们的测试：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-25-20-24-00_How to Use Cadence Efficiently.png"/></div>
@@ -960,7 +960,7 @@ mks.dx12.vendorID = "4318"
 | 测试条件 | 现象 | 结果一 | 结果二 |
 |:-:|:-:|:-:|:-:|
  | (2025.05.25 23:21) 按上面的条件进行测试 | 进入虚拟机和打开 virtuoso 软件的速度明显变快 | (2025.05.25 23:22) 刚开始测试时的进程如下 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-25-23-24-40_How to Use Cadence Efficiently.png"/></div> | (2025.05.26 01:25) 查看时仍正常工作 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-26-01-28-30_How to Use Cadence Efficiently.png"/></div>|
- | (2025.05.26 17:57) 按上面的条件进行第二次测试，边设计 [F-OTA](<Electronics/Design Example of F-OTA using Gm-Id Method.md>) 边测试 | (无) | (2025.05.26 17:58) 刚开始测试时的进程如下 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-26-18-00-26_How to Use Cadence Efficiently.png"/></div> | (2025.05.26 19:25) 出现卡死现象  |
+ | (2025.05.26 17:57) 按上面的条件进行第二次测试，边设计 [F-OTA](<AnalogIC/Virtuoso Tutorials - 6. Design Example of F-OTA using Gm-Id Method.md>) 边测试 | (无) | (2025.05.26 17:58) 刚开始测试时的进程如下 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-26-18-00-26_How to Use Cadence Efficiently.png"/></div> | (2025.05.26 19:25) 出现卡死现象  |
 </div>
 
 于是又加长上面代码中的 timeout 时间：
@@ -1015,6 +1015,17 @@ virtualHW.version = "17"
 - 2025.06.04 17:27 记录：这个卡死不卡死是真的玄学，昨天用了一整天，没卡死，今天四个小时已经卡死三次了
 - 2025.06.04 18:08 记录：今天已经第四次卡死了，检查时发现不知为何 `mksSandbox` 和 `vmware-vmx` 的设置都变为了默认设置，于是重新设置了一遍，重新打开虚拟机进行测试。
 - 2025.06.04 18:09 记录：设置完成发现，虚拟机无法正常打开了，一直报错 `VMware Workstation 未能开启 "...\IC618.vmx"`, 即使还原设置并重启也不行。于是尝试了在 Process Lasso 中 “关闭并重启” `vmware.exe` 进程，然后虚拟机可以正常打开了。于是还原各项设置，继续测试是否会卡死。
+
+
+2025.08.19: 看到这篇文章 [知乎 > 【Cadence 使用技巧 1】解决虚拟机使用中途鼠标突然失灵](https://zhuanlan.zhihu.com/p/1936898339963666762) 受到启发，猜测会不会是 VMware 与虚拟机之间的版本兼容性问题。于是去搜到这个视频 [Bilibili > 【VM虚拟机如何升、降及打开虚拟系统的各个版本呢？】](https://www.bilibili.com/video/BV1sBHxebEbn), 提出两种可能的原因：
+- (1) 我们的 VMware 版本为 17.5, 而虚拟机 `IC618.vmx` 的硬件兼容性默认是 `ESXi 7.0`, 可能这俩版本直接兼容性不好
+- (2) 我们的虚拟机操作系统为 Windows 11, 而 VMware 17.5 可能对 Windows 11 的支持不够完善
+
+于是提出解决方案：先重新安装 VMware 17.6.4 (截至 2025.08.19 的最新版本)，下载链接在 [link 1](https://www.123684.com/s/0y0pTd-5YSj3) 或 [link 2](https://changjiu365.cn/download/vmware)，然后将虚拟机 `IC618.vmx` 的硬件兼容性改为 `Workstation 17.5 or later`，最后正常使用看看还会不会卡死。
+
+在 VMware 17.6.4 下更改虚拟机 `IC618.vmx` 硬件兼容性为 `Workstation 17.5 or later` 的效果如下：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-19-13-17-07_Use Virtuoso Efficiently - 0. How to Use Cadence Virtuoso Efficiently.png"/></div>
+
 
 
 ### 4. ERROR (PRINT-1032): Unable to write to output file
@@ -1129,4 +1140,7 @@ export CDS_XVNC_OFFSET=9  # 端口号的个位 (本地的话无所谓, 随便写
 - [EETOP > ADE XL 多 corner 一直 PENDING](https://bbs.eetop.cn/thread-967362-1-1.html)
 - [CSDN > 解决在高版本系统中 IC617 无法使用 ADE XL Explorer 等进行多线程仿真 Pending 的问题](https://blog.csdn.net/qq_42761840/article/details/127625571)
 - [EETOP > 请问 corners 仿真报错__ADEXL Message1921 如何解？](https://bbs.eetop.cn/thread-870417-1-1.html): 认为是文件夹写入权限的问题 (个人虚拟机有权限的状态下也会出现这个)
+
+
+
 

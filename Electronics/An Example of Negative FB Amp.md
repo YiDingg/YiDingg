@@ -1,4 +1,4 @@
-# An Example of Negative FB Amp
+# An Example of Multi-Stage Amplifier with Deep Negative Feedback
 
 > [!Note|style:callout|label:Infor]
 Initially published at 00:51 on 2025-05-08 in Beijing.

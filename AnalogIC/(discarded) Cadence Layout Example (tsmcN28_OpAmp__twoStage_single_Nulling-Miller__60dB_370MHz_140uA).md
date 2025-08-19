@@ -328,7 +328,7 @@ LUP.6 { @ Any point inside NMOS source/drain space to the nearest PW STRAP in th
 
 
 
-以下是 **Cadence Virtuoso 版图 DRC 报错规则** 的详细表格解释，包含 **缩写全称**、**规则全称** 及 **含义说明** (截至 2025.07.21, 最新版见 [here](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>))：
+以下是 **Cadence Virtuoso 版图 DRC 报错规则** 的详细表格解释，包含 **缩写全称**、**规则全称** 及 **含义说明** (截至 2025.07.21, 最新版见 [here](<AnalogIC/Virtuoso Tutorials - 8. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>))：
 
 | **DRC Rule** | **缩写全称** | **规则全称** | **含义解释** |
 |-------------|-------------|-------------|-------------|

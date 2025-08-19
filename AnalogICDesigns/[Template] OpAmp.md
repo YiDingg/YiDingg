@@ -6,7 +6,7 @@ Initially published at xx:xx on 2025-xx-xx in Beijing.
 
 ## 0. Introduction
 
-本文，我们借助 [gm-Id](<Electronics/An Introduction to gm-Id Methodology.md>) 方法，使用台积电 180nm CMOS 工艺库 `tsmc18rf` 来设计一个 **xxx** 。暂时只作前仿练习，未进行 layout 和 post-layout simulation, 之后如果有需求再补上这一部分。
+本文，我们借助 [gm-Id](<AnalogIC/Virtuoso Tutorials - 5. An Introduction to gm-Id Methodology.md>) 方法，使用台积电 180nm CMOS 工艺库 `tsmc18rf` 来设计一个 **xxx** 。暂时只作前仿练习，未进行 layout 和 post-layout simulation, 之后如果有需求再补上这一部分。
 
 
 运放主要指标如下：

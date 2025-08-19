@@ -3,10 +3,10 @@
 > [!Note|style:callout|label:Infor]
 > Initially published at 15:34 on 2025-06-22 in Beijing.
 
+参考教材：[*Design of Analog CMOS Integrated Circuits (Behzad Razavi) (2nd edition, 2017)*](https://www.zhihu.com/question/452068235/answer/95164892409)
+
 
 ## Introduction
-
-参考教材: [*Design of Analog CMOS Integrated Circuits (Behzad Razavi) (2nd edition, 2015)*](https://www.zhihu.com/question/452068235/answer/95164892409).
 
 噪声限制了电路能够以可接受的质量处理的最小信号幅度。当今的模拟设计人员常常不得不噪声问题，因为它与功耗、速度和线性度相互制约。在本章，我们将对噪声现象进行建模，并探讨噪声对模拟电路的影响。在对噪声在频率域和时间域的特性进行一般性描述之后，我们将介绍热噪声和闪烁噪声。接下来，我们考虑在电路中表示噪声的方法（等效噪声源）。最后，我们将描述噪声在单级放大器和差分放大器中的影响，以及与其他性能参数之间的权衡。
 

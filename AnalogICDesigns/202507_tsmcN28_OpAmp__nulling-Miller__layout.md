@@ -232,7 +232,7 @@ PDK
 
 
 
-另外，假设这是我们第一次接触此工艺库的版图，对 design rules 和其他流程还不那么熟悉 (甚至完全未知)，那么完全有必要先完成一次简单的反相器版图设计，详见文章 [Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
+另外，假设这是我们第一次接触此工艺库的版图，对 design rules 和其他流程还不那么熟悉 (甚至完全未知)，那么完全有必要先完成一次简单的反相器版图设计，详见文章 [Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 8. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
 
 
 
@@ -340,7 +340,7 @@ PDK
 
 ### 2.5 DRC test
 
-在布线之前，不妨进行一下 DRC 以确定没有什么奇奇怪怪的问题。关于 DRC/LVS/PEX 和后仿的详细教程见 [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>), 这里直接给出 DRC 结果：
+在布线之前，不妨进行一下 DRC 以确定没有什么奇奇怪怪的问题。关于 DRC/LVS/PEX 和后仿的详细教程见 [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 8. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>), 这里直接给出 DRC 结果：
 
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-03-15-10_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>
@@ -359,7 +359,7 @@ PDK
 
 不妨再运行一下 LVS 测试，确保版图除网络连接外的各参数与原始 schematic 一致。
 
-由于我们的 cellview 名称太长，会导致 LVS 报错，所以直接将整个 cellview 复制为另一个名为 `OpAmp_Check_LVS` 的 cellview 来进行 LVS 检查即可。详细步骤参考这篇教程 [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>).
+由于我们的 cellview 名称太长，会导致 LVS 报错，所以直接将整个 cellview 复制为另一个名为 `OpAmp_Check_LVS` 的 cellview 来进行 LVS 检查即可。详细步骤参考这篇教程 [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 8. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>).
 
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-22-20-27-25_Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA).png"/></div>

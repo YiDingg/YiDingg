@@ -5,7 +5,7 @@
 
 ## 0. Introduction
 
-本文，我们借助 [gm-Id](<Electronics/An Introduction to gm-Id Methodology.md>) 方法，使用台积电 180nm CMOS 工艺库 `tsmc18rf` 来设计一个 **pmos-input single-ended output folded-cascode op amp** 。暂时只作前仿练习，未进行 layout 和 post-layout simulation, 之后如果有需求再补上这一部分。
+本文，我们借助 [gm-Id](<AnalogIC/Virtuoso Tutorials - 5. An Introduction to gm-Id Methodology.md>) 方法，使用台积电 180nm CMOS 工艺库 `tsmc18rf` 来设计一个 **pmos-input single-ended output folded-cascode op amp** 。暂时只作前仿练习，未进行 layout 和 post-layout simulation, 之后如果有需求再补上这一部分。
 
 
 运放主要指标如下：
@@ -33,8 +33,8 @@
 
 ### 1.1 theoretical formulas
 
-理论参考公式如下 (2025.06.11), 后续如有更新会放在 [Design Sheet of Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet of Folded-Cascode Op Amp.md>):
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-10-17-31-39_Design Sheet of Folded-Cascode Op Amp.png"/></div>
+理论参考公式如下 (2025.06.11), 后续如有更新会放在 [Design Sheet for Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet for Folded-Cascode Op Amp.md>):
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-10-17-31-39_Design Sheet for Folded-Cascode Op Amp.png"/></div>
 
 
 ### 1.2 biasing circuits

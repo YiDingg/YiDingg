@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Cadence 安装教程、实用技巧和仿真示例等详见 [How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>).
+Cadence 安装教程、实用技巧和仿真示例等详见 [How to Use Cadence Efficiently](<AnalogIC/Use Virtuoso Efficiently - 0. How to Use Cadence Virtuoso Efficiently.md>).
 
 ## 1. 仿真步骤
 

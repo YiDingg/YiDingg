@@ -5,7 +5,7 @@
 
 ## Introduction
 
-本文是 *Design of Analog CMOS Integrated Circuits (Razavi) (2nd Edition, 2015)* 一书课后习题 9.3 的解答。电路使用 LTspice 进行简单 SPICE 仿真 (cadence 的使用方法我还需要摸索一下)。在讲解完我们的设计过程后，会给出习题集答案上的解答，也即 *Solution Manual for "Design of Analog CMOS Integrated Circuits (Razavi) (Second Edition, 2015)"* 一书中给出的参考答案。
+本文是 *Design of Analog CMOS Integrated Circuits (Razavi) (2nd edition, 2017)* 一书课后习题 9.3 的解答。电路使用 LTspice 进行简单 SPICE 仿真 (cadence 的使用方法我还需要摸索一下)。在讲解完我们的设计过程后，会给出习题集答案上的解答，也即 *Solution Manual for "Design of Analog CMOS Integrated Circuits (Razavi) (Second Edition, 2015)"* 一书中给出的参考答案。
 
 
 本文的 LTspice 仿真文件已上传到 [123 云盘](https://www.123684.com/s/0y0pTd-YUUj3), [123 云盘 (备用链接)](https://www.123912.com/s/0y0pTd-YUUj3)。

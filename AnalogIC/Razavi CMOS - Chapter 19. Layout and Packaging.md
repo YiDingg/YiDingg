@@ -3,10 +3,10 @@
 > [!Note|style:callout|label:Infor]
 > Initially published at 23:30 on 2025-06-24 in Beijing.
 
+参考教材：[*Design of Analog CMOS Integrated Circuits (Behzad Razavi) (2nd edition, 2017)*](https://www.zhihu.com/question/452068235/answer/95164892409)
+
 
 ## Introduction
-
-参考教材: [*Design of Analog CMOS Integrated Circuits (Behzad Razavi) (2nd edition, 2015)*](https://www.zhihu.com/question/452068235/answer/95164892409).
 
 
 在过去的 40 年里，模拟 CMOS 电路已经从低速、低复杂度、小信号、高电压的拓扑结构发展成为高速、高复杂度、低电压的“混合信号”系统，其中包含了大量数字电路。尽管器件缩放提高了晶体管的本征速度，但集成电路不同部分之间的负面相互作用以及布局和封装中的非理想因素正越来越限制着这类系统的速度和精度，使当今的模拟电路设计深受布局和封装的影响。

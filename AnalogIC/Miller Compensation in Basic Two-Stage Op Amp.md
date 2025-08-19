@@ -74,7 +74,7 @@ eq = expand(eq)
 
 - Paper 1: [Design and Analysis of Miller Compensated Two-Stage Operational Amplifier](https://www.ewadirect.com/proceedings/ace/article/view/17296/pdf), 备用链接 [here](https://www.ewadirect.com/proceedings/ace/article/view/17296)
 - Paper 2: [Design of Two Stage Miller Compensated CMOS Opamp with Nulling Resistor in 90nm Technology](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10527553), 备用 [here](https://ieeexplore.ieee.org/document/10527553)
-- Book: Design of Analog CMOS Integrated Circuits (Razavi) (2nd edition, 2015)
+- Book: Design of Analog CMOS Integrated Circuits (Razavi) (2nd edition, 2017)
 - [知乎 > 模集王小桃: 两级运放的米勒补偿与 Cascode 米勒补偿](https://zhuanlan.zhihu.com/p/10217022358)
 - [知乎 > 模集王小桃: Miller 补偿与 Cascode 补偿的比较与仿真](https://zhuanlan.zhihu.com/p/1906792046129311751)
 - [知乎 > 模集王小桃: 王小桃带你读文献：两级运放的 Cascode 补偿方法](https://zhuanlan.zhihu.com/p/11681962059)

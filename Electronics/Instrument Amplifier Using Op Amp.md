@@ -42,6 +42,8 @@ NE5532 的 $V_{\mathrm{offset}}$ 为 0.5mV (typ.), 要实现较高的测量精�
 
 ## Using Three Op Amp
 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-18-23-40-02_Instrument Amplifier Using Op Amp.png"/></div>
+
 ## References
 
 - [TI: Three Op Amp Instrumentation Amplifier Circuit](https://www.ti.com/lit/an/sboa282a/sboa282a.pdf)

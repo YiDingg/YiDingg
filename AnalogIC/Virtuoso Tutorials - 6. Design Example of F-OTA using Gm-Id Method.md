@@ -5,7 +5,7 @@
 
 
 !> **<span style='color:red'>Attention:</span>**<br>
-注意：本文所使用的 gm-Id 方法是错误的，这会导致对晶体管静态工作点的估计有很大偏差（仅有部分参数基本准确），详见 [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)；正确的 gm-Id 方法请见 [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)。
+注意：本文所使用的 gm-Id 方法是错误的，这会导致对晶体管静态工作点的估计有很大偏差（仅有部分参数基本准确），详见 [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)；正确的 gm-Id 方法请见 [An Introduction to gm-Id Methodology](<AnalogIC/Virtuoso Tutorials - 5. An Introduction to gm-Id Methodology.md>)。
 
 ## 1. Design Specifications
 
@@ -54,7 +54,7 @@ gm-Id 方法的基本设计步骤如下：
 从以上步骤可以看出，我们这里的 gm-Id 设计方法共有三个独立变量 $g_m$, $\frac{g_m}{I_D}$ 和 $L$。当然，也有一种思路是把第三变量 $L$ 用 $\frac{I_D}{a} = \frac{I_D}{\left(\frac{W}{L}\right)}$ 来替代，称为 normalized current; 又或者是引入 $\omega_T = \frac{g_m}{C_{gs}}$ 作为 figure of merit (例如 [this article](https://designers-guide.org/forum/Attachments/Gm_BY_ID_Methodology.pdf)).
 
 
-有关 gm-Id 方法的详细介绍，请参见 [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)。
+有关 gm-Id 方法的详细介绍，请参见 [An Introduction to gm-Id Methodology](<AnalogIC/Virtuoso Tutorials - 5. An Introduction to gm-Id Methodology.md>)。
 
 
 ## 3. Gm-Id Design Example
@@ -481,7 +481,7 @@ SR 是 large-signal 下的非线性行为，将输入信号改为幅度较大的
 GBW 原本是按 60MHz 设计的，但由于我们使用的 transistor 已经算非常大了 (width 和 length 都比较高), 受寄生电容的影响, GBW 稍有下降。另外，上面的 current consumption 并没有考虑 biasing current, 考虑 1:10 的 bias 后总 current 约为 377.0 uA 。
 
 
-这篇文章的主要目的有二，其一是借助一个简单的设计例子，学习 gm-Id 设计方法的流程和思路；其二便是进一步熟悉 cadence 的使用，尤其是如何利用 SKILL 语言修改设置、快速执行某些操作等，这对日后在 cadence 中进行更复杂的设计是非常有帮助的。总的来讲，本次设计在 design idea 上并没有花多少时间，时间主要消耗在了 cadence 的探索、配置文件的修改优化和 SKILL 语言的基本使用上，最终为文章 [How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>) 贡献了相当多的内容。
+这篇文章的主要目的有二，其一是借助一个简单的设计例子，学习 gm-Id 设计方法的流程和思路；其二便是进一步熟悉 cadence 的使用，尤其是如何利用 SKILL 语言修改设置、快速执行某些操作等，这对日后在 cadence 中进行更复杂的设计是非常有帮助的。总的来讲，本次设计在 design idea 上并没有花多少时间，时间主要消耗在了 cadence 的探索、配置文件的修改优化和 SKILL 语言的基本使用上，最终为文章 [How to Use Cadence Efficiently](<AnalogIC/Use Virtuoso Efficiently - 0. How to Use Cadence Virtuoso Efficiently.md>) 贡献了相当多的内容。
 
 
 <!-- ### 5.1  simul.

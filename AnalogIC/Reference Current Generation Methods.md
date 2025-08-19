@@ -8,7 +8,7 @@ Initially published at 22:36 on 2025-06-17 in Beijing.
 
 ### output current
 
-参考 *Design of Analog CMOS Integrated Circuits (Razavi) (2nd edition, 2015)* , 电路基本结构如下：
+参考 *Design of Analog CMOS Integrated Circuits (Razavi) (2nd edition, 2017)* , 电路基本结构如下：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-17-23-51-34_Reference Current Generation Methods.png"/></div>
 

@@ -5,7 +5,7 @@
 
 
 
-## PDK Docs
+## 1. PDK Docs
 
 整个 PDK 所有的文档如下：
 
@@ -19,14 +19,14 @@
 - d
 
 
-## PDK Usage Guide
+## 2. PDK Usage Guide
 
 打开 `PDK_doc\TSMC_DOC_WM\PDK\TSMCN28_PDK_Usage_20190322.pdf` 文件，其目录如下：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-25-00-33-34_Basic Information of TSMC 28nm Process Library.png"/></div>
 
 
-## Devices Information
+## 3. Devices Information
 
 
 
@@ -523,7 +523,7 @@ parasitic_rc_3T      : Parasitic RC device, Please refer to parasitic_rc_UserGui
 
 ```
 
-## Main Devices
+## 4. Main Devices
 
 下面是一些普通设计中常用的 devices:
 - MOSFET:
@@ -570,7 +570,7 @@ parasitic_rc_3T      : Parasitic RC device, Please refer to parasitic_rc_UserGui
  -->
 
 
-## Devices Models
+## 5. Devices Models
 
 <!-- - minimum/maximum MOSFET length and width:
       - d
@@ -587,7 +587,7 @@ parasitic_rc_3T      : Parasitic RC device, Please refer to parasitic_rc_UserGui
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-25-01-11-15_Basic Information of TSMC 28nm Process Library.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-25-01-11-26_Basic Information of TSMC 28nm Process Library.png"/></div>
 
-## Design Rules
+## 6. Design Rules
 
 
 - A1 : Active−Active Spacing
@@ -601,7 +601,7 @@ parasitic_rc_3T      : Parasitic RC device, Please refer to parasitic_rc_UserGui
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-25-19-12-04_Basic Information of TSMC 28nm Process Library.png"/></div>
 
-## Frequently Asked Qu.
+## 7. Frequently Asked Qu.
 
 **问题 1: tsmc28n 工艺库中含有 Mosfets macro device 和 RF_Mosfets, 它们有什么区别，常规设计中应该用谁？用段落回答我，不要 list**
 
@@ -611,7 +611,9 @@ parasitic_rc_3T      : Parasitic RC device, Please refer to parasitic_rc_UserGui
 
 在常规设计中，如果电路工作频率较低 (如数字逻辑或低频模拟电路) ，应优先使用标准 MOSFETs, 因为它们面积更小、成本更低且设计流程成熟。然而，如果设计涉及高频或射频应用 (如 5G、Wi-Fi 或毫米波电路) ，则必须使用 RF_MOSFETs, 以确保性能指标 (如噪声、增益和线性度) 满足要求。选择错误的器件类型可能导致仿真结果与流片实测严重不符，因此在设计初期就应根据应用需求明确选用哪种器件。建议参考 TSMC 的 PDK 文档或与 Foundry 支持团队沟通，以确认具体器件的设计规范。
 
-## Simulated MOSFET
+## 8. gm/Id Simulation 
+
+### 8.1 summary of I_nor
 
 - `nch_mac`, `pch_mac`:
     - vgs_max = 990 mV
@@ -620,10 +622,21 @@ parasitic_rc_3T      : Parasitic RC device, Please refer to parasitic_rc_UserGui
     - W_range = (90.000 nm, 2700.1 nm)
     - a_range = (0.1, 100)
 
+分别设置 vds = 125 mV, 225 mV 进行仿真，得到归一化电流 I_nor 结果如下 (总结成表方便查阅)：
+
+<div class='center'>
+
+**Normalized current I_nor = Id/a of `nch_mac` in tsmcN28 process library.**
+<br>
+Note that for NMOS: I_nor and length have a <span style='color:red'> positive </span> correlation.
+<br>
+But for PMOS: I_nor and length have a <span style='color:blue'> negative </span> correlation. 
+</div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-18-16-27-29_202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N.png"/></div>
 
 
-
-### nch_mac (Vds = 225 mV)
+### 8.2 nch_mac (Vds = 225 mV)
 
 - L from 60n to 600n (19 steps)
 - a from 2 to 22 (5 steps)
@@ -637,8 +650,8 @@ parasitic_rc_3T      : Parasitic RC device, Please refer to parasitic_rc_UserGui
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-19-26-26_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-19-27-03_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
 
-### using ADE XL
+<!-- ### 8.3 using ADE XL
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-23-14-14_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
 
-### pch_mac (Vds = 225 mV)
+### 8.4 pch_mac (Vds = 225 mV) -->

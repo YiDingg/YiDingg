@@ -45,7 +45,7 @@
  -->
 
 
-具体的版图教程见 [here (待补充)]()。简洁起见，我们就不添加什么 dummy 了，最终效果如下：
+具体的版图教程见 [here](<AnalogIC/Virtuoso Tutorials - 7. Cadence Layout Tutorials.md>)。简洁起见，我们就不添加什么 dummy 了，最终效果如下：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-21-18-17-21_DRC-LVS-PEX Example in tsmcN28.png"/></div>
 
 

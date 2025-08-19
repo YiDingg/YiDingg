@@ -6,7 +6,7 @@ Initially published at 10:32 on 2025-06-17 in Beijing.
 
 ## 0. Introduction
 
-本文，我们借助 [gm-Id](<Electronics/An Introduction to gm-Id Methodology.md>) 方法，使用台积电 180nm CMOS 工艺库 `tsmc18rf` 来设计一个 **basic two-stage op amp with nulling-Miller compensation** 。暂时只作前仿练习，未进行 layout 和 post-layout simulation, 之后如果有需求再补上这一部分。
+本文，我们借助 [gm-Id](<AnalogIC/Virtuoso Tutorials - 5. An Introduction to gm-Id Methodology.md>) 方法，使用台积电 180nm CMOS 工艺库 `tsmc18rf` 来设计一个 **basic two-stage op amp with nulling-Miller compensation** 。暂时只作前仿练习，未进行 layout 和 post-layout simulation, 之后如果有需求再补上这一部分。
 
 
 运放主要指标如下：
@@ -27,7 +27,7 @@ Initially published at 10:32 on 2025-06-17 in Beijing.
 
 ### 1.1 theoretical formulas
 
-理论参考公式如下图 (2025.06.18), 后续如有更新会放在 [Design Sheet of Basic Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogICDesigns/Design Sheet of Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>).
+理论参考公式如下图 (2025.06.18), 后续如有更新会放在 [Design Sheet for Basic Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogICDesigns/Design Sheet for Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>).
 
 
 

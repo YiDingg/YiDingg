@@ -4,6 +4,9 @@
 > [!Note|style:callout|label:Infor]
 > Initially published at 21:16 on 2025-06-26 in Beijing.
 
+参考教材：[*Design of Analog CMOS Integrated Circuits (Behzad Razavi) (2nd edition, 2017)*](https://www.zhihu.com/question/452068235/answer/95164892409)
+
+## Introduction
 
 本章主要探讨了 CMOS Oscillators (振荡器) 的分析与设计，更具体地说是压控振荡器 (VCO, voltage-controlled oscillator)。我们先回顾反馈系统中的振荡现象，然后介绍 ring oscillator (环形振荡器) 和 LC 振荡器，并讨论改变振荡频率的方法 (VCO)。最后给出 VCO 的数学模型，该模型将在第 16 章中用于锁相环 (PLL) 的分析。
 

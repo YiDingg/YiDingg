@@ -3,7 +3,7 @@
 > [!Note|style:callout|label:Infor]
 > Initially published at 19:03 on 2025-07-14 in Beijing.
 
-参考教材：[*Design of Analog CMOS Integrated Circuits (Behzad Razavi) (2nd edition, 2015)*](https://www.zhihu.com/question/452068235/answer/95164892409)
+参考教材：[*Design of Analog CMOS Integrated Circuits (Behzad Razavi) (2nd edition, 2017)*](https://www.zhihu.com/question/452068235/answer/95164892409)
 
 ## 1. General Considerations
 

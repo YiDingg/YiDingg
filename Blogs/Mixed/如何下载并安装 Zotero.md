@@ -1,4 +1,4 @@
-# Zotero
+# 如何下载并安装 Zotero
 
 > [!Note|style:callout|label:Infor]
 Initially published at 14:32 on 2024-11-15 in Beijing.

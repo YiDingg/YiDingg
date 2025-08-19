@@ -107,7 +107,7 @@ $$
 
 ## Method Proof
 
->论文中并没有给出定理的证明过程，读者可在其他论文中找到。我们这里参考 *Design of Analog CMOS Integrated Circuits (Razavi) (2nd Edition, 2015)* page-210.
+>论文中并没有给出定理的证明过程，读者可在其他论文中找到。我们这里参考 *Design of Analog CMOS Integrated Circuits (Razavi) (2nd edition, 2017)* page-210.
 
 设系统含有 $m$ 个零点 $z_1, ..., z_m$ 和 $n$ 个极点 $p_1, ..., p_n$, 假设零点频率很高，可以忽略不计，则系统传递函数近似写为：
 

@@ -259,7 +259,7 @@ end
 
 ### strong inversion
 
-还是以文章 [Design Example of F-OTA using Gm-Id Method](<Electronics/Design Example of F-OTA using Gm-Id Method.md>) 的五管 OTA 为例。在本次示例，我们设置了五个 performance parameters, 它们分别是：
+还是以文章 [Design Example of F-OTA using Gm-Id Method](<AnalogIC/Virtuoso Tutorials - 6. Design Example of F-OTA using Gm-Id Method.md>) 的五管 OTA 为例。在本次示例，我们设置了五个 performance parameters, 它们分别是：
 
 ``` bash
 self gain (gm*rO)              = waveVsWave(?x OS("/NMOS" "gmoverid") ?y OS("/NMOS" "self_gain"))

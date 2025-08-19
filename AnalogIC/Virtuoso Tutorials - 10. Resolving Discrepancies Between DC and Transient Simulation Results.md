@@ -7,7 +7,7 @@
 
 ### 1.1 Issue Origin
 
-起因是在最近 “科研实践一” 的 [Low-Voltage BGR](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>) 设计中，发现 dc-sweep-temperature 的仿真结果与 tran 得到的结果明显不同。对于要进行 ac 小信号分析的情况，解决方案已经在文章 [Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 7. Using Tran Result as the DC Operation Point for AC Simulation.md>) 中介绍过。但现在，我们需要对温度进行直流扫描，依靠上一篇文章的方案并不能解决，因此，本文就来介绍如何 “从根源” 上解决这个问题。
+起因是在最近 “科研实践一” 的 [Low-Voltage BGR](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>) 设计中，发现 dc-sweep-temperature 的仿真结果与 tran 得到的结果明显不同。对于要进行 ac 小信号分析的情况，解决方案已经在文章 [Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 9. Using Tran Result as the DC Operation Point for AC Simulation.md>) 中介绍过。但现在，我们需要对温度进行直流扫描，依靠上一篇文章的方案并不能解决，因此，本文就来介绍如何 “从根源” 上解决这个问题。
 
 ### 1.2 Problem Description
 
@@ -45,7 +45,7 @@
  | (3) 在 tran 仿真中保存特定时刻 (例如结束时) 的电路状态，作为 dc 仿真的初始值 | 使 DC 仿真具有正确的工作状态 | 十分有效但是比较麻烦，详见这个问答 [微波 EDA 网 > 基准电路瞬态仿真和 DC 扫描温度结果不一致](http://ee.mweda.com/ask/402108.html) |
 </div>
 
-## 2. Solution 2 Implementation
+## 2. Solution 2
 
 我们先参考这个问答 [EETOP > virtuoso 如何设置某个节点的初始电压值](https://bbs.eetop.cn/thread-663990-1-1.html) 中给出的步骤试了下，发现完全没有效果。于是将步骤稍作修改：在 `Simulation > Convergence Aids > Node Set` 中找到想要有初始值的节点 (而不是在 `Convergence Aids > Initial Condition` 中)。为了使结果充分收敛，我们需要让运放成功进入负反馈回路，这可以通过设置 Vx = VDD 且 Vy = 0 得到 (Vin- = Vx, Vin+ = Vy) 做到, 也即设置 MM3_d = VDD 而 MM4_d = 0, 如下图:
 
@@ -65,12 +65,11 @@
 
 
 
-## 3. Solution 3 Implementation
+## 3. Solution 3
 
 参考这篇文章 [一种设置瞬态仿真初始态的方法](https://zhuanlan.zhihu.com/p/24416542)，我们这里略过。
 
 
-## References
 
 
 

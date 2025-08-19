@@ -3,8 +3,8 @@
 > [!Note|style:callout|label:Infor]
 > Initially published at 15:31 on 2025-08-08 in Lincang.
 
-参考教材：[*Design of Analog CMOS Integrated Circuits (Behzad Razavi) (2nd edition, 2015)*](https://www.zhihu.com/question/452068235/answer/95164892409)
-阅读本文需要部分数电知识基础，详见文章：[](<>)
+参考教材：[*Design of Analog CMOS Integrated Circuits (Behzad Razavi) (2nd edition, 2017)*](https://www.zhihu.com/question/452068235/answer/95164892409)
+阅读本文需要部分数电知识基础，详见文章：[Pre-requisite Digital Electronics Knowledge for PLL](<AnalogIC/Prerequisite Digital Electronics Knowledge for PLL.md>)
 
 
 ## Introduction

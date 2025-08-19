@@ -4,7 +4,7 @@
 > Initially published at 15:03 on 2025-06-02 in Beijing.
 
 !> **<span style='color:red'>Attention:</span>**<br>
-注意：本文所使用的 gm-Id 方法是错误的，这会导致对晶体管静态工作点的估计有很大偏差（仅有部分参数基本准确），详见 [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)；正确的 gm-Id 方法请见 [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)。
+注意：本文所使用的 gm-Id 方法是错误的，这会导致对晶体管静态工作点的估计有很大偏差（仅有部分参数基本准确），详见 [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)；正确的 gm-Id 方法请见 [An Introduction to gm-Id Methodology](<AnalogIC/Virtuoso Tutorials - 5. An Introduction to gm-Id Methodology.md>)。
 
 
 ## 0. Introduction
@@ -12,9 +12,9 @@
 本文，我们基于 gm-Id 方法，在 MATLAB 的辅助下，使用台积电 180nm CMOS 工艺库 `tsmc18rf` 设计一个 **PMOS-input single-ended output folded-cascode stage**, 并进行比较充分的前仿验证。
 
 开始设计之前，可以先回顾一下这几篇文章：
-- [An Introduction to gm-Id Methodology](<Electronics/An Introduction to gm-Id Methodology.md>)
-- [Design Example of F-OTA using Overdrive and Gm-Id Methods](<Electronics/Design Example of F-OTA using Gm-Id Method.md>)
-- [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<Electronics/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)
+- [An Introduction to gm-Id Methodology](<AnalogIC/Virtuoso Tutorials - 5. An Introduction to gm-Id Methodology.md>)
+- [Design Example of F-OTA using Overdrive and Gm-Id Methods](<AnalogIC/Virtuoso Tutorials - 6. Design Example of F-OTA using Gm-Id Method.md>)
+- [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<AnalogIC/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)
 
 主要设计指标如下：
 
@@ -674,7 +674,7 @@ $$
 
 ### 3.4 dc gain correction
 
-大概有 76 dB 的最高增益，这仍然无法达到要求，这是为什么呢？参考文章 [How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>) 中的 tip, 将晶体管的 self_gain 等静态工作点在 schematic 中直接标出，结果如下：
+大概有 76 dB 的最高增益，这仍然无法达到要求，这是为什么呢？参考文章 [How to Use Cadence Efficiently](<AnalogIC/Use Virtuoso Efficiently - 0. How to Use Cadence Virtuoso Efficiently.md>) 中的 tip, 将晶体管的 self_gain 等静态工作点在 schematic 中直接标出，结果如下：
 
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-04-23-12-17_Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.png"/></div>
  -->
@@ -970,4 +970,4 @@ $$
 </span>
 </div>
 
-本文的篇幅已经相当长了，因此本次设计的总结将在另一篇文章 [this article](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>) 中进行。事实上，我们在本次设计 (以及上一次 [F-OTA](<Electronics/Design Example of F-OTA using Gm-Id Method.md>) 的设计) 中，都犯了一个非常根本的错误：使用了错误的 gm-Id 设计流程，
+本文的篇幅已经相当长了，因此本次设计的总结将在另一篇文章 [this article](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>) 中进行。事实上，我们在本次设计 (以及上一次 [F-OTA](<AnalogIC/Virtuoso Tutorials - 6. Design Example of F-OTA using Gm-Id Method.md>) 的设计) 中，都犯了一个非常根本的错误：使用了错误的 gm-Id 设计流程，

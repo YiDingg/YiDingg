@@ -3,6 +3,9 @@
 > [!Note|style:callout|label:Infor]
 > Initially published at 15:56 on 2025-04-30 in Beijing.
 
+参考教材：[*Design of Analog CMOS Integrated Circuits (Behzad Razavi) (2nd edition, 2017)*](https://www.zhihu.com/question/452068235/answer/95164892409)
+
+
 ## Intro
 
 本文对 *Design of Analog CMOS Integrated Circuits (Razavi) (Second Edition, 2015)* 第八章 "Chapter 8: Feedback" 的内容作了简要总结，并讨论了我对书中各种反馈分析方法的理解。

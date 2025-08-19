@@ -16,7 +16,7 @@ Initially published at 02:01 on 2025-07-17 in Beijing.
 
 ## 0. Introduction
 
-本文，我们借助 [gm-Id](<Electronics/An Introduction to gm-Id Methodology.md>) 方法，使用台积电 28nm CMOS 工艺库 `tsmcN28` 来完整地设计一个 **basic two-stage op amp with nulling-Miller compensation**, 需要根据工艺性能自行确定一部分关键指标， **<span style='color:red'> 并完成前仿、版图、验证和后仿工作。 </span>** 设计流程参考上次 180nm CMOS 中所设计的运放： [A Basic Two-Stage Nulling-Miller Compensation Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR at 5pF Load (Simulated 84.35 dB, 55.75 MHz and +56.31/-45.35 V/us)](<AnalogICDesigns/tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md>)
+本文，我们借助 [gm-Id](<AnalogIC/Virtuoso Tutorials - 5. An Introduction to gm-Id Methodology.md>) 方法，使用台积电 28nm CMOS 工艺库 `tsmcN28` 来完整地设计一个 **basic two-stage op amp with nulling-Miller compensation**, 需要根据工艺性能自行确定一部分关键指标， **<span style='color:red'> 并完成前仿、版图、验证和后仿工作。 </span>** 设计流程参考上次 180nm CMOS 中所设计的运放： [A Basic Two-Stage Nulling-Miller Compensation Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR at 5pF Load (Simulated 84.35 dB, 55.75 MHz and +56.31/-45.35 V/us)](<AnalogICDesigns/tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md>)
 
 
 
@@ -46,7 +46,7 @@ Initially published at 02:01 on 2025-07-17 in Beijing.
 
 ### 1.1 theoretical formulas
 
-理论参考公式如下图 (2025.07.17), 后续如有更新会放在 [Design Sheet of Basic Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogICDesigns/Design Sheet of Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>).
+理论参考公式如下图 (2025.07.17), 后续如有更新会放在 [Design Sheet for Basic Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogICDesigns/Design Sheet for Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>).
 
 
 

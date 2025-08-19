@@ -68,7 +68,7 @@ Layout (版图设计) 是 IC 设计的核心环节，主要包括下面几个步
 
 ### 1.2 layout example
 
-关于 layout 的具体步骤和示例，包括后续 DRC, LVS, PEX 和 Post-Layout Simulation (后仿) 等操作，详见教程 [Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 6. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)。
+关于 layout 的具体步骤和示例，包括后续 DRC, LVS, PEX 和 Post-Layout Simulation (后仿) 等操作，详见教程 [Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 8. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)。
 
 
 ## 2. Keyboard Shortcuts
@@ -129,7 +129,7 @@ Layout 可能用到的一些图标如下 (from [this article](https://people.eec
     - `m`: 添加金属连线
 
 
-下面的代码更新于 2025.07.19, 最新源码见 [How to Use Cadence Virtuoso Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>).
+下面的代码更新于 2025.07.19, 最新源码见 [How to Use Cadence Virtuoso Efficiently](<AnalogIC/Use Virtuoso Efficiently - 0. How to Use Cadence Virtuoso Efficiently.md>).
 ``` bash
 hiSetBindKeys("Layout" list(
     list("None<Btn4Down>" "geScroll(nil \"n\" nil)")            ; 鼠标滚轮上滑, 界面上移:

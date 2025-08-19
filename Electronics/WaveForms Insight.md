@@ -3,6 +3,10 @@
 > [!Note|style:callout|label:Infor]
 > Initially published at 14:59 on 2025-05-09 in Beijing.
 
+官方网站: https://digilent.com/reference/software/waveforms/waveforms-3/start
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-19-00-00-22_WaveForms Insight.png"/></div>
+
 ## Formula inversion
 
 Formula inversion: 

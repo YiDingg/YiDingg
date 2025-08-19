@@ -8,7 +8,7 @@
 本文以 Cadence IC618 + `smic18mmrf` 工艺库为例，仿真一个简单的 CMOS inverter, 由此介绍 Cadence IC (Virtuoso) 的基本使用流程。 
 
 - 安装教程: [How to Install Cadence IC618](<AnalogIC/Virtuoso Tutorials - 1. How to Install Cadence IC618.md>)
-- 使用教程: [How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)
+- 使用教程: [How to Use Cadence Efficiently](<AnalogIC/Use Virtuoso Efficiently - 0. How to Use Cadence Virtuoso Efficiently.md>)
 
 
 ## Simulation Steps
@@ -57,5 +57,5 @@
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-18-32-17_Simulate CMOS Inverter in Cadence IC618 (Virtuoso).png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-18-35-17_Simulate CMOS Inverter in Cadence IC618 (Virtuoso).png"/></div>
 
-我们这里的仿真背景是黑色的，也可以改为白色，方法是：`初始界面 > Options > Cdsenv Editor > viva > graphFrame`, 然后把 `viva.graphFrame` 的 `background` 改为 `white` 即可 (默认是 `black`)。修改后记得保存，否则下次再用时又变为默认值了。其它利于提高仿真效率的设置也可以参考文章 [How to Use Cadence Efficiently](<AnalogIC/How to Use Cadence Virtuoso Efficiently.md>)。
+我们这里的仿真背景是黑色的，也可以改为白色，方法是：`初始界面 > Options > Cdsenv Editor > viva > graphFrame`, 然后把 `viva.graphFrame` 的 `background` 改为 `white` 即可 (默认是 `black`)。修改后记得保存，否则下次再用时又变为默认值了。其它利于提高仿真效率的设置也可以参考文章 [How to Use Cadence Efficiently](<AnalogIC/Use Virtuoso Efficiently - 0. How to Use Cadence Virtuoso Efficiently.md>)。
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-05-21-20-22-00_Simulate CMOS Inverter in Cadence IC618 (Virtuoso).png"/></div>
