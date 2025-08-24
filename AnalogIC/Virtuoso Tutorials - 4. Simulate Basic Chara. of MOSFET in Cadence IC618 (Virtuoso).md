@@ -58,6 +58,7 @@ Cadence 安装教程、实用技巧和仿真示例等详见 [How to Use Cadence 
 
 下面是与 Cadence Virtuoso 相关的一些资料/教程：
 
+- [University of Southern California > Cadence Virtuoso Tutorial (version 6.1, Oct, 2015)](https://ee.usc.edu/~redekopp/ee209/virtuoso/setup/USCVLSI-VirtuosoTutorial.pdf)
 - [西安交通大学 Cadence 入门教程 (2006.07.19)](https://picture.iczhiku.com/resource/eetop/whiRzEWyJywsSmBc.pdf)
 - [Cadence Official > Cadence Course Learning Maps](https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/training/learning-maps.pdf)
 

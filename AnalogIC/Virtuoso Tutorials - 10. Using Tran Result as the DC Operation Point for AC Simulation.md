@@ -1,4 +1,4 @@
-# Using Tran Result as the DC Operation Point for AC Simulation
+# Using Transient Operation Point for AC Simulation
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 23:27 on 2025-07-29 in Beijing.
@@ -6,7 +6,10 @@
 
 ## 1. 背景
 
-起因是在最近 “科研实践一” 的 [Low-Voltage BGR](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>) 设计中，发现后仿结果中 dc opt 与 tran 得到的直流工作点不一致。具体而言, dc opt 得到的 V_BG ≈ 430 mV, 而 tran 得到的 V_BG ≈ 520 mV, 如下图所示：
+起因是在最近 “科研实践一” 的 [Low-Voltage BGR](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>) 设计中，需要仿真 BGR 的 PSRR 情况，但是发现后仿结果中 dc opt (dc operation point) 得到的直流工作点异常，导致 PSRR 结果不对。
+
+
+经过测试, dc opt 仿真下 BGR 无法正常启动，但瞬态仿真下可以正常启动。具体而言, dc opt 得到的 V_BG ≈ 430 mV, 而 tran 得到的 V_BG ≈ 520 mV, 如下图所示：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-29-23-36-41_Virtuoso Tutorials - 7. Using Tran Result as the DC Operation Point for AC Simulation.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-29-23-32-00_Virtuoso Tutorials - 7. Using Tran Result as the DC Operation Point for AC Simulation.png"/></div>
@@ -15,10 +18,7 @@
 **<span style='color:red'> you must believe tran simulation result. </span>**
 
 
-
-## 2. 具体操作
-
-### 2.1 瞬态工作点的 ac 仿真 (正确结果)
+## 2. 在瞬态工作点进行 ac 仿真 (正确结果)
 
 在进行瞬态工作点的 ac 仿真之前，先进行一次 tran 仿真，找到我们需要的时间点 (例如电路状态充分收敛之后的某个时刻)。然后：
 - 打开 Tran 仿真进入 Options
@@ -36,9 +36,9 @@
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-30-00-07-30_Virtuoso Tutorials - 7. Using Tran Result as the DC Operation Point for AC Simulation.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-30-00-15-36_Virtuoso Tutorials - 7. Using Tran Result as the DC Operation Point for AC Simulation.png"/></div>
 
-### 2.2 直流工作点的 ac 仿真 (错误结果)
+## 3. 在 dc opt 进行 ac 仿真 (错误结果)
 
-为了方便对比，我们再给出直接用 dc opt 作为 ac 仿真的直流工作点的错误结果：
+为了方便对比，我们给出用 dc opt 作为 ac 仿真直流工作点所得到的**错误结果**：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-30-00-20-23_Virtuoso Tutorials - 7. Using Tran Result as the DC Operation Point for AC Simulation.png"/></div>
 
 

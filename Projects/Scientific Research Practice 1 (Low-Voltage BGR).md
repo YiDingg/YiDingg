@@ -60,6 +60,13 @@ Initially published at 18:48 on 2025-07-14 in Beijing.
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-30-00-40-03_Scientific Research Practice 1 (Low-Voltage BGR).png"/></div>
 
 
+## Relevant Resources
+
+下面是与本项目主题相关的一些资源，在设计过程中不一定有所参考，但也陈列于此，以期对读者有所帮助：
+
+- [知乎 > BGR 和曲率补偿前仿示例 (前仿性能较好)](https://zhuanlan.zhihu.com/p/1937524796410794602?share_code=1gIKCpRuJqH6U&utm_psn=1937916141822543378)
+- [知乎 > 三个 BGR 前仿例子](https://zhuanlan.zhihu.com/p/571897208?share_code=1cox3GGW9rn1Q&utm_psn=1935011649384850527)
+- [知乎 > BGR 设计与仿真全流程](https://www.zhihu.com/question/59563077/answer/3394528600)
 
 
 ## References

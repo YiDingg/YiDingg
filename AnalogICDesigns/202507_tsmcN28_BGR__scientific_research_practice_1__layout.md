@@ -528,7 +528,7 @@ stand-by current = 351.1 uA, maximum current = 464.3 uA.
 
 ### 4.7 postscript: mc simul after dc opt correction
 
-发现 dc opt 得到的工作状态与 tran 得到的工作状态不一致，于是按文章 [Resolving Discrepancies Between DC and Transient Simulation Results](<AnalogIC/Virtuoso Tutorials - 10. Resolving Discrepancies Between DC and Transient Simulation Results.md>) 中的方法设置初始状态后重新运行蒙卡仿真，结果如下：
+发现 dc opt 得到的工作状态与 tran 得到的工作状态不一致，于是按文章 [Resolving Discrepancies Between DC and Transient Simulation Results](<AnalogIC/Virtuoso Tutorials - 11. Resolving Discrepancies Between DC and Transient Simulation Results.md>) 中的方法设置初始状态后重新运行蒙卡仿真，结果如下：
 
 
 设置 `Vx = MM3_d = VDD` 和 `Vy = MM4_d = 0`, 结果可以正确收敛，进行 samples = 20 的蒙卡测试：

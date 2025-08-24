@@ -9,7 +9,9 @@ Initially published at 13:57 on 2025-08-16 in Lincang.
 
 ## 1. Create Verilog-A Module
 
-Verilog-AMS 模数混合仿真的教程见 [Virtuoso Tutorials - 11. Behavior-Level Simulation using Verilog-A in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 11. Behavior-Level Simulation using Verilog-A in Cadence IC618.md>), 我们直接在网站 [The Designer's Guide Community > Verilog-AMS Models](https://designers-guide.org/verilog-ams/index.html) 下载所需模型，然后对模型参数作适当修改，修改后的代码如下：
+Verilog-AMS 模数混合仿真的教程见 [Virtuoso Tutorials - 11. Behavior-Level Simulation using Verilog-A in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 12. Behavior-Level Simulation using Verilog-A in Cadence IC618.md>), 我们直接在网站 [The Designer's Guide Community > Verilog-AMS Models](https://designers-guide.org/verilog-ams/index.html) 下载所需模型，然后对模型参数作适当修改。下面几个小节展示了修改后的代码。
+
+当然，读者也可以参考这篇资料 [Cadence_PLL_Jitter_measurment_in_Spectre.pdf](https://www.writebug.com/static/uploads/2025/8/22/705f40616dd3afd7796ddfbe1d5b66d8.pdf) 中 page.21 给出的各模块代码。
 
 
 ### 1.1 PFD + CP

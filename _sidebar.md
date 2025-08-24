@@ -52,19 +52,22 @@
         - [3. How to Add New Process Libraries in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 3. How to Add New Process Libraries in Cadence IC618.md>)<!-- x -->
         - [4. Simulate Chara. of MOSFETs in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 4. Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)<!-- x -->
         - [5. Detailed Explanation of the gm/Id Methodology](<AnalogIC/Virtuoso Tutorials - 5. An Introduction to gm-Id Methodology.md>)<!-- x -->
-        - [6. Design Example of F-OTA using Gm-Id Methodology](<AnalogIC/Virtuoso Tutorials - 6. Design Example of F-OTA using Gm-Id Method.md>)<!--  -->
+        - [6. Design Example of F-OTA using Gm-Id Methodology](<AnalogIC/Virtuoso Tutorials - 6. Design Example of F-OTA using Gm-Id Method.md>)<!-- x -->
         - [7. Cadence Layout Tutorials](<AnalogIC/Virtuoso Tutorials - 7. Cadence Layout Tutorials.md>)<!--  -->
-        - [8. Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 8. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
-        - [9. Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 9. Using Tran Result as the DC Operation Point for AC Simulation.md>)
-        - [10. Resolving Discrepancies Between DC and Transient Simulation Results](<AnalogIC/Virtuoso Tutorials - 10. Resolving Discrepancies Between DC and Transient Simulation Results.md>)
-        - [11. Behavior-Level Simulation using Verilog-A in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 11. Behavior-Level Simulation using Verilog-A in Cadence IC618.md>)
+        - [8. Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 8. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)<!--  -->
+        - [9. Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<AnalogIC/Virtuoso Tutorials - 9. Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)<!--  -->
+        - [10. Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 10. Using Tran Result as the DC Operation Point for AC Simulation.md>)
+        - [11. Resolving Discrepancies Between DC and Transient Simulation Results](<AnalogIC/Virtuoso Tutorials - 11. Resolving Discrepancies Between DC and Transient Simulation Results.md>)
+        - [12. Behavior-Level Simulation using Verilog-A in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 12. Behavior-Level Simulation using Verilog-A in Cadence IC618.md>)
+        - [13. Periodical Steady-State and Phase Noise Simulation](<AnalogIC/Virtuoso Tutorials - 13. VCO and PLL Simulation (Periodical Steady-State and Phase Noise).md>)
 
 
     - Use Virtuoso Efficiently
         - [0. How to Use Cadence Efficiently](<AnalogIC/Use Virtuoso Efficiently - 0. How to Use Cadence Virtuoso Efficiently.md>)<!-- 这一篇不发在知乎或公众号上, 而是拆分为多篇文章来发 (相当于汇总) -->
         - [1. Shortcuts and Initialization](<AnalogIC/Use Virtuoso Efficiently - 1. Shortcuts and Initialization.md>)<!-- x -->
         - [2. File Transfer using Shared Folders](<AnalogIC/Use Virtuoso Efficiently - 2. File Transfer using Shared Folders.md>)<!--  -->
-        - [3. ]()
+        - [3. Decorate Your Library Manager](<AnalogIC/Use Virtuoso Efficiently - 3. Decorate Your Library Manager.md>)
+        - [4. Speed Up Your Simulation](<AnalogIC/Use Virtuoso Efficiently - 4. Speed Up Your Simulation.md>)
 
         <!--     - ADE Assembler Tutorials
                 - [0. Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/ADE Assembler - 0. How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)
@@ -84,6 +87,7 @@
 
 
     - Analog IC Blogs (2025, 33 items)
+        - [Jitter and Phase Noise in Mixed-Signal Circuits](<AnalogIC/Jitter and Phase Noise in Mixed-Signal Circuits.md>)
         - [PLL Behavior-Level Simulation using Cadence IC618](<AnalogIC/PLL Behavior-Level Simulation using Cadence IC618.md>)
         - [PLL System-Level Simulation using LTspice](<AnalogIC/PLL System-Level Simulation using LTspice.md>)
         - [Collection of Typical PLL Modules (PFD, CP, LPF, VCO, FD)](<AnalogIC/Implementation Collection of Typical PLL Modules (PFD, CP, LPF, VCO, FD).md>)

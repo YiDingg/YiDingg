@@ -7,7 +7,7 @@
 
 ### 1.1 Issue Origin
 
-起因是在最近 “科研实践一” 的 [Low-Voltage BGR](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>) 设计中，发现 dc-sweep-temperature 的仿真结果与 tran 得到的结果明显不同。对于要进行 ac 小信号分析的情况，解决方案已经在文章 [Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 9. Using Tran Result as the DC Operation Point for AC Simulation.md>) 中介绍过。但现在，我们需要对温度进行直流扫描，依靠上一篇文章的方案并不能解决，因此，本文就来介绍如何 “从根源” 上解决这个问题。
+起因是在最近 “科研实践一” 的 [Low-Voltage BGR](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>) 设计中，发现 dc-sweep-temperature 的仿真结果与 tran 得到的结果明显不同。对于要进行 ac 小信号分析的情况，解决方案已经在文章 [Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 10. Using Tran Result as the DC Operation Point for AC Simulation.md>) 中介绍过。但现在，我们需要对温度进行直流扫描，依靠上一篇文章的方案并不能解决，因此，本文就来介绍如何 “从根源” 上解决这个问题。
 
 ### 1.2 Problem Description
 
