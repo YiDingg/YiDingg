@@ -28,7 +28,7 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C528%20hrs%2038%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C531%20hrs%2049%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.6%20million%20lines%20of%20code-blue)
 
@@ -57,11 +57,12 @@ Sunday                   208 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 44 hrs 12 mins      █████████████████████████   99.12 % 
-Other                    23 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   00.88 % 
+Markdown                 39 hrs 3 mins       ████████████████████████░   97.92 % 
+TeX                      38 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   01.60 % 
+Other                    11 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   00.48 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               44 hrs 35 mins      █████████████████████████   100.00 % 
+GH.YiDingg               39 hrs 53 mins      █████████████████████████   100.00 % 
 ```
 
 **I Mostly Code in C** 
@@ -77,7 +78,7 @@ TypeScript               1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2025.08.24 18:44 UTC
+ Last Updated on 2025.08.25 18:47 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
