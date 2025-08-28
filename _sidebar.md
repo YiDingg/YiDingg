@@ -53,10 +53,10 @@
         - [4. Simulate Chara. of MOSFETs in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 4. Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso).md>)<!-- x -->
         - [5. Detailed Explanation of the gm/Id Methodology](<AnalogIC/Virtuoso Tutorials - 5. An Introduction to gm-Id Methodology.md>)<!-- x -->
         - [6. Design Example of F-OTA using Gm-Id Methodology](<AnalogIC/Virtuoso Tutorials - 6. Design Example of F-OTA using Gm-Id Method.md>)<!-- x -->
-        - [7. Cadence Layout Tutorials](<AnalogIC/Virtuoso Tutorials - 7. Cadence Layout Tutorials.md>)<!--  -->
+        - [7. Cadence Layout Tutorials](<AnalogIC/Virtuoso Tutorials - 7. Cadence Layout Tutorials.md>)<!-- x -->
         - [8. Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 8. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)<!--  -->
         - [9. Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<AnalogIC/Virtuoso Tutorials - 9. Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)<!--  -->
-        - [10. Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 10. Using Tran Result as the DC Operation Point for AC Simulation.md>)
+        - [10. Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 10. Using Tran Result as the DC Operation Point for AC Simulation.md>)<!--  -->
         - [11. Resolving Discrepancies Between DC and Transient Simulation Results](<AnalogIC/Virtuoso Tutorials - 11. Resolving Discrepancies Between DC and Transient Simulation Results.md>)
         - [12. Behavior-Level Simulation using Verilog-A in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 12. Behavior-Level Simulation using Verilog-A in Cadence IC618.md>)
         - [13. Periodical Steady-State and Phase Noise Simulation](<AnalogIC/Virtuoso Tutorials - 13. VCO and PLL Simulation (Periodical Steady-State and Phase Noise).md>)
@@ -84,16 +84,17 @@
         - [Razavi CMOS - Chapter 7. Noise](<AnalogIC/Razavi CMOS - Chapter 7. Noise.md>)<!--  -->
         - [Razavi CMOS - Chapter 8. Negative Feedback](<AnalogIC/Razavi CMOS - Chapter 8. Negative Feedback.md>)<!--  -->
 
-
+    - Digital Signal Processing
+        - [DSP - 0. Preparations](<Notes/DSP (Digital Signal Processing)/DSP - 0. Preparations.md>)
 
     - Analog IC Blogs (2025, 33 items)
+        - [Basics of Clock Data Recovery (CDR)](<AnalogIC/Basics of Clock Data Recovery (CDR).md>)
         - [Jitter and Phase Noise in Mixed-Signal Circuits](<AnalogIC/Jitter and Phase Noise in Mixed-Signal Circuits.md>)
         - [PLL Behavior-Level Simulation using Cadence IC618](<AnalogIC/PLL Behavior-Level Simulation using Cadence IC618.md>)
         - [PLL System-Level Simulation using LTspice](<AnalogIC/PLL System-Level Simulation using LTspice.md>)
         - [Collection of Typical PLL Modules (PFD, CP, LPF, VCO, FD)](<AnalogIC/Implementation Collection of Typical PLL Modules (PFD, CP, LPF, VCO, FD).md>)
         - [Prerequisite Digital Electronics Knowledge for PLL](<AnalogIC/Prerequisite Digital Electronics Knowledge for PLL.md>)
         - [Use Virtuoso Efficiently - 2. File Transfer using Shared Folders](<AnalogIC/Use Virtuoso Efficiently - 2. File Transfer using Shared Folders.md>)
-        - [Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 8. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)
         - [tsmc18rf (TSMC 180nm RF CMOS Process Library)](<AnalogIC/Basic Information of tsmc18rf (TSMC 180nm RF CMOS Process Library).md>)
         - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogIC/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
         - [The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogIC/The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation.md>)
@@ -103,14 +104,13 @@
         - [Design Sheet of Basic Two-Stage Op Amp](<AnalogICDesigns/Design Sheet for Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>)
         - [Miller Compensation in Basic Two-Stage Op Amp](<AnalogIC/Miller Compensation in Basic Two-Stage Op Amp.md>)
         - [Why Is the Simulated SR Lower Than the Theoretical Value](<AnalogIC/Why Is the Simulated SR Lower Than the Theoretical Value.md>)
-        - [Design Sheet for Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet for Folded-Cascode Op Amp.md>)
-        - [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)
+        - [Miller Compensation in Basic Two-Stage Op Amp](<AnalogIC/Miller Compensation in Basic Two-Stage Op Amp.md>)
+        - [Design Sheet for Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet for Folded-Cascode Op Amp.md>)<!--  -->
+        - [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)<!-- zhihu no, weixin no -->
         - [Relationship Between GBW and fp2 in a Two-Order System](<Electronics/Relationship Between GBW and fp2 in a Two-Order System.md>)
-        - [Design of Folded-Cascode Stage using Gm-Id Method in Cadence Virtuoso](<AnalogIC/Virtuoso Tutorials - 9. Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)
-        - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<AnalogIC/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)
+        - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<AnalogIC/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)<!--  -->
         - [Biasing Circuits for Low-Voltage Cascode Current Mirror](<Electronics/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)<!--  -->
         - [Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>)<!-- no -->
-        - [Design Example of F-OTA using Gm-Id Methodology](<AnalogIC/Virtuoso Tutorials - 6. Design Example of F-OTA using Gm-Id Method.md>)<!--  -->
         - [Design Example of Folded-Cascode Stage using LTspice](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>)<!--  -->
         - [Gain Boosting Techniques](<Electronics/[Razavi CMOS] Gain Boosting Techniques.md>)<!--  -->
         - [Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)<!--  -->
@@ -122,7 +122,6 @@
 
     - Electronic Blogs (2025, 69 items)
         - [Test Experiment of The DC-DC Converter Modules](<Electronics/Test Experiment of The DC-DC Converter Modules.md>)
-        - [Miller Compensation in Basic Two-Stage Op Amp](<AnalogIC/Miller Compensation in Basic Two-Stage Op Amp.md>)
         - [LCE 实验记录 (LCE-09 比较器)](<Electronics/LCE 实验记录 (LCE-09 比较器).md>)
         - [Relationship Between GBW and fp2 in a Two-Order System](<Electronics/Relationship Between GBW and fp2 in a Two-Order System.md>)
         - [Op Amp Measurement of LM741CN](<Electronics/Op Amp Measurement of LM741CN.md>)

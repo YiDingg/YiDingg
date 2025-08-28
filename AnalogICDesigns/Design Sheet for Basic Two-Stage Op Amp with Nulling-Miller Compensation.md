@@ -39,11 +39,11 @@ $$
 
 ### 4. CM Input Range
 
-略
+略。
 
 ### 5. Output Swing
 
-略
+略。
 
 ### 6. Biasing Generation
 
@@ -51,15 +51,16 @@ $$
 
 ### 7. Noise
 
-
+略。
 
 ### 8. CMRR 
 
-先求 $A_{CM-DM}$
+略。
 
 ### 9. PSRR 
 
-## Optimizations
+略。
+
 
 
 ## Relevant Resources

@@ -15,7 +15,7 @@ Initially published at 13:33 on 2025-08-19 in Lincang.
 2. 修改仿真精度
 3. 使用 spectre X 或 spectre FX 仿真器: spectre X > MX 兼顾速度和精度, CX 精度高, spectre FX 速度最快
 4. 给虚拟机分配更多 CPU 资源
-
+5. 在特定时间才开启各器件的 noise, 详见这篇文章 [知乎 > Transient noise 仿真在需要的时间点开启 noise](https://zhuanlan.zhihu.com/p/9915953761)
 
 
 

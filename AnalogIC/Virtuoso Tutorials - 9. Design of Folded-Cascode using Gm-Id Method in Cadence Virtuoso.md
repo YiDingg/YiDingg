@@ -20,7 +20,7 @@
 
 <div class='center'>
 
-| DC Gain | GBW | Load | PM | SR | Input CM | Swing | Power Dissipation |
+| DC Gain | GBW | Load | PM | SR | CM Input Range | Swing | Power Dissipation |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
  | 80 dB | 50 MHz | 5 pF | 60° | 50 V/us | - 0.1 V ~ + 1.2 V | 1 V | 600 uA @ 1.8V (1.08 mW) |
 </div>
@@ -33,7 +33,7 @@
 
 <div class='center'>
 
-| DC Gain | GBW | Load | PM | SR | Input CM | Swing | Power Dissipation |
+| DC Gain | GBW | Load | PM | SR | CM Input Range | Swing | Power Dissipation |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
  | 80 dB | 50 MHz | 5 pF | 60° | 50 V/us | - 0.1 V ~ + 1.2 V | 1 V | 600 uA @ 1.8V (1.08 mW) |
 </div>
@@ -267,7 +267,7 @@ $V_{b2}$ 的生成有多种方法，详见 [Biasing Circuits for Low-Voltage Cas
 
 
 
-## 2. Design Example
+## 2. Design Details
 
 上面的几个 subsection 都是在做设计前的准备工作，从这一 subsection 开始，我们便来一步步地确定每一个晶体管的具体尺寸。把上面 **3. Satisfying Specification** 一节中主电路的晶体管要求搬下来：
 - $I_{D5} = I_{D11} = 250 \ \mathrm{uA}$
@@ -594,14 +594,14 @@ $$
 
 | Parameter | Value |
 |:-:|:-:|
- | DC Gain | 81.49 dB @ Vin = 0.9 V in unit buffer |
- | GBW | 45.71 MHz @ Vin = 0.9 V in unit buffer |
- | PM | 57.8° @ Vin = 0.9 V in unit buffer |
+ | DC Gain | 80.27 dB @ Vin = 0.6 V |
+ | GBW | 47.78 MHz @ Vin = 0.6 V in unit buffer |
+ | PM | 52.09° @ Vin = 0.6 V in unit buffer |
  | Power dissipation | 590.3 uA @ 1.8V in unit buffer |
- | Open-loop swing  | (0.442 V, 1.416 V) = 0.974 V @ 60dB <br> (0.532 V, 1.352 V) = 0.820 V @ 74dB |
- | Buffer swing | (0.159 V, 1.416 V) = 1257 mV @ 0.900 slope in unit buffer <br> (0.450 V, 1.276 V) = 826 mV @ 0.999 slope in unit buffer <br> (0.450 V, 1.303 V) 850 mV @ 1e-4 error in unit buffer | 
+ | Open-loop swing  | (0.532 V, 1.352 V) = 0.820 V @ 60dB |
+ | Buffer swing | (0.166 V, 1.413 V) = 1.247 V @ 0.900 V/V in unit buffer <br> (0.450 V, 1.276 V) = 0.826 V @ 0.999 V/V in unit buffer <br> (0.450 V, 1.303 V) = 0.850 V @ 1e-4 error in unit buffer | 
  | Slew rate | + 42.22 V/us, - 38.27 V/us @ (0.5 V, 1.2 V) step pulse in unit buffer |
- | CM Input range | (0.027 V, 1.166 V) = 1.139 V @ -3dB drop at Vin_DM = 0 <br> (-0.154 V, 1.342 V) = 1.496 V @ -20dB drop at Vin_DM = 0 |
+ | CM Input range | (0.027 V, 1.342 V) = 1.315 V @ 60 dB |
 </div>
 
 
@@ -613,8 +613,8 @@ $$
 
 | Type | DC Gain | GBW | PM | Slew Rate | CM Input Range | Output Swing | Power Dissipation |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
- | Specifications | 80 dB | 50 MHz | 60° | 50 V/us | (-0.1 V, +1.2 V) | 1 V | 600 uA @ 1.8V (1.08 mW) |
- | Simulation Results | 81.49 dB | 45.71 MHz | 57.8° | +42.22 V/us, -38.27 V/us | (-0.154 V, +1.342 V) | 0.82 V ~ 1.26 V | 590.3 uA @ 1.8V (1.06 mW) |
+ | Specifications | 80 dB | 50 MHz | 60° | 50 V/us | - 0.1 V ~ + 1.2 V | 1 V | 600 uA @ 1.8V (1.08 mW) |
+ | Simulation Results | 80.27 dB | 47.78 MHz | 52.09° | +42.22 V/us, -38.27 V/us | + 0.027 V ~ + 1.342 V | 1.247 V| 590.3 uA @ 1.8V (1.063 mW) |
 
 </span>
 </div>
