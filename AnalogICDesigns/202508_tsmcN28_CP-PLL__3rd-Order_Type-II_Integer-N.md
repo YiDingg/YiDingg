@@ -12,7 +12,7 @@ Initially published at 13:48 on 2025-08-16 in Lincang.
 
 
 
-## 1. General Considerations
+## 1. Design Considerations
 
 `tsmcN28` 库中自带的逻辑门如下：
 
@@ -688,7 +688,7 @@ data_nomalized_sum = sum(data_nomalized.*co, 1) + exp(CP'/100);
 
 ### 6.3 transient jitter analysis
 
-有关 jitter 和 phase noise 的基础知识见文章 [Jitter and Phase Noise in Mixed-Signal Circuits](<AnalogIC/Jitter and Phase Noise in Mixed-Signal Circuits.md>)，锁相环的 FoM 公式详见参考文献 [[3]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9847207):
+有关 jitter 和 phase noise 的基础知识见文章 [Jitter and Phase Noise in Mixed-Signal Circuits](<AnalogIC/Phase Noise and Jitter in Mixed-Signal Circuits.md>)，锁相环的 FoM 公式详见参考文献 [[3]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9847207):
 
 $$
 \begin{gather}

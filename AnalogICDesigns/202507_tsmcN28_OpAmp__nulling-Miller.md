@@ -26,21 +26,27 @@ Initially published at 02:01 on 2025-07-17 in Beijing.
 
 在文章 [low-voltage bandgap reference (BGR)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>) 中，我们已经给出了部分 specs 内容：
 
+<span style='font-size:12px'>
 <div class='center'>
 
 | DC Gain | UGF | Load | PM | SR | ICMR | Swing | Power Dissipation | Process Corner |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
  | - | - | - | 60° | - | (600 mV, 800 mV) | (400 mV, 700 mV) | 100 uA @ 0.9V (0.09 mW) | TT, SS, FF, SF, FS |
 </div>
+</span>
 
 剩余未指定参数由 **1.3 determining specs** 一节给出，完整 specs 如下：
 
+
+
+<span style='font-size:12px'>
 <div class='center'>
 
 | DC Gain | UGF | Load | PM | SR | ICMR | Swing | Power Dissipation | Process Corner |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
  | - | 75 MHz | 1 pF | 60° | - | (600 mV, 800 mV) | (400 mV, 700 mV) | 120 uA @ 0.9V (0.108 mW) | TT, SS, FF, SF, FS |
 </div>
+</span>
 
 主要优化方向为 UGF, 其次是 DC Gain 和 ICMR.
 
@@ -71,7 +77,7 @@ $$
 
 ### 1.3 determining specs
 
-在考虑如何确定 Specifications 之前，需要对当前工艺的 NMOS/PMOS 性能有大致的了解 ([this article](<AnalogIC/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>))，然后再考虑 specifications. 在后文，若无特别说明, NMOS 的 bulk 默认接到 GND, PMOS 的 bulk 默认接 source (以避免 body-effect 导致的阈值电压上升)。
+在考虑如何确定 Specifications 之前，需要对当前工艺的 NMOS/PMOS 性能有大致的了解 ([this article](<AnalogICDesigns/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>))，然后再考虑 specifications. 在后文，若无特别说明, NMOS 的 bulk 默认接到 GND, PMOS 的 bulk 默认接 source (以避免 body-effect 导致的阈值电压上升)。
 
 先做下图中的考量：
 
@@ -527,6 +533,17 @@ hiFormDone(leDisplayOptionsForm)
  | OST | Overshoot (rise, fall)     | (1.172 %, 1.115 %) @ ± 10 mV step <br> (0.163 %, 0.008 %) @ ± 100 mV step |  TT, 27 °C, unit buffer, C_L = 1 pF |
  | ST | Settling time (rise, fall)  | (18.16 ns, 19.54 ns) @ 0.05% accuracy (10 mV step) <br> (8.701 ns, 11.30 ns) @ 0.05% accuracy (100 mV step) |  TT, 27 °C, unit buffer, C_L = 1 pF |
  | SR | Slew rate (from 20% to 80%)          | +156.6 V/us @ 20% to 80% (500 mV step) <br> -62.49 V/us @ 20% to 80% (500 mV step) | TT, 27 °C, unit buffer, C_L = 1 pF |
+</div>
+</span>
+
+<span style='font-size:8px'>
+<div class='center'>
+
+| Parameter | DC Gain | GBW | Load | PM | GM | SR | ICMR | Output Swing | Power Dissipation |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+ | Specifications | - | 75 MHz | 1 pF | 60° | 10 dB | - | (600 mV, 800 mV) | (400 mV, 700 mV) | 120 uA @ 0.9V (0.108 mW) |
+ | Nominal Corner (TT) | 66.71 dB | 193.3 MHz| 1 pF | 72.35° | 29.67 dB | +156.6 V/us,  -62.49 V/us | (187.2 mV, 742.4 mV) = 555.2 mV @ 40 dB gain | (59.69 mV, 813.7 mV) = 665.0 mV @ 40 dB gain | 122.1 uA @ 0.9V (0.110 mW) |
+ | All Corners (TT, SS, FF, SF, FS) | 61.63 dB ~ 70.37 dB | 137.9 MHz ~ 289.0 MHz | 1 pF | 61.83° ~ 80.62° | 29.12 dB ~ 30.99 dB | - | - | 467.3 mV ~ 754.3 mV @ 40 dB gain | 96.48 uA ~ 158.3 uA <br> (0.087 mW ~ 0.142 mW) |
 </div>
 </span>
 

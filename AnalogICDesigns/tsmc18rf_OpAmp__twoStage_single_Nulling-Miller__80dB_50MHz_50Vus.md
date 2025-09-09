@@ -1,4 +1,4 @@
-# A Basic Two-Stage Nulling-Miller Compensation Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR at 5pF Load (Simulated 84.35 dB, 55.75 MHz and +56.31/-45.35 V/us)
+# A Basic Two-Stage Op Amp with Nulling-Miller Compensation Achieving 84.35dB Gain, 55.75MHz GBW and 56.31V/us Slew Rate
 
 > [!Note|style:callout|label:Infor]
 Initially published at 10:32 on 2025-06-17 in Beijing.
@@ -77,7 +77,7 @@ $$
 - `Swing > 1.2 V` : 
     - 输出有两个晶体管，对于 1.8 V 的电源轨，要想在 600mV/2 = 300 mV 的情况下保证足够的增益是比较难的，因此最终得到的 -3dB (或 80dB) 输出摆幅大概率会小于 1.2 V, 但 60dB 摆幅应该可以满足 1.2 V 的要求
 
-### 1.4 summary
+### 1.4 design summary
 
 上面的考虑可汇总为以下几条 (括号内的是仿真时的 Vds 建议值):
 
@@ -374,7 +374,7 @@ Rz = 1.3 kOhm
 
 
 
-## 4. Simulation Results
+## 4. Pre-Layout Simulation
 
 综合上面的迭代，各元件的参数如下表所示：
 

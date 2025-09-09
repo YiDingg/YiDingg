@@ -71,7 +71,7 @@ $$
 
 ### 1.3 determining specs
 
-在考虑如何确定 Specifications 之前，需要对当前工艺的 NMOS/PMOS 性能有大致的了解 ([this article](<AnalogIC/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>))，然后再考虑 specifications. 在后文，若无特别说明, NMOS 的 bulk 默认接到 GND, PMOS 的 bulk 默认接 source (以避免 body-effect 导致的阈值电压上升)。
+在考虑如何确定 Specifications 之前，需要对当前工艺的 NMOS/PMOS 性能有大致的了解 ([this article](<AnalogICDesigns/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>))，然后再考虑 specifications. 在后文，若无特别说明, NMOS 的 bulk 默认接到 GND, PMOS 的 bulk 默认接 source (以避免 body-effect 导致的阈值电压上升)。
 
 先做下图中的考量：
 
@@ -408,7 +408,7 @@ $$
 在正式的前仿中，相比于 design iteration, 一方面我们需要将理想阻容器件替换为实际器件，另一方面需要对全工艺角度进行仿真。
 
 
-工艺库 `tsmcN28` 的常用器件见文章 [Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogIC/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>), 我们选择 `rupolym` 和 `cfmom_2t` 分别作为实际电阻和电容器件。
+工艺库 `tsmcN28` 的常用器件见文章 [Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>), 我们选择 `rupolym` 和 `cfmom_2t` 分别作为实际电阻和电容器件。
 
 具体而言：
 - Rs = 9.4 kOhm 替换为 rupolym = 16.13u/1u (9.40116 kOhm)

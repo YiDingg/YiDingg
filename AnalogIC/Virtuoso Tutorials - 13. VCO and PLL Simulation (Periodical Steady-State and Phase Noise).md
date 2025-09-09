@@ -57,7 +57,7 @@ pss 仿真给出的振荡频率与瞬态完全相同 (903.4 MHz)。
 ### 1.4 pnoise simulation
 
 
-有关 jitter 和 phase noise 的基础知识，详见文章 [Jitter and Phase Noise in Mixed-Signal Circuits](<AnalogIC/Jitter and Phase Noise in Mixed-Signal Circuits.md>)，这里不多赘述。
+有关 jitter 和 phase noise 的基础知识，详见文章 [Jitter and Phase Noise in Mixed-Signal Circuits](<AnalogIC/Phase Noise and Jitter in Mixed-Signal Circuits.md>)，这里不多赘述。
 
 
 下面仿真 VCO 的相位噪声和抖动。**先取消 pss 中的 sweep, 固定 Vcont = 0.5 V**，然后在 pss 仿真之后添加 pnoise 仿真 (pss 是必需的)，如图：
@@ -151,7 +151,7 @@ RMS jitter integrated from 10k Hz to 500 MHz
 ### 2.2 transient jitter analysis
 
 
-Phase Noise 结果不仅可以从 pnoise 等仿真中得到，还可以从 transient simulation results 中计算。也就是参考资料 [1](https://www.writebug.com/static/uploads/2025/8/22/705f40616dd3afd7796ddfbe1d5b66d8.pdf) page.28 中所介绍的，我们可以将系统锁定之后 VOUT 节点的周期数据 (频率数据) 导出，在 MATLAB 中分析 jitter 情况。
+Phase Noise 结果不仅可以从 pnoise 等仿真中得到，还可以从 transient simulation results 中计算。也就是参考资料 [[1]](https://www.writebug.com/static/uploads/2025/8/22/705f40616dd3afd7796ddfbe1d5b66d8.pdf) page.28 中所介绍的，我们可以将系统锁定之后 VOUT 节点的周期数据 (频率数据) 导出，在 MATLAB 中分析 jitter 情况。
 
 
 原文代码如下：

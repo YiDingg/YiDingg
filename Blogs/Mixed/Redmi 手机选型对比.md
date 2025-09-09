@@ -1,4 +1,4 @@
-# ￥1100 以下价位手机选型对比
+# Redmi ￥1100 以下价位手机选型对比
 
 > [!Note|style:callout|label:Infor]
 Initially published at 18:33 on 2025-03-03 in Beijing.
@@ -8,6 +8,8 @@ Initially published at 18:33 on 2025-03-03 in Beijing.
 
 
 部分筛选结果如下：
+
+<span style='font-size:11px'>
 
 <div class='center'>
 
@@ -20,5 +22,8 @@ Initially published at 18:33 on 2025-03-03 in Beijing.
  | [Redmi 13C](https://detail.tmall.com/item.htm?from=cart&id=758206466740) | 950￥ | 6.74寸，LCD, 90Hz (180Hz), 5000mAh (18W), 8GB+256GB | 5G, 侧边指纹, 3.5mm 耳机孔，2+1卡槽支持 1TB 扩展，蓝牙 5.3, 0.05亿主摄 |
  | [vivo iQOO Z9](https://detail.tmall.com/item.htm?abbucket=19&id=779815076690) | 1300￥ (国补后 1100￥) | 6.78寸, AMOLED, 144Hz, 6000mAh (80W), 8GB+128GB | 5G, 屏下指纹, 0.5亿主摄 |
 </div>
+</span>
+
+
 
 最终我们选择了 Redmi Note 13 Pro 的 8GB+256GB (￥1300), 也即上表中第二款的另一个版本，国补后约 ￥1100 (国补真好)。

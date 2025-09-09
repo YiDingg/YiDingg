@@ -61,7 +61,7 @@ Other tools:
     - (2) **`- iczhiku.com`**: for example, type `ADE XL User Guide - iczhiku.com` in the search bar, and you will find https://picture.iczhiku.com/resource/eetop/syIfptILiLPyrvCB.pdf
     - (3) [**<span style='color:red'> Academic resource library of UIUC (伊利诺伊大学学术资源库) </span>**](https://www.ideals.illinois.edu/search)
     - (4) [ResearchGate](https://www.researchgate.net/publication/295256070_CMOS_Circuit_Design_Layout_and_Simulation_Third_Edition)
-    - (5) 
+    - (5) [学霸盘](https://www.xuebapan.com/): 中学/考研教材教辅课件资料大全
 
 ### Graphics
 

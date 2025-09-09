@@ -15,7 +15,7 @@ BGR 的主要优化方向是 PSRR (Power Supply Rejection Ratio) 和温度系数
 
 相关资料：
 - [Razavi CMOS - Chapter 12. Bandgap References](<AnalogIC/Razavi CMOS - Chapter 12. Bandgap References.md>)
-- [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogIC/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
+- [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
 
 
 
@@ -99,7 +99,7 @@ $$
 
 但 F-OTA 的优势也是明显的：设计和偏置电路都很简单，并且输出范围广。因此我们还是先试试由 F-OTA + CS 构成的普通两级运放, 也就是 the basic two-stage op amp with nulling-Miller compensation. 有了先前的经验 [this article](<AnalogICDesigns/tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md>), 相信这一次设计会高效很多。
 
-为了确定 op amp 的 spec, 一方面我们需要考虑刚刚提到的优化方向，另一方面还需要关注 28nm 工艺的性能极限 [(this article)](<AnalogIC/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)。综合上面几点，我们给出 op amp 的 specifications:
+为了确定 op amp 的 spec, 一方面我们需要考虑刚刚提到的优化方向，另一方面还需要关注 28nm 工艺的性能极限 [(this article)](<AnalogICDesigns/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)。综合上面几点，我们给出 op amp 的 specifications:
 
 <div class='center'>
 

@@ -23,7 +23,7 @@
 - [Razavi CMOS - Chapter 13. Switched-Capacitor Circuits](<AnalogIC/Razavi CMOS - Chapter 13. Switched-Capacitor Circuits.md>)
 - [Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.1 Simple PLL](<AnalogIC/Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.1 Simple PLL.md>)
 - [Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.2 CP-PLL ~ 16.5 Applications](<AnalogIC/Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.2 CP-PLL ~ 16.5 Applications.md>)
-- [Paper Reading - [F. Gardner] Charge-Pump Phase-Lock Loops](<Papers/Phase-Locked Loop/[F. Gardner] Charge-Pump Phase-Lock Loops.md>)
+- [Paper Reading - [F. Gardner] Charge-Pump Phase-Lock Loops](<Papers/Phase-Locked Loop (PLL)/[F. Gardner] Charge-Pump Phase-Lock Loops.md>)
 
 
 

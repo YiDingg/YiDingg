@@ -65,8 +65,11 @@ vncserver -geometry 1920x1080 -depth 24 # 启动 vnc 服务器 (新端口), 设�
 也可以采用 SCP 命令上传和下载 (参考 [this link](https://deepinout.com/mobaxterm/8_uploading_files_with_mobaxterm.html))，好处是具有上传/下载的进度条 (但不能直接传输文件夹)。在 windows 端打开 terminal, 输入下面的命令即可将服务器上的文件下载到本地电脑上：
 
 ``` bash
-tar -czvf test.tar /home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5/    # 将要传输的文件打包成压缩包; -z：使用 gzip 压缩 (压缩率高，速度较快)
-scp username@111.11.111.111:/home/dy2025/Cadence_Data/test.tar D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/  # 将压缩包从服务器下载到本地 windows
+# 在服务器上将要传输的文件打包成压缩包; -z 代表使用 gzip 压缩 (压缩率高，速度较快)
+tar -czvf test.tar /home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5/
+
+# 将压缩包 test.tar 从服务器 username@111.11.111.111 下载到本地 windows
+scp username@111.11.111.111:/home/dy2025/Cadence_Data/test.tar D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/  
 ```
 
 <!-- ``` bash
@@ -75,7 +78,9 @@ scp dy2025@182.48.105.253:/home/dy2025/Cadence_Data/tsmc28n.tar D:/a_Win_VM_shar
 ``` -->
 
 
-如果报错 `Ensure the remote shell produces no output for non-interactive sessions.`, 大概是服务器主机上设置了 shell 初始化文件 `.cshrc` ，将此文件改名为 `ttt.cshrc` 即可暂时禁用。
+如果报错 `Ensure the remote shell produces no output for non-interactive sessions.`, 大概是服务器主机上设置了 shell 初始化文件 `.cshrc` ，将此文件改名为 `ttt.cshrc` 即可暂时禁用，传输完成后再改回来即可。
+
+
 
 <!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-24-20-21-59_如何通过 SSH 远程连接实验室服务器.png"/></div> -->
 
@@ -141,4 +146,25 @@ sudo adduser henry         # 示例: 创建一个名为 henry 的新用户
 sudo usermod -a -G [groupname] [username]   # 语法
 sudo usermod -a -G sudo henry               # 示例: 将 henry 加入到 sudo 组
 getent group sudo                           # 显示所有 sudo 权限用户
+```
+
+## 常用命令
+
+``` bash
+# 基本命令
+ls -l    # 查看当前目录下的文件和文件夹
+cd ..    # 返回上一级目录
+df -h    # 查看磁盘空间使用情况
+
+# 文件和文件夹操作
+cp -r [source] [destination]  # 递归复制文件夹
+rm -r [foldername]            # 递归删除文件夹
+mv [oldname] [newname]        # 重命名文件或文件夹
+mkdir [foldername]            # 创建新文件夹
+tar -czvf [archive_name].tar.gz [source]  # 将文件夹打包成压缩包
+tar -xzvf [archive_name].tar.gz               # 解压缩文件包
+touch [filename]              # 创建新文件
+nano [filename]               # 使用 nano 编辑器编辑文件
+pwd                           # 显示当前路径
+cat [filename]                # 查看文件内容
 ```

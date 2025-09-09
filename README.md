@@ -3,8 +3,8 @@
 <h2 style="text-align:center;"> Hello!👋(●'◡'●) I'm Yi Ding.</h2>
 
 <div style="text-align:center;">
-  • <a href="https://github.com/YiDingg">My GitHub</a>
-  • <a href="https://www.zhihu.com/people/YiDingg">My ZhiHu</a><br>
+  • <a href="https://www.zhihu.com/people/YiDingg/posts">My ZhiHu</a><br>
+  • <a href="https://github.com/YiDingg">My GitHub</a><br>
   • <a href="https://yidingg.github.io/YiDingg">My Personal Website</a><br>
 </div>
 

@@ -1026,6 +1026,7 @@ virtualHW.version = "17"
 在 VMware 17.6.4 下更改虚拟机 `IC618.vmx` 硬件兼容性为 `Workstation 17.5 or later` 的效果如下：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-19-13-17-07_Use Virtuoso Efficiently - 0. How to Use Cadence Virtuoso Efficiently.png"/></div>
 
+**<span style='color:red'> 我们从 2025.08.19 更新并修改兼容性后，一直使用到 2025.09.04, 期间没有出现任何卡死现象！！！这个 bug 终于修好了 (\:\_o\_\:) </span>**
 
 
 ### 4. ERROR (PRINT-1032): Unable to write to output file

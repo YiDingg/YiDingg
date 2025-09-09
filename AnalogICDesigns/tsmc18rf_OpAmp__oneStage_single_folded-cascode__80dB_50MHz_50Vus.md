@@ -1,4 +1,4 @@
-# A Single-Ended Output Folded-Cascode Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR (Simulated 81.33 dB, 51.59 MHz and +32.58/-35.22 V/us)
+# A Single-Ended Output Folded-Cascode Op Amp Achieving 81.33dB Gain, 51.59MHz GBW and 35.22V/us SR
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 17:12 on 2025-06-11 in Beijing.
@@ -12,7 +12,7 @@
 
 <div class='center'>
 
-| DC Gain | UGF | Load | PM | SR | Input CM | Swing | Power Dissipation |
+| DC Gain | GBW | Load | PM | SR | Input CM | Swing | Power Dissipation |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
  | 80 dB | 50 MHz | 5 pF | 60° | 50 V/us | - 0.1 V ~ + 1.2 V | 1 V | 600 uA @ 1.8V (1.08 mW) |
 </div>
@@ -34,7 +34,9 @@
 ### 1.1 theoretical formulas
 
 理论参考公式如下 (2025.06.11), 后续如有更新会放在 [Design Sheet for Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet for Folded-Cascode Op Amp.md>):
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-10-17-31-39_Design Sheet for Folded-Cascode Op Amp.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-10-17-31-39_Design Sheet of Folded-Cascode Op Amp.png"/></div>
+
 
 
 ### 1.2 biasing circuits
@@ -436,12 +438,12 @@ $$
 
 ## 4. Simulation Results
 
-### 3.1 dc: operation point
+### 4.1 dc: operation point
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-13-34-10_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
 
 
-### 3.2 dc: io-range and gain
+### 4.2 dc: io-range and gain
 
 ``` bash
 vout = VS("/Vout")
@@ -456,12 +458,12 @@ swing @ 60dB = (value(vout cross(dc_gain 60 2)) - value(vout cross(dc_gain 60 1)
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-14-03-29_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
 
 
-### 3.3 dc: CM input range
+### 4.3 dc: CM input range
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-14-19-26_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
 
 
-### 3.4 ac: UGF and PM
+### 4.4 ac: UGF and PM
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-12-13-39-24_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
 
@@ -470,7 +472,7 @@ swing @ 60dB = (value(vout cross(dc_gain 60 2)) - value(vout cross(dc_gain 60 1)
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-14-18-17-58_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.png"/></div>
 
 
-### 3.5 tran: slew rate
+### 4.5 tran: slew rate
 
 SR 是 large-signal 下的非线性行为，将输入信号改为幅度较大的 step signal, 运行仿真，结果如下：
 
@@ -485,9 +487,9 @@ SR+ = slewRate(vout 0 t 7e-07 t 20 80 nil "time")
 SR- = slewRate(vout 7e-07 t 20e-07 t 20 80 nil "time")
 ```
 
-图中可以看到，运放的 SR 为 +32.58 V/us 和 -35.22 V/us, 这与设计的 50 V/us 相差较大。具体的原因探究我们单独放在了文章 
+图中可以看到，运放的 SR 为 +32.58 V/us 和 -35.22 V/us, 这与设计的 50 V/us 相差较大，具体原因有待进一步探究。
 
-### 3.6 tran: step response
+### 4.6 tran: step response
 
 
 将 vout 和 vin- 短接，设置输入信号为幅度足够小的 step signal, 考察运放的 small-signal step response, 看看相位和增益裕度是不是“真的”, 并且计算运放的 settling time 和 overshoot:

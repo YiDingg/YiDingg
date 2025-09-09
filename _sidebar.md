@@ -20,20 +20,24 @@
 - 📱 **Analog IC Designs** <!-- 新的 design 放在前面 -->
 
     - tsmcN28
+        - [202509 LDO: basic 1.8 V ~ 2.5 V to 1.0 V](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.md>)
+        - [202509 Op Amp: op amp for the LDO](<AnalogICDesigns/202509_tsmcN65_OpAmp__nulling-Miller.md>)
         - [202508 CP-PLL: 3rd-Order Type-II Integer-N CP-PLL](<AnalogICDesigns/202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N.md>)
         - [202507 BGR (layout): low-voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1__layout.md>)
         - [202507 BGR: low-voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
         - [202507 Op Amp (layout): op amp for the BGR in scientific_research_practice_1](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller__layout.md>)
         - [202507 Op Amp: op amp for the BGR in scientific_research_practice_1](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)
-        - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogIC/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
+        - [tsmc18rf (TSMC 180nm RF CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmc18rf (TSMC 180nm RF CMOS Process Library).md>)
+        - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
+        - [tsmcN65 (TSMC 65nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).md>)
     - tsmc18rf
 
         - [202506 Op Amp: twoStage_single_Nulling-Miller__80dB_50MHz_50Vus](AnalogICDesigns/tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md)
-        - [202506 Op Amp: oneStage_single_folded-cascode__80dB_50MHz_50Vus](AnalogICDesigns/tsmc18rf_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md)
+        - [202506 Op Amp: oneStage_single_folded-cascode__80dB_50MHz_50Vus](AnalogICDesigns/tsmc18rf_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md)<!--  -->
     - Design Sheets
+        - [Third-Order Type-II CP-PLL](<AnalogICDesigns/Design Sheet for Third-Order Type-II CP-PLL.md>)
         - [Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogICDesigns/Design Sheet for Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>)
-        - [One-Stage Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet for Folded-Cascode Op Amp.md>)
-        - [tsmc18rf (TSMC 180nm RF CMOS Process Library)](<AnalogIC/Basic Information of tsmc18rf (TSMC 180nm RF CMOS Process Library).md>)
+        - [One-Stage Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet for Folded-Cascode Op Amp.md>)<!--  -->
 
 
 
@@ -84,28 +88,29 @@
         - [Razavi CMOS - Chapter 7. Noise](<AnalogIC/Razavi CMOS - Chapter 7. Noise.md>)<!--  -->
         - [Razavi CMOS - Chapter 8. Negative Feedback](<AnalogIC/Razavi CMOS - Chapter 8. Negative Feedback.md>)<!--  -->
 
+    - Razavi PLL
+        - [Razavi PLL - Chapter 15. Frequency Dividers](<AnalogIC/Razavi PLL - Chapter 15. Frequency Dividers.md>)
+        - [Razavi PLL - Chapter 2. Jitter and Phase Noise](<AnalogIC/Razavi PLL - Chapter 2. Jitter and Phase Noise.md>)
+
     - Digital Signal Processing
         - [DSP - 0. Preparations](<Notes/DSP (Digital Signal Processing)/DSP - 0. Preparations.md>)
 
     - Analog IC Blogs (2025, 33 items)
+        - [Phase Noise Spectrum Calculation using MATLAB](<AnalogIC/Phase Noise Spectrum Calculation using MATLAB.md>)
         - [Basics of Clock Data Recovery (CDR)](<AnalogIC/Basics of Clock Data Recovery (CDR).md>)
-        - [Jitter and Phase Noise in Mixed-Signal Circuits](<AnalogIC/Jitter and Phase Noise in Mixed-Signal Circuits.md>)
+        - [Jitter and Phase Noise in Mixed-Signal Circuits](<AnalogIC/Phase Noise and Jitter in Mixed-Signal Circuits.md>)
         - [PLL Behavior-Level Simulation using Cadence IC618](<AnalogIC/PLL Behavior-Level Simulation using Cadence IC618.md>)
         - [PLL System-Level Simulation using LTspice](<AnalogIC/PLL System-Level Simulation using LTspice.md>)
         - [Collection of Typical PLL Modules (PFD, CP, LPF, VCO, FD)](<AnalogIC/Implementation Collection of Typical PLL Modules (PFD, CP, LPF, VCO, FD).md>)
         - [Prerequisite Digital Electronics Knowledge for PLL](<AnalogIC/Prerequisite Digital Electronics Knowledge for PLL.md>)
         - [Use Virtuoso Efficiently - 2. File Transfer using Shared Folders](<AnalogIC/Use Virtuoso Efficiently - 2. File Transfer using Shared Folders.md>)
-        - [tsmc18rf (TSMC 180nm RF CMOS Process Library)](<AnalogIC/Basic Information of tsmc18rf (TSMC 180nm RF CMOS Process Library).md>)
-        - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogIC/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
+        - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
         - [The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogIC/The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation.md>)
         - [Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/ADE Assembler - 0. How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)
         - [Cadence Layout (tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus)](<AnalogIC/Cadence Layout (tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus).md>)
         - [Reference Current Generation Methods](<AnalogIC/Reference Current Generation Methods.md>)
-        - [Design Sheet of Basic Two-Stage Op Amp](<AnalogICDesigns/Design Sheet for Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>)
         - [Miller Compensation in Basic Two-Stage Op Amp](<AnalogIC/Miller Compensation in Basic Two-Stage Op Amp.md>)
         - [Why Is the Simulated SR Lower Than the Theoretical Value](<AnalogIC/Why Is the Simulated SR Lower Than the Theoretical Value.md>)
-        - [Miller Compensation in Basic Two-Stage Op Amp](<AnalogIC/Miller Compensation in Basic Two-Stage Op Amp.md>)
-        - [Design Sheet for Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet for Folded-Cascode Op Amp.md>)<!--  -->
         - [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)<!-- zhihu no, weixin no -->
         - [Relationship Between GBW and fp2 in a Two-Order System](<Electronics/Relationship Between GBW and fp2 in a Two-Order System.md>)
         - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<AnalogIC/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)<!--  -->
@@ -241,9 +246,12 @@
 
 - 📃 **Paper Reading**
 
+    - Clock and Data Recovery (CDR)
+        - [[Literature Review] Clock and Data Recovery](<Papers/Clock and Data Recovery (CDR)/[Literature Review] Clock and Data Recovery.md>)
+
     - Phase-Locked Loop (PLL)
-        - [[Literature Review] TSPC D Flip-Flop](<Papers/Phase-Locked Loop/[Literature Review] TSPC D Flip-Flop.md>)
-        - [[F. Gardner] Charge-Pump Phase-Lock Loops](<Papers/Phase-Locked Loop/[F. Gardner] Charge-Pump Phase-Lock Loops.md>)
+        - [[Literature Review] TSPC D Flip-Flop](<Papers/Phase-Locked Loop (PLL)/[Literature Review] TSPC D Flip-Flop.md>)
+        - [[F. Gardner] Charge-Pump Phase-Lock Loops](<Papers/Phase-Locked Loop (PLL)/[F. Gardner] Charge-Pump Phase-Lock Loops.md>)
 
     - Op Amp Measurement Methods
         - [Meas. of OpAmp in the Freq. Domain](<Papers/Op Amp Measurement Methods/Measurement of Operational Amplifier Characteristics in the Frequency Domain.md>)
@@ -275,6 +283,7 @@
 - 📓 **Other Blogs**
 
     - Mixed <!-- empty line is necessary to avoid the error -->
+        - [Redmi 手机选型对比](<Blogs/Mixed/Redmi 手机选型对比.md>)
         - [如何通过 SSH 远程连接实验室服务器](<Blogs/Mixed/如何通过 SSH 远程连接实验室服务器.md>)
         - [Markdown 转微信公众号或知乎](<Blogs/Mixed/Markdown 转微信公众号或知乎.md>)
         - [关于国科大本科部电子信息工程专业课程安排的一些思考](Blogs/Mixed/关于国科大本科部电子信息工程专业课程安排的一些思考.md)
@@ -425,6 +434,7 @@
 
 - 🗓️ **Monthly Summary**
 
+    - [2025.08](<MonthlySummary/Monthly Summary (2025.08).md>)
     - [2025.07](<MonthlySummary/Monthly Summary (2025.07).md>)
     - [2025.06](<MonthlySummary/Monthly Summary (2025.06).md>)
     - [2025.05](<MonthlySummary/Monthly Summary (2025.05).md>)
