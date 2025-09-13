@@ -183,7 +183,7 @@ LVS 给出了笑脸，说明检查成功通过，与原理图完全一致。
 
 ### 6.1 Design Rule Reference
 
-以下是 `tsmcN28` 工艺库 (台积电 28nm CMOS 工艺库) 的 **Cadence Virtuoso 版图 DRC 报错规则** 详细解释，包含 **缩写全称**、**规则全称** 及 **含义说明**：
+以下是我们手动整理的 `tsmcN28` 工艺库 (台积电 28nm CMOS 工艺库) 的 **Cadence Virtuoso 版图 DRC 报错规则** 详细解释，包含 **缩写全称**、**规则全称** 及 **含义说明**：
 
 
 <span style='font-size:10px'>

@@ -5,7 +5,7 @@ Initially published at 14:44 on 2025-06-22 in Beijing.
 
 ## Introduction
 
-在前不久的运放设计 [A Basic Two-Stage Nulling-Miller Compensation Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR at 5pF Load (Simulated 84.35 dB, 55.75 MHz and +56.31/-45.35 V/us)](<AnalogICDesigns/tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md>) 中，我们在仿真频响曲线时发现了一个 [design sheet](<AnalogICDesigns/Design Sheet for Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>) 中未预测到的极点，并且它是影响 phase margin 的主要因素。这篇文章便尝试分析这个极点的来源。
+在前不久的运放设计 [A Basic Two-Stage Nulling-Miller Compensation Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR at 5pF Load (Simulated 84.35 dB, 55.75 MHz and +56.31/-45.35 V/us)](<AnalogICDesigns/202506_tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md>) 中，我们在仿真频响曲线时发现了一个 [design sheet](<AnalogICDesigns/Design Sheet for Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>) 中未预测到的极点，并且它是影响 phase margin 的主要因素。这篇文章便尝试分析这个极点的来源。
 
 
 

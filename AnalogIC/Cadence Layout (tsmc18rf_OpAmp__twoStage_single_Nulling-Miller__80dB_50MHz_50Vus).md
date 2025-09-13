@@ -5,7 +5,7 @@
 
 ## Introduction
 
-本文是 analog ic design [A Basic Two-Stage Nulling-Miller Compensation Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR at 5pF Load (Simulated 84.35 dB, 55.75 MHz and +56.31/-45.35 V/us)](<AnalogICDesigns/tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md>) 的 layout example, 主要是为了展示如何在 Cadence Virtuoso 中进行基本的 layout 操作。
+本文是 analog ic design [A Basic Two-Stage Nulling-Miller Compensation Op Amp with 80 dB Gain, 50 MHz UGF and 50 V/us SR at 5pF Load (Simulated 84.35 dB, 55.75 MHz and +56.31/-45.35 V/us)](<AnalogICDesigns/202506_tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md>) 的 layout example, 主要是为了展示如何在 Cadence Virtuoso 中进行基本的 layout 操作。
 
 ## 1. Basic Setup
 

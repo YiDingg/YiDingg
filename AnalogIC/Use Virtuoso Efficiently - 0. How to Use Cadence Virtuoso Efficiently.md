@@ -1143,5 +1143,29 @@ export CDS_XVNC_OFFSET=9  # 端口号的个位 (本地的话无所谓, 随便写
 - [EETOP > 请问 corners 仿真报错__ADEXL Message1921 如何解？](https://bbs.eetop.cn/thread-870417-1-1.html): 认为是文件夹写入权限的问题 (个人虚拟机有权限的状态下也会出现这个)
 
 
+### 10. pcellEvalFailed
 
+在文章 [Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).md>) 中出现了 `pcellEvalFailed` 的问题 (即便是修改 MOS 的 length 或者 width 也会报错)：
 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-10-23-37-45_Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-10-23-41-35_Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).png"/></div>
+
+于是参考这两篇问答 [EETOP > [求助] tsCreateDiffusionL 函数调用, pcellEvalFailed](https://bbs.eetop.cn/thread-992729-1-1.html) 和 [EETOP > [讨论] PcellEvalFailed是什么原因](https://bbs.eetop.cn/thread-343615-5-1.html)，可能是我们的 `tsmcN65_old` 工艺库与 `tsmcN65` 产生了冲突（尽量不要一个 workspace 下，装/引入两个同类工艺库），于是在 `cds.lib` 中将 `tsmcN65_old` 工艺库的代码注释掉，重启 virtuoso 再次尝试，发现问题并没有解决。
+
+那么我们又想，会不会是 `tsmcN65` 与其它工艺库之间产生了冲突呢？于是又单独创建一个 `Workspace_tsmcN65` 文件夹，此文件夹中的 `cds.lib` 仅引入 `tsmcN65` 和几个基本工艺库，重启 virtuoso 再次尝试，问题得到解决：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-11-00-52-35_Use Virtuoso Efficiently - 0. How to Use Cadence Virtuoso Efficiently.png"/></div>
+
+**<span style='color:red'> 这个问题告诉我们，尽量避免在同一个 workspace 下引入多个工艺库 (即便它们不同类)，以免产生冲突。 </span>** 建议每一个工艺库都有自己的 workspace.
+
+### is a invalid register number
+
+生成 mom cap 的版图时报错：
+
+``` bash
+is a invalid register number, Need a valid register number from TSMC
+```
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-13-22-22-27_Use Virtuoso Efficiently - 0. How to Use Cadence Virtuoso Efficiently.png"/></div>
+
+生成 mom cap 版图需要 licence, 找老师要到 licence 文件后，参考 []
