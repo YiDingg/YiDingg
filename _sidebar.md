@@ -92,10 +92,15 @@
         - [Razavi PLL - Chapter 15. Frequency Dividers](<AnalogIC/Razavi PLL - Chapter 15. Frequency Dividers.md>)
         - [Razavi PLL - Chapter 2. Jitter and Phase Noise](<AnalogIC/Razavi PLL - Chapter 2. Jitter and Phase Noise.md>)
 
+    - Razavi RF
+        - [Razavi RF - Chapter 1. Introduction to RF Technology](<AnalogIC/Razavi RF - Chapter 1. Introduction to RF Technology.md>)
+        - [Razavi RF - Chapter 2. Basic Concepts in RF Circuits](<AnalogIC/Razavi RF - Chapter 2. Basic Concepts in RF Circuits.md>)
+
     - Digital Signal Processing
         - [DSP - 0. Preparations](<Notes/DSP (Digital Signal Processing)/DSP - 0. Preparations.md>)
 
     - Analog IC Blogs (2025, 33 items)
+        - [LDO Stability Analysis and Loop Compensation Mechanism](<AnalogIC/LDO Stability Analysis and Loop Compensation Mechanism.md>)
         - [Phase Noise Spectrum Calculation using MATLAB](<AnalogIC/Phase Noise Spectrum Calculation using MATLAB.md>)
         - [Basics of Clock Data Recovery (CDR)](<AnalogIC/Basics of Clock Data Recovery (CDR).md>)
         - [Jitter and Phase Noise in Mixed-Signal Circuits](<AnalogIC/Phase Noise and Jitter in Mixed-Signal Circuits.md>)

@@ -142,7 +142,7 @@ $$
 
 
 
-## 3. Design of LDO
+## 3. Design of LDO (v1)
 
 ### 3.1 PT iteration
 
@@ -333,17 +333,17 @@ LDO 的最终参数如下图所示：
  -->
 
 
-## 4. Pre-Simulation
+## 4. Pre-Simulation (v1_132108) 
+
+下面对第一个版本 (v1_132108) 进行 pre-simulation **(默认 C_L = 0.5 pF)。**
 
 ### 4.0 schematic preview
 
 (已检查过所有 schematic)
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-01-10-18_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-19-27-06_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-01-10-39_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-01-11-02_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-00-20-35_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-13-23-29-49_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div> -->
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-19-28-38_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
 
 ### 4.1 (tran) start-up response (all-corner, 1.7 V)
 
@@ -377,22 +377,27 @@ VDD = 2.65 V 时：
 
 VDD = 1.7 V 时：
 
+第一张图 (错误的) 是设置的什么参数给忘了：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-00-53-02_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-19-33-50_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
 
 VDD = 2.65 V 时：
 
+第一张图 (错误的) 是设置的什么参数给忘了：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-00-55-48_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-19-34-29_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
 
+### 4.4 (ac) stability at all C_L (TT65, 1.7 V)
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-13-00-50_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-16-43-46_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+
+<!-- 
 ### 4.4 (ac) load regulation (all-corner, 1.7 V)
-
-
-
 ### 4.5 (tran) step response (TT, 1.7 V)
-
-
 ### 4.6 (mc) output voltage (1.7 V)
-
-
 ### 4.7 pre-simul summary
 
 上面的前仿结果汇总在下表：
@@ -407,5 +412,427 @@ VDD = 2.65 V 时：
 </span>
 </div>
 
-
 后续的 layout and post-layout simulation 详见这篇文章 [202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0__layout]()。
+ -->
+
+
+## 5. Further Discussion
+
+### 5.1 the effect of C_L
+
+- (1) PSRR: C_L 对 PSRR 几乎无影响
+- (2) PM: 升高 C_L 会使 PM 显著降低
+
+
+关于要不要在输出端并联一个电容 $C_L$，我们先看看从不同负载电容下的零极点分布：
+
+<div class='center'>
+
+| LOAD | p1 (Hz) | p2 (Hz) | p3 (Hz) | zero | PM |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+ | 0 pF   | 28.23k | 17.04M | 298.1M | 41.89M | 48.57 |
+ | 10 pF  | 28.15k | 8.814M | - | - | 8.107 |
+ | 100 pF | 27.43k | 1.936M | - | - | -9.909 |
+ | 10 uF  | 14.10  | 43.67k | - | - | 14.47 |
+ | 100 uF | 1.411  | 43.63k | - | - | 43.31 |
+</div>
+
+除 0 pF 外的 p3 和 zero 没数据是因为从图中不太好肉眼看出。
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-13-00-50_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-12-55-45_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-13-03-52_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-13-14-53_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-13-21-18_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-13-21-06_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+从上面的数据可以看出：在非片外电容的情形下 (capacitor-less LDO), 系统 PM 随着 C_L 的增大而降低，甚至变为负值 (不稳定)。
+
+从下图又可看出 C_L 对 PSRR 影响不大：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-15-16-04_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+有关环路传递函数的分析，详见这篇文章 [LDO Stability Analysis and Loop Compensation Mechanism](<AnalogIC/LDO Stability Analysis and Loop Compensation Mechanism.md>).
+
+
+
+### 5.2 the effect of C1
+
+- (1) PSRR: 升高 C1 会使 PSRR 降低
+- (2) PM: 只有在 C1 很小时，升高才会对 PM 有改善作用
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-15-01-54_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-15-03-02_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+### 5.3 the effect of (Cc1, Rc1)
+
+- (1) PSRR: (Cc1, Rc1) 对 PSRR 无影响
+- (2) PM:   合适的 (Cc1, Rc1) 可以显著提升 PM
+
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-15-06-21_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+### 5.4 the effect of (Cc2, Rc2)
+
+- (1) PSRR: (Cc1, Rc1) 对 PSRR 几乎无影响
+- (2) PM:   合适的 (Cc2, Rc2) 可以显著提升 PM
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-15-09-48_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+### 5.5 the effect of R1
+
+- (1) PSRR: 合适的 R1 才能保持较好的 PSRR
+- (2) PM:   R1 对 PM 有一定影响，并且通常与 PSRR 的趋势相同 (同时使 PSRR 和 PM 变好)
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-15-23-30_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+### 5.6 the effect of IBIAS
+
+- (1) PSRR: 升高 IBIAS 可提升 PSRR_GBW 
+- (2) PM:   IBIAS 对 PM 有一定影响，不一定好或坏
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-15-26-08_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+### 5.7 the effect of opamp
+
+运放内部补偿参数 (Cc, Rz) 会影响运放的 GBW 和 PM, 从而影响 LDO 的 PSRR 和 PM:
+
+- (1) PSRR: 升高内部 Cc 会降低 PSRR_GBW
+- (2) PM:   升高内部 Cc 会提升 PM
+
+### 5.8 tradeoff between PSRR and PM
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-15-29-46_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+## 6. Design Iteration (v2)
+
+### 6.1 loop compensation
+
+先以 (C_L, C1, R_1, I_BIAS, Cc) = (0.5 pF, 0.1 pF, 5 kOhm, 150 uA, 0.425 pF) 为初始参数，迭代 (Cc1, Rc1) 和 (Cc2, Rc2) 以获得更好的 PM (这两个参数对 PSRR 几乎无影响)。考虑到电容的面积现在，首次迭代范围是 0.5 pF ~ 2.5 pF 和 0.6 kOhm ~ 1.5 kOhm:
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-15-40-11_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+固定 Cc2 = 2.5 pF, 设置 Cc1 = 1.5 pF ~ 2.5 pF, Rc1 = 0.5 kOhm ~ 2.0 kOhm, Rc2 = 0.3 kOhm ~ 1.0 kOhm 进行迭代：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-15-45-38_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+仍固定 Cc2 = 2.5 pF, 设置 Cc1 = 2.0 pF ~ 2.5 pF, Rc1 = 1.5 kOhm ~ 2.0 kOhm, Rc2 = 0.7 kOhm ~ 0.9 kOhm 进行迭代：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-15-50-05_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+**最终参数为: (Cc1, Rc1, Cc2, Rc2) = (2.5 pF, 1.5 kOhm, 2.5 pF, 0.7 kOhm)**
+
+
+
+### 6.2 R1/C1 iteration
+
+下面迭代 R1 和 C1 以获得更好的 PSRR (需要注意这两个参数对 PM 的影响)。
+
+先设置 R1 = 0.5 kOhm ~ 10 kOhm, C1 = 0 ~ 1.0 pF 进行迭代：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-15-56-11_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+修改范围为 R1 = 5 kOhm ~ 8 kOhm, C1 = 0 ~ 0.3 pF 继续迭代：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-16-00-25_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+修改范围为 R1 = 5.5 kOhm ~ 6.5 kOhm, C1 = 0 ~ 0.25 pF 继续迭代：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-16-03-29_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+**最终选择 (R1, C1) = (6.0 kOhm, 0.15 pF)**
+
+### 6.3 Cc/IBIAS iteration
+
+除 C_L 外，就剩下 Cc 和 IBIAS 两个参数了。设置 Cc = 0.3 pF ~ 1.5 pF, IBIAS = 100 uA ~ 250 uA 进行迭代：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-16-12-39_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+修改为 Cc = 0.25 pF ~ 0.75 pF, IBIAS = 100 uA ~ 250 uA 继续迭代：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-16-17-21_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+修改为 Cc = 350 fF ~ 650 fF, IBIAS = 150 uA ~ 200 uA 继续迭代：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-16-23-22_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-16-26-29_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+**最终选择 (IBAS, Cc) = (175 uA, 450 fF)。** 
+
+### 6.4 Rz iteration
+
+最后对运放内部补偿电阻 Rz 进行简单迭代，先仿真 0.1 kOhm ~ 2.0 kOhm:
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-16-37-01_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+再看看 400 Ohm ~ 1 kOhm:
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-16-39-01_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+最终还是选择 Rz = 700 Ohm (与初始值相同)。
+
+
+### 6.5 iteration summary
+
+综上所述, LDO 的最终参数为 (v2_141631):
+- (Cc1, Rc1) = (2.5 pF, 1.5 kOhm)
+- (Cc2, Rc2) = (2.5 pF, 0.7 kOhm)
+- (R1, C1) = (6.0 kOhm, 0.15 pF)
+- (IBIAS, Cc, Rz) = (175 uA, 450 fF, 0.7 kOhm)
+
+
+此时的 PSRR/PM/LOAD 曲线图如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-16-31-00_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+
+## 7. Pre-Simulation (v2_141631)
+
+按上一小节所得参数 (v2_141631) 摆放 schematic 并生成 symbol, 进行 pre-layout simulation **(默认 C_L = 0.5 pF)。**
+
+### 7.0 schematic preview
+
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-16-41-44_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-16-54-25_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-16-54-48_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+### 7.1 (tran) start-up response (all-corner, 1.7 V)
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-17-27-20_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-17-29-17_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-17-35-26_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+### 7.2 (ac) stability (all-corner, two-supply)
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-16-57-06_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+VDD = 1.7 V 时：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-17-13-53_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+VDD = 2.65 V 时：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-17-17-56_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+
+
+### 7.3 (ac) stability at all C_L (TT65, 1.7 V)
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-17-25-31_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-17-26-07_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+
+
+### 7.4 (ac) PSRR (all-corner, two-supply)
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-17-00-55_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+VDD = 1.7 V 时：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-17-02-52_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+VDD = 2.65 V 时：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-17-03-45_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+### 7.5 (sm) pre-simul summary
+
+ε(´ο｀*))) 唉，这一版本 (v2_141631) 尽管 PSRR 有所提升，但是的稳定性显然没有 v1_132108 好。
+
+又要重新迭代一次吗？如何保证迭代后的结果是具有高稳定性的呢？
+
+<!-- 为了保证迭代所得参数具有较高的稳定性，我们在迭代时设置如下条件：
+- ILOAD = 10 uA
+- corner:
+    - PM simulation: {(FF, -40°), (FF, 125°)}
+    - PSRR simulation: {(SS, -40°), (SS, 125°)}
+ -->
+
+## 8. Design Iteration (v3)
+
+为了解决稳定性问题，我们尝试在 op amp 输出端到 pass transistor gate 之间增加一级 buffer (例如 source follower 或者 push-pull), 实现阻抗上的隔离，从而提升系统的稳定性。当然，无论是输出范围还是简便程度都是 push-pull 占优。
+
+但是这种方法却会大幅降低 PSRR, 因为添加 push-pull stage 相当于将功率管驱动处的极点拉低到 10 Hz 级别 (来自 PP stage 极高的输入阻抗)，大幅拉低环路的 GBW 从而使原本位于 50 kHz 左右的极点成为第二极点。下面是一个例子：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-18-19-04_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-18-18-46_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+因此这种方法对我们而言并不适用。
+
+为保证结果的可靠性，我们设置 ILOAD = 10 uA @ 0.5 pF 进行 PM 仿真, 设置 ILOAD = 10 mA @ 0.5 pF 进行 PSRR 仿真。
+
+**迭代思路为：以 v1_132108 作为初始版本 (稳定性较好但是 PSRR 稍不够)，在降低全体管子 length 的前提下，先适当提高 R1 (同时调整 C1 以保证 PM 不太差)，然后调整两个补偿网络以及运放内部补偿网络以寻求更好的 PM. 这样整体来看，相当于牺牲 PSRR_DC 换取 PSRR_5MHz.**
+
+
+
+<!-- - R1 的升高可以提升 PSRR_5MHz (5kOhm 以下) 但是牺牲 PM
+- 降低全体管子 length 可以牺牲 PSRR_DC 换一点点 PM
+-  -->
+
+### 8.1 R1/C1/Rz iteration
+
+使用 v1_132108 参数作为初始值，将管子长度改为 L = 360 nm, LP_PT = 280 nm, 根据 R1 对 PSRR 的影响，我们选择 R1 = 5.0 kOhm 进行后续仿真 (此时 PSRR_5MHz 稍改善了一些)，看看能否达到较好的 PM.
+
+先迭代 C1 和 Rz: C1 = 0.0 pF ~ 1.0 pF, Rz = 0.5 kOhm ~ 5.0 kOhm
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-20-21-23_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-20-23-38_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+
+既然 5 kOhm 能如此简单地就找到 PM = 50°, 能否进一步提升 R1 呢？我们尝试 R1 = 7.0 kOhm 来搜索 C1 和 Rz:
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-20-26-46_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-20-29-32_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+看来 R1 = 7.0 kOhm 也是可行的。以 (Rz, C1) = (5k, 250f) 为中心点进一步仿真 Rz = 4.0 kOhm ~ 6.0 kOhm, C1 = 150 fF ~ 350f:
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-20-33-37_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+**最终选择了 (R1, Rz, C1) = (7.0 kOhm, 5.0 kOhm, 250 fF).**
+
+### 8.2 loop compensation
+
+下面就是迭代两个补偿网络 (Cc1, Rc1) 和 (Cc2, Rc2)，其初始值为 (2.0 pF, 0.6 kOhm) 和 (2.0 pF, 1.0 kOhm) (v1_132108 的值)。注意它们俩对 PSRR 几乎无影响，只需仿真 PM. 
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-20-38-03_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+以 (Cc1, Rc1, Cc2, Rc2) = (2.0 pF, 1.0 kOhm, 2.0 pF, 1.0 kOhm) 为中心点，仿真下面范围：
+- Cc1 = 1.5 pF ~ 2.5 pF
+- Rc1 = 0.5 kOhm ~ 1.5 kOhm
+- Cc2 = 1.5 pF ~ 2.5 pF
+- Rc2 = 0.5 kOhm ~ 1.5 kOhm
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-20-43-11_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+以 (Cc1, Rc1, Cc2, Rc2) = (2.5 pF, 500 Ohm, 2.5 pF, 1.5 kOhm) 为中心点，仿真下面范围：
+- Cc1 = 2.0 pF ~ 3.0 pF
+- Rc1 = 0.25 kOhm ~ 0.75 kOhm
+- Cc2 = 2.0 pF ~ 3.0 pF
+- Rc2 = 1.25 kOhm ~ 1.75 kOhm
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-20-48-52_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-20-49-51_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+<!-- 到这一步还不太完整，我们再简单扫描一下 (FF, -40°C) 工艺角的情况： -->
+
+**受电容面积限制，我们就截止到最大 3.0 pF 的迭代，得到补偿网络的最终参数：(Cc1, Rc1, Cc2, Rc2) = (3.0 pF, 0.75 kOhm, 3.0 pF, 1.25 kOhm)**
+
+### 8.3 Cc iteration
+
+基于上面结果，这么高的 PM 当然可以拿来牺牲一点啦。我们尝试降低 Cc 来提升 PSRR_5MHz:
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-20-55-20_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-20-55-38_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+进一步仿真 Cc = 325 fF ~ 375 fF:
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-20-59-40_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-20-59-52_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+**最终选择 Cc = 325 fF.** 
+
+### 8.4 transient verification
+
+本次迭代结果汇总如下 (v3_142126)：
+- L = 360 nm, LP_PT = 280 nm
+- (R1, C1, Rz) = (7.0 kOhm, 250 fF, 5.0 kOhm)
+- (Cc1, Rc1, Cc2, Rc2) = (3.0 pF, 0.75 kOhm, 3.0 pF, 1.25 kOhm)
+- (IBIAS, Cc) = (150 uA, 325 fF)
+
+
+用 10 uA 负载下的启动波形验证一下 PM 是不是 "真的"。先仅设置 VDD 具有上升时间看一下 (VREF 和 ILOAD 恒定)：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-21-09-52_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-21-10-17_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+
+
+再 VDD/VREF/ILOAD 依次上升，间隔 0.5 us:
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-21-17-41_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-21-20-48_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+
+
+基本没有什么问题, 10 uA 下全部工艺角的启动波形都很干净，说明 PM 结果是可靠的。顺便看看突然接入大负载电流的瞬态响应：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-21-21-49_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-21-26-05_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+也是没问题的。
+
+## 9. Pre-Simulation (v3_142126)
+
+
+### 9.0 schematic preview
+
+将上面所得参数 (v3_142126) 摆放 schematic 并生成 symbol, 进行 pre-layout simulation **(默认 C_L = 0.5 pF)。**
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-21-33-17_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-21-44-27_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-21-44-39_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+### 9.1 (tran) start-up response (all-corner, 1.7 V)
+
+**设置 VREF 与 VDD 一同上升 (上升时间相同)**，运行瞬态仿真：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-21-50-50_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-21-52-13_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-21-50-25_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+再看一下极低负载下的启动波形 (ILOAD = 10 uA):
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-21-54-06_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+也是没问题的。
+
+### 9.2 (ac) stability (all-corner, 1.7 V)
+
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-21-55-15_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-22-03-59_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+<!-- 注：我们怀疑 (ac) stability 仿真中得到的直流工作点与 transient opt 有明显不同，导致部分 stability 结果不准确。
+ -->
+
+
+<!-- 将 ILOAD 改为 RLOAD 又尝试了下，无明显变化。
+ -->
+
+
+### 9.3 (ac) stability at all C_L (TT65, 1.7 V)
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-22-22-34_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+### 9.4 (ac) PSRR (all-corner, two-supply)
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-22-24-59_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-22-24-02_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-22-29-19_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-22-24-39_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-22-31-03_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+### 9.4 (tran) step response (TT, 2.65 V)
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-22-41-46_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+DC_1mA + STEP_10mA:
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-22-44-37_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-22-43-48_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+DC_10uA + STEP_100uA:
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-22-47-22_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-22-48-25_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
+### 9.5 (sm) pre-simul summary
+
+除了 100uA/1mA/5mA 下的 stability 结果有点奇怪以外，其它参数都或多或少的比前两个版本更优秀，基本上就是最终迭代结果了。

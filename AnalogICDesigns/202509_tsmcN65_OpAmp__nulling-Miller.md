@@ -299,4 +299,6 @@ Pass transistor 的初始值不足以驱动 15 mA 也没关系，我们后续增
 
 ## 5. Pre-Simulation
 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-14-13-40-01_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
+
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-13-23-29-21_202509_tsmcN65_OpAmp__nulling-Miller.png"/></div>
