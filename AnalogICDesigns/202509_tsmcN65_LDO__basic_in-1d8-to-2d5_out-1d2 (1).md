@@ -1,7 +1,11 @@
-# 202509_tsmcN65_LDO__in-1d8-to-2d5_out-1d0
+# 202509_tsmcN65_LDO__in-1d8-to-2d5_out-1d2 (1)
 
 > [!Note|style:callout|label:Infor]
 > Initially published at 23:11 on 2025-09-09 in Lincang.
+
+**<span style='color:red'> 注：本次设计的迭代/前仿篇幅过长，故而分为了 (1) (2) 上下两个部分，以保证较好的阅读体验： </span>**
+- [本文: 202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1)](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1).md>)
+- [后文: 202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (2)](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (2).md>)
 
 
 ## Introduction
@@ -839,84 +843,3 @@ DC_10uA + STEP_100uA:
 ### 9.5 (sm) pre-simul summary
 
 除了 100uA/1mA/5mA 下的 stability 结果有点奇怪以外，其它参数都或多或少的比前两个版本更优秀，基本上就是最终迭代结果了。
-
-## 10. NMOS Pass Test
-
-NMOS as the pass transistor 的频率响应如下；
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-15-11-46-28_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-
-在 gate 极点 $-\frac{1}{R_{out1}C_{eq}}$ 较高的情况下，上述结构一定是稳定的，因为 GBW_LDO 仅为 GBW_opamp 的一半，而 op amp 具有较高的 PM.
-
-需要注意的是 NMOS pass 时 VREF 应该接在运放正端。并且 nch_na25 作为功率管时，高输出电流下的导通是关键点，因为 $V_{GS,\max} = 1.7 - 1.2 = 0.5 \ \mathrm{V}$ 很小，必须保证 nch_na25 有足够的开通能力来提供 15 mA 电流。
-
-
-为探究 NMOS pass 的性能，我们以下面各参数为初始值进行仿真：
-- L = 360 nm
-- LN_PT = 1.4 um (minimum 1.2 um), AN_PT = 600, FN_PT = 30
-- (R1, C1) = (7.0 kOhm, 250 fF)
-- (Cc1, Rc1, Cc2, Rc2) = (0, 0, 0, 0) (暂不使用补偿网络)
-- (IBIAS, Cc, Rz) = (150 uA, 325 fF, 5.0 kOhm)
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-15-12-41-44_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-
-此时 (ILOAD, Cc) = (10 uA, 325 fF) 的频率响应为：
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-15-12-43-55_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-
-pole2 和 pole3 中的一个其实就是运放 $\omega_{p2}$，可通过调整 (Rz, Cc) 来显著改善 (几乎不影响 PSRR)：
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-15-12-49-46_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-
-于是参数变为 
-- L = 360 nm
-- LN_PT = 1.4 um (minimum 1.2 um), AN_PT = 600, FN_PT = 30
-- (R1, C1) = (7.0 kOhm, 250 fF)
-- (Cc1, Rc1, Cc2, Rc2) = (0, 0, 0, 0) (暂不使用补偿网络)
-- (IBIAS, **Cc, Rz**) = (150 uA, **425 fF, 0.7 kOhm**)
-
-
-然后调整 R1 来提升 PSRR_5MHz:
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-15-12-57-40_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-
-根据 10 mA 下的 PSRR 结果，**R1 = 1.0 kOhm** 似乎是个不错的选择：
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-15-13-01-35_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-15-13-01-53_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-
-高输出电流下 PSRR 下降是因为 op amp 输出电压过高，导致 op amp 工作状态发生变化，可通过提高 AN_PT 来改善：
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-15-13-03-56_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-
-由上图选择 **AN_PT = 700**，此时的参数及其全工艺角结果为：
-
-- L = 360 nm
-- LN_PT = 1.4 um (minimum 1.2 um), **AN_PT = 700, FN_PT = 35**
-- (**R1**, C1) = (**1.0 kOhm**, 250 fF)
-- (Cc1, Rc1, Cc2, Rc2) = (0, 0, 0, 0) (暂不使用补偿网络)
-- (IBIAS, **Cc, Rz**) = (150 uA, **425 fF, 0.7 kOhm**)
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-15-13-10-13_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-15-13-11-39_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-
-不妨极端一点，选择 AN_PT = 1000 看看 15 mA 下的 PSRR 能否过全工艺角：
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-15-13-14-09_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-15-13-14-31_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-
-拿 (TT65, ILOAD = 10 uA) 下的频率响应看看：
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-15-13-19-54_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-
-以及此参数在不同负载电容下的稳定性：
-
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-15-13-25-28_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-15-13-27-20_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
-
-
-上面几张图片都说明 AN_PT = 1000 时性能似乎好得不可思议，那么这个面积是否可行呢？我们来算一下。取 finger = 40, 所占面积为 (40*L) \* (25\*L) = 56um * 35um, 好像确实是可以接受的，毕竟我们没有加任何补偿网络，也就没有那些很占面积的大电容。
-
-
-

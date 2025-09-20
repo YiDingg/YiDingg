@@ -114,6 +114,7 @@
 - (9) Post-Layout Simulation (后仿)
 
 
+
 ## 2. Layout Details
 
 
@@ -123,9 +124,7 @@
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-26-21-27-11_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-26-21-39-37_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
 
-
-<span style='color:red'> 注意：由于电阻比值 $\frac{R_2}{R_1}$ 对温度曲线的影响很大，我们在基本完成版图工作后，需要不断根据后仿的结果调整 $R_1$ 与 $R_2$ 的导线，从而间接地调整 $R_2$ 与 $R_1$ 的比值，直到 zero-TC point 和 TC (temperature coefficient) 都达到最佳 (比如 zero-TC point 在 27℃ 附近, 且 TC 约为 3.5 ppm/°C).</span>
-
+注意：由于电阻比值 $\frac{R_2}{R_1}$ 对温度曲线的影响很大，**如果时间充足**，我们在基本完成版图工作后，需要不断根据后仿的结果调整 $R_1$ 与 $R_2$ 的导线，从而间接地调整 $R_2$ 与 $R_1$ 的比值，直到 zero-TC point 和 TC (temperature coefficient) 都达到最佳 (比如 zero-TC point 在 27℃ 附近, 且 TC 约为 3.5 ppm/°C).
 
 ### 2.1 add dummy devices
 
@@ -142,6 +141,8 @@
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-26-22-08-25_Cadence Layout (202507_tsmcN28_BGR__scientific_research_practice_1).png"/></div>
 
 <span style='color:red'> 然后检查 shcematic 中各器件的参数是否正确，检查完毕后继续下一步 (这一步很重要！要是等 layout 做完了才发现器件参数弄错了，那实在令人崩溃) </span>
+
+
 
 ### 2.2 generate layout
 

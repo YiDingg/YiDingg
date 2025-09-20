@@ -578,6 +578,16 @@ notifyStarLevelSettingsNotAppliedToAll->applyStarLevelSettingsToAll->value= t
 hiFormDone(notifyStarLevelSettingsNotAppliedToAll)
 ```
 
+
+
+
+
+
+
+
+
+
+
 类似地，对于 `tsmcN28` 工艺库，代码如下：
 
 ``` bash
@@ -859,6 +869,12 @@ cp /home/IC/.cdsenv /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250
  -->
 
 
+
+### 7. Multiple Workspace
+
+
+
+Loading the Specified .cdsinit File from Another Workspace: 参考 https://wiki.to.infn.it/vlsi/workbook/analog/cdsenv
 
 ## Fix Bugs and Errors
 

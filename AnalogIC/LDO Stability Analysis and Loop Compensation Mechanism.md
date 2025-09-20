@@ -116,7 +116,7 @@ $$
 本文的传函推导借助 MATLAB 完成，代码如下：
 
 ``` matlab
-AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.md
+AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2.md
 
 1. The scaling equations for 2.5V N/PMOS transistor are shown in Table 2-8.
 lr = 0.5e-06;

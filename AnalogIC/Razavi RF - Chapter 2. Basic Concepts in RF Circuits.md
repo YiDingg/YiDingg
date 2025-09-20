@@ -307,7 +307,7 @@ $$
 
 
 
-### 3.1 noise as a random process
+### 3.1 random noise
 
 略。
 
@@ -368,3 +368,73 @@ where $V_{n,out,total}^2 = |\alpha|^2 A_v^2 \overline{V_{n,R_S}^2} + \overline{V
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-09-18-22-50_Razavi RF - Chapter 2. Basic Concepts in RF Circuits.png"/></div>
 
 
+### 3.6 cascaded NF
+
+如下图，当两级或更多模块级联起来时，整体的 NF (noise figure) 变为：
+
+$$
+\begin{gather}
+\mathrm{NF}_{total} = \mathrm{NF_1} + \frac{\mathrm{NF_2} - 1}{A_{P_1}^{\mathrm{ava}}}
+\\
+\mathrm{NF}_{total} = 1 + (\mathrm{NF_1} - 1) + \frac{\mathrm{NF_2} - 1}{A_{P_1}^{\mathrm{ava}}} + \cdots + \frac{\mathrm{NF_n} - 1}{A_{P_1}^{\mathrm{ava}} A_{P_2}^{\mathrm{ava}} \cdots A_{P_{n-1}}^{\mathrm{ava}}}
+\\
+\mathrm{Available\ Power\ Gain:}\ 
+A_{P}^{\mathrm{ava}} := \frac{P_{in}^{\mathrm{ava}}}{P_{out}^{\mathrm{ava}}} = \frac{V_{in,rms}^2 / R_S}{V_{out,rms}^2 / R_{out}} = \frac{V_{in,amp}^2 / 2R_S}{V_{out,amp}^2 / 2R_{out}}
+\end{gather}
+$$
+
+where $R_S$ and $R_{out}$ denote the source and output resistances, respectively. 并且注意 available power gain $A_{P}^{\mathrm{ava}}$ 的分子是 input.
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-16-14-06-49_Razavi RF - Chapter 2. Basic Concepts in RF Circuits.png"/></div>
+
+### 3.7 lossy NF
+
+无源器件构成的匹配网络不仅会降低信号的幅度，还会引入额外的噪声，从而影响系统噪声性能。可以证明, lossy circuits 的 NF (noise figure) 与其 lose factor $L$ 是相等的：
+
+$$
+\begin{gather}
+\mathrm{NF} = L = \frac{V_{in}^2/R_S}{V_{Thev}^2/R_{out}}
+\end{gather}
+$$
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-16-14-25-20_Razavi RF - Chapter 2. Basic Concepts in RF Circuits.png"/></div>
+
+## 4. Dynamic Range
+
+暂略。
+
+## 5. Passive Impedance Transformation
+
+<div class='center'>
+
+|  | $C$ | $L$ |
+|:-:|:-:|:-:|
+ | $Q_S$ | $\frac{\frac{1}{\omega C_S}}{R_S}$ | $\frac{\omega L_S}{R_S}$ |
+ | $Q_P$ | $\frac{R_P}{\frac{1}{\omega C_P}}$ | $\frac{R_P}{\omega L_P}$ |
+</div>
+
+串并联之间的等效转换：
+
+$$
+\begin{gather}
+\begin{cases}
+R_P = (1 + Q^2) R_S
+\\
+C_P = \frac{Q^2}{Q^2 + 1} C_S
+\\
+Q_P = Q_S = Q
+\end{cases}
+,\quad 
+\begin{cases}
+R_P = (1 + Q^2) R_S
+\\
+L_P = \frac{Q^2 + 1}{Q^2} L_S
+\\
+Q_P = Q_S = Q
+\end{cases}
+\end{gather}
+$$
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-16-14-31-23_Razavi RF - Chapter 2. Basic Concepts in RF Circuits.png"/></div>
+
+之所以说上面是 "等效" 的，是因为绝大多数模块都具有极窄的带宽，在这个给定带宽范围内，品质因子 $Q$ 可以看作是常数，因此上面的等效成立。

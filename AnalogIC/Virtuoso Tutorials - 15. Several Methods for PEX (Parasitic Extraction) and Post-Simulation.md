@@ -1,0 +1,289 @@
+# Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation
+
+> [!Note|style:callout|label:Infor]
+> Initially published at 16:55 on 2025-09-20 in Beijing.
+
+
+## Introduction
+
+起因是在最近的项目 [Design of A Basic Low Dropout Regulator (LDO) for BB-PLL](<Projects/Design of A Basic Low Dropout Regulator (LDO) for BB-PLL.md>) 做版图时，遇到了寄生参数提取时间过长的问题。其中 PEX 提取倒不算慢，但是 calibre view 生成非常非常慢，一个 LDO 的版图等了三个小时也没见生成好，因此果断放弃这种方法，改用提取 netlist 进行后仿。
+
+本文就先介绍最通用的 **"提取并生成 calibre view"** 方法，然后介绍速度明显更快的 **"提取并生成 netlist"** 方法 (包括 DSPF/SPECTRE/HSPICE 等多种格式)。当然，也会顺便介绍一下如何利用提取得到的 calibre 或者 netlist 进行后仿真 (post-simulation)。
+
+>注，后文所有寄生参数提取都是以  [202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.md>) 中的 **v7_layout__PS_0920_1451** 为例。
+
+
+## 1. Common Issues
+
+
+先把一些碎碎念放在前面，让读者有个大致了解：
+- **一般都用 Gate Level + X-Cells 提取寄生参数，** 这对晶体管的提取精度影响不大，主要是一些无源器件提取精度稍差一些；如果确实要用 Transistor Level, 一定确保没有引入 x-cell 文件 (否则会重复提取寄生参数)
+- calibre view 生成时一般 0 warning 才正确，warning 也是需要处理的
+
+
+## 2. PEX Steps 
+
+无论使用哪种格式/方法在 PEX 界面提取寄生参数网表，它们的操作都基本相同，因此这里先介绍如何进行 PEX 提取：
+- (1) 打开 PEX 并设置 file 和 dir: 
+    - `Calibre > Run PEX`，设置好 `PEX Rules File` 和 `run directory`；`PEX Rules File` 通常是以 `.rcx` 为后缀的文件，例如我们的路径是 `/home/IC/Cadence_Process_Library/tsmcN65/Calibre/rcx/calibre.rcx`；**其中 `run directory` 建议设置在当前 cellview 目录下，且新建一个标明本次提取格式的子文件夹** `PEX_HSPICE/PEX_DSPF/PEX_SPECTRE` 等 (这个子文件夹与 schematic/layout/symbol 同级)；例如设置为 `/home/xxx/our_cellview/PEX_HSPICE` 
+- (2) 设置 Netlist 来源: 
+    - `Inputs > Netlist > Export from schematic viewer`
+    - `Inputs > Netlist > Spice Files` 添加文件 `source.added`
+- (3) 设置输出精度: 
+    - `Output > Extraction Type` 选择提取精度，一般都是 **`Gate Level` (配合 x-cells)** 或 **`Transistor Level` (不配合 x-cells)**，然后阻容选择 `R + C + CC` (电阻 + 电容 + 互容)
+    - **(Optional)** `Inputs > H-Cells > PEX x-Cells file` 导入 x-cell 文件，如果是 Transistor Level 则不需要导入 (也不建议导入，否则可能出现重复提取寄生参数的问题)
+- (4) 设置输出格式: 
+    - `Output > Netlist > Format`，常用的有 `CALIBREVIEW`, `DSPF`, `HSPICE`, `SPECTRE` 等；本文所介绍的后仿方法适用于后三种: `DSPF`, `HSPICE`, `SPECTRE`；而 `CALIBREVIEW` 格式需要生成专门的 calibre view 进行后仿，生成这一步所耗的时间太长太长，而且容易出错，因此被我们抛弃
+- (5) 设置 PEX Options:
+    - `PEX Options > Netlist > Format > Ground node name` (与 schematic/layout 中的地名称保持一致)
+    - **(Optional)** 如果需要减小网表大小/加快提取速度/加快仿真速度 (但是牺牲一定精度)，可以在 `PEX Options > Netlist > Reduction and CC` 中设置 `Enable MinCap Reduction` 和 `Enable MinRes Reduction`；COMBINE 就是将阈值以下的电阻/电容的节点合并到最近的节点，REMOVE 就是阈值以下所有的寄生电阻或寄生电容去掉不提取 (一般仅设置 COMBINE)；**常规电路 (核心频率 1 GHz 以下) 通常设为 (0.01 Ohm, 0.01 fF)**，再高频的电路可以设为 (0.0001 Ohm, 0.0001 fF).
+    - `PEX Options > LVS Options > Power nets / Ground nets` 设置电源和地 (与 schematic/layout 中的电源/地名称保持一致)
+    - **`PEX Options > Misc > Create top level pin order + SOURCE + All Pins` (若不勾选，后仿时还需要手动修改网表端口，很麻烦)**
+- (6) 设置多线程以加快提取速度:
+    - `Run Control > Run Calibre > Multi-Threaded`
+- (7) 运行寄生参数提取：
+    - 点击 `RUN PEX` 运行 PEX, 等待结果；在多线程情况下，导出 10 MB 左右的寄生网表需要 30s ~ 60s，单线程 60s ~ 120s (耗时仅作参考)
+
+
+**可能上面的文字描述比较抽象，下面以一个 LDO 的版图为例，演示如何进行 PEX 提取：**
+
+- (1) 打开 PEX 并设置 file 和 dir: 
+    - `Calibre > Run PEX`，设置好 `PEX Rules File` 和 `run directory`；`PEX Rules File` 通常是以 `.rcx` 为后缀的文件，例如我们的路径是 `/home/IC/Cadence_Process_Library/tsmcN65/Calibre/rcx/calibre.rcx`；**其中 `run directory` 建议设置在当前 cellview 目录下，且新建一个标明本次提取格式的子文件夹** `PEX_HSPICE/PEX_DSPF/PEX_SPECTRE` 等 (这个子文件夹与 schematic/layout/symbol 同级)；例如设置为 `/home/xxx/our_cellview/PEX_HSPICE` 
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-00-43-46_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+
+- (2) 设置 Netlist 来源: 
+    - `Inputs > Netlist > Export from schematic viewer`
+    - `Inputs > Netlist > Spice Files` 添加文件 `source.added`
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-00-47-29_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+
+
+- (3) 设置输出精度: 
+    - `Output > Extraction Type` 选择提取精度，一般都是 **`Gate Level` (配合 x-cells)** 或 **`Transistor Level` (不配合 x-cells)**，然后阻容选择 `R + C + CC` (电阻 + 电容 + 互容)
+    - **(Optional)** `Inputs > H-Cells > PEX x-Cells file` 导入 x-cell 文件，如果是 Transistor Level 则不需要导入 (也不建议导入，否则可能出现重复提取寄生参数的问题)
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-00-48-22_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+- (4) 设置输出格式: 
+    - `Output > Netlist > Format`，常用的有 `CALIBREVIEW`, `DSPF`, `HSPICE`, `SPECTRE` 等；本文所介绍的后仿方法适用于后三种: `DSPF`, `HSPICE`, `SPECTRE`；而 `CALIBREVIEW` 格式需要生成专门的 calibre view 进行后仿，生成这一步所耗的时间太长太长，而且容易出错，因此被我们抛弃
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-00-50-12_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+- (5) 设置 PEX Options:
+    - `PEX Options > Netlist > Format > Ground node name` (与 schematic/layout 中的地名称保持一致)
+    - `PEX Options > LVS Options > Power nets / Ground nets` 设置电源和地 (与 schematic/layout 中的电源/地名称保持一致)
+    - **`PEX Options > Misc > Create top level pin order + SOURCE + All Pins` (若不勾选，后仿时还需要手动修改网表端口，很麻烦)**
+    - **(Optional)** 如果需要减小网表大小/加快提取速度/加快仿真速度 (但是牺牲一定精度)，可以在 `PEX Options > Netlist > Reduction and CC` 中设置 `Enable MinCap Reduction` 和 `Enable MinRes Reduction`；COMBINE 就是将阈值以下的电阻/电容的节点合并到最近的节点，REMOVE 就是阈值以下所有的寄生电阻或寄生电容去掉不提取 (一般仅设置 COMBINE)；**常规电路 (核心频率 1 GHz 以下) 通常设为 (0.01 Ohm, 0.01 fF)**，再高频的电路可以设为 (0.0001 Ohm, 0.0001 fF).
+
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-00-56-04_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+<!-- 四张分图片：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-00-52-02_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-00-53-03_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-00-53-58_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-00-55-47_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+-->
+
+- (6) 设置多线程以加快提取速度:
+    - `Run Control > Run Calibre > Multi-Threaded`
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-00-57-30_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+
+- (7) 运行寄生参数提取：
+    - 点击 `RUN PEX` 运行 PEX, 等待结果；在多线程情况下，导出 10 MB 左右的寄生网表需要 30s ~ 60s，单线程 60s ~ 120s (耗时仅作参考)
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-00-57-48_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+导出完毕后还可以点击 `Start RVE` 查看寄生电容情况：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-27-56_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+
+## 3. Post-Simulation
+
+### 3.1 Using CALIBREVIEW
+
+由于 CALIBREVIEW 格式无法通过 netlist 进行后仿 (必须生成 calibre view)，不但生成时间太长太长 (30 s 就能导出的 10 MB netlist，生成 calibre view 却要三个多小时)，而且生成得到器件属性容易出错 (必须合理设置 reset 参数)，因此被本文抛弃。
+
+
+这里仅介绍导出 CALIBREVIEW 网表的操作，具体的后仿例子，详见文章 [知乎 > Cadence Virtuoso 教程 (八)：台积电 28nm 版图设计示例——包括 Layout, DRC, LVS, PEX 和后仿 (Post-Simulation)](https://zhuanlan.zhihu.com/p/1937319302949769830)。
+
+导出 CALIBREVIEW 网表的步骤与上一节 **2. PEX Steps** 完全一致，只是格式换成 CALIBREVIEW 而已。这里直接从寄生网表提取完毕，弹出 calibre view 生成窗口开始说起：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-21-36_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+右边窗口是导出的 `CALIBREVIEW netlist`, 里面包含了所有的原始元件和 parasitic 元件 (电阻、电容等)，中间窗口是 PEX 的结果，左边是预览带寄生参数原理图的设置。这里还可以打开 `RVE` 来观察每一个网络对应的总寄生参数，详见 this video (16 分 10 秒)，我们略过。
+
+左边的 Cellmap File 一栏要选择工艺库对应的 .cellmap 文件，通常也在 rcx 文件夹下。在 cellmap file 处选择 tsmcN28 工艺库对应的 cellmap 文件，通常后缀为 `.cellmap` 或者 `.yaml_calibre`。
+
+设置好 cellmap 文件后选择 `Calibre View Type > schematic` 以及 `Open Calibre CellView > Read-mode`，最重要的是设置 `Reset Parameters`，生成 calibre view 时必须 reset 的几个参数为：
+
+``` bash
+m=1 nf=1 segments=1
+```
+- `m=1` 和 `nf=1`: 提取后的晶体管是以 finger 为单位的，假设原来有一个晶体管 M1 是 finger = 4, m = 2, 提取出来就是 8 个晶体管；如果没有设置 `m=1` 和 `nf=1`，这八个晶体管会继承原晶体管的各项参数，也就是八个晶体管都为 finger = 4, m = 2 (fingerW 和 length 保持不变), 这样所生成的 calibre 中，这个 M1 晶体管实际上有 32 个 finger, 这就不对了。我们之前因没有设置 `nf=1` 在这点上吃过亏。
+- `segments=1`: 类似地，这个参数是将所有电阻的 segments 参数 reset 为 1.
+
+
+点击 OK 以生成 calibre view，生成后的效果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-31-24_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-35-20_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+
+
+
+
+
+### 3.2 Using DSPF/HSPICE/SPECTRE
+
+DSPF/HSPICE/SPECTRE 格式所导出的都是网表 spice netlist, 它们可以直接用于后仿而无需其他修改，并且后仿步骤完全类似。这里以 DSPF 为例，介绍如何进行后仿 (配合 config 文件)：
+
+导出 DSPF 格式的寄生参数后，可以看到文件夹 `/home/xxx/our_cellview/PEX_DSPF` 下有这些文件：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-04-39_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+其中 `PEX_DSPF/xxx.pex.netlist` 就是我们待会要用到的寄生参数网表。在搭建的 test bench 中创建好 config, 然后打开 ADE L 或者 ADE XL 的 Test Editor, 在 Setup 选项中选择 config 文件，这是后面操作的基础。
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-08-25_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+接下来就简单了，要想使用 DSPF 导出的网表进行后仿，只需打开 config, 右键需要换成后仿的器件并点击 `Specify SPICE Source File`，选择刚刚导出的寄生参数网表 `xxx.pex.netlist`，然后点击 config 左上角的 "保存" 按钮即可：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-11-53_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-13-33_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-14-41_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+
+这时运行仿真，如果生成的 `input.scs` 文件里没有任何器件参数，并且在末尾 `include` 了我们刚刚指定的寄生参数网表 `xxx.pex.netlist`，就说明后仿成功了：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-16-14_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+等待仿真完毕，便可以愉快地查看结果了：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-20-23-20-09_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-18-00_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+下面我们分别导出 DSPF/HSPICE/SPECTRE 三种格式进行后仿，对比它们的结果和仿真速度：
+
+### 3.2 DSPF Results
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-49-16_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-20-23-15-41_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-20-23-21-15_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-51-04_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-18-00_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+
+### 3.3 HSPICE Results
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-20-23-02-07_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-20-23-08-08_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-56-13_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+### 3.4 SPECTRE Results
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-20-23-25-59_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-20-23-25-12_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-53-02_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+
+## 4. Speed and Accuracy
+
+上面这么多中导出格式，哪种更快更准呢？我们导出的过程发现寄生参数提取所需时间差别不大，于是来对比一下不同格式的仿真速度：
+
+<div class='center'>
+
+| Format | Simulation Time |
+|:-:|:-:|
+| DSPF | 16 min |
+| HSPICE | 16 min |
+| SPECTRE | 30 min |
+</div>
+
+
+上表可以看出 DSPF 和 HSPICE 的速度差不多，且都比 SPECTRE 快不少 (快近一倍)。这与我们的经验相符，因为一般认为 SPECTRE 的精度会高一些 (相比于 DSPF/HSPICE 等格式)。
+
+顺便对比它们的仿真结果：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-58-39_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+(上图 HSPICE 的 Vgs/Vgate 结果顺序反了)
+
+这三组结果不是仅仅比较相似，而是近乎一模一样了，也从侧面说明了不同格式的寄生参数提取都比较可靠。
+
+
+
+## 5. Other Post-Simulation Methods
+
+本文介绍的 PEX 和 Post-Simulation 方法是我们目前用下来认为最简单、最高效、最可靠的方法，当然也有其他方法，例如：
+
+### 5.1 using CALIBREVIEW
+
+下面是几种常用的 CALIBREVIEW 后仿方法：
+- **(1) calibre + ADE L:** 修改 Environmental Options 里 Switch View List 的顺序，把 calibre 放 schematic 前面 (现在基本上不单独用 ADE L 了，所以这种方式很少用，详见 [[6]](https://zhuanlan.zhihu.com/p/6580714389))
+- **(2) calibre + ADE XL/Explorer:** 用 config 设置 set cell view **(常用的就是这种方法)**
+- **(3) calibre + ADE Assembler:** 使用 ADE assembly 的 add config sweep, 详见参考文章 [[6]](https://zhuanlan.zhihu.com/p/6580714389)
+
+用 calibre view 进行后仿的过程也是见文章：[知乎 > Cadence Virtuoso 教程 (八)：台积电 28nm 版图设计示例——包括 Layout, DRC, LVS, PEX 和后仿 (Post-Simulation)](https://zhuanlan.zhihu.com/p/1937319302949769830)，这里略过。
+
+
+
+### 5.2 using DSPF
+
+
+
+DSPF 的后仿和 CALIBREVIEW 的差不太多，区别是 DSPF **生成后缀为 .netlist 的网表**，所以不会有 Calibre view setup 界面 (其实 CALIBREVIEW 也会生成网表？)。下面是后仿方法：
+- **(1) dspf + ADE L:** 和 calibre 方法一类似，通过修改 switch view list, 把 dspf view 放 schematic 前面就好了
+- **(2) dspf + ADE XL/Explorer:** 和 calibre 方法二类似，通过 config 设置 set cell view 
+- **(3) dspf +  ADE Assembler:** 和 calibre 方法三类似，也是 add config sweep, 详见参考文章 [[6]](https://zhuanlan.zhihu.com/p/6580714389)
+- **(4) dspf + ADE L/XL/Explorer:** 打开 Test Editor (类似 ADE L 的界面)，在 `Simulation Files > Parasitic Files (DSPF)` 里添加寄生网表路径 `/xxx/xxx/xxx.pex.netlist` 就好，注意，如果设置了这一步，就不要修改 switch view list 的顺序了。
+比较常用的是方法二和方法四，前者最简单，我们下面分别做个 post-simulation (PS) 的示范。
+
+
+### 5.3 using SPECTRE
+
+如果采用 spectre 提取的寄生，一定一定要遵循上一小节里 **把 create all pin 勾上，以及选上 source**，这样就不需要再手动修改网表。SPECTRE 后仿方法如下：
+- **SPECTRE 方法一：** 改 input.scs, 我们不推荐 (详见 [[6]](https://zhuanlan.zhihu.com/p/6580714389))
+- **SPECTRE 方法二：** 利用 `analogLib` 库中的元件 `scasubckt` 创建后仿电路模型，需要手动操作 netlist, 不推荐 (详见 [[6]](https://zhuanlan.zhihu.com/p/6580714389))
+- **SPECTRE 方法三：** 在 config 中导入 spice netlist **(最简单也是最推荐)**
+- **SPECTRE 方法四：** ADE assembly 同时实现 spectre view 的前后仿，也很麻烦，不推荐 (详见 [[7]](https://mp.weixin.qq.com/s?__biz=MzUyNzA2MDA0OQ==&mid=2247528418&idx=1&sn=0a799d2c6d32a8974e11fea3b2d5759b))
+
+
+### 5.4 using HSPICE
+
+使用 HSPICE 进行后仿的步骤与前面类似，这里就不再提了。
+
+
+
+## Reference
+
+
+这里记录了本文参考的几篇文章，以及它们的主要内容/观点：
+- [1] [cnblogs > cadence 使用 calibre 进行后仿的几种方法](https://www.cnblogs.com/Felix-sin/p/15510215.html)
+    - (1.1) 生成 calibre view 将 calibre view type 从 schematic 改为 masklayout 可以加快生成速度，但这时生成的 calibre view 以 layout 的摆放位置提取寄生参数，查看各 net 信号不是那么方便
+    - (1.2) 或者直接在 pex 设置中, output-Netlist-Format 更改为 SPECTRE 生成网表，此时方法生成的网表需修改 pin 参数才能用于后仿，文章中有详细说明，或者看这篇文章 [知乎 > 后仿真 calibre 寄生参数 PEX 提取方法](https://zhuanlan.zhihu.com/p/564399927) 中的步骤更好一些 (也介绍了查看寄生电容/电阻的方法)
+- [2-3] [EETOP > [求助] 关于 calibre 提取寄生参数的问题](https://bbs.eetop.cn/thread-863759-1-1.html) 和 [EETOP > [求助] 寄生参数提取后，筛选的问题](https://bbs.eetop.cn/thread-599642-1-1.html): PEX 提取里有个 RC reduction 选项可以设置提取参数的最小单位 (最小值), 1 GHz 以下的电路通常设为 (0.01 Ohm, 0.01 fF), 再高频的电路可以设为 (0.0001 Ohm, 0.0001 fF).
+- [4] [知乎 > 模拟 IC 设计--calibre 后仿真碎碎念](https://zhuanlan.zhihu.com/p/578599757): 
+    - (4.1) xcells 或者 hcells 文件的作用就是令文件里的模块内部不在进行寄生参数提取 (已经在 xcells 里封装好了)，从而加快 PEX 速度 **(注意使用 xcells 时应选择 gate level, 选择 transistor level 会重复提取寄生参数，结果反而不准确)**
+    - (4.2) 用的做多的还是 Gate Level 提取，将一些 device 进行模块化，不进一步提取这些 device 的寄生参数，Transistor Level 数据量太大
+    - (4.3) RC reduction 设置中, COMBINE 就是将阈值以下的电阻/电容的节点合并到最近的节点，REMOVE 就是阈值以下所有的寄生电阻或寄生电容去掉不提取 (一般设置 COMBINE 即可)
+- [5] [知乎 > 提参 PEX 中, Format：CALIBREVIEW 和 DSPF 区别](https://zhuanlan.zhihu.com/p/683150814):
+    - (5.1) CALIBREVIEW（CALIBREVIEW +Net Geometry）：提出为 "schematic + 寄生参数" 合成的结果，进行后仿；DSPF：只是提出寄生参数，输出的为 "netlist" 。进行后仿真时，需要 "前仿的 schematic + 后仿的 netlist" 即可
+    - (5.2) CALIBREVIEW 和 DSPF 提取的寄生参数是一致的，提参进行后仿结果对比，只是小数点后几位不同
+    - (5.3) 利用 DSPF 结果进行后仿时，只需要在 ADE L > Setup > Simulation Files 中添加 PEX_DSPF.netlist 即可，操作起来也很方便
+- [6] [知乎 > Cadence Virtuoso 后仿真总结 (包含 Calibre, DSPF, Spectre 提寄生)](https://zhuanlan.zhihu.com/p/6580714389)
+    - (6.1) 这篇文章介绍了多种寄生参数提取格式及其后仿方法，算总结得比较全面了
+    - (6.2) PEX 时建议在 `PEX Options > Misc` 中把 Layout 的电源和地加上 (要与 PEX Options > netlist 和 PEX Options > LVS Option 中的设置保持一致)
+    - (6.3) 生成 netlist 用于后仿时，**把 "Create top level pin order" 勾上，选择 "source"，勾上 "All Pins"。这一步对后面的后仿很重要，就不需要再到 netlist 里手动修改寄生网表的端口名称。**
+- [7] [微信文章 > 模拟集成电路设计流程——版图后仿真](https://mp.weixin.qq.com/s?__biz=MzUyNzA2MDA0OQ==&mid=2247528418&idx=1&sn=0a799d2c6d32a8974e11fea3b2d5759b)
+- [8] [知乎 > Cadence Virtuoso 教程 (八)：台积电 28nm 版图设计示例——包括 Layout, DRC, LVS, PEX 和后仿 (Post-Simulation)](https://zhuanlan.zhihu.com/p/1937319302949769830)
+    - (8.1) 介绍了台积电 28nm 工艺的版图设计流程，包含 DRC, LVS, PEX 和利用 CALIBREVIEW 格式进行的后仿
+    - (8.2) **详细讲解了 DRC/LVS/PEX 时容易遇到的常见问题及其解决方法，任何环节出现问题都可以到里面找找答案**

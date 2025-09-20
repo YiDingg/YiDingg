@@ -14,7 +14,7 @@
 
 ### 1.1 op amp specs
 
-我们已经在 [这篇文章](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.md>) 中给出了运放的设计指标：
+我们已经在 [这篇文章](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1).md>) 中给出了运放的设计指标：
 
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-12-23-56-26_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.png"/></div>
@@ -295,7 +295,7 @@ Pass transistor 的初始值不足以驱动 15 mA 也没关系，我们后续增
 
 ### 4.4 design summary
 
-后续有关 pass transistor, bypass capacitor 等设计迭代详见 [202509_tsmcN65_LDO__in-1d8-to-2d5_out-1d0](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.md>) 的 **3. Design of LDO** 一节。
+后续有关 pass transistor, bypass capacitor 等设计迭代详见 [202509_tsmcN65_LDO__in-1d8-to-2d5_out-1d0](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1).md>) 的 **3. Design of LDO** 一节。
 
 ## 5. Pre-Simulation
 

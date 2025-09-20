@@ -20,7 +20,9 @@
 - 📱 **Analog IC Designs** <!-- 新的 design 放在前面 -->
 
     - tsmcN28
-        - [202509 LDO: basic 1.8 V ~ 2.5 V to 1.0 V](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d0.md>)
+        - [202509 LDO (layout): 1.8 V ~ 2.5 V to 1.2 V](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.md>)
+        - [202509 LDO (2): 1.8 V ~ 2.5 V to 1.2 V](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (2).md>)
+        - [202509 LDO (1): 1.8 V ~ 2.5 V to 1.2 V](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1).md>)
         - [202509 Op Amp: op amp for the LDO](<AnalogICDesigns/202509_tsmcN65_OpAmp__nulling-Miller.md>)
         - [202508 CP-PLL: 3rd-Order Type-II Integer-N CP-PLL](<AnalogICDesigns/202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N.md>)
         - [202507 BGR (layout): low-voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1__layout.md>)
@@ -64,6 +66,8 @@
         - [11. Resolving Discrepancies Between DC and Transient Simulation Results](<AnalogIC/Virtuoso Tutorials - 11. Resolving Discrepancies Between DC and Transient Simulation Results.md>)
         - [12. Behavior-Level Simulation using Verilog-A in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 12. Behavior-Level Simulation using Verilog-A in Cadence IC618.md>)
         - [13. Periodical Steady-State and Phase Noise Simulation](<AnalogIC/Virtuoso Tutorials - 13. VCO and PLL Simulation (Periodical Steady-State and Phase Noise).md>)
+        - [14. Understanding Substrate, Well, Tap, and Guard Ring in Analog IC Layouts](<AnalogIC/Virtuoso Tutorials - 14. Understanding Substrate, Well, Tap, and Guard Ring in Analog IC Layouts.md>)
+        - [15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation](<AnalogIC/Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.md>)
 
 
     - Use Virtuoso Efficiently

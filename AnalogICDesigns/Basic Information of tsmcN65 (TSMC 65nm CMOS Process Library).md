@@ -105,13 +105,13 @@ tsmcN65\PDK_doc\TSMC_DOC_WM\PDK\2D4GHz_VCO_Process_Vehicle_Design_Report_2007
 
 
 图中各器件后缀含义如下：
-- **dnw = deep n-well**: 
-- **18 = 1.8V**, **2 = 2.5V**, **33 = 3.3V**
-- **na = native threshold voltage (zero VT)**, **lvt = low threshold voltage**, **hvt = high threshold voltage**
-- **x = three-terminal device (bulk/nwell connected to VSS/VDD)**
-- **m = three terminal (resistor)**
-- **OD = over drive**, **UD = under drive**
-- **BJT_mis = with mismatch model**: 工艺角仿真时无 mis 后者也可，但 BJT 的 mc 仿真必须带 mis (某些工艺库的 BJT 没有 mis 后缀，所有 BJT 都自带 mis)
+- **dnw** = deep n-well: 
+- **18** = 1.8V, **25** = 2.5V, **33** = 3.3V
+- **na** = native threshold voltage (zero VT), **lvt** = low threshold voltage, **hvt** = high threshold voltage
+- **x** = three-terminal device (bulk/nwell connected to VSS/VDD)
+- **m** = three terminal (resistor)
+- **OD** = over drive, **UD** = under drive
+- **BJT_mis** = with mismatch model: 工艺角仿真时无 mis 后者也可，但 BJT 的 mc 仿真必须带 mis (某些工艺库的 BJT 没有 mis 后缀，所有 BJT 都自带 mis)
 
 
 下面具体举几个例子：
@@ -225,9 +225,10 @@ nch_25_dnwud18_macx : three-terminal 2.5V under drive 1.8V nominal VT NMOS in DN
 
 | 特性 | MIM Cap (Metal-Insulator-Metal) | MOM Cap (Metal-Oxide-Metal) |
 | :--- | :--- | :--- |
-| **电容密度** | **较高** (1-2 fF/μm²) | **较低** (0.3-0.7 fF/μm²) |
+| **电容密度** | **较高** (1-2 fF/μm²) | **较高或较低均可** (0.5-2 fF/μm²) |
 | **Q值** | **高** (低频至射频) | **非常高** (尤其在极高频) |
 | **自谐振频率(SRF)** | 高 | **极高** (毫米波频段首选) |
+| **适用频率范围** | DC ~ 10 GHz |  DC ~ 25 GHz (最高频率取决于具体工艺库，高性能的能做到近百 GHz) |
 | **电压/温度系数** | **低** (线性度好，精度高) | 较高 (线性度较差) |
 | **匹配精度** | **极高** | 高 (需精心布局) |
 | **工艺成本** | **需要额外掩膜和工艺，成本高** | **无需额外成本，免费** |
@@ -237,6 +238,32 @@ nch_25_dnwud18_macx : three-terminal 2.5V under drive 1.8V nominal VT NMOS in DN
 下面是 mim cap 的版图示例：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-13-23-18-34_Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).png"/></div>
+
+关于 mom cap 的版图样式和参数设置，这里多提几句 (user guide 中仅有下面第一张图提到 crtmom cap)：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-17-17-04-11_Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-17-17-09-43_Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-17-17-02-28_Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-17-17-24-40_Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-17-17-57-08_Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).png"/></div>
+
+mom cap 各参数含义：
+- finger width: default 100 nm (100 nm ~ 160 nm), 要想获得更高的电容密度 (单位面积电容值)，可以将此参数调整为最大值 160 nm
+- finger spacing: default 100 nm (100 nm ~ 160 nm), 一般不会去调整此参数
+- number of fingers: default 32 (even number between 6 and 288), 调整此参数来改变电容值，当然，电容面积也会随之改变
+- bottom/top metal layer: default M3 to M5 (bottom M1 ~ M5, top M3 ~ M7), 调整此参数可以获得不同的电容密度和 Q 值，常用值为 M3 to M5 或 M1 to M7
+- OD_width: default 100 nm (100 nm ~ 260 nm), 一般不调整此参数
+- Create_OD2_Layer: default no, (yes/no), 
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-17-17-44-40_Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).png"/></div>
+
+作为经验定律, number of fingers 和 bottom/top metal layer 可以这样设置：
+- number of horizontal fingers = number of vertical fingers
+- 统一用 M3 to M5 或者 M1 to M7 (需要节省面积时)
+- 需要更高密度时，设置 finger width = 160 nm, finger spacing = 100 nm 保持不变
+
+
 
 ## 3. gm/Id Simulation
 
@@ -267,22 +294,20 @@ nch_25_dnwud18_macx : three-terminal 2.5V under drive 1.8V nominal VT NMOS in DN
 
 ### 3.3 nch_na25
 
-- `nch_na25`: Lmax=
+- `nch_na25`: Lmin = 1.2 um, Lmax = , Wmin = , Wmax = 901.0 um
 
-### 3.99 gm/Id summary
+### 3.4 gm/Id summary
 
 **<span style='color:red'> 将 gm/Id 仿真数据总结到表格中： </span>**
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-12-23-32-36_Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).png"/></div>
 
-## 5. Layout Rules
+
+## 4. Layer Definition
 
 
 与之前接触 28nm 类似，我们一方面熟悉一下 T65 中各个 layer 缩写的含义，另一方面根据 `calibre.drc` 等文件，手动整理一份 DRC 规则表格，方便后续设计时查阅。
 
 
-## 7. Frequently Asked Questions
 
-### 7.1 meaning of the subscript "_mac"
-
-在 tsmcN65 工艺库中，器件型号上的后缀带有 `_mac` 
+## 5. DRC Rules
