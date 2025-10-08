@@ -3,9 +3,9 @@
 > [!Note|style:callout|label:Infor]
 > Initially published at 16:34 on 2025-09-17 in Beijing.
 
-## General Considerations
+## 1. General Considerations
 
-### 1.0 Overview
+### 1.0 overview
 
 本文，我们将对 `tsmcN65` 工艺下设计的 [basic capacitor-less LDO (v6_171321)](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (2).md>) 进行版图设计，并完成后续一系列工作，这包括：
 - Layout (版图设计)
@@ -22,14 +22,14 @@
 - (4) 将 IBIAS 输入端管子的 multiplier 修改一下，使得接口处输入 100 uA 时，实际 IBIAS = 150 uA, 这可以通过 (m1, m2) = (2, 3) 来实现
 - 注：(2) (3) 两条提到的电容均为 mom cap, 并且其具体容值暂时还不清楚，需要先生成 layout 后看看剩余面积如何，再决定容值大小；我们优先把面积给 CREF，因为 COUT 可以于最后集成阶段在 LDO 四周添加 (空余面积都可以利用)
 
-### 1.1 Layout Settings
+### 1.1 layout settings
 
 为提高 layout 设计效率，建议调整部分设置。在 Layout GXL 中打开版图，点击 `Options > Display`, 修改如下：
 - <span style='color:red'> 打开布线时的 DRC 提示：`Options > DRD Edit > Enable Notify` </span>
 - `Display Controls`: 在 `Option > Display` 中 Enable `Pin Names` and `Show Name Of > both`，然后打开 `Option > Net Name Display > Draw labels on top`, 并调整合适的颜色 (例如将白色改为黄色)
 - `Dimming`: Enable `Dimming` (选中器件时会高亮对应器件，同时暗化其它器件)
 
-### 1.2 Layers and DRC Rules
+### 1.2 layers and DRC rules
 
 开始版图设计之前，得先确定此工艺库下的各个 layer 简称代表什么意思，以及阅读工艺库下的 DRC 文件，确定几个基本 DRC 规则的数值。详细的信息在文章 [Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).md>) 中有介绍，这里列出之前在 **tsmcN28** 28nm 工艺库下总结的表格，作为参考：
 
@@ -64,7 +64,7 @@
 
 如果对版图设计和验证的全流程还不太熟悉，建议先完成一次简单的反相器版图设计，详见文章 [知乎 > Cadence Virtuoso 教程 (八)：台积电 28nm 版图设计示例——包括 Layout, DRC, LVS, PEX 和后仿 (Post-Simulation)](https://zhuanlan.zhihu.com/p/1937319302949769830)。
 
-### 1.3 Layout Steps
+### 1.3 layout steps
 
 版图设计的主要流程与操作如下：
 - (1) Preparations
@@ -76,7 +76,7 @@
     - (2.2) 选择 `Place as in schematic`
 - (3) Setting layout properties
     - (3.1) 利用 align 功能分离每一组器件 (这一步要注意 DRC)
-    - (3.2) 依次选中各 MOS 管，在属性编辑中开启 gate contacts 和 route_Source_Drain 等，也即自动生成 gate contacts 和自动连接 multi-finger MOS 的 source/drain. **(在本次设计中，我们所有晶体管的 source/drain 都使用 M2 及以上金属层进行走线，因此无需打开此属性)**
+    - (3.2) 依次选中各 MOS 管，在属性编辑中开启 gate contacts 和 route_Source_Drain 等，也即自动生成 gate contacts 和自动连接 multi-finger MOS 的 source/drain. **(在本次设计中，我们所有晶体管的 source/drain 都使用 M2 及以上金属层进行走线，因此无需打开 route_Source_Drain)**
     - (3.3) 将每一组晶体管 group 起来
 - (4) Add Guard Ring and N-Well
     - (4.1) 手动添加 guard ring (这一步要注意 DRC)
@@ -155,6 +155,7 @@
 - fingers = 30 (减半)
 - multiplier = 2 (乘二)
 
+202509_OTA_1V2_constantGm_adjustable__v1_271731
 
 最后便是修改 MB1/MB2 的参数，这两个管子共五个 multiplier, 我们再添加一个 dummy 以方便排版。
 
@@ -420,17 +421,18 @@ DRC 和 LVS 均全部通过了：
 名称中的 "PS" 表示 "Passed"，意思是完整通过了 DRC 和 LVS 检查。
 
 
+## 3. PEX and Post-Simulation
 
+### 3.1 (ac) PSRR and noise
 
-### 2.11 PEX and Post-Simul.
-
-下面先对这个 v7_layout__PS_0920_1451 (无 CREF/CIN 等额外电容) 进行 PEX 和后仿，看看后仿性能如何。
-
-
+下面先对这个 v7_layout__PS_0920_1451 (无 CREF 等额外电容) 进行 PEX 和后仿，看看后仿性能如何。
 
 
 
-一开始我们用的是 CLIBREVIEW 格式，但是生成 calibre view 时等了整整两个小时不见生成完毕，果断放弃，改用生成 spice netlist 的方法 (生成 spice netlist 还有一个优势是无需担心 calibre.cellmap 时参数出错)。具体操作详见这篇文章 [Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation](<AnalogIC/Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.md>)，这里直接给出 PEX 和后仿结果：
+一开始我们用的是 CLIBREVIEW 格式，但是生成 calibre view 时等了整整两个小时不见生成完毕，果断放弃，改用生成 spice netlist 的方法 (生成 spice netlist 还有一个优势是无需担心 calibre.cellmap 时参数出错)。具体操作详见这篇文章 [Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation](<AnalogIC/Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.md>)，这里直接给出 PEX 和后仿结果。
+
+
+设置 **Transistor Level** (不导入 x-cells 文件) 和 R + C + CC, 导出 DSPF 格式网表并进行后仿，结果如下：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-49-16_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-20-23-15-41_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
@@ -438,30 +440,208 @@ DRC 和 LVS 均全部通过了：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-51-04_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-18-00_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
 
-这里的后仿只能作 Opt/PSRR/Noise 仿真，没办法仿真环路稳定性。要想仿真稳定性，我们需要另开一个版图，把反馈路径上的 `Vin-` 和 `Vmirror` 断开，并单独设置成两个 Pin, 详见下一小节
 
-### 2.12 Stability Post-Simul.
+也顺便看一下各种输出格式/精度的后仿结果对比 (DSPF + Gate, DSPF + Transistor, HSPICE + Transistor)：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-17-40-57_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-17-42-10_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+
+从 PSRR/Noise 的结果来看, Gate Level 仿真出来与前仿更接近。
+
+
+这里的后仿只能作 Opt/PSRR/Noise 仿真，没办法仿真环路稳定性。要想仿真稳定性，我们需要另开一个版图，把反馈路径上的 `Vin-` 和 `Vmirror` 断开，并单独设置成两个 Pin, 详见下一小节。
+
+
+
+### 3.2 (ac) loop stability
 
 为避免名称过长，我们将新开的版图所在 cell view 命名为：
 
 ``` bash
-202509_LDO_basic_in1d7to2d65_out1d2__v7_PS_0920_1320_stabili
+202509_LDO_basic_in1d7to2d65_out1d2__v7_PS_0920_1451_stabili
 ```
 
 
 名称长度 **不能超过 60 个英文字符**，例如下面的例子刚好是 60 个字符/字母：
 
 ``` bash
-202509_LDO_basic_in1d7to2d65_out1d2__v7_layout__PS_0920_1320
+202509_LDO_basic_in1d7to2d65_out1d2__v7_layout__PS_0920_1451
+```
+
+
+**<span style='color:red'> 注意从原 cell view 复制过来后，symbol 必须重新创建，因为我们修改了端口的数量 (或名称)，symbol 的 CDF 信息发生了变化。</span>** 我们一开始就是因为没有重新创建 symbol, 导致仿真时 netlist 出错，具体表现为：
+
+``` bash
+# output log error:
+ ERROR (SFE-45): "input.scs" 32: `I20': An instance of `202509_LDO_basic_in1d7to2d65_out1d2__v7_PS_0920_1451_stabili' needs at least 9 terminals (but has only 5).
+
+# generated netlist:
+LDO (IBIAS OUT VDD VREF VSS) \
+        202509_LDO_basic_in1d7to2d65_out1d2__v7_PS_0920_1451_stabili
+
+# correct netlist should be:
+LDO (IBIAS OUT VDD VREF VSS VMIRROR VINN) \
+        202509_LDO_basic_in1d7to2d65_out1d2__v7_PS_0920_1451_stabili
 ```
 
 
 
-### 3. Addition of CREF/CIN
+修改后的原理图和版图如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-15-19-35_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-15-20-05_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+
+DRC/LVS 均全部通过：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-13-29-23_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-13-29-52_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+
+为提高 PEX 和后仿效率，我们考虑导出 DSPF 网表进行后仿。下面是用 DSPF (Transistor Level) 仿真不同负载下的稳定性结果：
 
 
-**<span style='color:red'> 别忘了按导师要求，我们还需要在版图剩下的空余面积中添加电容 CREF/CIN</span>**
 
 
-## 3. Post-Simulation
+为说明结果可靠性，我们又分别导出了 DSPF (Gate Level) 和 HSPICE (Transistor Level) 网表，在 20 pF 负载下统一进行后仿，对比它们的 RVE 和后仿结果：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-13-37-48_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-13-40-27_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-16-00-14_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-16-13-35_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-16-14-53_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+
+
+**上面几张图可以看出，无论是 RVE 还是后仿, 不同格式 (同为 Transistor Level) 之间的结果基本没有差异，但是 Gate Level 和 Transistor Level 之间差异较大。** 哪一种更准确呢？这个问题其实没有绝对的答案，我们在文章 [Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation](<AnalogIC/Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.md>) 的 **6. Gate or Transistor Level?** 一节进行了具体的讨论，这里就不再赘述。
+
+<!-- 我们认为是 Transistor Level. 从提取的角度来讲，它的精度更高/提取更细致，从后仿的角度来看，它的结果更接近已充分验证过的前仿 (是我们想要的)。 -->
+
+<!-- 下面是 DeepSeek (2025.09.21) 对这两种方式的看法：
+
+>**问：**在模拟集成电路设计进行后仿时，有的人用 Transistor Level (不导入 x-cells 文件) 进行参数提取和后仿，有的人则使用 Gate Level (导入 x-cells 文件)，这两种方法所得后仿结果哪种更准确？这里 x-cells 文件的作用是什么？用段落而非 list 回答我，并将结论总结成表格。<br><br> **答：** 在模拟集成电路设计中进行后仿真时，选择 Transistor Level（不导入 x-cells 文件）或 Gate Level（导入 x-cells 文件）的方法会影响结果的准确性和仿真效率。Transistor Level 后仿直接基于晶体管级网表进行参数提取，包括所有晶体管的寄生参数（如电阻、电容和电感），以及互连线的寄生效应，因此它更全面地反映了实际工艺的物理特性，尤其是对模拟电路中的匹配、噪声和高频行为等敏感效应捕捉得更精确，结果通常更接近流片后的实测性能。然而，这种方法计算量大、仿真速度慢，尤其适用于关键模块或高精度模拟电路的设计验证。
+<br>相比之下，Gate Level 后仿通过导入 x-cells 文件（通常包含标准单元或预定义子电路的抽象模型，如门级网表或行为级模型），将部分电路（如数字逻辑单元）替换为等效的逻辑门级表示，从而减少仿真复杂度。x-cells 文件的作用是提供一种简化表示，以加速仿真并降低计算资源需求，但它可能忽略某些晶体管级的寄生细节或模拟行为，导致对混合信号电路中的模拟部分精度不足，尤其在高频或匹配要求高的场景中可能引入误差。因此，Gate Level 方法在数字主导或大规模混合信号电路中更高效，但准确性较低，尤其不适合纯模拟电路或高精度应用。
+<br>总体而言，Transistor Level 后仿更准确，但仿真成本高；Gate Level 后仿效率高，但准确性有妥协，尤其依赖于 x-cells 文件的质量和覆盖范围。设计者需根据电路类型（如模拟、数字或混合信号）和验证目标（如精度 vs. 速度）选择合适方法。以下表格总结了关键比较：
+| 方面                | Transistor Level (不导入 x-cells) | Gate Level (导入 x-cells) |
+|---------------------|----------------------------------|--------------------------|
+| 准确性              | 更高，包含完整寄生效应和晶体管细节    | 较低，依赖抽象模型，可能忽略部分寄生效应 |
+| 仿真速度            | 慢，计算密集型                   | 快，资源高效             |
+| 适用场景            | 高精度模拟电路、敏感匹配和高频应用   | 数字或大规模混合信号电路，注重效率 |
+| x-cells 文件作用    | 不适用                           | 提供标准单元或子电路的简化模型，加速仿真 |
+| 资源需求            | 高（内存和计算时间）             | 低                       |
+| 推荐使用            | 关键模拟模块和后签核验证         | 初步验证或数字部分占主导的设计 |
+
+ -->
+### 3.3 post-simul. summary
+
+下表总结了上面两节的后仿结果：
+
+<span style='font-size:12px'>
+<div class='center'>
+
+| Parameter | Post-Simulation <br> using DSPF (Transistor Level) | Test Condition |
+|:-:|:-:|:-:|
+ | PM           | 85.86° ~ 98.96° | ILOAD = 15 mA |
+ | GM           | 16.07 dB ~ 23.69 dB | ILOAD = 15 mA |
+ | PSRR Peaking | -13.27 dB ~ -19.14 dB <br> -2.934 dB ~ -5.081 dB |  ILOAD = 10 uA <br> ILOAD = 15 mA |
+ | PSRR @ DC    | -51.56 dB ~ -77.55 dB <br> -54.16 dB ~ -72.95 dB | ILOAD = 10 uA <br> ILOAD = 15 mA |
+ | PSRR @ 5 MHz | -41.79 dB ~ -47.02 dB <br> -33.76 dB ~ -44.88 dB | ILOAD = 10 uA <br> ILOAD = 15 mA |
+ | Output Noise @ 1 MHz | 10.25 nV/sqrt(Hz) ~ 14.97 nV/sqrt(Hz) <br> 10.25 nV/sqrt(Hz) ~ 14.92 nV/sqrt(Hz) | ILOAD = 10 uA <br> ILOAD = 15 mA |
+ | Integrated Noise (100 Hz ~ 1 MHz) | 20.74 uVrms ~ 25.32 uVrms <br> 20.73 uVrms ~ 25.28 uVrms | ILOAD = 10 uA <br> ILOAD = 15 mA |
+ |  Maximum Load Cap | 200 pF @ PM = 45° <br> 450 pF @ PM = 45° | ILOAD = 10 uA <br> ILOAD = 15 mA |
+</div>
+</span>
+
+<!-- <div class='center'>
+
+| Parameter | This Work | Reference |
+|:-:|:-:|:-:|
+ | PM | <span style='color:red'> 76.90° ~ 93.26° </span> | 80.8° ~ 82.62° |
+ | GM | 15.15 dB ~ 17.85 dB | <span style='color:red'> 42.55 dB ~ 46.09 dB </span> |
+ | PSRR Peaking | -2.305 dB ~ -4.585 dB <br> (-12.62 dB ~ -20.82 dB @ ILOAD = 10 uA) | -23.23 dB ~ -23.88 dB |
+ | PSRR @ DC    | <span style='color:red'> -52.24 dB ~ -84.37 dB </span> | -60.79 dB ~ -63.94 dB |
+ | PSRR @ 5 MHz | <span style='color:red'> -44.79 dB ~ -55.79 dB </span> | -38.44 dB ~ -40.51 dB |
+ | Output Noise @ 1 MHz | <span style='color:red'> 9.993 nV/sqrt(Hz) ~ 14.73 nV/sqrt(Hz) </span> | 38.71 nV/sqrt(Hz) ~ 44.48 nV/sqrt(Hz) |
+ | Integrated Noise (100 Hz ~ 1 MHz) | <span style='color:red'> 20.35 uVrms ~ 25.03 uVrms </span> | 50.25 uVrms ~ 68.55 uVrms |
+ | Maximum Load Cap | 460 pF @ PM = 45° | <span style='color:red'> 5.0 nF @ PM = 45° </span> |
+</div> -->
+
+## 4. Additional CREF
+
+
+**<span style='color:red'> 别忘了按导师要求，我们还需要在版图剩下的空余面积中添加电容 CREF (无需添加 CIN 和 COUT)，并且同时添加一个电阻 RREF。</span>** 对于这个电阻的作用，我的考虑是这样：
+- (1) 滤波：BGR 那边参考电压过来类似于一个低输出电阻的含噪声电压源，这个 RC 网络可以滤掉一部分噪声
+- (2) 稳定：平稳启动过程，启动时 VREF 这条线不至于电流过大，起到稳定作用
+- (3) 隔离：VREF 传输过程中可能突然受到较大的干扰，RC 网络带来的较大时间常数可以 "缓冲/滤掉" 这种干扰，起到隔离作用
+
+如下图，将所剩的版图面积填满得到 CREF = 14.52 pF:
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-23-48-32_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+
+那么我们的电阻该选多少比较合适呢？电阻越大 (时间常数越大)，滤波/稳定/隔离性能越好，但是电阻带来的热噪声也越明显。只考虑输入噪声和 RREF 热噪声的分析如下：
+
+
+上面的理论分析表明, RREF 越大，噪声性能越好。但其实我们粗略仿真下来，发现 RREF 对 Noise 的影响不大，反而会影响 LDO 的 PSRR 性能，下面的仿真说明了这一点：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-22-00-17-43_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-22-00-17-55_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-22-00-18-58_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-22-00-21-00_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+
+显然，这里过大的 RREF 只会恶化 PSRR 性能，所以我们考虑加 100 Ohm 以下的电阻。具体是多少呢？不妨选择 **RREF = 50 Ohm**. 毕竟 RREF 小了是可以的，但是绝对不能过大。
+
+
+在原理图和版图中添加 CREF 和 RREF 后，记得将 CREF 的属性 Well Type 从 N 修改为 P 以避免 floating n-well 报错，版图做完之后在模块最外围加上 "内 P 外 N 的 guard ring" 以实现良好的隔离效果，最终原理图/版图如下 **(v7_PS_0920_1451_CREF)**：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-22-14-26-11_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-22-14-25-19_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-22-14-26-38_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+
+DRC/LVS 也是全部通过了的：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-22-13-06-17_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-22-13-07-41_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+
+上面 LVS 报错说 "ERC > floating p-sub", 这是我们在模块最外围套了 n-well guard ring 导致的，是预料之中的，并且完全无害，到集成阶段正常连接 VSS 报错便自动消失。换句话说，将 n ring 去掉便不会存在任何 LVS 报错。
+
+
+
+**这一小节的版图中也遇到过一些问题/经验，一并总结在这里：**
+- 小型电路建议所有 net 都手动命名，避免版图复制后的 net 更新问题
+- 从其它 cell > layout 复制部分版图到新 cell > layout 时，对出现版图元件 ROD 属性不对应的问题 (被刷新覆盖了)，如果直接点击 `Update Components and Nets` 会出现 `unbounded` 报错；这时只需在左下角找到 `Define Device Correspondence` 更新以下版图元件和原理图的对应关系即可
+
+下图给出了 `v7_PS_0920_1451_CREF` 的 PSRR/Noise 后仿结果：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-23-19-23-36_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-23-19-24-28_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+
+和预期中的一样，上述结果与无电容版本 `v7_201154_layout` 的几乎没有区别。
+
+## 5. P.S. (Postscript)
+
+- 2025.10.08: 按导师要求，DNW 应该完全被 NW 覆盖，否则其隔离效果会大打折扣，我们在原 top cell `202509_LDO_basic_in1d7to2d65_out1d2__v7_PS_0920_1451_CREF` 的基础上修改了 DNW, 保存为 `202509_LDO_CREF_v8_10081442_PS` 并设置为新的 top cell. 其 Layout/DRC/LVS 效果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-08-14-58-51_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-08-15-00-32_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-08-15-02-01_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+
+这里给出新版 PEX 的一些设置：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-08-15-12-20_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-08-15-30-14_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-08-15-23-14_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+
+分别提取 Gate 和 Transistor Level:
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-08-15-30-33_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-08-15-35-34_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+
+顺便后仿验证一下：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-08-15-44-56_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-08-16-32-58_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+
+前仿结果放在这里方便对比 (标注 Gate/Tran 但其实是前仿)：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-08-15-44-17_202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.png"/></div>
+
+我们对比了一下 `Option > Job Setup` 中的 LSCS 和 ICRP control mode, 两者的仿真耗时分别为：
+- LSCS: 29min
+- ICRP: 30min
+
+看来区别不大。观察发现，主要是卡在 opening psf 文件这一步，会卡很久。
 

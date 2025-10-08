@@ -1,5 +1,9 @@
 # [Literature Review] TSPC D Flip-Flop
 
+> [!Note|style:callout|label:Infor]
+> Initially published at 19:04 on 2025-09-02 in Beijing.
+
+
 ## 1. Introduction
 
 
@@ -8,7 +12,7 @@
 
 ## 3. 
 
-## Relevant Links
+## Relevant Resources
 
 以下是与本文主题 TSPC 相关的一些链接，在正文中不一定有所参考，但也陈列于此，以期对读者有所帮助：
 - [Fitz's Blog > TSPC](https://zhouyuqian.com/2020/11/17/TSPC/)

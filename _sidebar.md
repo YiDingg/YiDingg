@@ -16,22 +16,49 @@
     -->
 
 
+- 📝 **Projects**
+
+    - [A 2.2-GHz ~ 3.3-GHz BB-PLL with Multiple Output Frequencies in TSMC 65-nm Technology](<Projects/A 3.3-GHz BB-PLL with Multiple Output Frequencies in TSMC 65-nm Technology.md>)
+        - [(1) LDO: Design of A Basic Low Dropout Regulator (LDO) for BB-PLL](<Projects/Design of A Basic Low Dropout Regulator (LDO) for BB-PLL.md>)
+        - [(2) OTA: Design of An Adjustable Constant-Gm OTA for Low Pass Filters in BB-PLL](<Projects/Design of An Adjustable Constant-Gm OTA for Low Pass Filters in BB-PLL.md>)
+        - [(3) DAC: Design of A 5-Bit RDR DAC for Reference Generation in BB-PLLs](<Projects/Design of A 5-Bit RDR DAC for Reference Generation in BB-PLLs.md>)
+    - [Design of A Type-II Integer-N Charge Pump PLL](<Projects/Design of A Third-Order Type-II Integer-N CP-PLL.md>)
+    - [Scientific Research Practice 1 (BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
+    - [Gomoku (The Final Assignment of C Programming)](Projects/Gomoku.md)
+    - [HDofDF (Humidity Detection of Diabetic Foot)](Projects/HDofDF.md)
+    - [MuMeStar (Multiple Menu Star for OLED)](Projects/MuMeStar.md)
+    - [OLEDSD (OLED Software Driver)](Projects/OLEDSD.md)
+    - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
+    - WSETD
+
+        - [Outline of WSETD](Projects/WSETD/OutlineOfWSETD.md)
+        - [WSETD (1): Chinese Document](<Projects/WSETD/WSETD(1)-ChineseDocument.md>)
+        - [WSETD (2): English Document](<Projects/WSETD/WSETD(2)-EnglishDocument.md>)
+
+
 
 - 📱 **Analog IC Designs** <!-- 新的 design 放在前面 -->
 
-    - tsmcN28
+    - [tsmcN65 (TSMC 65nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).md>)
+    - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
+    - [tsmc18rf (TSMC 180nm RF CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmc18rf (TSMC 180nm RF CMOS Process Library).md>)
+
+    - OCN180
+        - [202510 CP-PLL: ultra-low-power_400nA_640kHz](<>)
+    - tsmcN65
+        - [202509 DAC: 5-bit RDR (R-2R)](<AnalogICDesigns/202509_tsmcN65_DAC_RDR_5bit.md>)
+        - [202509 OTA (layout): constant-gm adjustable](<AnalogICDesigns/202509_tsmcN65_OTA_constantGm_adjustable__layout.md>)
+        - [202509 OTA: constant-gm adjustable](<AnalogICDesigns/202509_tsmcN65_OTA_constantGm_adjustable.md>)
         - [202509 LDO (layout): 1.8 V ~ 2.5 V to 1.2 V](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.md>)
         - [202509 LDO (2): 1.8 V ~ 2.5 V to 1.2 V](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (2).md>)
         - [202509 LDO (1): 1.8 V ~ 2.5 V to 1.2 V](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1).md>)
         - [202509 Op Amp: op amp for the LDO](<AnalogICDesigns/202509_tsmcN65_OpAmp__nulling-Miller.md>)
-        - [202508 CP-PLL: 3rd-Order Type-II Integer-N CP-PLL](<AnalogICDesigns/202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N.md>)
+    - tsmcN28
+        - [202508 CP-PLL: 3rd-order type-II integer-N CP-PLL](<AnalogICDesigns/202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N.md>)
         - [202507 BGR (layout): low-voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1__layout.md>)
         - [202507 BGR: low-voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
         - [202507 Op Amp (layout): op amp for the BGR in scientific_research_practice_1](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller__layout.md>)
         - [202507 Op Amp: op amp for the BGR in scientific_research_practice_1](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)
-        - [tsmc18rf (TSMC 180nm RF CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmc18rf (TSMC 180nm RF CMOS Process Library).md>)
-        - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
-        - [tsmcN65 (TSMC 65nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).md>)
     - tsmc18rf
 
         - [202506 Op Amp: twoStage_single_Nulling-Miller__80dB_50MHz_50Vus](AnalogICDesigns/202506_tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md)
@@ -60,8 +87,8 @@
         - [5. Detailed Explanation of the gm/Id Methodology](<AnalogIC/Virtuoso Tutorials - 5. An Introduction to gm-Id Methodology.md>)<!-- x -->
         - [6. Design Example of F-OTA using Gm-Id Methodology](<AnalogIC/Virtuoso Tutorials - 6. Design Example of F-OTA using Gm-Id Method.md>)<!-- x -->
         - [7. Cadence Layout Tutorials](<AnalogIC/Virtuoso Tutorials - 7. Cadence Layout Tutorials.md>)<!-- x -->
-        - [8. Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 8. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)<!--  -->
-        - [9. Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<AnalogIC/Virtuoso Tutorials - 9. Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)<!--  -->
+        - [8. Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 8. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)<!-- x -->
+        - [9. Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<AnalogIC/Virtuoso Tutorials - 9. Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)<!-- x -->
         - [10. Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 10. Using Tran Result as the DC Operation Point for AC Simulation.md>)<!--  -->
         - [11. Resolving Discrepancies Between DC and Transient Simulation Results](<AnalogIC/Virtuoso Tutorials - 11. Resolving Discrepancies Between DC and Transient Simulation Results.md>)
         - [12. Behavior-Level Simulation using Verilog-A in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 12. Behavior-Level Simulation using Verilog-A in Cadence IC618.md>)
@@ -82,12 +109,21 @@
                 - [! 1. Getting Started with Virtuoso ADE Assembler](<AnalogIC/ADE Assembler - 1. Getting Started with Virtuoso ADE Assembler.md>)
         -->
 
+        <!-- - Design Guide
+            - 
+            - AnalogIC/LDO Stability Analysis and Loop Compensation Mechanism.md
+            - AnalogIC/Miller Compensation in Basic Two-Stage Op Amp.md
+            - AnalogICDesigns/Design Sheet for Third-Order Type-II CP-PLL.md
+            - AnalogICDesigns/Design Sheet for Basic Two-Stage Op Amp with Nulling-Miller Compensation.md
+            - AnalogICDesigns/Design Sheet for Folded-Cascode Op Amp.md 
+        -->
+
 
     - Razavi CMOS
         - [Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.2 CP-PLL ~ 16.5 Applications](<AnalogIC/Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.2 CP-PLL ~ 16.5 Applications.md>)
         - [Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.1 Simple PLL](<AnalogIC/Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.1 Simple PLL.md>)
         - [Razavi CMOS - Chapter 12. Bandgap References](<AnalogIC/Razavi CMOS - Chapter 12. Bandgap References.md>)
-        - [Razavi CMOS - Chapter 15. Oscillators](<AnalogIC/Razavi CMOS - Chapter 15. Oscillators.md>)
+        - [Razavi CMOS - Chapter 15. Oscillators](<AnalogIC/Razavi CMOS - Chapter 15. Oscillators.md>)<!--  -->
         - [Razavi CMOS - Chapter 19. Layout and Packaging](<AnalogIC/Razavi CMOS - Chapter 19. Layout and Packaging.md>)
         - [Razavi CMOS - Chapter 7. Noise](<AnalogIC/Razavi CMOS - Chapter 7. Noise.md>)<!--  -->
         - [Razavi CMOS - Chapter 8. Negative Feedback](<AnalogIC/Razavi CMOS - Chapter 8. Negative Feedback.md>)<!--  -->
@@ -100,8 +136,9 @@
         - [Razavi RF - Chapter 1. Introduction to RF Technology](<AnalogIC/Razavi RF - Chapter 1. Introduction to RF Technology.md>)
         - [Razavi RF - Chapter 2. Basic Concepts in RF Circuits](<AnalogIC/Razavi RF - Chapter 2. Basic Concepts in RF Circuits.md>)
 
-    - Digital Signal Processing
-        - [DSP - 0. Preparations](<Notes/DSP (Digital Signal Processing)/DSP - 0. Preparations.md>)
+        <!-- - Digital Signal Processing
+            - [DSP - 0. Preparations](<Notes/DSP (Digital Signal Processing)/DSP - 0. Preparations.md>) 
+        -->
 
     - Analog IC Blogs (2025, 33 items)
         - [LDO Stability Analysis and Loop Compensation Mechanism](<AnalogIC/LDO Stability Analysis and Loop Compensation Mechanism.md>)
@@ -112,7 +149,6 @@
         - [PLL System-Level Simulation using LTspice](<AnalogIC/PLL System-Level Simulation using LTspice.md>)
         - [Collection of Typical PLL Modules (PFD, CP, LPF, VCO, FD)](<AnalogIC/Implementation Collection of Typical PLL Modules (PFD, CP, LPF, VCO, FD).md>)
         - [Prerequisite Digital Electronics Knowledge for PLL](<AnalogIC/Prerequisite Digital Electronics Knowledge for PLL.md>)
-        - [Use Virtuoso Efficiently - 2. File Transfer using Shared Folders](<AnalogIC/Use Virtuoso Efficiently - 2. File Transfer using Shared Folders.md>)
         - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
         - [The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogIC/The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation.md>)
         - [Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/ADE Assembler - 0. How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)
@@ -121,7 +157,7 @@
         - [Miller Compensation in Basic Two-Stage Op Amp](<AnalogIC/Miller Compensation in Basic Two-Stage Op Amp.md>)
         - [Why Is the Simulated SR Lower Than the Theoretical Value](<AnalogIC/Why Is the Simulated SR Lower Than the Theoretical Value.md>)
         - [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)<!-- zhihu no, weixin no -->
-        - [Relationship Between GBW and fp2 in a Two-Order System](<Electronics/Relationship Between GBW and fp2 in a Two-Order System.md>)
+        - [Relationship Between GBW and fp2 in a Two-Order System](<Electronics/Relationship Between GBW and fp2 in a Two-Order System.md>)<!--  -->
         - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<AnalogIC/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)<!--  -->
         - [Biasing Circuits for Low-Voltage Cascode Current Mirror](<Electronics/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)<!--  -->
         - [Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>)<!-- no -->
@@ -265,27 +301,16 @@
     - Op Amp Measurement Methods
         - [Meas. of OpAmp in the Freq. Domain](<Papers/Op Amp Measurement Methods/Measurement of Operational Amplifier Characteristics in the Frequency Domain.md>)
 
+    - Design of Op Amp
+        - [[Literature Review] Design of Constant-Gm Rail-to-Rail OTA](<Papers/Design of Op Amp/[Literature Review] Design of Constant-Gm Rail-to-Rail OTA.md>)
+        - [Design of Two Stage Miller Compensated CMOS  Opamp with Nulling Resistor](<Papers/Design of Op Amp/Design of Two Stage Miller Compensated CMOS  Opamp with Nulling Resistor.md>)
+
     - Transfer Function Analysis
 
         - [Navi. Page of Transfer Function Analysis](<Papers/Transfer Function Analysis/Navigation Page of Transfer Function Analysis.md>)
         - [EET (The Extra Element Theorem)](<Papers/Transfer Function Analysis/The Extra Element Theorem.md>)<!-- x -->
         - [! TEET (The Two Extra Element Theorem)](<Papers/Transfer Function Analysis/The Two Extra Element Theorem.md>)
         - [OCTC (Open-Circuit Time Constant Method)](<Papers/Transfer Function Analysis/Open-Circuit Time Constant Method.md>)
-
-
-- 📝 **Projects**
-
-    - [Design of A Type-II Integer-N Charge Pump PLL](<Projects/Design of A Third-Order Type-II Integer-N CP-PLL.md>)
-    - [Scientific Research Practice 1 (BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
-    - [Gomoku (The Final Assignment of C Programming)](Projects/Gomoku.md)
-    - [HDofDF (Humidity Detection of Diabetic Foot)](Projects/HDofDF.md)
-    - [MuMeStar (Multiple Menu Star for OLED)](Projects/MuMeStar.md)
-    - [OLEDSD (OLED Software Driver)](Projects/OLEDSD.md)
-    - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)
-    - WSETD
-        - [Outline of WSETD](Projects/WSETD/OutlineOfWSETD.md)
-        - [WSETD (1): Chinese Document](<Projects/WSETD/WSETD(1)-ChineseDocument.md>)
-        - [WSETD (2): English Document](<Projects/WSETD/WSETD(2)-EnglishDocument.md>)
 
 
 

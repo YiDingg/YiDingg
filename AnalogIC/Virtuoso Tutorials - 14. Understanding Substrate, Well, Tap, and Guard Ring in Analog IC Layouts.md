@@ -1,7 +1,7 @@
 # Virtuoso Tutorials - 14. Understanding Substrate, Well, Tap, and Guard Ring in Analog IC Layout
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 20:03 on 2025-09-19 in Beijing.
+> Initially published by Yi Ding (丁毅) at 20:03 on 2025-09-19 in Beijing.
 
 ## Introduction
 
@@ -20,7 +20,7 @@
 
 本文，我们就来聊聊这些问题，理清各种概念之间的关系，重点理解 substrate, well, tap, guard ring 这些概念在 Analog IC 版图设计中的作用和意义。
 
->注：本文中出现的所有示意图，若没有专门标出引用来源，均为笔者自己所绘制。
+>注：本文中的所有示意图，除第一张来自 *Razavi CMOS* 外，均为笔者自己所绘制。
 
 ## Sub, Well, Tap, and GR
 

@@ -75,6 +75,7 @@ Technology 'cdsDefTechLib' does not have a constraint group named 'virtuosoDefau
 - `tsmcN65\PDK_doc\ReleaseNote.txt`: 类似 README 文件，介绍了 PDK 的版本信息、库文件列表和库中器件全称 (但其实不看也行，因为下面的 PDK usage guide 比它介绍得更详细)
 - `tsmcN65\PDK_doc\TSMC_DOC_WM\PDK\CRN65_CDF_Usage.pdf`: PDK 使用手册，介绍了 PDK 所含器件、基本使用方法和注意事项
 - `tsmcN65\PDK_doc\TSMC_DOC_WM\model\TN65CMSP018_1.0.pdf`: PDK model 手册，介绍了 PDK 所含器件的模型参数
+- `tsmcN65\TN65CLDR001_2_0.pdf`: PDK design rule 手册，介绍了此 PDK 的设计规则
 
 从第一个 `ReleaseNote.txt` 文件可以看出， **<span style='color:red'> 本工艺库的 core voltage = 1.0 V, 即未标有电压后缀的 MOS 均为 1.0 V 器件。 </span>**
 
@@ -204,17 +205,19 @@ nch_25_dnwud18_macx : three-terminal 2.5V under drive 1.8V nominal VT NMOS in DN
 
 
 
-手动总结几种主要电阻的方块参数：
+从文档中总结出几种主要电阻的方块参数：
 <div class='center'>
 
 | Resistor | full name | square resistor (Ohm) |
 |:-:|:-:|:-:|
  | rnod     | N+ diffusion resistor with salicide   | 15.2 |
  | rnpoly   | N+ poly resistor with salicide        | 15.4 |
+ | rnpolywo | N+ poly resistor without salicide     | 124 |
  | rnwod    | NWell resistor under OD               | 316 |
  | rnwsti   | NWell resistor under STI              | 605 |
  | rpod     | P+ diffusion resistor with salicide   | 14.6 |
  | rppoly   | P+ poly resistor with salicide        | 14.8 |
+ | rppolywo | P+ poly resistor without salicide     | 756 |
  | rm1      | Metal 1 resistor                      | 0.137 |
 </div>
 
@@ -295,6 +298,23 @@ mom cap 各参数含义：
 ### 3.3 nch_na25
 
 - `nch_na25`: Lmin = 1.2 um, Lmax = , Wmin = , Wmax = 901.0 um
+
+### 3.4 sizes summary
+
+- `nch_25_dnw`: Lmax=9.010000e-04, Lmin=2.800000e-07, Wmax=9.010000e-04,and Wmin=4.000000e-07
+    - L_range = (280 nm, 901 um)
+    - W_range = (400 nm, 901 um)
+- `pch_25`: Lmax=9.010000e-04, Lmin=2.800000e-07, Wmax=9.010000e-04,and Wmin=4.000000e-07
+    - L_range = (280 nm, 901 um)
+    - W_range = (400 nm, 901 um)
+- `nch_dnw`: Lmax=2.000010e-05, Lmin=6.000000e-08, Wmax=9.000001e-04,and Wmin=1.200000e-07. 
+    - L_range = (60 nm, 20 um)
+    - W_range = (120 nm, 901 um)
+- `pch`: Lmax=2.000010e-05, Lmin=6.000000e-08, Wmax=9.000001e-04,and Wmin=1.200000e-07
+    - L_range = (60 nm, 20 um)
+    - W_range = (120 nm, 901 um)
+
+
 
 ### 3.4 gm/Id summary
 

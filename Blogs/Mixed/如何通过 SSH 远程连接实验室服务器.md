@@ -21,7 +21,8 @@ mypassword # 密码
 这时主界面会弹出来一个黑框框，并要求你输入密码，输入密码即可登录。登录完成后，输入下面这行代码创建 SSH 端口：
 
 ``` bash
-vncserver -geometry 1920x1080 -depth 24 # 启动 vnc 服务器 (新端口), 设置分辨率为 2560x1600, 颜色深度为 24 位 (适合高质量图形显示)
+# 启动 vnc 服务器 (自动分配新端口), 设置分辨率为 2560x1600, 颜色深度为 24 位 (适合高质量图形显示)
+vncserver -geometry 1920x1080 -depth 24 
 ```
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-24-18-19-09_如何通过 SSH 远程连接实验室服务器.png"/></div>
@@ -103,9 +104,14 @@ scp -r username@111.11.111.111:/home/dy2025/Workspace_T28 D:/a_Win_VM_shared_2_l
 ```
 
 <!-- ``` bash
-# test # scp -r dy2025@182.48.105.253:/home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5/Calibre_new D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/  # 将压缩包从服务器下载到本地 windows, -r 表示递归
-scp -r dy2025@182.48.105.253:/home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5 D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/  # 将压缩包从服务器下载到本地 windows, -r 表示递归
-scp -r dy2025@182.48.105.253:/home/library/TSMC/tsmc28n/1p9m6x1z1u/PDK_doc D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/tsmc28n_2v5/  # 将压缩包从服务器下载到本地 windows, -r 表示递归
+# 将压缩包从服务器下载到本地 windows, -r 表示递归
+scp -r dy2025@182.48.105.253:/home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5 D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/
+
+# 将压缩包从服务器下载到本地 windows, -r 表示递归
+scp -r dy2025@182.48.105.253:/home/library/TSMC/tsmc28n/1p9m6x1z1u/PDK_doc D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/tsmc28n_2v5/
+
+# 将本地文件发送到服务器
+scp D:\a_Win_VM_shared\Cadence_Data\202509_LDO_0923_1854.tar.gz dy2025@182.48.105.253:/home/dy2025/Cadence_Projects/
 ``` -->
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-24-21-29-42_如何通过 SSH 远程连接实验室服务器.png"/></div>
@@ -114,6 +120,12 @@ scp -r dy2025@182.48.105.253:/home/library/TSMC/tsmc28n/1p9m6x1z1u/PDK_doc D:/a_
 
 虽然传输起始出现了几行错误，但是后面便再无报错了。
 
+如果想将本地文件发送到服务器，只需输入：
+
+``` bash
+# 将本地文件发送到服务器
+scp D:\a_Win_VM_shared\Cadence_Data\202509_LDO_0923_1854.tar.gz username@111.11.111.111:/home/dy2025/Cadence_Projects/
+```
 
 
 
@@ -150,7 +162,25 @@ getent group sudo                           # 显示所有 sudo 权限用户
 
 ## 常用命令
 
+<!-- 
+scp D:\a_Win_VM_shared\Cadence_Data\MyLib_202509_DAC_tsmcN65 dy2025@182.48.105.253:/home/dy2025/Cadence_Projects/
+-->
+
 ``` bash
+vncserver -geometry 1920x1080               # 启动 vnc 服务器 (自动分配新端口) 并设置分辨率为 1920x1080, 颜色深度为 24 位 (适合高质量图形显示)
+#vncserver :1 -geometry 2560x1600 -depth 24  # 创建一个 vnc 服务器, 端口号为 1, 分辨率为 2560x1600, 颜色深度为 24 位
+vncserver -kill :1                          # 关闭端口 1
+vncserver -list                             # 查看已创建的 VNC 端口
+
+
+# 将文件从服务器下载到本地 windows:
+scp -r dy2025@182.48.105.253:/home/library/TSMC/tsmc28n/1p9m6x1z1u/PDK_doc D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/tsmc28n_2v5/
+# 将本地 windows 文件发送到服务器
+scp D:\a_Win_VM_shared\Cadence_Data\202509_LDO_0923_1854.tar.gz username@111.11.111.111:/home/dy2025/Cadence_Projects/
+# 将本地 windows 文件夹发送到服务器
+scp -r D:\a_Win_VM_shared\Cadence_Data\202509_LDO_0923_1854 username@111.11.111.111:/home/dy2025/Cadence_Projects/
+
+
 # 基本命令
 ls -l    # 查看当前目录下的文件和文件夹
 cd ..    # 返回上一级目录

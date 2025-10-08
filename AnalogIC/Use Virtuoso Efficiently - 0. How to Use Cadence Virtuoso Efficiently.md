@@ -219,6 +219,7 @@ hiSetBindKeys("Layout" list(
     list("Ctrl Shift<Key>f" "leZoomToSelSet()")                      ; Ctrl Shift + f 缩放到选中区域
     ; 下面是特殊操作
     list("<Key>w" "leAlign(\"top\")")                           ; 按键 W 按照 top 进行 align
+    list("Ctrl<Key>w" "leAlign(\"bottom\")")                    ; 按键 Ctrl + W 按照 bottom 进行 align
     list("<Key>c" "leAlign(\"vertical\")")                      ; 按键 C 按照 vertical (center) 进行 align
     list("<Key>a" "leAlign(\"left\")")                          ; 按键 A 按照 left 进行 align
     list("<Key>d" "leAlign(\"right\")")                         ; 按键 D 按照 right 进行 align
@@ -849,14 +850,14 @@ cp /home/IC/.cdsenv /home/IC/a_Win_VM_shared/Cadence_simulation_backup/.cdsenv_b
  -->
 
 ``` bash
-# tar -czvf simulation_backup_20250610.tar simulation/ # 将 simulation (仿真数据) 文件夹打包成 tar 文件
-tar -czvf Cadence_Projects_backup_20250610.tar Cadence_Projects/ # 将 Cadence_Projects (项目文件) 文件夹打包成 tar 文件
+# tar -czvf simulation_backup_20251002.tar.gz simulation/ # 将 simulation (仿真数据) 文件夹打包成 tar 文件
+tar -czvf Cadence_Projects_backup_20251002.tar.gz Cadence_Projects/ # 将 Cadence_Projects (项目文件) 文件夹打包成 tar 文件
 mkdir -p /home/IC/a_Win_VM_shared/Cadence_backup # 确保备份目录存在
-mkdir -p /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610 # 创建备份文件夹
-# mv simulation_backup_20250610.tar /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610/   # 将 tar 文件移动到共享文件夹 a_Win_VM_shared 中
-mv Cadence_Projects_backup_20250610.tar /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610/   # 将 tar 文件移动到共享文件夹 a_Win_VM_shared 中
-cp /home/IC/.cdsinit /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610/.cdsinit_backup_20250610 # 顺便备份一下 .cdsinit 和 .cdsenv 文件
-cp /home/IC/.cdsenv /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20250610/.cdsenv_backup_20250610 # 顺便备份一下 .cdsinit 和 .cdsenv 文件
+mkdir -p /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20251002 # 创建备份文件夹
+# mv simulation_backup_20251002.tar.gz /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20251002/   # 将仿真数据 tar 文件移动到共享文件夹中
+mv Cadence_Projects_backup_20251002.tar.gz /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20251002/   # 将项目数据 tar 文件移动到共享文件夹中
+cp /home/IC/.cdsinit /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20251002/.cdsinit_backup_20251002 # 顺便备份一下 .cdsinit 和 .cdsenv 文件
+cp /home/IC/.cdsenv /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20251002/.cdsenv_backup_20251002 # 顺便备份一下 .cdsinit 和 .cdsenv 文件
 # rm -r <directory>
 ```
 

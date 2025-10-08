@@ -34,6 +34,11 @@ Initially published at 13:49 on 2025-09-16 in Beijing.
 - format compact：压缩显示，减少输出行之间的空行。
 - format loose：宽松显示，增加输出行之间的空行（默认）。
 
+### 2. functions
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-28-13-46-56_MATLAB 与工程应用.png"/></div>
+
+
 ## 2. 插入实用任务
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-16-15-07-49_MATLAB 与工程应用.png"/></div>

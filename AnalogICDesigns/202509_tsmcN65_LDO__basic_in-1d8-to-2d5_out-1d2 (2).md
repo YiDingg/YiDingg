@@ -415,7 +415,7 @@ PSRR_DC 之所以有这么大的跨度，是因为我们把 M1/M2 和 M5 的 gm/
 ### 14.6 (ac) opamp transfer
 ### 14.7 (sm) simul. summary
 
-下表总结了 v6_171321 的全工艺角仿真结果 (ILOLAD = 15 mA, CLOAD = 20 pF)，与张钊老师提供的参考电路 `LDO_3.3_to_1.3_Low_Noise` 的结果作对比 ( (ILOAD = 10 mA, CLOAD = 10 pF)，红色表示更优：
+下表总结了 v6_171321 的全工艺角仿真结果 (ILOLAD = 15 mA, CLOAD = 20 pF)，与张钊老师提供的参考电路 `LDO_3.3_to_1.3_Low_Noise` 的结果作对比 (ILOAD = 10 mA, CLOAD = 10 pF)，红色表示更优：
 
 
 <div class='center'>

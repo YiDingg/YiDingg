@@ -4,6 +4,7 @@
 > Initially published at 16:55 on 2025-09-20 in Beijing.
 
 
+
 ## Introduction
 
 起因是在最近的项目 [Design of A Basic Low Dropout Regulator (LDO) for BB-PLL](<Projects/Design of A Basic Low Dropout Regulator (LDO) for BB-PLL.md>) 做版图时，遇到了寄生参数提取时间过长的问题。其中 PEX 提取倒不算慢，但是 calibre view 生成非常非常慢，一个 LDO 的版图等了三个小时也没见生成好，因此果断放弃这种方法，改用提取 netlist 进行后仿。
@@ -13,15 +14,8 @@
 >注，后文所有寄生参数提取都是以  [202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.md>) 中的 **v7_layout__PS_0920_1451** 为例。
 
 
-## 1. Common Issues
 
-
-先把一些碎碎念放在前面，让读者有个大致了解：
-- **一般都用 Gate Level + X-Cells 提取寄生参数，** 这对晶体管的提取精度影响不大，主要是一些无源器件提取精度稍差一些；如果确实要用 Transistor Level, 一定确保没有引入 x-cell 文件 (否则会重复提取寄生参数)
-- calibre view 生成时一般 0 warning 才正确，warning 也是需要处理的
-
-
-## 2. PEX Steps 
+## 1. PEX Steps 
 
 无论使用哪种格式/方法在 PEX 界面提取寄生参数网表，它们的操作都基本相同，因此这里先介绍如何进行 PEX 提取：
 - (1) 打开 PEX 并设置 file 和 dir: 
@@ -105,9 +99,9 @@
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-27-56_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
 
 
-## 3. Post-Simulation
+## 2. Post-Simulation
 
-### 3.1 Using CALIBREVIEW
+### 2.1 Using CALIBREVIEW
 
 由于 CALIBREVIEW 格式无法通过 netlist 进行后仿 (必须生成 calibre view)，不但生成时间太长太长 (30 s 就能导出的 10 MB netlist，生成 calibre view 却要三个多小时)，而且生成得到器件属性容易出错 (必须合理设置 reset 参数)，因此被本文抛弃。
 
@@ -141,7 +135,7 @@ m=1 nf=1 segments=1
 
 
 
-### 3.2 Using DSPF/HSPICE/SPECTRE
+### 2.2 Using DSPF/HSPICE/SPECTRE
 
 DSPF/HSPICE/SPECTRE 格式所导出的都是网表 spice netlist, 它们可以直接用于后仿而无需其他修改，并且后仿步骤完全类似。这里以 DSPF 为例，介绍如何进行后仿 (配合 config 文件)：
 
@@ -173,7 +167,7 @@ DSPF/HSPICE/SPECTRE 格式所导出的都是网表 spice netlist, 它们可以�
 
 下面我们分别导出 DSPF/HSPICE/SPECTRE 三种格式进行后仿，对比它们的结果和仿真速度：
 
-### 3.2 DSPF Results
+### 2.3 DSPF Results
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-49-16_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-20-23-15-41_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
@@ -182,20 +176,20 @@ DSPF/HSPICE/SPECTRE 格式所导出的都是网表 spice netlist, 它们可以�
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-18-00_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
 
 
-### 3.3 HSPICE Results
+### 2.4 HSPICE Results
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-20-23-02-07_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-20-23-08-08_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-56-13_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
 
-### 3.4 SPECTRE Results
+### 2.5 SPECTRE Results
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-20-23-25-59_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-20-23-25-12_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-01-53-02_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
 
 
-## 4. Speed and Accuracy
+## 3. Speed and Accuracy
 
 上面这么多中导出格式，哪种更快更准呢？我们导出的过程发现寄生参数提取所需时间差别不大，于是来对比一下不同格式的仿真速度：
 
@@ -217,15 +211,15 @@ DSPF/HSPICE/SPECTRE 格式所导出的都是网表 spice netlist, 它们可以�
 
 (上图 HSPICE 的 Vgs/Vgate 结果顺序反了)
 
-这三组结果不是仅仅比较相似，而是近乎一模一样了，也从侧面说明了不同格式的寄生参数提取都比较可靠。
+这三组结果不是仅仅比较相似，而是近乎一模一样了，也从侧面说明了不同格式的寄生参数提取都比较可靠。当然，同一种格式下，不同提取精度 (Gate/Transistor Level) 也会影响提取结果, Gate 因为有已经封装好的 x-cell, 提取出的小寄生器件会少很多，仿真更快；Transistor Level 仿真时间稍长，但结果要更精确一些。
 
 
 
-## 5. Other Post-Simulation Methods
+## 4. Other Post-Simulation Methods
 
-本文介绍的 PEX 和 Post-Simulation 方法是我们目前用下来认为最简单、最高效、最可靠的方法，当然也有其他方法，例如：
+本文介绍的 PEX 和后仿方法是我们目前用下来认为最简单、最高效、最可靠的方法，当然也有其他方法，下面就简要介绍一下。
 
-### 5.1 using CALIBREVIEW
+### 4.1 using CALIBREVIEW
 
 下面是几种常用的 CALIBREVIEW 后仿方法：
 - **(1) calibre + ADE L:** 修改 Environmental Options 里 Switch View List 的顺序，把 calibre 放 schematic 前面 (现在基本上不单独用 ADE L 了，所以这种方式很少用，详见 [[6]](https://zhuanlan.zhihu.com/p/6580714389))
@@ -236,7 +230,7 @@ DSPF/HSPICE/SPECTRE 格式所导出的都是网表 spice netlist, 它们可以�
 
 
 
-### 5.2 using DSPF
+### 4.2 using DSPF
 
 
 
@@ -245,10 +239,9 @@ DSPF 的后仿和 CALIBREVIEW 的差不太多，区别是 DSPF **生成后缀为
 - **(2) dspf + ADE XL/Explorer:** 和 calibre 方法二类似，通过 config 设置 set cell view 
 - **(3) dspf +  ADE Assembler:** 和 calibre 方法三类似，也是 add config sweep, 详见参考文章 [[6]](https://zhuanlan.zhihu.com/p/6580714389)
 - **(4) dspf + ADE L/XL/Explorer:** 打开 Test Editor (类似 ADE L 的界面)，在 `Simulation Files > Parasitic Files (DSPF)` 里添加寄生网表路径 `/xxx/xxx/xxx.pex.netlist` 就好，注意，如果设置了这一步，就不要修改 switch view list 的顺序了。
-比较常用的是方法二和方法四，前者最简单，我们下面分别做个 post-simulation (PS) 的示范。
 
 
-### 5.3 using SPECTRE
+### 4.3 using SPECTRE
 
 如果采用 spectre 提取的寄生，一定一定要遵循上一小节里 **把 create all pin 勾上，以及选上 source**，这样就不需要再手动修改网表。SPECTRE 后仿方法如下：
 - **SPECTRE 方法一：** 改 input.scs, 我们不推荐 (详见 [[6]](https://zhuanlan.zhihu.com/p/6580714389))
@@ -257,11 +250,154 @@ DSPF 的后仿和 CALIBREVIEW 的差不太多，区别是 DSPF **生成后缀为
 - **SPECTRE 方法四：** ADE assembly 同时实现 spectre view 的前后仿，也很麻烦，不推荐 (详见 [[7]](https://mp.weixin.qq.com/s?__biz=MzUyNzA2MDA0OQ==&mid=2247528418&idx=1&sn=0a799d2c6d32a8974e11fea3b2d5759b))
 
 
-### 5.4 using HSPICE
+### 4.4 using HSPICE
 
 使用 HSPICE 进行后仿的步骤与前面类似，这里就不再提了。
 
+## 5. Post-Simul. Tips
 
+后仿中也有各种提高效率的小技巧，下面详细介绍几个。
+
+### 5.1 save selected node
+
+后仿在寄生网表下进行，阻容特别多，如果按照默认的保存全部电压节点去仿真会严重浪费硬盘空间，因此建议只保存需要观察的节点。
+
+在 ADE L 或者 ADE XL 的 Test Editor 里，勾选 `Outputs > Save All > Save Options > selected` (默认是 `allpub`) 即可。
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-15-35-46_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+另外，在后仿时还可以利用 `.scs` 文件指定需要报错的器件，具体例子见 [CSDN > Cadence virtuoso 保存所有静态工作点](<https://blog.csdn.net/weixin_42221495/article/details/129611418>) 和 [知乎 > 如何在 DSPF 后仿中只保存自定义节点的仿真数据？](https://zhuanlan.zhihu.com/p/9488973897)，这样就可以设置 `lvl + level=0` 以节省空间了。
+
+
+下面是一些实测结果 (完全相同的仿真设置，仅数据保存设置不同)：
+
+<div class='center'>
+
+| Interactive | 所有 outputs 是否勾选 save | 数据保存设计 | 是否有 MM0 dcopt 数据 | 是否有噪声数据 | 数据量大小 |
+|:-:|:-:|:-:|:-:|
+ | interactive.180 | 否 | lvl + level=0 | no  | yes | 28.4 MB |
+ | interactive.181 | 否 | lvl + level=1 | no  | no  | 72.0 MB |
+ | interactive.188 | 否 | lvl + level=2 | yes | no  | 200.2 MB |
+ | interactive.189 | 否 | lvl + level=3 | yes | yes | 2.6 GB |
+ | interactive.182 | 否 | selected      | yes | yes | 2.6 GB |
+ | interactive.192 | 是 | lvl + level=0 | no  | yes | 28.4 MB |
+ | interactive.186 | 是 | lvl + level=1 | no  | no  | 72.0 MB |
+ | interactive.190 | 是 | lvl + level=2 | yes | no  | 200.2 MB |
+ | interactive.191 | 是 | lvl + level=3 | yes | yes | 2.6 GB |
+ | interactive.184 | 是 | selected      | yes | yes | 2.6 GB |
+ | interactive.199 | 是 | lvl + level=0 + <br> save I0.MM0:all (Definition Files) | no | yes | 28.4 MB |
+ | interactive.200 | 是 | lvl + level=0 + <br> save I0.MM0:all (Stimuli Files)    | no | yes | 28.4 MB |
+ | interactive.201 | 是 | lvl + level=0 + <br> ave I0.MM0:all + save I0/MM0:all (Stimuli Files)  | no | yes | 28.4 MB |
+ | interactive.202 | 是 | lvlpub + level=0 | no  | yes | 35.2 MB |
+ | interactive.203 | 是 | lvlpub + level=1 | no  | no  | 203.6 MB |
+ | interactive.204 | 是 | lvlpub + level=2 | yes | no  | 396.8 MB |
+ | interactive.205 | 是 | lvlpub + level=3 | yes | yes | 2.6 GB |
+ | interactive.206 | 是 | allpub           | yes | yes | 2.6 GB |
+</div>
+
+上表可以得出以下结论：
+- (1) 设置 `selected` 是 "无效" 的，网上似乎也存在有效的例子，但我们这里不知为何仍相当于保存全部数据
+- (2) 设置 `lvl + level=0` 或者 `lvlpub + level=0` 可以显著节省空间，但是只保留了 top level 数据，无法查看任何内部节点
+- (3) 利用 `.scs` 文件的 `save I0.MM0:all` 似乎也行不通，有待进一步考察
+
+一句话总结就是，上面提到的几种方法都不能解决此问题。最终参考下面几篇文章，我们考虑使用 `analogLib` 库中的 deepprobe:
+- [Cadence Blogs > Virtuosity: What's New in analogLib > Deepprobe](https://community.cadence.com/cadence_blogs_8/b/cic/posts/virtuosity-what-39-s-new-in-analoglib)
+- [Cadence Blogs > Virtuoso Studio: Schematic Syntax for Hierarchical Nodes and Buses in DeepProbe](https://community.cadence.com/cadence_blogs_8/b/cic/posts/enhanced-schematic-syntax-and-buses-a-game-changer-for-analog-design)
+- [Bilibili > 后仿真查看内部节点电流/电压（参考）](https://www.bilibili.com/opus/926079336561246226) 
+
+这两篇文章是直接将 deepprobe 放在 schematic 中仿真的，我们也可以使用此方法，因为后仿所导入的网表只是 I0 这一器件的网表 (利用 config 文件), schematic of test bench 也是包含在总网表内的。下面是几个 deepprobe 的示例 (using SPECTRE format)：
+- **<span style='color:red'> 查看模块 I0 内部晶体管 MM0 的 gate 端电压：`I0.N_VGATE_MM0_g` </span>**，其中 `N_VGATE_MM0_g` 是到 netlist (SPECTRE format with transistor level) 下搜索 `MM0 ` 查看的器件各端口名 (也即网络名)
+- 其它尝试过但是行不通的输入：
+    - 所有含 `:`, `/` 但是未转义的
+    - `\/I0\/N_VGATE_MM0_g`
+    - `I0\/N_VGATE_MM0_g`
+    - `I0.MM0.G`
+    - `I0.MM0@2.G`
+    - `/I0/MM0/G`
+    - `I0.MM0/G`
+    - `I0.MM0.N_VGATE_MM0_g`
+    - `I0.MM0\/N_VGATE_MM0_g`
+    - `I0.MM0\:N_VGATE_MM0_g`
+    - `I0\/MM0\/N_VGATE_MM0_g`
+    - `\/I0\/MM0\:N_VGATE_MM0_g`
+    - `\/I0\/MM0\/N_VGATE_MM0_g`
+- 如果遇到报错 Unexpected operator "/", 说明此格式下需要转义符号，将 `top_level.level1/level0/net_name` 改为 `top_level.level1\/level0\/net_name` 即可
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-23-01-41-30_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-23-01-36-37_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-23-01-47-30_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+我们上面的例子是使用 SPECTRE format with transistor level 提取出的寄生网表，整个 netlist 是 flat 的，因此所有器件都在 I0 下面，直接输入 `I0.net_name` 即可查看各网络的电压值。
+
+HSPICE 格式的操作和 SPECTRE 完全类似，都是在 netlist 中找到器件，其 pin name 就是 net name, 输入即可。下面是一个例子：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-23-11-36-20_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-23-11-41-55_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-23-11-43-00_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+
+
+
+
+
+
+我们再单独试试 DSPF 格式下如何填入网络名：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-23-01-43-42_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+我们尝试了很多，也没有找到可行的输入。下面是尝试但单行不通的输入：
+- 所有 `:` 和 `/` 符号未转义的
+- `I0.MM0.g`
+- `I0.MM0\:g`
+- `I0.MM0\/g`
+- `I0\/MM0.g`
+- `I0\/MM0\:g`
+- `\/I0\/MM0.g`
+- `\/I0\/MM0\/g`
+- `\/I0\/MM0\:g`
+- `I0.MM0.G`
+- `I0.MM0\/G`
+- `\/I0\/MM0\/G`
+
+好吧我们暂时没找出 DSPF 格式下应该怎么输入网络名，留到之后再进一步讨论。
+
+2025.09.23 11:01 看了一下 DSPF 格式的语法 ([here](https://wenku.baidu.com/view/d8eec221fc4ffe473368abc1.html?_wkts_=1758597812888&needWelcomeRecommand=1&unResetStore=1)), 发现上图中 `MM0:g` 之类的只是器件的 pin name 而非 net name, 于是重新查看 dspf netlist 再次尝试。
+
+
+仍不行的：
+- `\/I0\/VGATE`
+- `I0.VGATE`
+- `I0\/VGATE`
+- `I0.VGATE.2`
+- `\/I0\/VGATE\:2`
+- `I0.VGATE\:2`
+- `I0\/VGATE\:2`
+- `\/I0\/MM8@20\/g`
+- `\/I0\/MM8@20\:g`
+- `I0\/MM8@20\:g`
+- `I0.MM8@20\:g`
+
+
+罢了，以后还是导出 HSPICE 和 SPECTRE 格式的网表吧，DSPF 就不用了。
+
+### 5.2 multi-job simulation
+
+设置 `ADE XL > Options > Job Set > Setup > Max jobs = 4`，这样可以同时跑多次仿真，加快仿真速度。
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-15-53-55_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
+
+<!-- ## 6. Gate or Transistor Level?
+
+有关 PEX 提取时到底是使用 Gate Level (with x-cells) 还是 Transistor Level (without x-cells), 我们这里再多讨论一下。
+
+### 6.1 Calibre® xRC™ User's Manual
+
+- Calibre® xRC™ User's Manual (Software Version 2009.1): https://picture.iczhiku.com/resource/eetop/wYItYWLPleWrpvNV.pdf
+
+这篇文章主要讨论的是 Hierarchical Extraction 和  Flat Transistor-Level Extraction 之间的选择：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-18-40-44_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div> -->
 
 ## Reference
 
