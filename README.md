@@ -28,7 +28,7 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C688%20hrs%2042%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C697%20hrs%2029%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.6%20million%20lines%20of%20code-blue)
 
@@ -57,11 +57,17 @@ Sunday                   211 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 9 hrs 3 mins        █████████████████████████   99.37 % 
-Other                    3 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.63 % 
+Markdown                 15 hrs 57 mins      ███████████████████████░░   92.99 % 
+Makefile                 43 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   04.20 % 
+V                        27 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.70 % 
+JSON                     0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.06 % 
+Other                    0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.05 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               9 hrs 6 mins        █████████████████████████   100.00 % 
+GH.YiDingg               15 hrs 57 mins      ███████████████████████░░   93.00 % 
+GH.Verilog               39 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   03.81 % 
+202510_iverilog_makefile_28 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.76 % 
+202510_iverilog_test     4 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.43 % 
 ```
 
 **I Mostly Code in C** 
@@ -76,7 +82,7 @@ JavaScript               2 repos             ████░░░░░░░�
 
 
 
- Last Updated on 2025.10.09 18:45 UTC
+ Last Updated on 2025.10.10 18:44 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
