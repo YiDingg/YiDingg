@@ -28,7 +28,7 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C739%20hrs%2027%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C740%20hrs%2028%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.6%20million%20lines%20of%20code-blue)
 
@@ -57,14 +57,14 @@ Sunday                   211 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 38 hrs 57 mins      ████████████████████████░   96.00 % 
-Other                    1 hr 30 mins        █░░░░░░░░░░░░░░░░░░░░░░░░   03.72 % 
-CSS                      4 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.19 % 
-JSON                     1 min               ░░░░░░░░░░░░░░░░░░░░░░░░░   00.04 % 
-HTML                     0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.03 % 
+Markdown                 33 hrs 49 mins      ████████████████████████░   95.54 % 
+Other                    1 hr 30 mins        █░░░░░░░░░░░░░░░░░░░░░░░░   04.27 % 
+CSS                      2 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.10 % 
+JSON                     1 min               ░░░░░░░░░░░░░░░░░░░░░░░░░   00.05 % 
+HTML                     0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.04 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               40 hrs 34 mins      █████████████████████████   100.00 % 
+GH.YiDingg               35 hrs 24 mins      █████████████████████████   100.00 % 
 ```
 
 **I Mostly Code in C** 
@@ -79,7 +79,7 @@ JavaScript               2 repos             ████░░░░░░░�
 
 
 
- Last Updated on 2025.10.20 18:48 UTC
+ Last Updated on 2025.10.21 18:47 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
