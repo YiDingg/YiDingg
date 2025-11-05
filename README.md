@@ -28,7 +28,7 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C802%20hrs%2057%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C810%20hrs%2044%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.6%20million%20lines%20of%20code-blue)
 
@@ -57,15 +57,15 @@ Sunday                   211 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 20 hrs 3 mins       ██████████████████████░░░   88.10 % 
-Other                    1 hr 16 mins        █░░░░░░░░░░░░░░░░░░░░░░░░   05.62 % 
-V                        1 hr 8 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   05.04 % 
-Git Config               17 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   01.25 % 
+Markdown                 23 hrs 37 mins      ███████████████████████░░   91.52 % 
+V                        1 hr 8 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   04.44 % 
+Other                    45 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.94 % 
+Git Config               17 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   01.10 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               21 hrs 39 mins      ████████████████████████░   95.17 % 
-DCE-02_sources           46 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   03.37 % 
-GH.UCAS-DigitalCircuitExp19 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   01.46 % 
+GH.YiDingg               24 hrs 42 mins      ████████████████████████░   95.74 % 
+DCE-02_sources           46 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.97 % 
+GH.UCAS-DigitalCircuitExp19 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   01.29 % 
 ```
 
 **I Mostly Code in C** 
@@ -81,7 +81,7 @@ Verilog                  1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2025.11.04 18:47 UTC
+ Last Updated on 2025.11.05 18:47 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
