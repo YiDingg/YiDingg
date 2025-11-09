@@ -28,7 +28,7 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C827%20hrs%2048%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C834%20hrs%2027%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.6%20million%20lines%20of%20code-blue)
 
@@ -57,13 +57,16 @@ Sunday                   211 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 38 hrs 30 mins      ████████████████████████░   97.64 % 
-Other                    40 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   01.73 % 
-V                        14 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   00.62 % 
+Markdown                 35 hrs 43 mins      ███████████████████████░░   91.68 % 
+V                        2 hrs 7 mins        █░░░░░░░░░░░░░░░░░░░░░░░░   05.46 % 
+Other                    40 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   01.75 % 
+Git Config               19 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   00.85 % 
+Tcl                      4 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.21 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               39 hrs 11 mins      █████████████████████████   99.38 % 
-DCE-02_sources           14 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   00.62 % 
+GH.YiDingg               36 hrs 24 mins      ███████████████████████░░   93.43 % 
+sources_DCE-03           2 hrs 3 mins        █░░░░░░░░░░░░░░░░░░░░░░░░   05.26 % 
+GH.UCAS-DigitalCircuitExp30 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   01.30 % 
 ```
 
 **I Mostly Code in C** 
@@ -79,7 +82,7 @@ Verilog                  1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2025.11.08 18:43 UTC
+ Last Updated on 2025.11.09 18:41 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
