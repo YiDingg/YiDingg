@@ -1,7 +1,7 @@
 # Use Virtuoso Efficiently - 1. Shortcuts and Initialization
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 15:51 on 2025-07-14 in Beijing.
+> Initially published by YiDingg at 15:51 on 2025-07-14 in Beijing.
 
 
 ## 1. 起因

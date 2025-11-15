@@ -1,7 +1,7 @@
 # 202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout (v6_171321)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 16:34 on 2025-09-17 in Beijing.
+> Initially published by YiDingg at 16:34 on 2025-09-17 in Beijing.
 
 ## 1. General Considerations
 

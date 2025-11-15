@@ -1,7 +1,7 @@
 # Basic Differential Circuit Simulation Report
 
 > [!Note|style:callout|label:Infor]
-Initially published at 23:45 on 2025-03-25 in Beijing.
+Initially published by YiDingg at 23:45 on 2025-03-25 in Beijing.
 
 ## Intro
 

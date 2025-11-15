@@ -1,7 +1,7 @@
 # How to Add New Process Libraries in Cadence IC618 
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 13:25 on 2025-05-22 in Beijing.
+> Initially published by YiDingg at 13:25 on 2025-05-22 in Beijing.
 
 ## Introduction
 

@@ -1,7 +1,7 @@
 # Design of A Third-Order Type-II Integer-64 CP-PLL with 0.5 GHz ~ 3.0 GHz Locking Range Achieving 2.800 ps RMS Jitter and -234.3 dB FoM in 28nm CMOS Technology
 
 > [!Note|style:callout|label:Infor]
-Initially published at 18:03 on 2025-08-13 in Lincang.
+Initially published by YiDingg at 18:03 on 2025-08-13 in Lincang.
 
 
 ## Infor and Summary

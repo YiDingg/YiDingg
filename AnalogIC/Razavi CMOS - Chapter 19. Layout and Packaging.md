@@ -1,7 +1,7 @@
 # Razavi CMOS - Chapter 19. Layout and Packaging
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 23:30 on 2025-06-24 in Beijing.
+> Initially published by YiDingg at 23:30 on 2025-06-24 in Beijing.
 
 参考教材：[*Design of Analog CMOS Integrated Circuits (Behzad Razavi) (2nd edition, 2017)*](https://www.zhihu.com/question/452068235/answer/95164892409)
 

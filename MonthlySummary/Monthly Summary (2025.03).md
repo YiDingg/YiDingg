@@ -1,7 +1,7 @@
 # Monthly Summary (2025.03)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 16:11 on 2025-04-05 in Beijing.
+Initially published by YiDingg at 16:11 on 2025-04-05 in Beijing.
 
 
 这个月主要还是在学习模电，或者说我校的“线性电子电路”课程。当然，我是完全不使用我校“电子技术基础（线性部分）”这本教材的，看的是 Razavi 的 Fundamentals of Microelectronics 。系统地学习了 BJT 和 MOS 的基本特性、基本放大器、 biasing 、差分放大器（差分-差分与差分-单端）、输出级、多级放大电路、简单的运放结构等，几乎所有的公式、结论都自己推导了（至少）一遍，自认为掌握得比较扎实（ MOS 的内容其实算复习）。当然，相关的仿真也做了不少，也实际搭过几个放大电路。

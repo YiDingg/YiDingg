@@ -1,7 +1,7 @@
 # Build Your Personal Website
 
 > [!Note|style:callout|label:Infor]
-Initially published at 16:32 on 2024-06-27 in Beijing.
+Initially published by YiDingg at 16:32 on 2024-06-27 in Beijing.
 
 
 ## Introduction

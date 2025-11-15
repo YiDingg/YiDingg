@@ -1,7 +1,7 @@
 # An Example of Miller Effect in Common-Emitter Stage
 
 > [!Note|style:callout|label:Infor]
-Initially published at 23:13 on 2025-04-29 in Beijing.
+Initially published by YiDingg at 23:13 on 2025-04-29 in Beijing.
 
 ## Intro 
 

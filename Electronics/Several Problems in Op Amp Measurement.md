@@ -1,7 +1,7 @@
 # Several Problems in Op Amp Measurement
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 15:59 on 2025-03-22 in Beijing.
+> Initially published by YiDingg at 15:59 on 2025-03-22 in Beijing.
 
 ## Intro
 

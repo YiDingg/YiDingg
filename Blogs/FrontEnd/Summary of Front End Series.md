@@ -1,7 +1,7 @@
 # Summary of Front End Series
 
 > [!Note|style:callout|label:Infor]
-Initially published at 12:13 on 2024-06-25 in Beijing.
+Initially published by YiDingg at 12:13 on 2024-06-25 in Beijing.
 
 
 ## Learn roadmap

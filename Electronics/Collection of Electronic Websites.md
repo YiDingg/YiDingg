@@ -1,7 +1,7 @@
 # Collection of Electronic Websites
 
 > [!Note|style:callout|label:Infor]
-Initially published at 00:09 on 2025-04-22 in Beijing.
+Initially published by YiDingg at 00:09 on 2025-04-22 in Beijing.
 
 ## Introduction
 

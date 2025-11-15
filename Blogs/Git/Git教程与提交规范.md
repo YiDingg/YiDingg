@@ -1,7 +1,7 @@
 # Git 教程与命令规范
 
 > [!Note|style:callout|label:Infor]
-Initially published at 13:05 on 2024-06-26 in Beijing.
+Initially published by YiDingg at 13:05 on 2024-06-26 in Beijing.
 
 
 ## 前言

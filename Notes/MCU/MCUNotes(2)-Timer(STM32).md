@@ -2,5 +2,5 @@
 
 
 > [!Note|style:callout|label:Infor]
-Initially published at 19:47 on 2024-06-31 in Beijing.
+Initially published by YiDingg at 19:47 on 2024-06-31 in Beijing.
 

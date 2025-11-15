@@ -1,7 +1,7 @@
 # Principles of Electric Circuits <br> 电路原理
 
 > [!Note|style:callout|label:Infor]
-Initially published at 09:46 on 2024-08-29 in Beijing.
+Initially published by YiDingg at 09:46 on 2024-08-29 in Beijing.
 
 
 ## Notes

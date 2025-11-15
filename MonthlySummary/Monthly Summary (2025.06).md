@@ -1,7 +1,7 @@
 # Monthly Summary (2025.06)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 22:18 on 2025-07-06 in Beijing.
+Initially published by YiDingg at 22:18 on 2025-07-06 in Beijing.
 
 
 ## 本月概览 (2025.06)

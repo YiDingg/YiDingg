@@ -1,7 +1,7 @@
 # Versatile Voltage-Controlled Power Source
 
 > [!Note|style:callout|label:Infor]
-Initially published at 17:58 on 2025-02-20 in Lincang.
+Initially published by YiDingg at 17:58 on 2025-02-20 in Lincang.
 
 ## Infor
 

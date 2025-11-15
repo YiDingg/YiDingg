@@ -1,7 +1,7 @@
 # [Razavi CMOS] Detailed Explanation of Cascode Op Amp (Telescopic Op Amp)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 18:39 on 2025-05-08 in Beijing.
+> Initially published by YiDingg at 18:39 on 2025-05-08 in Beijing.
 
 ## Introduction
 

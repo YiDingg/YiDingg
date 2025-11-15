@@ -1,7 +1,7 @@
 # PLL System-Level Simulation using LTspice
 
 > [!Note|style:callout|label:Infor]
-Initially published at 14:13 on 2025-08-15 in Lincang.
+Initially published by YiDingg at 14:13 on 2025-08-15 in Lincang.
 
 
 ## Introduction

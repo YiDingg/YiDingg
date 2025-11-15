@@ -1,7 +1,7 @@
 # Basic HTML
 
 > [!Note|style:callout|label:Infor]
-Initially published at 13:01 on 2024-06-25 in Beijing.
+Initially published by YiDingg at 13:01 on 2024-06-25 in Beijing.
 
 
 >[!TIP]<div>

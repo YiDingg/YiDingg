@@ -1,7 +1,7 @@
 # Setting Advice for New Computer<br> 新电脑设置及调整建议
 
 > [!Note|style:callout|label:Infor]
-Initially published at 22:36 on 2024-09-03 in Beijing.
+Initially published by YiDingg at 22:36 on 2024-09-03 in Beijing.
 
 
 本机环境：Windows 11 家庭版，64 位，16 GB 内存，512 GB 硬盘，Redmi Book 14 Pro 2023

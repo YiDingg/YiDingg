@@ -1,7 +1,7 @@
 # Prerequisite Digital Electronics Knowledge for PLL
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 16:19 on 2025-08-08 in Lincang.
+> Initially published by YiDingg at 16:19 on 2025-08-08 in Lincang.
 
 ## References
 
@@ -365,3 +365,15 @@ B = data1[0:7] ;
 - [5] M. S. Hossain, M. B. Moreira, F. Sandrez, F. Rivet, H. Lapuyade, and Y. Deval, “Low Power Frequency Dividers using TSPC logic in 28nm FDSOI Technology,” in 2022 IEEE 13th Latin America Symposium on Circuits and System (LASCAS), Puerto Varas, Chile: IEEE, Mar. 2022, pp. 1–4. doi: 10.1109/LASCAS53948.2022.9789073.
 - [6] P. Xu, C. Gimeno, and D. Bol, “Optimizing TSPC frequency dividers for always-on low-frequency applications in 28nm FDSOI CMOS,” in 2017 IEEE SOI-3D-Subthreshold Microelectronics Technology Unified Conference (S3S), Burlingame, CA: IEEE, Oct. 2017, pp. 1–2. doi: 10.1109/S3S.2017.8308751.
 - [[7]](https://www.mdpi.com/2079-9292/9/5/725/xml) X. Li, J. Gao, Z. Chen, and X. Wang, “High-Speed Wide-Range True-Single-Phase-Clock CMOS Dual Modulus Prescaler,” Electronics, vol. 9, no. 5, p. 725, Apr. 2020, doi: 10.3390/electronics9050725.
+
+## 6. Summary
+
+这里放一张总结：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-10-18-19-39_Prerequisite Digital Electronics Knowledge for PLL.png"/></div>
+
+
+
+## Advanced Reading
+
+- [From Basic Logic Gates to D Latch and D Flipflop](<AnalogIC/From Basic Logic Gates to D Latch and D Flipflop.md>)

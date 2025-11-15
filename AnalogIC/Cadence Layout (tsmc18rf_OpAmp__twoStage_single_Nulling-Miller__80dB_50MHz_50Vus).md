@@ -1,7 +1,7 @@
 # Cadence Layout Example (tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 00:29 on 2025-06-19 in Beijing.
+> Initially published by YiDingg at 00:29 on 2025-06-19 in Beijing.
 
 ## Introduction
 

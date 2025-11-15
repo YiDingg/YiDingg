@@ -1,7 +1,7 @@
 # Cpp 笔记大纲
 
 > [!Note|style:callout|label:Infor]
-Initially published at 20:49 on 2024-07-08 in Beijing.
+Initially published by YiDingg at 20:49 on 2024-07-08 in Beijing.
 
 
 ## 学习路线

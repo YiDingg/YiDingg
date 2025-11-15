@@ -18,12 +18,58 @@
 
 - 📝 **Projects**
 
+    - [An Ultra-Low-Power CP-PLL in ONC 180nm Technology](<Projects/Design of An Ultra-Low-Power CP-PLL in ONC 180nm Technology.md>)
+        - Documents (old at the top):
+        - [onc18 (ONC 180nm CMOS Process Library)](<AnalogICDesigns/Basic Information of onc18 (ONC 180nm CMOS Process Library).md>)
+        - [Loop Analysis of Typical Type-II CP-PLL](<AnalogIC/Loop Analysis of Typical Type-II CP-PLL.md>)
+        - [Large Resistor Implementation Techniques for Low-Power Analog IC Designs](<AnalogIC/Large Resistor Implementation Techniques for Low-Power Analog IC Designs.md>)
+        - [The Differences Between Latch and Flipflop (D Latch vs. D Flipflop)](<AnalogIC/From Basic Logic Gates to D Latch and D Flipflop.md>)
+        - [(modified) Virtuoso Tutorials - 15. Several Methods for PEX and How to Speed Up Your Post-Simulation](<AnalogIC/Virtuoso Tutorials - 15. Several Methods for PEX and How to Speed Up Your Post-Simulation.md>)
+        - [Virtuoso Tutorials - 16. Using Config Sweep and CALIBREVIEW to Speed Up Your Post-Layout Simulation](<AnalogIC/Virtuoso Tutorials - 16. Using Config Sweep and CALIBREVIEW to Speed Up Your Post-Layout Simulation.md>)
+        - [Virtuoso Tutorials - 17. Creating Parameter Passing Symbol as The Standard PCell](<AnalogIC/Virtuoso Tutorials - 17. Creating Parameter Passing Symbol as The Standard PCell.md>)
+        - [Phase Noise and Jitter Characterization in Mixed-Signal Circuits, and the MATLAB Implementation](<AnalogIC/Phase Noise and Jitter Characterization in Mixed-Signal Circuits, and the MATLAB Implementation.md>)
+        - Project Records:
+        - [202510_onc18_CPPLL (1) VCO Design Iteration](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (1) VCO Design Iteration.md>)
+        - [202510_onc18_CPPLL (2) VCO Iteration and Layout](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (2) VCO Iteration and Layout.md>)
+        - [202510_onc18_CPPLL (3) Other Modules Design and Layout](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.md>)
+
     - [A 2.2-GHz ~ 3.3-GHz BB-PLL with Multiple Output Frequencies in TSMC 65-nm Technology](<Projects/A 3.3-GHz BB-PLL with Multiple Output Frequencies in TSMC 65-nm Technology.md>)
         - [(1) LDO: Design of A Basic Low Dropout Regulator (LDO) for BB-PLL](<Projects/Design of A Basic Low Dropout Regulator (LDO) for BB-PLL.md>)
+            - [LDO Stability Analysis and Loop Compensation Mechanism](<AnalogIC/LDO Stability Analysis and Loop Compensation Mechanism.md>)
+            - [tsmcN65 (TSMC 65nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).md>)
+            - [202509 LDO (1): 1.8 V ~ 2.5 V to 1.2 V](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1).md>)
+            - [202509 LDO (2): 1.8 V ~ 2.5 V to 1.2 V](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (2).md>)
+            - [202509 LDO (layout): 1.8 V ~ 2.5 V to 1.2 V](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.md>)
         - [(2) OTA: Design of An Adjustable Constant-Gm OTA for Low Pass Filters in BB-PLL](<Projects/Design of An Adjustable Constant-Gm OTA for Low Pass Filters in BB-PLL.md>)
+            - [Design of Constant-Gm Rail-to-Rail OTA](<AnalogIC/Design of Constant-Gm Rail-to-Rail OTA.md>)
+            - [202509_tsmcN65_OTA_constantGm_adjustable](<AnalogICDesigns/202509_tsmcN65_OTA_constantGm_adjustable.md>)
+            - [202509_tsmcN65_OTA_constantGm_adjustable__layout](<AnalogICDesigns/202509_tsmcN65_OTA_constantGm_adjustable__layout.md>)
         - [(3) DAC: Design of A 5-Bit RDR DAC for Reference Generation in BB-PLLs](<Projects/Design of A 5-Bit RDR DAC for Reference Generation in BB-PLLs.md>)
-    - [Design of A Type-II Integer-N Charge Pump PLL](<Projects/Design of A Third-Order Type-II Integer-N CP-PLL.md>)
+
+    - [A Type-II Integer-N Charge Pump PLL](<Projects/Design of A Third-Order Type-II Integer-N CP-PLL.md>)
+        - [Razavi CMOS - Chapter 13. Switched-Capacitor Circuits](<AnalogIC/Razavi CMOS - Chapter 13. Switched-Capacitor Circuits.md>)
+        - [Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.1 Simple PLL](<AnalogIC/Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.1 Simple PLL.md>)
+        - [Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.2 CP-PLL ~ 16.5 Applications](<AnalogIC/Razavi CMOS - Chapter 16. Phase-Locked Loops - 16.2 CP-PLL ~ 16.5 Applications.md>)
+        - [Prerequisite Digital Electronics Knowledge for PLL](<AnalogIC/Prerequisite Digital Electronics Knowledge for PLL.md>)
+        - [[F. Gardner] Charge-Pump Phase-Lock Loops](<Papers/Phase-Locked Loop (PLL)/[F. Gardner] Charge-Pump Phase-Lock Loops.md>)
+        - [Design Sheet for Third-Order Type-II CP-PLL](<AnalogICDesigns/Design Sheet for Third-Order Type-II CP-PLL.md>)
+        - [Phase Noise and Jitter in Mixed-Signal Circuits](<AnalogIC/Phase Noise and Jitter in Mixed-Signal Circuits.md>)
+        - [Jitter and Phase Noise Calculation using MATLAB](<AnalogIC/Phase Noise and Jitter Calculation using MATLAB.md>)
+        - [Virtuoso Tutorials - 13. VCO and PLL Simulation (Periodical Steady-State and Phase Noise)](<AnalogIC/Virtuoso Tutorials - 13. VCO and PLL Simulation (Periodical Steady-State and Phase Noise).md>)
+        - [PLL System-Level Simulation using LTspice](<AnalogIC/PLL System-Level Simulation using LTspice.md>)
+        - [PLL Behavior-Level Simulation using Cadence IC618](<AnalogIC/PLL Behavior-Level Simulation using Cadence IC618.md>)
+        - [202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N](<AnalogICDesigns/202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N.md>)
+
     - [Scientific Research Practice 1 (BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
+        - [Razavi CMOS - Chapter 12. Bandgap References](<AnalogIC/Razavi CMOS - Chapter 12. Bandgap References.md>)
+        - [Virtuoso Tutorials - 8. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 8. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>) 
+        - [Virtuoso Tutorials - 10. Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 10. Using Tran Result as the DC Operation Point for AC Simulation.md>) 
+        - [Virtuoso Tutorials - 11. Resolving Discrepancies Between DC and Transient Simulation Results](<AnalogIC/Virtuoso Tutorials - 11. Resolving Discrepancies Between DC and Transient Simulation Results.md>)
+        - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>) 
+        - [202507_tsmcN28_OpAmp__nulling-Miller](AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md)
+        - [202507_tsmcN28_OpAmp__nulling-Miller__layout](AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller__layout.md) 
+        - [202507_tsmcN28_BGR__scientific_research_practice_1](AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md) 
+        - [202507_tsmcN28_BGR__scientific_research_practice_1__layout](AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1__layout.md) 
     - [Gomoku (The Final Assignment of C Programming)](Projects/Gomoku.md)
     - [HDofDF (Humidity Detection of Diabetic Foot)](Projects/HDofDF.md)
     - [MuMeStar (Multiple Menu Star for OLED)](Projects/MuMeStar.md)
@@ -39,12 +85,15 @@
 
 - 📱 **Analog IC Designs** <!-- 新的 design 放在前面 -->
 
+    - [onc18 (ONC 180nm CMOS Process Library)](<AnalogICDesigns/Basic Information of onc18 (ONC 180nm CMOS Process Library).md>)
     - [tsmcN65 (TSMC 65nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).md>)
     - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
     - [tsmc18rf (TSMC 180nm RF CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmc18rf (TSMC 180nm RF CMOS Process Library).md>)
 
-    - OCN180
-        - [202510 CP-PLL: ultra-low-power_400nA_640kHz](<>)
+    - other technology
+        - [[ocn180] 202511 LDO: low-power LDO for nA-Level Systems](<>)
+        - [[ocn180] 202510 PLL: ultra-low-power CP-PLL](<>)
+
     - tsmcN65
         - [202509 DAC: 5-bit RDR (R-2R)](<AnalogICDesigns/202509_tsmcN65_DAC_RDR_5bit.md>)
         - [202509 OTA (layout): constant-gm adjustable](<AnalogICDesigns/202509_tsmcN65_OTA_constantGm_adjustable__layout.md>)
@@ -54,7 +103,7 @@
         - [202509 LDO (1): 1.8 V ~ 2.5 V to 1.2 V](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1).md>)
         - [202509 Op Amp: op amp for the LDO](<AnalogICDesigns/202509_tsmcN65_OpAmp__nulling-Miller.md>)
     - tsmcN28
-        - [202508 CP-PLL: 3rd-order type-II integer-N CP-PLL](<AnalogICDesigns/202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N.md>)
+        - [202508 PLL: 3rd-order type-II integer-N CP-PLL](<AnalogICDesigns/202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N.md>)
         - [202507 BGR (layout): low-voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1__layout.md>)
         - [202507 BGR: low-voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
         - [202507 Op Amp (layout): op amp for the BGR in scientific_research_practice_1](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller__layout.md>)
@@ -74,11 +123,6 @@
 
 - 💡 **My Blogs**
 
-
-
-
-
-
     -  Virtuoso Tutorials
         - [1. How to Install Cadence IC618](<AnalogIC/Virtuoso Tutorials - 1. How to Install Cadence IC618.md>)<!-- x -->
         - [2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)<!-- x -->
@@ -89,12 +133,12 @@
         - [7. Cadence Layout Tutorials](<AnalogIC/Virtuoso Tutorials - 7. Cadence Layout Tutorials.md>)<!-- x -->
         - [8. Cadence Layout Example in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)](<AnalogIC/Virtuoso Tutorials - 8. Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation).md>)<!-- x -->
         - [9. Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<AnalogIC/Virtuoso Tutorials - 9. Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)<!-- x -->
-        - [10. Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 10. Using Tran Result as the DC Operation Point for AC Simulation.md>)<!--  -->
-        - [11. Resolving Discrepancies Between DC and Transient Simulation Results](<AnalogIC/Virtuoso Tutorials - 11. Resolving Discrepancies Between DC and Transient Simulation Results.md>)
+        - [10. Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 10. Using Tran Result as the DC Operation Point for AC Simulation.md>)<!-- x -->
+        - [11. Resolving Discrepancies Between DC and Transient Simulation Results](<AnalogIC/Virtuoso Tutorials - 11. Resolving Discrepancies Between DC and Transient Simulation Results.md>)<!-- x -->
         - [12. Behavior-Level Simulation using Verilog-A in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 12. Behavior-Level Simulation using Verilog-A in Cadence IC618.md>)
-        - [13. Periodical Steady-State and Phase Noise Simulation](<AnalogIC/Virtuoso Tutorials - 13. VCO and PLL Simulation (Periodical Steady-State and Phase Noise).md>)
+        - [13. Periodical Steady-State and Phase Noise Simulation (VCO and PLL)](<AnalogIC/Virtuoso Tutorials - 13. VCO and PLL Simulation (Periodical Steady-State and Phase Noise).md>)
         - [14. Understanding Substrate, Well, Tap, and Guard Ring in Analog IC Layouts](<AnalogIC/Virtuoso Tutorials - 14. Understanding Substrate, Well, Tap, and Guard Ring in Analog IC Layouts.md>)
-        - [15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation](<AnalogIC/Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.md>)
+        - [15. Several Methods for PEX and How to Speed Up Your Post-Simulation](<AnalogIC/Virtuoso Tutorials - 15. Several Methods for PEX and How to Speed Up Your Post-Simulation.md>)
 
 
     - Use Virtuoso Efficiently
@@ -104,19 +148,6 @@
         - [3. Decorate Your Library Manager](<AnalogIC/Use Virtuoso Efficiently - 3. Decorate Your Library Manager.md>)
         - [4. Speed Up Your Simulation](<AnalogIC/Use Virtuoso Efficiently - 4. Speed Up Your Simulation.md>)
 
-        <!--     - ADE Assembler Tutorials
-                - [0. Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/ADE Assembler - 0. How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)
-                - [! 1. Getting Started with Virtuoso ADE Assembler](<AnalogIC/ADE Assembler - 1. Getting Started with Virtuoso ADE Assembler.md>)
-        -->
-
-        <!-- - Design Guide
-            - 
-            - AnalogIC/LDO Stability Analysis and Loop Compensation Mechanism.md
-            - AnalogIC/Miller Compensation in Basic Two-Stage Op Amp.md
-            - AnalogICDesigns/Design Sheet for Third-Order Type-II CP-PLL.md
-            - AnalogICDesigns/Design Sheet for Basic Two-Stage Op Amp with Nulling-Miller Compensation.md
-            - AnalogICDesigns/Design Sheet for Folded-Cascode Op Amp.md 
-        -->
 
 
     - Razavi CMOS
@@ -136,18 +167,14 @@
         - [Razavi RF - Chapter 1. Introduction to RF Technology](<AnalogIC/Razavi RF - Chapter 1. Introduction to RF Technology.md>)
         - [Razavi RF - Chapter 2. Basic Concepts in RF Circuits](<AnalogIC/Razavi RF - Chapter 2. Basic Concepts in RF Circuits.md>)
 
-        <!-- - Digital Signal Processing
-            - [DSP - 0. Preparations](<Notes/DSP (Digital Signal Processing)/DSP - 0. Preparations.md>) 
-        -->
-
     - Analog IC Blogs (2025, 33 items)
+        - [Structure Options and Design Considerations for Analog PLLs](<AnalogIC/Structure Options and Design Considerations for Analog PLLs.md>)
         - [LDO Stability Analysis and Loop Compensation Mechanism](<AnalogIC/LDO Stability Analysis and Loop Compensation Mechanism.md>)
-        - [Phase Noise Spectrum Calculation using MATLAB](<AnalogIC/Phase Noise Spectrum Calculation using MATLAB.md>)
+        - [Phase Noise Spectrum Calculation using MATLAB](<AnalogIC/Phase Noise and Jitter Calculation using MATLAB.md>)
         - [Basics of Clock Data Recovery (CDR)](<AnalogIC/Basics of Clock Data Recovery (CDR).md>)
         - [Jitter and Phase Noise in Mixed-Signal Circuits](<AnalogIC/Phase Noise and Jitter in Mixed-Signal Circuits.md>)
         - [PLL Behavior-Level Simulation using Cadence IC618](<AnalogIC/PLL Behavior-Level Simulation using Cadence IC618.md>)
         - [PLL System-Level Simulation using LTspice](<AnalogIC/PLL System-Level Simulation using LTspice.md>)
-        - [Collection of Typical PLL Modules (PFD, CP, LPF, VCO, FD)](<AnalogIC/Implementation Collection of Typical PLL Modules (PFD, CP, LPF, VCO, FD).md>)
         - [Prerequisite Digital Electronics Knowledge for PLL](<AnalogIC/Prerequisite Digital Electronics Knowledge for PLL.md>)
         - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
         - [The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogIC/The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation.md>)
@@ -253,67 +280,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-- ⚒️ **Electronic Designs**
-
-    - [**[Pinned] DC-DC Converter Modules**](<ElectronicDesigns/DC-DC Converter Modules.md>)
-    - [**[Pinned] μA741 using Discrete BJTs (SOT-23)**](<ElectronicDesigns/μA741 using Discrete BJTs (SOT-23).md>)
-    - [Adapter Board for Analog Discovery v2](<ElectronicDesigns/Adapter Board for Analog Discovery v2.md>)
-    - [Basic Two-Stage Op Amp using Discrete MOSFETs](<ElectronicDesigns/Basic CMOS Op Amp using Discrete MOSFETs.md>)
-    - [μA741 using Discrete BJTs (SOT-23)](<ElectronicDesigns/μA741 using Discrete BJTs (SOT-23).md>)
-    - [Basic Op Amp Measurement Board v2](<ElectronicDesigns/Basic Op Amp Measurement Board v2.md>)
-    - [PCB Light Painting](<ElectronicDesigns/PCB Light Painting.md>)
-    - [Voltage Source with Ammeter](<ElectronicDesigns/Voltage Source with Ammeter.md>)
-    - [Simplified Transistor Tester](<ElectronicDesigns/Simplified Transistor Tester.md>)
-    - [Current Sense Amplifiers](<ElectronicDesigns/Current Sense Amplifiers.md>)
-    - [Precision Current Source](<ElectronicDesigns/Precision Voltage-Controlled Current Source.md>)
-    - [DC-DC Converter Modules](<ElectronicDesigns/DC-DC Converter Modules.md>)
-    - [Voltage Linear Operation Board](<ElectronicDesigns/Voltage Linear Operation Board.md>)<!--  -->
-    - [General-Purpose Transistor Tester](<ElectronicDesigns/General-Purpose Transistor Tester.md>)
-    - [Voltage-Controlled Power Source](<ElectronicDesigns/Versatile Voltage-Controlled Power Source.md>)
-    - [All-In-One DC-DC Power Supply (5V Input)](<ElectronicDesigns/All-In-One DC-DC Power Supply (5V Input).md>)
-    - [Basic Op Amp Measurement Board](<ElectronicDesigns/Basic Op Amp Measurement Board.md>)<!--  -->
-    - [Adapter Board for Analog Discovery](<ElectronicDesigns/Adapter Board for Analog Discovery.md>)
-    - [Transistor Tester for Analog Discovery](<ElectronicDesigns/Transistor Tester for ADx.md>)
-    - [General VCVS and VCCS (up to 5A)](<ElectronicDesigns/General VCVS and VCCS (up to 10 A).md>)
-    - [ESP12-F Adapter Board](<ElectronicDesigns/ESP12-F Adapter Board.md>)
-    - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)<!--  -->
-    - [Other Circuit Boards](<ElectronicDesigns/Other Circuit Boards.md>)
-
-
-- 📃 **Paper Reading**
-
-    - Clock and Data Recovery (CDR)
-        - [[Literature Review] Clock and Data Recovery](<Papers/Clock and Data Recovery (CDR)/[Literature Review] Clock and Data Recovery.md>)
-
-    - Phase-Locked Loop (PLL)
-        - [[Literature Review] TSPC D Flip-Flop](<Papers/Phase-Locked Loop (PLL)/[Literature Review] TSPC D Flip-Flop.md>)
-        - [[F. Gardner] Charge-Pump Phase-Lock Loops](<Papers/Phase-Locked Loop (PLL)/[F. Gardner] Charge-Pump Phase-Lock Loops.md>)
-
-    - Op Amp Measurement Methods
-        - [Meas. of OpAmp in the Freq. Domain](<Papers/Op Amp Measurement Methods/Measurement of Operational Amplifier Characteristics in the Frequency Domain.md>)
-
-    - Design of Op Amp
-        - [[Literature Review] Design of Constant-Gm Rail-to-Rail OTA](<Papers/Design of Op Amp/[Literature Review] Design of Constant-Gm Rail-to-Rail OTA.md>)
-        - [Design of Two Stage Miller Compensated CMOS  Opamp with Nulling Resistor](<Papers/Design of Op Amp/Design of Two Stage Miller Compensated CMOS  Opamp with Nulling Resistor.md>)
-
-    - Transfer Function Analysis
-
-        - [Navi. Page of Transfer Function Analysis](<Papers/Transfer Function Analysis/Navigation Page of Transfer Function Analysis.md>)
-        - [EET (The Extra Element Theorem)](<Papers/Transfer Function Analysis/The Extra Element Theorem.md>)<!-- x -->
-        - [! TEET (The Two Extra Element Theorem)](<Papers/Transfer Function Analysis/The Two Extra Element Theorem.md>)
-        - [OCTC (Open-Circuit Time Constant Method)](<Papers/Transfer Function Analysis/Open-Circuit Time Constant Method.md>)
-
-
-
 - 📓 **Other Blogs**
 
     - Mixed <!-- empty line is necessary to avoid the error -->
@@ -362,6 +328,69 @@
         - [新版 Keil MDK 中无 Compiler_V5 的解决方案](Blogs/FixProblem/新版keil_MDK中无compiler_v5的解决方案.md)
     - Reprinted Articles 
         - [Circuit Cellar - Impedance Matching Fundamentals](<Blogs/Reprint/Circuit Cellar - Impedance Matching Fundamentals.md>)
+
+
+
+
+
+
+
+
+
+
+
+- 📃 **Paper Reading**
+
+    - Clock and Data Recovery (CDR)
+        - [[Literature Review] Clock and Data Recovery](<Papers/Clock and Data Recovery (CDR)/[Literature Review] Clock and Data Recovery.md>)
+
+    - Phase-Locked Loop (PLL)
+        - [[Literature Review] TSPC D Flip-Flop](<Papers/Phase-Locked Loop (PLL)/[Literature Review] TSPC D Flip-Flop.md>)
+        - [[F. Gardner] Charge-Pump Phase-Lock Loops](<Papers/Phase-Locked Loop (PLL)/[F. Gardner] Charge-Pump Phase-Lock Loops.md>)
+
+    - Op Amp Measurement Methods
+        - [Meas. of OpAmp in the Freq. Domain](<Papers/Op Amp Measurement Methods/Measurement of Operational Amplifier Characteristics in the Frequency Domain.md>)
+
+    - Design of Op Amp
+        - [[Literature Review] Design of Constant-Gm Rail-to-Rail OTA](<Papers/Design of Op Amp/[Literature Review] Design of Constant-Gm Rail-to-Rail OTA.md>)
+        - [Design of Two Stage Miller Compensated CMOS  Opamp with Nulling Resistor](<Papers/Design of Op Amp/Design of Two Stage Miller Compensated CMOS  Opamp with Nulling Resistor.md>)
+
+    - Transfer Function Analysis
+
+        - [Navi. Page of Transfer Function Analysis](<Papers/Transfer Function Analysis/Navigation Page of Transfer Function Analysis.md>)
+        - [EET (The Extra Element Theorem)](<Papers/Transfer Function Analysis/The Extra Element Theorem.md>)<!-- x -->
+        - [! TEET (The Two Extra Element Theorem)](<Papers/Transfer Function Analysis/The Two Extra Element Theorem.md>)
+        - [OCTC (Open-Circuit Time Constant Method)](<Papers/Transfer Function Analysis/Open-Circuit Time Constant Method.md>)
+
+
+
+- ⚒️ **Electronic Designs**
+
+    - [**[Pinned] DC-DC Converter Modules**](<ElectronicDesigns/DC-DC Converter Modules.md>)
+    - [**[Pinned] μA741 using Discrete BJTs (SOT-23)**](<ElectronicDesigns/μA741 using Discrete BJTs (SOT-23).md>)
+    - [Adapter Board for Analog Discovery v2](<ElectronicDesigns/Adapter Board for Analog Discovery v2.md>)
+    - [Basic Two-Stage Op Amp using Discrete MOSFETs](<ElectronicDesigns/Basic CMOS Op Amp using Discrete MOSFETs.md>)
+    - [μA741 using Discrete BJTs (SOT-23)](<ElectronicDesigns/μA741 using Discrete BJTs (SOT-23).md>)
+    - [Basic Op Amp Measurement Board v2](<ElectronicDesigns/Basic Op Amp Measurement Board v2.md>)
+    - [PCB Light Painting](<ElectronicDesigns/PCB Light Painting.md>)
+    - [Voltage Source with Ammeter](<ElectronicDesigns/Voltage Source with Ammeter.md>)
+    - [Simplified Transistor Tester](<ElectronicDesigns/Simplified Transistor Tester.md>)
+    - [Current Sense Amplifiers](<ElectronicDesigns/Current Sense Amplifiers.md>)
+    - [Precision Current Source](<ElectronicDesigns/Precision Voltage-Controlled Current Source.md>)
+    - [DC-DC Converter Modules](<ElectronicDesigns/DC-DC Converter Modules.md>)
+    - [Voltage Linear Operation Board](<ElectronicDesigns/Voltage Linear Operation Board.md>)<!--  -->
+    - [General-Purpose Transistor Tester](<ElectronicDesigns/General-Purpose Transistor Tester.md>)
+    - [Voltage-Controlled Power Source](<ElectronicDesigns/Versatile Voltage-Controlled Power Source.md>)
+    - [All-In-One DC-DC Power Supply (5V Input)](<ElectronicDesigns/All-In-One DC-DC Power Supply (5V Input).md>)
+    - [Basic Op Amp Measurement Board](<ElectronicDesigns/Basic Op Amp Measurement Board.md>)<!--  -->
+    - [Adapter Board for Analog Discovery](<ElectronicDesigns/Adapter Board for Analog Discovery.md>)
+    - [Transistor Tester for Analog Discovery](<ElectronicDesigns/Transistor Tester for ADx.md>)
+    - [General VCVS and VCCS (up to 5A)](<ElectronicDesigns/General VCVS and VCCS (up to 10 A).md>)
+    - [ESP12-F Adapter Board](<ElectronicDesigns/ESP12-F Adapter Board.md>)
+    - [MinSyBo (Minimum System Board of STM32)](Projects/MinSyBo.md)<!--  -->
+    - [Other Circuit Boards](<ElectronicDesigns/Other Circuit Boards.md>)
+
+
 
 - 📖 **Notes**
 

@@ -1,7 +1,7 @@
 # Test Experiment of The DC-DC Converter Modules
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 18:26 on 2025-02-28 in Beijing.
+> Initially published by YiDingg at 18:26 on 2025-02-28 in Beijing.
 
 ## Introduction
 

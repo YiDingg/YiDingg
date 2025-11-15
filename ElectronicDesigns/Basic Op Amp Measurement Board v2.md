@@ -1,7 +1,7 @@
 # Basic Op Amp Measurement Board v2
 
 > [!Note|style:callout|label:Infor]
-Initially published at 23:43 on 2025-04-22 in Beijing.
+Initially published by YiDingg at 23:43 on 2025-04-22 in Beijing.
 
 ## Infor
 

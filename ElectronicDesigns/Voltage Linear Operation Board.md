@@ -1,7 +1,7 @@
 # Voltage Linear Operation Board (电压线性运算器)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 18:13 on 2025-02-27 in Beijing.
+> Initially published by YiDingg at 18:13 on 2025-02-27 in Beijing.
 
 
 ## Infor

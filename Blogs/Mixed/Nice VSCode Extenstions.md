@@ -1,7 +1,7 @@
 # Nice VSCode Extenstions
 
 > [!Note|style:callout|label:Infor]
-Initially published at 22:24 on 2024-06-26 in Beijing, updating constantly.
+Initially published by YiDingg at 22:24 on 2024-06-26 in Beijing, updating constantly.
 
 
 ## Mixed

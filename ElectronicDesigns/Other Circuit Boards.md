@@ -1,7 +1,7 @@
 # Other Circuit Boards
 
 > [!Note|style:callout|label:Infor]
-Initially published at 15:40 on 2025-01-21 in Lincang.
+Initially published by YiDingg at 15:40 on 2025-01-21 in Lincang.
 
 仅由洞洞板搭建 (未做PCB) 的电路统一放在这里
 

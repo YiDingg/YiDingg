@@ -1,7 +1,7 @@
 # Cadence Layout Example of Inverter in tsmcN28 (including DRC, LVS, PEX and Post-Simulation)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 17:30 on 2025-07-21 in Beijing.
+> Initially published by YiDingg at 17:30 on 2025-07-21 in Beijing.
 
 ## 1. Background
 

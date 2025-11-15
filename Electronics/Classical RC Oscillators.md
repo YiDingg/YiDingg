@@ -1,7 +1,7 @@
 # Classical RC Oscillators: Wien-Bridge, T-Bridge and Twin-T Oscillators
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 14:23 on 2025-03-21 in Beijing.
+> Initially published by YiDingg at 14:23 on 2025-03-21 in Beijing.
 
 ## Intro
 

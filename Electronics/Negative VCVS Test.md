@@ -1,7 +1,7 @@
 # Solutions for Negative VCVS (负压控电压源的设计方案)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 12:20 on 2025-02-20 in Lincang.
+Initially published by YiDingg at 12:20 on 2025-02-20 in Lincang.
 
 ## 前言
 

@@ -23,6 +23,9 @@ My Technology Stack:
 - Analog Circuit Design
 - LTspice (ANALOG DEVICES)
 - Cadence Virtuoso
+- Analog IC Design (OPA, OTA, BGR, LDO, etc.)
+- Mixed-Signal IC Design (DAC, VCO, PLL, etc.)
+- Verilog, Verilog-A/AMS
 
 
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)

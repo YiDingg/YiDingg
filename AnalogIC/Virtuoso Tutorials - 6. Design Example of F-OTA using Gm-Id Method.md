@@ -1,7 +1,7 @@
 # Design Example of F-OTA using Gm-Id Method
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 00:42 on 2025-05-26 in Beijing.
+> Initially published by YiDingg at 00:42 on 2025-05-26 in Beijing.
 
 
 !> **<span style='color:red'>Attention:</span>**<br>

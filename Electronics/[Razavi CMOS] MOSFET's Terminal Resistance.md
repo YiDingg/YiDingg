@@ -1,7 +1,7 @@
 # [Razavi CMOS] MOSFET's Terminal Resistance
 
 > [!Note|style:callout|label:Infor]
-Initially published at 17:55 on 2025-01-29 in Lincang.
+Initially published by YiDingg at 17:55 on 2025-01-29 in Lincang.
 
 在《模拟 CMOS 集成电路设计》的 single stage amplifier 中，我们常常使用 $A_v = -G_m R_{out}$ 来计算单极放大器的增益，其中 $R_{out}$ 是输出电阻，$G_m$ 是广义跨导。本文讨论了小信号模型中 MOSFET 的三种“端口电阻”，即从某个端口看入的电阻大小，为快速计算 $R_{out}$ 打下基础 (by inspection)。
 

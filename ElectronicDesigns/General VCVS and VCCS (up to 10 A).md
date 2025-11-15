@@ -1,7 +1,7 @@
 # General-Purpose VCVS and VCCS <br> (通用压控电压源和压控电流源)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 17:27 on 2025-01-08 in Beijing.
+Initially published by YiDingg at 17:27 on 2025-01-08 in Beijing.
 
 ## Infor
 

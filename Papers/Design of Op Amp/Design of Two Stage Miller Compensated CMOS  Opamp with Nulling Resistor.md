@@ -1,7 +1,7 @@
 # Design of Two Stage Miller Compensated CMOS  Opamp with Nulling Resistor
 
 > [!Note|style:callout|label:Infor]
-Initially published at 19:02 on 2025-06-15 in Beijing.
+Initially published by YiDingg at 19:02 on 2025-06-15 in Beijing.
 
 ## Infor 
 

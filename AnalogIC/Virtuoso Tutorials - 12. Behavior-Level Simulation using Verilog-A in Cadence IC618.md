@@ -1,19 +1,19 @@
-# Virtuoso Tutorials - 11. Behavior-Level Simulation using Verilog-A in Cadence IC618
+# Virtuoso Tutorials - 12. Behavior-Level Simulation using Verilog-A in Cadence IC618
 
 > [!Note|style:callout|label:Infor]
-Initially published at 14:02 on 2025-08-16 in Lincang.
+Initially published by YiDingg at 14:02 on 2025-08-16 in Lincang.
 
 
 
 ## 1. Introduction
 
-本文，我们在 Cadence IC618 中使用 Verilog-A 语言搭建压控振荡器 VCO (voltage-controlled oscillator) 的行为级电路模型，并进行仿真验证。
+本文，我们在 Cadence Virtuoso 中使用 Verilog-A 语言搭建压控振荡器 VCO (voltage-controlled oscillator) 的行为级电路模型，并进行仿真验证。
 
-可能有读者疑惑 Verilog-A 是什么： Verilog-A 是用来专门描述模拟电路的语言，由 Verilog 演变而来，但它们是两种完全不同的语言。具体而言, Verilog-A 是 Verilog-AMS 的子集，其中 AMS 是指 "analog and mixed signal"，可以同时表述数字电路和模拟电路。
+可能有读者疑惑 Verilog-A 是什么？毕竟我们平常说的都是 Verilog, 带了一个后缀 `A` 是啥意思？  Verilog-A 是用来专门描述模拟电路的语言，`A` 就是代表 `Analog`，它由 Verilog 演变而来，基本逻辑几乎相同，但具体语法稍有区别。具体而言, Verilog-A 是 Verilog-AMS 的子集，其中 AMS 是指 "analog and mixed signal"，专门用于混合信号电路 (同时包含数字和模拟部分) 的仿真。
 
-## 2. Model and Simulate the VCO
+## 2. VCO Modeling
 
-### 2.1 Verilog-A Model
+### 2.1 Verilog-A Modeling
 
 到网址 [The Designer's Guide Community > Verilog-AMS Models](https://designers-guide.org/verilog-ams/index.html) 下载 VCO 的 model 文件：
 
@@ -34,7 +34,7 @@ Initially published at 14:02 on 2025-08-16 in Lincang.
 // Chapter 3, Listing 22.
 
 
-// 2025.08.16 modified by https://github.com/YiDingg
+// 2025.08.16 modified by https://www.zhihu.com/people/YiDingg
 `include "disciplines.vams"
 `include "constants.vams"
 
@@ -78,30 +78,36 @@ endmodule
 
 
 
-### 2.2 Create V-A Model and Symbol
+### 2.2 Create V-A Module
 
 在 library 下新建 cellview, type 选择 `verilogA`。将代码复制进去后，点击左上角 `Build`, 会提示是否生成 symbol, 点击确认并调整 symbol 样式。
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-16-23-06-58_Virtuoso Tutorials - 11. Behavior-Level Simulation using Verilog-A in Cadence Ic618.png"/></div>
 
+
+
 ### 2.3 VCO Simulation
 
-打开 ADE XL 进行仿真 (有没有 config 文件都可以)，因为 Verilog-A 模型可以直接用 spectre 仿真器进行仿真，不需要修改。
+设置好 testbench 的原理图后，打开 ADE XL 或 ADE Assembler 进行仿真 (有没有 config 文件都可以)。因为 Verilog-A 模型可以像常规模拟电路一样直接用 spectre simulator 进行仿真，所以不需要作额外调整。
 
+
+仿真示例如下：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-16-23-40-15_Virtuoso Tutorials - 11. Behavior-Level Simulation using Verilog-A in Cadence Ic618.png"/></div>
+
+
 
 ## 3. Using Verilog-AMS Model
 
-如果我们在创建 cell view 时选择了 `verilogAMSText` (Verilog-AMS), 则仿真时需要将 simulator 从 spectre 换为 ams (Verilog-A 则不需要), 但是**我们运行仿真时却出现了仿真器版本过低的报错：**
+注意，如果我们在创建 cell view 时选择了 `verilogAMSText` (Verilog-AMS), 仿真时就需要将 simulator 从 spectre 换为 ams (Verilog-A 则不需要), 但是**我们运行仿真时却出现了仿真器版本过低的报错：**
 
 ``` bash
 *ERROR* (AMS-2141): The INCISIV installation being used is not compatible with the AMS Unified Netlisting (AMS UNL) flow. To run AMS Unified Netlister, either use INCISIV 13.20-s007 or a later release, or use other AMS netlisters.
 ```
 
-如何解决这个问题，等我们有方案了再发出来，下面几个小节是此问题的复现过程。
+如何解决这个问题，等我们有方案了再发出来，下面几个小节 (3.1 ~ 3.3) 是此问题的复现过程。
 
 
-### 3.1 Verilog-AMS Model
+### 3.1 Verilog-AMS Modeling
 
 到网址 [The Designer's Guide Community > Verilog-AMS Models](https://designers-guide.org/verilog-ams/index.html) 下载 VCO 的 model 文件：
 
@@ -121,6 +127,7 @@ endmodule
 // Taken from "The Designer's Guide to Verilog-AMS" by Kundert & Zinke.
 // Chapter 3, Listing 22.
 
+// 2025.08.16 modified by https://www.zhihu.com/people/YiDingg
 `include "disciplines.vams"
 `include "constants.vams"
 
@@ -156,7 +163,7 @@ endmodule
 
 
 
-### 3.2 Create V-AMS Model and Symbol
+### 3.2 Create V-AMS Module
 
 在 library 下新建 cellview, type 选择 `verilogAMSText` (verilogAMSText 的功能涵盖 verilog, verilogA, 因此是最佳选择)，如图：
 
@@ -197,7 +204,11 @@ endmodule
 *ERROR* (AMS-2141): The INCISIV installation being used is not compatible with the AMS Unified Netlisting (AMS UNL) flow. To run AMS Unified Netlister, either use INCISIV 13.20-s007 or a later release, or use other AMS netlisters.
 ```
 
-我们参考这个问答 [Cadence Community > AMS Simulation Error for INCISIV Version](https://community.cadence.com/cadence_technology_forums/f/mixed-signal-design/45160/ams-simulation-error-for-incisiv-version) 来解决。
+读者可以参考这个问答 [Cadence Community > AMS Simulation Error for INCISIV Version](https://community.cadence.com/cadence_technology_forums/f/mixed-signal-design/45160/ams-simulation-error-for-incisiv-version) 来解决。
+
+## 4. Conclusion
+
+一般情况下，无论是模拟电路还是混合信号电路，我们都推荐使用 Verilog-A 来搭建行为级模型，因为它可以直接用 spectre 仿真器进行仿真，省去了切换仿真器和配置 config 文件的麻烦，更别提切换为 AMS Simulator 可能会出现杂七杂八的仿真问题。
 
 
 

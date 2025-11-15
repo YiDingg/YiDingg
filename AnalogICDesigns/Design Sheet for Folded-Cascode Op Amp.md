@@ -1,7 +1,7 @@
 # Design Sheet for Folded-Cascode Op Amp
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 16:49 on 2025-06-10 in Beijing.
+> Initially published by YiDingg at 16:49 on 2025-06-10 in Beijing.
 
 
 ## 1. Design Sheet

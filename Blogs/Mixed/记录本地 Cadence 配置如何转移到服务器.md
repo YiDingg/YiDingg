@@ -1,7 +1,7 @@
 # 记录本地 Cadence 配置如何转移到服务器
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 22:02 on 2025-10-07 in Beijing.
+> Initially published by YiDingg at 22:02 on 2025-10-07 in Beijing.
 
 **<span style='color:red'> 注：本文内容涉及私人信息，不公开到个人网站或其它公共平台。 </span>**
 

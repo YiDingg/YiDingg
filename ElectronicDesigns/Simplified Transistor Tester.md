@@ -1,7 +1,7 @@
 # Simplified Transistor Tester
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 17:50 on 2025-03-10 in Beijing.
+> Initially published by YiDingg at 17:50 on 2025-03-10 in Beijing.
 
 - Time: 2025.03.10
 - Notes: for diodes and transistors (NFET/PFET/NPN/PNP) testing, a simplified version of [General-Purpose Transistor Tester](<ElectronicDesigns/General-Purpose%20Transistor%20Tester.md>)

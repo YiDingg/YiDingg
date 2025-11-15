@@ -1,7 +1,7 @@
 # Design of Constant-Gm Rail-to-Rail OTA
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 00:33 on 2025-09-24 in Beijing.
+> Initially published by YiDingg at 00:33 on 2025-09-24 in Beijing.
 
 ## Introduction
 

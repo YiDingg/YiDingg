@@ -1,7 +1,7 @@
 # Basic Op Amp Measurement Methods
 
 > [!Note|style:callout|label:Infor]
-Initially published at 19:12 on 2025-02-12 in Lincang.
+Initially published by YiDingg at 19:12 on 2025-02-12 in Lincang.
 
 
 ## Introduction

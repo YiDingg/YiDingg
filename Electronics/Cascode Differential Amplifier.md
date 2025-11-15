@@ -1,7 +1,7 @@
 # Cascode Differential Amplifier
 
 > [!Note|style:callout|label:Infor]
-Initially published at 23:30 on 2025-03-26 in Beijing.
+Initially published by YiDingg at 23:30 on 2025-03-26 in Beijing.
 
 ## Cascode Diff Amp with Simple Biasing
 

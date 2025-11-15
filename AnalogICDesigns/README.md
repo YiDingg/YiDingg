@@ -1,7 +1,7 @@
 # README (Analog IC Designs)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 17:10 on 2025-06-11 in Beijing.
+> Initially published by YiDingg at 17:10 on 2025-06-11 in Beijing.
 
 
 本文是 **Analog IC Designs** 一栏的说明文件。

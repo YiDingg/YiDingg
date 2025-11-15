@@ -1,7 +1,7 @@
 # A 1.2 V-Supply (Minimum 0.984 V) Low-Voltage Bandgap Reference (BGR) in 28 nm CMOS Technology
 
 > [!Note|style:callout|label:Infor]
-Initially published at 18:56 on 2025-07-14 in Beijing.
+Initially published by YiDingg at 18:56 on 2025-07-14 in Beijing.
 
 ## 0. Introduction
 

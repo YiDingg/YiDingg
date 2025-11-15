@@ -1,7 +1,7 @@
 # C Notes (6): Special Data Types
 
 > [!Note|style:callout|label:Infor]
-Initially published at 22:23 on 2024-08-07 in Lincang.
+Initially published by YiDingg at 22:23 on 2024-08-07 in Lincang.
 
 
 ## struct

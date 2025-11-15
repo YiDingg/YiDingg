@@ -1,7 +1,7 @@
 # Transistor Tester for Analog Discovery
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 22:59 on 2024-01-20 in Beijing.
+> Initially published by YiDingg at 22:59 on 2024-01-20 in Beijing.
 
 
 - Time: 2025.01.21

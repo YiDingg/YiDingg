@@ -1,7 +1,7 @@
 # Constant Current Source using Transistors
 
 > [!Note|style:callout|label:Infor]
-Initially published at 23:46 on 2025-04-02 in Beijing.
+Initially published by YiDingg at 23:46 on 2025-04-02 in Beijing.
 
 
 ## 不同 I_out 仿真结果

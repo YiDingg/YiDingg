@@ -1,7 +1,7 @@
 # Words
 
 > [!Note|style:callout|label:Infor]
-Initially published at 00:13 on 2024-08-12 in Lincang.
+Initially published by YiDingg at 00:13 on 2024-08-12 in Lincang.
 
 
 ## Example

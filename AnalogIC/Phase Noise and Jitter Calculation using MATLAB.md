@@ -1,7 +1,7 @@
 # Phase Noise Spectrum Calculation using MATLAB
 
 > [!Note|style:callout|label:Infor]
-Initially published at 20:18 on 2025-09-05 in Lincang.
+Initially published by YiDingg at 20:18 on 2025-09-05 in Lincang.
 
 
 ## 1. Introduction
@@ -13,6 +13,8 @@ Initially published at 20:18 on 2025-09-05 in Lincang.
 
 
 ## 2. Phase Noise for Sinusoid Wave
+
+
 
 
 
@@ -78,7 +80,7 @@ MyFigure_ChangeSize([1.8, 1]*512*1.3)
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-05-19-20-50_Phase Noise Spectrum Calculation using MATLAB.png"/></div>
 
-下面给出了上图的 MATLAB 代码。**<span style='color:red'> 但是需要注意：下列代码虽然是参考 [3] 来写的，几乎没有什么改动，但是得到的结果却和 "正确值" 对不上。</span>** 具体而言，下面代码得到的功率谱，其总功率远远大于实际总功率 $\overline{\phi_n^2(t)} = \frac{1}{T}\int \phi_n^2 \ \mathrm{d}t$（但功率谱形状是相似的）。背后的具体原因，还有待进一步探索。
+下面给出了上图的 MATLAB 代码。 **<span style='color:red'> 但是需要注意：下列代码虽然是参考 [3] 来写的，几乎没有什么改动，但是得到的结果却和 "正确值" 对不上。</span>** 具体而言，下面代码得到的功率谱，其总功率远远大于实际总功率 $\overline{\phi_n^2(t)} = \frac{1}{T}\int \phi_n^2 \ \mathrm{d}t$（但功率谱形状是相似的）。背后的具体原因，还有待进一步探索。
 
 ``` matlab
 
@@ -348,6 +350,281 @@ text(x_pos, y_pos, [ ...
    
 ```
 
+## 5. Updated on 2025.10.31
+
+2025.10.31 在一个 [Ultra-Low-Power CP-PLL](<Projects/Design of An Ultra-Low-Power CP-PLL in ONC 180nm Technology.md>) 的项目中用到这篇文章的内容，将代码封装为了函数，顺便添加了以 dBc/Hz 为单位的第四个子图 (Phase Noise in dBc/Hz)。新代码效果如下：
+
+<!-- <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-31-20-03-38_Phase Noise and Jitter Calculation using MATLAB.png"/></div> -->
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-31-20-25-57_Phase Noise and Jitter Calculation using MATLAB.png"/></div>
+
+``` matlab
+data = readmatrix("D:\aa_MyExperimentData\Raw data backup\202510_PLL_RVCO1_v1_calibre_tran_3x1600_frequencySequence.csv");
+MyAnalysis_PhaseNoise(data)
+figure
+MyAnalysis_PhaseNoise(data, 1.25/2)
+```
+
+``` matlab
+function MyAnalysis_PhaseNoise(data_frequencySequence_withTime, Vout_amp)
+
+if nargin == 1  % 一共三个子图
+    % figureLayout = [3, 1];
+    figureSize = [4, 1.4*3]*512*1;
+    tiledlayout(3, 1);
+    plotSequence = [1 2 3];
+    %ax1 = nexttile(1);
+    %ax2 = nexttile(2);
+    %ax3 = nexttile(3);
+elseif nargin == 2  % nargin = 2 代表输入了 V_out_amp, 可以作出 Phase Noise on dBc/Hz
+    % figureLayout = [2, 2];
+    figureSize = [4*2, 1.8*2]*512*1;
+    tiledlayout(2, 2);
+    plotSequence = [1 3 2 4];
+    % 2x2 布局顺序是这样的：
+    %  1 2
+    %  3 4
+else
+    error("Wrong number of input parameter!")
+end
+
+
+%% (完整代码) Calculation of jitter and phase noise spectrum using periods of the signal
+
+
+% 1. 导入频率序列并计算周期序列
+    % data = readmatrix("D:\aa_MyExperimentData\Raw data backup\202510_PLL_RVCO1_v1_calibre_tran_3x1600_frequencySequence.csv"); 
+    data = data_frequencySequence_withTime;
+    nfft=2^16;
+    time = data(:, 1); time = time - time(1);   % 设置 time_initial = 0
+    freq = data(:, 2);
+    periods = 1./freq;
+    N = length(periods);
+
+
+
+
+%% 2. 通过周期序列计算 T_0 (nominal period), Jc (cycle jitter) 和 Jcc (cycle-to-cycle jitter)
+    T_0 = mean(periods);
+    f_0 = mean(freq);
+    %f_0 = 1/T_0;
+    omega_0 = 2*pi*f_0;
+    delta_T_relative_max = max(abs(periods-T_0)/T_0)*100; % unit: %
+    delta_f_relative_max = max(abs(freq-f_0)/f_0)*100; % unit: %
+    
+    Jc = periods - T_0;
+    Jc_rms = std(Jc);
+    Jcc = Jc(2:end) - Jc(1:(end - 1));
+    Jcc_rms = std(Jcc);
+    
+    disp(['number of periods = ', num2str(N)])
+    disp(['T_0 = ', num2str(T_0*10^9, '%.4f'), ' ns, f_0 = ', num2str(f_0/10^9, '%.4f'), ' GHz'])
+    disp(['max abs relative delta T = ', num2str(delta_T_relative_max, '%.4f'), ' %'])
+    disp(['max abs relative delta f = ', num2str(delta_f_relative_max, '%.4f'), ' %'])
+    disp(['Jc_rms = ', num2str(Jc_rms*10^12, '%.4f'), ' ps'])
+    disp(['Jcc_rms = ', num2str(Jcc_rms*10^12, '%.4f'), ' ps'])
+    disp(['Jc_rms*sqrt(2) = ', num2str(Jc_rms*sqrt(2)*10^12), ' ps'])
+
+    % 作出 periods 图像：
+    ax = nexttile(plotSequence(1));
+    % stc = MyPlot_ax(ax, time*10^6, periods*10^9);
+    stc = MyScatter_ax(ax, time'*10^6, periods'*10^9);
+    ylim([750, 770])
+    % xlim([0 100])
+    stc.axes.Title.String = 'Period Sequence of the Transient Simulation Results';
+    stc.label.x.String = 'Time $t$ (us)';
+    stc.label.y.String = 'Period $T(t)$ (ns)';
+    stc.leg.Visible = 'off';
+    % MyFigure_ChangeSize([3, 1]*512*1.3)
+    
+    % 在计算好的位置添加文本
+    XLIM = stc.axes.XLim;   % 获取横坐标范围
+    YLIM = stc.axes.YLim;   % 获取纵坐标范围
+    text(XLIM(1) + 0.05*(XLIM(2) - XLIM(1)), YLIM(1) + 0.05*(YLIM(2) - YLIM(1)), [ ...
+        "Number of periods = " + num2str(N)
+        "Nominal period $T_0$ = " + num2str(T_0*10^9, '%.4f') + " ns"
+        "Nominal frequency $f_0$ = " + num2str(f_0/10^6, '%.4f') + " MHz"
+        "RMS cycle jitter $J_{c, rms}$ = " + num2str(Jc_rms*10^12, '%.2f')      + " ps" +   " = " + num2str(Jc_rms/T_0*1000, '%.2f') + " mUI"
+        "RMS cycle-to-cycle jitter $J_{cc, rms}$ = " + num2str(Jcc_rms*10^12, '%.2f') + " ps" +   " = " + num2str(Jcc_rms/T_0*1000, '%.2f') + " mUI"
+        ], ...
+        'VerticalAlignment', 'bottom', ... % 文本底部对齐到y_pos
+        'HorizontalAlignment', 'left', ...  % 文本左对齐到x_pos
+        'BackgroundColor', [1, 1, 1], ... % 设置浅黄色背景（可选）
+        'EdgeColor', 'k', ...               % 设置黑色边框（可选）
+        'Margin', 2, ...                    % 设置文本与边框的边距（可选）
+        'FontSize', 13, ...
+        'Interpreter', 'latex' ...
+        );                    % 设置字体大小
+
+
+
+%% 3. 积分后分离出 phi_n (phase noise)
+    phases = 2*pi*cumsum(periods/T_0); % 积分得到 phase noise (unit: rad) 
+    periods_ideal = zeros(N, 1) + T_0;
+    phi_n = phases - 2*pi*cumsum(periods_ideal/T_0); % unit: rad
+    
+    % 计算 phi_n 的功率
+    fs = f_0;
+    [bw, ~, ~, power] = obw(phi_n, fs);
+    ave_power = power;
+    RMS_Sphin_rad = sqrt(ave_power);
+    RMS_Jitter = RMS_Sphin_rad/(2*pi*f_0);
+    disp(['RMS_phi = ', num2str(RMS_Sphin_rad), ' rad'])
+    disp(['RMS_Jitter = ', num2str(RMS_Jitter*10^12), ' ps'])
+
+    ax = nexttile(plotSequence(2));
+    stc = MyPlot_ax(ax, time*10^6, phi_n);
+    % xlim([0 100])
+    ylim([-1 1])
+    stc.axes.Title.String = 'Recovered Phase Noise Curve';
+    stc.label.x.String = 'Time $t$ (us)';
+    stc.label.y.String = 'Phase Noise $\phi_n(t)$ (rad)';
+    stc.leg.Visible = 'off';
+    % MyFigure_ChangeSize([3, 1]*512*1.3)
+    
+    
+    % 在计算好的位置添加文本
+    XLIM = stc.axes.XLim;   % 获取横坐标范围
+    YLIM = stc.axes.YLim;   % 获取纵坐标范围
+    if 0
+    text(XLIM(1) + 0.1*(XLIM(2) - XLIM(1)), YLIM(1) + 0.05*(YLIM(2) - YLIM(1)), [ ...
+        "Average power $\overline{\phi_n(t)^2}$ = " + num2str(power, '%.6f') + " rad$^2$"
+        "RMS phase noise $J_{\phi_n, rms}$ = " + num2str(RMS_Sphin_rad, '%.4f') + " rad"
+        "RMS phase jitter $J_{t, rms}$ = " + num2str(RMS_Jitter*10^12, '%.4f') + " ps"
+        "RMS cycle jitter $J_{c, rms}$ = " + num2str(Jc_rms*10^12, '%.4f') + " ps"
+        "RMS cycle-to-cycle jitter $J_{cc, rms}$ = " + num2str(Jcc_rms*10^12, '%.4f') + " ps"
+        "Bandwidth for 99\% noise $\mathrm{BW}_{99\%}$ = " + num2str(bw/10^6, '%.4f') + " MHz"
+        ], ...
+        'VerticalAlignment', 'bottom', ... % 文本底部对齐到y_pos
+        'HorizontalAlignment', 'left', ...  % 文本左对齐到x_pos
+        'BackgroundColor', [1, 1, 1], ... % 设置浅黄色背景（可选）
+        'EdgeColor', 'k', ...               % 设置黑色边框（可选）
+        'Margin', 2, ...                    % 设置文本与边框的边距（可选）
+        'FontSize', 13, ...
+        'Interpreter', 'latex' ...
+        );                    % 设置字体大小
+    end
+
+%% 4. (实际采用) 用函数 periodogram 计算功率谱、功率和抖动
+    % powerbw 默认使用 periodogram 方法
+    fs = f_0;
+    [S_phi_n, f] = periodogram(phi_n, [], [], fs);
+    % 横坐标 (频率): f   (Hz)
+    % 纵坐标 (功率谱密度): S_phi_n  (W)
+    S = S_phi_n';
+    S_dB = 10*log10(S);
+    tv = length(S_dB);
+    S_dB_filted = zeros(size(S_dB));
+    S_dB_filted(1:ceil(tv/10)) = MyFilter_mean( S_dB(1:ceil(tv/10)), 10 );
+    S_dB_filted(ceil(tv/10):end) = MyFilter_mean( S_dB(ceil(tv/10):end), 50 );
+    S_filted = 10.^(S_dB_filted/10);
+    
+    ax = nexttile(plotSequence(3));
+    stc = MyPlot_ax(ax, f', [S_dB; S_dB_filted]);
+    stc.axes.XScale = 'log';
+    stc.axes.XLim = [10^2 10^6];
+    stc.axes.YLim = [-150 0];
+    MyFigure_ChangeSize([3, 1]*512*1.3)
+    stc.axes.Title.String = 'Phase Noise Power Spectral Density (PSD)';
+    %stc.axes.Subtitle.FontSize = 10;
+    %stc.axes.Subtitle.String = ['RMS_Jitter = ', num2str(RMS_Jitter*10^12), ' ps'];
+    stc.label.x.String = 'Frequency $f$ (Hz)';
+    stc.label.y.String = 'Phase Noise Density $S_{\phi_n}$ (dB/Hz)';
+    %xline(bw)
+    %stc.leg.String = ["Raw data"; "Filted data"; "99\% noise = " + num2str(bw/10^6, '%.1f') + " MHz"];
+    stc.leg.String = ["Raw data"; "Filted data"];
+    stc.leg.Location = 'northeast';
+    %stc.plot.plot_1.LineStyle = '--';
+    stc.plot.plot_2.LineStyle = '-';
+
+    % 在计算好的位置添加文本
+    XLIM = stc.axes.XLim;   % 获取横坐标范围
+    YLIM = stc.axes.YLim;   % 获取纵坐标范围
+    text(1.2*XLIM(1), YLIM(1) + 0.05*(YLIM(2) - YLIM(1)), [ ...
+        "Average phase noise $\overline{\phi_n(t)^2}$ = " + num2str(power, '%.4f')    + " rad$^2$"
+        "RMS phase noise $J_{\phi_n, rms}$ = " + num2str(RMS_Sphin_rad, '%.4f') + " rad"
+        "RMS phase jitter $J_{t, rms}$ = " + num2str(RMS_Jitter*10^12, '%.2f')  + " ps" +   " = " + num2str(RMS_Jitter/T_0*1000, '%.2f') + " mUI"
+        "RMS cycle jitter $J_{c, rms}$ = " + num2str(Jc_rms*10^12, '%.2f')      + " ps" +   " = " + num2str(Jc_rms/T_0*1000, '%.2f') + " mUI"
+        "RMS cycle-to-cycle jitter $J_{cc, rms}$ = " + num2str(Jcc_rms*10^12, '%.2f') + " ps" +   " = " + num2str(Jcc_rms/T_0*1000, '%.2f') + " mUI"
+        "Bandwidth for 99\% noise $\mathrm{BW}_{99\%}$ = " + num2str(bw/10^6, '%.4f') + " MHz"+   " = " + num2str(bw/f_0, '%.2f') + " mUI"
+        ], ...
+        'VerticalAlignment', 'bottom', ... % 文本底部对齐到y_pos
+        'HorizontalAlignment', 'left', ...  % 文本左对齐到x_pos
+        'BackgroundColor', [1, 1, 1], ... % 设置浅黄色背景（可选）
+        'EdgeColor', 'k', ...               % 设置黑色边框（可选）
+        'Margin', 2, ...                    % 设置文本与边框的边距（可选）
+        'FontSize', 13, ...
+        'Interpreter', 'latex' ...
+        );                    % 设置字体大小
+   
+
+
+
+%% 5. 利用 Vout_amp 得到 carrier power, 进而计算 phase noise on dBc/Hz
+
+if nargin == 2
+    % 数据处理
+    Vamp = Vout_amp;
+    power_main = (Vamp/sqrt(2)).^2/50;
+    power_main_dB = log10(power_main);
+    S_dBc = S_dB - power_main_dB;
+    S_dBc_filted = S_dB_filted - power_main_dB;
+    [S_dBc_filted_fit, gof] = fit(f, S_dBc_filted', 'splineinterp', 'Normalize', 'on'); % 插值拟合以得到给定频率处的 phase noise 值
+
+        
+    % 作图
+    ax = nexttile(plotSequence(4));
+    stc = MyPlot_ax(ax, f', [S_dBc; S_dBc_filted]);
+    stc.axes.XScale = 'log';
+    stc.axes.XLim = [10^2 10^6];
+    stc.axes.YLim = [-150 0];
+    MyFigure_ChangeSize([3, 1]*512*1.3)
+    stc.axes.Title.String = 'Relative Phase Noise Spectrum';
+    %stc.axes.Subtitle.FontSize = 10;
+    %stc.axes.Subtitle.String = ['RMS_Jitter = ', num2str(RMS_Jitter*10^12), ' ps'];
+    stc.label.x.String = 'Frequency $f$ (Hz)';
+    stc.label.y.String = 'Phase Noise $S_{\phi_n}/S_{carrier}$ (dBc/Hz)';
+    %xline(bw)
+    %stc.leg.String = ["Raw data"; "Filted data"; "99\% noise = " + num2str(bw/10^6, '%.1f') + " MHz"];
+    stc.leg.String = ["Raw data"; "Filted data"];
+    stc.leg.Location = 'northeast';
+    %stc.plot.plot_1.LineStyle = '--';
+    stc.plot.plot_2.LineStyle = '-';
+    
+    % 在计算好的位置添加文本
+    XLIM = stc.axes.XLim;   % 获取横坐标范围
+    YLIM = stc.axes.YLim;   % 获取纵坐标范围
+    text(1.2*XLIM(1), YLIM(1) + 0.05*(YLIM(2) - YLIM(1)), [ ...
+        "Average phase noise $\overline{\phi_n(t)^2}$ = " + num2str(power, '%.4f')    + " rad$^2$"
+        %"Phase Noise @ 1kHz = " + num2str(S_dBc_filted_fit(10e3), '%.2f')    + " dBc/Hz"
+        "Phase Noise @ 10 kHz  = " + num2str(S_dBc_filted_fit(10e3), '%.2f')    + " dBc/Hz"
+        "Phase Noise @ 100 kHz = " + num2str(S_dBc_filted_fit(100e3), '%.2f')    + " dBc/Hz"
+        "Phase Noise @ 500 kHz = " + num2str(S_dBc_filted_fit(500e3), '%.2f')    + " dBc/Hz"
+        %"Phase Noise @ 1MHz = " + num2str(S_dBc_filted_fit(1e6), '%.2f')    + " dBc/Hz"
+        %"Phase Noise @ 10MHz = " + num2str(S_dBc_filted_fit(10e6), '%.2f')    + " dBc/Hz"
+        ], ...
+        'VerticalAlignment', 'bottom', ... % 文本底部对齐到y_pos
+        'HorizontalAlignment', 'left', ...  % 文本左对齐到x_pos
+        'BackgroundColor', [1, 1, 1], ... % 设置浅黄色背景（可选）
+        'EdgeColor', 'k', ...               % 设置黑色边框（可选）
+        'Margin', 2, ...                    % 设置文本与边框的边距（可选）
+        'FontSize', 13, ...
+        'Interpreter', 'latex' ...
+        );                    % 设置字体大小
+
+end
+
+MyFigure_ChangeSize(figureSize)
+end
+```
+
+
+
+## 6. Updated on 2025.11.03
+
+
+上面的代码和理论，或多或少有一些不完备的地方，我们将在这篇文章中进行补充和修正： [Phase Noise and Jitter Characterization in Mixed-Signal Circuits, and the MATLAB Implementation](<AnalogIC/Phase Noise and Jitter Characterization in Mixed-Signal Circuits, and the MATLAB Implementation.md>)
+
 
 ## References
 
@@ -356,4 +633,4 @@ text(x_pos, y_pos, [ ...
 - \[3\] [Cadence_PLL_Jitter_measurment_in_Spectre.pdf](https://www.writebug.com/static/uploads/2025/8/22/705f40616dd3afd7796ddfbe1d5b66d8.pdf)
 - \[4\] [Jitter measurement using SpectreRF Application Note.pdf](https://www.writebug.com/static/uploads/2025/8/22/28c1f61cd30eb054e8a9d5c6824f4d7e.pdf)
 - \[5\] [Razavi PLL - Chapter 2. Jitter and Phase Noise](<AnalogIC/Razavi PLL - Chapter 2. Jitter and Phase Noise.md>)
-- \[6\] [Jitter and Phase Noise in Mixed-Signal Circuits](<AnalogIC/Phase Noise and Jitter in Mixed-Signal Circuits.md>)
+- \[6\] [Phase Noise and Jitter in Mixed-Signal Circuits](<AnalogIC/Phase Noise and Jitter in Mixed-Signal Circuits.md>)

@@ -1,7 +1,7 @@
 # Compound BJT - Sziklai and Darlington
 
 > [!Note|style:callout|label:Infor]
-Initially published at 00:21 on 2025-04-01 in Beijing.
+Initially published by YiDingg at 00:21 on 2025-04-01 in Beijing.
 
 
 ## Summary

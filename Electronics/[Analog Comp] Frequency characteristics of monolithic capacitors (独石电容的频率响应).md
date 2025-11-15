@@ -2,7 +2,7 @@
 
 
 > [!Note|style:callout|label:Infor]
-Initially published at 16:37 on 2025-01-23 in Lincang.
+Initially published by YiDingg at 16:37 on 2025-01-23 in Lincang.
 
 ## 测试条件
 本文测试了手头上几个独石电容的频率响应 (20pF, 1nF, 100nF 和 10uF 共四种)，并依据测得的频率曲线，计算等效电容模型。测试条件为：室温，0.5V amplitude，R_sense 10Ohm ~ 1MOhm，下面是相关测试结果。

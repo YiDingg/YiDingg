@@ -1,7 +1,7 @@
 # Op Amp Measurement of LM741CN
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 14:01 on 2025-05-30 in Beijing.
+> Initially published by YiDingg at 14:01 on 2025-05-30 in Beijing.
 
 ## 实验记录
 

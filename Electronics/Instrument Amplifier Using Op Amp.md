@@ -1,7 +1,7 @@
 # Instrument Amplifier Using Op Amp
 
 > [!Note|style:callout|label:Infor]
-Initially published at 22:40 on 2025-02-26 in Beijing.
+Initially published by YiDingg at 22:40 on 2025-02-26 in Beijing.
 
 ## Using Single Op Amp
 

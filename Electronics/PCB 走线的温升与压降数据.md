@@ -2,7 +2,7 @@
 
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 22:37 on 2025-03-23 in Beijing.
+> Initially published by YiDingg at 22:37 on 2025-03-23 in Beijing.
 
 
 1oz 铜厚的 PCB 走线温升与压降数据如下：

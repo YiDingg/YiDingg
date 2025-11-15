@@ -1,7 +1,7 @@
 # Precision VCCS (Voltage-Controlled Current Source)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 18:59 on 2025-03-01 in Beijing.
+> Initially published by YiDingg at 18:59 on 2025-03-01 in Beijing.
 
 ## Infor
 

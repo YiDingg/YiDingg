@@ -1,7 +1,7 @@
 # ATandR(3): Drawing 
 
 > [!Note|style:callout|label:Infor]
-Initially published at 21:26 on 2024-06-23 in Beijing.
+Initially published by YiDingg at 21:26 on 2024-06-23 in Beijing.
 
 
 The creation of visual aids like graphs, flowcharts, and illustrations can be a crucial component of various projects. In this context, we will explore some of freely available and impressive tools to facilitate your development. And all of their graphs can be exported as vector graphics, which really meets my habit.

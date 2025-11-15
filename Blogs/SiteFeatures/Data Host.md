@@ -1,7 +1,7 @@
 # Data Host
 
 > [!Note|style:callout|label:Infor]
-Initially published at 21:08 on 2024-06-19 in Beijing.
+Initially published by YiDingg at 21:08 on 2024-06-19 in Beijing.
 
 
 ## Conclusion

@@ -1,7 +1,7 @@
 # Programming of Gomoku<br>五子棋程序设计
 
 > [!Note|style:callout|label:Infor]
-Initially published at 09:13 on 2024-08-30 in Beijing.
+Initially published by YiDingg at 09:13 on 2024-08-30 in Beijing.
 
 
 ## Intro

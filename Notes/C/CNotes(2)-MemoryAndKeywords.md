@@ -1,7 +1,7 @@
 # C Notes (2): Memory and Keywords
 
 > [!Note|style:callout|label:Infor]
-Initially published at 12:31 on 2024-08-06 in Lincang.
+Initially published by YiDingg at 12:31 on 2024-08-06 in Lincang.
 
 
 ## 关键字

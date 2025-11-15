@@ -1,7 +1,7 @@
-# Resolving Discrepancies Between DC and Transient Simulation Results
+# Virtuoso Tutorials - 11. Resolving Discrepancies Between DC and Transient Simulation Results
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 21:45 on 2025-07-30 in Beijing.
+> Initially published by YiDingg at 21:45 on 2025-07-30 in Beijing.
 
 ## 1. Background
 

@@ -1,7 +1,7 @@
 # 202509_tsmcN65_OTA_constantGm_adjustable__layout
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 16:31 on 2025-09-27 in Beijing.
+> Initially published by YiDingg at 16:31 on 2025-09-27 in Beijing.
 
 >注：本文是项目 [Design of An Adjustable Constant-Gm OTA for Low Pass Filters in BB-PLL](<Projects/Design of An Adjustable Constant-Gm OTA for Low Pass Filters in BB-PLL.md>) 的附属文档，用于记录 OTA 的版图和后仿过程。
 

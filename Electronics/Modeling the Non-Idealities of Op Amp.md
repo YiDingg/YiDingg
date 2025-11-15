@@ -1,7 +1,7 @@
 # Modeling the Non-Idealities of Op Amp
 
 > [!Note|style:callout|label:Infor]
-Initially published at 00:01 on 2025-05-16 in Beijing.
+Initially published by YiDingg at 00:01 on 2025-05-16 in Beijing.
 
 ## Ideal Op Amp Model
 

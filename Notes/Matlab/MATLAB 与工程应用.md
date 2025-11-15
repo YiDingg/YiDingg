@@ -1,7 +1,7 @@
 # MATLAB 与工程应用
 
 > [!Note|style:callout|label:Infor]
-Initially published at 13:49 on 2025-09-16 in Beijing.
+Initially published by YiDingg at 13:49 on 2025-09-16 in Beijing.
 
 ## Course Infor
 

@@ -1,7 +1,7 @@
 # Linear Algebra 2 Notes
 
 > [!Note|style:callout|label:Infor]
-Initially published at 00:16 on 2024-07-28 in Beijing.
+Initially published by YiDingg at 00:16 on 2024-07-28 in Beijing.
 
 ## Notes
 

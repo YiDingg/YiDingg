@@ -1,7 +1,7 @@
 # Mathematical Modeling (+): Tips and Tricks
 
 > [!Note|style:callout|label:Infor]
-Initially published at 12:42 on 2024-08-18 in Lincang.
+Initially published by YiDingg at 12:42 on 2024-08-18 in Lincang.
 
 ## During The Contest 
 - Matlab 搜 [examples](https://www.mathworks.com/support/search.html?q=&fq%5B%5D=asset_type_name:documentation/example&page=1&s_tid=CRUX_topnav) 和 [fileexchange](https://www.mathworks.com/matlabcentral/fileexchange)

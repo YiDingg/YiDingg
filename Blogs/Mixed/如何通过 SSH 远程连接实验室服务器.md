@@ -1,7 +1,7 @@
 # 如何通过 SSH 远程连接实验室服务器
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 00:03 on 2025-06-24 in Beijing.
+> Initially published by YiDingg at 00:03 on 2025-06-24 in Beijing.
 
 本文是我们组里其中一个服务器的连接流程记录。首先要有服务器的 IP 地址, 以及你的用户名和密码，下面是一个例子：
 
@@ -167,8 +167,10 @@ scp D:\a_Win_VM_shared\Cadence_Data\MyLib_202509_DAC_tsmcN65 dy2025@182.48.105.2
 -->
 
 ``` bash
-vncserver -geometry 1920x1080               # 启动 vnc 服务器 (自动分配新端口) 并设置分辨率为 1920x1080, 颜色深度为 24 位 (适合高质量图形显示)
-#vncserver :1 -geometry 2560x1600 -depth 24  # 创建一个 vnc 服务器, 端口号为 1, 分辨率为 2560x1600, 颜色深度为 24 位
+# 创建端口
+vncserver :21 -geometry 2560x1600 -depth 24     # 创建一个 vnc 服务器端口, 端口号为 21, 分辨率为 2560x1600, 颜色深度为 24 位 (适合高质量图形显示)
+vncserver -geometry 1920x1080               # 启动 vnc 服务器端口 (自动分配新端口) 设置分辨率为 1920x1080
+#vncserver :1 -geometry 2560x1600 -depth 24  # 创建一个 vnc 服务器端口, 端口号为 1, 分辨率为 2560x1600, 颜色深度为 24 位 (适合高质量图形显示)
 vncserver -kill :1                          # 关闭端口 1
 vncserver -list                             # 查看已创建的 VNC 端口
 
@@ -182,6 +184,7 @@ scp -r D:\a_Win_VM_shared\Cadence_Data\202509_LDO_0923_1854 username@111.11.111.
 
 
 # 基本命令
+sar -u 1 # 实时查看 CPU 使用率, 每隔 1 秒刷新一次
 ls -l    # 查看当前目录下的文件和文件夹
 cd ..    # 返回上一级目录
 df -h    # 查看磁盘空间使用情况
@@ -197,4 +200,63 @@ touch [filename]              # 创建新文件
 nano [filename]               # 使用 nano 编辑器编辑文件
 pwd                           # 显示当前路径
 cat [filename]                # 查看文件内容
+```
+
+
+``` bash
+#!/bin/csh
+
+unsetenv LANG
+unsetenv LC_ALL
+set filec
+set history=100
+umask 22
+
+
+#initial man path
+setenv MANPATH /usr/share/man:/usr/openwin/share/man:/usr/openwin/share/man:/usr/local/man
+
+#
+# load Modules
+#
+setenv MHOME /App/system/modules
+source $MHOME/init/csh
+module load analog 
+
+setenv LS_COLORS "di=01;34"
+
+setenv CDS_Netlisting_Mode Analog
+
+# 2016.11.23
+alias prw 'echo; echo " " d1-- [ $d1 ] "  "d2-- [ $d2 ]  ; echo'
+
+set pxp = `whoami`
+set hn = `hostname | gawk -F. '{print $1}'`
+set grpname = `groups | gawk '{print $1}'`
+set d1
+set d2
+
+alias prw 'echo; echo " " d1-- [ $d1 ] "  "d2-- [ $d2 ]  ; echo'
+alias cd  'set x=`pwd`;chdir \!*;ls;set d2=$d1;set d1=$x;unset x;prw; \\
+      ;set prompt="`echo $pxp`@`echo $hn`#[$grpname] : `pwd`/ > ";\\
+      if("\!:0-$" == cd) cd; '
+
+
+#alias bcalibre 'bsub -I calibre '
+
+#
+# load user settings
+#
+if(-e ~/user.cshrc) then
+  source ~/user.cshrc
+endif
+
+
+#cd
+#cat  ~/welcome
+#autoset DISPLAY
+#set DIS=`env |grep DIS|awk -F '[=]' '{print $2}'`
+#set HOSTIP=`cat /etc/hosts |grep $HOST |awk '{print $1}'`
+#setenv DISPLAY $HOSTIP$DIS
+#echo $DISPLAY
 ```

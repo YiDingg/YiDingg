@@ -1,7 +1,7 @@
 # Op Amp using Discrete MOSFETs
 
 > [!Note|style:callout|label:Infor]
-Initially published at 00:01 on 2025-03-18 in Beijing.
+Initially published by YiDingg at 00:01 on 2025-03-18 in Beijing.
 
 
 

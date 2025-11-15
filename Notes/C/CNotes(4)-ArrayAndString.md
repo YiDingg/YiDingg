@@ -1,7 +1,7 @@
 # C Notes (4): Array and String (数组)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 13:16 on 2024-08-07 in Lincang.
+Initially published by YiDingg at 13:16 on 2024-08-07 in Lincang.
 
 
 ## 数组

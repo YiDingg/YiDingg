@@ -1,7 +1,7 @@
 # Ideal Op Amp and Nonideal Op Amp
 
 > [!Note|style:callout|label:Infor]
-Initially published at 14:34 on 2025-02-16 in Lincang.
+Initially published by YiDingg at 14:34 on 2025-02-16 in Lincang.
 
 理想运放模型十分简洁，为电路分析提供了很大的便利。然而，某些情况下，实际运放的表现与理想运放有较大的差别，因此有必要了解（并掌握）实际运放的常见非理想特征。
 

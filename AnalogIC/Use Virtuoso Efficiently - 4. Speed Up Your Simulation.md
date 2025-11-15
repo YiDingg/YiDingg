@@ -1,7 +1,7 @@
 # Use Virtuoso Efficiently - 4. Speed Up Your Simulation
 
 > [!Note|style:callout|label:Infor]
-Initially published at 13:33 on 2025-08-19 in Lincang.
+Initially published by YiDingg at 13:33 on 2025-08-19 in Lincang.
 
 ## Background
 

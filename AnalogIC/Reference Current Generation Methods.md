@@ -1,7 +1,7 @@
 # Reference Current Generation Methods
 
 > [!Note|style:callout|label:Infor]
-Initially published at 22:36 on 2025-06-17 in Beijing.
+Initially published by YiDingg at 22:36 on 2025-06-17 in Beijing.
 
 
 ## Basic Beta Multiplier

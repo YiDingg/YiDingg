@@ -1,7 +1,7 @@
 # LCE 实验记录 (LCE-09 比较器)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 14:05 on 2025-06-06 in Beijing.
+> Initially published by YiDingg at 14:05 on 2025-06-06 in Beijing.
 
 ## 准备
 

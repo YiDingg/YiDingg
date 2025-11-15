@@ -1,7 +1,7 @@
 # Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library) (台积电 tsmcN28 工艺库基本信息)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 00:01 on 2025-06-25 in Beijing.
+> Initially published by YiDingg at 00:01 on 2025-06-25 in Beijing.
 
 
 

@@ -1,7 +1,7 @@
 # The Definitions of SPICE Model Parameters
 
 > [!Note|style:callout|label:Infor]
-Initially published at 00:26 on 2025-03-26 in Beijing.
+Initially published by YiDingg at 00:26 on 2025-03-26 in Beijing.
 
 ## BJT 
 

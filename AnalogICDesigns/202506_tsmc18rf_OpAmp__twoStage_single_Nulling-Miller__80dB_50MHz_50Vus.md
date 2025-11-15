@@ -1,7 +1,7 @@
 # A Basic Two-Stage Op Amp with Nulling-Miller Compensation Achieving 84.35dB Gain, 55.75MHz GBW and 56.31V/us Slew Rate
 
 > [!Note|style:callout|label:Infor]
-Initially published at 10:32 on 2025-06-17 in Beijing.
+Initially published by YiDingg at 10:32 on 2025-06-17 in Beijing.
 
 
 ## 0. Introduction

@@ -1,7 +1,7 @@
 # Simulate Basic Chara. of MOSFET in Cadence IC618 (Virtuoso)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 17:08 on 2025-05-20 in Beijing.
+> Initially published by YiDingg at 17:08 on 2025-05-20 in Beijing.
 
 ## Introduction
 

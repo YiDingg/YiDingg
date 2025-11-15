@@ -1,7 +1,7 @@
 # Transistor Measurement Methods
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 15:44 on 2025-03-12 in Beijing.
+> Initially published by YiDingg at 15:44 on 2025-03-12 in Beijing.
 
 ## 前言
 

@@ -1,7 +1,7 @@
 # Scientific Research Practice 1 (Design of A Low-Voltage Bandgap Reference)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 18:48 on 2025-07-14 in Beijing.
+Initially published by YiDingg at 18:48 on 2025-07-14 in Beijing.
 
 
 

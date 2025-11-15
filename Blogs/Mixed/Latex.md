@@ -1,7 +1,7 @@
 # Latex 
 
 > [!Note|style:callout|label:Infor]
-Initially published at 22:43 on 2024-09-03 in Beijing.
+Initially published by YiDingg at 22:43 on 2024-09-03 in Beijing.
 
 
 本文环境：Windows 11 + Texlive 2023 + VSCode

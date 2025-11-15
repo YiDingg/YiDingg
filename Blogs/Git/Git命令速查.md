@@ -1,7 +1,7 @@
 # Git 命令速查
 
 > [!Note|style:callout|label:Infor]
-Initially published at 13:49 on 2024-06-26 in Beijing.
+Initially published by YiDingg at 13:49 on 2024-06-26 in Beijing.
 
 
 ## 一、命令速查手册

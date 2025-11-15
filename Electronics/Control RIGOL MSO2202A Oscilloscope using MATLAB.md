@@ -1,7 +1,7 @@
 # 用 MATLAB 控制普源 (RIGOL) MSO2202A 数字示波器
 
 > [!Note|style:callout|label:Infor]
-Initially published at 16:26 on 2025-03-21 in Beijing.
+Initially published by YiDingg at 16:26 on 2025-03-21 in Beijing.
 
 ## Intro
 

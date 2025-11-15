@@ -1,7 +1,7 @@
 # Analog Pulse Width Modulation 
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 13:43 on 2025-03-22 in Beijing.
+> Initially published by YiDingg at 13:43 on 2025-03-22 in Beijing.
 
 see [TI Precision Designs: Analog Pulse Width Modulation](https://www.ti.com/lit/ug/slau508/slau508.pdf)
 

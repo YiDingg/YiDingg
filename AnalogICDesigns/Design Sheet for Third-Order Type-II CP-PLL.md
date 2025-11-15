@@ -1,7 +1,7 @@
 # Design Sheet for Third-Order Type-II CP-PLL
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 17:38 on 2025-08-15 in Lincang.
+> Initially published by YiDingg at 17:38 on 2025-08-15 in Lincang.
 
 ## Design Sheet
 

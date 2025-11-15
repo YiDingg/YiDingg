@@ -1,7 +1,7 @@
 # C Notes (3): Basic Data Types
 
 > [!Note|style:callout|label:Infor]
-Initially published at 09:42 on 2024-08-07 in Lincang.
+Initially published by YiDingg at 09:42 on 2024-08-07 in Lincang.
 
 
 ## 基本数据类型大小

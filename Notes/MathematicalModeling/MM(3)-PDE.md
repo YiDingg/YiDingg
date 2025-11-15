@@ -2,7 +2,7 @@
 
 
 > [!Note|style:callout|label:Infor]
-Initially published at 23:16 on 2024-08-19 in Lincang.
+Initially published by YiDingg at 23:16 on 2024-08-19 in Lincang.
 
 
 考虑到数学建模得到的微分方程（组）常常具有不平凡的初始条件和边界条件，通常难以求得解析解，因此本文着重考虑微分方程的数值解。

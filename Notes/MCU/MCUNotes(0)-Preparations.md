@@ -1,7 +1,7 @@
 # MCU Notes (0): Preparations
 
 > [!Note|style:callout|label:Infor]
-Initially published at 14:36 on 2024-06-21 in Beijing.
+Initially published by YiDingg at 14:36 on 2024-06-21 in Beijing.
 
 
 ## Intro

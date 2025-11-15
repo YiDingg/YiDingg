@@ -1,7 +1,7 @@
 # Cadence Layout Example (tsmcN28_OpAmp__twoStage_single_Nulling-Miller__60dB_370MHz_140uA)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 22:15 on 2025-07-19 in Beijing.
+> Initially published by YiDingg at 22:15 on 2025-07-19 in Beijing.
 
 
 ## 1. Preparations

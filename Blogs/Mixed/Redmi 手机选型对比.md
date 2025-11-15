@@ -1,7 +1,7 @@
 # Redmi ￥1100 以下价位手机选型对比
 
 > [!Note|style:callout|label:Infor]
-Initially published at 18:33 on 2025-03-03 in Beijing.
+Initially published by YiDingg at 18:33 on 2025-03-03 in Beijing.
 
 本文对比目前 (2025-03-03) 各主流品牌价位在 1100￥ 及以下的手机型号，硬性要求为：5G, 至少 8GB+128GB, 至少 90Hz 刷新率, 充电功率至少 30W, 
 

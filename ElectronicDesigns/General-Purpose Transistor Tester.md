@@ -1,7 +1,7 @@
 # General-Purpose Transistor Tester
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 18:49 on 2025-02-26 in Beijing.
+> Initially published by YiDingg at 18:49 on 2025-02-26 in Beijing.
 
 ## Infor
 

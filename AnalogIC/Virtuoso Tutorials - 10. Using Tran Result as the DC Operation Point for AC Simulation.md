@@ -1,7 +1,7 @@
 # Using Transient Operation Point for AC Simulation
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 23:27 on 2025-07-29 in Beijing.
+> Initially published by YiDingg at 23:27 on 2025-07-29 in Beijing.
 
 
 ## 1. 背景

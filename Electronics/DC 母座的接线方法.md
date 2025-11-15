@@ -1,7 +1,7 @@
 # DC 母座的接线方法
 
 > [!Note|style:callout|label:Infor]
-Initially published at 12:31 on 2025-01-25 in Lincang.
+Initially published by YiDingg at 12:31 on 2025-01-25 in Lincang.
 
 
 DC 母座可以在 DC 公头接入时断开原电源，其接线方法如下：

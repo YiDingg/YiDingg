@@ -1,7 +1,7 @@
 # 用 Pi 型滤波器改善可调直流电源的输出纹波
 
 > [!Note|style:callout|label:Infor]
-Initially published at 20:32 on 2025-01-03 in Beijing.
+Initially published by YiDingg at 20:32 on 2025-01-03 in Beijing.
 
 最近在某宝上买了一个可调直流电源 (3.6V ~ 12.1V, 3A max)，但是发现输出的电压纹波较大，不足以满足我常规的实验需求，于是决定用 Pi 型滤波器来改善输出的纹波。
 

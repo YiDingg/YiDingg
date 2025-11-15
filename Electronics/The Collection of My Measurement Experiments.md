@@ -1,7 +1,7 @@
 # The Collection of My Measurement Experiments
 
 > [!Note|style:callout|label:Infor]
-Initially published at 16:15 on 2025-05-18 in Beijing.
+Initially published by YiDingg at 16:15 on 2025-05-18 in Beijing.
 
 
 ## Experimental Apparatuses

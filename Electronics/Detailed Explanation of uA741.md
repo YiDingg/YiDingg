@@ -1,7 +1,7 @@
 # Detailed Explanation of Classic Op Amp uA741 (经典运放 uA741 原理详解)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 16:00 on 2025-05-14 in Beijing.
+Initially published by YiDingg at 16:00 on 2025-05-14 in Beijing.
 
 
 ## Background

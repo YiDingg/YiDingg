@@ -1,7 +1,7 @@
 # A Third-Order Type-II Integer-64 CP-PLL with 0.5 GHz ~ 3.0 GHz Locking Range Achieving 2.800 ps RMS Jitter and -234.3 dB FoM in 28nm CMOS Technology
 
 > [!Note|style:callout|label:Infor]
-Initially published at 13:48 on 2025-08-16 in Lincang.
+Initially published by YiDingg at 13:48 on 2025-08-16 in Lincang.
 
 ## Introduction
 
@@ -318,12 +318,6 @@ UP 和 DN 波形有所改善，但 UP 和 DN 不能同时关闭导致的次级�
 ## 3. Design of FD
 
 
-<!-- 分频器 FD (frequency divider) 一般是用 D flip-flop (D 触发器) 来实现的。
-
-
-对于一个 active-high-input D flipflop (在上升沿或高电平时触发)，只需简单地将输出 Q_BAR 与输入 D 相连，便可得到一个 Divide-by-2 的分频器 (在 CLK 处输入时钟信号，输出端为 Q)。只不过 D flipflop 的实现方式非常多，例如经典 CMOS Logic 的 NOR 门或者 NAND 门、适用于高速低功耗的 TSPC (ture single-phase clock) 方法等。单单是 TSPC 就已经有 5-transistors (5T), 6T, 8T, 9T, 11T 构成的 D flipflop [[10]](https://ieeexplore.ieee.org/document/7754138).
-
-考虑使用 TSPC (true single-phase clock) 下的 D Flip-Flop (D Latch) 来实现。 -->
 
 关于 Frequency Dividers 的基础知识 (包括 TSPC) 详见文章 [Razavi PLL - Chapter 15. Frequency Dividers](<AnalogIC/Razavi PLL - Chapter 15. Frequency Dividers.md>)。我们直接采用如下结构：
 

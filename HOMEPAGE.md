@@ -51,6 +51,7 @@ Frequently used tools for my workflow:
 - SVG to PDF: [PDF24 Tools](https://tools.pdf24.org/zh/svg-to-pdf)
 - PDF to EXCEL: [I Love PDF](https://www.ilovepdf.com/pdf_to_excel)
 - EPUB to PDF (9pt or 10pt): [FreeConvert](https://www.freeconvert.com/epub-to-pdf)
+- IMG to EXCEL: [Baimiao](https://web.baimiaoapp.com/image-to-excel)
 
 Other tools:
 - Text comparing tool: [diffing_tool](https://csacademy.com/app/diffing_tool/)

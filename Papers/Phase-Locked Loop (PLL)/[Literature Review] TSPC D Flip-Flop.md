@@ -1,7 +1,7 @@
 # [Literature Review] TSPC D Flip-Flop
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 19:04 on 2025-09-02 in Beijing.
+> Initially published by YiDingg at 19:04 on 2025-09-02 in Beijing.
 
 
 ## 1. Introduction

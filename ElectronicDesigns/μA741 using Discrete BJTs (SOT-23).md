@@ -1,7 +1,7 @@
 # μA741 (Op Amp) using Discrete BJTs (SOT-23)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 01:40 on 2025-04-30 in Beijing.
+> Initially published by YiDingg at 01:40 on 2025-04-30 in Beijing.
 
 ## Information
 

@@ -1,7 +1,7 @@
 # Keypad Failure in VSCode <br> VSCode 按键失灵的解决方案
 
 > [!Note|style:callout|label:Infor]
-Initially published at 19:52 on 2024-09-14 in Beijing.
+Initially published by YiDingg at 19:52 on 2024-09-14 in Beijing.
 
 
 ## 问题描述

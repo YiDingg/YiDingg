@@ -1,7 +1,7 @@
 # C Notes (5): Memory Management (内存管理)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 16:27 on 2024-08-07 in Lincang.
+Initially published by YiDingg at 16:27 on 2024-08-07 in Lincang.
 
 
 ## Before 

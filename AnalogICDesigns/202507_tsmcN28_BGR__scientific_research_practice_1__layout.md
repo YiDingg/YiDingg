@@ -1,7 +1,7 @@
 # Layout and Post-Simulation for 202507_tsmcN28_BGR__scientific_research_practice_1
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 20:15 on 2025-07-26 in Beijing.
+> Initially published by YiDingg at 20:15 on 2025-07-26 in Beijing.
 
 本次科研实践相关链接：
 - [Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)

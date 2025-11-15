@@ -1,7 +1,7 @@
 # title
 
 > [!Note|style:callout|label:Infor]
-Initially published at xx:xx on 2025-xx-xx in xxxx.
+Initially published by YiDingg at xx:xx on 2025-xx-xx in xxxx.
 
 ## Infor 
 

@@ -1,7 +1,7 @@
 # Improved Push-Pull Stage
 
 > [!Note|style:callout|label:Infor]
-Initially published at 12:52 on 2025-03-27 in Beijing.
+Initially published by YiDingg at 12:52 on 2025-03-27 in Beijing.
 
 
 

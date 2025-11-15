@@ -1,7 +1,7 @@
 # 202509_tsmcN65_DAC_R2R_5bit
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 21:05 on 2025-09-30 in Beijing.
+> Initially published by YiDingg at 21:05 on 2025-09-30 in Beijing.
 
 >注：本文是项目 [Design of A 5-Bit RDR DAC for Reference Generation in BB-PLLs](<Projects/Design of A 5-Bit RDR DAC for Reference Generation in BB-PLLs.md>) 的附属文档，用于记录 OTA 的设计和前仿过程。
 

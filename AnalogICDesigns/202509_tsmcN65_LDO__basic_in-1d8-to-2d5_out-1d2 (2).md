@@ -1,7 +1,7 @@
 # 202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (2)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 23:31 on 2025-09-16 in Beijing.
+> Initially published by YiDingg at 23:31 on 2025-09-16 in Beijing.
 
 **<span style='color:red'> 注：本次设计的迭代/前仿篇幅过长，故而分为了 (1) (2) 上下两个部分，以保证较好的阅读体验： </span>**
 - [前文: 202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1)](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1).md>)

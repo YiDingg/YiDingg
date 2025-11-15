@@ -1,7 +1,7 @@
 # Frequency Response of CE and CS Stages (共射/共源放大器的频率响应)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 18:53 on 2025-04-07 in Beijing.
+Initially published by YiDingg at 18:53 on 2025-04-07 in Beijing.
 
 ## 1. Intro
 

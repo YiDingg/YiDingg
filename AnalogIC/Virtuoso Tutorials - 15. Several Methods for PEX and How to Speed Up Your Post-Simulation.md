@@ -1,7 +1,7 @@
 # Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 16:55 on 2025-09-20 in Beijing.
+> Initially published by YiDingg at 16:55 on 2025-09-20 in Beijing.
 
 
 
@@ -62,7 +62,7 @@
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-00-48-22_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
 
 - (4) 设置输出格式: 
-    - `Output > Netlist > Format`，常用的有 `CALIBREVIEW`, `DSPF`, `HSPICE`, `SPECTRE` 等；本文所介绍的后仿方法适用于后三种: `DSPF`, `HSPICE`, `SPECTRE`；而 `CALIBREVIEW` 格式需要生成专门的 calibre view 进行后仿，生成这一步所耗的时间太长太长，而且容易出错，因此被我们抛弃
+    - `Output > Netlist > Format`，常用的有 `CALIBREVIEW`, `DSPF`, `HSPICE`, `SPECTRE` 等；本文所介绍的后仿方法适用于后三种: `DSPF`, `HSPICE`, `SPECTRE`；而 `CALIBREVIEW` 格式需要生成专门的 calibre view 进行后仿，这一步可能需要非常非常久的时间，而且容易出错，因此被我们抛弃
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-00-50-12_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
 
@@ -262,11 +262,11 @@ DSPF 的后仿和 CALIBREVIEW 的差不太多，区别是 DSPF **生成后缀为
 
 后仿在寄生网表下进行，阻容特别多，如果按照默认的保存全部电压节点去仿真会严重浪费硬盘空间，因此建议只保存需要观察的节点。
 
-在 ADE L 或者 ADE XL 的 Test Editor 里，勾选 `Outputs > Save All > Save Options > selected` (默认是 `allpub`) 即可。
+在 ADE L 或者 ADE XL 的 Test Editor 里，勾选 `Outputs > Save All > Save Options > selected` (默认是 `allpub`) 即可，或者设置 `lvl + level=1` 仅保存 top level 节点 (无法查看内部节点)。
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-15-35-46_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>
 
-另外，在后仿时还可以利用 `.scs` 文件指定需要报错的器件，具体例子见 [CSDN > Cadence virtuoso 保存所有静态工作点](<https://blog.csdn.net/weixin_42221495/article/details/129611418>) 和 [知乎 > 如何在 DSPF 后仿中只保存自定义节点的仿真数据？](https://zhuanlan.zhihu.com/p/9488973897)，这样就可以设置 `lvl + level=0` 以节省空间了。
+另外，在后仿时还可以利用 `.scs` 文件指定需要保存的器件，具体例子见 [CSDN > Cadence virtuoso 保存所有静态工作点](<https://blog.csdn.net/weixin_42221495/article/details/129611418>) 和 [知乎 > 如何在 DSPF 后仿中只保存自定义节点的仿真数据？](https://zhuanlan.zhihu.com/p/9488973897)，这样就可以设置 `lvl + level=1` 以节省空间了。
 
 
 下面是一些实测结果 (完全相同的仿真设置，仅数据保存设置不同)：
@@ -399,6 +399,108 @@ HSPICE 格式的操作和 SPECTRE 完全类似，都是在 netlist 中找到器�
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-18-40-44_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div> -->
 
+### 5.3 high-perfor. simulator
+
+本小节参考 Reference 中的 [9] ~ [15].
+
+截至 2025.09.20, 除 Spectre 以外 virtuoso 还支持使用 APS, Spectre X, Spectre FX 等高性能仿真器进行仿真，在相同精度下的仿真速度为 Spectre < APS < Spectre X < Spectre FX. 参考链接 [[11]](https://picture.iczhiku.com/weixin/message1582550787289.html) 给出了一个对比示例，Spectre X 的速度是 APS 的 3.7 ~ 9.2 倍。
+
+下面是一些使用/设置技巧：
+- (1) APS: 
+- (2) Spectre X: Preset 可设置为 CX/AX/MX/LX/VX, 其中 CX 精度最高 (速度最慢)，VX 为速度最快 (精度最低)；参考 [here](https://bbs.eetop.cn/thread-983266-1-1.html) 可以知道，功能性验证用 MX 甚至 VX, 指标性验证最低 AX, 最好是用 CX.
+- (3) Spectre FX: FX 也是类似地，与 X 的 preset 几乎相同，只是不具有 CX 选项，最高精度为 AX.
+
+2025.10.26 补：最近在做一个 ultra-low power PLL 的项目，环路后仿时间较长，如果使用 Spectre 来做仿真，就算仅代入 RVCO 的后仿网表 (其它模块都用 Verilog-A) 单次也需要 60min 左右，于是尝试使用其它仿真器来做后仿，并对比它们的速度和结果精度。
+
+下表中，未指明仿真精度的话就是默认 `Do not override`，其它参数未指明的话就是使用默认设置。
+
+<div class='center'>
+
+| Simulator | Spectre | APS | (Spectre X using) VX, MX, CX | (Spectre FX using) VX, MX, AX |
+|:-:|:-:|:-:|:-:|:-:|
+| Run Time| > 20m | > 20m |  484 s (8m 3.6s), 481 s (8m 0.9s),  832 s (13m 52.1s). | 54.5 s (0m 54.5s), 69.5 s (1m 9.5s),  169 s (2m 48.7s) |
+
+</div>
+
+这里在测试的时候经常出现如下 Simulator 报错：
+``` bash
+FATAL (SPECTRE-19): Bus error signal received by Spectre. Encountered a critical error during simulation. Run `mmsimpack' (see mmsimpack -h for detailed usage information) to package the netlist and log files as a compressed tar file. Then, contact your Cadence representative or submit a service request via Cadence Online Support, including the tar file and any other information that could help identify the problem. 
+FATAL (SPECTRE-18): Segmentation fault. Encountered a critical error during simulation. Run `mmsimpack' (see mmsimpack -h for detailed usage information) to package the netlist and log files as a compressed tar file.
+```
+
+查阅以下资料：
+- [EETOP > 解决 Spectre 仿真报错Segmentation Fault (during AHDL read-in)](https://bbs.eetop.cn/thread-983285-1-1.html): 楼主是因为 linux 的 memory segments 最大数量太小了，系统是 centos 7.9 默认 4096 条，改为 16384 条后问题解决
+- [CSDN > spectre 仿真器中断](https://blog.csdn.net/weixin_42221495/article/details/140003274): 认为是当前 spectre 仿真器仿不了这么大容量的仿真，需要换仿真器
+- [博客园 > XPS MS 遇到 segmentation fault 错误](https://www.cnblogs.com/li2000/p/18296503/Analog-Cadence-Virtuoso-ADE-XPSMS): 博主提出/收集了多种可能原因，包括 服务器内存不够、没设置64位、未知错误（尝试重启 virtuoso 或者服务器端口）等，他认为最稳妥的方法是重启 virtuoso
+- [EETOP > Spectre 仿真报错，Internal error found in spectre during AHDL read-in](https://bbs.eetop.cn/thread-887124-1-1.html): 楼主提出了三种解决方案，22楼提出了另一种：
+- 使用 `ipcs -p |wc -l` 查看共享内存的条数  然后 `cat /proc/sys/kernel/shmmni` 的数值，看前面数值是否超过后面的。如果超过了，第一方法是删除共享内存的条数，把 `ipcs -p` 查询到的进程 `pid kill`；第二种是用 `sysctl -w kernel.shmmni=16384` 更改最大数值 (默认是 4096 条)
+
+我们尝试了以下办法：
+- (1) 重启 virtuoso
+- (2) 勾选 `Environment > Run with 64-bit binary`，并且在 `Environment > Use Command-Line Options` 中输入 `-64`
+- (3) 在 (2) 的基础上，重启 virtuoso 再次尝试
+- (4) 删除之前一些比较大的仿真数据，大概删了 100 GB 左右吧，还是不行
+
+现在 Spectre FX 完全用不了了，无论设置 multi-thread 还是 single-thread, 无论 design 用前仿还是后仿网表，总是报 segmentation fault 错误。然后 Spectre X 是仿真到一大半时才会报错，例如下面这样：
+
+``` bash
+    tran: time = 3.93 ms     (64.4 %), step = 5 ns        (81.9 u%)
+    tran: time = 3.939 ms    (64.5 %), step = 1.755 ns    (28.8 u%)
+    tran: time = 3.949 ms    (64.7 %), step = 1.265 ns    (20.7 u%)
+    tran: time = 3.958 ms    (64.8 %), step = 5 ns        (81.9 u%)
+    tran: time = 3.967 ms      (65 %), step = 5 ns        (81.9 u%)
+    tran: time = 3.975 ms    (65.1 %), step = 5 ns        (81.9 u%)
+    tran: time = 3.984 ms    (65.3 %), step = 5 ns        (81.9 u%)
+    tran: time = 3.993 ms    (65.4 %), step = 2.5 ns        (41 u%)
+    tran: time = 4.002 ms    (65.6 %), step = 5 ns        (81.9 u%)
+    tran: time = 4.011 ms    (65.7 %), step = 5 ns        (81.9 u%)
+    tran: time = 4.02 ms     (65.9 %), step = 2.528 ns    (41.4 u%)
+
+Internal error found in spectre at time = 4.02582 ms during transient analysis `tran'.
+FATAL (SPECTRE-19): Bus error signal received by Spectre. Encountered a critical error during simulation. Run `mmsimpack' (see mmsimpack -h for detailed usage information) to package the netlist and log files as a compressed tar file. Then, contact your Cadence representative or submit a service request via Cadence Online Support, including the tar file and any other information that could help identify the problem. Encountered a critical error during simulation. Run `mmsimpack' (see mmsimpack -h for detailed usage information) to package the netlist and log files as a compressed tar file. Then, contact your Cadence representative or submit a service request via Cadence Online Support, including the tar file and any other information that could help identify the problem.
+FATAL (SPECTRE-18):  Segmentation fault. Encountered a critical error during simulation. Run `mmsimpack' (see mmsimpack -h for detailed usage information) to package 
+```
+
+非常奇怪：为什么一开始能用，用着用着反而不行了？
+
+**2025.10.27 补：我们后来又修改了一下，Spectre/APS 的设置保持默认不变，而 Spectre X/FX 都改为 `(manual) Multi-Thread = 4` (无论 preset 是什么) 之后，莫名又全部能用了。** 最终得到不同仿真模式的 nominal corner (TT, 27°C) 结果汇总如下：
+
+<div class='center'>
+
+| Simulator | Spectre | APS | (Spectre X using) VX, MX, CX | (Spectre FX using) VX, MX, AX |
+|:-:|:-:|:-:|:-:|:-:|
+ | Run Time @ 10nA, 15MOhm, 30pF, 2.5\*1600/(CLK_REF\*N)  | 3.39 ks (56m  30.4s) | 2.32 ks (38m  41.1s) | VX = 944 s (15m  44.3s) <br> MX = 1.31 ks (21m  47.2s) <br> CX = 1.42 ks (23m  43.6s) | VX = 78.8 s (1m  18.8s) <br> MX = 123 s (2m  3.0s) <br> AX = 191 s (3m  10.8s) |
+
+</div>
+
+<div class='center'>
+
+| 全部仿真结果对比 | 波形对比 (Spectre, APS, Spectre X + CX, Spectre FX + AX) | 波形对比 (Spectre X, Spectre FX) |
+|:-:|:-:|:-:|
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-27-00-55-08_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-27-01-04-54_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>    <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-27-01-03-01_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>    <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-27-01-01-24_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-27-00-34-26_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>    
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-27-00-40-38_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div>    
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-27-00-43-52_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div> |
+</div>
+
+## 6. Cautions for CALIBREVIEW
+
+**在使用 Calibre PEX 导出 calibre view 时，有以下几点需要注意：**
+- (1) Assembler Test 要用 config 作为 design, 并且这个 config (of tb schematic) 里要想 sweep 的模块需设置为 schematic view. 可以进行 config sweep 的格式，必须是像 schematic/calibre 这样可以直接选择的，这是因为这些 view 的文件夹中有一个指向 `sch.oa` 的 `master.tag` 文件，有了这个文件 Cadence 才能正确识别。像其它的寄生参数格式，例如 HSPICE/SPECTRE 之类的，我们目前还没有找到能用在 config sweep 的例子，暂时只能在 config 中手动选择 `Specify SPICE Netlist` 来调用。
+- (2) 用 cellmap 导出 calibre view 时，最麻烦也是最重要的一点就是设置 `Reset Parameters` 这一步，如果没有正确 reset 管子的 finger 或者电阻/电容的 segments, 就会导致 calibre view 和实际 schematic/layout 不一致，从而得到错误的后仿结果。
+- (3) config sweep 不能放在 local variable of the explorer test 中，否则一旦取值不当 (例如设定其值为 1) 会出现 `Segmentation fault` 错误，导致 virtuoso 崩溃退出；就算设置了 "正确" 的值，也没有作用，必须是在 global variable 中设置 config sweep 才能生效。
+
+
+
+
+导出 calibre 的推荐设置：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-28-00-08-46_202510_onc18_CPPLL_ultra_low_lower (2) VCO Iteration and Layout.png"/></div>
+
+没有任何警告和报错才是大概率没问题的：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-28-00-09-39_202510_onc18_CPPLL_ultra_low_lower (2) VCO Iteration and Layout.png"/></div>
+
+
+
+
 ## Reference
 
 
@@ -423,3 +525,10 @@ HSPICE 格式的操作和 SPECTRE 完全类似，都是在 netlist 中找到器�
 - [8] [知乎 > Cadence Virtuoso 教程 (八)：台积电 28nm 版图设计示例——包括 Layout, DRC, LVS, PEX 和后仿 (Post-Simulation)](https://zhuanlan.zhihu.com/p/1937319302949769830)
     - (8.1) 介绍了台积电 28nm 工艺的版图设计流程，包含 DRC, LVS, PEX 和利用 CALIBREVIEW 格式进行的后仿
     - (8.2) **详细讲解了 DRC/LVS/PEX 时容易遇到的常见问题及其解决方法，任何环节出现问题都可以到里面找找答案**
+- [9] [EETOP > Spectre X 讨论](https://bbs.eetop.cn/thread-983266-2-1.html)
+- [10] [知乎 > Cadence加快仿真速度](https://zhuanlan.zhihu.com/p/680258606)
+- [11] [Accuracy you know, Speed you need – 新一代 Spectre X 仿真器](https://picture.iczhiku.com/weixin/message1582550787289.html)
+- [12] [EETOP > 解决 Spectre 仿真报错Segmentation Fault (during AHDL read-in)](https://bbs.eetop.cn/thread-983285-1-1.html): 楼主是因为 linux 的 memory segments 最大数量太小了，系统是 centos 7.9 默认 4096 条，改为 16384 条后问题解决
+- [13] [CSDN > spectre 仿真器中断](https://blog.csdn.net/weixin_42221495/article/details/140003274): 认为是当前 spectre 仿真器仿不了这么大容量的仿真，需要换仿真器
+- [14] [博客园 > XPS MS 遇到 segmentation fault 错误](https://www.cnblogs.com/li2000/p/18296503/Analog-Cadence-Virtuoso-ADE-XPSMS): 博主提出/收集了多种可能原因，包括 服务器内存不够、没设置64位、未知错误（尝试重启 virtuoso 或者服务器端口）等，他认为最稳妥的方法是重启 virtuoso
+- [15] [EETOP > Spectre 仿真报错，Internal error found in spectre during AHDL read-in](https://bbs.eetop.cn/thread-887124-1-1.html): 楼主提出了三种解决方案，22楼提出了另一种：

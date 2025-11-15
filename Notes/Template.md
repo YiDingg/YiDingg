@@ -1,7 +1,7 @@
 #  Template <br> 模版
 
 > [!Note|style:callout|label:Infor]
-Initially published at 11:48 on 2024-08-23 in 北京.
+Initially published by YiDingg at 11:48 on 2024-08-23 in 北京.
 
 ## Notes 
 

@@ -1,7 +1,7 @@
 # Goodness of Fit<br> 拟合优度（回归模型评价指标）
 
 > [!Note|style:callout|label:Infor]
-Initially published at 19:12 on 2024-09-30 in 北京.
+Initially published by YiDingg at 19:12 on 2024-09-30 in 北京.
 
 ## 离散数据
 

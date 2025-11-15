@@ -1,7 +1,7 @@
 # Basic Physics Experiment <br> (基础物理实验)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 09:38 on 2024-07-11 in Beijing.
+Initially published by YiDingg at 09:38 on 2024-07-11 in Beijing.
 
 
 ## 课程信息

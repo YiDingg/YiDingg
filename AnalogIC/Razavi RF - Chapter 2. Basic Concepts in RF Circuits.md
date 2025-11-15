@@ -1,7 +1,7 @@
 # Razavi RF - Chapter 2. Basic Concepts in RF Circuits
 
 > [!Note|style:callout|label:Infor]
-Initially published at 21:54 on 2025-09-06 in Lincang.
+Initially published by YiDingg at 21:54 on 2025-09-06 in Lincang.
 
 参考教材：[*RF Microelectronics (Behzad Razavi) (2nd Edition, 2012)*](https://www.writebug.com/static/uploads/2025/9/7/e8086c78d053e74f2d3225579e0fe0cc.pdf)
 

@@ -1,7 +1,7 @@
 # Matlab Notes (1): Graphics 
 
 > [!Note|style:callout|label:Infor]
-Initially published at 23:54 on 2024-08-07 in Lincang.
+Initially published by YiDingg at 23:54 on 2024-08-07 in Lincang.
 
 
 ## Intro 

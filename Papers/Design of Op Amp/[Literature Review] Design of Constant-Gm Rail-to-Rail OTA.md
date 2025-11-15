@@ -1,7 +1,7 @@
 # [Literature Review] Design of Constant-Gm Rail-to-Rail OTA
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 23:42 on 2025-09-23 in Beijing.
+> Initially published by YiDingg at 23:42 on 2025-09-23 in Beijing.
 
 
 ## Introduction

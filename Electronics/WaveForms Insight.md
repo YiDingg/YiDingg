@@ -1,7 +1,7 @@
 # WaveForms Insight
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 14:59 on 2025-05-09 in Beijing.
+> Initially published by YiDingg at 14:59 on 2025-05-09 in Beijing.
 
 官方网站: https://digilent.com/reference/software/waveforms/waveforms-3/start
 

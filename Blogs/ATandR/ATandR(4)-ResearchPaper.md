@@ -1,7 +1,7 @@
 # ATandR(4): Research Paper
 
 > [!Note|style:callout|label:Infor]
-Initially published at 22:11 on 2024-06-23 in Beijing.
+Initially published by YiDingg at 22:11 on 2024-06-23 in Beijing.
 
 
 

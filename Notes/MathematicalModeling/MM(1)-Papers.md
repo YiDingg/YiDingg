@@ -1,7 +1,7 @@
 # Mathematical Modeling (1): Papers
 
 > [!Note|style:callout|label:Infor]
-Initially published at 12:45 on 2024-08-17 in Lincang.
+Initially published by YiDingg at 12:45 on 2024-08-17 in Lincang.
 
 ## 官网
 

@@ -1,7 +1,7 @@
 # 常见 NPN 三极管特性曲线测量
 
 > [!Note|style:callout|label:Infor]
-Initially published at 00:22 on 2025-02-21 in Lincang.
+Initially published by YiDingg at 00:22 on 2025-02-21 in Lincang.
 
 ## 前言
 

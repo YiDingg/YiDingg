@@ -1,7 +1,7 @@
 # Design of Analog CMOS Integrated Circuits <br> (Razavi) (2015, 2nd edition)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 09:46 on 2024-08-29 in Beijing.
+Initially published by YiDingg at 09:46 on 2024-08-29 in Beijing.
 
 
 !> **<span style='color:red'>Attention:</span>**<br>

@@ -3,7 +3,7 @@
 **A 5-Bit R-2R DAC with -0.150\% Average Output Error (TT, +65°C) in TSMC 65nm Technology**
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 21:24 on 2025-09-30 in Beijing.
+> Initially published by YiDingg at 21:24 on 2025-09-30 in Beijing.
 
 ## 1. Information
 
@@ -47,8 +47,12 @@
 
 <!-- ## 4. Material Detail Record -->
 
+## 4. Experience Summary
 
-
+本小节总结一些设计过程中积累的经验，供后续参考：
+- **版图中的器件并不需要完全从原理图中导入，可以在版图中直接放置，即便没有修改对应关系也是能正常过 DRC/LVS 的**；但是对应关系不对的话，可以导致版图上显示的 net 出错，从而出现很多 "假的短路"，一方面看起来很乱，另一方面也可能影响到后续的版图设计，因此最好还是在 Connectivity > Define Device Correspondence 中手动更新一下对应关系
+- **<span style='color:red'> 设置为 (segments = 2, series) 的 dummy 电阻是非常容易出 LVS 错误的，一般是关闭 `LVS Options > LVS Filter Unused Option` 则不报错，但只要一打开，即便没有勾选任何过滤项也会导致报错，根本原因是 reduction parallel/series priority. 因此，为了避免 LVS 上的扯皮，要么尽量不用 series = 2 的电阻设置，要么将 series = 2 的 dummy 电阻在原理图拆分成两个电阻并且 中间节点悬空 (floating)，然后两端都接 VSS 形成短路 </span>** (这个问题曾困扰我们好几天)
+- 原理图/版图中如果电阻的宽度/长度具有三位小数 (例如 1.005 um)，某些工艺的 LVS 会提取成 1.010 um 导致电阻尺寸出现误差，从而报错 discrepancy, 因此在设计时就要注意电阻尺寸不能有三位小数
 
 ## References
 

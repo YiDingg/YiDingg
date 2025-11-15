@@ -1,7 +1,7 @@
 # Matlab Notes(4): Animations
 
 > [!Note|style:callout|label:Infor]
-Initially published at 19:48 on 2024-09-22 in Beijing.
+Initially published by YiDingg at 19:48 on 2024-09-22 in Beijing.
 
 
 Animate a simple plot:

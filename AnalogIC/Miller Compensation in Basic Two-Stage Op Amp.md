@@ -1,7 +1,7 @@
 # Miller Compensations in Basic Two-Stage Op Amp
 
 > [!Note|style:callout|label:Infor]
-Initially published at 18:29 on 2025-06-15 in Beijing.
+Initially published by YiDingg at 18:29 on 2025-06-15 in Beijing.
 
 ## Introduction
 

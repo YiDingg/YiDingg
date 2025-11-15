@@ -1,7 +1,7 @@
 # How to Design a PCB Light Painting
 
 > [!Note|style:callout|label:Infor]
-Initially published at 23:13 on 2025-03-23 in Beijing.
+Initially published by YiDingg at 23:13 on 2025-03-23 in Beijing.
 
 ## Intro
 

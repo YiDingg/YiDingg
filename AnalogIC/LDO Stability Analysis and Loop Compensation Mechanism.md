@@ -1,7 +1,7 @@
 # Stability Analysis and Loop Compensation Mechanism of Capacitor-less LDO
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 16:14 on 2025-09-13 in Lincang.
+> Initially published by YiDingg at 16:14 on 2025-09-13 in Lincang.
 
 ## 1. Overview
 

@@ -1,7 +1,7 @@
 # Monthly Summary (2025.04)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 19:21 on 2025-04-30 in Beijing.
+Initially published by YiDingg at 19:21 on 2025-04-30 in Beijing.
 
 四月中旬到五月中旬是国科大特有的“期中月”，课程复习消耗了我太多青春，因此本月只有不到两周的时间在学习新知识。具体而言，我们学习了 CMOS 和微电子的频响、反馈两个章节。目前打算在五一器件阅读、学习时间常数法的相关论文，把所谓“node-pole theorem”的理论基础打扎实，因为这个定理（思想）在传函分析中用得非常多。
 

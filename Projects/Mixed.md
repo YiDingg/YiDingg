@@ -2,7 +2,7 @@
 
 
 > [!Note|style:callout|label:Infor]
-Initially published at 19:41 on 2024-06-19 in Beijing.
+Initially published by YiDingg at 19:41 on 2024-06-19 in Beijing.
 
 
 Here are some mixed projects, which are not so complicated so that we won't have a dedicated section for them.

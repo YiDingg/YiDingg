@@ -1,7 +1,7 @@
 # Discrete Op Amp Design Reference
 
 > [!Note|style:callout|label:Infor]
-Initially published at 20:15 on 2025-03-17 in Beijing.
+Initially published by YiDingg at 20:15 on 2025-03-17 in Beijing.
 
 
 

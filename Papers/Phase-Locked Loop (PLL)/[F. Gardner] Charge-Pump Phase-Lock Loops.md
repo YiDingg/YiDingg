@@ -1,7 +1,7 @@
 # [F. Gardner] Charge-Pump Phase-Lock Loops
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 22:22 on 2025-08-12 in Lincang.
+> Initially published by YiDingg at 22:22 on 2025-08-12 in Lincang.
 
 本文分析了二阶和三阶 Type-II CP-PLL (Charge Pump PLL) 的典型特征，并为实际设计提供了理论方程和图表参考。
 

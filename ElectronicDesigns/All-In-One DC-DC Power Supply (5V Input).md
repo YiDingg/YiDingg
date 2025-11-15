@@ -1,7 +1,7 @@
 # All-In-One DC-DC Power Supply (5V~12V Input)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 18:18 on 2025-02-15 in Lincang.
+Initially published by YiDingg at 18:18 on 2025-02-15 in Lincang.
 
 ## Infor
 

@@ -1,17 +1,17 @@
 # How to Install Cadence IC618 (Virtuoso)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 20:46 on 2025-05-19 in Beijing.
+> Initially published by YiDingg at 20:46 on 2025-05-19 in Beijing.
 
 **<span style='color:red'>本文所分享的所有资料和资源仅供学习参考使用，请在下载 24 小时后全部删除！</span>**<br>
 
 
-## Introduction
+## 1 Introduction
 
 **模拟 IC 苦 Cadence 教程久矣！** 在本文，我们先介绍一下常说的 "cadence" 到底是什么意思，不同的软件版本之间有什么区别，然后便进入我们的主题：**下载并安装 Cadence IC618**。另外，我们给出的安装包已经包含了 Virtuoso, Calibre, Hspipce, Spectre 和 Innovus 等组件，可以满足 IC 设计的绝大部分需求。
 
 
-### Basic Info
+### 1.1 Basic Info
 
 - [Cadence Official](https://www.cadence.com/en_US/home.html)
 - [Cadence 官方网站](https://www.cadence.com/zh_CN/home/company.html)
@@ -26,7 +26,7 @@ Cadence IC 主要包括以下功能：
 
 在后文，我们将 "cadence" 作为 "Cadence IC" 或 "Cadence Virtuoso" 的简称。
 
-### Cadence IC 版本区别
+### 1.2 Cadence IC 版本区别
 
 
 - IC5141（旧版）发布年代：2000 年左右，较老版本。特点：基于 32 位系统，依赖老旧库（如 libXt.so.6）。界面较原始，功能有限，但占用资源少。支持旧版 Linux (如RHEL 4/5)。此版本已淘汰，仅少数老项目可能使用。
@@ -34,9 +34,9 @@ Cadence IC 主要包括以下功能：
 - IC618（新版）发布年代：2018 年后，持续更新。特点：新增 AI 辅助设计、高性能仿真等功能。对硬件要求更高（需要更多 CPU/内存）。支持最新 Linux (如 RHEL 8/CentOS 8)。此版本适用于先进工艺节点（7nm 以下）或其它研究需求。
 
 
-## Install Cadence IC618
+## 2. Install Cadence IC618
 
-### Installation Requirements
+### 2.1 Installation Requirements
 
 Cadence IC 的完整安装需要在 Linux 系统 (或虚拟机) 上进行，并且配置操作十分繁杂。这里，我们考虑使用别人已经配置好的虚拟机：这种虚拟机内已经预装好了 Cadence IC 的软件包和库文件（并配置好了 license 和环境变量等），我们只需下载并安装虚拟机，然后便可以在虚拟机上愉快地使用 cadence 了！
 
@@ -48,7 +48,7 @@ Cadence IC 的完整安装需要在 Linux 系统 (或虚拟机) 上进行，并�
 **注意：压缩包有大约 25 GB, 解压后文件夹约占 75 GB, 因此在下载/安装之前，请先确保电脑有足够的硬盘空间 (至少留有 100 GB 以上)。**
 
 
-### My Installation Process
+### 2.2 My Installation Process
 
 - 示例时间与环境: 2025.05.19, Windows 11
 
@@ -97,13 +97,23 @@ Cadence IC 的完整安装需要在 Linux 系统 (或虚拟机) 上进行，并�
 
 
 
-### Other Installation Methods
+### 2.3 Other Installation Methods
 
 如果不想按照上面的方法，也可以参考 [Bilibili: Cadence IC618 Virtuoso 虚拟机安装](https://www.bilibili.com/video/BV1Z14y197qF), 安装包到 https://pan.quark.cn/s/aac217e76e2f (提取码 `4ddb`) 下载。
 
-## Add New Process Library
+## 3. Add New Process Library
 
 
 详见 [How to Add New Process Libraries in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 3. How to Add New Process Libraries in Cadence IC618.md>)。另外, Cadence 的相关教程已经全部汇总在了 [知乎专栏: Cadence Tutorials](https://www.zhihu.com/column/c_1917022837237081134), 读者可移步专栏查看更多内容。
 
+## 4. Tips and Tricks
 
+### 4.1 虚拟机瘦身
+
+虚拟机越用越大，占用磁盘空间越来越多，可以回收虚拟机空闲空间来减小虚拟机文件的大小。参考这两篇文章中的 `sudo vmware-toolbox-cmd disk shrink /` 方法即可：
+- [博客园 > VMware-Windows 虚拟机清理空间大的问题](https://www.cnblogs.com/autopwn/p/18020250)
+- [CSDN > 6 种方法给 Vmware 虚拟机清理瘦身](https://blog.csdn.net/qq_45300786/article/details/122735744)
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-09-20-48-35_Virtuoso Tutorials - 1. How to Install Cadence IC618.png"/></div>
+
+原 190 GB 的虚拟机，清理后变成 135 GB, 节省了 55 GB 的空间。

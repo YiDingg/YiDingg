@@ -1,7 +1,7 @@
 # The Five-Transistor OTA
 
 > [!Note|style:callout|label:Infor]
-Initially published at 17:49 on 2025-03-24 in Beijing.
+Initially published by YiDingg at 17:49 on 2025-03-24 in Beijing.
 
 
 ## Intro

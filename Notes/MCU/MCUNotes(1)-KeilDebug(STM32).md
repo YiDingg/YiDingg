@@ -1,7 +1,7 @@
 # MCU Notes (1): Keil Debug (STM32) 
 
 > [!Note|style:callout|label:Infor]
-Initially published at 18:40 on 2024-06-22 in Beijing.
+Initially published by YiDingg at 18:40 on 2024-06-22 in Beijing.
 
 
 ## Keil 软件设置

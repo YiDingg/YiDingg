@@ -1,7 +1,7 @@
 # Biasing Circuits for Low-Voltage Cascode Current Mirror
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 16:53 on 2025-06-02 in Beijing.
+> Initially published by YiDingg at 16:53 on 2025-06-02 in Beijing.
 
 
 ## General Considerations

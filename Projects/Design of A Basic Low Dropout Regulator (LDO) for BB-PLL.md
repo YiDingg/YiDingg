@@ -2,7 +2,7 @@
 
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 22:33 on 2025-09-09 in Lincang.
+> Initially published by YiDingg at 22:33 on 2025-09-09 in Lincang.
 
 
 ## 1. Information
@@ -16,7 +16,9 @@
 项目相关链接：
 - [(本文) Design of A Basic Low Dropout Regulator (LDO)](<Projects/Design of A Basic Low Dropout Regulator (LDO) for BB-PLL.md>)
     - (1) 理论与指导：[LDO Stability Analysis and Loop Compensation Mechanism](<AnalogIC/LDO Stability Analysis and Loop Compensation Mechanism.md>)
-    - (2) 设计与前仿：[202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1)](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1).md>) 和 [202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (2)](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (2).md>)
+    - (2) 设计与前仿：
+        - [202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1)](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1).md>)
+        - [202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (2)](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (2).md>)
     - (3) 版图与后仿：[202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.md>)
 
 
@@ -91,6 +93,26 @@
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-22-21-04-32_Design of A Basic Low Dropout Regulator (LDO) for BB-PLL.png"/></div>
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-21-55-37_Design of A Basic Low Dropout Regulator (LDO) for BB-PLL.png"/></div>
+
+## 5. Experience Summary
+
+本小节总结一些设计过程中积累的经验，供后续参考：
+- 像我们这类 10 mA 级别的 LDO 算是电流比较大的了，如果想用 NMOS Pass, 要么有相当不错的 voltage headroom (1.3 V 左右)，要么用 native device 或者 low Vth device
+- 按以前的经验，LDO 应该是负载电容越大越稳定，但实际上 "并非如此"；在本次设计中我们发现，系统的相位裕度随负载电容增大会先减小再增大，在小电容 (pF) 或大电容 (uF) 下可以正常工作，对于中等大小电容则会不稳定；之前 "LDO 负载电容越大越稳定" 的经验是对于含有外部电容的 LDO 而言，其工作在右端的大电容区间，而 capacitor-less LDO 则工作在左端的小电容区间
+- 对 capacitor-less LDO 而言，NMOS Pass 的稳定性比 PMOS 好得多 (NMOS Pass 下的 GBW_LDO 小得多), PMOS Pass 可以通过降低功率管增益/运放GBW/引入补偿网络来提高稳定性 (牺牲 PSRR 性能)
+- 如果仅对 PSRR @ DC 有要求，可以考虑加一个 buffer stage 来驱动功率管，这会大幅降低环路的 GBW, 从而显著提高稳定性 (牺牲中频 PSRR)
+- 尽管理论上 NMOS Pass 的 PSRR 会更好，但我们本次设计中却是比 PMOS Pass 差了一点点，也不知是 native device 还是 vgs 的原因
+- 本次的 capacitor-less LDO, 在低电流 (轻载) 时稳定性差，在大电流 (重载) 时稳定性会更好；至于 PSRR，前仿和 Gate Level 后仿倒都是轻载差重载好，但 Tran Level 的后仿却是轻载好而重载差
+- 提取寄生参数时，无论选择哪种输出格式，提取结果都几乎一致，仅在仿真速度上有略微差异 (SPECTRE 比 HSPICE/DSPF 稍长些)
+- 对于一个走线电阻均非常小的优秀版图，如果电路中不存在 mim/mom cap 这类特殊器件，Gate Level 和 Transistor Level 的后仿结果是几乎找不出区别的
+- 后仿时用 maestro 似乎不需要再单独设置保存节点数 (我们也没找到在哪设置)，几个项目仿真下来感觉 maestro 会保存电路中与 schematic 对应的一些主节点，可以大幅度节省空间 (但自然没有仅保存顶层节省得多)
+- 也不清楚是什么原因，后仿时仿真器总是在 opening psf file 这一步卡很久 (从 output log 中看出)，如果能解决这个问题，仿真速度会大大提高
+- 65nm 下的运放，输入共模距离 VDD 有 0 ~ 0.7V 时可以考虑 nmos input, 距离 VSS 有 0 ~ 0.7 V 时可以考虑 pmos input, 对于卡在中间的情况，还是建议用 constant-gm op amp
+- 从其它 cell > layout 复制部分版图到新 cell > layout 时，可能出现版图元件 ROD 属性不对应的问题 (被刷新覆盖了)，如果直接点击 Update Components and Nets 会出现 unbounded 报错；这时只需在左下角找到 Define Device Correspondence 更新以下版图元件和原理图的对应关系即可
+- NMOS 的 bulk/body 不想连 VSS/GND 的话，一般都要使用 DNW 隔离出 local p-sub, 否则会产生 stamping conflict 报错，也即 "高阻短路" 现象，这是一个比较严重的 ERC 问题，后仿不一定能仿出来，导致流片后结果与后仿差异较大
+- 使用 crtmom 时 ERC 检查中出现 floating n-well 报错，可以通过将其版图属性 "Well Type" 从 N 修改为 P 来解决 (使用 PW 而非 NW)
+- 模块设计完毕之后，我们通常会在整个模块外围套上多层 guard ring 以提供较好的隔离效果，一般是内 p-ring (VSS) 外 n-ring (VDD), 围上后 LVS > ERC 会报一条 floating p-sub 的错误，这是因为整个电路的 p-sub 未连接到外部，是正常现象，因为我们还没把模块集成到系统中去
+
 
 
 ## Relevant Resources

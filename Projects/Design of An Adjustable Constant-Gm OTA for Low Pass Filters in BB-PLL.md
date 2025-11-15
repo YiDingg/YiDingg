@@ -3,7 +3,7 @@
 **A Constant-Gm OTA with 1.306-uS ~ 22.06-uS Adjustable Range in TSMC 65-nm Technology**
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 22:48 on 2025-09-23 in Beijing.
+> Initially published by YiDingg at 22:48 on 2025-09-23 in Beijing.
 
 ## 1. Information
 
@@ -11,6 +11,7 @@
 - 时间: 2025.09.23 ~ 2025.10.02
 - 工艺:  <span style='color:red'>TSMC 65NM COMS </span> Mixed Signal RF SALICIDE Low-K IMD 1P6M-1P9M PDK (CRN65GP)
 - 目标：设计一个满足指标要求的 Adjustable Constant-Gm OTA, 包括前仿、版图和后仿
+- 作者：丁毅 (Yi Ding)
 
 项目相关链接：
 - [(本文) Design of An Adjustable Constant-Gm OTA for Low Pass Filters](<Projects/Design of An Adjustable Constant-Gm OTA for Low Pass Filters in BB-PLL.md>)
@@ -86,10 +87,24 @@
  -->
 
 
-### 4. Experience Summary
+## 4. Experience Summary
 
 本小节总结了本次 OTA 设计中的一些经验，供后续设计参考：
-- 
+- 无论什么工艺，对绝大多数设计而言，基本上都可使用下面的八个 corners 作为全温度-工艺角，可以覆盖绝大多数温度-工艺变化情况：
+    - TT: +27°C, +65°C
+    - FF: -40°C, +130°C
+    - SS: -40°C, +130°C
+    - FS: -40°C
+    - SF: +130°C
+- 仿真时遇到报错 `Internal error found in spectre during hierarchy flattening, during circuit read-in. Encountered a critical error during simulation.` 可能是因为管子的 finger 设置为了非整数 (例如 2.5)，将 finger 设置为整数即可解决
+- 对 constant-Gm OTA, VDD 在不同范围适用不同的补偿方法：
+    - no compensation: VDD = 1.7\*VTH ~ 2.3\*VTH
+    - current-reuse: VDD >= 2.2\*VTH
+    - ...... (待补充)
+- 由于电流源的非理想性，OTA 的总跨导 Gm 一般都达不到 (Gm_N + Gm_P), 多数在 40\% ~ 70\% 之间
+- **<span style='color:red'> 在版图中导入器件，仅放置器件、修改器件版图属性、放置 VSS/VDD label，还未连线时，我们运行一次 LVS, 正确的报错应该为 layout 中的器件在 schematic 中显示 missing instance 而不是 missing injected instance，如果出现后者，说明 schematic 中的器件有问题，需要重新放置一遍器件再试；反之，schematic 中的器件在 layout 中显示 missing injected instance 是正常的，这不会影响后续的 LVS。 </span>** (这个问题曾困扰我们好几天)
+- 模拟电路中，为提高流片稳定性，一般要保证所有的 via/CO 都至少有两个，尤其是 CO, 在管子 L or W 较小时容易只有一个
+- 仿真设计好的模块版图时，如果遇到 "模块版图边界比实际边界大得多" 的问题，打开模块 layout 后在 CIW 输入 `(foreach st geGetEditCellView()~>steiners dbDeleteObject(st))` 便可解决
 
 ## References
 

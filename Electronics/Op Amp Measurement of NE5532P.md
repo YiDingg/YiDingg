@@ -1,7 +1,7 @@
 # Op Amp Measurement of NE5532P (运算放大器 NE5532P 的测试记录)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 09:31 on 2025-03-15 in Beijing.
+> Initially published by YiDingg at 09:31 on 2025-03-15 in Beijing.
 
 ## 实验目的
 

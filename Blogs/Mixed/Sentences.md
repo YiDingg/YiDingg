@@ -1,7 +1,7 @@
 # Sentences
 
 > [!Note|style:callout|label:Infor]
-Initially published at 22:36 on 2024-06-27 in Beijing.
+Initially published by YiDingg at 22:36 on 2024-06-27 in Beijing.
 
 
 > [!Note|style:callout|label:庭有枇杷树，吾妻死之年所手植也，今已亭亭如盖矣。—— 归有光《项脊轩志》]

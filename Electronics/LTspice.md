@@ -1,7 +1,7 @@
 # LTspice 
 
 > [!Note|style:callout|label:Infor]
-Initially published at 22:23 on 2024-12-21 in Beijing.
+Initially published by YiDingg at 22:23 on 2024-12-21 in Beijing.
 
 ## Relevant Resources
 

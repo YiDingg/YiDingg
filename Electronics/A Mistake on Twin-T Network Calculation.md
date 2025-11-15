@@ -1,7 +1,7 @@
 # A Mistake on Twin-T Network Calculation
 
 > [!Note|style:callout|label:Infor]
-Initially published at 11:27 on 2025-03-23 in Beijing.
+Initially published by YiDingg at 11:27 on 2025-03-23 in Beijing.
 
 在昨天的 transfer function of twin-T network 计算中，我们犯了一些计算错误，得到了不正确的结果。本文利用采用<span style='color:red'> 二端口矩阵法 </span>，对原计算的错误进行了更正。
 

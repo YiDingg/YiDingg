@@ -1,7 +1,7 @@
 # MCU Notes (3): DMA (STM32)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 17:43 on 2024-06-26 in Beijing.
+Initially published by YiDingg at 17:43 on 2024-06-26 in Beijing.
 
 
 ## DMA原理

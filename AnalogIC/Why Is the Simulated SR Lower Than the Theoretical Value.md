@@ -1,7 +1,7 @@
 # Why Is the Simulated SR Lower Than the Theoretical Value ? <br> (in the Folded-Cascode Op Amp)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 00:59 on 2025-06-15 in Beijing.
+> Initially published by YiDingg at 00:59 on 2025-06-15 in Beijing.
 
 
 ## Introduction

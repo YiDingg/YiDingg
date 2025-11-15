@@ -1,7 +1,7 @@
 # Electromegnetism Notes
 
 > [!Note|style:callout|label:Infor]
-Initially published at 10:38 on 2024-06-24 in Beijing.
+Initially published by YiDingg at 10:38 on 2024-06-24 in Beijing.
 
 
 !> **<span style='color:red'>Attention:</span>**<br>

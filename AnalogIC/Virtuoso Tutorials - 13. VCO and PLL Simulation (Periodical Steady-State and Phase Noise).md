@@ -1,7 +1,7 @@
 # Virtuoso Tutorials - 13. VCO/PLL Simulation (Periodical Steady-State and Phase Noise)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 16:02 on 2025-08-21 in Lincang.
+Initially published by YiDingg at 16:02 on 2025-08-21 in Lincang.
 
 ## Introduction
 
@@ -35,9 +35,17 @@ PSS (Periodical Steady-State) Simulation, 即周期性稳态仿真，专门用�
 
 然后是 pss 仿真中一些常见的 Outputs 设置：
 ``` bash
-tstab simulation of Vout = v("/Vout" ?result "pss-tran.pss")
-spectrum of f_osc = getData("Vout" ?result "pss_fd")
-fundamental frequency of f_osc = harmonic(xval(getData("Vout" ?result "pss_fd")) '1)
+# tstab simulation of Vout
+v("/Vout" ?result "pss-tran.pss")
+
+# spectrum of f_osc
+getData("Vout" ?result "pss_fd")
+
+# fundamental frequency of f_osc
+harmonic(xval(getData("Vout" ?result "pss_fd")) '1
+
+# current IDD of I5
+leafValue( i("I5:VDD" ?result "pss_tran"))
 ```
 
 现在如图设置 pss 参数，运行仿真：

@@ -1,7 +1,7 @@
 ## 前言
 
 > [!Note|style:callout|label:Infor]
-Initially published at 14:05 on 2024-06-24 in Beijing.
+Initially published by YiDingg at 14:05 on 2024-06-24 in Beijing.
 
 
 近几天（2024.4.17）使用 VScode Latex 编辑Latex时，发现反向搜索功能失灵（无法由PDF预览器反向定位到代码位置）。 

@@ -1,7 +1,7 @@
 # Precision Full-Wave Rectifier
 
 > [!Note|style:callout|label:Infor]
-Initially published at 17:27 on 2025-04-28 in Beijing.
+Initially published by YiDingg at 17:27 on 2025-04-28 in Beijing.
 
 ## Intro
 

@@ -2,7 +2,7 @@
 
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 21:16 on 2025-06-26 in Beijing.
+> Initially published by YiDingg at 21:16 on 2025-06-26 in Beijing.
 
 参考教材：[*Design of Analog CMOS Integrated Circuits (Behzad Razavi) (2nd edition, 2017)*](https://www.zhihu.com/question/452068235/answer/95164892409)
 

@@ -1,7 +1,7 @@
 # A Single-Ended Output Folded-Cascode Op Amp Achieving 81.33dB Gain, 51.59MHz GBW and 35.22V/us SR
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 17:12 on 2025-06-11 in Beijing.
+> Initially published by YiDingg at 17:12 on 2025-06-11 in Beijing.
 
 ## 0. Introduction
 

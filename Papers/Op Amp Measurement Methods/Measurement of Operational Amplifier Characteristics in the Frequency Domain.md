@@ -1,7 +1,7 @@
 # Measurement of Operational Amplifier Characteristics in the Frequency Domain
 
 > [!Note|style:callout|label:Infor]
-Initially published at 16:50 on 2025-04-15 in Beijing.
+Initially published by YiDingg at 16:50 on 2025-04-15 in Beijing.
 
 ## Infor 
 

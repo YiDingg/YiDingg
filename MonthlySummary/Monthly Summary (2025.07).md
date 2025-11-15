@@ -1,7 +1,7 @@
 # Monthly Summary (2025.07)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 18:03 on 2025-08-03 in Lincang.
+Initially published by YiDingg at 18:03 on 2025-08-03 in Lincang.
 
 ## 本月概览 (2025.07)
 

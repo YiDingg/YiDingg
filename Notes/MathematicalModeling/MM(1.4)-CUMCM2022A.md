@@ -1,7 +1,7 @@
 # Mathematical Modeling (1.4): CUMCM 2022-A
 
 > [!Note|style:callout|label:Infor]
-Initially published at 16:12 on 2024-08-19 in Lincang.
+Initially published by YiDingg at 16:12 on 2024-08-19 in Lincang.
 
 ## 概览
 

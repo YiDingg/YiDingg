@@ -1,7 +1,7 @@
 # Jitter and Phase Noise in Mixed-Signal Circuits
 
 > [!Note|style:callout|label:Infor]
-Initially published at 16:04 on 2025-08-23 in Beijing.
+Initially published by YiDingg at 16:04 on 2025-08-23 in Beijing.
 
 ## Introduction
 
@@ -83,7 +83,7 @@ Recall that the aberrations in the zero crossings or the period can be viewed as
 
 无论是 sinusoid signal 还是 square wave signal 都有 phase noise 和 time-domain jitter, 这两种参数都可以用来描述信号的噪声性能。
 
-特别地，对于方波信号 (如时钟信号)，为避免奇次谐波对噪声计算产生影响，一般限定噪声的积分上限不会超过原信号频率。这样，方波信号的 phase noise 计算/测量便可套用正弦信号的方法。
+特别地，对于方波信号 (如时钟信号)，为避免奇次谐波对噪声计算产生影响，一般限定噪声的积分上限不会超过原信号频率的一半 $\frac{f_c}{2}$。这样，方波信号的 phase noise 计算/测量便可套用正弦信号的方法。
 
 
 
@@ -130,29 +130,36 @@ $$
 
 注意，上面所说的 "相位噪声功率" $\overline{\phi_n^2 (t)}$ 是广义功率，实际含义是 **mean square**，在这里单位是 $\mathrm{rad^2}$ 而非 $\mathrm{W}$。
 
-**<span style='color:red'> 事实上，按照 [这篇文章](https://www.analog.com/media/en/technical-documentation/tech-articles/clock-clk-jitter-and-phase-noise-conversion.pdf) 的说法，上式中以 second (秒) 为单位的 rms phase noise 就是 rms cycle jitter $J_{c,rms}$</span>** ，也就是说：
+事实上，参考 [\[9\] ADI Application Note > Clock (CLK) Jitter and Phase Noise Conversion](https://www.analog.com/media/en/technical-documentation/tech-articles/clock-clk-jitter-and-phase-noise-conversion.pdf)  的推导可以知道， **<span style='color:red'> 上式中以 second (秒) 为单位的 rms phase noise $J_{\phi_n, rms}$ (integrated RMS jitter) 其实就是 rms edge jitter $J_{e,rms}$。</span>** 
+
+也就是说：
 
 $$
 \begin{gather}
-{\color{red}{J_{c, rms} \ \mathrm{(s)} = J_{\phi_n, rms} \ \mathrm{(s)} }}
+{\color{red}{J_{e, rms} \ \mathrm{(s)} = J_{\phi_n, rms} \ \mathrm{(s)} }}
 = \sqrt{\ \overline{\phi_n^2 (t)}\ } \times \frac{T_0}{2\pi} = \frac{\sqrt{\ \overline{\phi_n^2 (t)}\ }}{2\pi f_0}
 \end{gather}
 $$
+
+注：上面提到的这篇文章 [[9]](https://www.analog.com/media/en/technical-documentation/tech-articles/clock-clk-jitter-and-phase-noise-conversion.pdf) 错将 edge jitter 当作了 period jitter (cycle jitter)，只需将文中所有 period jitter 均改为 edge jitter, 即可得到正确结论。
+
+
+
 
 ## 7. From Jitter to Phase Noise
 
 在第五小节 **5. From Phase Noise to Jitter** 中，我们已经展示了如何根据 phase noise spectrum $S_{\phi_n}(\omega)$ 计算出 rms phase noise jitter $J_{\phi_n, rms}$，也即 rms cycle jitter $J_{c,rms}$。
 
-那么，如何根据 $J_{c}(i)$ or $J_{c}(t)$ 计算出 phase noise spectrum $S_{\phi_n}(\omega)$ 呢？详见这篇文章 [Phase Noise Spectrum Calculation using MATLAB](<AnalogIC/Phase Noise Spectrum Calculation using MATLAB.md>)。
+那么，如何根据 $J_{c}(i)$ or $J_{c}(t)$ 计算出 phase noise spectrum $S_{\phi_n}(\omega)$ 呢？详见这篇文章 [Phase Noise Spectrum Calculation using MATLAB](<AnalogIC/Phase Noise and Jitter Calculation using MATLAB.md>)。
 
 
 
 ## Accompanying Materials
 
 下面是参考资料 [[5]](https://www.sitime.com/zh-hans-cn/company/newsroom/blog/jitter-101-what-you-need-know) 所推荐的 **jitter application notes**:
-- [Clock Jitter Definitions and Measurement Methods](https://www.sitime.com/support/resource-library/application-notes/an10007-clock-jitter-definitions-and-measurement-methods) – Learn more about different types of jitter encounter in today’s high-speed systems, plus best practices for measuring jitter using a real time oscilloscope in this application note.
-- [How to Setup a Real-time Oscilloscope to Measure Jitter](https://www.sitime.com/support/resource-library/application-notes/an10073-how-setup-real-time-oscilloscope-measure-jitter) – One of the most common instruments used to measure jitter is the real-time digital oscilloscope. This application note provides guidelines for setting up an oscilloscope for best jitter measurement accuracy.
-- [Removing Oscilloscope Noise from RMS Jitter Measurements](https://www.sitime.com/support/resource-library/application-notes/an10074-removing-oscilloscope-noise-rms-jitter) – Learn how to accurately measure jitter using a real-time oscilloscope when the level of jitter added to a signal from the measurement environment approaches or exceeds the signal's intrinsic jitter.
+- [Clock Jitter Definitions and Measurement Methods](https://www.sitime.com/support/resource-library/application-notes/an10007-clock-jitter-definitions-and-measurement-methods): Learn more about different types of jitter encounter in today’s high-speed systems, plus best practices for measuring jitter using a real time oscilloscope in this application note.
+- [How to Setup a Real-time Oscilloscope to Measure Jitter](https://www.sitime.com/support/resource-library/application-notes/an10073-how-setup-real-time-oscilloscope-measure-jitter): One of the most common instruments used to measure jitter is the real-time digital oscilloscope. This application note provides guidelines for setting up an oscilloscope for best jitter measurement accuracy.
+- [Removing Oscilloscope Noise from RMS Jitter Measurements](https://www.sitime.com/support/resource-library/application-notes/an10074-removing-oscilloscope-noise-rms-jitter): Learn how to accurately measure jitter using a real-time oscilloscope when the level of jitter added to a signal from the measurement environment approaches or exceeds the signal's intrinsic jitter.
 
 参考资料 [[5]](https://www.sitime.com/zh-hans-cn/company/newsroom/blog/jitter-101-what-you-need-know) 还推荐了一些 **free on-demand courses on jitter**:
 - [Jitter Fundamentals](https://learning.sitime.com/explore/jitter-fundamentals?utm_source=sitime.com&utm_medium=site&_gl=1*l8jjj4*_gcl_au*OTE2ODU2NjU1LjE3NTU5NjM1ODk.*_ga*NjI5OTUwMzUxLjE3NTU5NjM2ODU.*_ga_3D908EQ7KW*czE3NTU5NjM2ODQkbzEkZzEkdDE3NTU5Njg3OTMkajQ5JGwwJGgxMTI2MzQyMzMx)
@@ -163,11 +170,12 @@ $$
 
 
 以及常用的 jitter calculators:
-- [Phase Noise to Jitter Calculator](https://www.sitime.com/phase-noise-and-jitter-calculator) – Convert phase noise to phase jitter (rms) for a specified offset frequency range. Plot phase noise data and export results as a png, csv or PDF file.
-- [Jitter Budget Spreadsheet Calculator](https://www.sitime.com/jitter-budget-calculator) – Estimate total jitter by connecting several elements in series, given each element's random and deterministic jitter contribution. Alternatively, begin with a jitter target, then budget jitter for each element to meet this target.
-- [RMS to Eye-closure Jitter Calculator](https://www.sitime.com/rms-eye-closure-jitter-calculator) – Computes the eye-closure in a BER bathtub plot due to the random component of TIE jitter (in ps rms) in a signal. Alternatively, calculate a crest factor for your specific application.
-- [RMS to Peak-peak Jitter Calculator](https://www.sitime.com/rms-peak-peak-jitter-calculator) – Evaluate a jitter distribution at a specified probability to convert an rms value of jitter into a peak-to-peak value. A quick reference table is also provided to estimate probabilities.
-- [Phase Noise Spreadsheet Calculator](https://www.sitime.com/phase-noise-spreadsheet-calculator) – Calculate phase jitter from measured phase noise data, including jitter filtering. Plus, learn all the math behind these calculations.
+- [Phase Noise to RMS Jitter Calculator](<https://markimicrowave.com/technical-resources/tools/phase-noise-jitter-calculator/>): Convert phase noise into RMS phase jitter.
+- [Phase Noise to Integrated Jitter Calculator](https://www.sitime.com/phase-noise-and-jitter-calculator): Convert phase noise to phase jitter (rms) for a specified offset frequency range. Plot phase noise data and export results as a png, csv or PDF file.
+- [Jitter Budget Spreadsheet Calculator](https://www.sitime.com/jitter-budget-calculator): Estimate total jitter by connecting several elements in series, given each element's random and deterministic jitter contribution. Alternatively, begin with a jitter target, then budget jitter for each element to meet this target.
+- [RMS to Eye-closure Jitter Calculator](https://www.sitime.com/rms-eye-closure-jitter-calculator): Computes the eye-closure in a BER bathtub plot due to the random component of TIE jitter (in ps rms) in a signal. Alternatively, calculate a crest factor for your specific application.
+- [RMS to Peak-peak Jitter Calculator](https://www.sitime.com/rms-peak-peak-jitter-calculator): Evaluate a jitter distribution at a specified probability to convert an rms value of jitter into a peak-to-peak value. A quick reference table is also provided to estimate probabilities.
+- [Phase Noise Spreadsheet Calculator](https://www.sitime.com/phase-noise-spreadsheet-calculator): Calculate phase jitter from measured phase noise data, including jitter filtering. Plus, learn all the math behind these calculations.
 
 
 ## References
@@ -179,3 +187,5 @@ $$
 - [\[5\]](https://www.sitime.com/zh-hans-cn/company/newsroom/blog/jitter-101-what-you-need-know) “Jitter 101. What you need to know. | SiTime.” Accessed: Aug. 23, 2025. [Online]. Available: https://www.sitime.com/zh-hans-cn/company/newsroom/blog/jitter-101-what-you-need-know
 - [\[6\]](https://search.iczhiku.com/paper/SuAUtarUX0Vkit3c.pdf) F. Herzel and B. Razavi, ”A study of oscillator jitter due to supply and substrate noise,” IEEE Trans. Circuits and Systems, Part II, vol. 46, pp. 56-62, Jan. 1999.
 - [[7]](https://ww1.microchip.com/downloads/aemDocuments/documents/VOP/ApplicationNotes/ApplicationNotes/Clock_Jitter_Basics.pdf) “Clock_Jitter_Basics.” [Online]. Available: https://ww1.microchip.com/downloads/aemDocuments/documents/VOP/ApplicationNotes/ApplicationNotes/Clock_Jitter_Basics.pdf
+- [[8] Razavi PLL - Chapter 2. Jitter and Phase Noise](<AnalogIC/Razavi PLL - Chapter 2. Jitter and Phase Noise.md>)
+- [\[9\] ADI Application Note > Clock (CLK) Jitter and Phase Noise Conversion](https://www.analog.com/media/en/technical-documentation/tech-articles/clock-clk-jitter-and-phase-noise-conversion.pdf) 

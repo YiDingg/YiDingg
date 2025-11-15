@@ -1,7 +1,7 @@
 # Transistor Measurement of 2N7000 (N-Channel VDMOS)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 20:43 on 2025-04-23 in Beijing.
+> Initially published by YiDingg at 20:43 on 2025-04-23 in Beijing.
 
 
 ## 2N7000 实验记录

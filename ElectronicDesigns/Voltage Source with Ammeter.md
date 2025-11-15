@@ -1,7 +1,7 @@
 # Voltage Source with Ammeter
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 20:41 on 2025-03-13 in Beijing.
+> Initially published by YiDingg at 20:41 on 2025-03-13 in Beijing.
 
 ## Infor
 

@@ -1,7 +1,7 @@
 # Razavi CMOS - Chapter 8. Negative Feedback
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 15:56 on 2025-04-30 in Beijing.
+> Initially published by YiDingg at 15:56 on 2025-04-30 in Beijing.
 
 参考教材：[*Design of Analog CMOS Integrated Circuits (Behzad Razavi) (2nd edition, 2017)*](https://www.zhihu.com/question/452068235/answer/95164892409)
 

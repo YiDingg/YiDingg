@@ -1,7 +1,7 @@
 # Download Inkscape <br> 下载 Inkscape
 
 > [!Note|style:callout|label:Infor]
-Initially published at 19:43 on 2024-09-14 in Beijing.
+Initially published by YiDingg at 19:43 on 2024-09-14 in Beijing.
 
 
 ## Official 

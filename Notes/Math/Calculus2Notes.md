@@ -1,7 +1,7 @@
 # Calculus 2 Notes
 
 > [!Note|style:callout|label:Infor]
-Initially published at 23:34 on 2024-07-26 in Beijing.
+Initially published by YiDingg at 23:34 on 2024-07-26 in Beijing.
 
 
 !> **<span style='color:red'>Attention:</span>**<br>

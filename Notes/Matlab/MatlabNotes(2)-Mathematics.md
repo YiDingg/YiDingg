@@ -1,7 +1,7 @@
 # Matlab Notes (2): Mathematics
 
 > [!Note|style:callout|label:Infor]
-Initially published at 19:45 on 2024-08-08 in Lincang.
+Initially published by YiDingg at 19:45 on 2024-08-08 in Lincang.
 
 
 Official link: Mathworks --> Help Center --> Matlab --> [Mathematics](https://www.mathworks.com/help/releases/R2022a/matlab/mathematics.html)

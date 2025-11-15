@@ -1,7 +1,7 @@
 # The Polarity of Input Offset Voltage of Op Amps
 
 > [!Note|style:callout|label:Infor]
-Initially published at 18:21 on 2025-03-18 in Beijing.
+Initially published by YiDingg at 18:21 on 2025-03-18 in Beijing.
 
 
 ## Conclusion

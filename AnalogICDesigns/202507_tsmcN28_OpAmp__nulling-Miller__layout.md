@@ -1,7 +1,7 @@
 # Layout and Post-Simulation for 202507_tsmcN28_OpAmp__nulling-Miller
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 18:52 on 2025-07-22 in Beijing.
+> Initially published by YiDingg at 18:52 on 2025-07-22 in Beijing.
 
 本次科研实践相关链接：
 - [Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)

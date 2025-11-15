@@ -1,7 +1,7 @@
 # Adapter Board for Analog Discovery v2
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 00:53 on 2025-06-10 in Beijing.
+> Initially published by YiDingg at 00:53 on 2025-06-10 in Beijing.
 
 - Time: 2025.06.10
 - Notes: the new version of [Adapter Board for Analog Discovery v1](<ElectronicDesigns/Adapter Board for Analog Discovery.md>), suitable for [AD1](https://digilent.com/reference/test-and-measurement/analog-discovery/start) (Analog Discovery 1), [AD2](https://digilent.com/reference/test-and-measurement/analog-discovery-2/start), and [AD3](https://digilent.com/reference/test-and-measurement/analog-discovery-3/start)

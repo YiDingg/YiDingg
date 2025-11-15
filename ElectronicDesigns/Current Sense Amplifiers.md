@@ -1,7 +1,7 @@
 # Current Sense Amplifiers
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 23:36 on 2025-03-06 in Beijing.
+> Initially published by YiDingg at 23:36 on 2025-03-06 in Beijing.
 
 ## Infor
 

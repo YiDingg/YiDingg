@@ -1,7 +1,7 @@
 # BNC Adapter for Analog Discovery (适用于 Analog Discovery 产品的 BNC 转接板)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 22:59 on 2024-02-13 in Beijing.
+> Initially published by YiDingg at 22:59 on 2024-02-13 in Beijing.
 
 - Time: 2025.02.04
 - Notes: BNC adapter board for Suitable for [AD1](https://digilent.com/reference/test-and-measurement/analog-discovery/start) (Analog Discovery 1), [AD2](https://digilent.com/reference/test-and-measurement/analog-discovery-2/start), and [AD3](https://digilent.com/reference/test-and-measurement/analog-discovery-3/start)

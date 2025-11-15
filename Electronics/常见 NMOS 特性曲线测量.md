@@ -1,7 +1,7 @@
 # 常见 NMOS 特性曲线测量
 
 > [!Note|style:callout|label:Infor]
-Initially published at 00:22 on 2025-02-21 in Lincang.
+Initially published by YiDingg at 00:22 on 2025-02-21 in Lincang.
 
 本文对几种较为常见的 MOS 进行测试，并得到它们的 $I_{DS}-V_{DS}$ 曲线、$I_{DS}-V_{GS}$ 曲线和 body-diode (反向特性) 曲线。为了使增大（信号发生器的）输出功率，我们用一个 VCVS (Voltage Controlled Voltage Source) 进行功率放大。由于现有的 VCVS 和 Transistor Tester 设计不够完善，3V@2A 以上的曲线，以及 Transfer Characteristics 暂时无法得到，待更换新的 VCVS 电路后再行补充。
 

@@ -1,7 +1,7 @@
 # [Razavi CMOS] Single Stage Gm and Av calculation
 
 > [!Note|style:callout|label:Infor]
-Initially published at 15:33 on 2025-02-02 in Beijing.
+Initially published by YiDingg at 15:33 on 2025-02-02 in Beijing.
 
 往期回顾：[MOSFET's Terminal Resistance](<Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>)
 

@@ -1,7 +1,7 @@
 # 202509_tsmcN65_OpAmp__nulling-Miller
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 23:11 on 2025-09-09 in Lincang.
+> Initially published by YiDingg at 23:11 on 2025-09-09 in Lincang.
 
 
 ## Introduction

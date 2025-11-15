@@ -3,7 +3,7 @@
 ## 网盘存储
 
 > [!Note|style:callout|label:Infor]
-Initially published at 16:22 on 2024-09-23 in Beijing.
+Initially published by YiDingg at 16:22 on 2024-09-23 in Beijing.
 
 
 下面是主流网盘、云盘存储免费用户的权益对比，`-` 符号表示无。

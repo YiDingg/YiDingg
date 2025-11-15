@@ -1,7 +1,7 @@
 # Time Line
 
 > [!Note|style:callout|label:Infor]
-Initially published at 23:16 on 2024-06-14 in Beijing.
+Initially published by YiDingg at 23:16 on 2024-06-14 in Beijing.
 
 
 ## Development Plan

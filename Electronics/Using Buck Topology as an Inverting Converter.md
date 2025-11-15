@@ -1,7 +1,7 @@
 # Using Buck Topology as an Inverting Converter (Buck-Boost)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 13:57 on 2025-02-16 in Lincang.
+Initially published by YiDingg at 13:57 on 2025-02-16 in Lincang.
 
 ## 前言
 

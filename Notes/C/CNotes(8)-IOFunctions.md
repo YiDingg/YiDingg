@@ -1,7 +1,7 @@
 # C Notes (8): I/O Functions
 
 > [!Note|style:callout|label:Infor]
-Initially published at 00:46 on 2024-08-08 in Lincang.
+Initially published by YiDingg at 00:46 on 2024-08-08 in Lincang.
 
 
 ## Intro 

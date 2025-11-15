@@ -1,7 +1,7 @@
 # Markdown 转微信公众号或知乎
 
 > [!Note|style:callout|label:Infor]
-Initially published at 19:12 on 2025-02-27 in Beijing.
+Initially published by YiDingg at 19:12 on 2025-02-27 in Beijing.
 
 ## 背景
 

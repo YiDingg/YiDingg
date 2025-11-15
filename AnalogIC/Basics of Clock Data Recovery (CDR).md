@@ -1,7 +1,7 @@
 # Basics of Clock Data Recovery (CDR)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 23:40 on 2024-08-27 in Lincang.
+Initially published by YiDingg at 23:40 on 2024-08-27 in Lincang.
 
 ## 1. Introduction
 

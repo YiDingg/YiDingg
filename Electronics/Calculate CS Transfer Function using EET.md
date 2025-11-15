@@ -2,7 +2,7 @@
 
 
 > [!Note|style:callout|label:Infor]
-Initially published at 18:53 on 2025-04-07 in Beijing.
+Initially published by YiDingg at 18:53 on 2025-04-07 in Beijing.
 
 ## Intro
 

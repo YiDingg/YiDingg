@@ -1,7 +1,7 @@
 # 求解答 TPS5430DDAR 构建的 Buck 电路输出异常
 
 > [!Note|style:callout|label:Infor]
-Initially published at 18:23 on 2025-02-24 in Beijing.
+Initially published by YiDingg at 18:23 on 2025-02-24 in Beijing.
 
 ## 前言
 

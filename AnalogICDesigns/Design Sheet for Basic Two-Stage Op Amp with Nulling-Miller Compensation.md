@@ -1,7 +1,7 @@
 # Design Sheet for Basic Two-Stage Op Amp with Nulling-Miller Compensation 
 
 > [!Note|style:callout|label:Infor]
-Initially published at 10:26 on 2025-06-17 in Beijing.
+Initially published by YiDingg at 10:26 on 2025-06-17 in Beijing.
 
 ## 1. Design Sheet
 

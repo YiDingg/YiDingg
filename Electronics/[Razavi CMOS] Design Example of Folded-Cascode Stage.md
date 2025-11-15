@@ -1,7 +1,7 @@
 # [Razavi CMOS] Design Example of Folded-Cascode Stage
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 17:11 on 2025-05-20 in Beijing.
+> Initially published by YiDingg at 17:11 on 2025-05-20 in Beijing.
 
 ## Introduction
 

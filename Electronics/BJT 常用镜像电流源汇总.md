@@ -1,7 +1,7 @@
 # BJT 常用镜像电流源汇总
 
 > [!Note|style:callout|label:Infor]
-Initially published at 19:40 on 2025-05-13 in Beijing.
+Initially published by YiDingg at 19:40 on 2025-05-13 in Beijing.
 
 ## Intro 
 

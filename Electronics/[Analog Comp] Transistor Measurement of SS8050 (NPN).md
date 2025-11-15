@@ -1,7 +1,7 @@
 # Transistor Measurement of SS8050 (NPN) (NPN 三极管 SS8050 的测试实验记录)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 09:31 on 2025-03-15 in Beijing.
+> Initially published by YiDingg at 09:31 on 2025-03-15 in Beijing.
 
 
 ## SS8050 实验记录

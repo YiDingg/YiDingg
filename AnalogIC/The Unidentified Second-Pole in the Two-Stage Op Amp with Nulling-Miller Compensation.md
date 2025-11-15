@@ -1,7 +1,7 @@
 # The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation
 
 > [!Note|style:callout|label:Infor]
-Initially published at 14:44 on 2025-06-22 in Beijing.
+Initially published by YiDingg at 14:44 on 2025-06-22 in Beijing.
 
 ## Introduction
 

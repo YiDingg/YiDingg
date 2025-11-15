@@ -1,7 +1,7 @@
 # Use Virtuoso Efficiently - 2. File Transfer using Shared Folders
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 18:35 on 2025-07-22 in Beijing.
+> Initially published by YiDingg at 18:35 on 2025-07-22 in Beijing.
 
 
 ## 1. 背景

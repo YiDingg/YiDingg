@@ -1,7 +1,7 @@
 # How to Use Cadence Efficiently
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 17:05 on 2025-05-20 in Beijing.
+> Initially published by YiDingg at 17:05 on 2025-05-20 in Beijing.
 
 
 Cadence 相关教程见 [知乎 > YiDingg > Cadence Virtuoso (IC618) 教程汇总](https://zhuanlan.zhihu.com/p/1923539215657959730).
@@ -653,6 +653,73 @@ notifyStarLevelSettingsNotAppliedToAll->applyStarLevelSettingsToAll->value= t
 hiFormDone(notifyStarLevelSettingsNotAppliedToAll)
 ```
 
+**下面是适用于 onc18 工艺库的 annotation 设置：**
+
+``` bash
+; Updated on 2025.11.02 By https://www.zhihu.com/people/YiDingg
+; 快速设置 schematic 界面上的 dc annotation, 标出器件的 region, id, self_gain 等参数
+
+name_processLibrary = "onc18"; 
+name_nmos = "nmosuhvt1p8v" ;  NMOS 
+name_pmos = "pmosuhvt1p8v" ;  PMOS 
+schSingleSelectPt()
+asaEditCompDisplay()
+
+;  nmos
+
+_annInstanceChanged(annotationSetupForm->annNativeWidget name_processLibrary "*" "*")
+_annInstanceChanged(annotationSetupForm->annNativeWidget name_processLibrary name_nmos "*")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (9 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 9 3 "region")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (10 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 10 3 "id")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (11 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 11 3 "gm/(2*3.14*cgg)")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (12 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 12 3 "vdsat")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (13 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 13 3 "gm/gds")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (14 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 14 3 "1/gds")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (15 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 15 3 "gm")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (16 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 16 3 "gm/id")
+
+; 
+_annApplyAndRedraw(hiGetCurrentWindow())
+
+;  pmos
+_annInstanceChanged(annotationSetupForm->annNativeWidget name_processLibrary "*" "*")
+_annInstanceChanged(annotationSetupForm->annNativeWidget name_processLibrary name_pmos "*")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (9 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 9 3 "region")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (10 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 10 3 "(-id)")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (11 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 11 3 "gm/(2*3.14*cgg)")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (12 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 12 3 "(-vdsat)")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (13 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 13 3 "gm/gds")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (14 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 14 3 "1/gds")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (15 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 15 3 "gm")
+_annSelectItem(annotationSetupForm->annNativeWidget "'(  (16 3)  )")
+_annSetData(annotationSetupForm->annNativeWidget 16 3 "gm/(-id)")
+; 
+_annApplyAndRedraw(hiGetCurrentWindow())
+_annOKFormCB(hiGetCurrentWindow())
+
+; 
+hiiSetCurrentForm('notifyStarLevelSettingsNotAppliedToAll)
+notifyStarLevelSettingsNotAppliedToAll->dontShowStarLevelSettingsWarning->value= t
+notifyStarLevelSettingsNotAppliedToAll->applyStarLevelSettingsToAll->value= t
+hiFormDone(notifyStarLevelSettingsNotAppliedToAll)
+```
+
+
 ### 2. output GBW and PM
 
 参考 [知乎 > AC 仿真中直接打印 GBW 和 PM 的设置方法【cadence使用】](https://zhuanlan.zhihu.com/p/681899170)
@@ -876,6 +943,16 @@ cp /home/IC/.cdsenv /home/IC/a_Win_VM_shared/Cadence_backup/Cadence_backup_20251
 
 
 Loading the Specified .cdsinit File from Another Workspace: 参考 https://wiki.to.infn.it/vlsi/workbook/analog/cdsenv
+
+## 8. 虚拟机瘦身
+
+虚拟机越用越大，占用磁盘空间越来越多，可以回收虚拟机空闲空间来减小虚拟机文件的大小。参考这两篇文章中的 `sudo vmware-toolbox-cmd disk shrink /` 方法即可：
+- [博客园 > VMware-Windows 虚拟机清理空间大的问题](https://www.cnblogs.com/autopwn/p/18020250)
+- [CSDN > 6 种方法给 Vmware 虚拟机清理瘦身](https://blog.csdn.net/qq_45300786/article/details/122735744)
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-09-20-48-35_Virtuoso Tutorials - 1. How to Install Cadence IC618.png"/></div>
+
+原 190 GB 的虚拟机，清理后变成 135 GB, 节省了 55 GB 的空间。
 
 ## Fix Bugs and Errors
 

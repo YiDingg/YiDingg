@@ -1,7 +1,7 @@
 # LTEX
 
 > [!Note|style:callout|label:Infor]
-Initially published at 18:06 on 2024-12-15 in Beijing.
+Initially published by YiDingg at 18:06 on 2024-12-15 in Beijing.
 
 ## 安装 LTEX
 直接在 VSCode 中搜索 `LTEX`，点击安装即可，注意区分不同作者的相似插件。

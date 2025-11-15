@@ -1,7 +1,7 @@
 # A Basic Two-Stage Op Amp with Nulling-Miller Compensation for Low-Voltage BGR in 28nm CMOS Technology
 
 > [!Note|style:callout|label:Infor]
-Initially published at 02:01 on 2025-07-17 in Beijing.
+Initially published by YiDingg at 02:01 on 2025-07-17 in Beijing.
 
 本次科研实践相关链接：
 - [Scientific Research Practice 1 (Low-Voltage BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)

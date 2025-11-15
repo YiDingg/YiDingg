@@ -1,7 +1,7 @@
 # Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 22:17 on 2025-06-05 in Beijing.
+> Initially published by YiDingg at 22:17 on 2025-06-05 in Beijing.
 
 ## Introduction
 

@@ -1,7 +1,7 @@
 # Correction of the AC Gain Equation in the ADI Op Amp Measurement Methods
 
 > [!Note|style:callout|label:Infor]
-Initially published at 16:13 on 2025-05-28 in Beijing.
+Initially published by YiDingg at 16:13 on 2025-05-28 in Beijing.
 
 ## Introduction
 

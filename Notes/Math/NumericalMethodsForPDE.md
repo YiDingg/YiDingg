@@ -1,7 +1,7 @@
 # Numerical Methods for PDE
 
 > [!Note|style:callout|label:Infor]
-Initially published at 19:53 on 2024-08-09 in Lincang.
+Initially published by YiDingg at 19:53 on 2024-08-09 in Lincang.
 
 
 ## Intro

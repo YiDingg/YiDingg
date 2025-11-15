@@ -1,7 +1,7 @@
 #  Optics <br> 光学
 
 > [!Note|style:callout|label:Infor]
-Initially published at 11:48 on 2024-08-23 in Lincang.
+Initially published by YiDingg at 11:48 on 2024-08-23 in Lincang.
 
 
 ## Notes 

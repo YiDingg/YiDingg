@@ -1,7 +1,7 @@
 # Basic Physics Experiment (1): Introductions 
 
 > [!Note|style:callout|label:Infor]
-Initially published at 13:42 on 2024-08-27 in Beijing.
+Initially published by YiDingg at 13:42 on 2024-08-27 in Beijing.
 
 
 本节课为绪论课，主要介绍物理实验的基本知识和实验方法。

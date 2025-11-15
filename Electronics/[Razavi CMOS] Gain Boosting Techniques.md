@@ -1,7 +1,7 @@
 # [Razavi CMOS] Gain Boosting Techniques
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 18:22 on 2025-05-18 in Beijing.
+> Initially published by YiDingg at 18:22 on 2025-05-18 in Beijing.
 
 ## Intro
 

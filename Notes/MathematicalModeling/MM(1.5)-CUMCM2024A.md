@@ -1,7 +1,7 @@
 # Mathematical Modeling (1.5): CUMCM 2024
 
 > [!Note|style:callout|label:Infor]
-Initially published at 13:31 on 2024-09-01 in Beijing.
+Initially published by YiDingg at 13:31 on 2024-09-01 in Beijing.
 
 ## 开赛前
 

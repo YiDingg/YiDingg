@@ -2,7 +2,7 @@
 
 
 > [!Note|style:callout|label:Infor]
-Initially published at 21:45 on 2024-08-19 in Lincang.
+Initially published by YiDingg at 21:45 on 2024-08-19 in Lincang.
 
 
 ## 理论

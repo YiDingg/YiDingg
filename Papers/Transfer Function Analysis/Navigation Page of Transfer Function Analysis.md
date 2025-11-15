@@ -1,7 +1,7 @@
 # Navigation Page of Transfer Function Analysis
 
 > [!Note|style:callout|label:Infor]
-Initially published at 16:11 on 2025-04-05 in Beijing.
+Initially published by YiDingg at 16:11 on 2025-04-05 in Beijing.
 
 ## Intro
 

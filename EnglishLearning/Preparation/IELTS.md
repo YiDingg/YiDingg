@@ -1,7 +1,7 @@
 # IELTS Preparation
 
 > [!Note|style:callout|label:Infor]
-Initially published at 01:26 on 2024-08-12 in Lincang.
+Initially published by YiDingg at 01:26 on 2024-08-12 in Lincang.
 
 
 ## Information 

@@ -1,7 +1,7 @@
 # Basic Op Amp Measurement Board (运算放大器参数测量板)
 
 > [!Note|style:callout|label:Infor]
-Initially published at 20:03 on 2025-02-12 in Lincang.
+Initially published by YiDingg at 20:03 on 2025-02-12 in Lincang.
 
 ## Infor
 

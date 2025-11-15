@@ -1,7 +1,7 @@
 # Razavi PLL - Chapter 2. Jitter and Phase Noise
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 19:59 on 2025-08-28 in Lincang.
+> Initially published by YiDingg at 19:59 on 2025-08-28 in Lincang.
 
 参考教材：[*Design of CMOS Phase-Locked Loops (Behzad Razavi) (1st Edition, 2020)*](https://www.zhihu.com/question/23142886/answer/108257466853)
 

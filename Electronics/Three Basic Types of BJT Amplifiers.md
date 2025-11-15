@@ -1,7 +1,7 @@
 # BJT (三极管) 三种基本放大器的增益、跨导与输出阻抗
 
 > [!Note|style:callout|label:Infor]
-Initially published at 00:22 on 2025-02-21 in Lincang.
+Initially published by YiDingg at 00:22 on 2025-02-21 in Lincang.
 
 ## 前言
 

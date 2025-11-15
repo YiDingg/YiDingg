@@ -1,7 +1,7 @@
 # BJT's Small-Signal Terminal Resistances (三极管的小信号节点电阻)
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 16:44 on 2025-03-05 in Beijing.
+> Initially published by YiDingg at 16:44 on 2025-03-05 in Beijing.
 
 
 ## 前言

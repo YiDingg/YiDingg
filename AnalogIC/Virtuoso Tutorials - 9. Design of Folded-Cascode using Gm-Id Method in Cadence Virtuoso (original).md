@@ -1,7 +1,7 @@
 # Design Example of Folded-Cascode using Gm-Id Method in Cadence Virtuoso
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 15:03 on 2025-06-02 in Beijing.
+> Initially published by YiDingg at 15:03 on 2025-06-02 in Beijing.
 
 !> **<span style='color:red'>Attention:</span>**<br>
 注意：本文所使用的 gm-Id 方法是错误的，这会导致对晶体管静态工作点的估计有很大偏差（仅有部分参数基本准确），详见 [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)；正确的 gm-Id 方法请见 [An Introduction to gm-Id Methodology](<AnalogIC/Virtuoso Tutorials - 5. An Introduction to gm-Id Methodology.md>)。

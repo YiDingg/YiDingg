@@ -1,7 +1,7 @@
 # How to Use ADE Assembler to Enhance Your Simulation Efficiency
 
 > [!Note|style:callout|label:Infor]
-> Initially published at 12:09 on 2025-06-20 in Beijing.
+> Initially published by YiDingg at 12:09 on 2025-06-20 in Beijing.
 
 
 ## Learn ADE Assembler 
