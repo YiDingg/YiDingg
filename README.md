@@ -31,7 +31,7 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-1%2C906%20hrs%209%20mins-blue)
+![Code Time](http://img.shields.io/badge/Code%20Time-1%2C908%20hrs%2021%20mins-blue)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.7%20million%20lines%20of%20code-blue)
 
@@ -60,15 +60,17 @@ Sunday                   211 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 9 hrs 13 mins       ██████████████░░░░░░░░░░░   56.86 % 
-TeX                      6 hrs 58 mins       ███████████░░░░░░░░░░░░░░   42.98 % 
-Git Config               1 min               ░░░░░░░░░░░░░░░░░░░░░░░░░   00.16 % 
-Other                    0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
+TeX                      7 hrs 50 mins       ██████████████░░░░░░░░░░░   57.99 % 
+Markdown                 4 hrs 32 mins       ████████░░░░░░░░░░░░░░░░░   33.62 % 
+V                        46 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   05.78 % 
+Tcl                      19 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.41 % 
+Git Config               1 min               ░░░░░░░░░░░░░░░░░░░░░░░░░   00.19 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               9 hrs 13 mins       ██████████████░░░░░░░░░░░   56.86 % 
-GH.UCAS-NonlinearCircuitE6 hrs 59 mins       ███████████░░░░░░░░░░░░░░   43.11 % 
-GH.UCAS-LinearCircuitExpe0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.03 % 
+GH.UCAS-NonlinearCircuitE7 hrs 52 mins       ███████████████░░░░░░░░░░   58.15 % 
+GH.YiDingg               4 hrs 32 mins       ████████░░░░░░░░░░░░░░░░░   33.62 % 
+GH.UCAS-DigitalCircuitExp1 hr 6 mins         ██░░░░░░░░░░░░░░░░░░░░░░░   08.20 % 
+GH.UCAS-LinearCircuitExpe0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.04 % 
 ```
 
 **I Mostly Code in TeX** 
@@ -84,7 +86,7 @@ Verilog                  1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2025.12.05 18:47 UTC
+ Last Updated on 2025.12.06 18:44 UTC
 <!--END_SECTION:waka-->
 
 <!-- Coding activity over the last year -->
