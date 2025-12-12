@@ -1264,5 +1264,6 @@ $$
 - [[9]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1661757) A. A. Abidi, “Phase Noise and Jitter in CMOS Ring Oscillators,” IEEE Journal of Solid-State Circuits, vol. 41, no. 8, pp. 1803–1816, Aug. 2006, [doi: 10.1109/JSSC.2006.876206.](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1661757)
 - [[10]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=766813) “Predicting the Phase Noise and Jitter of PLLBased Frequency Synthesizers,” in Phase-Locking in High-Performance Systems, IEEE, 2009. [doi: 10.1109/9780470545492.ch5.](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=766813)
 - [[11]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=658619) A. Hajimiri and T. H. Lee, “A general theory of phase noise in electrical oscillators,” IEEE Journal of Solid-State Circuits, vol. 33, no. 2, pp. 179–194, Feb. 1998, [doi: 10.1109/4.658619.](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=658619)
+- [[12] Phase Noise Characterization of Microwave Oscillators Frequency Discriminator Method](https://hpmemoryproject.org/an/pdf/pn11729C-2.pdf)
 
 

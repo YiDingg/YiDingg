@@ -52,10 +52,12 @@ Frequently used tools for my workflow:
 - PDF to EXCEL: [I Love PDF](https://www.ilovepdf.com/pdf_to_excel)
 - EPUB to PDF (9pt or 10pt): [FreeConvert](https://www.freeconvert.com/epub-to-pdf)
 - IMG to EXCEL: [Baimiao](https://web.baimiaoapp.com/image-to-excel)
+- PFD Translation: [IFlyTranslate](https://www.iflytranslate.com/doc-translate)
 
 Other tools:
 - Text comparing tool: [diffing_tool](https://csacademy.com/app/diffing_tool/)
 - Title: use [Capitalize](https://capitalizemytitle.com/style/APA/) <span class='tinyscript'>or [Wawa](https://www.iamwawa.cn/daxiaoxie.html)</span> to capitalize your titles, and use [Rewriter](https://capitalizemytitle.com/ai-title-rewriter/) to rewrite your title.
+- Table for LaTex: [LaTex Tables](https://www.latex-tables.com/)
 - Questionnaire survey (问卷调查): [aidaform](https://aidaform.com/)
 - Collection of e-books: 
     - (1) [GitCode > Open-source-documentation-tutorial](https://gitcode.com/org/Open-source-documentation-tutorial/repos)
@@ -63,6 +65,7 @@ Other tools:
     - (3) [**<span style='color:red'> Academic resource library of UIUC (伊利诺伊大学学术资源库) </span>**](https://www.ideals.illinois.edu/search)
     - (4) [ResearchGate](https://www.researchgate.net/publication/295256070_CMOS_Circuit_Design_Layout_and_Simulation_Third_Edition)
     - (5) [学霸盘](https://www.xuebapan.com/): 中学/考研教材教辅课件资料大全
+    - (6) [Semantic Scholar](https://www.semanticscholar.org/paper/) (全网免费下载)
 
 ### Graphics
 

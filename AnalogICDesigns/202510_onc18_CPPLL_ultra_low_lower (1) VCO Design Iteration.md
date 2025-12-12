@@ -3,7 +3,7 @@
 > [!Note|style:callout|label:Infor]
 > Initially published by YiDingg at 22:05 on 2025-09-23 in Beijing.
 
->注：本文是项目 [Design of An Ultra-Low-Power CP-PLL in ONC 180nm Technology](<Projects/Design of An Ultra-Low-Power CP-PLL in ONC 180nm Technology.md>) 的附属文档，用于记录 PLL 的设计过程和前仿结果。
+>注：本文是项目 [Design of An Ultra-Low-Power CP-PLL in ONC 180nm Technology](<Projects/Design of An Ultra-Low-Power CP-PLL in ONC 180nm Technology.md>) 的附属文档，用于全面记录 PLL 的设计/迭代/仿真/版图/后仿过程。
 
 ## 1. Design Exploration
 

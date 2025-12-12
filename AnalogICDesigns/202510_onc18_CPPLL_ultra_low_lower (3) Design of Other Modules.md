@@ -1,9 +1,9 @@
-# 202510_onc18_CPPLL_ultra_low_lower (3) - Other Modules
+# 202510_onc18_CPPLL_ultra_low_lower (3) Design of Other Modules
 
 > [!Note|style:callout|label:Infor]
 > Initially published by YiDingg at 17:46 on 2025-10-23 in Beijing.
 
->注：本文是项目 [Design of An Ultra-Low-Power CP-PLL in ONC 180nm Technology](<Projects/Design of An Ultra-Low-Power CP-PLL in ONC 180nm Technology.md>) 的附属文档，用于记录 PLL 的设计过程和前仿结果。
+>注：本文是项目 [Design of An Ultra-Low-Power CP-PLL in ONC 180nm Technology](<Projects/Design of An Ultra-Low-Power CP-PLL in ONC 180nm Technology.md>) 的附属文档，用于全面记录 PLL 的设计/迭代/仿真/版图/后仿过程。
 
 
 续前文 [202510_onc18_CPPLL_ultra_low_lower (2) VCO Iteration and Layout](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (2) VCO Iteration and Layout.md>), 本文继续记录 PLL 的设计进展。
@@ -557,7 +557,7 @@ Spectre X + CX 仿真结果如下：
 ### 9.2 simul. verification
 
 算上原来的环路参数，一共是 7 种组合，对两种 RVCO 都进行仿真，详细设置如下：
-- (1) PFD (1 point): 使用 `PFD_NOR_v1`，也就是旧的 NOR-based PFD/CP with (KA, WN, L) = (2.5, 0.84, 0.18)
+- (1) PFD (1 point): `PFD_ANDrst` with (KA, WN, L) = (2.5, 0.84, 0.18)
 - (2) CP (1 point): 使用 NO pass gate 版本的 CP, 数字部分尺寸与 PFD 保持一致
 - (3) LPF (14 points): 上面列出的 7 种组合，以及每种组合使用 alpha = C2/C1 = {1/8, 1/4} 两种
     - alpha = C2/C1 = {1/8, 1/4}
@@ -801,7 +801,7 @@ $ phase_noise_1kHz-offset @ RVCO1
 ### 9.4 simul. verification
 
 上面给出了 14 组环路参数，再算上两个 RVCO 后一共是 28 种组合，这里先进行 Spectre FX 验证，仿真设置与结果如下：
-- (1) PFD (1 point): 使用 `PFD_NOR_v1`，也就是旧的 NOR-based PFD/CP with (KA, WN, L) = (2.5, 0.84, 0.18)
+- (1) PFD (1 point): `PFD_ANDrst` with (KA, WN, L) = (2.5, 0.84, 0.18)
 - (2) CP (1 point): 使用 NO pass gate 版本的 CP, 数字部分尺寸与 PFD 保持一致, 模拟部分尺寸仍是 (KA, WN, L) = (2.5, 0.42, 8.00)
 - (3) LPF (14 points): 上图列出的 14 种组合，具体参数为
     - I_P = {12n    20n    20n    8n     12n    20n    20n    20n    10n    10n    15n    15n    20n    20n}
@@ -970,7 +970,7 @@ $ C1 @ RVCO1
 
 
 由于 analog_KA of CP 对环路的影响难以评估，我们直接在 PLL 环路中设置 KA = 1.0 ~ 3.0 进行仿真，具体设置如下：
-- (1) PFD (1 point): 使用 `PFD_NOR_v1`，也就是旧的 NOR-based PFD/CP with (KA, WN, L) = (2.5, 0.84, 0.18)
+- (1) PFD (1 point): `PFD_ANDrst` with (KA, WN, L) = (2.5, 0.84, 0.18)
 - (2) CP (5 points): 使用 NO pass gate 版本的 CP, 数字部分尺寸与 PFD 保持一致，模拟部分尺寸基本不变，只改变 KA:
     - KA = {1.0, 1.5, 2.0, 2.5, 3.0}, WN = 0.42, L = 8.00
 - (3) LPF (1 point): 使用分别对应 RVCO1/2 最佳点的 LPF 参数
@@ -1001,7 +1001,7 @@ Spectre X + CX 仿真结果如下：
 
 在上面 analog ka of CP = 2.0 的基础上，我们继续优化 alpha = C2/C1 对相噪的影响，具体设置如下：
 
-- (1) PFD (1 point): 使用 `PFD_NOR_v1`，也就是旧的 NOR-based PFD/CP with (KA, WN, L) = (2.5, 0.84, 0.18)
+- (1) PFD (1 point): `PFD_ANDrst` with (KA, WN, L) = (2.5, 0.84, 0.18)
 - (2) CP (1 point): 使用 NO pass gate 版本的 CP, 数字部分尺寸与 PFD 保持一致，模拟部分尺寸为 (KA, WN, L) = (**2.0**, 0.42, 8.00)
 - (3) LPF (5 points): 使用分别对应 RVCO1/2 最佳点的 LPF 参数
     - RVCO1: (IP, R1, C1) = (20 nA, 10.52 MOhm, 23.75 pF)
@@ -1036,7 +1036,7 @@ Spectre X + CX 仿真结果如下：
 
 
 之前我们的 FD 都是一直用 (KA, WN, L) = (1.0, 0.42, 0.18) 的保守尺寸，主要是担心更大尺寸功耗过高，但其实 FD 对相噪也有一定影响，因此也尝试优化一下 FD 尺寸，具体设置如下：
-- (1) PFD (1 point): 仍然使用 `PFD_NOR_v1`，也就是旧的 NOR-based PFD/CP with (KA, WN, L) = (2.5, 0.84, 0.18)
+- (1) PFD (1 point): `PFD_ANDrst` with (KA, WN, L) = (2.5, 0.84, 0.18)
 - (2) CP (1 point): 模拟尺寸为 (KA, WN, L) = (2.0, 0.42, 8.00), 数字部分尺寸与 PFD 保持一致
 - (3) LPF (1 point): 使用刚刚得到的两组最佳 LPF 参数
     - RVCO1: (IP, R1, C1, alpha) = **(20 nA, 10.5 MOhm, 24 pF, 1/12)**
@@ -1118,7 +1118,7 @@ Spectre X + CX 仿真结果如下：
 
 
 然后用 Spectre X + CX 进行正式仿真，具体设置如下：
-- (1) PFD (1 point): 仍然使用 `PFD_NOR_v1`，也即 NOR-based PFD/CP with (KA, WN, L) = (2.5, 0.84, 0.18)
+- (1) PFD (1 point): `PFD_ANDrst` with (KA, WN, L) = (2.5, 0.84, 0.18)
 - (2) CP (1 point): 模拟尺寸为 (KA, WN, L) = (2.0, 0.42, 8.00), 数字部分尺寸与 PFD 保持一致
 - (3) LPF (1 point): 使用两组最佳 LPF 参数
     - RVCO1: (IP, R1, C1, alpha) = **(20 nA, 10.5 MOhm, 24 pF, 1/12)**
@@ -1227,7 +1227,7 @@ Spectre X + CX 仿真结果如下：
 原先 CP 共消耗电流 $I_{DD,CP} = 3I_B = 3 I_P = 60 \ \mathrm{nA}$，现在作出修改：一方面将主支路电流设置为 $I_P = 4I_B$，两个偏置支路电流分别为 $I_B$；另一方面，给 CP 加上一个 OTA, 其偏置直接由 CP 偏置支路给出 (5 nA)。于是 CP 共消耗电流 $I_{DD,CP} = 6 I_B \sim 7 I_B = 1.5 I_P \sim 1.75 I_P = 30 \ \mathrm{nA} \sim 35 \ \mathrm{nA}$，**相比了之前起码节省了 25 nA.**
 
 先用 Spectre FX + AX 简单测试，然后用 Spectre X + CX 进行 (全工艺角) 正式仿真，具体设置如下：
-- (1) PFD (1 point): 仍然使用 `PFD_NOR_v1`，也即 NOR-based PFD/CP with (KA, WN, L) = (2.5, 0.84, 0.18)
+- (1) PFD (1 point): `PFD_ANDrst` with (KA, WN, L) = (2.5, 0.84, 0.18)
 - (2) CP (1 point): 由于输出尾电流源改成了 `multiplier = 4`，因此适当增加长度， **模拟尺寸为 (KA, WN, L) = (2.0, 0.42, 10.0)**, 数字部分尺寸与 PFD 保持一致
 - (3) LPF (1 point): 使用两组最佳 LPF 参数
     - RVCO1: (IP, R1, C1, alpha) = **(20 nA, 10.5 MOhm, 24 pF, 1/12)**
@@ -1303,7 +1303,7 @@ Spectre X + CX 仿真结果如下：
 上面的 VDD 仅含 300 kHz 正弦纹波，接下来验证一下环路在不同电源纹波下的性能。
 
 用 Spectre X + CX 进行仿真，具体设置如下：
-- (1) PFD (1 point): 仍然使用 `PFD_NOR_v1`，也即 NOR-based PFD/CP with (KA, WN, L) = (2.5, 0.84, 0.18)
+- (1) PFD (1 point): `PFD_ANDrst` with (KA, WN, L) = (2.5, 0.84, 0.18)
 - (2) CP (1 point): 由于输出尾电流源改成了 `multiplier = 4`，因此适当增加长度， **模拟尺寸为 (KA, WN, L) = (2.0, 0.42, 10.0)**, 数字部分尺寸与 PFD 保持一致
 - (3) LPF (1 point): 使用两组最佳 LPF 参数
     - RVCO1: (IP, R1, C1, alpha) = **(20 nA, 10.5 MOhm, 24 pF, 1/12)**
@@ -1334,206 +1334,3 @@ Spectre X + CX 仿真结果如下：
 </div>
 
 
-## 15. Pre-Layout Simulation
-
-### 15.1 analog MUX4
-
-<div class='center'>
-
-| 我们采用的 Analog MUX 结构 | 其它参考资料 | 其它参考资料 |
-|:-:|:-:|:-:|
- | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-14-23-37-33_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> | [TI Documents > Basics of Analog Multiplexers 1](https://www.ti.com.cn/content/dam/videos/external-videos/en-us/1/3816841626001/5125907075001.mp4/subassets/switches-and-muxes-on-resistance-flatness-and-on-capacitance-presentation-quiz.pdf) <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-14-18-35-39_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-14-18-36-06_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> | [ADI MT-088 Tutorial > Analog Switches and Multiplexers Basics](https://www.analog.com/media/en/training-seminars/tutorials/MT-088.pdf) <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-14-18-39-00_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> |
-
-</div>
-
-仿真验证：
-
-<div class='center'>
-
-| testbench 原理图 | 仿真结果 |  |
-|:-:|:-:|:-:|
- | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-14-23-40-03_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-14-23-41-01_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> |  |
-</div>
-
-### 15.2 big buffer
-
-这一小节来设计引到 PAD 用于测试的 clk buffer, 仿真结果如下：
-
-<div class='center'>
-
-| Buffer Chain 简单测试 |  |  |
-|:-:|:-:|:-:|
- | testbench 原理图 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-15-00-23-45_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> | 单个 Buffer Chain 带载能力 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-15-00-04-56_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> | 两个 Buffer Chain (级联) 带载能力 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-15-00-07-38_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> |
- | 综合考虑版图安排，固定尺寸为 **wg/lg = 3.60/0.18 (a = 20)**, 考察 ka 对带载能力影响 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-15-00-25-42_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> | 固定尺寸为 **(ka, wg, lg) = (2, 3.6, 0.18)**, 进一步仿真带载能力 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-15-00-34-34_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> |  |
-</div>
-
-**2025.11.15 01:12 注: 上面这个表的仿真, BUF 参数设置错误，固定为了 (ka, wg, lg) = (2.5, 0.84, 0.18), multiplier 倒是正确设置了，所以才会出现带载能力与尺寸完全无关的 "错误结果"。**
-
-有了基本的设计框架后，我们需要对 buffer chain 的抖动进行优化：
-
-<div class='center'>
-
-| 设置 transient noise f_max = 10 x (8 x f_ref) 进行抖动测试 (CL = 20 pF) |  |  |
-|:-:|:-:|
- | **(ka, wg, lg) = (2.5, 0.84, 0.18)** 时的抖动表现： <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-15-01-07-07_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> | 左图可以看出，buffer chain 带来的额外抖动很小，放在环路中应该也是类似的效果，负面效果可以忽略 |
- | 不同尺寸下的性能 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-15-01-19-13_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> |  |  |
-</div>
-
-### 15. actual cap and res
-
-**<span style='color:red'> LPF 中的电容改用 `cmimhc` 来实现 (multiplier x 0.5 pF)，电阻的话，改用 `rppolyhr` (multiplier 0.5 MOhm) </span>**
-
-<div class='center'>
-
-| 高密度电阻 rnwsti 与 rppolyhr 对比 |
-|:-:|
- | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-15-01-52-43_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> |
- | 尽管 rnwsti 的 PC (process coefficient) 系数较小，但其温度系数较大，在 100°C 跨度下变化量达到 0.4 (40 %)；反过来看, rppolyhr 具有更高的电阻密度和更小的温度系数，因此我们选择 rppolyhr 作为具体电阻实现 |
- | 将 `cmimhc` 和 `rppolyhr` 封装成 pcell, 版图效果如下 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-15-02-18-07_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> |
- | 在当前工艺库设置下 (m5t08), `cmimhc` 的两端分别在 M4 和 M5 (m5t08), `rppolyhr` 的两端则在  |
-</div>
-
-
-### 15.3 pre-layout simulation
-
-
-## x. Iteration Summary
-
-<!-- <div class='center'>
-
-| Time | Summary | Results Overview | 
-|:-:|:-:|:-:|
- | 2025.11.04 (1) | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-07-00-08-35_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-06-23-55-35_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> |
- | 2025.11.04 (2) | x | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-06-23-34-46_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> |
- | 2025.11.05 (1) | x | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-06-23-36-49_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> |
- | 2025.11.05 (2) (PFD optimization) | x | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-06-23-31-27_202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.png"/></div> |
- | 2025.11.07 (LPF optimization - lower BW) |  |  |
- | 2025.11.08 (LPF optimization - lower tau_P, higher zeta) |  |  |
-</div>
- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**<span style='color:red'> ！！！！！ Macro Model Name 没改 </span>**
-
-
-
-**FD 不仅要能在低频工作，高频也是需要的？**
-
-
-
-
-## x. Experience Summary
- 
-- Verilog-A 代码修改后却 "没有变化" 时，记得在 verilog 界面点击左上角的保存按钮 `Build a databese of instances, nets and pins found in file`，这会重新提取 verilog 代码对应网表；如果还不行，可能是原理图未刷新导致的，重新放置器件即可。 
-- 在 Assembler 的 Global Variables 处右键可以 Add Config Sweep.
-- VCO 输出波形 (CK_OUT) 占空比不为 50% 时，不会对 CK_FB 产生影响，因为 PFD 比较的是两路时钟的上升沿对齐情况，即便 CK_FB 是窄脉冲也可以正常工作
-- 偶数分频 (2 分频) 可以完全修正时钟占空比，奇数分配只能部分修正，具体如下：
-
-$$
-\begin{gather}
-N = 2k + 1 \Longrightarrow  D' = \frac{100\%\times k + D}{100\%\times (2k + 1)} = \frac{D  - 50\%}{N} + 50\% 
-\\
-\mathrm{for\ example:}\ D = 53\%,\ N = 15 \Longrightarrow D' = \frac{53\% - 50\%}{15} + 50\% = 50.2\%
-\end{gather}
-$$
-
-
-- global 变量用于扫描，sweep 变量由于存放最佳值
-- VCO 设置时分为 VCO_core 和 VCO_buffer 两部分，方便迭代
-- Current-Starved Ring VCO: VDD = 1.2\*Vth ~ 2.8\*Vth 有良好性能；如果要求功耗尽量低，那么 1.5\*Vth 左右能在保证其它性能的前提下尽量降低功耗；综合性能最优的点一般在 2.0\*Vth 附近
-- 蒙卡点数太少是看不了 mismatch contribution 的，例如只设了 10 个点不行，改成 100 个点后可以
-- **Analog multiplexers can be used as digital multiplexers too however digital multiplexers cannot be used as analog multiplexers.**
-- 对小面积 nA 级低功耗设计而言，除寄生电容影响外，后仿总比前仿功耗高出 40 nA ~ 100 nA 不等 (与版图面积有关)，这是因为后仿考虑了版图寄生器件漏电流的影响 (主要是寄生 PN 结)
-
-
-
-模块文件结构：
-``` bash
-2025_PLL_RVCO1_layout
-    schematic
-    layout
-    symbol
-```
-
-
-做完一个版本后复制（备份）到另一个 cell: **<span style='color:red'> (注意修改复制后新 cell > layout 的 reference source) </span>**
-
-``` bash
-2025_PLL_RVCO1_layout_v1
-    schematic
-    layout
-    symbol
-    v1_10272243_PEX_HSPICE
-    v1_10272243_layout
-```
-
-
-v1_10272243_layout 是为了再次备份，因为后面有可能修改 v1 的 layout，此时可保存为 v1_10281026_layout (仍属于 v1)
-另外，将寄生网表复制到主 cell (config 均使用主 cell，直接从此处调用寄生网表)，最终得到这样的结构：
-
-``` bash
-2025_PLL_RVCO1_layout
-    schematic
-    layout
-    symbol
-    v1_10272243_PEX_HSPICE
-    v1_10281026_PEX_HSPICE
-    v2_10290000_PEX_HSPICE
-
-2025_PLL_RVCO1_layout_v1
-    schematic
-    layout (注意修改复制后新 cell > layout 的 reference source)
-    symbol
-    v1_10272243_layout
-    v1_10272243_PEX_HSPICE
-    v1_10281026_layout
-    v1_10281026_PEX_HSPICE
-
-
-2025_PLL_RVCO1_layout_v2
-    schematic
-    layout (注意修改复制后新 cell > layout 的 reference source)
-    symbol
-    v2_10290000_layout
-    v2_10290000_PEX_HSPICE
-```
-
-这样的好处是，可以直接用 config sweep 快速切换 2025_PLL_RVCO1_layout 的 schematic/v1_PEX/v2_PEX, 十分方便。
-
-
-- 想要 annotate DC operating points 时，直接在 ADE results 处找到想看的工艺角或特定参数，右键选择 `annotate > DC Operating Points` 即可，这样就会自动选择对应参数下的直流工作点结果，显示在原理图上 (配合我们的设置代码即可快速查看晶体管的各个关键参数)
-- 对于具有 Negative K_VCO 的锁相环 (假设锁定时控制电压在 VDD/2 附近，不过高或过低)，滤波器 LPF 的 "地" 端有两种基本接法：
-    - (1) 接 VDD: 上电之后 V_CT = VDD (最大值)，VCO 频率最低，PLL 需要 "向高频锁定"，锁定时间较长？但是对环路模块 (主要是第一级 FD) 的频率要求大大降低； **如何 "打破" f_out/2 的假锁定状态？**
-    - (2) 接 VSS: 上电之后 V_CT = VSS = 0 (最小值)，VCO 频率最高，PLL 需要 "向低频锁定"，锁定时间较短？但是对环路模块 (主要是第一级 FD) 的频率要求较高；也就是说，如果 FD 的最大工作频率不足以覆盖此频率，锁定过程中可能会出现一些问题； **如何 "打破" 2\*f_out 的假锁定状态？**
-- VCT 可以设置初始值以加快环路锁定，节省一些时间来仿真稳定后的性能，但是 VDD 最好给充足的 delay 再上电，以避免可能出现的时序或其它问题；
-- LPF to VSS/VDD 对 FD 的高频要求不同，如果上电后频率是从低向高锁定，则 FD 高频要求较低，反之则要求较高
-- 中高频锁相环 (output > 100 MHz) 的闭环环路带宽比 (f_REF/f_BW) 常常会做到 100 以上，以获得更低的相位噪声 (尤其是低频段)，通常是 150 ~ 500 居多。对于分频比较高的锁相环又如何？
-- 对于 CP-PLL, the dead zone of PFD/CP 对整个环路的 Je_rms 影响较大 (因为 Je 是很长时间的 "累积" 抖动)，死区大时，输出相位越有可能接近死区边界，这时便有较大的相位噪声/抖动。举个例子，假设 PFD/CP 对 delay = ±2% 以内都没有反应，也就是 dead zone = -2% ~ +2%, 如果这段死区内的等效电流 $I_{dz}$ 非常小，几乎相当于 "没有电流"，就会导致环路的 RMS phase noise 达到 $2\pi \times 2\% = 0.1257 \ \mathrm{rad} = 7.2^\circ$，这在低抖动时钟系统中是完全不可接受的。这个现象在 nominal $I_P$ 较小时尤为明显，比如 nA-level 低功耗设计。
-- 可以用 **`basic > patch`** 元件来短接两个具有不同 net name 的网络，这在版图中也是能正常过的 (版图中会将两网络合二为一，同时保持正确的对应关系)，LVS 能不能过还待验证；但是注意，`patch` 仅能短接两个 net 或者 1 pin + 1 net, 但是不能短接两个 pin (会报错)。与之类似的还有 `basic > cds_thru` 元件 [(here)](https://zhuanlan.zhihu.com/p/370333465)，这个元件其实更好用，一方面它可以短接两个 pin, 另一方面可以明确知道两个 net 到底共用哪个名字 (src 和 dst 两个端口，公用 src 端口的 net name)，数字电路在综合时 (如果需要 "短接") 常常就是自动生成了这个元件，它的版图和 LVS 都能正常通过 (LVS 是利用了 `lvs ignore = true` 来实现的)
-- 作图之后，可以通过 `Graph > Edge Browser` 查看边沿的各种信息
-- 封装 pcell (parameterized cell) 时，`4*pPar("mu")` 不行但是 `pPar("mu")*4` 可以

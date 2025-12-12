@@ -24,12 +24,18 @@
 
 ## 3. 基本操作
 
-### 3.1 创建工程
+### 3.1 基本使用
 
-打开 `Capture CIS 16.6`，在弹出的产品选择对话框中选择 `OrCAD Capture CIS`.
+打开 `Capture CIS 16.6`，在弹出的产品选择对话框中选择 `OrCAD Capture CIS`:
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-13-14-13-31_NCE 数字电路实验 - 0. 课程信息与准备.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-13-14-21-42_NCE 数字电路实验 - 0. 课程信息与准备.png"/></div>
+
+原理图设计完成后在 `Tools > Design Rule Check` 中进行 DRC 检查，确保原理图没有错误。
+
+PCB 设计的话选择 `Allegro Enterprise PCB Designer Suite`:
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-20-13-43-52_NCE 非线性电路实验 - 0. 课程信息与准备.png"/></div>
 
 ### 2.x usage and tips
 

@@ -778,57 +778,243 @@ startFinde(); 打开 "Cadence SKILL API Finder", 用于查找函数及其定义
 在 schematic 界面打开后，我们可以运行下面的代码以快速导出 image:
 
 ``` bash
-; 以原样式导出 (已测试过无问题)
-    hiExportImageDialog(getCurrentWindow()) ; 打开 export image 窗口
-    ExportImageDialog->fileName->value = "/home/IC/a_Win_VM_shared/a_Misc/schematic.png" ; 设置导出为 image 时的路径
-    ExportImageDialog->entireDesign->value = t ; 设置导出整个 schematic
-    ExportImageDialog->save->value = t  ; 执行导出操作
-    ExportImageDialog->close->value = t ; 关闭 export image 窗口
-```
-
-
-``` bash
-; 以白底黑线导出, 带 dotting (已测试过无问题)
-    hiExportImageDialog(getCurrentWindow()) ; 打开 export image 窗口
-    ExportImageDialog->fileName->value = "/home/IC/a_Win_VM_shared/a_Misc/schematic.png" ; 设置导出为 image 时的路径
-    ExportImageDialog->entireDesign->value = t ; 设置导出整个 schematic
-    ExportImageDialog->biColor->value = t ; 设置颜色样式为 bi-color
-    ExportImageDialog->swapFgBgColors->value = nil ; 先重置 swap 选项 (因为重新 open 一个 schematic, 新 sch 的 value 没有被重置, 仍是 t, 本质是设置为 nil 或 t 时才会触发相关动作)
-    ExportImageDialog->swapFgBgColors->value = t ; 再开启 swap
-    ExportImageDialog->save->value = t  ; 执行导出操作
-    ExportImageDialog->close->value = t ; 关闭 export image 窗口
-```
-
-``` bash
-; 以白底黑线导出, 不带 dotting (已测试过无问题)
+; 以黑底彩色样式导出, 不带 dotting (已测试过无问题)
+    fileName = "/home/dy2025/Desktop/Work/00_File_Library/Cadence_Data/schematic_0.png";
     ; 先修改 dotting, 导出后再修改回来
     schHiDisplayOptions() ; 打开 schematic display options 窗口
+    ditting_style = schDisplayOptionsForm->gridType->value ; 记录当前的 dotting 设置
     schDisplayOptionsForm->gridType->value="none" ; 设置网格类型为 none
     _hiFormApplyCB(schDisplayOptionsForm) ; 应用已修改的 display options 结构体
     hiFormDone(schDisplayOptionsForm) ; 关闭 schDisplayOptionsForm
-    ; 以白底黑线导出
+    ; 设置样式并执行导出操作
     hiExportImageDialog(getCurrentWindow()) ; 打开 export image 窗口
-    ExportImageDialog->fileName->value = "/home/IC/a_Win_VM_shared/a_Misc/schematic.png" ; 设置导出为 image 时的路径
+    ExportImageDialog->reset->value = t ; 重置 export 的各项设置 (默认黑底)
+    ExportImageDialog->fileName->value = fileName; 设置导出为 image 时的路径
     ExportImageDialog->entireDesign->value = t ; 设置导出整个 schematic
-    ExportImageDialog->biColor->value = t ; 设置颜色样式为 bi-color
-    ExportImageDialog->swapFgBgColors->value = nil ; 先重置 swap 选项 (因为重新 open 一个 schematic, 新 sch 的 value 没有被重置, 仍是 t, 本质是设置为 nil 或 t 时才会触发相关动作)
-    ExportImageDialog->swapFgBgColors->value = t ; 再开启 swap
+    ExportImageDialog->fullColor->value = t ; 使用 full color 选项
     ExportImageDialog->save->value = t  ; 执行导出操作
     ExportImageDialog->close->value = t ; 关闭 export image 窗口
     ; 恢复 dotting 设置
     schHiDisplayOptions() ; 打开 schematic display options 窗口
-    schDisplayOptionsForm->gridType->value="dotted" ; 恢复网格类型为 dotted
+    schDisplayOptionsForm->gridType->value=ditting_style ; 恢复网格类型为 dotted
     _hiFormApplyCB(schDisplayOptionsForm) ; 应用已修改的 display options 结构体
     hiFormCancel(schDisplayOptionsForm) ; 关闭 schematic display options 窗口
     hiFormDone(schDisplayOptionsForm) ; 关闭 schDisplayOptionsForm
 ```
 
-但是，要如何实现打开 schematic 前就设置好默认导出路径，并且可以自定义导出的颜色？我们尝试了几个小时，仍未找到解决方案，只能作罢。
+``` bash
+; 以白底彩色样式导出, 不带 dotting (已测试过无问题)
+    fileName = "/home/dy2025/Desktop/Work/00_File_Library/Cadence_Data/schematic_0.png";
+    ; 先修改 dotting, 导出后再修改回来
+    schHiDisplayOptions() ; 打开 schematic display options 窗口
+    ditting_style = schDisplayOptionsForm->gridType->value ; 记录当前的 dotting 设置
+    schDisplayOptionsForm->gridType->value="none" ; 设置网格类型为 none
+    _hiFormApplyCB(schDisplayOptionsForm) ; 应用已修改的 display options 结构体
+    hiFormDone(schDisplayOptionsForm) ; 关闭 schDisplayOptionsForm
+    ; 设置样式并执行导出操作
+    hiExportImageDialog(getCurrentWindow()) ; 打开 export image 窗口
+    ExportImageDialog->reset->value = t ; 重置 export 的各项设置 (默认黑底)
+    ExportImageDialog->fileName->value = fileName; 设置导出为 image 时的路径
+    ExportImageDialog->entireDesign->value = t ; 设置导出整个 schematic
+    ExportImageDialog->fullColor->value = t ; 使用 full color 选项
+    ExportImageDialog->swapFgBgColors->value = t ; 交换 bg/fg 颜色
+    ExportImageDialog->save->value = t  ; 执行导出操作
+    ExportImageDialog->close->value = t ; 关闭 export image 窗口
+    ; 恢复 dotting 设置
+    schHiDisplayOptions() ; 打开 schematic display options 窗口
+    schDisplayOptionsForm->gridType->value=ditting_style ; 恢复网格类型为 dotted
+    _hiFormApplyCB(schDisplayOptionsForm) ; 应用已修改的 display options 结构体
+    hiFormCancel(schDisplayOptionsForm) ; 关闭 schematic display options 窗口
+    hiFormDone(schDisplayOptionsForm) ; 关闭 schDisplayOptionsForm
+```
+
+
+``` bash
+; ExportImageDialog->swapFgBgColors->value = t ; 交换 bg/fg 颜色
+
+; 以白底黑字导出, 带 dotting (已测试过无问题)
+    fileName = "/home/dy2025/Desktop/Work/00_File_Library/Cadence_Data/schematic_2.png";
+    hiExportImageDialog(getCurrentWindow()) ; 打开 export image 窗口
+    ExportImageDialog->reset->value = t ; 重置 export 的各项设置 (默认黑底)
+    ExportImageDialog->fileName->value = fileName ; 设置导出为 image 时的路径
+    ExportImageDialog->entireDesign->value = t ; 设置导出整个 schematic
+    ExportImageDialog->biColor->value = t ; 设置颜色样式为 bi-color
+    ExportImageDialog->swapFgBgColors->value = t ; 交换 bg/fg 颜色
+    ExportImageDialog->save->value = t  ; 执行导出操作
+    ExportImageDialog->fullColor->value = t ; 恢复 full color 选项
+    ExportImageDialog->close->value = t ; 关闭 export image 窗口
+```
+
+``` bash
+; 以白底黑字导出, 不带 dotting (已测试过无问题)
+    fileName = "/home/dy2025/Desktop/Work/00_File_Library/Cadence_Data/schematic_3.png";
+    ; 先修改 dotting, 导出后再修改回来
+    schHiDisplayOptions() ; 打开 schematic display options 窗口
+    ditting_style = schDisplayOptionsForm->gridType->value ; 记录当前的 dotting 设置
+    schDisplayOptionsForm->gridType->value="none" ; 设置网格类型为 none
+    _hiFormApplyCB(schDisplayOptionsForm) ; 应用已修改的 display options 结构体
+    hiFormDone(schDisplayOptionsForm) ; 关闭 schDisplayOptionsForm
+    ; 以白底黑线导出
+    hiExportImageDialog(getCurrentWindow()) ; 打开 export image 窗口
+    ExportImageDialog->reset->value = t ; 重置 export 的各项设置 (默认黑底)
+    ExportImageDialog->fileName->value = fileName ; 设置导出为 image 时的路径
+    ExportImageDialog->entireDesign->value = t ; 设置导出整个 schematic
+    ExportImageDialog->biColor->value = t ; 设置颜色样式为 bi-color
+    ExportImageDialog->swapFgBgColors->value = t ; 交换 bg/fg 颜色
+    ExportImageDialog->save->value = t  ; 执行导出操作
+    ExportImageDialog->fullColor->value = t ; 恢复 full color 选项
+    ExportImageDialog->close->value = t ; 关闭 export image 窗口
+    ; 恢复 dotting 设置
+    schHiDisplayOptions() ; 打开 schematic display options 窗口
+    schDisplayOptionsForm->gridType->value=ditting_style ; 恢复网格类型为 dotted
+    _hiFormApplyCB(schDisplayOptionsForm) ; 应用已修改的 display options 结构体
+    hiFormCancel(schDisplayOptionsForm) ; 关闭 schematic display options 窗口
+    hiFormDone(schDisplayOptionsForm) ; 关闭 schDisplayOptionsForm
+```
+
+``` bash
+; 以自定义颜色导出, 无 dotting (先选择 background, 再选择 Foreground) (已测试过无问题)
+    fileName = "/home/dy2025/Desktop/Work/00_File_Library/Cadence_Data/schematic_3.png";
+    ; 先修改 dotting, 导出后再修改回来
+    schHiDisplayOptions() ; 打开 schematic display options 窗口
+    ditting_style = schDisplayOptionsForm->gridType->value ; 记录当前的 dotting 设置
+    schDisplayOptionsForm->gridType->value="none" ; 设置网格类型为 none
+    _hiFormApplyCB(schDisplayOptionsForm) ; 应用已修改的 display options 结构体
+    hiFormDone(schDisplayOptionsForm) ; 关闭 schDisplayOptionsForm
+    ; 以白底黑线导出
+    hiExportImageDialog(getCurrentWindow()) ; 打开 export image 窗口
+    ExportImageDialog->reset->value = t ; 重置 export 的各项设置 (默认黑底)
+    ExportImageDialog->fileName->value = fileName ; 设置导出为 image 时的路径
+    ExportImageDialog->entireDesign->value = t ; 设置导出整个 schematic
+    ExportImageDialog->biColor->value = t ; 设置颜色样式为 bi-color
+    ExportImageDialog->swapFgBgColors->value = t ; 交换 bg/fg 颜色
+    ; 设置自定义颜色 (先 background 后 foreground)
+    ExportImageDialog->bgColorSelect->value = t
+    ExportImageDialog->fgColorSelect->value = t
+    ; 执行导出操作
+    ExportImageDialog->save->value = t  ; 执行导出操作
+    ExportImageDialog->fullColor->value = t ; 恢复 full color 选项
+    ExportImageDialog->close->value = t ; 关闭 export image 窗口
+    ; 恢复 dotting 设置
+    schHiDisplayOptions() ; 打开 schematic display options 窗口
+    schDisplayOptionsForm->gridType->value=ditting_style ; 恢复网格类型为 dotted
+    _hiFormApplyCB(schDisplayOptionsForm) ; 应用已修改的 display options 结构体
+    hiFormCancel(schDisplayOptionsForm) ; 关闭 schematic display options 窗口
+    hiFormDone(schDisplayOptionsForm) ; 关闭 schDisplayOptionsForm
+```
+
+
+<!-- 但是，要如何实现打开 schematic 前就设置好默认导出路径，并且可以自定义导出的颜色？我们尝试了几个小时，仍未找到解决方案，只能作罢。 -->
+
+### 1. Export Layout Img
+
+
+
+
+
+``` bash
+; 以白底彩色样式导出, 不带 dotting (已测试过无问题)
+    fileName = "/home/dy2025/Desktop/Work/00_File_Library/Cadence_Data/layout_0.png";
+    ; 先修改 dotting 和 axes, 导出后再修改回来
+    leHiEditDisplayOptions() ; 打开 display options 窗口
+    ditting_style = leDisplayOptionsForm->gridType->value ; 记录当前的 dotting 设置
+    axes_enable = leDisplayOptionsForm->options->axes->value ; 记录当前的 axes 设置
+    leDisplayOptionsForm->options->axes->value = nil ; 关闭 axes 显示
+    leDisplayOptionsForm->gridType->value="none"    ; 设置网格类型为 none
+    hiFormDone(leDisplayOptionsForm) ; 应用已修改的 display options 结构体
+    ; 修改 netname display 设置, 导出后再修改回来
+    _geNetNameDisplayOptionForm()
+    netname_enable = geNetNameDisplayOptionForm->netNameEnabled->value ; 记录当前的 netname 显示设置
+    geNetNameDisplayOptionForm->netNameEnabled->value= nil ; 关闭 netname 显示
+    hiFormDone(geNetNameDisplayOptionForm)
+    ; 设置样式并执行导出操作
+    hiExportImageDialog(getCurrentWindow()) ; 打开 export image 窗口
+    ExportImageDialog->reset->value = t ; 重置 export 的各项设置 (默认黑底)
+    ExportImageDialog->fileName->value = fileName; 设置导出为 image 时的路径
+    ExportImageDialog->entireDesign->value = t ; 设置导出整个 schematic
+    ExportImageDialog->fullColor->value = t ; 使用 full color 选项
+    ExportImageDialog->swapFgBgColors->value = t ; 交换 bg/fg 颜色
+    ExportImageDialog->save->value = t  ; 执行导出操作
+    ExportImageDialog->close->value = t ; 关闭 export image 窗口
+    ; 恢复 dotting 和 axes 设置
+    leHiEditDisplayOptions() ; 打开 display options 窗口
+    leDisplayOptionsForm->gridType->value=ditting_style ; 恢复网格类型为 dotted
+    leDisplayOptionsForm->options->axes->value = axes_enable ; 恢复 axes 设置
+    hiFormDone(leDisplayOptionsForm) ; 应用已修改的 display options 结构体
+    ; 恢复 netname display 设置
+    _geNetNameDisplayOptionForm()
+    geNetNameDisplayOptionForm->netNameEnabled->value= netname_enable ; 恢复 netname 设置
+    hiFormDone(geNetNameDisplayOptionForm)
+```
+
+最常用的 schematic 和 layout 图片导出：
+
+``` bash
+; 原理图以白底黑字导出, 不带 dotting (已测试过无问题)
+    name = "TEST";
+    fileName = strcat("/home/dy2025/Desktop/Work/00_File_Library/Cadence_Data/", name , "_schematic.png");
+    ; 先修改 dotting, 导出后再修改回来
+    schHiDisplayOptions() ; 打开 schematic display options 窗口
+    ditting_style = schDisplayOptionsForm->gridType->value ; 记录当前的 dotting 设置
+    schDisplayOptionsForm->gridType->value="none" ; 设置网格类型为 none
+    _hiFormApplyCB(schDisplayOptionsForm) ; 应用已修改的 display options 结构体
+    hiFormDone(schDisplayOptionsForm) ; 关闭 schDisplayOptionsForm
+    ; 以白底黑线导出
+    hiExportImageDialog(getCurrentWindow()) ; 打开 export image 窗口
+    ExportImageDialog->reset->value = t ; 重置 export 的各项设置 (默认黑底)
+    ExportImageDialog->fileName->value = fileName ; 设置导出为 image 时的路径
+    ExportImageDialog->entireDesign->value = t ; 设置导出整个 schematic
+    ExportImageDialog->biColor->value = t ; 设置颜色样式为 bi-color
+    ExportImageDialog->swapFgBgColors->value = t ; 交换 bg/fg 颜色
+    ExportImageDialog->save->value = t  ; 执行导出操作
+    ExportImageDialog->fullColor->value = t ; 恢复 full color 选项
+    ExportImageDialog->close->value = t ; 关闭 export image 窗口
+    ; 恢复 dotting 设置
+    schHiDisplayOptions() ; 打开 schematic display options 窗口
+    schDisplayOptionsForm->gridType->value=ditting_style ; 恢复网格类型为 dotted
+    _hiFormApplyCB(schDisplayOptionsForm) ; 应用已修改的 display options 结构体
+    hiFormCancel(schDisplayOptionsForm) ; 关闭 schematic display options 窗口
+    hiFormDone(schDisplayOptionsForm) ; 关闭 schDisplayOptionsForm
+    shell(strcat("xdg-open ", fileName)) ; 打开刚刚导出的 schematic 图片以进行预览
+
+; 版图以白底彩色样式导出, 不带 dotting
+    fileName = strcat("/home/dy2025/Desktop/Work/00_File_Library/Cadence_Data/", name , "_layout.png");
+    ; 先修改 dotting 和 axes, 导出后再修改回来
+    leHiEditDisplayOptions() ; 打开 display options 窗口
+    ditting_style = leDisplayOptionsForm->gridType->value ; 记录当前的 dotting 设置
+    axes_enable = leDisplayOptionsForm->options->axes->value ; 记录当前的 axes 设置
+    leDisplayOptionsForm->options->axes->value = nil ; 关闭 axes 显示
+    leDisplayOptionsForm->gridType->value="none"    ; 设置网格类型为 none
+    hiFormDone(leDisplayOptionsForm) ; 应用已修改的 display options 结构体
+    ; 修改 netname display 设置, 导出后再修改回来
+    _geNetNameDisplayOptionForm()
+    netname_enable = geNetNameDisplayOptionForm->netNameEnabled->value ; 记录当前的 netname 显示设置
+    geNetNameDisplayOptionForm->netNameEnabled->value= nil ; 关闭 netname 显示
+    hiFormDone(geNetNameDisplayOptionForm)
+    ; 设置样式并执行导出操作
+    hiExportImageDialog(getCurrentWindow()) ; 打开 export image 窗口
+    ExportImageDialog->reset->value = t ; 重置 export 的各项设置 (默认黑底)
+    ExportImageDialog->fileName->value = fileName; 设置导出为 image 时的路径
+    ExportImageDialog->entireDesign->value = t ; 设置导出整个 schematic
+    ExportImageDialog->fullColor->value = t ; 使用 full color 选项
+    ExportImageDialog->swapFgBgColors->value = t ; 交换 bg/fg 颜色
+    ExportImageDialog->save->value = t  ; 执行导出操作
+    ExportImageDialog->close->value = t ; 关闭 export image 窗口
+    ; 恢复 dotting 和 axes 设置
+    leHiEditDisplayOptions() ; 打开 display options 窗口
+    leDisplayOptionsForm->gridType->value=ditting_style ; 恢复网格类型为 dotted
+    leDisplayOptionsForm->options->axes->value = axes_enable ; 恢复 axes 设置
+    hiFormDone(leDisplayOptionsForm) ; 应用已修改的 display options 结构体
+    ; 恢复 netname display 设置
+    _geNetNameDisplayOptionForm()
+    geNetNameDisplayOptionForm->netNameEnabled->value= netname_enable ; 恢复 netname 设置
+    hiFormDone(geNetNameDisplayOptionForm)
+    shell(strcat("xdg-open ", fileName)) ; 打开刚刚导出的 layout 图片以进行预览
+```
+
 
 
 ### 2. Export Simulation PDF
-
-
 
 经过测试, print 窗口为函数 `_ddtExecuteAction(awvGetCurrentWindow()->vivaSession "graphPrint")` 的内部进程，无法通过代码快速设置、调用。
 

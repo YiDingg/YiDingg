@@ -15,6 +15,7 @@
                 部分难以区分的 blog 可以放在 Analog IC 文件夹, 并且同时被两个条目收录
     -->
 
+- [(Pinned) My Research Direction](<AnalogIC/(Pinned) My Research Direction.md>)
 
 - 📝 **Projects**
 
@@ -28,11 +29,15 @@
         - [Virtuoso Tutorials - 16. Using Config Sweep and CALIBREVIEW to Speed Up Your Post-Layout Simulation](<AnalogIC/Virtuoso Tutorials - 16. Using Config Sweep and CALIBREVIEW to Speed Up Your Post-Layout Simulation.md>)
         - [Virtuoso Tutorials - 17. Creating Parameter Passing Symbol as The Standard PCell](<AnalogIC/Virtuoso Tutorials - 17. Creating Parameter Passing Symbol as The Standard PCell.md>)
         - [Phase Noise and Jitter Characterization in Mixed-Signal Circuits, and the MATLAB Implementation](<AnalogIC/Phase Noise and Jitter Characterization in Mixed-Signal Circuits, and the MATLAB Implementation.md>)
+        - [All You Need to Know About Fourier Analysis (FS, DFS, FT, DTFT, DFT)](<AnalogIC/All You Need to Know About Fourier Analysis (FS, DFS, FT, DTFT, DFT).md>)
+        - [Use AI to Boost Your Academic Research and Paper Reading](<AnalogIC/Use AI to Boost Your Academic Research and Paper Reading.md>)
+        - [(Pinned) My Research Direction](<AnalogIC/(Pinned) My Research Direction.md>)
+        - [An Overview of PLL Architectures](<AnalogIC/An Overview of PLL Architectures.md>)
         - Project Records:
         - [202510_onc18_CPPLL (1) VCO Design Iteration](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (1) VCO Design Iteration.md>)
         - [202510_onc18_CPPLL (2) VCO Iteration and Layout](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (2) VCO Iteration and Layout.md>)
-        - [202510_onc18_CPPLL (3) Other Modules Design and Layout](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (3) Other Modules Design and Layout.md>)
-
+        - [202510_onc18_CPPLL (3) Design of Other Modules](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (3) Design of Other Modules.md>)
+        - [202510_onc18_CPPLL (4) Pre-Layout Simulation and Layout Details](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.md>)
     - [A 2.2-GHz ~ 3.3-GHz BB-PLL with Multiple Output Frequencies in TSMC 65-nm Technology](<Projects/A 3.3-GHz BB-PLL with Multiple Output Frequencies in TSMC 65-nm Technology.md>)
         - [(1) LDO: Design of A Basic Low Dropout Regulator (LDO) for BB-PLL](<Projects/Design of A Basic Low Dropout Regulator (LDO) for BB-PLL.md>)
             - [LDO Stability Analysis and Loop Compensation Mechanism](<AnalogIC/LDO Stability Analysis and Loop Compensation Mechanism.md>)
@@ -135,10 +140,13 @@
         - [9. Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<AnalogIC/Virtuoso Tutorials - 9. Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)<!-- x -->
         - [10. Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 10. Using Tran Result as the DC Operation Point for AC Simulation.md>)<!-- x -->
         - [11. Resolving Discrepancies Between DC and Transient Simulation Results](<AnalogIC/Virtuoso Tutorials - 11. Resolving Discrepancies Between DC and Transient Simulation Results.md>)<!-- x -->
-        - [12. Behavior-Level Simulation using Verilog-A in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 12. Behavior-Level Simulation using Verilog-A in Cadence IC618.md>)
+        - [12. Behavior-Level Simulation using Verilog-A in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 12. Behavior-Level Simulation using Verilog-A in Cadence IC618.md>)<!--  -->
         - [13. Periodical Steady-State and Phase Noise Simulation (VCO and PLL)](<AnalogIC/Virtuoso Tutorials - 13. VCO and PLL Simulation (Periodical Steady-State and Phase Noise).md>)
         - [14. Understanding Substrate, Well, Tap, and Guard Ring in Analog IC Layouts](<AnalogIC/Virtuoso Tutorials - 14. Understanding Substrate, Well, Tap, and Guard Ring in Analog IC Layouts.md>)
         - [15. Several Methods for PEX and How to Speed Up Your Post-Simulation](<AnalogIC/Virtuoso Tutorials - 15. Several Methods for PEX and How to Speed Up Your Post-Simulation.md>)
+        - [16. Using Config Sweep and CALIBREVIEW to Speed Up Your Post-Layout Simulation](<AnalogIC/Virtuoso Tutorials - 16. Using Config Sweep and CALIBREVIEW to Speed Up Your Post-Layout Simulation.md>)
+        - [17. Creating Parameter Passing Symbol as The Standard PCell](<AnalogIC/Virtuoso Tutorials - 17. Creating Parameter Passing Symbol as The Standard PCell.md>)
+        - [18. How to Create a Supply Source with White Noise](<AnalogIC/Virtuoso Tutorials - 18. How to Create a Supply Source with White Noise.md>)
 
 
     - Use Virtuoso Efficiently
@@ -168,6 +176,7 @@
         - [Razavi RF - Chapter 2. Basic Concepts in RF Circuits](<AnalogIC/Razavi RF - Chapter 2. Basic Concepts in RF Circuits.md>)
 
     - Analog IC Blogs (2025, 33 items)
+        - [Basics of LC and Crystal Sinusoidal Oscillator](<AnalogIC/Basics of LC and Crystal Sinusoidal Oscillator.md>)
         - [Structure Options and Design Considerations for Analog PLLs](<AnalogIC/Structure Options and Design Considerations for Analog PLLs.md>)
         - [LDO Stability Analysis and Loop Compensation Mechanism](<AnalogIC/LDO Stability Analysis and Loop Compensation Mechanism.md>)
         - [Phase Noise Spectrum Calculation using MATLAB](<AnalogIC/Phase Noise and Jitter Calculation using MATLAB.md>)
@@ -197,7 +206,16 @@
         - [MOSFET's Terminal Resistance](<Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>) <!--  -->
 
 
-    - Electronic Blogs (2025, 69 items)
+    - Electronic Blogs (2025, 69 items) 
+        - [DPSE 数字信号处理实验 - 1. ADC 与 DAC 实验](<Electronics/DPSE 数字信号处理 - 1. ADC 与 DAC 实验.md>)
+        - [DPSE 数字信号处理实验 - 0. 课程信息与准备](<Electronics/DPSE 数字信号处理 - 0. 课程信息与准备.md>)
+        - [DCE 数字电路实验 - 实验 4. 频率计设计](<Electronics/DCE 数字电路实验 - 实验 4. 频率计设计.md>)
+        - [DCE 数字电路实验 - 实验 3. 序列检测器](<Electronics/DCE 数字电路实验 - 实验 3. 序列检测器.md>)
+        - [DCE 数字电路实验 - 实验 2. 计数器实验](<Electronics/DCE 数字电路实验 - 实验 2. 计数器实验.md>)
+        - [DCE 数字电路实验 - 实验 1. 阻塞与非阻塞](<Electronics/DCE 数字电路实验 - 实验 1. 阻塞与非阻塞.md>)
+        - [DCE 数字电路实验 - 0. 课程信息与准备](<Electronics/DCE 数字电路实验 - 0. 课程信息与准备.md>)
+        - [NCE 非线性电路实验 - 2. 正弦振荡器模块设计](<Electronics/NCE 非线性电路实验 - Lecture.2 ~ Lecture.4 - 第二章. 正弦振荡器模块设计.md>)
+        - [NCE 非线性电路实验 - 0. 课程信息与准备](<Electronics/NCE 非线性电路实验 - 0. 课程信息与准备.md>)
         - [Test Experiment of The DC-DC Converter Modules](<Electronics/Test Experiment of The DC-DC Converter Modules.md>)
         - [LCE 实验记录 (LCE-09 比较器)](<Electronics/LCE 实验记录 (LCE-09 比较器).md>)
         - [Relationship Between GBW and fp2 in a Two-Order System](<Electronics/Relationship Between GBW and fp2 in a Two-Order System.md>)

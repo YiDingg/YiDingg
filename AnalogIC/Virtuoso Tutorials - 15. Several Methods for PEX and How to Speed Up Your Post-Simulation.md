@@ -274,7 +274,7 @@ DSPF 的后仿和 CALIBREVIEW 的差不太多，区别是 DSPF **生成后缀为
 <div class='center'>
 
 | Interactive | 所有 outputs 是否勾选 save | 数据保存设计 | 是否有 MM0 dcopt 数据 | 是否有噪声数据 | 数据量大小 |
-|:-:|:-:|:-:|:-:|
+|:-:|:-:|:-:|:-:|:-:|:-:|
  | interactive.180 | 否 | lvl + level=0 | no  | yes | 28.4 MB |
  | interactive.181 | 否 | lvl + level=1 | no  | no  | 72.0 MB |
  | interactive.188 | 否 | lvl + level=2 | yes | no  | 200.2 MB |
@@ -399,14 +399,14 @@ HSPICE 格式的操作和 SPECTRE 完全类似，都是在 netlist 中找到器�
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-21-18-40-44_Virtuoso Tutorials - 15. Several Methods for PEX (Parasitic Extraction) and Post-Simulation.png"/></div> -->
 
-### 5.3 high-perfor. simulator
+### 5.3 high-per. simulation
 
 本小节参考 Reference 中的 [9] ~ [15].
 
 截至 2025.09.20, 除 Spectre 以外 virtuoso 还支持使用 APS, Spectre X, Spectre FX 等高性能仿真器进行仿真，在相同精度下的仿真速度为 Spectre < APS < Spectre X < Spectre FX. 参考链接 [[11]](https://picture.iczhiku.com/weixin/message1582550787289.html) 给出了一个对比示例，Spectre X 的速度是 APS 的 3.7 ~ 9.2 倍。
 
 下面是一些使用/设置技巧：
-- (1) APS: 
+- (1) APS: 相比原生 Spectre, APS 除支持 multi-thread, 在精度方面与 Spectre 基本相同 (仅略微降低)
 - (2) Spectre X: Preset 可设置为 CX/AX/MX/LX/VX, 其中 CX 精度最高 (速度最慢)，VX 为速度最快 (精度最低)；参考 [here](https://bbs.eetop.cn/thread-983266-1-1.html) 可以知道，功能性验证用 MX 甚至 VX, 指标性验证最低 AX, 最好是用 CX.
 - (3) Spectre FX: FX 也是类似地，与 X 的 preset 几乎相同，只是不具有 CX 选项，最高精度为 AX.
 
@@ -418,7 +418,7 @@ HSPICE 格式的操作和 SPECTRE 完全类似，都是在 netlist 中找到器�
 
 | Simulator | Spectre | APS | (Spectre X using) VX, MX, CX | (Spectre FX using) VX, MX, AX |
 |:-:|:-:|:-:|:-:|:-:|
-| Run Time| > 20m | > 20m |  484 s (8m 3.6s), 481 s (8m 0.9s),  832 s (13m 52.1s). | 54.5 s (0m 54.5s), 69.5 s (1m 9.5s),  169 s (2m 48.7s) |
+| Run Time | > 20m | > 20m |  484 s (8m 3.6s), 481 s (8m 0.9s),  832 s (13m 52.1s). | 54.5 s (0m 54.5s), 69.5 s (1m 9.5s),  169 s (2m 48.7s) |
 
 </div>
 
@@ -531,4 +531,7 @@ FATAL (SPECTRE-18):  Segmentation fault. Encountered a critical error during sim
 - [12] [EETOP > 解决 Spectre 仿真报错Segmentation Fault (during AHDL read-in)](https://bbs.eetop.cn/thread-983285-1-1.html): 楼主是因为 linux 的 memory segments 最大数量太小了，系统是 centos 7.9 默认 4096 条，改为 16384 条后问题解决
 - [13] [CSDN > spectre 仿真器中断](https://blog.csdn.net/weixin_42221495/article/details/140003274): 认为是当前 spectre 仿真器仿不了这么大容量的仿真，需要换仿真器
 - [14] [博客园 > XPS MS 遇到 segmentation fault 错误](https://www.cnblogs.com/li2000/p/18296503/Analog-Cadence-Virtuoso-ADE-XPSMS): 博主提出/收集了多种可能原因，包括 服务器内存不够、没设置64位、未知错误（尝试重启 virtuoso 或者服务器端口）等，他认为最稳妥的方法是重启 virtuoso
-- [15] [EETOP > Spectre 仿真报错，Internal error found in spectre during AHDL read-in](https://bbs.eetop.cn/thread-887124-1-1.html): 楼主提出了三种解决方案，22楼提出了另一种：
+- [15] [EETOP > Spectre 仿真报错，Internal error found in spectre during AHDL read-in](https://bbs.eetop.cn/thread-887124-1-1.html): 楼主提出了三种解决方案，22楼提出了另一种
+- [16] [Cadence Blogs > Analog/Custom Design > Start Your Engines: Speed Up Your Analog Mixed-Signal Verification with Spectre X Simulator](https://community.cadence.com/cadence_blogs_8/b/cic/posts/start-your-engines-speed-up-your-analog-mixed-signal-verification-with-spectre-x-simulator)
+- [17] [Cadence Product and Solutions Resources > Datasheets > Spectre X Simulator](https://login.cadence.com/content/dam/cadence-www/global/en_US/documents/tools/custom-ic-analog-rf-design/spectre-x-simulator-ds.pdf)
+

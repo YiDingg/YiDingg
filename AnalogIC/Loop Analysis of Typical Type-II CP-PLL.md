@@ -41,7 +41,7 @@ H_{CL}(s) = \frac{4\zeta^2}{\tau_P^2} \times \frac{1 + s\tau_P}{s^2 + \frac{4\ze
 \\
 \mathrm{PM} = \arctan \left(2\,\zeta \left[2\,\zeta^2 +\sqrt{4\,\zeta^4 +1}\right]^{\frac{1}{2}}\right)\ \mathrm{(rad)}
 \\
-\mathrm{BW}_\omega = \frac{2\zeta}{\tau_P} \left[2\zeta^2 +1 + \sqrt{4\zeta^4 + 4\zeta^2 + 2}\right]^{\frac{1}{2}} \ \mathrm{(rad/s)}
+\mathrm{BW}_\omega = \frac{2\zeta}{\tau_P} \left[1 + 2\zeta^2 + \sqrt{4\zeta^4 + 4\zeta^2 + 2}\right]^{\frac{1}{2}} \ \mathrm{(rad/s)}
 \\
 \mathrm{BW}_f = \mathrm{BW}_\omega/(2\pi)\ \mathrm{(Hz)}
 \\
@@ -242,7 +242,7 @@ $$
 \begin{gather}
 \mathrm{PM} = \arctan \left(2\,\zeta \,\sqrt{2\,\zeta^2 +\sqrt{4\,\zeta^4 +1}}\right) = 44.3714°
 \\
-\omega_{BW} = \frac{2\zeta}{\tau_P} \left[2\zeta^2 +1 + \sqrt{4\zeta^4 + 4\zeta^2 + 2}\right]^{\frac{1}{2}} = 4.7879 \ \mathrm{krad/s}
+\omega_{BW} = \frac{2\zeta}{\tau_P} \left[1 + 2\zeta^2 + \sqrt{4\zeta^4 + 4\zeta^2 + 2}\right]^{\frac{1}{2}} = 4.7879 \ \mathrm{krad/s}
 \end{gather}
 $$
 
@@ -321,7 +321,7 @@ $$
 
 ## 5. PLL Phase Noise
 
-这里放一张 PLL 相位噪声的经典模型图，供读者参考：
+这里先放一张 PLL 相位噪声的经典模型图，供读者参考：
 
 <div class='center'>
 
@@ -330,7 +330,95 @@ $$
  | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-06-02-30-51_Loop Analysis of Typical Type-II CP-PLL.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-06-02-32-36_Loop Analysis of Typical Type-II CP-PLL.png"/></div> |
 </div>
 
-## 5. MATLAB Codes
+本小节给出 PLL 中各模块的相位噪声传递函数 **(闭环)**，推导过程详见 Razavi PLL page.249, 这里直接给出关键结果：
+
+<span style='font-size:12px'> 
+<div class='center'>
+
+| Noise | Pass Type | (Closed Loop) Phase Noise Transfer | Condition for Lower Noise |
+|:-:|:-:|:-:|:-:|
+ | $S_{\phi_n,REF}$ of REF  | LP | $ S_{\phi_n,REF}(f) = S_0 \\ H_{\phi_n,REF}(s) = \frac{\Phi_{n,out}}{\Phi_{n,REF}}(s) = N^2 \times H_{CL}(s) \\ \phi_{rms,REF} \approx N \sqrt{\pi S_0 \mathrm{BW}_f}\ \ \mathrm{(rad)} \\ J_{rms,REF} \approx \frac{N}{2\pi f_{out}} \sqrt{\pi S_0 \mathrm{BW}_f}\ \ \mathrm{(second)} $ | $N \downarrow,\ \mathrm{BW}_f \downarrow \ (\tau_P \uparrow,\ \zeta \downarrow) $ |
+ | $S_{\phi_n,VCO}$ of VCO | HP | $ S_{\phi_n,VCO}(f) = \frac{\alpha}{f^3} + \frac{\beta}{f^2} \\ H_{\phi_n,VCO}(s) = \frac{\Phi_{n,out}}{\Phi_{n,VCO}}(s)  = \frac{s^2}{s^2 + \frac{4\zeta^2}{\tau_P} s + \frac{4\zeta^2}{\tau_P^2}} \\ \omega_{HP,VCO} = \frac{2\zeta}{\tau_P} \left[(2\zeta^2 - 1) + \sqrt{1 + (2\zeta^2 - 1 )^2}\right]^{\frac{1}{2}} $ | $ \tau_P \downarrow,\ \zeta \uparrow $ |
+ | Equal REF and VCO Noise Contribution | - | $ BW_f = \sqrt{\frac{4\beta}{\pi N^2 S_0}}\\ \phi_{rms,REF,VCO} = 4 \sqrt{ N^2\pi\beta  S_0} \\ J_{rms,REF,VCO} = \frac{2}{\pi f_{out}} \sqrt{ N^2\pi\beta  S_0} $ | - |
+ | $S_{V_n,VDD}$ of VDD (through VCO) | BP | $ K_{VDD}(s) = 2 \pi \frac{\partial f_{out} }{\partial V_{DD} } (s) \\ H_{\phi_n,VDD}(s) = \frac{\Phi_{n,out}}{V_{n,VDD}}(s) = \frac{s K_{VDD}(s)}{s^2 + \frac{4\zeta^2}{\tau_P} s + \frac{4\zeta^2}{\tau_P^2}} \\ \max\{H_{\phi_n,VDD} (s)\} \le \frac{K_{VDD}}{2 \zeta \omega_n} = K_{VDD}\times \frac{\tau_P}{4\zeta^2}$ | $\tau_P \downarrow,\ \zeta \uparrow $ |
+ | $S_{I_n,CP,eq}$ of CP | LP | $ S_{I_n,CP,eq}(f) = 2S_{I_n,CP}(f) \cdot \frac{T_{res}}{T_{ref}} = \left(2\overline{I_{n}^2}\right) \cdot \frac{T_{res}}{T_{ref}} \\ H_{\phi_n,CP}(s) = \frac{\Phi_{n,out}}{I_{n,CP,eq}}(s) = \frac{N K_{VCO,eq}}{C_1} \times \frac{1 + s\tau_P}{s^2 + \frac{4\zeta^2}{\tau_P} s + \frac{4\zeta^2}{\tau_P^2}} \\ H_{\phi_n,CP}(0) = \frac{2\pi N}{I_P}  $ | $ N \downarrow,\ I_P \uparrow $ |
+ | $S_{V_n,LPF}$ of LPF Resistor | BP | $ S_{V_n,LPF}(f) = 4kT R_1 \\ H_{\phi_n,LPF}(s) = \frac{\Phi_{n,out}}{V_{n,LPF}}(s) = \frac{s N K_{VCO,eq}}{s^2 + \frac{4\zeta^2}{\tau_P} s + \frac{4\zeta^2}{\tau_P^2}} \\ \max \{S_{\phi_n}(f)\} = \frac{16 \pi^2 N^2 kT }{R_1 I_P^2} \ \ \mathrm{(SSB)} $ | $ N \downarrow,\ I_P \uparrow,\ R_1 \uparrow $ |
+</div>
+</span>
+
+<!-- $$
+\begin{gather}
+\mathrm{Closed\ Loop\ Phase\ Noise\ Transfer\ Function:\ \ }
+\\
+\mathrm{REF\ (LP):\ \ }
+\begin{cases}
+S_{\phi_n,REF}(f) = S_0 \\
+H_{\phi_n,REF}(s) = \frac{\Phi_{n,out}}{\Phi_{n,REF}}(s) = N^2 \times H_{CL}(s)
+\\
+\phi_{rms,REF} \approx N \sqrt{\pi S_0 \mathrm{BW}_f}\ \ \mathrm{(rad)}
+\\
+J_{rms,REF} \approx \frac{N}{2\pi f_{out}} \sqrt{\pi S_0 \mathrm{BW}_f}\ \ \mathrm{(second)}
+\end{cases}
+\\
+\mathrm{VCO\ (HP):\ \ }
+\begin{cases}
+S_{\phi_n,VCO}(f) = \frac{\alpha}{f^3} + \frac{\beta}{f^2}
+\\
+H_{\phi_n,VCO} = \frac{\Phi_{n,out}}{\Phi_{n,VCO}}(s) = \frac{s^2}{s^2 + 2\zeta \omega_n s + \omega_n^2} = \frac{s^2}{s^2 + \frac{4\zeta^2}{\tau_P} s + \frac{4\zeta^2}{\tau_P^2}}
+\\
+\omega_{HP,VCO} = \frac{2\zeta}{\tau_P} \left[2\zeta^2 - 1 + \sqrt{4\zeta^4 - 4\zeta^2 + 2}\right]^{\frac{1}{2}}
+\end{cases}
+\\
+\mathrm{Equal\ REF\ and\ VCO\ Noise\ Contribution:\ \ } 
+\begin{cases}
+BW_f = \sqrt{\frac{4\beta}{\pi N^2 S_0}}\\
+\phi_{rms,REF,VCO} = 4 \sqrt{ N^2\pi\beta  S_0} \\
+J_{rms,REF,VCO} = \frac{2}{\pi f_{out}} \sqrt{ N^2\pi\beta  S_0}
+\end{cases}
+\\
+\mathrm{CP\ (LP):\ \ }
+\begin{cases}
+S_{I_n,CP,eq}(f) = 2S_{I_n,CP}(f) \times \frac{T_{res}}{T_{ref}} = \left(2\overline{I_{n}^2}\right) \times \frac{T_{res}}{T_{ref}}
+\\
+H_{\phi_n,CP}(s) = \frac{\Phi_{n,out}}{I_{n,CP,eq}}(s) = \frac{N K_{VCO,eq}}{C_1} \times \frac{1 + s\tau_P}{s^2 + \frac{4\zeta^2}{\tau_P} s + \frac{4\zeta^2}{\tau_P^2}}
+\\
+H_{\phi_n,CP}(s) \approx \frac{N K_{VCO,eq}}{C_1 \omega_n^2} = \frac{2\pi N}{I_P} \ \ \mathrm{(@\ low\ frequency)}
+\end{cases}
+\\
+\mathrm{LPF\ Resistor\ (BP):\ \ } 
+\begin{cases}
+S_{V_n,LPF}(f) = 4kT R_1
+\\
+H_{\phi_n,LPF}(s) = \frac{\Phi_{n,out}}{V_{n,LPF}}(s) = \frac{s N K_{VCO,eq}}{s^2 + \frac{4\zeta^2}{\tau_P} s + \frac{4\zeta^2}{\tau_P^2}}
+\\
+\max \{S_{\phi_n,LPF}(f)\} = \frac{N^2 K_{VCO,eq}^2}{4\zeta^2 \omega_n^2} \times (4kT R_1) = \frac{16 \pi^2 N^2 kT }{R_1 I_P^2} \ \ \mathrm{(SSB)}
+\end{cases}
+\end{gather}
+$$
+ -->
+
+
+
+## 6. Other Considerations
+
+<span style='font-size:10px'> 
+<div class='center'>
+
+| Other Design Considerations | Description | Formula |
+|:-:|:-:|:-:|
+ | LPF Leakage | 很多设计会用 MOSFET 来实现 LPF 中的电容 C1 or C2, 这样虽节省面积，但可能带来较大的 gate leakage, 比如 Razavi PLL page.261 举的例子： 45-nm CMOS 工艺下，一个 10um/0.5um 管子的 gate leakage current $I_{G}$ 达到 0.1 uA @ Vgs = 0.6 V 和 = 1 uA @ Vgs = 1.0 V (gate dielectric thickness = 20 Å) <br> 这个问题我们在最近的项目 (202510_PLL) 中也直观感受到了，LPF 的漏电会导致环路无法正常“静默 (关闭)”，带来周期性的开启纹波和周期性的 vcont 波动，导致系统相噪/抖动迅速恶化 | $$\phi_{pp} = \frac{1}{2}K_{VCO,eq} \frac{I_GT_{REF}^2}{4C_2} = \frac{N K_{VCO} I_G}{8C_2f_{out}^2} \\ J_{pp} = \frac{\phi_{pp}}{2\pi f_{out}} = \frac{N K_{VCO} I_G}{16 \pi C_2 f_{out}^3} $$ |
+ | Ripple Reduction by Sampling Filter | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-09-02-21-12_Loop Analysis of Typical Type-II CP-PLL.png"/></div> | - |
+ | Filter Capacitor Reduction | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-09-02-22-44_Loop Analysis of Typical Type-II CP-PLL.png"/></div> | $C_{eq} = \frac{1}{\alpha - 1} C,\ \alpha \in (1,\ 2)$，注意由 $R_1$ 产生的纹波仍为 $\Delta V = I_P R_1$ |
+ | Divider Delay Correction | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-09-02-28-48_Loop Analysis of Typical Type-II CP-PLL.png"/></div> | - |
+ | Duty Cycle Correction | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-09-02-34-03_Loop Analysis of Typical Type-II CP-PLL.png"/></div> |  |
+ | High-Speed PFD | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-09-02-36-09_Loop Analysis of Typical Type-II CP-PLL.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-09-02-36-17_Loop Analysis of Typical Type-II CP-PLL.png"/></div> |
+</div>
+
+</span>
+
+
+## 7. MATLAB Codes
+
 
 
 本文的公式推导/作图利用 MATLAB 辅助进行，源码如下：
