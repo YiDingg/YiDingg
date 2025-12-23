@@ -15,8 +15,15 @@ Initially published by YiDingg at 18:36 on 2024-06-19 in Beijing.
 | 相关链接 |
 | :------: |
 | 原理图和PCB下载(GitHub)：[MinSyBo](https://github.com/YiDingg/MinSyBo)|
-| 设计思路、物料表与焊接建议：[MinSyBo (Minimum System Board of STM32)](https://yidingg.github.io/YiDingg/#/Projects/MinSyBo%20(Minimum%20System%20Board%20of%20STM32)%20详解.md?id=四、物料表与焊接) |
+| 设计思路、物料表与焊接建议：[MinSyBo (Minimum System Board of STM32)](<Projects/MinSyBo.md?id=四、物料表与焊接>) |
+
+<!-- | 设计思路、物料表与焊接建议：[MinSyBo (Minimum System Board of STM32)](https://yidingg.github.io/YiDingg/#/Projects/MinSyBo%20(Minimum%20System%20Board%20of%20STM32)%20详解.md?id=四、物料表与焊接) | -->
+
 </div>
+
+
+
+
 
 产品图片：
 

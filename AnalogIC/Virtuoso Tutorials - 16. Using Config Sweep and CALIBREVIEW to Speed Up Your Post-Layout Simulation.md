@@ -13,7 +13,7 @@ Config Sweep 是 Cadence Virtuoso ADE Assembler 中的一个功能，允许用�
 
 ### 1.1 config sweep demo
 
-
+推荐的项目文件结构如下：
 ``` bash
 - (cell) Testbench_VCO  # The top-level testbench cell for pre-layout and post-layout simulation of VCO
     - (view) schematic  # The schematic of the testbench, which instantiates RVCO1/RVCO2 as its sub-cells

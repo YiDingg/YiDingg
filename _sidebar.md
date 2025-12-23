@@ -29,10 +29,12 @@
         - [Virtuoso Tutorials - 16. Using Config Sweep and CALIBREVIEW to Speed Up Your Post-Layout Simulation](<AnalogIC/Virtuoso Tutorials - 16. Using Config Sweep and CALIBREVIEW to Speed Up Your Post-Layout Simulation.md>)
         - [Virtuoso Tutorials - 17. Creating Parameter Passing Symbol as The Standard PCell](<AnalogIC/Virtuoso Tutorials - 17. Creating Parameter Passing Symbol as The Standard PCell.md>)
         - [Phase Noise and Jitter Characterization in Mixed-Signal Circuits, and the MATLAB Implementation](<AnalogIC/Phase Noise and Jitter Characterization in Mixed-Signal Circuits, and the MATLAB Implementation.md>)
+        - [Virtuoso Tutorials - 18. How to Create a Supply Source with White Noise](<AnalogIC/Virtuoso Tutorials - 18. How to Create a Supply Source with White Noise.md>)
         - [All You Need to Know About Fourier Analysis (FS, DFS, FT, DTFT, DFT)](<AnalogIC/All You Need to Know About Fourier Analysis (FS, DFS, FT, DTFT, DFT).md>)
         - [Use AI to Boost Your Academic Research and Paper Reading](<AnalogIC/Use AI to Boost Your Academic Research and Paper Reading.md>)
         - [(Pinned) My Research Direction](<AnalogIC/(Pinned) My Research Direction.md>)
         - [An Overview of PLL Architectures](<AnalogIC/An Overview of PLL Architectures.md>)
+        - [Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum](<AnalogIC/Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.md>)
         - Project Records:
         - [202510_onc18_CPPLL (1) VCO Design Iteration](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (1) VCO Design Iteration.md>)
         - [202510_onc18_CPPLL (2) VCO Iteration and Layout](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (2) VCO Iteration and Layout.md>)
@@ -95,35 +97,42 @@
     - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
     - [tsmc18rf (TSMC 180nm RF CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmc18rf (TSMC 180nm RF CMOS Process Library).md>)
 
-    - other technology
-        - [[ocn180] 202511 LDO: low-power LDO for nA-Level Systems](<>)
-        - [[ocn180] 202510 PLL: ultra-low-power CP-PLL](<>)
+    - Collection
 
+        - [[ocn180] 202510 PLL: ultra-low-power CP-PLL](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower.md>)
+        - [[tsmcN65] 202509 DAC: 5-bit RDR (R-2R)](<AnalogICDesigns/202509_tsmcN65_DAC_RDR_5bit.md>)
+        - [[tsmcN65] 202509 OTA: adjustable constant-gm](<AnalogICDesigns/202509_tsmcN65_OTA_constantGm_adjustable.md>)
+        - [[tsmcN65] 202509 LDO (1): basic LDO with 1.2V output](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1).md>)
+        - [[tsmcN65] 202509 Op Amp: op amp for the LDO](<AnalogICDesigns/202509_tsmcN65_OpAmp__nulling-Miller.md>)
+        - [[tsmcN28] 202508 PLL: 3rd-order type-II integer-N CP-PLL](<AnalogICDesigns/202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N.md>)
+        - [[tsmcN28] 202507 BGR: low-voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)<!-- 知乎已发理论 -->
+        - [[tsmcN28] 202507 Op Amp: op amp for the BGR in scientific_research_practice_1](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)<!-- 知乎已发理论、设计、版图 -->
+        - [[tsmc18rf] 202506 Op Amp: twoStage_single_Nulling-Miller__80dB_50MHz_50Vus](AnalogICDesigns/202506_tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md)<!--  -->
+        - [[tsmc18rf] 202506 Op Amp: oneStage_single_folded-cascode__80dB_50MHz_50Vus](AnalogICDesigns/202506_tsmc18rf_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md)<!--  -->
+
+    - Design Sheets
+        - [Third-Order Type-II CP-PLL](<AnalogICDesigns/Design Sheet for Third-Order Type-II CP-PLL.md>)
+        - [Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogICDesigns/Design Sheet for Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>)
+        - [Design Sheet for Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet for Folded-Cascode Op Amp.md>)<!-- x -->
+
+
+<!-- 
+    - other technology
+        - [[ocn180] 202510 PLL: ultra-low-power CP-PLL](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower.md>)
     - tsmcN65
         - [202509 DAC: 5-bit RDR (R-2R)](<AnalogICDesigns/202509_tsmcN65_DAC_RDR_5bit.md>)
-        - [202509 OTA (layout): constant-gm adjustable](<AnalogICDesigns/202509_tsmcN65_OTA_constantGm_adjustable__layout.md>)
-        - [202509 OTA: constant-gm adjustable](<AnalogICDesigns/202509_tsmcN65_OTA_constantGm_adjustable.md>)
-        - [202509 LDO (layout): 1.8 V ~ 2.5 V to 1.2 V](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2__layout.md>)
-        - [202509 LDO (2): 1.8 V ~ 2.5 V to 1.2 V](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (2).md>)
-        - [202509 LDO (1): 1.8 V ~ 2.5 V to 1.2 V](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1).md>)
+        - [202509 OTA: adjustable constant-gm](<AnalogICDesigns/202509_tsmcN65_OTA_constantGm_adjustable.md>)
+        - [202509 LDO (1): basic LDO with 1.2V output](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1).md>)
         - [202509 Op Amp: op amp for the LDO](<AnalogICDesigns/202509_tsmcN65_OpAmp__nulling-Miller.md>)
     - tsmcN28
         - [202508 PLL: 3rd-order type-II integer-N CP-PLL](<AnalogICDesigns/202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N.md>)
-        - [202507 BGR (layout): low-voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1__layout.md>)
         - [202507 BGR: low-voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
-        - [202507 Op Amp (layout): op amp for the BGR in scientific_research_practice_1](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller__layout.md>)
         - [202507 Op Amp: op amp for the BGR in scientific_research_practice_1](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)
     - tsmc18rf
 
         - [202506 Op Amp: twoStage_single_Nulling-Miller__80dB_50MHz_50Vus](AnalogICDesigns/202506_tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md)
-        - [202506 Op Amp: oneStage_single_folded-cascode__80dB_50MHz_50Vus](AnalogICDesigns/202506_tsmc18rf_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md)<!--  -->
-    - Design Sheets
-        - [Third-Order Type-II CP-PLL](<AnalogICDesigns/Design Sheet for Third-Order Type-II CP-PLL.md>)
-        - [Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogICDesigns/Design Sheet for Basic Two-Stage Op Amp with Nulling-Miller Compensation.md>)
-        - [One-Stage Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet for Folded-Cascode Op Amp.md>)<!--  -->
-
-
-
+        - [202506 Op Amp: oneStage_single_folded-cascode__80dB_50MHz_50Vus](AnalogICDesigns/202506_tsmc18rf_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md)
+-->
 
 
 - 💡 **My Blogs**
@@ -140,7 +149,7 @@
         - [9. Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso](<AnalogIC/Virtuoso Tutorials - 9. Design of Folded-Cascode using Gm-Id Method in Cadence Virtuoso.md>)<!-- x -->
         - [10. Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 10. Using Tran Result as the DC Operation Point for AC Simulation.md>)<!-- x -->
         - [11. Resolving Discrepancies Between DC and Transient Simulation Results](<AnalogIC/Virtuoso Tutorials - 11. Resolving Discrepancies Between DC and Transient Simulation Results.md>)<!-- x -->
-        - [12. Behavior-Level Simulation using Verilog-A in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 12. Behavior-Level Simulation using Verilog-A in Cadence IC618.md>)<!--  -->
+        - [12. Behavior-Level Simulation using Verilog-A in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 12. Behavior-Level Simulation using Verilog-A in Cadence IC618.md>)<!-- x -->
         - [13. Periodical Steady-State and Phase Noise Simulation (VCO and PLL)](<AnalogIC/Virtuoso Tutorials - 13. VCO and PLL Simulation (Periodical Steady-State and Phase Noise).md>)
         - [14. Understanding Substrate, Well, Tap, and Guard Ring in Analog IC Layouts](<AnalogIC/Virtuoso Tutorials - 14. Understanding Substrate, Well, Tap, and Guard Ring in Analog IC Layouts.md>)
         - [15. Several Methods for PEX and How to Speed Up Your Post-Simulation](<AnalogIC/Virtuoso Tutorials - 15. Several Methods for PEX and How to Speed Up Your Post-Simulation.md>)

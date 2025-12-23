@@ -949,10 +949,13 @@ TUB 端悬空是能正常过 DRC/LVS 的：
 - 上面一共是 32 个仿真点, Spectre  X + CX 的话大约需要 8 x 8h = 64h (2.67d) @ tran = 15ms
 
 
+<div class='center'>
+
 | Spectre X + CX 仿真结果与可视化 |  |  |
 |:-:|:-:|:-:|
- | 仿真设置  | all_trimming of v2 @ Spectre X + CX (0 to 14)  | all_trimming of v2 @ Spectre X + CX (15 to 31)  |
- | MATLAB 可视化结果 (all_trimming) | MATLAB 可视化结果 (all_corner) | MATLAB 可视化结果 (all_load) |
+ | 仿真设置 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-13-02-30-11_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> | all_trimming of v2 @ Spectre X + CX (0 to 12) <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-13-02-28-50_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> | all_trimming of v2 @ Spectre X + CX (13 to 31) <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-13-02-30-00_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> |
+ | 结果汇总表 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-14-19-56-55_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> | MATLAB 可视化曲线图  | MATLAB 可视化柱状图  |
+ | 结果汇总表  | MATLAB 可视化曲线图  | MATLAB 可视化柱状图  |
 </div>
 
 
@@ -963,8 +966,6 @@ TUB 端悬空是能正常过 DRC/LVS 的：
 保险起见，我们又将数据作了备份，路径为：
 /home/dy2025/Desktop/Work/simulation/MyLib_202510_PLL_onc18/TB_PLL/maestro/results/maestro/.tmpADEDir_dy2025/TB_PLL_SpectreFXAX/simulation/MyLib_202510_PLL_onc18/TB_PLL/maestro/results/maestro/.tmpADEDir_dy2025/TB_PLL_SpectreFXAX/simulation/MyLib_202510_PLL_onc18/TB_PLL/maestro/results/maestro/.tmpADEDir_dy2025/TB_PLL_SpectreFXAX/simulation/MyLib_202510_PLL_onc18/TB_PLL/maestro/results/maestro/202510_PLL_v2_SpectreXCX_tran15ms_allTrimming_40fF_outX24_29points_3to31__BK_20251212_1358
 ```
-
-
 
 
 <div class='center'>
@@ -987,13 +988,884 @@ CK_OUT = clip(VT("/CK_OUT") settling_begin time_end)
 ```
 
 
+``` bash
+\begin{table}[H]\centering
+    %\renewcommand{\arraystretch}{1.5} % 调整行间距为 1.5 倍
+    %\setlength{\tabcolsep}{1.5mm} % 调整列间距
+    \caption{Post-layout simulation results at typical corner for all trimming codes}
+    \label{tab__simul_all_trimming_results}
+
+\resizebox{\linewidth}{!}{   % 设置宽度为 \linewidth 等比例缩放
+\begin{tabular}{cccccccccccccccccccccccccccccccccccccccc}\toprule\toprule
+    T$\left \langle 4:0 \right \rangle\ $ (Decimal) & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 & 31 \\
+    \bottomrule\toprule
+    $I_P$ & \\
+    $C_1$ & \\
+    $C_2$ & \\
+    \midrule
+    $I_{DD}$ @ 40 fF (simul.)   & \\ 
+    $I_{DD}$ @ no load (calc.)  & \\ 
+    $t_{lock}$                  & \\ 
+    \midrule
+    $D_{ADC}$ & \\ 
+    $t_{rise,ADC}$    & \\ 
+    $t_{fall,ADC}$    & \\ 
+    $J_{c,rms,ADC}$   & \\ 
+    $J_{e,rms,ADC}$   & \\ 
+    $J_{int,rms,ADC}$ & \\ 
+    $L_{ADC}(f_m)\,@\,1 \ \mathrm{kHz}$         & \\ 
+    $L_{ADC}(f_m)\,@\,10 \ \mathrm{kHz}$        & \\ 
+    $L_{ADC}(f_m)\,@\, \frac{f_{CK\_ADC}}{2}$   & \\ 
+    \midrule
+    $D_{OUT}$ & \\ 
+    $t_{rise,OUT}$    & \\ 
+    $t_{fall,OUT}$    & \\ 
+    $J_{c,rms,OUT}$   & \\ 
+    $J_{e,rms,OUT}$   & \\ 
+    $J_{int,rms,OUT}$ & \\ 
+    $L_{OUT}(f_m)\,@\,1 \ \mathrm{kHz}$         & \\ 
+    $L_{OUT}(f_m)\,@\,10 \ \mathrm{kHz}$        & \\ 
+    $L_{OUT}(f_m)\,@\, \frac{f_{CK\_OUT}}{2}$   & \\ 
+    \bottomrule\bottomrule
+\end{tabular}
+}\end{table}
+
+
+
+\begin{table}[H]\centering
+    %\renewcommand{\arraystretch}{1.5} % 调整行间距为 1.5 倍
+    %\setlength{\tabcolsep}{1.5mm} % 调整列间距
+    \caption{Post-layout simulation results at typical corner for all trimming codes}
+    \label{tab__simul_all_trimming_results}
+
+\resizebox{\linewidth}{!}{   % 设置宽度为 \linewidth 等比例缩放
+\begin{tabular}{cccccccccccccccccccccccccccccccccccccccc}\toprule\toprule
+    T$\left \langle 4:0 \right \rangle\ $ (Decimal) & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 & 31 \\
+    \bottomrule\toprule
+    $I_P$ & \\
+    $C_1$ & \\
+    $C_2$ & \\
+    \midrule
+    (simul.) $I_{DD}$ @ 40 fF (nA)  & 503.40 & 503.70 & 502.50 & 505.20 & 503.90 & 502.70 & 503.40 & 504.40 & 508.40 & 507.90 & 507.40 & 506.20 & 508.00 & 508.50 & 508.50 & 508.90 & 513.50 & 511.20 & 512.40 & 512.90 & 513.90 & 514.20 & 514.40 & 511.60 & 518.10 & 519.30 & 518.50 & 518.70 & 518.30 & 518.10 & 518.30 & 519.30 \\
+    (calc.)$I_{DD}$ @ no load (nA) & 459.16 & 459.46 & 458.26 & 460.96 & 459.66 & 458.46 & 459.16 & 460.16 & 464.16 & 463.66 & 463.16 & 461.96 & 463.76 & 464.26 & 464.26 & 464.66 & 469.26 & 466.96 & 468.16 & 468.66 & 469.66 & 469.96 & 470.16 & 467.36 & 473.86 & 475.06 & 474.26 & 474.46 & 474.06 & 473.86 & 474.06 & 475.06 \\
+    $t_{lock}$ (ms)                 & 1.77 & 2.05 & 2.23 & 2.42 & 2.72 & 2.99 & 3.15 & 3.33 & 1.56 & 1.71 & 1.90 & 2.08 & 2.32 & 2.57 & 2.69 & 2.81 & 1.44 & 1.56 & 1.77 & 1.93 & 2.14 & 2.32 & 2.47 & 2.54 & 14.97 & 1.50 & 1.62 & 1.80 & 2.02 & 2.17 & 2.29 & 2.41 \\
+    \midrule
+    $D_{ADC}$ (\%) & 50.02 & 50.02 & 50.02 & 50.01 & 50.04 & 50.04 & 50.03 & 50.03 & 50.02 & 50.02 & 50.01 & 50.01 & 50.04 & 50.04 & 50.03 & 50.03 & 50.02 & 50.02 & 50.02 & 50.01 & 50.04 & 50.04 & 50.04 & 50.03 & 49.96 & 50.01 & 50.01 & 50.01 & 50.04 & 50.04 & 50.03 & 50.03 \\
+    $t_{rise,ADC}$ (mUI)  & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 \\
+    $t_{fall,ADC}$ (mUI)   & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 \\
+    $J_{c,rms,ADC}$ (ns)  & 24.54 & 22.12 & 20.22 & 19.52 & 20.33 & 18.67 & 17.84 & 17.36 & 34.22 & 29.78 & 24.21 & 22.06 & 21.09 & 20.08 & 20.20 & 16.92 & 68.35 & 42.69 & 34.32 & 26.93 & 25.49 & 23.08 & 21.29 & 20.84 & 564.12 & 170.31 & 63.15 & 39.00 & 33.65 & 26.98 & 25.46 & 22.05 \\
+    $J_{e,rms,ADC}$ (ns)  & 26.28 & 26.73 & 26.39 & 28.32 & 29.85 & 28.81 & 28.04 & 30.51 & 34.56 & 32.38 & 27.46 & 26.74 & 25.60 & 26.47 & 28.18 & 23.26 & 66.39 & 42.30 & 35.11 & 28.80 & 28.72 & 27.82 & 26.46 & 26.86 & 545.67 & 165.28 & 61.77 & 39.77 & 34.69 & 29.94 & 28.88 & 26.21 \\
+    $J_{int,rms,ADC}$ (ns) & 19.65 & 18.38 & 15.09 & 14.95 & 14.85 & 13.61 & 13.63 & 11.49 & 31.01 & 27.73 & 21.92 & 20.78 & 19.45 & 18.14 & 15.62 & 14.74 & 64.92 & 40.25 & 32.67 & 26.09 & 24.82 & 21.74 & 21.35 & 19.94 & 542.28 & 163.91 & 60.62 & 37.80 & 32.68 & 26.79 & 25.41 & 21.94 \\
+    $L_{ADC}(f_m)\,@\,1 \ \mathrm{kHz}$ (dBc/Hz)        & -81.82 & -81.03 & -80.51 & -81.46 & -80.69 & -82.33 & -81.51 & -80.95 & -82.82 & -82.33 & -82.69 & -83.01 & -83.96 & -83.97 & -83.75 & -85.03 & -84.60 & -87.35 & -85.72 & -85.36 & -86.16 & -84.54 & -88.98 & -86.72 & -82.46 & -86.58 & -88.52 & -87.35 & -87.13 & -85.68 & -87.99 & -87.31 \\
+    $L_{ADC}(f_m)\,@\,10 \ \mathrm{kHz}$ (dBc/Hz)       & -84.42 & -82.98 & -82.59 & -82.61 & -81.87 & -82.48 & -82.50 & -83.49 & -84.23 & -83.34 & -83.21 & -82.09 & -82.03 & -81.15 & -79.55 & -83.02 & -86.16 & -84.86 & -85.19 & -85.04 & -81.14 & -81.12 & -80.25 & -79.53 & -78.84 & -84.33 & -85.08 & -84.77 & -85.56 & -81.89 & -81.50 & -82.10 \\
+    $L_{ADC}(f_m)\,@\, \frac{f_{CK\_ADC}}{2}$ (dBc/Hz)  & -102.70 & -100.25 & -101.80 & -102.36 & -103.81 & -105.02 & -103.91 & -104.20 & -90.89 & -96.40 & -101.44 & -104.43 & -103.48 & -102.26 & -102.24 & -102.40 & -82.22 & -88.08 & -90.15 & -96.65 & -99.45 & -101.34 & -103.84 & -102.19 & -73.70 & -79.50 & -82.36 & -87.59 & -91.57 & -96.27 & -96.38 & -100.15 \\
+    \midrule
+    $D_{OUT}$ (\%)  & 50.68 & 50.68 & 50.69 & 50.65 & 50.67 & 50.67 & 50.68 & 50.68 & 50.67 & 50.68 & 50.67 & 50.68 & 50.69 & 50.68 & 50.67 & 50.67 & 50.68 & 50.65 & 50.67 & 50.68 & 50.69 & 50.66 & 50.67 & 50.68 & 50.66 & 50.66 & 50.65 & 50.67 & 50.69 & 50.65 & 50.67 & 50.67 \\
+    $t_{rise,OUT}$ (mUI)   & 0.47 & 0.48 & 0.48 & 0.48 & 0.48 & 0.47 & 0.47 & 0.48 & 0.48 & 0.48 & 0.48 & 0.48 & 0.48 & 0.48 & 0.47 & 0.48 & 0.48 & 0.48 & 0.48 & 0.48 & 0.48 & 0.47 & 0.47 & 0.48 & 0.47 & 0.48 & 0.48 & 0.48 & 0.48 & 0.48 & 0.48 & 0.48 \\
+    $t_{fall,OUT}$ (mUI)   & 0.44 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.44 & 0.45 & 0.44 & 0.45 & 0.44 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.44 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 & 0.45 \\
+    $J_{c,rms,OUT}$ (ns)  & 4.49 & 4.14 & 3.91 & 3.82 & 4.04 & 3.82 & 3.68 & 3.62 & 5.54 & 4.98 & 4.32 & 4.04 & 4.10 & 3.96 & 3.84 & 3.61 & 9.68 & 6.42 & 5.44 & 4.56 & 4.53 & 4.22 & 4.04 & 3.95 & 74.77 & 22.98 & 8.95 & 5.94 & 5.41 & 4.60 & 4.43 & 4.06 \\
+    $J_{e,rms,OUT}$ (ns)  & 25.87 & 26.40 & 26.17 & 28.14 & 29.69 & 28.56 & 27.84 & 30.37 & 33.72 & 31.65 & 27.02 & 26.38 & 25.23 & 26.18 & 27.94 & 23.03 & 63.90 & 41.11 & 34.11 & 28.12 & 28.27 & 27.40 & 26.10 & 26.54 & 522.49 & 158.78 & 59.60 & 38.87 & 33.83 & 29.22 & 28.18 & 25.62 \\
+    $J_{int,rms,OUT}$ (ns) & 19.28 & 18.07 & 14.95 & 14.83 & 14.90 & 13.60 & 13.58 & 11.61 & 30.18 & 27.08 & 21.52 & 20.50 & 19.09 & 17.97 & 15.46 & 14.68 & 62.51 & 39.06 & 31.66 & 25.39 & 24.39 & 21.47 & 20.99 & 19.67 & 521.92 & 158.18 & 58.49 & 36.93 & 31.83 & 26.08 & 24.81 & 21.46 \\
+    $L_{OUT}(f_m)\,@\,1 \ \mathrm{kHz}$  (dBc/Hz)       & -81.82 & -81.03 & -80.51 & -81.46 & -80.69 & -82.33 & -81.51 & -80.95 & -82.82 & -82.33 & -82.69 & -83.01 & -83.96 & -83.97 & -83.75 & -85.03 & -84.60 & -87.35 & -85.72 & -85.36 & -86.16 & -84.54 & -88.98 & -86.72 & -82.46 & -86.58 & -88.52 & -87.35 & -87.13 & -85.68 & -87.99 & -87.31 \\
+    $L_{OUT}(f_m)\,@\,10 \ \mathrm{kHz}$ (dBc/Hz)       & -84.42 & -82.98 & -82.59 & -82.61 & -81.87 & -82.48 & -82.50 & -83.49 & -84.23 & -83.34 & -83.21 & -82.09 & -82.03 & -81.15 & -79.55 & -83.02 & -86.16 & -84.86 & -85.19 & -85.04 & -81.14 & -81.12 & -80.25 & -79.53 & -78.84 & -84.33 & -85.08 & -84.77 & -85.56 & -81.89 & -81.50 & -82.10 \\
+    $L_{OUT}(f_m)\,@\, \frac{f_{CK\_OUT}}{2}$ (dBc/Hz)  & -102.70 & -100.25 & -101.80 & -102.36 & -103.81 & -105.02 & -103.91 & -104.20 & -90.89 & -96.40 & -101.44 & -104.43 & -103.48 & -102.26 & -102.24 & -102.40 & -82.22 & -88.08 & -90.15 & -96.65 & -99.45 & -101.34 & -103.84 & -102.19 & -73.70 & -79.50 & -82.36 & -87.59 & -91.57 & -96.27 & -96.38 & -100.15 \\
+    \bottomrule\bottomrule
+\end{tabular}
+}\end{table}
+
+```
+
+
+
+``` bash
+\begin{tabular}{cccccccccccccccccccccccccccccccccccccccc}\toprule\toprule
+    Trimming Code T$\left \langle 4:0 \right \rangle$ (Decimal) & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 & 31 \\
+    \toprule\toprule
+    $I_{DD}$ @ 40 fF (simul.) (nA)   & \\
+    $I_{DD}$ @ no load (calc.) (nA)  & \\
+    $t_{lock}$  (ms)                & \\
+    \midrule
+    $D_{ADC}$ (\%) & \\
+    $t_{rise,ADC}$ (ns)    & \\
+    $t_{fall,ADC}$ (ns)    & \\
+    $J_{c,rms,ADC}$ (ns)   & \\
+    $J_{e,rms,ADC}$ (ns)   & \\
+    $J_{int,rms,ADC}$ (ns) & \\
+    $L_{ADC}(f_m)\,@\,1 \ \mathrm{kHz}$ (dBc/Hz)       & \\
+    $L_{ADC}(f_m)\,@\,10 \ \mathrm{kHz}$ (dBc/Hz)      & \\
+    $L_{ADC}(f_m)\,@\, \frac{f_{CK\_ADC}}{2}$ (dBc/Hz) & \\
+    \midrule
+    $D_{OUT}$ (\%) & \\
+    $t_{rise,OUT}$ (ns)   & \\
+    $t_{fall,OUT}$ (ns)    & \\
+    $J_{c,rms,OUT}$ (ns)   & \\
+    $J_{e,rms,OUT}$ (ns)   & \\
+    $J_{int,rms,OUT}$ (ns) & \\
+    $L_{OUT}(f_m)\,@\,1 \ \mathrm{kHz}$ (dBc/Hz)       & \\
+    $L_{OUT}(f_m)\,@\,10 \ \mathrm{kHz}$ (dBc/Hz)      & \\
+    $L_{OUT}(f_m)\,@\, \frac{f_{CK\_OUT}}{2}$ (dBc/Hz) & \\
+    \bottomrule\bottomrule
+\end{tabular}
+
+\begin{tabular}{cccccccccccccccccccccccccccccccccccccccc}\toprule\toprule
+    Parameter & Best @ Code & Worst @ Code \\
+    \toprule\toprule
+    (simul.) $I_{DD}$ @ 40 fF   & \\
+    (calc.) $I_{DD}$ @ no load  & \\
+    $t_{lock}$                & \\
+    \midrule
+    $D_{ADC}$  & \\
+    $t_{rise,ADC}$   & \\
+    $t_{fall,ADC}$   & \\
+    $J_{c,rms,ADC}$  & \\
+    $J_{e,rms,ADC}$  & \\
+    $J_{int,rms,ADC}$ & \\
+    $L_{ADC}(f_m)\,@\,1 \ \mathrm{kHz}$          & \\
+    $L_{ADC}(f_m)\,@\,10 \ \mathrm{kHz}$         & \\
+    $L_{ADC}(f_m)\,@\, \frac{f_{CK\_ADC}}{2}$    & \\
+    \midrule
+    $D_{OUT}$  & \\
+    $t_{rise,OUT}$   & \\
+    $t_{fall,OUT}$    & \\
+    $J_{c,rms,OUT}$   & \\
+    $J_{e,rms,OUT}$   & \\
+    $J_{int,rms,OUT}$ & \\
+    $L_{OUT}(f_m)\,@\,1 \ \mathrm{kHz}$       & \\
+    $L_{OUT}(f_m)\,@\,10 \ \mathrm{kHz}$      & \\
+    $L_{OUT}(f_m)\,@\, \frac{f_{CK\_OUT}}{2}$ & \\
+    \bottomrule\bottomrule
+\end{tabular}
+
+nA      
+nA      
+ms      
+\%      
+ns      
+ns      
+ns      
+ns      
+ns      
+dBc/Hz  
+dBc/Hz  
+dBc/Hz  
+\%      
+ns      
+ns      
+ns      
+ns      
+ns      
+dBc/Hz  
+dBc/Hz  
+dBc/Hz  
+```
+
+
+``` bash
+\begin{table}[H]\centering
+    %\renewcommand{\arraystretch}{1.5} % 调整行间距为 1.5 倍
+    %\setlength{\tabcolsep}{1.5mm} % 调整列间距
+    \caption{Post-layout simulation results at typical corner for all trimming codes}
+    \label{tab__simul_all_trimming_results}
+
+\resizebox{\linewidth}{!}{   % 设置宽度为 \linewidth 等比例缩放
+\begin{tabular}{cccccccccccccccccccccccccccccccccccccccc}\toprule\toprule
+    Trimming Code T$\left \langle 4:0 \right \rangle$ (Decimal) & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 & 31 \\
+    \toprule\toprule
+    (simul.) $I_{DD}$ @ 40 fF (nA)   & 503.40 & 503.70 & 502.50 & 505.20 & 503.90 & 502.70 & 503.40 & 504.40 & 508.40 & 507.90 & 507.40 & 506.20 & 508.00 & 508.50 & 508.50 & 508.90 & 513.50 & 511.20 & 512.40 & 512.90 & 513.90 & 514.20 & 514.40 & 511.60 & 518.10 & 519.30 & 518.50 & 518.70 & 518.30 & 518.10 & 518.30 & 519.30 \\
+    (calc.) $I_{DD}$ @ no load (nA)  & 459.16 & 459.46 & 458.26 & 460.96 & 459.66 & 458.46 & 459.16 & 460.16 & 464.16 & 463.66 & 463.16 & 461.96 & 463.76 & 464.26 & 464.26 & 464.66 & 469.26 & 466.96 & 468.16 & 468.66 & 469.66 & 469.96 & 470.16 & 467.36 & 473.86 & 475.06 & 474.26 & 474.46 & 474.06 & 473.86 & 474.06 & 475.06 \\
+    $t_{lock}$  (ms)                & 1.77 & 2.05 & 2.23 & 2.42 & 2.72 & 2.99 & 3.15 & 3.33 & 1.56 & 1.71 & 1.90 & 2.08 & 2.32 & 2.57 & 2.69 & 2.81 & 1.44 & 1.56 & 1.77 & 1.93 & 2.14 & 2.32 & 2.47 & 2.54 & NAN & 1.50 & 1.62 & 1.80 & 2.02 & 2.17 & 2.29 & 2.41 \\
+    \midrule
+    $D_{ADC}$ (\%) & 50.02 & 50.02 & 50.02 & 50.01 & 50.04 & 50.04 & 50.03 & 50.03 & 50.02 & 50.02 & 50.01 & 50.01 & 50.04 & 50.04 & 50.03 & 50.03 & 50.02 & 50.02 & 50.02 & 50.01 & 50.04 & 50.04 & 50.04 & 50.03 & 49.96 & 50.01 & 50.01 & 50.01 & 50.04 & 50.04 & 50.03 & 50.03 \\
+    $t_{rise,ADC}$ (ns)    & 0.54 & 0.54 & 0.55 & 0.55 & 0.55 & 0.54 & 0.55 & 0.55 & 0.54 & 0.55 & 0.55 & 0.55 & 0.54 & 0.55 & 0.55 & 0.54 & 0.55 & 0.55 & 0.54 & 0.54 & 0.54 & 0.55 & 0.55 & 0.54 & 0.55 & 0.54 & 0.55 & 0.54 & 0.54 & 0.55 & 0.55 & 0.54 \\
+    $t_{fall,ADC}$ (ns)    & 0.56 & 0.56 & 0.55 & 0.55 & 0.55 & 0.55 & 0.55 & 0.55 & 0.55 & 0.55 & 0.55 & 0.55 & 0.55 & 0.55 & 0.55 & 0.56 & 0.55 & 0.55 & 0.55 & 0.55 & 0.56 & 0.55 & 0.55 & 0.56 & 0.55 & 0.55 & 0.56 & 0.56 & 0.55 & 0.56 & 0.55 & 0.56 \\
+    $J_{c,rms,ADC}$ (ns)   & 24.54 & 22.12 & 20.22 & 19.52 & 20.33 & 18.67 & 17.84 & 17.36 & 34.22 & 29.78 & 24.21 & 22.06 & 21.09 & 20.08 & 20.20 & 16.92 & 68.35 & 42.69 & 34.32 & 26.93 & 25.49 & 23.08 & 21.29 & 20.84 & 564.12 & 170.31 & 63.15 & 39.00 & 33.65 & 26.98 & 25.46 & 22.05 \\
+    $J_{e,rms,ADC}$ (ns)   & 26.28 & 26.73 & 26.39 & 28.32 & 29.85 & 28.81 & 28.04 & 30.51 & 34.56 & 32.38 & 27.46 & 26.74 & 25.60 & 26.47 & 28.18 & 23.26 & 66.39 & 42.30 & 35.11 & 28.80 & 28.72 & 27.82 & 26.46 & 26.86 & 545.67 & 165.28 & 61.77 & 39.77 & 34.69 & 29.94 & 28.88 & 26.21 \\
+    $J_{int,rms,ADC}$ (ns) & 19.65 & 18.38 & 15.09 & 14.95 & 14.85 & 13.61 & 13.63 & 11.49 & 31.01 & 27.73 & 21.92 & 20.78 & 19.45 & 18.14 & 15.62 & 14.74 & 64.92 & 40.25 & 32.67 & 26.09 & 24.82 & 21.74 & 21.35 & 19.94 & 542.28 & 163.91 & 60.62 & 37.80 & 32.68 & 26.79 & 25.41 & 21.94 \\
+    $L_{ADC}(f_m)\,@\,1 \ \mathrm{kHz}$ (dBc/Hz)       & -81.82 & -81.03 & -80.51 & -81.46 & -80.69 & -82.33 & -81.51 & -80.95 & -82.82 & -82.33 & -82.69 & -83.01 & -83.96 & -83.97 & -83.75 & -85.03 & -84.60 & -87.35 & -85.72 & -85.36 & -86.16 & -84.54 & -88.98 & -86.72 & -82.46 & -86.58 & -88.52 & -87.35 & -87.13 & -85.68 & -87.99 & -87.31 \\
+    $L_{ADC}(f_m)\,@\,10 \ \mathrm{kHz}$ (dBc/Hz)      & -84.42 & -82.98 & -82.59 & -82.61 & -81.87 & -82.48 & -82.50 & -83.49 & -84.23 & -83.34 & -83.21 & -82.09 & -82.03 & -81.15 & -79.55 & -83.02 & -86.16 & -84.86 & -85.19 & -85.04 & -81.14 & -81.12 & -80.25 & -79.53 & -78.84 & -84.33 & -85.08 & -84.77 & -85.56 & -81.89 & -81.50 & -82.10 \\
+    $L_{ADC}(f_m)\,@\, \frac{f_{CK\_ADC}}{2}$ (dBc/Hz) & -102.70 & -100.25 & -101.80 & -102.36 & -103.81 & -105.02 & -103.91 & -104.20 & -90.89 & -96.40 & -101.44 & -104.43 & -103.48 & -102.26 & -102.24 & -102.40 & -82.22 & -88.08 & -90.15 & -96.65 & -99.45 & -101.34 & -103.84 & -102.19 & -73.70 & -79.50 & -82.36 & -87.59 & -91.57 & -96.27 & -96.38 & -100.15 \\
+    \midrule
+    $D_{OUT}$ (\%) & 50.68 & 50.68 & 50.69 & 50.65 & 50.67 & 50.67 & 50.68 & 50.68 & 50.67 & 50.68 & 50.67 & 50.68 & 50.69 & 50.68 & 50.67 & 50.67 & 50.68 & 50.65 & 50.67 & 50.68 & 50.69 & 50.66 & 50.67 & 50.68 & 50.66 & 50.66 & 50.65 & 50.67 & 50.69 & 50.65 & 50.67 & 50.67 \\
+    $t_{rise,OUT}$ (ns)   & 4.83 & 4.85 & 4.84 & 4.87 & 4.91 & 4.83 & 4.83 & 4.89 & 4.84 & 4.85 & 4.85 & 4.87 & 4.84 & 4.84 & 4.81 & 4.88 & 4.85 & 4.87 & 4.87 & 4.86 & 4.90 & 4.82 & 4.82 & 4.86 & 4.82 & 4.93 & 4.92 & 4.85 & 4.88 & 4.88 & 4.87 & 4.90 \\
+    $t_{fall,OUT}$ (ns)    & 4.52 & 4.53 & 4.57 & 4.57 & 4.54 & 4.55 & 4.62 & 4.53 & 4.56 & 4.53 & 4.58 & 4.49 & 4.56 & 4.53 & 4.59 & 4.52 & 4.57 & 4.55 & 4.59 & 4.55 & 4.56 & 4.56 & 4.59 & 4.58 & 4.54 & 4.51 & 4.55 & 4.58 & 4.56 & 4.55 & 4.60 & 4.57 \\
+    $J_{c,rms,OUT}$ (ns)   & 4.49 & 4.14 & 3.91 & 3.82 & 4.04 & 3.82 & 3.68 & 3.62 & 5.54 & 4.98 & 4.32 & 4.04 & 4.10 & 3.96 & 3.84 & 3.61 & 9.68 & 6.42 & 5.44 & 4.56 & 4.53 & 4.22 & 4.04 & 3.95 & 74.77 & 22.98 & 8.95 & 5.94 & 5.41 & 4.60 & 4.43 & 4.06 \\
+    $J_{e,rms,OUT}$ (ns)   & 25.87 & 26.40 & 26.17 & 28.14 & 29.69 & 28.56 & 27.84 & 30.37 & 33.72 & 31.65 & 27.02 & 26.38 & 25.23 & 26.18 & 27.94 & 23.03 & 63.90 & 41.11 & 34.11 & 28.12 & 28.27 & 27.40 & 26.10 & 26.54 & 522.49 & 158.78 & 59.60 & 38.87 & 33.83 & 29.22 & 28.18 & 25.62 \\
+    $J_{int,rms,OUT}$ (ns) & 19.28 & 18.07 & 14.95 & 14.83 & 14.90 & 13.60 & 13.58 & 11.61 & 30.18 & 27.08 & 21.52 & 20.50 & 19.09 & 17.97 & 15.46 & 14.68 & 62.51 & 39.06 & 31.66 & 25.39 & 24.39 & 21.47 & 20.99 & 19.67 & 521.92 & 158.18 & 58.49 & 36.93 & 31.83 & 26.08 & 24.81 & 21.46 \\
+    $L_{OUT}(f_m)\,@\,1 \ \mathrm{kHz}$ (dBc/Hz)       & -81.82 & -81.03 & -80.51 & -81.46 & -80.69 & -82.33 & -81.51 & -80.95 & -82.82 & -82.33 & -82.69 & -83.01 & -83.96 & -83.97 & -83.75 & -85.03 & -84.60 & -87.35 & -85.72 & -85.36 & -86.16 & -84.54 & -88.98 & -86.72 & -82.46 & -86.58 & -88.52 & -87.35 & -87.13 & -85.68 & -87.99 & -87.31 \\
+    $L_{OUT}(f_m)\,@\,10 \ \mathrm{kHz}$ (dBc/Hz)      & -84.42 & -82.98 & -82.59 & -82.61 & -81.87 & -82.48 & -82.50 & -83.49 & -84.23 & -83.34 & -83.21 & -82.09 & -82.03 & -81.15 & -79.55 & -83.02 & -86.16 & -84.86 & -85.19 & -85.04 & -81.14 & -81.12 & -80.25 & -79.53 & -78.84 & -84.33 & -85.08 & -84.77 & -85.56 & -81.89 & -81.50 & -82.10 \\
+    $L_{OUT}(f_m)\,@\, \frac{f_{CK\_OUT}}{2}$ (dBc/Hz) & -102.70 & -100.25 & -101.80 & -102.36 & -103.81 & -105.02 & -103.91 & -104.20 & -90.89 & -96.40 & -101.44 & -104.43 & -103.48 & -102.26 & -102.24 & -102.40 & -82.22 & -88.08 & -90.15 & -96.65 & -99.45 & -101.34 & -103.84 & -102.19 & -73.70 & -79.50 & -82.36 & -87.59 & -91.57 & -96.27 & -96.38 & -100.15 \\
+    \bottomrule\bottomrule
+\end{tabular}
+}\end{table}
+
+```
+
+
 
 
 ### 7.2 all_corner of v2
-### 7.3 all_load of v2
-### 7.4 more detailed results
 
-这里给出功耗分布饼图：
+
+<div class='center'>
+
+| Spectre X + CX 仿真结果与可视化 (all-corner) |  |  |
+|:-:|:-:|:-:|
+ | 仿真设置 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-14-00-26-48_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> | all_corner of v2 @ Spectre X + CX <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-13-22-21-14_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> |  |
+ | 结果汇总表 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-14-00-26-35_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> | nominal/mean/min/max <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-14-00-26-01_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div>  |  |
+ |  MATLAB 可视化曲线图 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-14-00-25-41_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> | MATLAB 可视化柱状图 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-14-00-25-23_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> | MATLAB 全工艺相位噪声可视化 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-14-00-25-03_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> |
+</div>
+
+
+
+
+``` bash
+\begin{tabular}{cccccccccccccccccccccccccccccccccccccccc}\toprule\toprule
+    Test Point & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+    \bottomrule\toprule
+    Process Corner & TT & TT & TT & TT & SS & SS & SS & SS & FF & FF & FF & FF \\
+    Temperature & -20°C & 27°C & 50°C & 80°C & -20°C & 27°C & 50°C & 80°C & -20°C & 27°C & 50°C & 80°C \\
+    Supply Voltage (VDD) & 1.25 V & 1.25 V & 1.25 V & 1.25 V & 1.20 V & 1.20 V & 1.20 V & 1.20 V & 1.30 V & 1.30 V & 1.30 V & 1.30 V \\
+    \bottomrule\toprule
+    $I_{DD}$ @ 40 fF (simul.) (nA)   & \\
+    $I_{DD}$ @ no load (calc.) (nA)  & \\
+    $t_{lock}$  (ms)                & \\
+    \midrule
+    $D_{ADC}$ (\%) & \\
+    $t_{rise,ADC}$ (ns)    & \\
+    $t_{fall,ADC}$ (ns)    & \\
+    $J_{c,rms,ADC}$ (ns)   & \\
+    $J_{e,rms,ADC}$ (ns)   & \\
+    $J_{int,rms,ADC}$ (ns) & \\
+    $L_{ADC}(f_m)\,@\,1 \ \mathrm{kHz}$ (dBc/Hz)       & \\
+    $L_{ADC}(f_m)\,@\,10 \ \mathrm{kHz}$ (dBc/Hz)      & \\
+    $L_{ADC}(f_m)\,@\, \frac{f_{CK\_ADC}}{2}$ (dBc/Hz) & \\
+    \midrule
+    $D_{OUT}$ (\%) & \\
+    $t_{rise,OUT}$ (ns)   & \\
+    $t_{fall,OUT}$ (ns)    & \\
+    $J_{c,rms,OUT}$ (ns)   & \\
+    $J_{e,rms,OUT}$ (ns)   & \\
+    $J_{int,rms,OUT}$ (ns) & \\
+    $L_{OUT}(f_m)\,@\,1 \ \mathrm{kHz}$ (dBc/Hz)       & \\
+    $L_{OUT}(f_m)\,@\,10 \ \mathrm{kHz}$ (dBc/Hz)      & \\
+    $L_{OUT}(f_m)\,@\, \frac{f_{CK\_OUT}}{2}$ (dBc/Hz) & \\
+    \bottomrule\bottomrule
+\end{tabular}
+```
+
+
+### 7.3 all_load of v2
+
+<div class='center'>
+
+| Spectre X + CX 仿真结果与可视化 (all-corner) |  |  |
+|:-:|:-:|:-:|
+ | 仿真设置  | all_corner of v2 @ Spectre X + CX  |  |
+ | 结果汇总表 (1) | 结果汇总表 (2) nominal/mean/min/max   |  |
+
+</div>
+
+
+### 7.4 comparison to prior art
+
+2025.12.15 搜集了一下 ultra-low-power PLL 的相关文献，总结如下：
+
+<span style='font-size:10px'> 
+
+<div class='center'>
+
+| Paper | Power Efficiency | Ref. Spur | RMS Jitter | 其它参数 | 架构 | 主要亮点 |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+ | [1] J.-W. Moon | 0.256 mW/GHz @ 0.4 V (0.13 mW @ 0.5 GHz) | -59 dBc | 16.9 ps | - | 经典 CP-PLL, 差分 RVCO  | (1) 在 CP 中引入了补偿，包括 gain-boosting 和 bulk-driven; (2) 利用了 AFC (automatic frequency calibration) 来提高性能; (3) 使用了带 bulk-driven 的 cross-couple-based differential RVCO  |
+ | [2] B. Xiang | 0.213mW/GHz @ 0.8 V  | < -90 dBc | 2.3 ps (J_int @ 100 kHz ~ 100 MHz) | FoM = -234.4 dB, core area = 0.015 mm2 | 经典 CP-PLL | (1) 带有 lock detection 以加速锁定, 200ns lock time at 100MHz reference clock (20 ref cycles); (2) 使用了 tunable switched capacitor based loop filter (SC-LPF); (3) VCO 带有 start-up;   |
+ | [3] W. Wu et al. 这是个 Ultra-Low Jitter Frac-N DTC-based sampling PLL  |  |  |  |  |  |  |
+ | [4] M. Faisal | 1.6 mW/GHz or 1.1 mW/GHz @ 0.5 V (300 nW @ 187.5 kHz, 570 nW @ 500 kHz) | -60 dBc | 12.3 ns @ 187.5 kHz, 4.7 ns @ 500 kHz | core area = 0.07 mm2  | ADPLL |  |
+ | [5] S. Schober (这篇没有给出除 CP 之外的其它模块情况，有拿一个特殊 CP 去蹭已有优秀模块的嫌疑) |  |  |  |  | 经典 CP-PLL | 主要亮点 (1) 使用了非常规的 capacitor-based CP 以实现低抖动和宽锁定, 并且实现了极低的 CP 电流失配和极低的 (锁定后) 静态电流 |
+ | [6] S. K. Saw 这篇很拉，像课程大作业而不是论文 |  |  |  |  |  |  |
+ | [7] B. Ghafari 这篇不咋行，更像是课程大作业 | @ 1 V (0.196 mW @ 0.4 GHz ) |  |  |  |  | (1) 使用 cross-coupled-based RVCO |
+ | [8] Y.-H. | 0.50 mW/GHz @ 1V (1.19 mW @ 2.4 GHz) | -66 dBc | 1.7 ps | FoMJ = -234.6 dB, core area = 0.22 mm2 | frac-N sub-sampling digital PLL (SS-DPLL) | (1) improved DTC nonlinearity |
+ | [9] C.-Y. Lin | 5.16 mW/GHz @ 1V (169 nW @ 32.768 kHz) |  | 94.54 ns (Jcc_rms), 529.4 ns (Jcc_pp) | core area = 0.116 mm2 |  |  |
+ | [10] N. O. Adesina 这是个特殊工艺，并且功率效率异常的低，有点奇怪 | 0.0010 mW/GHz @ 0.5V (1.91 uW @ 2 GHz) |  |  |  |  |  |
+ | [14] T.-S. Chao | 0.38 mW/GHz @ 0.5V (210 uW @ 0.55 GHz) | - | 8.01 ps (Je_rms), 56.36 ps (Je_pp) | core area = 0.017 mm2 |  |  |
+ | [17] A. Gundel | 70 mW/GHz @ 5V (7 uW @ 100.013 kHz) | - | 5 ns (Jc_rms) | core area = 0.8 mm2 |  |  |
+ | [18] A. Kira et al. | 0.0609 mW/GHz @ 1 V (6.709 uW @ 110.2 MHz) | - | 2.02 ps (estimated from SSB phase noise spectral density) | FoM = , core area =  | CP-PLL | (1) 使用了 dead-zone-free PFD 以提高相噪/抖动性能  (2) 使用了 MEMS-based oscillator 以实现低相噪/抖动的参考信号 | 
+ | [19] A. Kira et al. | 0.0609 mW/GHz @ 1 V (6.709 uW @ 110.2 MHz) | - | 2.02 ps (estimated from SSB phase noise spectral density) | FoM = , core area =  | CP-PLL | (1) 使用了 dead-zone-free PFD 以提高相噪/抖动性能  (2) 使用了 MEMS-based oscillator 以实现低相噪/抖动的参考信号 | 
+</div>
+</span>
+
+<div class='center'>
+
+| [18] A. Kira et al. 的这个 PFD 值得复现试一试 |
+|:-:|
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-15-22-53-15_临时文件.png"/></div> |  |  |
+ |  |
+</div>
+
+
+进一步筛选和整理之后：
+
+<span style='font-size:09px'> 
+
+<div class='center'>
+
+| Paper | Power Efficiency | Ref. Spur | RMS Jitter | 其它参数 | 架构 |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+ | CICC'14 [1] J.-W. Moon | 0.256 mW/GHz @ 0.4 V (0.13 mW @ 0.5 GHz) | -59 dBc | 16.9 ps (Je_rms) | FoM = -224.3, core area = 0.041 (estimated from die graph) | 经典 CP-PLL, 差分 RVCO  |
+ | CICC'20 [2] B. Xiang | 0.213mW/GHz @ 0.8 V (0.682 mW @ 3.2 GHz) | < -90 dBc | 2.3 ps (J_int @ 100 kHz ~ 100 MHz) | FoM = -234.4 dB, core area = 0.015 mm2 | 经典 CP-PLL |
+ | S3S'15 [4] M. Faisal | 1.6 mW/GHz @ 0.5 V (300 nW @ 187.5 kHz) <br> 1.1 mW/GHz @ 0.5 V (570 nW @ 500 kHz) <br> 1.266 mW/GHz (435 nW @ 343.75 kHz) (estimated from the reported power consumption at 187.5 kHz and 500 kHz) | -60 dBc | 12.3 ns @ 187.5 kHz <br> 4.7 ns @ 500 kHz <br> 301.4 ns @ 343 kHz (estimated from the SSB phase noise) | FoM = -193.43 dB @ 187.5 kHz, core area = 0.07 mm2 <br> FoM = -199.00 dB @ 500 kHz | ADPLL |
+ | TCSI'16 [8] Y.-H. | 0.50 mW/GHz @ 1 V (1.19 mW @ 2.4 GHz) | -66 dBc | 1.7 ps | FoMJ = -234.6 dB, core area = 0.22 mm2 | frac-N sub-sampling digital PLL (SS-DPLL) | 
+ | ASSCC'17 [9] C.-Y. Lin | 5.16 mW/GHz @ 1 V (169 nW @ 32.768 kHz) | - | 94.54 ns (Je_rms) | FoM = -178.21 dB (estimated from the reported Jcc_rms), core area = 0.116 mm2 | CP-PLL |
+ | ESSCIRC'09 [14] T.-S. Chao | 0.38 mW/GHz @ 0.5 V (210 uW @ 0.55 GHz) | - | 8.01 ps (Je_rms) | FoM = -228.71 dB, core area = 0.017 mm2 | CP-PLL |
+ | ISCAS'07 [17] A. Gundel | 70 mW/GHz @ 5 V (7 uW @ 100.013 kHz) | - | 5 ns (Jc_rms) | FoM = -187.57 dB, core area = 0.8 mm2 | CP-PLL |
+ | JSSC'14 [19] S. Zaliasl et al. ([9] 的参考文献) | 8.8501 mW/GHz @ 1.2 V (290 nW @ 32.768 kHz) | - | 235 ns (estimated Je_rms from the reported LTJ_pp) <br> 0.7 ns (long-term jitter) | FoM = -167.95 dB (calc. from the estimated Je_rms), core area = 0.3 mm2 | CP-PLL |
+ | ISSCC'23 [20] Z. Zhang (组内文献) | 0.22 mW/GHz @ 0.35 V (0.55 mW @ 2.5 GHz) | -78.1 dBc |  375 fs  | FoM = -251.1 dB, core area = 0.197 mm2 | SS-PLL |
+ | VLSIC'19 [21] Z. Zhang (组内文献) | 0.048 mW/GHz @ 0.25 V (0.0095 mW @ 0.2 GHz) | -48.5 dBc |  147.2 ps | FoM = -216.9 dB, core area = 0.009 mm2 | DP-CP-PLL |
+ | ISSCC'19 [22] Z. Zhang (组内文献) | 0.5143 mW/GHz @ 0.65 V (7.2 mW @ 14 GHz) | -64.6 | 56.4 fs | FoM = - 256.4 dB, core area = 0.234 mm2 | SS-PLL |
+ | ISSCC'25 [23] X. Shen (组内文献)  | 1.3048 mW/GHz @ 0.65 V (13.7 mW @ 10.5 GHz) | -72.9 | 73.8 fs | FoM = - 251.3 dB, core area = 0.27 mm2 | S-PLL |
+ | TCSI'19 [24] Z. Zhang (组内文献) | 0.685 mW/GHz @ 0.95 V (13.7 mW @ 20 GHz) | NA | 57.4 fs | FoM = -253.5 dB, core area = 0.462 mm2 | SIL-ADPLL |
+
+<!--  | [18] A. Kira et al. | 0.0609 mW/GHz @ 1 V (6.709 uW @ 110.2 MHz) | -135 dBc (estimated) | 1.94 ps (estimated Jint_rms from SSB phase noise spectral density) | FoM = -255.63 dB, core area = 0.110 mm2 | CP-PLL | -->
+</div>
+</span>
+
+``` bash
+str_matrix = [
+% Name, Architecture, Cite_name
+"This Work (X03)"   "CP-PLL"    ""
+"This Work (X24)"   "CP-PLL"    ""
+"[1] CICC'14"       "CP-PLL"    "\cite{Moon_2014_04V500MHzUltralowpower}           "
+"[2] CICC'20"       "CP-PLL"    "\cite{Xiang_2020_05Vto09V02GHzto5GHzUltraLowPower}"
+"[4] S3S'15"        "AD-PLL"    "\cite{Faisal_2015_300nWNearthreshold1875500}      "
+"[8] TCSI'16"       "SS-DPLL"   "\cite{Liu_2017_UltraLowPower1727}                 "
+"[9] ASSCC'17"      "CP-PLL"    "\cite{Lin_2017_UltralowPower169nA}                "
+"[14] ESSCIRC'09"   "CP-PLL"    "\cite{Chao_2009_DesigningUltralowVoltage}         "
+"[17] ISCAS'07"     "CP-PLL"    "\cite{Gundel_2007_UltraLowPower}                  "
+"[19] JSSC'14"      "CP-PLL"    "\cite{Zaliasl_2015_3Ppm15}                        "
+"[20] ISSCC'23"     "SS-PLL"    "\cite{Zhang_2023_04VVDD225to275GHzULVSSPLL}       "
+"[21] VLSIC'19"     "DP-CP-PLL" "\cite{Zhang_2019_02504VSub011mWGHz}               "
+"[22] ISSCC'19"     "SS-PLL"    "\cite{Zhang_2019_065V12to16GHzSubSampling}        "
+"[23] ISSCC'25"     "S-PLL"     "\cite{Shen_2025_065VVDD104to118GHzFractionalN}    "
+"[24] TCSI'19"      "SIL-ADPLL" "\cite{Zhang_2019_1823GHz574fs}                    "
+];
+
+\begin{tabular}{ccccccccccccccccc}\toprule
+    Parameter 
+    & {\color{red}\bfseries This Work (X03)} 
+    & \cite{Moon_2014_04V500MHzUltralowpower}               CICC'14 
+    & \cite{Xiang_2020_05Vto09V02GHzto5GHzUltraLowPower}    CICC'20 
+    & \cite{Faisal_2015_300nWNearthreshold1875500}          S3S'15
+    & \cite{Liu_2017_UltraLowPower1727}                     TCSI'16
+    & \cite{Lin_2017_UltralowPower169nA}                    ASSCC'17
+    & \cite{Chao_2009_DesigningUltralowVoltage}             ESSCIRC'09
+    & \cite{Gundel_2007_UltraLowPower}                      ISCAS'07
+    & \cite{Zaliasl_2015_3Ppm15}                            JSSC'14
+    % 下面五篇是组内文献
+    & \cite{Zhang_2023_04VVDD225to275GHzULVSSPLL}           ISSCC'23
+    & \cite{Zhang_2019_02504VSub011mWGHz}                   VLSIC'19
+    & \cite{Zhang_2019_065V12to16GHzSubSampling}            ISSCC'19
+    & \cite{Shen_2025_065VVDD104to118GHzFractionalN}        ISSCC'25
+    & \cite{Zhang_2019_1823GHz574fs}                        TCSI'19
+    \\
+    \midrule
+    Architecture                &  &   \\
+    Output Frequency $f_{out}$  &  &   \\
+    Current Efficiency $I_{eff}$&  &   \\
+    Power Efficiency $P_{eff}$  &  &   \\
+    Supply Voltage $V_{DD}$     &  &   \\
+    RMS Jitter $J_{rms}$        &  &   \\
+    FoM$_J$                     &  &   \\
+    Core Area                   &  &   \\
+    Reference Spur              &  &   \\
+    \bottomrule
+\end{tabular}
+
+
+
+
+
+
+
+
+
+
+str_matrix = [
+% Name, Architecture, Cite_name
+"This Work (X03)"   "CP-PLL"    ""
+"This Work (X24)"   "CP-PLL"    ""
+"CICC'14"       "CP-PLL"    "\cite{Moon_2014_04V500MHzUltralowpower}           "
+"CICC'20"       "CP-PLL"    "\cite{Xiang_2020_05Vto09V02GHzto5GHzUltraLowPower}"
+"S3S'15"        "AD-PLL"    "\cite{Faisal_2015_300nWNearthreshold1875500}      "
+"TCSI'16"       "SS-DPLL"   "\cite{Liu_2017_UltraLowPower1727}                 "
+"ASSCC'17"      "CP-PLL"    "\cite{Lin_2017_UltralowPower169nA}                "
+"ESSCIRC'09"   "CP-PLL"    "\cite{Chao_2009_DesigningUltralowVoltage}         "
+"ISCAS'07"     "CP-PLL"    "\cite{Gundel_2007_UltraLowPower}                  "
+"JSSC'14"      "CP-PLL"    "\cite{Zaliasl_2015_3Ppm15}                        "
+"ISSCC'23"     "SS-PLL"    "\cite{Zhang_2023_04VVDD225to275GHzULVSSPLL}       "
+"VLSIC'19"     "DP-CP-PLL" "\cite{Zhang_2019_02504VSub011mWGHz}               "
+"ISSCC'19"     "SS-PLL"    "\cite{Zhang_2019_065V12to16GHzSubSampling}        "
+"ISSCC'25"     "S-PLL"     "\cite{Shen_2025_065VVDD104to118GHzFractionalN}    "
+"TCSI'19"      "SIL-ADPLL" "\cite{Zhang_2019_1823GHz574fs}                    "
+];
+
+\begin{tabular}{ccccccccccccccccc}\toprule
+    \midrule
+    Work                                    & \\
+    Architecture                            & \\
+    Output Frequency $f_{out}$ (kHz)        & \\
+    Current Efficiency $I_{eff}$ (nA/kHz)   & \\
+    Power Efficiency $P_{eff}$ (nW/kHz)     & \\
+    Supply Voltage $V_{DD}$ (V)             & \\
+    RMS Jitter $J_{rms}$ (ps)               & \\
+    FoM$_J$ (dB)                            & \\
+    Core Area (mm$^2$)                      & \\
+    Reference Spur (dBc)                     & \\
+    \bottomrule
+\end{tabular}
+
+
+
+str_matrix = [
+% Name (用于作图), Architecture, export_name
+"This Work (X03)"   "CP-PLL"    "This Work (X03)"
+"This Work (X24)"   "CP-PLL"    "This Work (X24)"
+"[99] CICC'14"      "CP-PLL"    "\cite{Moon_2014_04V500MHzUltralowpower} CICC'14"
+"[99] CICC'20"      "CP-PLL"    "\cite{Xiang_2020_05Vto09V02GHzto5GHzUltraLowPower} CICC'20"
+"S3S'15"            "AD-PLL"    "\cite{Faisal_2015_300nWNearthreshold1875500} S3S'15"
+"TCSI'16"           "SS-DPLL"   "\cite{Liu_2017_UltraLowPower1727} TCSI'16"
+"ASSCC'17"          "CP-PLL"    "\cite{Lin_2017_UltralowPower169nA} ASSCC'17"
+"ESSCIRC'09"        "CP-PLL"    "\cite{Chao_2009_DesigningUltralowVoltage} ESSCIRC'09"
+"ISCAS'07"          "CP-PLL"    "\cite{Gundel_2007_UltraLowPower} ISCAS'07"
+"JSSC'14"           "CP-PLL"    "\cite{Zaliasl_2015_3Ppm15} JSSC'14"
+"ISSCC'23"          "SS-PLL"    "\cite{Zhang_2023_04VVDD225to275GHzULVSSPLL} ISSCC'23"
+"VLSIC'19"          "DP-CP-PLL" "\cite{Zhang_2019_02504VSub011mWGHz} VLSIC'19"
+"ISSCC'19"          "SS-PLL"    "\cite{Zhang_2019_065V12to16GHzSubSampling} ISSCC'19"
+"ISSCC'25"          "S-PLL"     "\cite{Shen_2025_065VVDD104to118GHzFractionalN} ISSCC'25"
+"TCSI'19"           "SIL-ADPLL" "\cite{Zhang_2019_1823GHz574fs} TCSI'19"
+];
+
+
+\begin{tabular}{cccccccccccccccccccc}\bottomrule\toprule
+    Work                                    & 
+    Architecture                            & 
+    Output Frequency $f_{out}$ (kHz)        & 
+    Current Consumption $I_{DD}$ (nA)       & 
+    Current Efficiency $I_{eff}$ (nA/kHz)   & 
+    Power Efficiency $P_{eff}$ (nW/kHz)     & 
+    Supply Voltage $V_{DD}$ (V)             & 
+    RMS Jitter $J_{rms}$ (ps)               & 
+    FoM$_{J}$ (dB)                          & 
+    FoM$_{JA}$ (dB)                         & 
+    Core Area (mm$^2$)                      & 
+    Reference Spur (dBc)                    & 
+    \bottomrule\toprule
+\end{tabular}
+
+
+
+```
+
+
+注：下面的文献仅用于指标性能对比，与总项目中参考文献标号无关。
+- [1] J.-W. Moon, S.-G. Kim, D.-H. Kwon, and W.-Y. Choi, “A 0.4-V, 500-MHz, ultra-low-power phase-locked loop for near-threshold voltage operation,” in Proceedings of the IEEE 2014 Custom Integrated Circuits Conference, Sept. 2014, pp. 1–4. doi: 10.1109/CICC.2014.6946100.
+- [2] B. Xiang, Y. Fan, J. Ayers, J. Shen, and D. Zhang, “A 0.5V-to-0.9V 0.2GHz-to-5GHz Ultra-Low-Power Digitally-Assisted Analog Ring PLL with Less Than 200ns Lock Time in 22nm FinFET CMOS Technology,” in 2020 IEEE Custom Integrated Circuits Conference (CICC), Mar. 2020, pp. 1–4. doi: 10.1109/CICC48029.2020.9075897.
+- [3] W. Wu et al., “A 14-nm Ultra-Low Jitter Fractional-N PLL Using a DTC Range Reduction Technique and a Reconfigurable Dual-Core VCO,” IEEE Journal of Solid-State Circuits, vol. 56, no. 12, pp. 3756–3767, Dec. 2021, doi: 10.1109/JSSC.2021.3111134.
+- [4] M. Faisal, N. E. Roberts, and D. D. Wentzloff, “A 300nW near-threshold 187.5–500 kHz programmable clock generator for ultra low power SoCs,” in 2015 IEEE SOI-3D-Subthreshold Microelectronics Technology Unified Conference (S3S), Oct. 2015, pp. 1–3. doi: 10.1109/S3S.2015.7333528.
+- [5] S. Schober and J. Choma, “A charge transfer-based high performance, ultra-low power PLL charge pump,” in 2015 IEEE 6th Latin American Symposium on Circuits & Systems (LASCAS), Montevideo, Uruguay: IEEE, Feb. 2015, pp. 1–4. doi: 10.1109/LASCAS.2015.7250412.
+- [6] S. K. Saw and V. Nath, “A low power low noise current starved CMOS VCO for PLL,” in Communication & Automation International Conference on Computing, May 2015, pp. 1252–1255. doi: 10.1109/CCAA.2015.7148611.
+- [7] B. Ghafari, L. Koushaeian, and F. Goodarzy, “An ultra low power and small size PLL for wearable and implantable medical sensors,” in 2012 IEEE Consumer Communications and Networking Conference (CCNC), Jan. 2012, pp. 409–412. doi: 10.1109/CCNC.2012.6181026.
+- [8] Y.-H. Liu et al., “An Ultra-Low Power 1.7-2.7 GHz Fractional-N Sub-Sampling Digital Frequency Synthesizer and Modulator for IoT Applications in 40 nm CMOS,” IEEE Transactions on Circuits and Systems I: Regular Papers, vol. 64, no. 5, pp. 1094–1105, May 2017, doi: 10.1109/TCSI.2016.2625462.
+- [9] C.-Y. Lin, T.-J. Wang, T.-H. Liu, and T.-H. Lin, “An ultra-low power 169-nA 32.768-kHz fractional-N PLL,” in 2017 IEEE Asian Solid-State Circuits Conference (A-SSCC), Nov. 2017, pp. 45–48. doi: 10.1109/ASSCC.2017.8240212.
+- [10] N. O. Adesina, A. Srivastava, A. Ullah Khan, and J. Xu, “An Ultra-Low Power MOS2 Tunnel Field Effect Transistor PLL Design for IoT Applications,” in 2021 IEEE International IOT, Electronics and Mechatronics Conference (IEMTRONICS), Apr. 2021, pp. 1–6. doi: 10.1109/IEMTRONICS52119.2021.9422641.
+- [11] S. Chakraborty et al., “An ultra-low power, low-cost, multi-standard transceiver,” in 2015 Texas Symposium on Wireless and Microwave Circuits and Systems (WMCS), Apr. 2015, pp. 1–5. doi: 10.1109/WMCaS.2015.7233220.
+- [12] N. van Helleputte and G. Gielen, “An Ultra-low-Power Quadrature PLL in 130nm CMOS for Impulse Radio Receivers,” in 2007 IEEE Biomedical Circuits and Systems Conference, Nov. 2007, pp. 63–66. doi: 10.1109/BIOCAS.2007.4463309.
+- [13] T. Alam, T. H. Saika, T. Tanjil Hossain, and S. Nishat, “Design and Optimization of an Area Efficient Ultra-Low Voltage Differential Ring VCO with Wide Tuning Range for PLL Applications,” in 2023 26th International Conference on Computer and Information Technology (ICCIT), Dec. 2023, pp. 1–6. doi: 10.1109/ICCIT60459.2023.10441252.
+- [14] T.-S. Chao, Y.-L. Lo, W.-B. Yang, and K.-H. Cheng, “Designing ultra-low voltage PLL Using a bulk-driven technique,” in 2009 Proceedings of ESSCIRC, Sept. 2009, pp. 388–391. doi: 10.1109/ESSCIRC.2009.5325983.
+- [15] B. Ghafari, L. Koushaeian, and F. Goodarzy, “New architecture for an ultra low power and low noise PLL for biomedical applications,” in 2013 IEEE Global High Tech Congress on Electronics, Nov. 2013, pp. 61–62. doi: 10.1109/GHTCE.2013.6767241.
+- [16] S. K. Saw and V. Nath, “Performance Analysis of Low Power CSVCO for PLL Architecture,” in 2015 Second International Conference on Advances in Computing and Communication Engineering, May 2015, pp. 370–373. doi: 10.1109/ICACCE.2015.101.
+- [17] A. Gundel and W. N. Carr, “Ultra Low Power CMOS PLL Clock Synthesizer for Wireless Sensor Nodes,” in 2007 IEEE International Symposium on Circuits and Systems (ISCAS), May 2007, pp. 3059–3062. doi: 10.1109/ISCAS.2007.378054.
+- [18] A. Kira et al., “A 6.7 μW Low-Noise, Compact PLL with an Input MEMS-Based Reference Oscillator Featuring a High-Resolution Dead/Blind Zone-Free PFD,” Sensors, vol. 24, no. 24, Dec. 2024, doi: 10.3390/s24247963.
+- [19] S. Zaliasl et al., “A 3 ppm 1.5 × 0.8 mm 2 1.0 µA 32.768 kHz MEMS-Based Oscillator,” IEEE Journal of Solid-State Circuits, vol. 50, no. 1, pp. 291–302, Jan. 2015, doi: 10.1109/JSSC.2014.2360377.
+下面几篇是我们组的部分文献，用作 state-of-art 参考：
+- [20] Z. Zhang et al., “A 0.4V-VDD 2.25-to-2.75GHz ULV-SS-PLL Achieving 236.6fsrms Jitter, −253.8dB Jitter-Power FoM, and −76.1dBc Reference Spur,” in 2023 IEEE International Solid- State Circuits Conference (ISSCC), San Francisco, CA, USA: IEEE, Feb. 2023, pp. 86–88. doi: 10.1109/ISSCC42615.2023.10067638.
+- [21] Z. Zhang, G. Zhu, and C. P. Yue, “A 0.25-0.4-V, Sub-0.11-mW/GHz, 0.15-1.6-GHz PLL Using an Offset Dual-Path Loop Architecture with Dynamic Charge Pumps,” in 2019 Symposium on VLSI Circuits, June 2019, pp. C158–C159. doi: 10.23919/VLSIC.2019.8778061.
+- [22] Z. Zhang, G. Zhu, and C. P. Yue, “A 0.65V 12-to-16GHz Sub-Sampling PLL with 56.4fsrms Integrated Jitter and -256.4dB FoM,” in 2019 IEEE International Solid- State Circuits Conference - (ISSCC), San Francisco, CA, USA: IEEE, Feb. 2019, pp. 488–490. doi: 10.1109/ISSCC.2019.8662378.
+- [23] X. Shen et al., “A 0.65V-VDD 10.4-to-11.8GHz Fractional-N Sampling PLL Achieving 73.8fsrms Jitter, -271.5dB FoMN, and -61 dBc in-Band Fractional Spur in 40nm CMOS,” in 2025 IEEE International Solid-State Circuits Conference (ISSCC), San Francisco, CA, USA: IEEE, Feb. 2025, pp. 1–3. doi: 10.1109/ISSCC49661.2025.10904612.
+- [24] Z. Zhang et al., “An 18–23 GHz 57.4-fs RMS Jitter −253.5-dB FoM Sub-Harmonically Injection-Locked All-Digital PLL With Single-Ended Injection Technique and ILFD Aided Adaptive Injection Timing Alignment Technique,” IEEE Trans. Circuits Syst. I, vol. 66, no. 10, pp. 3733–3746, Oct. 2019, doi: 10.1109/TCSI.2019.2911531.
+
+
+
+
+### 7.5 summary and comparison
+
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-16-22-10-02_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div>
+
+**记得给出功耗分布饼图：**
+
+
+## 8. Simulation with Digital LDO
+
+这一小节我们代入需求方提供的数字 LDO 进行联合仿真。
+
+<div class='center'>
+
+| 联合仿真结果 |
+|:-:|:-:|:-:|
+ | 先看一下需求方提供的数字 LDO 的仿真结果 (LDO schematic, Spectre X + CX)：<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-16-22-04-27_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> |
+ | 然后将 LDO 和 PLL 联合起来仿真，考虑到仿真时长，仅使用 schematic of LDO and PLL  |
+</div>
+
+
+vref 被 enable 之前，仿真是很快的；但 vref 被 enable 之后，仿真耗时大约 35ms/h @ Spectre FX + AX (8-thread)。于是推荐：
+- Spectre FX + AX (8-thread)：设置 (延迟 5ms 是为了达到稳态)
+    - vref_delay = 700m
+    - settling_begin = vref_delay + 5m
+    - time_end = settling_begin + 200m
+    - 仿真耗时约 5min + 6h
+- Spectre X + CX (8-thread)：设置 (延迟 5ms 是为了达到稳态)
+    - vref_delay = 700m
+    - settling_begin = vref_delay + 5m
+    - time_end = settling_begin + 10m
+    - 仿真耗时约 10min + 7h
+
+经过测试，发现将总仿真时间拉长时，仿真精度会明显降低 (平均步长增加)，导致仿出来的结果和预期不符 (Spectre FX + AX 是这样，X + CX 还没试过)。
+
+
+### 8.0 transient operation points
+
+
+
+另起一个 test 命名为 `TB_PLL_withDigitalLDO_forTranOP`，在 `tran > Option > state file > savetime` 中设置好保存时间为 `500m, 700m`，可以看到仿真过程中保存了瞬态工作点：
+
+``` bash
+# ......
+  491.00 ms / 700.00 ms (70.14%)  # of steps: 278159 time spent: 00:03:54  time left: 00:01:39  CPU: 796.06%  mem: 184.184 MB
+  497.00 ms / 700.00 ms (71.00%)  # of steps: 281659 time spent: 00:03:57  time left: 00:01:36  CPU: 796.06%  mem: 184.191 MB
+Saving the states into file at t=500 ms...
+State File: ./input.scs.tran.srf_at_500.00ms.
+  505.00 ms / 700.00 ms (72.14%)  # of steps: 286946 time spent: 00:04:02  time left: 00:01:33  CPU: 796.11%  mem: 184.688 MB
+  512.98 ms / 700.00 ms (73.28%)  # of steps: 291556 time spent: 00:04:06  time left: 00:01:29  CPU: 796.07%  mem: 184.723 MB
+  519.75 ms / 700.00 ms (74.25%)  # of steps: 295655 time spent: 00:04:10  time left: 00:01:26  CPU: 796.00%  mem: 184.734 MB
+# ......
+# ......
+  695.00 ms / 700.00 ms (99.29%)  # of steps: 398924 time spent: 00:05:43  time left: 00:00:02  CPU: 796.04%  mem: 185.25 MB
+Saving the states into file at t=700 ms...
+State File: ./input.scs.tran.srf_at_700.00ms.
+# ......
+```
+
+然后到原来的仿真中，设置 `tran > Option > recovery` 为刚刚保存的瞬态工作点，这里以 700ms 的瞬态工作点为例，文件路径为：
+``` bash
+# 注意下面的 /4 对应 all_load8 的结果 (BUF 被使能)
+/home/dy2025/Desktop/Work/simulation/MyLib_202510_PLL_onc18/TB_PLL_withDigitalLDO/maestro/results/maestro/Interactive.286/4/TB_PLL_withDigitalLDO_forTranOP_SpectreFXAX/netlist/input.scs.tran.srf_at_700.00ms
+```
+
+设置好仿真结束时间 (总的时间，包含之前的 700ms)，这里以 710ms 为例，运行仿真，可以看到仿真是从 700ms 开始的：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-17-14-59-18_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div>
+
+recovery 文件相当于设置了一个初始状态，在开始瞬态之前仿真器会先给一个收敛的 DC 结果，然后再开始瞬态仿真，但仿出来发现这个 DC 结果明显错误，如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-17-15-17-54_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div>
+
+遂改为 Spextre X + CX 重新尝试一遍，先仿瞬态工作点 (vref disabled)：从 15:20 到 15:30 只仿了 1.035 ms (148 m%)，这样算下来要仿完大约需要 112.6h (4.7 days)，实在是太久了。于是无奈在 tb schematic 中将 PLL 和 white_noise disable 掉，只仿 LDO 的瞬态工作点。具体而言：
+- (1) 设置仿真模式为 Spectre X + CX (8-thread)
+- (2) 在 tb schematic 中将 PLL 和 white_noise disable 掉
+- (3) 设置 fnoise_max = 1 MHz 以提高仿真速度 (增加仿真步长)
+
+保存的瞬态工作点路径为：
+``` bash
+# Interactive.292
+/home/dy2025/Desktop/Work/simulation/MyLib_202510_PLL_onc18/TB_PLL_withDigitalLDO/maestro/results/maestro/Interactive.292/4/TB_PLL_withDigitalLDO_forTranOP_SpectreXCX/netlist/input.scs.tran.srf_at_700.00ms
+```
+
+然后将其它的器件 enable 回来，设置 recovery 文件为刚刚保存的瞬态工作点，修改仿真结束时间进行仿真，却警告说 “恢复失败”：
+
+``` bash
+*************************************************
+Transient Analysis `tran': time = (0 s -> 715 ms)
+*************************************************
+Recovering from save-restart file /data/Work_dy2025/simulation/MyLib_202510_PLL_onc18/TB_PLL_withDigitalLDO/maestro/results/maestro/Interactive.292/4/TB_PLL_withDigitalLDO_forTranOP_SpectreXCX/netlist/input.scs.tran.srf_at_700.00ms,
+
+Warning from spectre during transient analysis `tran'.
+    WARNING (SPECTRE-4076): The circuit information has changed since the last savestate, which is not allowed. Use the checkpoint feature to restore the circuit to the last saved state.
+    WARNING (SPECTRE-16532): Failed to recover from /data/Work_dy2025/simulation/MyLib_202510_PLL_onc18/TB_PLL_withDigitalLDO/maestro/results/maestro/Interactive.292/4/TB_PLL_withDigitalLDO_forTranOP_SpectreXCX/netlist/input.scs.tran.srf_at_700.00ms due to error in file or the reloaded ckt is different from the ckt when saved.
+```
+
+无奈，又回去重新仿真瞬态工作点：
+- (1) 设置仿真模式为 Spectre X + CX (8-thread)
+- (2) 在 tb schematic 中所有用到的器件全部 enable 回来
+- (3) 设置 fnoise_max = 1 MHz (or 0.1 MHz) 以提高仿真速度
+保存的瞬态工作点路径为：
+``` bash
+# Interactive.298
+/data/Work_dy2025/simulation/MyLib_202510_PLL_onc18/TB_PLL_withDigitalLDO/maestro/results/maestro/Interactive.298/4/TB_PLL_withDigitalLDO_forTranOP_SpectreXCX/netlist/input.scs.tran.srf_at_700.00ms
+```
+
+遇到了仿真不收敛的问题：
+
+``` bash
+
+*************************************************
+Transient Analysis `tran': time = (0 s -> 710 ms)
+*************************************************
+Recovering from save-restart file /data/Work_dy2025/simulation/MyLib_202510_PLL_onc18/TB_PLL_withDigitalLDO/maestro/results/maestro/Interactive.298/5/TB_PLL_withDigitalLDO_forTranOP_SpectreXCX/netlist/input.scs.tran.srf_at_700.00ms,
+Restarting at time 700 ms.
+
+Opening the PSFXL file ../psf/tran.tran.tran ...
+Important parameter values:
+    start = 0 s
+    outputstart = 0 s
+    stop = 710 ms
+    step = 710 us
+    maxstep = 7.1 ms
+    minstep = 100 as
+    ic = all
+    useprevic = no
+    skipdc = no
+    reltol = 100e-06
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    abstol(Temp) = 100 uC
+    abstol(Pwr) = 1 nW
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    errpreset = conservative_sigglobal
+    method = gear2only
+    lteratio = 10
+    relref = sigglobal
+    cmin = 0 F
+    gmin = 1 pS
+    rabsshort = 1 mOhm
+    trannoisemethod = default
+    noisefmax = 100 MHz
+    noisefmin = 1.40845 Hz
+    noiseseed = 1
+
+
+Warning from spectre during transient analysis `tran'.
+    WARNING (CMI-2732): I0.I92.R1.R0.r_noise:  Resistance= 9.998528e+12 has exceeded rcut=1.000000e+12 and will be cut to 1.000000e+12. 
+    WARNING (CMI-2732): I1.R17.r_noise:  Resistance= 1.070437e+12 has exceeded rcut=1.000000e+12 and will be cut to 1.000000e+12. 
+    WARNING (CMI-2732): I1.R1.r_noise:  Resistance= 2.143550e+13 has exceeded rcut=1.000000e+12 and will be cut to 1.000000e+12. 
+    WARNING (CMI-2732): I1.R18.r_noise:  Resistance= 3.131028e+12 has exceeded rcut=1.000000e+12 and will be cut to 1.000000e+12. 
+    WARNING (CMI-2732): I1.R0.r_noise:  Resistance= 3.853573e+12 has exceeded rcut=1.000000e+12 and will be cut to 1.000000e+12. 
+        Further occurrences of this warning will be suppressed.
+
+
+Output and IC/nodeset summary:
+                 save   31      (current)
+                 save   51      (voltage)
+
+    tran: time = 700 ms      (98.6 %), step = 700 ms       (98.6 %)
+
+Notice from spectre at time = 700 ms during transient analysis `tran'.
+    Newton iteration fails to converge at time = 700 ms step = 19.984 fs.
+        Disaster recovery algorithm is enabled to search for a converged solution.
+Error found by spectre at time = 701.311 ms during transient analysis `tran'.
+    ERROR (SPECTRE-16192): No convergence achieved with the minimum time step specified.  
+```
+
+日志中给出了下面几条改进建议：
+``` bash
+The following set of suggestions might help you avoid convergence difficulties.  
+
+ 1. Enable diagnostic messages using the `+diagnose' option.
+
+ 2. Evaluate and resolve any notice, warning, or error messages.
+ 3. Use realistic device models. Check all component parameters, particularly nonlinear device model parameters, to ensure that they are reasonable.
+ 4. Small floating resistors connected to high impedance nodes can cause convergence difficulties. Avoid very small floating resistors, particularly small parasitic resistors in semiconductors. Instead, use voltage sources or iprobes to measure current.
+ 5. Ensure that a complete set of parasitic capacitors is used on nonlinear devices to avoid jumps in the solution waveforms. On MOS models, specify nonzero source and drain areas.
+ 6. Perform sanity check on the parameter values by using the parameter range checker (use ``+param param-limits-file'' as a command line argument) and heed any warnings.  Print the minimum and maximum parameter value by using `info' analysis.  Ensure that the bounds given for instance, model, output, temperature-dependent, and operating-point (if possible) parameters are reasonable.
+
+ 7. Check the direction of both independent and dependent current sources. Convergence problems might result if current sources are connected such that they force current backward through diodes.
+ 8. Use the `cmin' parameter to install a small capacitor from every node in the circuit to ground.  This usually eliminates any jump in the solution.
+ 9. Loosen tolerances, particularly absolute tolerances like `iabstol' (on options statement). If tolerances are set too tight, they might preclude convergence.
+10. Try to simplify the nonlinear component models to avoid regions that might contribute to convergence problems in the model.
+
+```
+
+然后是网上的一些方法：
+- [cadence virtuoso 仿真不收敛的几种解决方法](https://www.bilibili.com/opus/965887928148426791)：(1) minstep越小越容易收敛; (2) 换算法or改变迭代次数，可以试试 gear2only或者其它的算法，再或者修改迭代次数，但是增大迭代次数可能会让仿真变得很慢。
+
+尝试了多种方法，没能解决。于是考虑用 APS 而不是 Spectre X + CX 来仿，因为这样可以修改 DC 收敛算法 (比如 gear2only) 和迭代次数，Spectre X 是不能修改这些参数的。瞬态工作点仿真设置如下：
+- (1) 设置仿真模式为 APS (8-thread)
+- (2) 在 tb schematic 中所有用到的器件全部 enable 回来
+- (3) 设置 fnoise_max = 1 MHz (or 0.1 MHz) 以提高仿真速度
+保存的瞬态工作点路径为：
+``` bash
+# Interactive.311
+/data/Work_dy2025/simulation/MyLib_202510_PLL_onc18/TB_PLL_withDigitalLDO/maestro/results/maestro/Interactive.311/4/TB_PLL_withDigitalLDO_forTranOP_APS/netlist/input.scs.tran.srf_at_700.00ms
+```
+
+还是不收敛，没办法了，只能直接长时间仿真了。
+
+### 8.1 Spectre X + CX 仿真结果
+
+仿真设置：
+- (1) 设置仿真模式为 Spectre X + CX (16-thread)
+- (2) 仿真时长：
+    - vref_delay = 700m
+    - settling_begin = vref_delay + 5m
+    - time_end = settling_begin + 20m (稳定后再多仿 15ms)
+- (3) 瞬态噪声 (仿真精度): fnoise_max = 1 MHz (无法实现 100 MHz 因为仿真时间太长)
+- (4) Corner 设置：
+    - all_load8
+    - TT +27°
+
+19:32 开始，约 20:36 (1h) 时到 700ms 处，开始进入锁相环的仿真，然后又到 22:52:21 才仿完，共耗时 1h + 2h 20m = 3h 20m. 仿真结果如下：
+
+<div class='center'>
+
+|  |  |  |
+|:-:|:-:|:-:|
+ | 结果总览 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-17-23-09-50_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> |  |  |
+ | EN_BUF = 0 @ (TT, 27°C) 时： | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-17-23-04-31_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-17-23-05-47_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> |
+ | 下图之所以 Std. Dev. 达到 80 ns, 是因为在 VDD 突变时引起了大抖动 (详见右图) <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-17-22-53-53_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-17-22-55-34_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> |  |
+ | EN_BUF = 1 @ (TT, 27°C) 时： <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-17-22-57-58_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-17-23-00-05_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> |  |
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-17-23-02-54_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> |  |  |
+</div>
+
+### 8.2 Spectre X + CX 长时间仿真
+
+延长仿真时间到 750ms (700 ms 接入，705 ms 稳定，然后再多仿 45 ms)，仿真设置和结果如下：
+- (1) 设置仿真模式为 Spectre X + CX @ 16-thread (2-job parallel)
+- (2) 瞬态噪声 (仿真精度): fnoise_max = 2 MHz
+- (3) Corner 设置：
+    - all_load8 (EN_BUF = 1, CL1 = 80 fF, CL2 = 30 pF)
+    - TT +27° (EN_BUF = 0, CL1 = 40 fF, CL2 = 30 pF)
+- (4) 仿真时长：
+    - vref_delay = 700m
+    - settling_begin = vref_delay + 5m
+    - time_end = vref_delay + 50m (稳定后再多仿 45ms)
+
+<div class='center'>
+
+| 仿真耗时 10h 50m 59s @ 16-thread (2-job parallel) |
+|:-:|
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-20-22-52-12_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> |
+ | 这边有个问题就是，需求方的这个电源，输出纹波会使 VDD 突变 +60 mV 左右，这个 60 mV 实在太大，导致每出现一次纹波，我们的锁相环输出频率就会波动一次，然后在 180 us 内重归稳定。在电源轻载模式下（比如引到 PAD 的两路被 disable），这个纹波间隔在 64.3 ms 左右 (15.5 Hz)。这么大的间隔，对输出频率的影响其实不大。但是在电源重载模式（比如 enable 引到 PAD 的两路输出），这个纹波间隔会缩短到 2 ms (0.5 kHz)，尽管每次波动之后输出频率很快就会锁回来 (180 us 内)，但频繁的纹波会导出输出频率不那么好看，如下图：<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-19-00-58-38_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> |
+</div>
+
+
+### 8.3 电源上升纹波导致的输出频率波动问题
+
+下面是一个给导这边拿去和需求方 battlle 的问题说明文档，记录了电源充电纹波导致输出频率波动的问题。
+
+### 电源上升纹波导致的输出频率波动问题
+
+#### 1. 问题现象描述
+
+在锁相环和数字电源联合仿真时，发现电源充电时纹波突变过大 (约 +60 mV)，这会使输出频率出现明显波动，然后在 180 us 内重新稳定。并且，由电源的工作原理容易知道，平均输出电流与充电纹波频率成正比，所以这个频率波动现象在重载时更为明显 (比如 enable 了引到 PAD 的两路输出时)。
+
+具体而言，当前数字电源的工作原理是：当输出电压低于 1.25 V 时 (比如 1.235 V)，内部电路开启，给电源输出端大电容 (uF-level) 充电，直到输出电压达到 1.31 V 左右，停止充电。这个过程带来了 +50 mV ~ +70 mV 的输出电压突变，尽管我们已经使用了 VDD-referenced LPF 和 VDD-referenced VCO 来抑制电源波动对输出频率的影响，但 50 mV ~ 70 mV 的突变还是足以让输出频率出现明显波动。
+
+下图是一个具体的例子：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-19-01-28-46_临时文件.png"/></div><br><br>
+
+图中可以看到，在接入锁相环之后 (enable 了 big BUF，模拟测试时的电流消耗)，电源的充电纹波间隔缩小到 2ms, 导致输出频率每 2ms 出现一次明显波动，尽管 180 us 内能重新稳定下来，但频繁的波动为测试带来了不便。
+
+使用 VDD-referenced LPF/VCO，是为了让锁相环中 VCO 的控制电压 "`vcont` 紧紧跟随 VDD"，使得这俩的差值基本不变，这样能充分抑制电源波动对输出频率的影响。但别忘了从 vcont 到 GND 之间的电压差也会影响 VCO 输出频率。下图是一个例子，说明了频率波动的直接原因是 "VCO 控制电压 vcont 到 GND 之间的电压差值突变过大"。毕竟 50 mV ~ 70 mV 已经较大，足以使 VCO 频率发生明显变化：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-19-01-31-08_临时文件.png"/></div><br><br>
+
+最后给出每次频率波动的具体变化情况：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-19-01-41-03_临时文件.png"/></div><br><br>
+
+可以看到，输出通道 `CK_OUT` (当前频率设置为 X24) 的频率在 720.9 kHz ~ 843.0 kHz 之间波动，也即 **<span style='color:red'> -8.33% ~ +7.193% </span>**，并 **<span style='color:red'> 在 180 us 内重新稳定下来 </span>**；而另一路输出 `CK_ADC` (频率固定为 X03) 的频率在 92.36 kHz ~ 104.6 kHz 之间波动，也即 **<span style='color:red'> -6.05% ~ +6.40% </span>**，同样在 180 us 内重新稳定下来。
+
+
+
+
+#### 2. 问题细节补充
+
+问：电源的上升纹波是怎么来的，重载模式是什么意思？
+- 答：这个数字电源，大概是根据 "`当输出电压低于 1.25 V 时 (比如 1.235 V)，内部电路开启，给电源输出端大电容 (uF-level) 充电，直到输出电压达到 1.31 V 左右，停止充电`" 的原理来工作的。那么在输出端电容不变的情况下，平均消耗电流越大，电压下降得越快，充电越频繁，纹波就越密集。
+
+问：enable 了 big BUF 时是这样，那么 disable big BUF 时的输出频率如何？
+- 答：disable 了 big BUF 时，由于整个锁相环仅消耗 465 nA 电流 (空载)，电源电压下降得非常慢，即便 TB 中多消耗了 1uA 电流 (总共 1.465 uA)，充电间隔也能维持在 60 ms 以上，这么大的间隔并不会对输出频率造成明显影响 (因为频率波动间隔远大于 180 us 的稳定时间)，也基本不会影响后级使用锁相环输出时钟的数字电路正常工作 (具体有没有影响，还需进一步确认)。
+- <span style='color:red'> 注：无论有没有 enable big BUF，联合仿真下的锁相环输出性能都与单独仿真时一致 (包括功耗和抖动等)，仅是频率受电源纹波影响出现波动而已。 </span>
+
+
+问：可能的解决方案有什么？
+- 答：只要从 LDO 输出端消耗过多电流，这个纹波就会变密集。相反，平均消耗电流越少，纹波就越稀疏 (间隔越大)。那么只有两种方案：
+    - (1) 增大 LDO 输出端电容，让每次充电能“撑住”的时间长一些，开启没那么频繁，纹波自然就变稀疏
+    - (2) 把我们输出端 big BUF (用于将内部的两路输出放大到 PAD) 的电源单独拉出来，不和锁相环其它部分共用，这样测试的时候需要单独给 big BUF 供电（small BUF 仍算在锁相环剩余部分里，用于提供有一定负载能力的时钟输出）
+
+
+
+
+
+
+
+
+
+
+
+
+
+### 8.4 all-SL 验证
+
+数字 LDO 和 PLL 都只用 schematic 进行仿真，设置 Spectre X + CX 为 16-thread 进行仿真时，仿真器自动将线程数限制为了 8-thread：
+
+``` bash
+Notice from spectre during initial setup.
+    Number of thread was limited because of small circuit size.
+
+Notice from spectre.
+    Multithreading enabled: 8 threads in the system with 152 available processors.
+```
+
+仿真设置和结果如下：
+- (1) 设置仿真模式为 Spectre X + CX @ 16-thread (4-job parallel), 实际被自动限制为了 8-thread
+- (2) 瞬态噪声 (仿真精度): fnoise_max = 0.5 MHz
+- (3) Corner 设置：all_SL, 也即 SL<1:0> = <00>, <01>, <10>, <11> @ (TT, 27°C)
+- (4) 仿真时长：
+    - vref_delay = 700m
+    - settling_begin = vref_delay + 5m
+    - time_end = vref_delay + 25m (稳定后再多仿 20ms)
+
+
+<div class='center'>
+
+| 仿真耗时 2h 31m 60s @ 8-thread |
+|:-:|
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-20-22-44-44_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> |
+</div>
+
+截至目前，我们所有的仿真都是设置 REF 为方波输入。尽管我们已经在 PFD 给了两个 INV 作为输入 BUF, 但 TB 最好还是设置正弦输入以模仿真实输入情况。于是：
+
+**<span style='color:red'> 从本语句之后的所用仿真，若无特别说明，REF 均设置为了正弦输入 (无相噪) </span>**
+
+
+### 8.5 GND-reference LPF/VCO
+
+
+我们顺便将 LPF 改为 GND-referenced 简单测试了一下，但 VCO 的控制电压 vcont 仍然是 PMOS-input (没改), 所以稳定后的噪声水平显著恶化 (主要来自 VDD)。于是又重新试了一下 GND-referenced LPF 配合 GND-referenced VCO，仿真设置和结果如下：
+- (1) 设置仿真模式为 Spectre X + CX @ 16-thread (2-job parallel), 实际被限制为了 8-thread
+- (2) 瞬态噪声 (仿真精度): fnoise_max = 2 MHz
+- (3) Corner 设置：
+    - all_load8 (EN_BUF = 1, CL1 = 80 fF, CL2 = 30 pF)
+    - TT +27° (EN_BUF = 0, CL1 = 40 fF, CL2 = 30 pF)
+- (4) 其它修改：
+    - LPF 改为 GND-referenced
+    - VCO 改为 GND-referenced (NMOS-input)
+    - 上述修改已经在开始仿真 (生成网表) 后修改回来，不必担心对后续仿真产生影响
+- (5) 仿真时长：
+    - vref_delay = 700m
+    - settling_begin = vref_delay + 5m
+    - time_end = vref_delay + 50m (稳定后再多仿 45ms)
+
+
+<div class='center'>
+
+| 仿真耗时  @ 8-thread (设置 16-thread 但被限制为 8-thread) |
+|:-:|
+ |  |
+</div>
+
 
 
 ## FATAL (SPECTRE-18): Segmentation fault.
@@ -1047,8 +1919,8 @@ which creates a resistive path or UNDERPASS in the net which is not recommended.
 ```
 
 
-## x. Iteration Summary
-
+<!-- ## x. Iteration Summary
+ -->
 <!-- <div class='center'>
 
 | Time | Summary | Results Overview | 
@@ -1063,38 +1935,67 @@ which creates a resistive path or UNDERPASS in the net which is not recommended.
  -->
 
 
+## Literature Review
 
+2025.12.15 搜集了一下 ultra-low-power PLL 的相关文献，总结如下：
 
+<span style='font-size:10px'> 
 
+<div class='center'>
 
+| Paper | Power Efficiency | Ref. Spur | RMS Jitter | 其它参数 | 架构 | 主要亮点 |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+ | [1] J.-W. Moon | 0.256 mW/GHz @ 0.4 V (0.13 mW @ 0.5 GHz) | -59 dBc | 16.9 ps | - | 经典 CP-PLL, 差分 RVCO  | (1) 在 CP 中引入了补偿，包括 gain-boosting 和 bulk-driven; (2) 利用了 AFC (automatic frequency calibration) 来提高性能; (3) 使用了带 bulk-driven 的 cross-couple-based differential RVCO  |
+ | [2] B. Xiang | 0.213mW/GHz @ 0.8 V  | < -90 dBc | 2.3 ps (J_int @ 100 kHz ~ 100 MHz) | FoM = -234.4 dB, core area = 0.015 mm2 | 经典 CP-PLL | (1) 带有 lock detection 以加速锁定, 200ns lock time at 100MHz reference clock (20 ref cycles); (2) 使用了 tunable switched capacitor based loop filter (SC-LPF); (3) VCO 带有 start-up;   |
+ | [3] W. Wu et al. 这是个 Ultra-Low Jitter Frac-N DTC-based sampling PLL  |  |  |  |  |  |  |
+ | [4] M. Faisal | 1.6 mW/GHz or 1.1 mW/GHz @ 0.5 V (300 nW @ 187.5 kHz, 570 nW @ 500 kHz) | -60 dBc | 12.3 ns @ 187.5 kHz, 4.7 ns @ 500 kHz | core area = 0.07 mm2  | ADPLL |  |
+ | [5] S. Schober (这篇没有给出除 CP 之外的其它模块情况，有拿一个特殊 CP 去蹭已有优秀模块的嫌疑) |  |  |  |  | 经典 CP-PLL | 主要亮点 (1) 使用了非常规的 capacitor-based CP 以实现低抖动和宽锁定, 并且实现了极低的 CP 电流失配和极低的 (锁定后) 静态电流 |
+ | [6] S. K. Saw 这篇很拉，像课程大作业而不是论文 |  |  |  |  |  |  |
+ | [7] B. Ghafari 这篇不咋行，更像是课程大作业 | @ 1 V (0.196 mW @ 0.4 GHz ) |  |  |  |  | (1) 使用 cross-coupled-based RVCO |
+ | [8] Y.-H. | 0.50 mW/GHz @ 1V (1.19 mW @ 2.4 GHz) | -66 dBc | 1.7 ps | FoMJ = -234.6 dB, core area = 0.22 mm2 | frac-N sub-sampling digital PLL (SS-DPLL) | (1) improved DTC nonlinearity |
+ | [9] C.-Y. Lin | 5.16 mW/GHz @ 1V (169 nW @ 32.768 kHz) |  | 94.54 ns (Jcc_rms), 529.4 ns (Jcc_pp) | core area = 0.116 mm2 |  |  |
+ | [10] N. O. Adesina 这是个特殊工艺，并且功率效率异常的低，有点奇怪 | 0.0010 mW/GHz @ 0.5V (1.91 uW @ 2 GHz) |  |  |  |  |  |
+ | [14] T.-S. Chao | 0.38 mW/GHz @ 0.5V (210 uW @ 0.55 GHz) | - | 8.01 ps (Je_rms), 56.36 ps (Je_pp) | core area = 0.017 mm2 |  |  |
+ | [17] A. Gundel | 70 mW/GHz @ 5V (7 uA @ 100.013 kHz) | - | 5 ns (Jc_rms) | core area = 0.8 mm2 |  |  |
+</div>
+</span>
 
+上表重新筛选之后：
 
+<span style='font-size:10px'> 
 
+<div class='center'>
 
+| Paper | Power Efficiency | Ref. Spur | RMS Jitter | 其它参数 | 架构 |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+ | [1] J.-W. Moon | 0.256 mW/GHz @ 0.4 V (0.13 mW @ 0.5 GHz) | -59 dBc | 16.9 ps | - | 经典 CP-PLL, 差分 RVCO  |
+ | [2] B. Xiang | 0.213mW/GHz @ 0.8 V  | < -90 dBc | 2.3 ps (J_int @ 100 kHz ~ 100 MHz) | FoM = -234.4 dB, core area = 0.015 mm2 | 经典 CP-PLL |
+ | [4] M. Faisal | 1.6 mW/GHz (300 nW @ 187.5 kHz) <br> 1.1 mW/GHz @ 0.5 V (570 nW @ 500 kHz) | -60 dBc | 12.3 ns @ 187.5 kHz, 4.7 ns @ 500 kHz | core area = 0.07 mm2  | ADPLL |
+ | [8] Y.-H. | 0.50 mW/GHz @ 1 V (1.19 mW @ 2.4 GHz) | -66 dBc | 1.7 ps | FoMJ = -234.6 dB, core area = 0.22 mm2 | frac-N sub-sampling digital PLL (SS-DPLL) | 
+ | [9] C.-Y. Lin | 5.16 mW/GHz @ 1 V (169 nW @ 32.768 kHz) |  | 94.54 ns (Jcc_rms), 529.4 ns (Jcc_pp) | core area = 0.116 mm2 |  |
+ | [14] T.-S. Chao | 0.38 mW/GHz @ 0.5 V (210 uW @ 0.55 GHz) | - | 8.01 ps (Je_rms), 56.36 ps (Je_pp) | core area = 0.017 mm2 |  |
+ | [17] A. Gundel | 70 mW/GHz @ 5 V (7 uA @ 100.013 kHz) | - | 5 ns (Jc_rms) | core area = 0.8 mm2 |  |  |
+</div>
+</span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**<span style='color:red'> ！！！！！ Macro Model Name 没改 </span>**
-
-
-
-**FD 不仅要能在低频工作，高频也是需要的？**
-
-
+注：下面的文献仅用于指标性能对比，与总项目中参考文献标号无关。
+- [1] J.-W. Moon, S.-G. Kim, D.-H. Kwon, and W.-Y. Choi, “A 0.4-V, 500-MHz, ultra-low-power phase-locked loop for near-threshold voltage operation,” in Proceedings of the IEEE 2014 Custom Integrated Circuits Conference, Sept. 2014, pp. 1–4. doi: 10.1109/CICC.2014.6946100.
+- [2] B. Xiang, Y. Fan, J. Ayers, J. Shen, and D. Zhang, “A 0.5V-to-0.9V 0.2GHz-to-5GHz Ultra-Low-Power Digitally-Assisted Analog Ring PLL with Less Than 200ns Lock Time in 22nm FinFET CMOS Technology,” in 2020 IEEE Custom Integrated Circuits Conference (CICC), Mar. 2020, pp. 1–4. doi: 10.1109/CICC48029.2020.9075897.
+- [3] W. Wu et al., “A 14-nm Ultra-Low Jitter Fractional-N PLL Using a DTC Range Reduction Technique and a Reconfigurable Dual-Core VCO,” IEEE Journal of Solid-State Circuits, vol. 56, no. 12, pp. 3756–3767, Dec. 2021, doi: 10.1109/JSSC.2021.3111134.
+- [4] M. Faisal, N. E. Roberts, and D. D. Wentzloff, “A 300nW near-threshold 187.5–500 kHz programmable clock generator for ultra low power SoCs,” in 2015 IEEE SOI-3D-Subthreshold Microelectronics Technology Unified Conference (S3S), Oct. 2015, pp. 1–3. doi: 10.1109/S3S.2015.7333528.
+- [5] S. Schober and J. Choma, “A charge transfer-based high performance, ultra-low power PLL charge pump,” in 2015 IEEE 6th Latin American Symposium on Circuits & Systems (LASCAS), Montevideo, Uruguay: IEEE, Feb. 2015, pp. 1–4. doi: 10.1109/LASCAS.2015.7250412.
+- [6] S. K. Saw and V. Nath, “A low power low noise current starved CMOS VCO for PLL,” in Communication & Automation International Conference on Computing, May 2015, pp. 1252–1255. doi: 10.1109/CCAA.2015.7148611.
+- [7] B. Ghafari, L. Koushaeian, and F. Goodarzy, “An ultra low power and small size PLL for wearable and implantable medical sensors,” in 2012 IEEE Consumer Communications and Networking Conference (CCNC), Jan. 2012, pp. 409–412. doi: 10.1109/CCNC.2012.6181026.
+- [8] Y.-H. Liu et al., “An Ultra-Low Power 1.7-2.7 GHz Fractional-N Sub-Sampling Digital Frequency Synthesizer and Modulator for IoT Applications in 40 nm CMOS,” IEEE Transactions on Circuits and Systems I: Regular Papers, vol. 64, no. 5, pp. 1094–1105, May 2017, doi: 10.1109/TCSI.2016.2625462.
+- [9] C.-Y. Lin, T.-J. Wang, T.-H. Liu, and T.-H. Lin, “An ultra-low power 169-nA 32.768-kHz fractional-N PLL,” in 2017 IEEE Asian Solid-State Circuits Conference (A-SSCC), Nov. 2017, pp. 45–48. doi: 10.1109/ASSCC.2017.8240212.
+- [10] N. O. Adesina, A. Srivastava, A. Ullah Khan, and J. Xu, “An Ultra-Low Power MOS2 Tunnel Field Effect Transistor PLL Design for IoT Applications,” in 2021 IEEE International IOT, Electronics and Mechatronics Conference (IEMTRONICS), Apr. 2021, pp. 1–6. doi: 10.1109/IEMTRONICS52119.2021.9422641.
+- [11] S. Chakraborty et al., “An ultra-low power, low-cost, multi-standard transceiver,” in 2015 Texas Symposium on Wireless and Microwave Circuits and Systems (WMCS), Apr. 2015, pp. 1–5. doi: 10.1109/WMCaS.2015.7233220.
+- [12] N. van Helleputte and G. Gielen, “An Ultra-low-Power Quadrature PLL in 130nm CMOS for Impulse Radio Receivers,” in 2007 IEEE Biomedical Circuits and Systems Conference, Nov. 2007, pp. 63–66. doi: 10.1109/BIOCAS.2007.4463309.
+- [13] T. Alam, T. H. Saika, T. Tanjil Hossain, and S. Nishat, “Design and Optimization of an Area Efficient Ultra-Low Voltage Differential Ring VCO with Wide Tuning Range for PLL Applications,” in 2023 26th International Conference on Computer and Information Technology (ICCIT), Dec. 2023, pp. 1–6. doi: 10.1109/ICCIT60459.2023.10441252.
+- [14] T.-S. Chao, Y.-L. Lo, W.-B. Yang, and K.-H. Cheng, “Designing ultra-low voltage PLL Using a bulk-driven technique,” in 2009 Proceedings of ESSCIRC, Sept. 2009, pp. 388–391. doi: 10.1109/ESSCIRC.2009.5325983.
+- [15] B. Ghafari, L. Koushaeian, and F. Goodarzy, “New architecture for an ultra low power and low noise PLL for biomedical applications,” in 2013 IEEE Global High Tech Congress on Electronics, Nov. 2013, pp. 61–62. doi: 10.1109/GHTCE.2013.6767241.
+- [16] S. K. Saw and V. Nath, “Performance Analysis of Low Power CSVCO for PLL Architecture,” in 2015 Second International Conference on Advances in Computing and Communication Engineering, May 2015, pp. 370–373. doi: 10.1109/ICACCE.2015.101.
+- [17] A. Gundel and W. N. Carr, “Ultra Low Power CMOS PLL Clock Synthesizer for Wireless Sensor Nodes,” in 2007 IEEE International Symposium on Circuits and Systems (ISCAS), May 2007, pp. 3059–3062. doi: 10.1109/ISCAS.2007.378054.
 
 
 ## x. Experience Summary
@@ -1188,5 +2089,15 @@ v1_10272243_layout 是为了再次备份，因为后面有可能修改 v1 的 la
 - 作图之后，可以通过 `Graph > Edge Browser` 查看边沿的各种信息
 - 封装 pcell (parameterized cell) 时，`4*pPar("mu")` 不行但是 `pPar("mu")*4` 可以
 - `schematic > View > Info Balloons` 可以打开波形信息气泡，鼠标悬停在 net/pin 上可以快速查看此位置的 voltage/current 波形。
+- 管子栅极从 m1 引出，那么 m2/m3 尽量不走线以避免寄生电容耦合，并且最好拿高层金属把沟道全遮住以避免可能存在的光效应 (尤其射频、毫米波)
+- Integer-N CP-PLL 的 FD chain 中，随着频率的降低，cycle jitter 逐渐增大 (近似满足$\sqrt{N}$)，而 edge jitter 则基本不变。
 
+
+
+
+**<span style='color:red'> ！！！！！ Macro Model Name 没改 </span>**
+
+
+
+**FD 不仅要能在低频工作，高频也是需要的？**
 

@@ -3,6 +3,12 @@
 > [!Note|style:callout|label:Infor]
 > Initially published by YiDingg at 16:58 on 2025-12-08 in Beijing.
 
+## (Pinned) My Learning Map
+
+- 2025.10.13: 接着最近的 ultra-low-power CP-PLL 项目，回顾并修正 CP-PLL 理论知识，进一步巩固 PLL 基础
+- 2025.12.22: 最近 CP-PLL 项目基本做完，经过初步文献调研，决定下一步先涉猎各种架构的 PLL，体会其优缺点，然后重点学习 SS-PLL 并作简单实践
+
+
 
 
 ## (2025.12.08) AI 对课题组近年来的论文总结

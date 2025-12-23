@@ -289,5 +289,8 @@ magick test.gif test.png
 !> **<span style='color:red'>Attention:</span>**<br>
 You may need a certain PDF viewer to view the GIF in your pdf file, such as Adoube Acrobat. The built-in PDF viewer in VSCode when editing `.tex` file does not supporte the function, WPS does not, either.
 
-Refer to [Blogs/Mixed/Latex --> Insert GIF in Latex](https://yidingg.github.io/YiDingg/#/Blogs/Mixed/Latex?id=insert-gif-in-latex) for more details, you can also refer to [ImageMagick](https://www.imagemagick.org/script/command-line-processing.php) for more advanced usage.
+Refer to [Blogs/Mixed/Latex --> Insert GIF in Latex](<Blogs/Mixed/Latex.md?id=insert-gif-in-latex>) for more details, you can also refer to [ImageMagick](https://www.imagemagick.org/script/command-line-processing.php) for more advanced usage.  <!-- (https://yidingg.github.io/YiDingg/#/Blogs/Mixed/Latex?id=insert-gif-in-latex) -->
+
+
+
 

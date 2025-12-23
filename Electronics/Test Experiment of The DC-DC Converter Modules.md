@@ -45,7 +45,9 @@
 - 数字直流电源： GWINSTEK GPD-3303S (GES813705) 
 - 电流电压转换器： Tektronix TCPA300 (B017520)
 - 多功能数字测量仪： [Analog Discovery 1](https://digilent.com/reference/test-and-measurement/analog-discovery/start) (D704387)
-- 多功能模块化 DC-DC 开关电源： [All-In-One DC-DC Converter Modules](https://yidingg.github.io/YiDingg/#/ElectronicDesigns/DC-DC%20Converter%20Modules)
+- 多功能模块化 DC-DC 开关电源： [All-In-One DC-DC Converter Modules](<ElectronicDesigns/All-In-One DC-DC Power Supply (5V Input).md>) <!-- (https://yidingg.github.io/YiDingg/#/ElectronicDesigns/DC-DC%20Converter%20Modules) -->
+
+
 
 
 下面几个小节介绍各性能的测试方法及测试结果。

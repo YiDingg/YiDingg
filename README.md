@@ -5,7 +5,9 @@
 <div style="text-align:center;">
   • <a href="https://www.zhihu.com/people/YiDingg/posts">My ZhiHu</a><br>
   • <a href="https://github.com/YiDingg">My GitHub</a><br>
-  • <a href="https://yidingg.github.io/YiDingg">My Personal Website</a><br>
+
+<!--   • <a href="https://yidingg.github.io/YiDingg">My Personal Website</a><br> -->
+
 </div>
 
 About Me:
@@ -31,7 +33,7 @@ My Technology Stack:
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg)](https://github.com/anuraghazra/github-readme-stats)
 
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=anuraghazra&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&show_icons=true&theme=radical)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=YiDingg&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&show_icons=true&theme=radical)
 
 
 <!--START_SECTION:waka-->

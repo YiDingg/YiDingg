@@ -5,7 +5,7 @@ Initially published by YiDingg at 18:56 on 2025-07-14 in Beijing.
 
 ## 0. Introduction
 
-本文，我们使用台积电 28nm CMOS 工艺库 `tsmcN28` **(VDD = 0.9 V)** 来完整地设计一个 low-voltage bandgap reference (BGR), 依次完成前仿、版图、后仿等工作。要求能在汽车级温度范围 (-40 °C, 125 °C) 内输出一个约 500 mV 的 bandgap voltage, 具有较小的温度系数和较高的 PSRR. 另外，电路的供电电压在 0.9V ~ 1.3V 之间可选，供电精度 ±10%.
+本文，我们使用台积电 28nm CMOS 工艺库 `tsmcN28` 来完整地设计一个 low-voltage bandgap reference (BGR), 依次完成前仿、版图、后仿等工作。要求能在汽车级温度范围 (-40 °C, 125 °C) 内输出一个约 500 mV 的 bandgap voltage, 具有较小的温度系数和较高的 PSRR. 另外，电路的供电电压在 0.9V ~ 1.3V 之间可选，供电精度 ±10%.
 
 BGR 的主要优化方向是 PSRR (Power Supply Rejection Ratio) 和温度系数 (其实温度系数不太好优化，一般需要 curvature correction).
 

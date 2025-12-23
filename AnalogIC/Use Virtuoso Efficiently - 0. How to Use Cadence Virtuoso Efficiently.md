@@ -947,7 +947,7 @@ startFinde(); 打开 "Cadence SKILL API Finder", 用于查找函数及其定义
     hiFormDone(geNetNameDisplayOptionForm)
 ```
 
-最常用的 schematic 和 layout 图片导出：
+最常用的 schematic 和 layout 图片导出总结如下：
 
 ``` bash
 ; 原理图以白底黑字导出, 不带 dotting (已测试过无问题)

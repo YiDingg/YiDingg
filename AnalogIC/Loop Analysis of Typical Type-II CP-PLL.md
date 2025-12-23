@@ -24,8 +24,7 @@ Initially published by YiDingg at 21:28 on 2025-10-22 in Beijing.
 
 其中 Second-Order 和 Third-Order 的区别仅仅是 LPF 处是否存在额外的补偿电容 $C_2$ (用于抑制瞬态充放电纹波)。
 
-这里直接给出 Type-II CP-PLL 的关键结论，后文会作详细推导：
-
+**<span style='color:red'> 假设以 $\Phi_{FB} = \Phi_{out2}$ 作为我们的输出相位，</span>** 这里直接给出关键结论，后文会作详细推导：
 
 $$
 \begin{gather}
@@ -35,7 +34,7 @@ H_{OL}(s) = \frac{4\zeta^2}{\tau_P^2} \times \frac{1 + s\tau_P}{s^2}
 \\
 H_{CL}(s) = \frac{4\zeta^2}{\tau_P^2} \times \frac{1 + s\tau_P}{s^2 + \frac{4\zeta^2}{\tau_P} s + \frac{4\zeta^2}{\tau_P^2}}
 \\
-\zeta = \frac{R_P C_P}{2}\sqrt{\frac{I_PK_{VCO}}{2\pi C_P}},\quad \tau_P = R_P C_P
+\zeta = \frac{R_P C_P}{2}\sqrt{\frac{I_PK_{VCO,eq}}{2\pi C_P}},\ \ \tau_P = R_P C_P,\ \  K_{VCO,eq} = \frac{K_{VCO}}{N}
 \\
 \mathrm{UGF}_\omega = \frac{2\sqrt{2}\,\zeta}{\tau_P }\left(\sqrt{\zeta^4 +\frac{1}{4}}+\zeta^2 \right)^{\frac{1}{2}} \approx \frac{2\zeta}{\tau_P}\ (\zeta < 0.5)
 \\
@@ -77,24 +76,24 @@ $$
 
 $$
 \begin{gather}
-H_{OL}(s) = \frac{\Phi_{out}}{\Phi_{in}}(s) = \frac{I_PK_{VCO}}{2\pi C_P}\times \frac{1 + sR_PC_P}{s^2},\quad H_0 = \frac{I_PK_{VCO}}{2\pi C_P}
+H_{OL}(s) = \frac{\Phi_{out}}{\Phi_{in}}(s) = \frac{I_PK_{VCO,eq}}{2\pi C_P}\times \frac{1 + sR_PC_P}{s^2},\quad H_0 = \frac{I_PK_{VCO,eq}}{2\pi C_P}
 \\
-H_{CL}(s) = \frac{H_{OL}(s)}{1 + H_{OL}(s)} = \frac{I_PK_{VCO}}{2\pi C_P}\times \frac{1 + sR_PC_P}{s^2 + \frac{I_PK_{VCO}}{2\pi C_P}\cdot R_PC_P s + \frac{I_PK_{VCO}}{2\pi C_P}}
+H_{CL}(s) = \frac{H_{OL}(s)}{1 + H_{OL}(s)} = \frac{I_PK_{VCO,eq}}{2\pi C_P}\times \frac{1 + sR_PC_P}{s^2 + \frac{I_PK_{VCO,eq}}{2\pi C_P}\cdot R_PC_P s + \frac{I_PK_{VCO,eq}}{2\pi C_P}}
 \end{gather}
 $$
 
-其中 $K_{VCO}$ 是 VCO 的增益，$I_P$ 是 Charge Pump 的充/放电电流大小。
+其中 $K_{VCO,eq} = \frac{K_{VCO}}{N}$ 是 (以 FB 作为输出时) VCO 的等效增益，$I_P$ 是 Charge Pump 的充/放电电流大小。
 
 
 从上面可以发现环路增益 $H_{OL}(0) = \infty$ 和 $H_{CL}(0) = 1$，其它信息则很难一眼看出来。简洁起见，也是为了深入分析，我们将闭环传递函数化为标准二阶系统的形式：
 
 $$
 \begin{gather}
-H_{CL}(s) = \frac{I_PK_{VCO}}{2\pi C_P}\times \frac{1 + sR_PC_P}{s^2 + \frac{I_PK_{VCO}}{2\pi C_P}\cdot R_PC_P s + \frac{I_PK_{VCO}}{2\pi C_P}}
+H_{CL}(s) = \frac{I_PK_{VCO,eq}}{2\pi C_P}\times \frac{1 + sR_PC_P}{s^2 + \frac{I_PK_{VCO,eq}}{2\pi C_P}\cdot R_PC_P s + \frac{I_PK_{VCO,eq}}{2\pi C_P}}
 = \omega_n^2 \times \frac{1 + sR_PC_P}{s^2 + 2\zeta \omega_n s + \omega_n^2} 
 \\
 \Longrightarrow 
-\zeta = \frac{R_P C_P}{2}\sqrt{\frac{I_PK_{VCO}}{2\pi C_P}},\quad \omega_n = \sqrt{\frac{I_PK_{VCO}}{2\pi C_P}},\quad \omega_n = \frac{2\zeta}{\tau_P},\quad \tau_P = R_P C_P
+\zeta = \frac{R_P C_P}{2}\sqrt{\frac{I_PK_{VCO,eq}}{2\pi C_P}},\quad \omega_n = \sqrt{\frac{I_PK_{VCO,eq}}{2\pi C_P}},\quad \omega_n = \frac{2\zeta}{\tau_P},\quad \tau_P = R_P C_P
 \end{gather}
 $$
 
@@ -179,7 +178,6 @@ $$
 
 上面我们提过，开环传递函数 $H_{CL}(s) = \frac{H_{OL}(s)}{1 + H_{OL}(s)}$ 的值在低频时趋近于无穷大，也就 **不存在 Open-Loop -3dB BW (开环环路带宽)** 的概念。事实上，人们口中常说的 "锁相环环路带宽" 都是指 **Close-Loop -3dB BW (闭环环路带宽)** ，下面便来推导它的 (近似) 值。
 
-
 $$
 \begin{gather}
 |H_{CL}(j\omega)|^2 = \frac{1}{2} 
@@ -232,7 +230,7 @@ $$
 \begin{gather}
 I_P = 8 \ \mathrm{nA},\quad K_{VCO} = 4.7761 \ \mathrm{MHz/V},\quad N_{\mathrm{divide}} = 40,\quad R_P = 15\ \mathrm{M\Omega},\quad C_P = 20\ \mathrm{pF}
 \\
-\Longrightarrow \zeta = 0.1950,\quad \tau_P = 0.1\times 10^{-3} \ \mathrm{s}
+\Longrightarrow \zeta = 0.1950,\quad \tau_P = 0.1\times 10^{-3} \ \mathrm{s},\quad K_{VCO,eq} = 119.4025 \ \mathrm{kHz/V}
 \end{gather}
 $$
 
@@ -305,7 +303,7 @@ $$
 
 $$
 \begin{gather}
-H_{OL}(s) = \frac{I_PK_{VCO}}{2\pi C_P}\times \frac{1 + sR_PC_P}{s^2(1 + \alpha + s\alpha \tau_P)},\quad p_3 = - \frac{1 + \frac{1}{\alpha}}{\tau_P}
+H_{OL}(s) = \frac{I_PK_{VCO,eq}}{2\pi C_P}\times \frac{1 + sR_PC_P}{s^2(1 + \alpha + s\alpha \tau_P)},\quad p_3 = - \frac{1 + \frac{1}{\alpha}}{\tau_P}
 \end{gather}
 $$
 
@@ -416,8 +414,373 @@ $$
 
 </span>
 
+## 7. 补: VCO output 作为输出时
 
-## 7. MATLAB Codes
+**<span style='color:red'> 2025.12.16 补: VCO output 作为输出相位时 </span>**
+
+
+### 7.1 transfer function
+
+VCO output 作为输出相位时：
+$$
+\begin{gather}
+H_{OL}(s) = \frac{\Phi_{out}}{\Phi_{in}}(s) = \frac{I_P \,K_{\textrm{VCO}} \,{\left(R_1 +\frac{1}{C_1 \,s}\right)}}{2\,\pi\,s } = {\color{red} N \times\,}\frac{4\zeta^2}{\tau_P^2} \times \frac{1 + s\tau_1}{s^2} 
+\\
+{\color{red} F = \frac{1}{N}}
+\\
+H_{CL}(s)  = \frac{I_P \,K_{\textrm{VCO}} \,N\,{\left(s\,\tau_1 +1\right)}}{2\,C_1 \,N\,\pi \,s^2 +I_P \,K_{\textrm{VCO}} \,\tau_1 \,s+I_P \,K_{\textrm{VCO}} } 
+= {\color{red} N \times} \frac{4\zeta^2}{\tau_P^2} \times \frac{1 + s\tau_P}{s^2 + \frac{4\zeta^2}{\tau_P} s + \frac{4\zeta^2}{\tau_P^2}}
+\\
+\Longrightarrow 
+H_{OL}(s) = {\color{red} N \times\,} \mathrm{old\ }H_{OL}(s),\quad 
+H_{CL}(s) = {\color{red} N \times\,} \mathrm{old\ }H_{CL}(s)
+\end{gather}
+$$
+
+相比于 FB 作为输出的情形 (前文)，这里相当于闭环增益变为了原来的 $N$ 倍，其它所有参数均不变，包括 $K_{VCO,eq} = \frac{K_{VCO}}{N}$。<span style='color:red'> 错误做法是：</span> 闭环 $\mathrm{BW}$ 变为原来的 $N$ 倍 (开环 UGF 不变，因为传递函数没变)，而 $\mathrm{PM}$ 则保持不变。开环传递函数在 $UGF$ 附近，以及闭环传递函数在 $BW$ 附近并不满足一阶近似，比如 $A(s) = A_0/(1 + \frac{s}{s_0})$，因此不能简单作 $N$ 倍缩放。
+
+
+
+
+### 7.2 phase margin analysis
+
+这里还是借助 MATLAB 来作推导，得到：
+$$
+\begin{gather}
+\omega_\mathrm{UGF} = \frac{1}{\tau_P} \times \sqrt{N\zeta^2\,} \times 2\,\sqrt{2} \,\sqrt{N\,\zeta^2 + \sqrt{N^2 \,\zeta^4 +\frac{1}{4}}}
+\\
+\mathrm{Re}\{H_{OL}(j\omega_{UGF})\} = 2 N \zeta^2 - \sqrt{4 N^2 \zeta^4 + 1}
+\\
+\mathrm{Im}\{H_{OL}(j\omega_{UGF})\} = 2\sqrt{N\zeta^2} \,\sqrt{2\,N\,\zeta^2 +\sqrt{4\,N^2 \,\zeta^4 +1}}\,{\left(2\,N\,\zeta^2 -\,\sqrt{4\,N^2 \,\zeta^4 +1}\right)}
+\\
+\angle H_{OL}(j\omega_{UGF}) = \mathrm{atan}\left(2\,\sqrt{N\zeta^2} \,\sqrt{2\,N\,\zeta^2 +\sqrt{4\,N^2 \,\zeta^4 +1}}\right)-\pi
+\\
+\Longrightarrow 
+\mathrm{PM} = \mathrm{atan}\left(2\,\sqrt{N\zeta^2} \,\sqrt{2\,N\,\zeta^2 +\sqrt{4\,N^2 \,\zeta^4 +1}}\right)\ \mathrm{(rad)}
+\end{gather}
+$$
+
+显然，$N = 1$ 时退化为文章开头所得结果 (Phi_FB 作为输出)。有趣的是，只需将原来结论中的 $\zeta$ 全部替换为 $\sqrt{N}\zeta$ 即可得到 VCO output 作为输出时的 UGF 和 PM 结论，奇怪的同时又很简洁，原因有待进一步探讨。
+
+### 7.3 bandwidth analysis
+
+同样地，借助 MATLAB 作推导。注意以 VCO output 作为输出时，闭环传递函数变为原来的 $N$ 倍，闭环函数的直流幅度为 $N$ 而不是 1，因此解方程时等式右侧带宽对应的是 $\frac{N^2}{2}$，而不是 $\frac{1}{2}$：
+
+$$
+\begin{gather}
+\frac{16\,N^2 \,\zeta^4 \,{\left(\omega^2 \,{\tau_P }^2 +1\right)}}{\omega^4 \,{\tau_P }^4 +16\,\omega^2 \,{\tau_P }^2 \,\zeta^4 -8\,\omega^2 \,{\tau_P }^2 \,\zeta^2 +16\,\zeta^4 } = \frac{N^2 }{2}
+\\
+\Longrightarrow 
+\frac{16 \,\zeta^4 \,{\left(\omega^2 \,{\tau_P }^2 +1\right)}}{\omega^4 \,{\tau_P }^4 +16\,\omega^2 \,{\tau_P }^2 \,\zeta^4 -8\,\omega^2 \,{\tau_P }^2 \,\zeta^2 +16\,\zeta^4 } = \frac{1}{2}
+\end{gather}
+$$
+
+这个方程与前文 Phi_FB 作为输出时的方程完全相同，因此闭环带宽的结论也完全相同：
+
+$$
+\begin{align}
+\omega_{BW} &= \frac{2\,\sqrt{\zeta^2 \,{\left(4\,\sqrt{\frac{\zeta^4 }{4}+\frac{\zeta^2 }{4}+\frac{1}{8}}+2\,\zeta^2 +1\right)}}}{\tau_P }  \ \mathrm{(rad/s)}
+\\
+&= \frac{2\zeta}{\tau_P} \left[1 + 2\zeta^2 + \sqrt{4\zeta^4 + 4\zeta^2 + 2}\right]^{\frac{1}{2}} \ \mathrm{(rad/s)}
+\end{align}
+$$
+
+也就是说，单纯的改变 $N$ 并不会影响整个环路的闭环带宽 (BW)，这与我们对 PLL 的直观理解是一致的：闭环带宽主要由环路滤波器决定，而与分频比无关。背后的根本原因是： **分频比 $N$ 同时把开环增益和闭环增益都放大了 $N$ 倍，从而相互抵消了对闭环带宽的影响。** 从另一个角度看，分配比 $N$ 变化时，仅会使闭环传递函数“上下平移”，而不会改变其“形状”，因此闭环带宽与分频比无关，保持不变。
+
+
+### 7.4 MATLAB codes
+
+本节我们重新推导了 VCO output 作为输出端口时的 UGF, PM 和 BW 等参数，详细 MATLAB 代码如下：
+
+``` matlab
+2025.12.16 CPPLL 环路重新推导 (以 VCO 作为 output)
+syms s H_OL H_CL K_d Z_LPF K_VCO N I_P R_1 C_1 tau_1 omega_n zeta
+K_d = I_P/(2*pi)
+Z_LPF = R_1 + 1/(s*C_1)
+H_OL = K_d * Z_LPF * (K_VCO/s)
+F = 1/N
+H_CL = simplify(H_OL/(1 + F*H_OL))
+
+H_OL = I_P*K_VCO/(2*pi*C_1) * (1 + s*tau_1)/s^2
+H_CL = simplify(H_OL/(1 + F*H_OL))
+
+H_OL = N * 4*zeta^2/tau_1^2 * (1 + s*tau_1)/s^2
+H_CL = simplify(H_OL/(1 + F*H_OL))
+MyAnalysis_TransferFunction(H_CL, 1, 0)
+
+
+
+CPPLL 环路可视化 (下面的公式是以 Phi_FB 作为输出，2025.12.17 已验证过无问题)
+clc, clear
+I_P = [20]*1e-9;   
+R_P = [10]*1e6;   % R1
+C_P = [42]*1e-12; % C1
+
+K_VCO = 1.28e6/(0.7 - 0.432)
+f_in = 32.768e3;
+omega_in = 2*pi*f_in;
+Divide_N = 24;
+K_VCO_eq = K_VCO/Divide_N; 
+K = K_VCO_eq*I_P*R_P/(2*pi); 
+tau_P = R_P.*C_P
+zeta = sqrt(K.*tau_P)/2
+
+% 计算 PM 和 BW
+UGF_f = 1/(2*pi) * 2*sqrt(2)*zeta/tau_P * sqrt( sqrt(zeta^4 + 1/4) + zeta^2 )
+PM_rad = @(zeta) atan(2*zeta.*sqrt(2*zeta.^2 + sqrt(4*zeta.^4 + 1)));
+PM_deg = rad2deg(PM_rad(zeta));
+PM_deg = round(PM_deg, 2)
+omega_BW = @(zeta, tau_P) (2*sqrt(zeta.^2.*(4*sqrt(zeta.^4/4 + zeta.^2/4 + 1/8) + 2*zeta.^2 + 1)))./tau_P;
+BW_omega = omega_BW(zeta, tau_P)
+BW_f = BW_omega/(2*pi);
+BW_f = round(BW_f, 2)
+ratio_BW = f_in./BW_f;
+ratio_BW = round(ratio_BW, 2)
+
+% 作图
+func_H_OL = @(f) - (4*zeta.^2*(1 + 1j*(2*pi*f)*tau_P))./((2*pi*f).^2*tau_P^2);
+func_H_CL = @(f) (4*zeta.^2.*((1j*(2*pi*f)).*tau_P + 1))./((1j*(2*pi*f)).^2.*tau_P.^2 + 4*(1j*(2*pi*f)).*tau_P.*zeta.^2 + 4*zeta.^2);
+f_array = logspace(0, 8, 1001);
+omega_array = f_array/(2*pi);
+
+stc = MyPlot_Bode_oneH_f_YY(f_array, func_H_OL);
+stc.axes.Title.String = 'Open-Loop Transfer Function $H_{OL}(s)$';
+stc.axes.XLim = [10^0, 10^8];
+%stc.p_left.XData = stc.p_left.XData/(2*pi);
+%stc.p_right.XData = stc.p_right.XData/(2*pi);
+stc.p_left.LineWidth = 3;
+stc.p_right.LineWidth = 3;
+stc.label.x.String = 'Frequency $f$ (Hz)';
+stc.leg.Location = 'northeast';
+stc.axes.YLim = [-120, 120];
+stc.axes.YTick = linspace(stc.axes.YLim(1), stc.axes.YLim(2), 7);
+yyaxis('right')
+stc.axes.YLim = [-180, 0];
+stc.axes.YTick = linspace(stc.axes.YLim(1), stc.axes.YLim(2), 7);
+MyFigure_ChangeSize([2.2, 1]*512);
+%MyExport_pdf_modal
+
+stc = MyPlot_Bode_oneH_f_YY(f_array, func_H_CL);
+stc.axes.Title.String = 'Close-Loop Transfer Function $H_{CL}(s)$';
+stc.axes.XLim = [10^0, 10^8];
+stc.p_left.LineWidth = 3;
+stc.p_right.LineWidth = 3;
+stc.label.x.String = 'Frequency $f$ (Hz)';
+stc.leg.Location = 'northeast';
+stc.axes.YLim = [-100, 20];
+stc.axes.YTick = linspace(stc.axes.YLim(1), stc.axes.YLim(2), 7);
+yyaxis('right')
+stc.axes.YLim = [-180, 0];
+stc.axes.YTick = linspace(stc.axes.YLim(1), stc.axes.YLim(2), 7);
+MyFigure_ChangeSize([2.2, 1]*512);
+%MyExport_pdf_modal
+
+
+以 VCO output 作为输出的公式推导 (H_OL 和 H_CL 均变为原来的 N 倍)
+syms H_OL s complex
+syms omega_n tau_P zeta omega x real
+syms N real positive integer
+H_OL(s) = N * 4*zeta^2/tau_P^2 * (1 + s*tau_P)/s^2
+MyAnalysis_TransferFunction(H_OL(s), 1, 0);
+
+% 求解 omega_UGF: |H| = 1
+    H_OL_omega = subs(H_OL, s, 1j*omega)
+    H_OL_omega_conj = conj(H_OL_omega);  % 取共轭
+    eq = simplify(simplify(H_OL_omega*H_OL_omega_conj) - 1)
+    % eq = subs(eq, omega^2, x);
+    % re_x = solve(eq, x)
+    re = solve(eq, omega)
+    omega_UGF = re(4)   % 得到 UGF 点
+
+% 结论：
+func_omega_UGF = @(zeta, tau_P, N) (2*sqrt((2))*sqrt(N)*zeta*sqrt(N*zeta^2 + sqrt(N^2*zeta^4 + (1/4))))/tau_P;
+
+% 求解 PM
+    H_OL_omega_UGF = simplify(subs(H_OL_omega, omega, omega_UGF))
+    %H_OL_omega_UGF = subs(H_OL_omega_UGF, N, 1)    % 检查 N = 1 时的退化情况
+    re = simplify(real(H_OL_omega_UGF))
+    im = simplify(imag(H_OL_omega_UGF))
+    ratio = simplify(imag(H_OL_omega_UGF)/real(H_OL_omega_UGF))
+    phase = atan(ratio) - pi    % H_OL 在 omega_UGF 处的相位
+    
+    phase_UGF = @(zeta, N) atan(2.*sqrt(N).*zeta.*sqrt(2.*N.*zeta.^2 + sqrt(4.*N.^2.*zeta.^4 + 1))) - pi;
+    zeta_array = [0, 0.2, 0.4, 0.707, 1, 2, 5, 10];
+    % phase_UGF(zeta_array);
+    % rad2deg(phase_UGF(zeta_array))
+    N = 24;
+    rad2deg(phase_UGF([0.1950, 0.3377], N) + pi)
+    
+% 结论：
+func_PM = @(zeta, N) phase_UGF(zeta, N) + pi;
+
+    X = logspace(-2, 2, 101);
+    Y_rad = phase_UGF(X, N);
+    % Y_rad(Y_rad > 0) = - Y_rad(Y_rad > 0);
+    Y = rad2deg(Y_rad);
+    stc = MyPlot(X, Y);
+    stc.label.x.String = '$\zeta$';
+    stc.label.y.String = 'Phase at UGF (deg)';
+    stc.axes.XScale = 'log';
+    stc.axes.YLim = [-180 -90];
+    stc.axes.YTick = -180:15:180;
+
+    X = linspace(0, 1, 101);
+    stc = MyPlot(X, Y + 180);
+    stc.label.x.String = '$\zeta$';
+    stc.label.y.String = 'Phase Margin (deg)';
+    % stc.axes.XScale = 'log';
+    stc.axes.XLim = [0 1];
+    stc.axes.YLim = [0 90];
+    stc.axes.YTick = -180:15:180;
+
+% 闭环 BW 推导
+%H_OL(s) = N * 4*zeta^2/tau_P^2 * (1 + s*tau_P)/s^2
+syms N real positive integer
+H_CL = N* omega_n^2 * (1 + s*tau_P) / (s^2 + 2*zeta*omega_n*s + omega_n^2);
+H_CL = simplifyFraction(subs(H_CL, omega_n, 2*zeta/tau_P))
+MyAnalysis_TransferFunction(H_CL, 0, 0);
+H_CL_omega = subs(H_CL, s, 1j*omega)
+H_CL_0 = subs(H_CL, s, 0)
+% H_CL_omega = subs(H_CL_omega, N, 1)
+H_CL_omega_conj = conj(H_CL_omega)  % 取共轭
+
+eq = simplify(expand(H_CL_omega*H_CL_omega_conj)) - H_CL_0^2/2
+eq = subs(eq, (omega*tau_P)^2, x)
+re = solve(eq, x)
+omega_BW = simplifyFraction(sqrt(re(2))/tau_P)
+test = subs(omega_BW, N, 1)
+
+% BW 化简结果
+a = zeta^2*(N - 1/2)
+A = zeta^2 * (  4*a + 1 + 4*sqrt((a + 1/4)^2 + N/8 - 1/16)  )
+omega_BW = 2*sqrt(A)/tau_P
+test = simplify(subs(omega_BW, N, 1))
+expand(test)
+
+% 结论 (闭环带宽不变, 与 N 无关)
+func_omega_BW = @(zeta, tau_P) (2*sqrt(zeta^2*(4*sqrt(zeta^4/4 + zeta^2/4 + (1/8)) + 2*zeta^2 + 1)))/tau_P;
+
+
+新环路结果可视化 (以 Phi_out 作为输出), 导出到报告中
+
+I_P = [20]*1e-9;   
+R_P = [10]*1e6;   % R1
+C_P = [42]*1e-12; % C1
+
+K_VCO = 1.28e6/(0.7 - 0.432)
+f_in = 32.768e3;
+omega_in = 2*pi*f_in;
+Divide_N = 24;
+K_VCO_eq = K_VCO/Divide_N; 
+K = K_VCO_eq*I_P*R_P/(2*pi); 
+tau_P = R_P.*C_P
+zeta = sqrt(K.*tau_P)/2
+N = Divide_N
+
+% 计算 PM 和 BW
+UGF_f = 1/(2*pi) * func_omega_UGF(zeta, tau_P, N)
+PM_rad = func_PM(zeta, N); PM_deg = rad2deg(PM_rad); PM_deg = round(PM_deg, 2)
+BW_omega = func_omega_BW(zeta, tau_P); BW_f = BW_omega/(2*pi); BW_f = round(BW_f, 2)
+ratio_BW = f_in./BW_f; ratio_BW = round(ratio_BW, 2)
+
+% 作图
+func_H_OL = @(f) - N * (4*zeta.^2*(1 + 1j*(2*pi*f)*tau_P))./((2*pi*f).^2*tau_P^2);
+func_H_CL = @(f) N * (4*zeta.^2.*((1j*(2*pi*f)).*tau_P + 1))./((1j*(2*pi*f)).^2.*tau_P.^2 + 4*(1j*(2*pi*f)).*tau_P.*zeta.^2 + 4*zeta.^2);
+f_array = logspace(0, 8, 1001);
+omega_array = f_array/(2*pi);
+
+stc = MyPlot_Bode_oneH_f_YY(f_array, func_H_OL);
+stc.axes.Title.String = 'Open-Loop Transfer Function $H_{OL}(s)$';
+stc.axes.XLim = [10^0, 10^8];
+%stc.p_left.XData = stc.p_left.XData/(2*pi);
+%stc.p_right.XData = stc.p_right.XData/(2*pi);
+stc.p_left.LineWidth = 3;
+stc.p_right.LineWidth = 3;
+stc.label.x.String = 'Frequency $f$ (Hz)';
+stc.leg.Location = 'northeast';
+stc.axes.YLim = [-120, 120];
+stc.axes.YTick = linspace(stc.axes.YLim(1), stc.axes.YLim(2), 7);
+yyaxis('right')
+stc.axes.YLim = [-180, 0];
+stc.axes.YTick = linspace(stc.axes.YLim(1), stc.axes.YLim(2), 7);
+MyFigure_ChangeSize([1.5, 1]*512);
+
+% 标点
+yyaxis left
+ax2 = gca;
+chart = ax2.Children(1);
+datatip(chart, 2.4199e+04, 0);  % 会自动标出离此最近的点
+datatip(chart, 100, 60, 'Location', 'northeast');  % 会自动标出离此最近的点
+yyaxis right
+chart = ax2.Children(1);
+datatip(chart, 265.461, -145, 'Location', 'northwest');  % 1st pole
+datatip(chart, 2.4199e+04, -90.8967, 'Location', 'southwest');  % PM
+% 导出
+path_and_name = "D:\a_RemoteRepo\GH.MiscReports\202510_PLL_ultra_low_power\assets\open_loop.pdf";
+MyExport_pdf_modal(path_and_name)
+
+
+
+stc = MyPlot_Bode_oneH_f_YY(f_array, func_H_CL);
+stc.axes.Title.String = 'Close-Loop Transfer Function $H_{CL}(s)$';
+stc.axes.XLim = [10^0, 10^8];
+stc.p_left.LineWidth = 3;
+stc.p_right.LineWidth = 3;
+stc.label.x.String = 'Frequency $f$ (Hz)';
+stc.leg.Location = 'northeast';
+stc.axes.YLim = [-80, 40];
+stc.axes.YTick = linspace(stc.axes.YLim(1), stc.axes.YLim(2), 7);
+yyaxis('right')
+stc.axes.YLim = [-180, 0];
+stc.axes.YTick = linspace(stc.axes.YLim(1), stc.axes.YLim(2), 7);
+MyFigure_ChangeSize([1.5, 1]*512);
+
+yyaxis left
+ax2 = gca;
+chart = ax2.Children(1);
+datatip(chart, 10, 27.6042);  % DC 幅度
+datatip(chart, 1.3635e+03, 27.6042-3);  % BW (-6 dB)
+yyaxis right
+chart = ax2.Children(1);
+datatip(chart, 1614.36, -67, 'Location', 'southwest');  % BW
+% 导出
+path_and_name = "D:\a_RemoteRepo\GH.MiscReports\202510_PLL_ultra_low_power\assets\closed_loop.pdf";
+MyExport_pdf_modal(path_and_name)
+
+```
+
+### xxx
+
+$$
+\begin{gather}
+\begin{matrix}
+\mathrm{Second-Order\ (C_2 = 0)}:\  \\
+{\color{red} \mathrm{VCO\ Output\ as\ the\ Output\ Port}}
+\end{matrix}
+\\
+\begin{cases}
+H_{OL}(s) = \frac{4\zeta^2}{\tau_P^2} \times \frac{1 + s\tau_P}{s^2},\quad F = \frac{1}{N}
+\\
+H_{CL}(s) = {\color{red} N \times }\frac{4\zeta^2}{\tau_P^2} \times \frac{1 + s\tau_P}{s^2 + \frac{4\zeta^2}{\tau_P} s + \frac{4\zeta^2}{\tau_P^2}}
+\\
+\zeta = \frac{R_P C_P}{2}\sqrt{\frac{I_PK_{VCO}}{{\color{red} N \times} 2\pi C_P}},\quad \tau_P = R_P C_P,\quad \frac{2 I_P K_{VCO,eq}}{2\pi C_P} = \frac{4\zeta^2}{\tau_P^2}
+\\
+\mathrm{OL-UGF}_\omega = {\color{red} N \times}  \frac{2\sqrt{2}\,\zeta}{\tau_P }\left(\sqrt{\zeta^4 +\frac{1}{4}}+\zeta^2 \right)^{\frac{1}{2}}
+\\
+\mathrm{OL-PM} = \arctan \left(2\,\zeta \left[2\,\zeta^2 +\sqrt{4\,\zeta^4 +1}\right]^{\frac{1}{2}}\right)\ \mathrm{(rad)}
+\\
+\mathrm{CL-BW}_\omega = {\color{red} N \times} \frac{2\zeta}{\tau_P} \left[1 + 2\zeta^2 + \sqrt{4\zeta^4 + 4\zeta^2 + 2}\right]^{\frac{1}{2}} \ \mathrm{(rad/s)}
+\\
+\mathrm{CL-BW}_f = \mathrm{BW}_\omega/(2\pi)\ \mathrm{(Hz)}
+\\
+\mathrm{Q\ Factor} = \left[2\zeta^2 + \sqrt{4\zeta^4 + 1}\right]^{\frac{1}{2}}
+\\
+\mathrm{Damping\ Factor} = \frac{1}{2Q}
+\end{cases}
+\end{gather}
+$$
+
+## 8. MATLAB Codes
 
 
 

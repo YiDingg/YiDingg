@@ -170,7 +170,9 @@ $$
 
 
 以及常用的 jitter calculators:
-- [Phase Noise to RMS Jitter Calculator](<https://markimicrowave.com/technical-resources/tools/phase-noise-jitter-calculator/>): Convert phase noise into RMS phase jitter.
+- [Phase Noise (dBc/Hz) to Phase Jitter Converter](https://www.changpuak.ch/electronics/phase_noise_jitter_conversion.php)
+- [Phase Noise to Jitter Calculator](https://www.sitime.com/phase-noise-jitter-calculator)
+- [Jitter calculator](https://www.leleivre.com/rf_iPN_jitter.html)
 - [Phase Noise to Integrated Jitter Calculator](https://www.sitime.com/phase-noise-and-jitter-calculator): Convert phase noise to phase jitter (rms) for a specified offset frequency range. Plot phase noise data and export results as a png, csv or PDF file.
 - [Jitter Budget Spreadsheet Calculator](https://www.sitime.com/jitter-budget-calculator): Estimate total jitter by connecting several elements in series, given each element's random and deterministic jitter contribution. Alternatively, begin with a jitter target, then budget jitter for each element to meet this target.
 - [RMS to Eye-closure Jitter Calculator](https://www.sitime.com/rms-eye-closure-jitter-calculator): Computes the eye-closure in a BER bathtub plot due to the random component of TIE jitter (in ps rms) in a signal. Alternatively, calculate a crest factor for your specific application.

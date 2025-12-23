@@ -531,7 +531,7 @@ MATLAB 提供了多种与相位噪声相关的函数，可以辅助我们实现�
 
 ### 5.2 custom functions
 
-进行相位噪声和抖动数据处理时，非常忌讳使用 "黑箱" (black-box) 来完成计算任务，因为黑箱的内部实现细节往往不透明，导致结果难以验证和解释，容易对结果的正确性和适用范围产生怀疑。因此，本小节就基于 zero-crossing method, 给出一套完整的 phase noise and jitter analysis 代码 (MATLAB)，供读者参考和使用。
+进行相位噪声和抖动数据处理时，非常忌讳使用 "黑箱" (black-box) 来完成计算任务，因为黑箱的内部实现细节往往不透明，导致结果难以验证和解释，容易对结果的正确性和适用范围产生怀疑。因此，本小节就基于 **zero-crossing method**, 给出一套完整的 phase noise and jitter analysis 代码 (MATLAB)，供读者参考和使用。
 
 具体的实现细节见前置文章 [Phase Noise and Jitter Calculation using MATLAB](<AnalogIC/Phase Noise and Jitter Calculation using MATLAB.md>)，这里直接给出具体代码：
 
@@ -1028,6 +1028,11 @@ STC = MyAnalysis_PhaseNoise_v1_20251106(edgeTime, flag_drawFigure);
 ```
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-12-01-56-22_Phase Noise and Jitter Characterization in Mixed-Signal Circuits, and the MATLAB Implementation.png"/></div>
+
+### 5.3 different methods
+
+除上面用到的 zero-crossing method 外，还可以利用 direct power spectrum method 等方法来计算相位噪声谱密度，从而得到 L(f_m) 以及积分抖动等参数。受篇幅限制，我们将这部分对比单独放在了一篇文章，详见：
+
 
 
 ## 6. Further Reading

@@ -15,8 +15,13 @@ Initially published by YiDingg at 20:49 on 2024-06-19 in Beijing.
 | 相关链接 |
 | :------: |
 | 源码下载(GitHub)：[MuMeStar](https://github.com/YiDingg/MuMeStar)  |
-|代码移植方法、详细扩展教程：[MuMeStar (Mutiple Menu Star for OLED)](https://yidingg.github.io/YiDingg/#/Projects/MuMeStar%20(Mutiple%20Menu%20Star%20for%20OLED)%20%E8%AF%A6%E8%A7%A3) |
+|代码移植方法、详细扩展教程：[MuMeStar (Mutiple Menu Star for OLED)](<Projects/MuMeStar.md>) |
+
+<!-- |代码移植方法、详细扩展教程：[MuMeStar (Mutiple Menu Star for OLED)](https://yidingg.github.io/YiDingg/#/Projects/MuMeStar%20(Mutiple%20Menu%20Star%20for%20OLED)%20%E8%AF%A6%E8%A7%A3) | -->
+
 </div>
+
+
 
 由于个人时间、精力和水平有限，项目难免存在不足，望读者不吝指正。
 
