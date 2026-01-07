@@ -15,16 +15,19 @@
                 部分难以区分的 blog 可以放在 Analog IC 文件夹, 并且同时被两个条目收录
     -->
 
-- [(Pinned) My Research Direction](<AnalogIC/(Pinned) My Research Direction.md>)
+- [[Pinned] My Research Direction](<AnalogIC/(Pinned) My Research Direction.md>)
 
 - 📝 **Projects**
+    - [[Pinned] Experience Summary of Analog IC Design, Simulation, Layout, and PEX](<Experience Summary of Analog IC Design, Simulation, Layout, and PEX>)
+    
+    - [An Sub-Sampling PLL (SS-PLL) in TSMC 28nm Technology](<>)
 
     - [An Ultra-Low-Power CP-PLL in ONC 180nm Technology](<Projects/Design of An Ultra-Low-Power CP-PLL in ONC 180nm Technology.md>)
-        - Documents (old at the top):
+        - 1. Related Documents:
         - [onc18 (ONC 180nm CMOS Process Library)](<AnalogICDesigns/Basic Information of onc18 (ONC 180nm CMOS Process Library).md>)
         - [Loop Analysis of Typical Type-II CP-PLL](<AnalogIC/Loop Analysis of Typical Type-II CP-PLL.md>)
         - [Large Resistor Implementation Techniques for Low-Power Analog IC Designs](<AnalogIC/Large Resistor Implementation Techniques for Low-Power Analog IC Designs.md>)
-        - [The Differences Between Latch and Flipflop (D Latch vs. D Flipflop)](<AnalogIC/From Basic Logic Gates to D Latch and D Flipflop.md>)
+        - [From Basic Logic Gates to D Latch and D Flipflop](<AnalogIC/From Basic Logic Gates to D Latch and D Flipflop.md>)
         - [(modified) Virtuoso Tutorials - 15. Several Methods for PEX and How to Speed Up Your Post-Simulation](<AnalogIC/Virtuoso Tutorials - 15. Several Methods for PEX and How to Speed Up Your Post-Simulation.md>)
         - [Virtuoso Tutorials - 16. Using Config Sweep and CALIBREVIEW to Speed Up Your Post-Layout Simulation](<AnalogIC/Virtuoso Tutorials - 16. Using Config Sweep and CALIBREVIEW to Speed Up Your Post-Layout Simulation.md>)
         - [Virtuoso Tutorials - 17. Creating Parameter Passing Symbol as The Standard PCell](<AnalogIC/Virtuoso Tutorials - 17. Creating Parameter Passing Symbol as The Standard PCell.md>)
@@ -32,14 +35,27 @@
         - [Virtuoso Tutorials - 18. How to Create a Supply Source with White Noise](<AnalogIC/Virtuoso Tutorials - 18. How to Create a Supply Source with White Noise.md>)
         - [All You Need to Know About Fourier Analysis (FS, DFS, FT, DTFT, DFT)](<AnalogIC/All You Need to Know About Fourier Analysis (FS, DFS, FT, DTFT, DFT).md>)
         - [Use AI to Boost Your Academic Research and Paper Reading](<AnalogIC/Use AI to Boost Your Academic Research and Paper Reading.md>)
-        - [(Pinned) My Research Direction](<AnalogIC/(Pinned) My Research Direction.md>)
+        - [My Research Direction](<AnalogIC/(Pinned) My Research Direction.md>)
         - [An Overview of PLL Architectures](<AnalogIC/An Overview of PLL Architectures.md>)
         - [Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum](<AnalogIC/Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.md>)
-        - Project Records:
+        - [Advanced PLL Architecture - Sub-Sampling PLL (SS-PLL)](<AnalogIC/Advanced PLL Architecture - Sub-Sampling PLL (SS-PLL).md>)
+        - [Overview and Comparison of VCO Architectures for PLL](<AnalogIC/Overview and Comparison of VCO Architectures for PLL.md>)
+        - [Phase Noise Modeling and Prediction of CP-PLL](<AnalogIC/Phase Noise Modeling and Prediction of CP-PLL.md>)
+
+        - 2. Project Records:
         - [202510_onc18_CPPLL (1) VCO Design Iteration](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (1) VCO Design Iteration.md>)
         - [202510_onc18_CPPLL (2) VCO Iteration and Layout](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (2) VCO Iteration and Layout.md>)
         - [202510_onc18_CPPLL (3) Design of Other Modules](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (3) Design of Other Modules.md>)
-        - [202510_onc18_CPPLL (4) Pre-Layout Simulation and Layout Details](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.md>)
+        - [202510_onc18_CPPLL (4) Pre-Layout Simulation and Layout Details](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (4) Pre-Simulation, Layout Details and Post-Simulation Results.md>)
+        - [202510_onc18_CPPLL (5) Project Report and Documents](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (5) Project Report and Documents.md>)
+
+        - 3. Project Documents:
+        - [(docs-1) 2025.11.13 PLL 性能评估结果 (Digital 1.25V or 0.625V)](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (docs-1) 2025.11.13 PLL 性能评估结果 (Digital 1.25V or 0.625V).md>)
+        - [(docs-2) 2025.12.19 电源上升纹波导致的输出频率波动问题](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (docs-2) 2025.12.19 电源上升纹波导致的输出频率波动问题.md>)
+        - [(docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report.md>)
+        - [(docs-4) 2026.01.xx 锁相环后仿报告 CP-PLL post-layout simulation report](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (docs-4) 2026.01.xx 锁相环后仿报告 CP-PLL post-layout simulation report.pdf>)
+
+
     - [A 2.2-GHz ~ 3.3-GHz BB-PLL with Multiple Output Frequencies in TSMC 65-nm Technology](<Projects/A 3.3-GHz BB-PLL with Multiple Output Frequencies in TSMC 65-nm Technology.md>)
         - [(1) LDO: Design of A Basic Low Dropout Regulator (LDO) for BB-PLL](<Projects/Design of A Basic Low Dropout Regulator (LDO) for BB-PLL.md>)
             - [LDO Stability Analysis and Loop Compensation Mechanism](<AnalogIC/LDO Stability Analysis and Loop Compensation Mechanism.md>)
@@ -52,6 +68,7 @@
             - [202509_tsmcN65_OTA_constantGm_adjustable](<AnalogICDesigns/202509_tsmcN65_OTA_constantGm_adjustable.md>)
             - [202509_tsmcN65_OTA_constantGm_adjustable__layout](<AnalogICDesigns/202509_tsmcN65_OTA_constantGm_adjustable__layout.md>)
         - [(3) DAC: Design of A 5-Bit RDR DAC for Reference Generation in BB-PLLs](<Projects/Design of A 5-Bit RDR DAC for Reference Generation in BB-PLLs.md>)
+
 
     - [A Type-II Integer-N Charge Pump PLL](<Projects/Design of A Third-Order Type-II Integer-N CP-PLL.md>)
         - [Razavi CMOS - Chapter 13. Switched-Capacitor Circuits](<AnalogIC/Razavi CMOS - Chapter 13. Switched-Capacitor Circuits.md>)
@@ -66,6 +83,7 @@
         - [PLL System-Level Simulation using LTspice](<AnalogIC/PLL System-Level Simulation using LTspice.md>)
         - [PLL Behavior-Level Simulation using Cadence IC618](<AnalogIC/PLL Behavior-Level Simulation using Cadence IC618.md>)
         - [202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N](<AnalogICDesigns/202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N.md>)
+
 
     - [Scientific Research Practice 1 (BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
         - [Razavi CMOS - Chapter 12. Bandgap References](<AnalogIC/Razavi CMOS - Chapter 12. Bandgap References.md>)
@@ -156,7 +174,7 @@
         - [16. Using Config Sweep and CALIBREVIEW to Speed Up Your Post-Layout Simulation](<AnalogIC/Virtuoso Tutorials - 16. Using Config Sweep and CALIBREVIEW to Speed Up Your Post-Layout Simulation.md>)
         - [17. Creating Parameter Passing Symbol as The Standard PCell](<AnalogIC/Virtuoso Tutorials - 17. Creating Parameter Passing Symbol as The Standard PCell.md>)
         - [18. How to Create a Supply Source with White Noise](<AnalogIC/Virtuoso Tutorials - 18. How to Create a Supply Source with White Noise.md>)
-
+        - [19. Using Auto Routing to Boost Your Layout Design](<AnalogIC/Virtuoso Tutorials - 19. Using Auto Routing to Boost Your Layout Design.md>)
 
     - Use Virtuoso Efficiently
         - [0. How to Use Cadence Efficiently](<AnalogIC/Use Virtuoso Efficiently - 0. How to Use Cadence Virtuoso Efficiently.md>)<!-- 这一篇不发在知乎或公众号上, 而是拆分为多篇文章来发 (相当于汇总) -->
@@ -184,16 +202,30 @@
         - [Razavi RF - Chapter 1. Introduction to RF Technology](<AnalogIC/Razavi RF - Chapter 1. Introduction to RF Technology.md>)
         - [Razavi RF - Chapter 2. Basic Concepts in RF Circuits](<AnalogIC/Razavi RF - Chapter 2. Basic Concepts in RF Circuits.md>)
 
-    - Analog IC Blogs (2025, 33 items)
+
+
+    - Analog/AMS IC Blogs (2025, 37 items)
+        - [Overview and Comparison of VCO Architectures for PLL](<AnalogIC/Overview and Comparison of VCO Architectures for PLL.md>)
+        - [Advanced PLL Architecture - Sub-Sampling PLL (SS-PLL)](<AnalogIC/Advanced PLL Architecture - Sub-Sampling PLL (SS-PLL).md>)
+        - [Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum](<AnalogIC/Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.md>)
+        - [An Overview of PLL Architectures](<AnalogIC/An Overview of PLL Architectures.md>)
+        - [Use AI to Boost Your Academic Research and Paper Reading](<AnalogIC/Use AI to Boost Your Academic Research and Paper Reading.md>)
         - [Basics of LC and Crystal Sinusoidal Oscillator](<AnalogIC/Basics of LC and Crystal Sinusoidal Oscillator.md>)
+        - [All You Need to Know About Fourier Analysis (FS, DFS, FT, DTFT, DFT)](<AnalogIC/All You Need to Know About Fourier Analysis (FS, DFS, FT, DTFT, DFT).md>)
+        - [Phase Noise and Jitter Characterization in Mixed-Signal Circuits, and the MATLAB Implementation](<AnalogIC/Phase Noise and Jitter Characterization in Mixed-Signal Circuits, and the MATLAB Implementation.md>)
+        - [From Basic Logic Gates to D Latch and D Flipflop](<AnalogIC/From Basic Logic Gates to D Latch and D Flipflop.md>)
+        - [Loop Analysis of Typical Type-II CP-PLL](<AnalogIC/Loop Analysis of Typical Type-II CP-PLL.md>)
+        - [Large Resistor Implementation Techniques for Low-Power Analog IC Designs](<AnalogIC/Large Resistor Implementation Techniques for Low-Power Analog IC Designs.md>)
         - [Structure Options and Design Considerations for Analog PLLs](<AnalogIC/Structure Options and Design Considerations for Analog PLLs.md>)
+        - [Design of Constant-Gm Rail-to-Rail OTA](<AnalogIC/Design of Constant-Gm Rail-to-Rail OTA.md>)
+        - [Experience Summary of Analog IC Design, Simulation, Layout, and PEX](<AnalogIC/Experience Summary of Analog IC Design, Simulation, Layout, and PEX.md>)
         - [LDO Stability Analysis and Loop Compensation Mechanism](<AnalogIC/LDO Stability Analysis and Loop Compensation Mechanism.md>)
         - [Phase Noise Spectrum Calculation using MATLAB](<AnalogIC/Phase Noise and Jitter Calculation using MATLAB.md>)
         - [Basics of Clock Data Recovery (CDR)](<AnalogIC/Basics of Clock Data Recovery (CDR).md>)
         - [Jitter and Phase Noise in Mixed-Signal Circuits](<AnalogIC/Phase Noise and Jitter in Mixed-Signal Circuits.md>)
         - [PLL Behavior-Level Simulation using Cadence IC618](<AnalogIC/PLL Behavior-Level Simulation using Cadence IC618.md>)
         - [PLL System-Level Simulation using LTspice](<AnalogIC/PLL System-Level Simulation using LTspice.md>)
-        - [Prerequisite Digital Electronics Knowledge for PLL](<AnalogIC/Prerequisite Digital Electronics Knowledge for PLL.md>)
+        - [Prerequisite Digital Electronics Knowledge for Analog & Mixed-Signal (AMS) Circuits](<AnalogIC/Prerequisite Digital Electronics Knowledge for PLL.md>)<!--  -->
         - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
         - [The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogIC/The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation.md>)
         - [Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/ADE Assembler - 0. How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)
@@ -204,7 +236,7 @@
         - [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)<!-- zhihu no, weixin no -->
         - [Relationship Between GBW and fp2 in a Two-Order System](<Electronics/Relationship Between GBW and fp2 in a Two-Order System.md>)<!--  -->
         - [Design of Op Amp using gm-Id Methodology Assisted by MATLAB](<AnalogIC/Design of Op Amp using gm-Id Methodology Assisted by MATLAB.md>)<!--  -->
-        - [Biasing Circuits for Low-Voltage Cascode Current Mirror](<Electronics/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)<!--  -->
+        - [Biasing Circuits for Low-Voltage Cascode Current Mirror](<AnalogIC/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)<!--  -->
         - [Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation](<Electronics/The Cause of the Exponential Decay in the F-OTA's Output Waveform During Slew Rate Simulation.md>)<!-- no -->
         - [Design Example of Folded-Cascode Stage using LTspice](<Electronics/[Razavi CMOS] Design Example of Folded-Cascode Stage.md>)<!--  -->
         - [Gain Boosting Techniques](<Electronics/[Razavi CMOS] Gain Boosting Techniques.md>)<!--  -->
@@ -215,7 +247,7 @@
         - [MOSFET's Terminal Resistance](<Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>) <!--  -->
 
 
-    - Electronic Blogs (2025, 69 items) 
+    - Electronic Blogs (2025, 77 items) 
         - [DPSE 数字信号处理实验 - 1. ADC 与 DAC 实验](<Electronics/DPSE 数字信号处理 - 1. ADC 与 DAC 实验.md>)
         - [DPSE 数字信号处理实验 - 0. 课程信息与准备](<Electronics/DPSE 数字信号处理 - 0. 课程信息与准备.md>)
         - [DCE 数字电路实验 - 实验 4. 频率计设计](<Electronics/DCE 数字电路实验 - 实验 4. 频率计设计.md>)
@@ -227,6 +259,7 @@
         - [NCE 非线性电路实验 - 0. 课程信息与准备](<Electronics/NCE 非线性电路实验 - 0. 课程信息与准备.md>)
         - [Test Experiment of The DC-DC Converter Modules](<Electronics/Test Experiment of The DC-DC Converter Modules.md>)
         - [LCE 实验记录 (LCE-09 比较器)](<Electronics/LCE 实验记录 (LCE-09 比较器).md>)
+        - [Design Conclusion of the Folded-Cascode Op Amp (v1_20250605)](<Electronics/Design Conclusion of the Folded-Cascode Op Amp (v1_20250605).md>)
         - [Relationship Between GBW and fp2 in a Two-Order System](<Electronics/Relationship Between GBW and fp2 in a Two-Order System.md>)
         - [Op Amp Measurement of LM741CN](<Electronics/Op Amp Measurement of LM741CN.md>)
         - [Correction of the AC Gain Equation in ADI's Op Amp Measurement Methods](<Electronics/Correction of the AC Gain Equation in the ADI Op Amp Measurement Methods.md>)

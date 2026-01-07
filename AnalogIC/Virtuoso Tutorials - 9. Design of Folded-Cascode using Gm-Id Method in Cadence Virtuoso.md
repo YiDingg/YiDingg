@@ -260,7 +260,7 @@ early resistance (rout)          = waveVsWave(?x OS("/NMOS" "gmoverid") ?y OS("/
 
 
 
-$V_{b2}$ 的生成有多种方法，详见 [Biasing Circuits for Low-Voltage Cascode Current Mirror](<Electronics/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)，我们这里使用文中的第二种方法 **diode-connected series transistor**. 
+$V_{b2}$ 的生成有多种方法，详见 [Biasing Circuits for Low-Voltage Cascode Current Mirror](<AnalogIC/Biasing Circuits for Low-Voltage Cascode Current Mirror.md>)，我们这里使用文中的第二种方法 **diode-connected series transistor**. 
 
 对于 $V_{b1}$, $V_{b3}$ 和 $V_{b4}$, 直接用 multiplier 作 biasing 即可。
 

@@ -170,8 +170,8 @@ scp D:\a_Win_VM_shared\Cadence_Data\MyLib_202509_DAC_tsmcN65 dy2025@182.48.105.2
 # 创建端口
 vncserver :21 -geometry 2560x1600 -depth 24     # 创建一个 vnc 服务器端口, 端口号为 21, 分辨率为 2560x1600, 颜色深度为 24 位 (适合高质量图形显示)
 vncserver -geometry 1920x1080               # 启动 vnc 服务器端口 (自动分配新端口) 设置分辨率为 1920x1080
-#vncserver :1 -geometry 2560x1600 -depth 24  # 创建一个 vnc 服务器端口, 端口号为 1, 分辨率为 2560x1600, 颜色深度为 24 位 (适合高质量图形显示)
-vncserver -kill :1                          # 关闭端口 1
+#vncserver :1 -geometry 2560x1600 -depth 24 # 创建一个 vnc 服务器端口, 端口号为 1, 分辨率为 2560x1600, 颜色深度为 24 位 (适合高质量图形显示)
+vncserver -kill :21                         # 关闭端口 21
 vncserver -list                             # 查看已创建的 VNC 端口
 
 

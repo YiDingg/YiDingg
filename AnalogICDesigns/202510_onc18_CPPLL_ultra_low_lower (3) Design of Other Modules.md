@@ -1087,6 +1087,10 @@ Spectre X + CX 仿真结果如下：
 
 ## 13. 1.25V/0.625V Option Test
 
+>注：本小节内容对比 1.25V 和 0.625V 供电方案下 PLL (数字部分) 的性能差异，从而选择最优供电方案，相关内容在这里已有，还另外整理成了一个文档提交给导师用于分析讨论，详见 [202510_onc18_CPPLL_ultra_low_lower (docs-1) 2025.11.13 PLL 性能评估结果 (Digital 1.25V or 0.625V)](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (docs-1) 2025.11.13 PLL 性能评估结果 (Digital 1.25V or 0.625V).md>).
+
+
+
 ### 13.1 Integer-3 FD
 
 类比 Integer-5 FD 电路，可得 Integer-3 FD (50% duty) 的最简电路实现：
@@ -1101,7 +1105,6 @@ Spectre X + CX 仿真结果如下：
 
 
 **上面 FD3 中，主电路由两个 DFF 构成，得到 Divider = 2^(2-1) + 1 = 3; 而 FD5 中，主电路由三个 DFF 构成，得到 Divider = 2^(3-1) + 1 = 5; 以此类推，可以由上面结构任意 "加减" DFF 来得到 2^(N-1) + 1 的分频比，也即 3, 5, 9, 17, 33, 65, 129, 257... 等等。当然, 9/33/65/129 这样的分频比不是质数，不考虑最简实现的情况下也可用质因数分解后实现。**
-
 
 
 ### 13.2 1.25V option test

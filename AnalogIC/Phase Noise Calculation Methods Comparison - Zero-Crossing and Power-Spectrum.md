@@ -148,7 +148,7 @@ Initially published by YiDingg at 23:58 on 2025-12-21 in Beijing.
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-23-18-59-49_Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.png"/></div>
 
 
-奇怪的是，对比 19.6078 GHz resampling (f0 = 1.0 GHz) 和 accurate edge time 的结果，可以看出尽管现在 resampling freq 虽然只有信号频率的 19.61 倍，但抖动和相噪结果仍非常接近 (仅在 high-offset 下有一定误差)，说明在高频信号下，zero-crossing method 对采样率的要求似乎没有想象中那么高？这点有待进一步验证。
+奇怪的是，对比 19.6078 GHz resampling (f0 = 1.0 GHz) 和 accurate edge time 的结果，可以看出尽管现在 resampling freq 虽然只有信号频率的 19.61 倍，但抖动和相噪结果仍非常接近 (仅在 high-offset 下有一定误差)，说明对 edge phase noise 而言，zero-crossing method 对采样率的要求似乎没有想象中那么高？这点有待进一步验证。 **但是注意 19.61 倍带来的时间分辨率极大限制了 $J_c[n]$ 和 $J_{cc}[n]$ 的计算精度，导致其分布和 RMS value 均有较大误差。**
 
 
 
@@ -176,11 +176,23 @@ Initially published by YiDingg at 23:58 on 2025-12-21 in Beijing.
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-23-23-01-36_Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.png"/></div>
 
+与 1.0 GHz 时类似，可以看到 $J_e[n]$ (edge jitter)、 SSB phase noise $L(f_m)$ 及其相关的 integral jitter 等结果与准确值非常接近，仅在 high-offset 下有一定误差，但 $J_c[n]$ (cycle jitter) 和 $J_{cc}[n]$ (cycle-to-cycle jitter) 结果误差较大，说明时间分辨率对它们的影响依然很明显。
+
 
 ### 4.6 summary of comparison
 
 将上述几个例子的对比图汇总如下：
 
+<div class='center'>
+
+| 信号类型/频率 @ 采样频率 | 精确 crossing time 计算结果 | 基于采样序列的 zero-crossing 计算结果 | zero-crossing 和 power-spectrum 结果对比 |
+|:-:|:-:|:-:|:-:|
+ | 10.245 MHz sine clock @ 8-bit 1 GHz (97.6 倍) | - | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-23-17-48-40_Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-23-17-56-32_Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.png"/></div> |
+ | 786.432 kHz square clock @ 100 MHz (127.16 倍) | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-23-18-14-15_Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-23-18-11-47_Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-23-18-22-23_Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.png"/></div> |
+ | 98.304 kHz square clock @ 100 MHz (1017.25 倍) | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-23-18-30-06_Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-23-18-34-04_Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-23-18-35-27_Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.png"/></div> |
+ | 1.0 GHz square clock @ 19.6078 GHz (19.61 倍) | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-23-18-59-49_Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-23-19-01-46_Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-23-19-02-09_Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.png"/></div> |
+ | 1.28 GHz square clock @ 19.6078 GHz (15.32 倍) | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-23-18-59-49_Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-23-19-01-46_Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-23-19-02-09_Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.png"/></div> |
+</div>
 
 ## 5. Conclusion
 
@@ -198,6 +210,8 @@ Initially published by YiDingg at 23:58 on 2025-12-21 in Beijing.
 本文所用到的 MATLAB 代码如下：
 
 ``` matlab
+%% d_202510_ultra_low_power_CPPLL_4.mlx
+
 2025.12.22
 Phase Noise Calculation Methods Comparison: Zero-Crossing and Power-Spectrum
 

@@ -62,7 +62,32 @@ $$
 
 实际设计时，$\alpha$ 取值范围一般在 $(\frac{1}{40},\ \frac{1}{5})$ 之间，典型值是 $\frac{1}{10}$ 和 $\frac{1}{20}$。
 
+如果以 VCO output 作为输出相位，则环路特性变为：
 
+$$
+\begin{gather}
+\begin{matrix}
+\mathrm{Second-Order\ (C_2 = 0)}:\  \\
+{\color{red} \mathrm{VCO\ Output\ as\ the\ Output\ Port}}
+\end{matrix}
+\\
+\begin{cases}
+H_{OL}(s) = \frac{4\zeta^2}{\tau_P^2} \times \frac{1 + s\tau_P}{s^2},\quad F = \frac{1}{N}
+\\
+H_{CL}(s) = {\color{red} N \times }\frac{4\zeta^2}{\tau_P^2} \times \frac{1 + s\tau_P}{s^2 + \frac{4\zeta^2}{\tau_P} s + \frac{4\zeta^2}{\tau_P^2}}
+\\
+\zeta = \frac{R_P C_P}{2}\sqrt{\frac{I_PK_{VCO}}{{\color{red} N \times} 2\pi C_P}},\quad \tau_P = R_P C_P,\quad \frac{2 I_P K_{VCO,eq}}{2\pi C_P} = \frac{4\zeta^2}{\tau_P^2}
+\\
+\mathrm{UGF}_\omega = \frac{\sqrt{N\zeta^2\,}}{\tau_P} \times 2\,\sqrt{2} \,\sqrt{N\,\zeta^2 + \sqrt{N^2 \,\zeta^4 +\frac{1}{4}}}
+\\
+\mathrm{PM} = \mathrm{atan}\left(2\,\sqrt{N\zeta^2} \,\sqrt{2\,N\,\zeta^2 +\sqrt{4\,N^2 \,\zeta^4 +1}}\right)\ \mathrm{(rad)}
+\\
+\mathrm{BW}_\omega = \frac{2\zeta}{\tau_P} \left[1 + 2\zeta^2 + \sqrt{4\zeta^4 + 4\zeta^2 + 2}\right]^{\frac{1}{2}} \ \mathrm{(rad/s)}
+\\
+\mathrm{BW}_f = \mathrm{BW}_\omega/(2\pi)\ \mathrm{(Hz)}
+\end{cases}
+\end{gather}
+$$
 
 
 
@@ -176,7 +201,7 @@ $$
 
 ### 3.3 bandwidth analysis
 
-上面我们提过，开环传递函数 $H_{CL}(s) = \frac{H_{OL}(s)}{1 + H_{OL}(s)}$ 的值在低频时趋近于无穷大，也就 **不存在 Open-Loop -3dB BW (开环环路带宽)** 的概念。事实上，人们口中常说的 "锁相环环路带宽" 都是指 **Close-Loop -3dB BW (闭环环路带宽)** ，下面便来推导它的 (近似) 值。
+上面我们提过，开环传递函数 $H_{CL}(s) = \frac{H_{OL}(s)}{1 + H_{OL}(s)}$ 的值在低频时趋近于无穷大，也就 **不存在 Open-Loop -3dB BW (开环环路带宽)** 的概念。事实上，人们口中常说的 "锁相环环路带宽" 都是指 **Close-Loop -3dB BW (闭环环路带宽)** ，下面便来推导它的精确值。
 
 $$
 \begin{gather}
@@ -344,58 +369,6 @@ $$
 </div>
 </span>
 
-<!-- $$
-\begin{gather}
-\mathrm{Closed\ Loop\ Phase\ Noise\ Transfer\ Function:\ \ }
-\\
-\mathrm{REF\ (LP):\ \ }
-\begin{cases}
-S_{\phi_n,REF}(f) = S_0 \\
-H_{\phi_n,REF}(s) = \frac{\Phi_{n,out}}{\Phi_{n,REF}}(s) = N^2 \times H_{CL}(s)
-\\
-\phi_{rms,REF} \approx N \sqrt{\pi S_0 \mathrm{BW}_f}\ \ \mathrm{(rad)}
-\\
-J_{rms,REF} \approx \frac{N}{2\pi f_{out}} \sqrt{\pi S_0 \mathrm{BW}_f}\ \ \mathrm{(second)}
-\end{cases}
-\\
-\mathrm{VCO\ (HP):\ \ }
-\begin{cases}
-S_{\phi_n,VCO}(f) = \frac{\alpha}{f^3} + \frac{\beta}{f^2}
-\\
-H_{\phi_n,VCO} = \frac{\Phi_{n,out}}{\Phi_{n,VCO}}(s) = \frac{s^2}{s^2 + 2\zeta \omega_n s + \omega_n^2} = \frac{s^2}{s^2 + \frac{4\zeta^2}{\tau_P} s + \frac{4\zeta^2}{\tau_P^2}}
-\\
-\omega_{HP,VCO} = \frac{2\zeta}{\tau_P} \left[2\zeta^2 - 1 + \sqrt{4\zeta^4 - 4\zeta^2 + 2}\right]^{\frac{1}{2}}
-\end{cases}
-\\
-\mathrm{Equal\ REF\ and\ VCO\ Noise\ Contribution:\ \ } 
-\begin{cases}
-BW_f = \sqrt{\frac{4\beta}{\pi N^2 S_0}}\\
-\phi_{rms,REF,VCO} = 4 \sqrt{ N^2\pi\beta  S_0} \\
-J_{rms,REF,VCO} = \frac{2}{\pi f_{out}} \sqrt{ N^2\pi\beta  S_0}
-\end{cases}
-\\
-\mathrm{CP\ (LP):\ \ }
-\begin{cases}
-S_{I_n,CP,eq}(f) = 2S_{I_n,CP}(f) \times \frac{T_{res}}{T_{ref}} = \left(2\overline{I_{n}^2}\right) \times \frac{T_{res}}{T_{ref}}
-\\
-H_{\phi_n,CP}(s) = \frac{\Phi_{n,out}}{I_{n,CP,eq}}(s) = \frac{N K_{VCO,eq}}{C_1} \times \frac{1 + s\tau_P}{s^2 + \frac{4\zeta^2}{\tau_P} s + \frac{4\zeta^2}{\tau_P^2}}
-\\
-H_{\phi_n,CP}(s) \approx \frac{N K_{VCO,eq}}{C_1 \omega_n^2} = \frac{2\pi N}{I_P} \ \ \mathrm{(@\ low\ frequency)}
-\end{cases}
-\\
-\mathrm{LPF\ Resistor\ (BP):\ \ } 
-\begin{cases}
-S_{V_n,LPF}(f) = 4kT R_1
-\\
-H_{\phi_n,LPF}(s) = \frac{\Phi_{n,out}}{V_{n,LPF}}(s) = \frac{s N K_{VCO,eq}}{s^2 + \frac{4\zeta^2}{\tau_P} s + \frac{4\zeta^2}{\tau_P^2}}
-\\
-\max \{S_{\phi_n,LPF}(f)\} = \frac{N^2 K_{VCO,eq}^2}{4\zeta^2 \omega_n^2} \times (4kT R_1) = \frac{16 \pi^2 N^2 kT }{R_1 I_P^2} \ \ \mathrm{(SSB)}
-\end{cases}
-\end{gather}
-$$
- -->
-
-
 
 ## 6. Other Considerations
 
@@ -485,10 +458,42 @@ $$
 \end{align}
 $$
 
-也就是说，单纯的改变 $N$ 并不会影响整个环路的闭环带宽 (BW)，这与我们对 PLL 的直观理解是一致的：闭环带宽主要由环路滤波器决定，而与分频比无关。背后的根本原因是： **分频比 $N$ 同时把开环增益和闭环增益都放大了 $N$ 倍，从而相互抵消了对闭环带宽的影响。** 从另一个角度看，分配比 $N$ 变化时，仅会使闭环传递函数“上下平移”，而不会改变其“形状”，因此闭环带宽与分频比无关，保持不变。
+也就是说，单纯的改变 $N$ 并不会影响整个环路的闭环带宽 (BW)，这与我们对 PLL 的直观理解是一致的：闭环带宽主要由环路滤波器决定，而与分频比无关。从另一个角度看，分配比 $N$ 变化时，仅导致闭环传递函数“上下平移”，而不会改变其“形状”，因此闭环带宽与分频比无关，保持不变。
+
+### 7.4 summary
+
+我们将 VCO output 作为输出端口时的结论总结如下：
+$$
+\begin{gather}
+\begin{matrix}
+\mathrm{Second-Order\ (C_2 = 0)}:\  \\
+{\color{red} \mathrm{VCO\ Output\ as\ the\ Output\ Port}}
+\end{matrix}
+\\
+\begin{cases}
+H_{OL}(s) = \frac{4\zeta^2}{\tau_P^2} \times \frac{1 + s\tau_P}{s^2},\quad F = \frac{1}{N}
+\\
+H_{CL}(s) = {\color{red} N \times }\frac{4\zeta^2}{\tau_P^2} \times \frac{1 + s\tau_P}{s^2 + \frac{4\zeta^2}{\tau_P} s + \frac{4\zeta^2}{\tau_P^2}}
+\\
+\zeta = \frac{R_P C_P}{2}\sqrt{\frac{I_PK_{VCO}}{{\color{red} N \times} 2\pi C_P}},\quad \tau_P = R_P C_P,\quad \frac{2 I_P K_{VCO,eq}}{2\pi C_P} = \frac{4\zeta^2}{\tau_P^2}
+\\
+\mathrm{UGF}_\omega = \frac{\sqrt{N\zeta^2\,}}{\tau_P} \times 2\,\sqrt{2} \,\sqrt{N\,\zeta^2 + \sqrt{N^2 \,\zeta^4 +\frac{1}{4}}}
+\\
+\mathrm{PM} = \mathrm{atan}\left(2\,\sqrt{N\zeta^2} \,\sqrt{2\,N\,\zeta^2 +\sqrt{4\,N^2 \,\zeta^4 +1}}\right)\ \mathrm{(rad)}
+\\
+\mathrm{BW}_\omega = \frac{2\zeta}{\tau_P} \left[1 + 2\zeta^2 + \sqrt{4\zeta^4 + 4\zeta^2 + 2}\right]^{\frac{1}{2}} \ \mathrm{(rad/s)}
+\\
+\mathrm{BW}_f = \mathrm{BW}_\omega/(2\pi)\ \mathrm{(Hz)}
+\end{cases}
+\end{gather}
+$$
+
+### 7.5 phase noise prediction
+
+根据上面结论，我们可以进一步对 PLL 相位噪声进行预测。也就是依据各模块噪声源及其噪声传函，对 CP-PLL 总输出相噪进行建模和预测，最后与仿真结果作对比。详见文章 [Phase Noise Modeling and Prediction of CP-PLL](<AnalogIC/Phase Noise Modeling and Prediction of CP-PLL.md>)
 
 
-### 7.4 MATLAB codes
+### 7.6 MATLAB codes
 
 本节我们重新推导了 VCO output 作为输出端口时的 UGF, PM 和 BW 等参数，详细 MATLAB 代码如下：
 
@@ -749,40 +754,10 @@ MyExport_pdf_modal(path_and_name)
 
 ```
 
-### xxx
-
-$$
-\begin{gather}
-\begin{matrix}
-\mathrm{Second-Order\ (C_2 = 0)}:\  \\
-{\color{red} \mathrm{VCO\ Output\ as\ the\ Output\ Port}}
-\end{matrix}
-\\
-\begin{cases}
-H_{OL}(s) = \frac{4\zeta^2}{\tau_P^2} \times \frac{1 + s\tau_P}{s^2},\quad F = \frac{1}{N}
-\\
-H_{CL}(s) = {\color{red} N \times }\frac{4\zeta^2}{\tau_P^2} \times \frac{1 + s\tau_P}{s^2 + \frac{4\zeta^2}{\tau_P} s + \frac{4\zeta^2}{\tau_P^2}}
-\\
-\zeta = \frac{R_P C_P}{2}\sqrt{\frac{I_PK_{VCO}}{{\color{red} N \times} 2\pi C_P}},\quad \tau_P = R_P C_P,\quad \frac{2 I_P K_{VCO,eq}}{2\pi C_P} = \frac{4\zeta^2}{\tau_P^2}
-\\
-\mathrm{OL-UGF}_\omega = {\color{red} N \times}  \frac{2\sqrt{2}\,\zeta}{\tau_P }\left(\sqrt{\zeta^4 +\frac{1}{4}}+\zeta^2 \right)^{\frac{1}{2}}
-\\
-\mathrm{OL-PM} = \arctan \left(2\,\zeta \left[2\,\zeta^2 +\sqrt{4\,\zeta^4 +1}\right]^{\frac{1}{2}}\right)\ \mathrm{(rad)}
-\\
-\mathrm{CL-BW}_\omega = {\color{red} N \times} \frac{2\zeta}{\tau_P} \left[1 + 2\zeta^2 + \sqrt{4\zeta^4 + 4\zeta^2 + 2}\right]^{\frac{1}{2}} \ \mathrm{(rad/s)}
-\\
-\mathrm{CL-BW}_f = \mathrm{BW}_\omega/(2\pi)\ \mathrm{(Hz)}
-\\
-\mathrm{Q\ Factor} = \left[2\zeta^2 + \sqrt{4\zeta^4 + 1}\right]^{\frac{1}{2}}
-\\
-\mathrm{Damping\ Factor} = \frac{1}{2Q}
-\end{cases}
-\end{gather}
-$$
 
 ## 8. MATLAB Codes
 
-
+(这里给出的是 FB 作为输出端口时的推导代码)
 
 本文的公式推导/作图利用 MATLAB 辅助进行，源码如下：
 
@@ -959,6 +934,7 @@ Z_F = simplifyFraction(MyParallel(R_P + 1/(s*C_P), 1/(s*alpha*C_P)))
 ## Reference
 
 - [*Design of Analog CMOS Integrated Circuits (Behzad Razavi) (2nd edition, 2017)*](https://www.zhihu.com/question/452068235/answer/95164892409)
+- [*Design of CMOS Phase-Locked Loops (Behzad Razavi) (1st Edition, 2020)*](https://www.zhihu.com/question/23142886/answer/108257466853)
 - F. Gardner, "Charge-Pump Phase-Lock Loops," in IEEE Transactions on Communications, vol. 28, no. 11, pp. 1849-1858, November 1980, doi: 10.1109/TCOM.1980.1094619. 
 - [ADI > MT-086 TUTORIAL > Fundamentals of Phase Locked Loops (PLLs) ](https://www.analog.com/media/en/training-seminars/tutorials/MT-086.pdf)
 - [Understanding Open Loop Bandwidth and Phase Margin in PLL Systems](https://rahsoft.com/2024/06/19/understanding-open-loop-bandwidth-and-phase-margin-in-pll-systems/)

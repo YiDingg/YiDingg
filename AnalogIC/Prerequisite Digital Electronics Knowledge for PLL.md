@@ -1,4 +1,4 @@
-# Prerequisite Digital Electronics Knowledge for PLL
+# Prerequisite Digital Electronics Knowledge for Analog & Mixed-Signal (AMS) Circuits
 
 > [!Note|style:callout|label:Infor]
 > Initially published by YiDingg at 16:19 on 2025-08-08 in Lincang.
@@ -9,19 +9,27 @@
 - [*Digital Electronics (Betty Lincoln) (1st Edition, 2014)*](https://www.zhihu.com/question/283747173/answer/1937200146287945093)
 - [*Digital Electronics Principles and Applications (Roger L. Tokheim, Patrick E. Hoppe) (9th Edition, 2022)*](https://www.zhihu.com/question/283747173/answer/1937200146287945093)
 
+先放一张总结图在这里，也方便读者知道本文都讲了些啥：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-11-10-18-19-39_Prerequisite Digital Electronics Knowledge for PLL.png"/></div>
+
+
+
 ## 1. Logic Gate (逻辑门)
+
+一些基本逻辑门，就不多赘述了，直接给出图片总结：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-08-17-24-32_Prerequisite Digital Electronics Knowledge for PLL.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-08-17-24-47_Prerequisite Digital Electronics Knowledge for PLL.png"/></div>
 
 ## 2. Latch (锁存器)
 
-- Latch：电平敏感 (level-sensitive)，在使能信号（时钟）为有效电平（高或低）期间持续透明，或者干脆就不需要时钟信号
+- Latch：电平敏感 (level-sensitive)，在使能信号 (EN) 为有效电平 (高或低) 期间持续透明，一般不需要时钟信号
 - Flip-Flop：边沿敏感 (edge-triggered)，只在时钟信号的上升沿或下降沿采样输入
 
-当然，也可以吧 latch 归到 FF (flip-flop) 中，这时不使用时钟脉冲的触发器便称为锁存器。从大类上讲, latch 共分为两种: SR (set-reset) latch 和 D (data) latch, 其中 SR latch 是最基本的锁存器。
+当然，也可以把 latch 归到 FF (flip-flop) 中，这时不使用脉冲触发的单元便称为锁存器。从大类上讲, latch 主要就是两种: SR (set-reset) latch 和 D (data) latch, 其中 SR latch 是最基本的锁存器；而 flip-flop 则分为 SR flip-flop, D flip-flop, JK flip-flop 和 T flip-flop 四种，其中 SR flip-flop 最基本，D flip-flop 最常用。
 
-为避免产生歧义，本文将电平敏感 (在有效电平器件持续透明) 的触发器称为 latch, 而将边沿敏感 (仅在时钟边沿采样输入) 的触发器称为 flip-flop. 
+为避免产生歧义，本文将 **电平敏感 (在有效电平器件持续透明) 的触发器称为 latch**, 而将 **边沿敏感 (仅在时钟边沿采样输入) 的触发器称为 flip-flop**.
 
 ### 2.1 Summary of Latch
 
@@ -39,6 +47,8 @@ SR latch 有两个输入端，共四种输入情况，分别对应 hold, reset, 
 
 **<span style='color:red'> 注意上图 (Fig.9.7) 中 R 端口右侧应该对应 Q 端口，教材中 S 端口右侧对应 Q 端口是错误的。 </span>**
 
+ 下表是 SR-latch 的输入与输出 (电路装填) 关系：
+
 <div class='center'>
 
 | S | R | $\mathrm{Q_{n+1}}$ | Mode |
@@ -49,8 +59,9 @@ SR latch 有两个输入端，共四种输入情况，分别对应 hold, reset, 
 | 1 | 1 | - | prohibited/undefined |
 </div>
 
-上表中，我们暂时不理解的是，如果 S = R = 1, 明明可以得到两个输出端口都为 0 的结果，为什么我们要说这种情况是 prohibited/undefined 呢？类似地，下图中用 NAND 门构成的 (LOW active) SR latch, 如果输入同时为零，可以得到输出均为 1 的结果。背后原因有待进一步探究。
+上表中，值得注意的是，如果 S = R = 1, 明明可以得到两个输出端口都为 0 的结果，为什么我们要说这种情况是 prohibited/undefined 呢？其实是因为 S = R = 1 时，电路的状态取决于前一个输入状态，也就是 SR = 11 之前的输入。如果 SR = 11 之前是 SR = 10，那么电路当前状态 (SR =  11) 时就为 set, 和 SR = 10 一致；反过来，如果 SR = 11 之前是 SR = 01，那么电路当前状态 (SR =  11) 时就为 reset, 和 SR = 01 一致。
 
+也就是说，SR = 11 并不意味电路有着薛定谔般的未知状态，而是具有确定状态的，只是这个状态取决于 SR = 11 之前的输入是什么样子。
 
 与之相反，低电平有效 (active LOW inputs) 的 SR Latch 在输入端有 inverting 标志 (小圆圈)：
 
@@ -71,15 +82,15 @@ SR latch 还可以用于按键消抖 (Contact Bounce Eliminator):
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-09-00-48-17_Prerequisite Digital Electronics Knowledge for PLL.png"/></div>
 
-### 2.3 Clocked SR Latch (时控 SR 锁存器)
+### 2.3 Gated SR Latch (门控 SR 锁存器)
 
-上面的普通 SR latch 是典型的异步触发器，这在需要顺序逻辑处理的任务中十分受限，引入时钟信号的时控 SR latch 便应运而生：
+上面的普通 SR latch 是典型的异步触发器，这在需要顺序逻辑处理的任务中十分受限，引入使能信号的门控 SR latch 便应运而生：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-09-00-51-06_Prerequisite Digital Electronics Knowledge for PLL.png"/></div>
 
 <div class='center'>
 
-| CLK | S | R | $\mathrm{Q_{n+1}}$ | Mode |
+| EN | S | R | $\mathrm{Q_{n+1}}$ | Mode |
 |:-:|:-:|:-:|:-:|:-:|
 | 1 | 0 | 0 | $\mathrm{Q_n}$ | hold |
 | 1 | 0 | 1 | 0 | reset |
@@ -87,16 +98,19 @@ SR latch 还可以用于按键消抖 (Contact Bounce Eliminator):
 | 1 | 1 | 1 | - | prohibited/undefined |
 </div>
 
-将右半边看作 active LOW inputs 的 SR latch, 不难发现 clocked SR latch 仅在 CLK (clock signal) = 1 时可以改变输出信号，否则 (CLK = 0 时) 一直处于 hold 状态，输出信号不变。通常情况下，一个触发器/锁存器的最大时钟频率都定义为器件能够可靠触发/翻转的最高频率。
+对于这个电路，我们一般把图中的使能信号称为 EN 而不是 CLK，因为本质上这是一个电平使能的 latch，引入 CLK 只会让理解变得困难，百害而无一利。这也是为什么我们将其称为 gated SR latch 而不是 clocked SR latch，在学界/业界中也是一样，gated SR latch 才是“正统叫法”。
+
+将右半边看作 active LOW inputs 的 SR latch, 不难发现 gated SR latch 仅在 CLK (enable signal) = 1 时可以改变输出信号，否则 (CLK = 0 时) 一直处于 hold 状态，输出信号不变。通常情况下，一个触发器/锁存器的最大工作频率都定义为器件能够可靠触发/翻转的最高频率。
+
 
 下面是一个输入输出波形示例：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-09-12-56-51_Prerequisite Digital Electronics Knowledge for PLL.png"/></div>
 
-### 2.4 D Latch (D 锁存器)
+### 2.4 D-latch (D 锁存器)
 
-D latch, 其实也是 clocked D latch, 名称中的字母 D 表示 "data", 因为该锁存器会暂时存储一位 bit. D latch 的符号如图 9.17 所示，当时钟为高电平时, D latch 会将存储一位比特传输到输出端 Q, 而在时钟为低电平时, Q 的状态保持不变，直到时钟信号到达下一个高电平。
+D-latch, 其实也是 gated D-latch, 名称中的字母 D 表示 "data", 因为该锁存器会暂时存储一位 bit. D-latch 的符号如图 9.17 所示，当门控为高电平时, D-latch 会将存储一位比特传输到输出端 Q, 而在门控为低电平时, Q 的状态保持不变，直到门控信号到达下一个高电平。
 
-换句话说，当时钟为高电平时，D 锁存器是 "透明" 的, D 输入的任何变化都会立即反映在输出端 Q 上。
+换句话说，当模块被 enable 时，D 锁存器是 "透明" 的, D 输入的任何变化都会立即反映在输出端 Q 上。
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-09-02-41-35_Prerequisite Digital Electronics Knowledge for PLL.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-09-12-58-52_Prerequisite Digital Electronics Knowledge for PLL.png"/></div>
@@ -105,28 +119,29 @@ D latch, 其实也是 clocked D latch, 名称中的字母 D 表示 "data", 因�
 
 <div class='center'>
 
-| CLK | D | $\mathrm{Q_{n+1}}$ |
+| EN | D | $\mathrm{Q_{n+1}}$ |
 |:-:|:-:|:-:|
+| 0 | x | hold |
 | 1 | 0 | 0 |
 | 1 | 1 | 1 |
 </div>
 
 
 
-### 2.5 Master-Slave D Latch (主从式 D 锁存器)
+### 2.5 Master-Slave D-latch (主从式 D 锁存器)
 
-Master-slave D latch, 也常称作 master-slave D flip-flop, 由两个 D latch 和一个 NOT gate 级联而成。第一个时钟先改变 master latch 的状态，然后在第二个时钟到来时，slave latch 才会根据 master latch 的状态更新输出。
+Master-slave D-latch, 也常称作 master-slave D flip-flop, 由两个 gated D-latch 级联配合一个 INV 构成。时钟会先改变 master latch 的状态，然后在时钟翻转后，slave latch 才会根据 master latch 的状态更新输出。
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-09-02-47-06_Prerequisite Digital Electronics Knowledge for PLL.png"/></div>
 
-Master-slave D latch 可由 NAND gate 构成，下面是一个例子：
+Master-slave D-latch 可由 NAND gate 构成，下面是一个例子：
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-09-02-48-40_Prerequisite Digital Electronics Knowledge for PLL.png"/></div>
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-09-13-02-44_Prerequisite Digital Electronics Knowledge for PLL.png"/></div>
 
 ### 2.6 JK Latch (JK 锁存器)
 
-JK latch 是所有 latch or flip-flop 中最常用的一种。与 clocked SR latch 类似, JK latch 也在时钟信号的控制下工作，当且仅当 CLK = 1 时, JK latch 才会根据 J 和 K 的输入状态改变输出 Q (否则 hold 不变)。其结构和符号如下：
+JK latch 是所有 latch or flip-flop 中最常用的一种。与 gated SR latch 类似, JK latch 也在时钟信号的控制下工作，当且仅当 CLK = 1 时, JK latch 才会根据 J 和 K 的输入状态改变输出 Q (否则 hold 不变)。其结构和符号如下：
 
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-09-16-39-52_Prerequisite Digital Electronics Knowledge for PLL.png"/></div>
@@ -195,7 +210,7 @@ JK latch 是所有 latch or flip-flop 中最常用的一种。与 clocked SR lat
 
 ### 4.1 Basic Syntax
 
-- Verilog 区分大小写，空白符（换行、制表、空格）都没有实际的意义每个语句必须以分号为结束符。
+- Verilog 区分大小写，空白符 (换行、制表、空格) 都没有实际的意义每个语句必须以分号为结束符。
 - 注释方式与 C 语言完全相同，有 `// 这里是注释` 和 `/* 这里是注释 */` 两种方式
 - 标识符与关键字：与 C 语言类似，标识符 (变量名) 的第一个字符必须是字母或者下划线，关键字则是 Verilog 中预留的用于定义语言结构的特殊标识符 **(Verilog 中关键字全部为小写)**
 
@@ -376,4 +391,4 @@ B = data1[0:7] ;
 
 ## Advanced Reading
 
-- [From Basic Logic Gates to D Latch and D Flipflop](<AnalogIC/From Basic Logic Gates to D Latch and D Flipflop.md>)
+- [From Basic Logic Gates to D-latch and D-Flipflop](<AnalogIC/From Basic Logic Gates to D Latch and D Flipflop.md>)

@@ -79,6 +79,21 @@ pss 仿真给出的振荡频率与瞬态完全相同 (903.4 MHz)。
 >it is only used when the signal frequency is not the same as the PSS analysis’ fundamental, which would happen when there is a frequency division or multiplication in the circuit.
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-22-00-57-46_Virtuoso Tutorials - 12. Phase Noise Simulation (pss and pnoise).png"/></div>
+
+上图选项中涉及到多个 jitter 参数，它们物理意义不同，这里简单介绍一下：
+- (1) Jc: cycle jitter, $J_c[n] = T[n] - T_0,\ \ n = 0,\ 1,\ ...$, 其中 $T[n]$ 是第 n 个周期时长，$T_0$ 是 nominal 周期时长 (一般用平均周期时长来算)
+- (2) Jcc: cycle-to-cycle jitter, $J_{cc}[n] = J_c[n] - J_c[n - 1] = T[n] - T[n-1],\ \ n = 1,\ 2,\ ...$
+- (3) Je: edge jitter,  $J_e[n] = \mathrm{edge}[n] - n\times T_0, \ \ n = 0,\ 1,\ ...$, 其中 $\mathrm{edge}[n]$ 是第 n 个 zero-crossing 时间点 (一般是上升沿)，例如含直流量 square clock 信号穿过 VDD/2 的时间点，或者不含直流量交流 sine clock 信号穿过 0V 的时间点
+- (4) Jee: edge-to-edge jitter, $J_{ee}[n] = J_e[n] - J_e[n - 1],\ \ n = 1,\ 2,\ ...$
+- (5) 图中的 phase jitter 即为 Je (edge jitter), rms phase jitter 即为 Je 的 rms value; 然后 edge phase noise 是从 Je (edge jitter) 计算得到的 SSB phase noise 曲线 (单位 dBc/Hz)
+
+值得一提的是，从数学上来讲，因为 $J_{ee}[n] = J_e[n] - J_e[n - 1] = \mathrm{edge}[n] - \mathrm{edge}[n - 1] - T_0 = T[n] - T_0 = J_c[n]$, 所以 Jee 和 Jc 是完全等价的，只是从不同的角度来定义而已。也不太清楚上图为什么要单独再给出一个 Jee 选项。
+
+
+
+更详细的抖动定义和计算方法，我们会在后续单独出一篇文章来介绍，这里不多赘述。
+
+
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-22-01-15-46_Virtuoso Tutorials - 12. Phase Noise Simulation (pss and pnoise).png"/></div>
 
 上面有一个选项是 Modifier, 表示 phase noise 的单位，下面是参考资料 [[2] Jitter measurement using SpectreRF Application Note.pdf](https://www.writebug.com/static/uploads/2025/8/22/28c1f61cd30eb054e8a9d5c6824f4d7e.pdf) 的原话：
@@ -375,7 +390,7 @@ This is what I recommend to designers: **simulating PLLs and DLLs are best accom
 
 因此，我们并不能保证闭环锁相环在 pss 仿真中能够收敛，但还是斗胆尝试一下。
 
-### 2.3 pss simulation
+### 2.4 pss simulation
 
 如图设置 pss 仿真参数：
 <div class="center"><img width=400px src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-22-17-51-14_Virtuoso Tutorials - 13. Periodical Steady-State and Phase Noise Simulation (pss and pnoise).png"/></div>
@@ -387,7 +402,7 @@ This is what I recommend to designers: **simulating PLLs and DLLs are best accom
 
 这里 tstab 仿真给了 1.5 us 有些长，所以仿真总共花了 26 min 比较长。在下面加入 pnoise 仿真前可以适当缩短 (比如 10 ns).
 
-### 2.4 pnoise simulation
+### 2.5 pnoise simulation
 
 将 pss 的 tstab time 改为 10 ns, 设置好 pnoise 并运行仿真，发现 pss 不能正常收敛，于是重新修改回 1.5 us 进行仿真：
 
@@ -419,7 +434,9 @@ $$
 RMS jitter = 3.901 ps, 这与 **2.2 transient jitter analysis** 一节中得到的结果基本一致。
 
 
-### 2.5 figure of merit (FoM)
+### 2.6 figure of merit (FoM)
+
+>注：学界业界在 PLL/时钟生成 这块领域所说的 RMS Jitter，未特别指明抖动类型时，一般都是指 rms integral jitter 或者 rms edge jitter，前者从 SSB phase noise curve 积分得到 (需作单位转换)，后者直接从 transient simulation (measurement) results 中用统计方法算出来。简单起见，我们这里就直接用 rms cycle jitter 来计算 FoM 了，不再单独算一遍 edge jitter 或者 integral jitter，只要思路能 get 到就可以。
 
 锁相环的 FoM 公式详见参考文献 [[4]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9847207):
 

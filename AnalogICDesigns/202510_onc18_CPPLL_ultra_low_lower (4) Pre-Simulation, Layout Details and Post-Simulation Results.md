@@ -1752,6 +1752,8 @@ The following set of suggestions might help you avoid convergence difficulties.
 
 下面是一个给导这边拿去和需求方 battlle 的问题说明文档，记录了电源充电纹波导致输出频率波动的问题。
 
+>注：本小节内容除在下面已有外，还另外整理成了一个文档提交给导师用于分析讨论，详见 [202510_onc18_CPPLL_ultra_low_lower (docs-1) 2025.11.13 PLL 性能评估结果 (Digital 1.25V or 0.625V)](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (docs-1) 2025.11.13 PLL 性能评估结果 (Digital 1.25V or 0.625V).md>).
+
 ### 电源上升纹波导致的输出频率波动问题
 
 #### 1. 问题现象描述
@@ -1840,7 +1842,7 @@ Notice from spectre.
 **<span style='color:red'> 从本语句之后的所用仿真，若无特别说明，REF 均设置为了正弦输入 (无相噪) </span>**
 
 
-### 8.5 GND-reference LPF/VCO
+## 8.5 GND-reference LPF/VCO
 
 
 我们顺便将 LPF 改为 GND-referenced 简单测试了一下，但 VCO 的控制电压 vcont 仍然是 PMOS-input (没改), 所以稳定后的噪声水平显著恶化 (主要来自 VDD)。于是又重新试了一下 GND-referenced LPF 配合 GND-referenced VCO，仿真设置和结果如下：
@@ -1852,23 +1854,43 @@ Notice from spectre.
 - (4) 其它修改：
     - LPF 改为 GND-referenced
     - VCO 改为 GND-referenced (NMOS-input)
+    - <span style='color:red'> PFD 从反接改为正接 </span>
     - 上述修改已经在开始仿真 (生成网表) 后修改回来，不必担心对后续仿真产生影响
 - (5) 仿真时长：
     - vref_delay = 700m
     - settling_begin = vref_delay + 5m
     - time_end = vref_delay + 50m (稳定后再多仿 45ms)
 
+不知为何，从 `2:36:16 AM, Sun Dec 21, 2025` 一直运行到 `01:03:49 AM, Fri Dec 26, 2025` 都五天了，竟然只仿真到 `tran: time = 462.6 ms (61.7 %), step = 1.165 ns (155 n%)`，无奈只能终止仿真重新运行，下面是一些简要情况记录：
 
 <div class='center'>
 
-| 仿真耗时  @ 8-thread (设置 16-thread 但被限制为 8-thread) |
+| 五天只仿真了 61.7% (Interactive.323) |
 |:-:|
- |  |
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-12-26-01-10-15_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Layout Simulation and Layout Details.png"/></div> |
+</div>
+
+取消后适当修改 TB 电路参数，将总仿真时长从 750 ms 缩短到 440 ms, 运放仿真，结果如下：
+
+<div class='center'>
+
+| fnoise_max = 0.1 MHz @ 8-thread (设置 16 但被限制为 8) | fnoise_max = 0.5 MHz @ 8-thread (设置 16 但被限制为 8) | fnoise_max = 2.0 MHz @ 8-thread (设置 16 但被限制为 8) |
+|:-:|:-:|:-:|
+ | fnoise_max = 0.1 MHz 仿真耗时 16.6 ks (4h 36m 29s) <br> fnoise_max = 0.5 MHz 仿真耗时 20.5 ks (5h 41m 52s) <br> fnoise_max = 2.0 MHz 仿真耗时 23.6 ks (6h 32m 35s) | 仿真结果总览 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-01-17-38-40_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Simulation, Layout Details and Post-Simulation Results.png"/></div> |  |
+ | 波形总览 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-01-17-44-46_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Simulation, Layout Details and Post-Simulation Results.png"/></div> | 锁定过程总览 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-01-17-48-04_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Simulation, Layout Details and Post-Simulation Results.png"/></div> |  |
+ | CK_OUT/CK_ADC 的频率波形和相位噪声 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-01-17-53-35_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Simulation, Layout Details and Post-Simulation Results.png"/></div> | 作为对比，我们把原先使用 VDD-referenced 时的频率波形和相噪曲线也给出来，如下图 (scalar 结果总览) 和右图 (波形和相噪总览) <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-01-17-57-34_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Simulation, Layout Details and Post-Simulation Results.png"/></div>  | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-01-18-07-45_202510_onc18_CPPLL_ultra_low_lower (4) Pre-Simulation, Layout Details and Post-Simulation Results.png"/></div> |
 </div>
 
 
 
-## FATAL (SPECTRE-18): Segmentation fault.
+
+
+
+
+
+## 99. 杂七杂八的尝试
+
+### 99.1 FATAL (SPECTRE-18): Segmentation fault.
 
 2025.12.10 13:35 做后仿时又出现了这个问题，之前就遇到过 (当时就没找到解决方案)，放着不管之后，不知道为啥它莫名很久没出现，然后不知道为啥今天又出现了。这里详细记录一下问题出现的过程和报错信息，方便之后查找解决方案。
 
@@ -1898,7 +1920,7 @@ Internal error found in spectre at time = 647.25 us during transient analysis `t
 
 这个我之前到时也看到过，当时还简单试了一下（用），但不太清楚异常退出后会不会按原先设置的保存不同时间下的 transient 状态。
 
-## Hspice 尝试 
+### 99.2 Hspice 尝试 
 
 ``` bash
 ERROR (SFE-23): "netlist" 57: The instance `I0' is referencing an undefined model or subcircuit, `202510_PLL'. Either include the file containing the definition of `202510_PLL', or define `202510_PLL' before running the simulation.
@@ -1907,7 +1929,7 @@ Warning from spectre during circuit read-in.
 
 尝试了 `Hspice` 格式的 hspiceText view, 行不通，暂时放弃。
 
-## x. DRC tips
+### 99.3 DRC tips
 
 
 ``` bash
@@ -1935,7 +1957,7 @@ which creates a resistive path or UNDERPASS in the net which is not recommended.
  -->
 
 
-## Literature Review
+## 100. Literature Review
 
 2025.12.15 搜集了一下 ultra-low-power PLL 的相关文献，总结如下：
 
@@ -1996,108 +2018,4 @@ which creates a resistive path or UNDERPASS in the net which is not recommended.
 - [15] B. Ghafari, L. Koushaeian, and F. Goodarzy, “New architecture for an ultra low power and low noise PLL for biomedical applications,” in 2013 IEEE Global High Tech Congress on Electronics, Nov. 2013, pp. 61–62. doi: 10.1109/GHTCE.2013.6767241.
 - [16] S. K. Saw and V. Nath, “Performance Analysis of Low Power CSVCO for PLL Architecture,” in 2015 Second International Conference on Advances in Computing and Communication Engineering, May 2015, pp. 370–373. doi: 10.1109/ICACCE.2015.101.
 - [17] A. Gundel and W. N. Carr, “Ultra Low Power CMOS PLL Clock Synthesizer for Wireless Sensor Nodes,” in 2007 IEEE International Symposium on Circuits and Systems (ISCAS), May 2007, pp. 3059–3062. doi: 10.1109/ISCAS.2007.378054.
-
-
-## x. Experience Summary
- 
-- Verilog-A 代码修改后却 "没有变化" 时，记得在 verilog 界面点击左上角的保存按钮 `Build a databese of instances, nets and pins found in file`，这会重新提取 verilog 代码对应网表；如果还不行，可能是原理图未刷新导致的，重新放置器件即可。 
-- 在 Assembler 的 Global Variables 处右键可以 Add Config Sweep.
-- VCO 输出波形 (CK_OUT) 占空比不为 50% 时，不会对 CK_FB 产生影响，因为 PFD 比较的是两路时钟的上升沿对齐情况，即便 CK_FB 是窄脉冲也可以正常工作
-- 偶数分频 (2 分频) 可以完全修正时钟占空比，奇数分配只能部分修正，具体如下：
-
-$$
-\begin{gather}
-N = 2k + 1 \Longrightarrow  D' = \frac{100\%\times k + D}{100\%\times (2k + 1)} = \frac{D  - 50\%}{N} + 50\% 
-\\
-\mathrm{for\ example:}\ D = 53\%,\ N = 15 \Longrightarrow D' = \frac{53\% - 50\%}{15} + 50\% = 50.2\%
-\end{gather}
-$$
-
-
-- global 变量用于扫描，sweep 变量由于存放最佳值
-- VCO 设置时分为 VCO_core 和 VCO_buffer 两部分，方便迭代
-- Current-Starved Ring VCO: VDD = 1.2\*Vth ~ 2.8\*Vth 有良好性能；如果要求功耗尽量低，那么 1.5\*Vth 左右能在保证其它性能的前提下尽量降低功耗；综合性能最优的点一般在 2.0\*Vth 附近
-- 蒙卡点数太少是看不了 mismatch contribution 的，例如只设了 10 个点不行，改成 100 个点后可以
-- **Analog multiplexers can be used as digital multiplexers too however digital multiplexers cannot be used as analog multiplexers.**
-- 对小面积 nA 级低功耗设计而言，除寄生电容影响外，后仿总比前仿功耗高出 40 nA ~ 100 nA 不等 (与版图面积有关)，这是因为后仿考虑了版图寄生器件漏电流的影响 (主要是寄生 PN 结)
-
-
-
-模块文件结构：
-``` bash
-2025_PLL_RVCO1_layout
-    schematic
-    layout
-    symbol
-```
-
-
-做完一个版本后复制（备份）到另一个 cell: **<span style='color:red'> (注意修改复制后新 cell > layout 的 reference source) </span>**
-
-``` bash
-2025_PLL_RVCO1_layout_v1
-    schematic
-    layout
-    symbol
-    v1_10272243_PEX_HSPICE
-    v1_10272243_layout
-```
-
-
-v1_10272243_layout 是为了再次备份，因为后面有可能修改 v1 的 layout，此时可保存为 v1_10281026_layout (仍属于 v1)
-另外，将寄生网表复制到主 cell (config 均使用主 cell，直接从此处调用寄生网表)，最终得到这样的结构：
-
-``` bash
-2025_PLL_RVCO1_layout
-    schematic
-    layout
-    symbol
-    v1_10272243_PEX_HSPICE
-    v1_10281026_PEX_HSPICE
-    v2_10290000_PEX_HSPICE
-
-2025_PLL_RVCO1_layout_v1
-    schematic
-    layout (注意修改复制后新 cell > layout 的 reference source)
-    symbol
-    v1_10272243_layout
-    v1_10272243_PEX_HSPICE
-    v1_10281026_layout
-    v1_10281026_PEX_HSPICE
-
-
-2025_PLL_RVCO1_layout_v2
-    schematic
-    layout (注意修改复制后新 cell > layout 的 reference source)
-    symbol
-    v2_10290000_layout
-    v2_10290000_PEX_HSPICE
-```
-
-这样的好处是，可以直接用 config sweep 快速切换 2025_PLL_RVCO1_layout 的 schematic/v1_PEX/v2_PEX, 十分方便。
-
-
-- 想要 annotate DC operating points 时，直接在 ADE results 处找到想看的工艺角或特定参数，右键选择 `annotate > DC Operating Points` 即可，这样就会自动选择对应参数下的直流工作点结果，显示在原理图上 (配合我们的设置代码即可快速查看晶体管的各个关键参数)
-- 对于具有 Negative K_VCO 的锁相环 (假设锁定时控制电压在 VDD/2 附近，不过高或过低)，滤波器 LPF 的 "地" 端有两种基本接法：
-    - (1) 接 VDD: 上电之后 V_CT = VDD (最大值)，VCO 频率最低，PLL 需要 "向高频锁定"，锁定时间较长？但是对环路模块 (主要是第一级 FD) 的频率要求大大降低； **如何 "打破" f_out/2 的假锁定状态？**
-    - (2) 接 VSS: 上电之后 V_CT = VSS = 0 (最小值)，VCO 频率最高，PLL 需要 "向低频锁定"，锁定时间较短？但是对环路模块 (主要是第一级 FD) 的频率要求较高；也就是说，如果 FD 的最大工作频率不足以覆盖此频率，锁定过程中可能会出现一些问题； **如何 "打破" 2\*f_out 的假锁定状态？**
-- VCT 可以设置初始值以加快环路锁定，节省一些时间来仿真稳定后的性能，但是 VDD 最好给充足的 delay 再上电，以避免可能出现的时序或其它问题；
-- LPF to VSS/VDD 对 FD 的高频要求不同，如果上电后频率是从低向高锁定，则 FD 高频要求较低，反之则要求较高
-- 中高频锁相环 (output > 100 MHz) 的闭环环路带宽比 (f_REF/f_BW) 常常会做到 100 以上，以获得更低的相位噪声 (尤其是低频段)，通常是 150 ~ 500 居多。对于分频比较高的锁相环又如何？
-- 对于 CP-PLL, the dead zone of PFD/CP 对整个环路的 Je_rms 影响较大 (因为 Je 是很长时间的 "累积" 抖动)，死区大时，输出相位越有可能接近死区边界，这时便有较大的相位噪声/抖动。举个例子，假设 PFD/CP 对 delay = ±2% 以内都没有反应，也就是 dead zone = -2% ~ +2%, 如果这段死区内的等效电流 $I_{dz}$ 非常小，几乎相当于 "没有电流"，就会导致环路的 RMS phase noise 达到 $2\pi \times 2\% = 0.1257 \ \mathrm{rad} = 7.2^\circ$，这在低抖动时钟系统中是完全不可接受的。这个现象在 nominal $I_P$ 较小时尤为明显，比如 nA-level 低功耗设计。
-- 可以用 **`basic > patch`** 元件来短接两个具有不同 net name 的网络，这在版图中也是能正常过的 (版图中会将两网络合二为一，同时保持正确的对应关系)，LVS 能不能过还待验证；但是注意，`patch` 仅能短接两个 net 或者 1 pin + 1 net, 但是不能短接两个 pin (会报错)。与之类似的还有 `basic > cds_thru` 元件 [(here)](https://zhuanlan.zhihu.com/p/370333465)，这个元件其实更好用，一方面它可以短接两个 pin, 另一方面可以明确知道两个 net 到底共用哪个名字 (src 和 dst 两个端口，公用 src 端口的 net name)，数字电路在综合时 (如果需要 "短接") 常常就是自动生成了这个元件，它的版图和 LVS 都能正常通过 (LVS 是利用了 `lvs ignore = true` 来实现的)
-- 作图之后，可以通过 `Graph > Edge Browser` 查看边沿的各种信息
-- 封装 pcell (parameterized cell) 时，`4*pPar("mu")` 不行但是 `pPar("mu")*4` 可以
-- `schematic > View > Info Balloons` 可以打开波形信息气泡，鼠标悬停在 net/pin 上可以快速查看此位置的 voltage/current 波形。
-- 管子栅极从 m1 引出，那么 m2/m3 尽量不走线以避免寄生电容耦合，并且最好拿高层金属把沟道全遮住以避免可能存在的光效应 (尤其射频、毫米波)
-- Integer-N CP-PLL 的 FD chain 中，随着频率的降低，cycle jitter 逐渐增大 (近似满足$\sqrt{N}$)，而 edge jitter 则基本不变。
-
-
-
-
-**<span style='color:red'> ！！！！！ Macro Model Name 没改 </span>**
-
-
-
-**FD 不仅要能在低频工作，高频也是需要的？**
 
