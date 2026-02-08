@@ -36,26 +36,15 @@
 
 
 ## 2. Differential CP-PLL 
-### 2.x reference
-
-本小节的参考文献如下：
-
 ## 3. Self-Biased PLL (SB-PLL)
-### 3.x reference
-
-本小节的参考文献如下：
-
 ## 4. Sub-Sampling PLL (SS-PLL)
-### 4.x reference
-
-本小节的参考文献如下：
-
 ## 5. Dual-Loop PLL (HDL-PLL)
 
-### 5.x reference
 
 本小节的参考文献如下：
 - **(主要参考)** [[3]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9278255) Z. Zhang and N. Wu, “Design of High-Performance Phase-Locked Loop Using Hybrid Dual-Path Loop Architecture: an Overview (Invited Paper),” in 2020 IEEE 15th International Conference on Solid-State & Integrated Circuit Technology (ICSICT), Kunming, China: IEEE, Nov. 2020, pp. 1–4. doi: 10.1109/ICSICT49897.2020.9278255.
+
+
 ## Reference
 
 资料/博客：

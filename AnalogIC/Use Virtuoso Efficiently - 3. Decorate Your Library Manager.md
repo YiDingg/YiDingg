@@ -3,7 +3,7 @@
 > [!Note|style:callout|label:Infor]
 Initially published by YiDingg at 13:33 on 2025-08-19 in Lincang.
 
-## Demo
+## 调整后的示例
 
 参考 [知乎 > 让你的 Cadence Library 更加美观](https://zhuanlan.zhihu.com/p/20739660)，文中的例子是 IC617, 但其步骤同样适用于我们的 Cadence IC618 。
 
@@ -14,7 +14,7 @@ Initially published by YiDingg at 13:33 on 2025-08-19 in Lincang.
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-19-14-12-46_Use Virtuoso Efficiently - 3. Decorate Your Library Manager.png"/></div>
 
 
-## Setup
+## 具体调整步骤
 
 打开 `Library Manager > View > Display Options > Custom library display attributes`, 点击 add 创建一个新的 Library Display Attributes, 不妨命名为 `MyLibraries`, 并勾选样式 `Using color` 和 `Using icon`。至于颜色和图标，自己凭喜好选择即可 (icon 图片可以使用自己导入的)。
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-19-13-39-53_Use Virtuoso Efficiently - 3. Decorate Your Library Manager.png"/></div>

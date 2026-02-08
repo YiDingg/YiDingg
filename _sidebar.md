@@ -16,19 +16,41 @@
     -->
 
 - [[Pinned] My Research Direction](<AnalogIC/(Pinned) My Research Direction.md>)
+- [[Pinned] Experience Summary of Analog IC Design, Simulation, Layout, and PEX](<AnalogIC/Experience Summary of Analog IC Design, Simulation, Layout, and PEX.md>)
 
 - 📝 **Projects**
-    - [[Pinned] Experience Summary of Analog IC Design, Simulation, Layout, and PEX](<Experience Summary of Analog IC Design, Simulation, Layout, and PEX>)
     
     - [An Sub-Sampling PLL (SS-PLL) in TSMC 28nm Technology](<>)
+        - **1. Related Documents:**
+        - [Analog and Digital Split-Tuned VCO and PLL](<AnalogIC/Analog and Digital Split-Tuned VCO and PLL.md>)
+        - **2. Project Records:**
+        - **3. Project Documents:**
+
+
+    - [A 56 Gbuad/s Quarter-Rate Reference-Less PAM3 CDR (84 Gb/s, 14 GHz) in TSMC 28nm Technology](<Projects/A 56-Gbuad PAM3 CDR (84 Gbps, 14 GHz) in TSMC 28nm Technology.md>)
+        - **1. Related Documents:**
+        - [(old) Basics of CDR (Clock and Data Recovery)](<AnalogIC/Basics of Clock Data Recovery (CDR).md>)
+        - [Razavi PLL - Chapter 13. Clock and Data Recovery Fundamentals](<AnalogIC/Razavi PLL - Chapter 13. Clock and Data Recovery Fundamentals.md>)
+        - [Analog Design Examples from GitHub User HarshitSri-Analog](<AnalogIC/Analog Design Examples from GitHub User HarshitSri-Analog.md>)
+        - [Razavi PLL - Chapter 14. Advanced Clock and Data Recovery Principles](<AnalogIC/Razavi PLL - Chapter 14. Advanced Clock and Data Recovery Principles.md>)
+        - [Explore Practical Instances in Basic Libraries of Cadence Virtuoso](<AnalogIC/Explore Practical Instances in Basic Libraries of Cadence Virtuoso.md>)
+        - [() Virtuoso Tutorials - 21. How to Generate PRBS (Pseudo-Random Binary Sequence) Signal in Virtuoso](<AnalogIC/Virtuoso Tutorials - 21. How to Generate PRBS (Pseudo-Random Binary Sequence) Signal in Virtuoso.md>)
+        - [() Verilog-A Modeling for Commonly Used Modules of SerDes and Wireline](<AnalogIC/Verilog-A Modeling for Commonly Used Modules of SerDes and Wireline.md>)
+        - [() Introduction to SerDes and High-Speed Data Communication](<AnalogIC/Introduction to SerDes and High-Speed Data Communication.md>)
+        - [() Basics and Overview of Clock Data Recovery (CDR)](<AnalogIC/Basics and Overview of Clock Data Recovery (CDR).md>)
+        - [() High-Speed Logic Circuit - LVDS, LVPECL and CML](<AnalogIC/High-Speed Logic Circuit - LVDS, LVPECL and CML.md>)
+        - **2. Project Records:**
+        - **3. Project Documents:**
+        - [(0) Theoretical Basics and Project Preparations](<AnalogICDesigns/202602_tsmcN28_CDR_PAM3_56Gbuad (0) Theoretical Basics and Project Preparations.md>)
+
 
     - [An Ultra-Low-Power CP-PLL in ONC 180nm Technology](<Projects/Design of An Ultra-Low-Power CP-PLL in ONC 180nm Technology.md>)
-        - 1. Related Documents:
+        - **1. Related Documents:**
         - [onc18 (ONC 180nm CMOS Process Library)](<AnalogICDesigns/Basic Information of onc18 (ONC 180nm CMOS Process Library).md>)
-        - [Loop Analysis of Typical Type-II CP-PLL](<AnalogIC/Loop Analysis of Typical Type-II CP-PLL.md>)
+        - [(old but remodified) Loop Analysis of Typical Type-II CP-PLL](<AnalogIC/Loop Analysis of Typical Type-II CP-PLL.md>)
         - [Large Resistor Implementation Techniques for Low-Power Analog IC Designs](<AnalogIC/Large Resistor Implementation Techniques for Low-Power Analog IC Designs.md>)
         - [From Basic Logic Gates to D Latch and D Flipflop](<AnalogIC/From Basic Logic Gates to D Latch and D Flipflop.md>)
-        - [(modified) Virtuoso Tutorials - 15. Several Methods for PEX and How to Speed Up Your Post-Simulation](<AnalogIC/Virtuoso Tutorials - 15. Several Methods for PEX and How to Speed Up Your Post-Simulation.md>)
+        - [(old but remodified) Virtuoso Tutorials - 15. Several Methods for PEX and How to Speed Up Your Post-Simulation](<AnalogIC/Virtuoso Tutorials - 15. Several Methods for PEX and How to Speed Up Your Post-Simulation.md>)
         - [Virtuoso Tutorials - 16. Using Config Sweep and CALIBREVIEW to Speed Up Your Post-Layout Simulation](<AnalogIC/Virtuoso Tutorials - 16. Using Config Sweep and CALIBREVIEW to Speed Up Your Post-Layout Simulation.md>)
         - [Virtuoso Tutorials - 17. Creating Parameter Passing Symbol as The Standard PCell](<AnalogIC/Virtuoso Tutorials - 17. Creating Parameter Passing Symbol as The Standard PCell.md>)
         - [Phase Noise and Jitter Characterization in Mixed-Signal Circuits, and the MATLAB Implementation](<AnalogIC/Phase Noise and Jitter Characterization in Mixed-Signal Circuits, and the MATLAB Implementation.md>)
@@ -41,19 +63,18 @@
         - [Advanced PLL Architecture - Sub-Sampling PLL (SS-PLL)](<AnalogIC/Advanced PLL Architecture - Sub-Sampling PLL (SS-PLL).md>)
         - [Overview and Comparison of VCO Architectures for PLL](<AnalogIC/Overview and Comparison of VCO Architectures for PLL.md>)
         - [Phase Noise Modeling and Prediction of CP-PLL](<AnalogIC/Phase Noise Modeling and Prediction of CP-PLL.md>)
-
-        - 2. Project Records:
+        - **2. Project Records:**
         - [202510_onc18_CPPLL (1) VCO Design Iteration](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (1) VCO Design Iteration.md>)
         - [202510_onc18_CPPLL (2) VCO Iteration and Layout](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (2) VCO Iteration and Layout.md>)
         - [202510_onc18_CPPLL (3) Design of Other Modules](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (3) Design of Other Modules.md>)
         - [202510_onc18_CPPLL (4) Pre-Layout Simulation and Layout Details](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (4) Pre-Simulation, Layout Details and Post-Simulation Results.md>)
         - [202510_onc18_CPPLL (5) Project Report and Documents](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (5) Project Report and Documents.md>)
-
-        - 3. Project Documents:
+        - **3. Project Documents:**
         - [(docs-1) 2025.11.13 PLL 性能评估结果 (Digital 1.25V or 0.625V)](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (docs-1) 2025.11.13 PLL 性能评估结果 (Digital 1.25V or 0.625V).md>)
         - [(docs-2) 2025.12.19 电源上升纹波导致的输出频率波动问题](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (docs-2) 2025.12.19 电源上升纹波导致的输出频率波动问题.md>)
         - [(docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report.md>)
         - [(docs-4) 2026.01.xx 锁相环后仿报告 CP-PLL post-layout simulation report](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (docs-4) 2026.01.xx 锁相环后仿报告 CP-PLL post-layout simulation report.pdf>)
+
 
 
     - [A 2.2-GHz ~ 3.3-GHz BB-PLL with Multiple Output Frequencies in TSMC 65-nm Technology](<Projects/A 3.3-GHz BB-PLL with Multiple Output Frequencies in TSMC 65-nm Technology.md>)
@@ -134,23 +155,7 @@
         - [Design Sheet for Folded-Cascode Op Amp](<AnalogICDesigns/Design Sheet for Folded-Cascode Op Amp.md>)<!-- x -->
 
 
-<!-- 
-    - other technology
-        - [[ocn180] 202510 PLL: ultra-low-power CP-PLL](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower.md>)
-    - tsmcN65
-        - [202509 DAC: 5-bit RDR (R-2R)](<AnalogICDesigns/202509_tsmcN65_DAC_RDR_5bit.md>)
-        - [202509 OTA: adjustable constant-gm](<AnalogICDesigns/202509_tsmcN65_OTA_constantGm_adjustable.md>)
-        - [202509 LDO (1): basic LDO with 1.2V output](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1).md>)
-        - [202509 Op Amp: op amp for the LDO](<AnalogICDesigns/202509_tsmcN65_OpAmp__nulling-Miller.md>)
-    - tsmcN28
-        - [202508 PLL: 3rd-order type-II integer-N CP-PLL](<AnalogICDesigns/202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N.md>)
-        - [202507 BGR: low-voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)
-        - [202507 Op Amp: op amp for the BGR in scientific_research_practice_1](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)
-    - tsmc18rf
 
-        - [202506 Op Amp: twoStage_single_Nulling-Miller__80dB_50MHz_50Vus](AnalogICDesigns/202506_tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md)
-        - [202506 Op Amp: oneStage_single_folded-cascode__80dB_50MHz_50Vus](AnalogICDesigns/202506_tsmc18rf_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md)
--->
 
 
 - 💡 **My Blogs**
@@ -175,6 +180,8 @@
         - [17. Creating Parameter Passing Symbol as The Standard PCell](<AnalogIC/Virtuoso Tutorials - 17. Creating Parameter Passing Symbol as The Standard PCell.md>)
         - [18. How to Create a Supply Source with White Noise](<AnalogIC/Virtuoso Tutorials - 18. How to Create a Supply Source with White Noise.md>)
         - [19. Using Auto Routing to Boost Your Layout Design](<AnalogIC/Virtuoso Tutorials - 19. Using Auto Routing to Boost Your Layout Design.md>)
+        - [20. How to Create Bus Wires in Schematic and Symbol Editor](<AnalogIC/Virtuoso Tutorials - 20. How to Create Bus Wires in Schematic and Symbol Editor.md>)
+        - [21. More on Verilog-A Modeling in Cadence Virtuoso](<>)
 
     - Use Virtuoso Efficiently
         - [0. How to Use Cadence Efficiently](<AnalogIC/Use Virtuoso Efficiently - 0. How to Use Cadence Virtuoso Efficiently.md>)<!-- 这一篇不发在知乎或公众号上, 而是拆分为多篇文章来发 (相当于汇总) -->
@@ -182,7 +189,7 @@
         - [2. File Transfer using Shared Folders](<AnalogIC/Use Virtuoso Efficiently - 2. File Transfer using Shared Folders.md>)<!--  -->
         - [3. Decorate Your Library Manager](<AnalogIC/Use Virtuoso Efficiently - 3. Decorate Your Library Manager.md>)
         - [4. Speed Up Your Simulation](<AnalogIC/Use Virtuoso Efficiently - 4. Speed Up Your Simulation.md>)
-
+        - [5. Save Your Settings and Workspace Setup](<AnalogIC/Use Virtuoso Efficiently - 5. How to Save Your Settings and Workspace Setup.md>)
 
 
     - Razavi CMOS
@@ -195,20 +202,30 @@
         - [Razavi CMOS - Chapter 8. Negative Feedback](<AnalogIC/Razavi CMOS - Chapter 8. Negative Feedback.md>)<!--  -->
 
     - Razavi PLL
-        - [Razavi PLL - Chapter 15. Frequency Dividers](<AnalogIC/Razavi PLL - Chapter 15. Frequency Dividers.md>)
+        - [Razavi PLL - Chapter 14. Advanced Clock and Data Recovery Principles](<AnalogIC/Razavi PLL - Chapter 14. Advanced Clock and Data Recovery Principles.md>)
+        - [Razavi PLL - Chapter 13. Clock and Data Recovery Fundamentals](<AnalogIC/Razavi PLL - Chapter 13. Clock and Data Recovery Fundamentals.md>)
         - [Razavi PLL - Chapter 2. Jitter and Phase Noise](<AnalogIC/Razavi PLL - Chapter 2. Jitter and Phase Noise.md>)
+        - [Razavi PLL - Chapter 15. Frequency Dividers](<AnalogIC/Razavi PLL - Chapter 15. Frequency Dividers.md>)
 
     - Razavi RF
-        - [Razavi RF - Chapter 1. Introduction to RF Technology](<AnalogIC/Razavi RF - Chapter 1. Introduction to RF Technology.md>)
         - [Razavi RF - Chapter 2. Basic Concepts in RF Circuits](<AnalogIC/Razavi RF - Chapter 2. Basic Concepts in RF Circuits.md>)
+        - [Razavi RF - Chapter 1. Introduction to RF Technology](<AnalogIC/Razavi RF - Chapter 1. Introduction to RF Technology.md>)
 
 
 
-    - Analog/AMS IC Blogs (2025, 37 items)
+    - AMS IC Blogs (2026, 5 items)
+        - [High-Speed Logic Circuit - LVDS, LVPECL and CML](<AnalogIC/High-Speed Logic Circuit - LVDS, LVPECL and CML.md>)
+        - [Analog Design Examples from GitHub User HarshitSri-Analog](<AnalogIC/Analog Design Examples from GitHub User HarshitSri-Analog.md>)
+        - [Basics and Overview of Clock Data Recovery (CDR)](<AnalogIC/Basics and Overview of Clock Data Recovery (CDR).md>)
+        - [Analog and Digital Split-Tuned VCO and PLL](<AnalogIC/Analog and Digital Split-Tuned VCO and PLL.md>)
+        - [Phase Noise Modeling and Prediction of CP-PLL](<AnalogIC/Phase Noise Modeling and Prediction of CP-PLL.md>)
+
+    - AMS IC Blogs (2025, 41 items)
         - [Overview and Comparison of VCO Architectures for PLL](<AnalogIC/Overview and Comparison of VCO Architectures for PLL.md>)
         - [Advanced PLL Architecture - Sub-Sampling PLL (SS-PLL)](<AnalogIC/Advanced PLL Architecture - Sub-Sampling PLL (SS-PLL).md>)
         - [Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum](<AnalogIC/Phase Noise Calculation Methods Comparison - Zero-Crossing and Power-Spectrum.md>)
         - [An Overview of PLL Architectures](<AnalogIC/An Overview of PLL Architectures.md>)
+        - [(Pinned) My Research Direction](<AnalogIC/(Pinned) My Research Direction.md>)
         - [Use AI to Boost Your Academic Research and Paper Reading](<AnalogIC/Use AI to Boost Your Academic Research and Paper Reading.md>)
         - [Basics of LC and Crystal Sinusoidal Oscillator](<AnalogIC/Basics of LC and Crystal Sinusoidal Oscillator.md>)
         - [All You Need to Know About Fourier Analysis (FS, DFS, FT, DTFT, DFT)](<AnalogIC/All You Need to Know About Fourier Analysis (FS, DFS, FT, DTFT, DFT).md>)
@@ -247,7 +264,10 @@
         - [MOSFET's Terminal Resistance](<Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>) <!--  -->
 
 
-    - Electronic Blogs (2025, 77 items) 
+    - Electronic Blogs (2026, 0 items) 
+        - [xxx](<>)
+
+    - Electronic Blogs (2025, 78 items) 
         - [DPSE 数字信号处理实验 - 1. ADC 与 DAC 实验](<Electronics/DPSE 数字信号处理 - 1. ADC 与 DAC 实验.md>)
         - [DPSE 数字信号处理实验 - 0. 课程信息与准备](<Electronics/DPSE 数字信号处理 - 0. 课程信息与准备.md>)
         - [DCE 数字电路实验 - 实验 4. 频率计设计](<Electronics/DCE 数字电路实验 - 实验 4. 频率计设计.md>)

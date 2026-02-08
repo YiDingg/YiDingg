@@ -1,7 +1,7 @@
 # Basics of Clock Data Recovery (CDR)
 
 > [!Note|style:callout|label:Infor]
-Initially published by YiDingg at 23:40 on 2024-08-27 in Lincang.
+> Initially published by YiDingg at 23:40 on 2024-08-27 in Lincang.
 
 ## 1. Introduction
 
@@ -183,15 +183,15 @@ $$
 ## References
 
 
-- [\[1\]](https://people.engr.tamu.edu/spalermo/ecen689/cdr_comparisons_hsieh_cas_2008.pdf) M. Hsieh and G. E. Sobelman, “Architectures for multi-gigabit wire-linked clock and data recovery,” IEEE Circuits Syst. Mag., vol. 8, no. 4, pp. 45–57, 2008, doi: 10.1109/MCAS.2008.930152.
-- \[2\] J. Savoj and B. Razavi, Eds., “Clock and Data Recovery Architectures,” in Clock and Data Recovery Architectures, Boston, MA: Springer US, 2001. doi: 10.1007/0-306-47576-6_3.
-- \[3\] Hugo Ernesto Safadi Figueroa, “Design of a Clock and Data Recovery Circuit in FDSOI Technology for High Speed Serial Links.”
-- \[4\] A. Amirkhany, “Basics of Clock and Data Recovery Circuits: Exploring High-Speed Serial Links,” IEEE Solid-State Circuits Magazine, vol. 12, no. 1, pp. 25–38, 2020, doi: 10.1109/MSSC.2019.2939342.
-- [\[5\]](https://www.zhihu.com/question/23142886/answer/108257466853) Behzad Razavi, Design of CMOS Phase-Locked Loops. New York, NY: Cambridge University Press, 2020.
-- [\[6\]](https://www.mdpi.com/2079-9292/10/16/1888) T. Liu et al., “Analysis and Modeling of Mueller–Muller Clock and Data Recovery Circuits,” Electronics, vol. 10, no. 16, p. 1888, Aug. 2021, doi: 10.3390/electronics10161888.
-- \[7\] T. Liu, F. Lv, B. Liang, H. Wang, J. Wang, and M. Wu, “An Analytical Jitter Transfer Model for Mueller-Muller Clock and Data Recovery Circuits,” in 2021 IEEE 14th International Conference on ASIC (ASICON), Kunming, China: IEEE, Oct. 2021, pp. 1–4. doi: 10.1109/ASICON52560.2021.9620396.
-- \[8\] B. Razavi, J. Lee, and K. S. Kundert, “Analysis and modeling of bang-bang clock and data recovery circuits,” IEEE J. Solid-State Circuits, vol. 39, no. 9, pp. 1571–1580, Sep. 2004, doi: 10.1109/JSSC.2004.831600.
-- \[9\] H. Abdel-Maguid, “Analysis of bang-bang clock and data recovery,” Master of Applied Science, Carleton University, Ottawa, Ontario, 2006. doi: 10.22215/etd/2006-07544.
+- [[1]](https://people.engr.tamu.edu/spalermo/ecen689/cdr_comparisons_hsieh_cas_2008.pdf) M. Hsieh and G. E. Sobelman, “Architectures for multi-gigabit wire-linked clock and data recovery,” IEEE Circuits Syst. Mag., vol. 8, no. 4, pp. 45–57, 2008, doi: 10.1109/MCAS.2008.930152.
+- [2] J. Savoj and B. Razavi, Eds., “Clock and Data Recovery Architectures,” in Clock and Data Recovery Architectures, Boston, MA: Springer US, 2001. doi: 10.1007/0-306-47576-6_3.
+- [3] Hugo Ernesto Safadi Figueroa, “Design of a Clock and Data Recovery Circuit in FDSOI Technology for High Speed Serial Links.”
+- [4] A. Amirkhany, “Basics of Clock and Data Recovery Circuits: Exploring High-Speed Serial Links,” IEEE Solid-State Circuits Magazine, vol. 12, no. 1, pp. 25–38, 2020, doi: 10.1109/MSSC.2019.2939342.
+- [[5]](https://www.zhihu.com/question/23142886/answer/108257466853) Behzad Razavi, Design of CMOS Phase-Locked Loops. New York, NY: Cambridge University Press, 2020.
+- [[6]](https://www.mdpi.com/2079-9292/10/16/1888) T. Liu et al., “Analysis and Modeling of Mueller–Muller Clock and Data Recovery Circuits,” Electronics, vol. 10, no. 16, p. 1888, Aug. 2021, doi: 10.3390/electronics10161888.
+- [7] T. Liu, F. Lv, B. Liang, H. Wang, J. Wang, and M. Wu, “An Analytical Jitter Transfer Model for Mueller-Muller Clock and Data Recovery Circuits,” in 2021 IEEE 14th International Conference on ASIC (ASICON), Kunming, China: IEEE, Oct. 2021, pp. 1–4. doi: 10.1109/ASICON52560.2021.9620396.
+- [8] B. Razavi, J. Lee, and K. S. Kundert, “Analysis and modeling of bang-bang clock and data recovery circuits,” IEEE J. Solid-State Circuits, vol. 39, no. 9, pp. 1571–1580, Sep. 2004, doi: 10.1109/JSSC.2004.831600.
+- [9] H. Abdel-Maguid, “Analysis of bang-bang clock and data recovery,” Master of Applied Science, Carleton University, Ottawa, Ontario, 2006. doi: 10.22215/etd/2006-07544.
 - [10] F. Spagna, “Clock and data recovery systems,” in 2018 IEEE Custom Integrated Circuits Conference (CICC), San Diego, CA: IEEE, Apr. 2018, pp. 1–120. doi: 10.1109/CICC.2018.8357111.
 - [[11]](https://download.tek.com/document/65W_26023_0_Letter.pdf) “Clock Recovery Primer, Part 1.” Accessed: Jun. 21, 2025. [Online]. Available: https://download.tek.com/document/65W_26023_0_Letter.pdf
 - [12] Y. Ren, “Design of a Clock and Data Recovery Circuit in 65 NM Technology.”

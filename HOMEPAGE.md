@@ -39,6 +39,7 @@ Below are some tools that may be helpful. Refer to [Data Host](Blogs\SiteFeature
 ### Frequently Used Tools 
 
 Frequently used tools for my workflow:
+- Table for LaTex: [LaTex Tables](https://www.latex-tables.com/)
 - Img, gif: use [Resize](https://bulkresizephotos.com/zh?preset=true&type=filesize&filesize=80000) (img) and [Docsmall](https://docsmall.com/gif-compress) (img, gif) <span class='tinyscript'>or [imgdiet](https://www.imgdiet.com/zh-CN/compress) (compress the entire folder),  [i2img](https://www.i2img.com/image-compressor), [Tiomg](https://tiomg.org/compress-image), [Oplimize LLA](https://imagecompressor.com), [TinyPNG](https://tinypng.com/), [Tanpok](https://tool.tanpok.com/#/ImgCompress)</span> to compress the image and gif.
 - Image inversion: [LZL tool](https://lzltool.cn/batch-img-color-reverse)
 - Video: use [FreeCompress](https://freecompress.com/) <span class='tinyscript'>or [Video To Edit](https://www.video2edit.com), [FCO](https://compress-video.file-converter-online.com/#google_vignette)</span> to compress the video.
@@ -54,10 +55,10 @@ Frequently used tools for my workflow:
 - IMG to EXCEL: [Baimiao](https://web.baimiaoapp.com/image-to-excel)
 - PFD Translation: [IFlyTranslate](https://www.iflytranslate.com/doc-translate)
 
+
 Other tools:
 - Text comparing tool: [diffing_tool](https://csacademy.com/app/diffing_tool/)
 - Title: use [Capitalize](https://capitalizemytitle.com/style/APA/) <span class='tinyscript'>or [Wawa](https://www.iamwawa.cn/daxiaoxie.html)</span> to capitalize your titles, and use [Rewriter](https://capitalizemytitle.com/ai-title-rewriter/) to rewrite your title.
-- Table for LaTex: [LaTex Tables](https://www.latex-tables.com/)
 - Questionnaire survey (问卷调查): [aidaform](https://aidaform.com/)
 - Collection of e-books: 
     - (1) [GitCode > Open-source-documentation-tutorial](https://gitcode.com/org/Open-source-documentation-tutorial/repos)

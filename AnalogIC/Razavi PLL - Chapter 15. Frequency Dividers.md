@@ -3,8 +3,7 @@
 > [!Note|style:callout|label:Infor]
 > Initially published by YiDingg at 19:09 on 2025-08-18 in Lincang.
 
-参考教材：[*Design of CMOS Phase-Locked Loops (Behzad Razavi) (1st Edition, 2020)*](https://www.zhihu.com/question/23142886/answer/108257466853)
-
+**参考教材：[*Design of CMOS Phase-Locked Loops (Behzad Razavi) (1st Edition, 2020)*](https://www.zhihu.com/question/23142886/answer/108257466853)**
 ## Introduction
 
 ## 15.1 General Considerations

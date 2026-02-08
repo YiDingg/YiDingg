@@ -1,8 +1,6 @@
-# 202510_onc18_CPPLL (docs-3) <br> 2026.01.06 电荷泵锁相环前仿报告 <br> (CP-PLL pre-layout simulation report)
+# 202510_onc18_CPPLL (docs-3) <br> 电荷泵锁相环前仿报告 <br> (updated on 2026.01.27)
 
-> [!Note|style:callout|label:Infor]
-> Initially published by YiDingg at 02:06 on 2026-01-06 in Beijing. 
-> dingyi233@mails.ucas.ac.cn
+
 
 
 本报告为 `202510_onc18_CPPLL_ultra_low_lower` (超低功耗电荷泵锁相环) 项目的前仿报告 (CP-PLL pre-layout simulation report)，主要内容包括：
@@ -10,25 +8,26 @@
 2. 性能指标与电路设计/优化思路
 3. 锁相环理论基础与环路设计
 4. 各条件下的前仿结果展示与分析
-5. 设计总结
+5. library 使用说明、设计总结
 
 
 ## 1. PLL Overview and Interface Description
 
-所设计的超低功耗 CP-PLL 系统框图如下图所示：
+所设计的超低功耗 CP-PLL 系统框图如下图所示 (updated at 2025.01.10)：
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-06-13-49-09_202510_onc18_CPPLL_ultra_low_lower (docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-10-19-01-11_202510_onc18_CPPLL_ultra_low_lower (docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report.png"/></div>
 
-其输入输出端口的定义如下：
+其输入输出端口的定义如下 (updated at 2025.01.10, big BUF 换为 level shifter)：
 
-<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-06-13-49-33_202510_onc18_CPPLL_ultra_low_lower (docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-10-19-02-08_202510_onc18_CPPLL_ultra_low_lower (docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report.png"/></div>
 
 
 锁相环设置为 **<span style='color:red'> `EN_BUF = 0, T<4:0> = <01111>, SL<1:0> = <11>` </span>** (CK_OUT = X24) 时的典型前仿性能如下：
 
 $$
 \begin{gather}
-I_{DD} = 296.5 \ \mathrm{nA} \,@\, \mathrm{no\ load},\ \ t_{lock} = 2.7 \ \mathrm{ms}  \\
+t_{lock} = 2.8 \ \mathrm{ms}  \\
+I_{DD} = 333.2 \ \mathrm{nA} \,@\, \mathrm{40\ fF\ (per\ ch)} = 277.9 \ \mathrm{nA} \,@\, \mathrm{no\ load} \\
 \mathrm{CK\_ADC:}\ \ J_{c,rms,ADC} = 20.45 \ \mathrm{ns},\ \ J_{e,rms,ADC} = 33.06 \ \mathrm{ns} \\
 \mathrm{CK\_OUT:}\ \ J_{c,rms,OUT} = 4.334 \ \mathrm{ns},\ \ J_{e,rms,OUT} = 32.07 \ \mathrm{ns}
 \end{gather}
@@ -36,6 +35,8 @@ $$
 
 
 ## 2. Specifications
+
+### 2.1 updated at 2026.01.06 (original)
 
 本次 ultra-low-power CP-PLL 设计的主要性能指标如下：
 - **(1) Reference Clock:** 32.768 kHz (X01) reference clock;
@@ -53,6 +54,29 @@ $$
 
 
 简单来讲就是需要两路输出，一路 `CK_ADC` 固定 X03 (98.304 kHz) 作为 ADC 采样时钟，另一路 `CK_OUT` 可配置输出为 X03/X06/X12/X24 四档频率 (98.304 kHz ~ 786.432 kHz)，抖动要求 `CK_ADC` 的 rms cycle jitter 小于 100 ns，同时整个锁相环的功耗要非常低 (< 500 nA @ no load with disabled big BUFs)，其它就是一些 robustness 方面的要求了。
+
+### 2.2 updated at 2026.01.10 (big BUF > level shifter)
+
+
+本次 ultra-low-power CP-PLL 设计的主要性能指标如下 (updated at 2026.01.10, 换为 level shifter 而不是 big BUFs)：
+- **(1) Reference Clock:** 32.768 kHz (X01) reference clock from crystal oscillator;
+- **(2) Output Clocks (Four Channels in Total):**
+    - **System Clock (`CK_OUT`):** 98.304 kHz ~ 786.432 kHz (X03 ~ X24) controlled by 2-bit digital code `SL<1:0>` for X03/X06/X12/X24 output frequency selection;
+    - **ADC Clock (`CK_ADC`):** 98.304 kHz (fixed X03), serving as the sampling clock for the subsequent ADC circuit;
+    - **Shifted ADC Clock (`CK_ADC_BUF`):** shifted output (from 1.25V-level to vbat-level) at fixed X03 frequency with enable/disable control `EN_BUF;`
+    - **Shifted System Clock (`CK_OUT_BUF`):** shifted output (from 1.25V-level to vbat-level) with configurable frequency controlled by `SL<1:0>` and enable/disable control `EN_BUF;`
+- **(3) Jitter Performance:** RMS cycle jitter of `CK_ADC` (ADC clock) <span style='color:red'> $J_{c,rms,ADC} < 100 \ \mathrm{ns}$ </span>;
+- **(4) Power Consumption:** total average current consumption <span style='color:red'> $I_{DD} < 500 \ \mathrm{nA}$ @ no load (with disabled level shifters) </span>;
+- **(5) Supply Voltage:** 1.25V ± 0.05 V digital power supply;
+- **(6) Temperature Range:** nominally at human body temperature (≈ 37°C), <span style='color:red'> -20°C ~ 80°C </span> should be covered for robustness;
+- **(7) Process Corners:** <span style='color:red'> TT/SS/FF </span> process corners;
+- **(8) Process Technology:** ONC 180nm CMOS.
+
+
+简单来讲就是需要四路输出，一路 `CK_ADC` 固定 X03 (98.304 kHz) 作为 ADC 采样时钟，另一路 `CK_OUT` 可配置输出为 X03/X06/X12/X24 四档频率 (98.304 kHz ~ 786.432 kHz)，剩下两路 `CK_ADC_BUF` 和 `CK_OUT_BUF` 则是转到 vbat 电压域的时钟输出，以满足 PAD 端测量需求；抖动方面需要 `CK_ADC` 的 rms cycle jitter 小于 100 ns，同时整个锁相环的功耗要非常低 (< 500 nA @ no load with disabled level shifters)，其它就是一些 robustness 方面的要求了。
+
+>注：后文部分内容仍然保留 big BUF 设计的描述，仅供参考，不再一一修改为 level shifter 设计。
+
 
 ## 3. Design Considerations
 
@@ -159,6 +183,9 @@ $$
 </div>
 
 
+
+
+
 ### 4.2 analysis and loop design
 
 根据前面提到的 Type-II CP-PLL 理论基础，我们可以分析各模块的噪声贡献，并据此设计环路参数以优化整体相位噪声性能。综合考虑指标要求和实际电路设计结果，最终确定最佳环路参数如下：
@@ -188,20 +215,25 @@ $$
 
 ## 5. Pre-layout Simulation Results
 
+### 5.0 testbench
+
 我们先给出锁相环原理图和 testbench 原理图，然后再展示各条件下的前仿结果。
 
 锁相环 schematic 如下：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-06-14-55-29_202510_onc18_CPPLL_ultra_low_lower (docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report.png"/></div>
 
-单独对锁相环进行仿真的 testbench schematic 如下 (all-corner 中用到)：
+`TB_PLL` 单独对锁相环进行仿真的 testbench schematic 如下 (all-corner 中用到)：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-06-15-31-40_202510_onc18_CPPLL_ultra_low_lower (docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report.png"/></div>
 
-锁相环与数字 LDO 联合仿真的 testbench schematic 如下：
+`TB_PLL_withDigitalLDO` 锁相环与数字 LDO 联合仿真的 testbench schematic 如下：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-06-15-31-45_202510_onc18_CPPLL_ultra_low_lower (docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report.png"/></div>
 
+`TB_TOP` LDO 与 PLL 合并后的顶层 testbench schematic 如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-10-18-20-12_202510_onc18_CPPLL_ultra_low_lower (docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report.png"/></div>
 
 
 
@@ -264,21 +296,6 @@ $$
 
 不过，升高归升高，即便频繁受到扰动，输出时钟的 Jc_rms (rms cycle jitter) 仍小于 100 ns，满足指标要求。
 
-根据图中数据，单独把典型工艺角和典型负载条件下的锁相环性能列出，方便参考：
-
-<div class='center'>
-
-| Parameter | Nominal | Spec. |
-|:-:|:-:|:-:|
- | IDD (total current consumption) <br> @ 40 fF (per channel) | 332.9 nA | < 500 nA <br> @ no load |
- | Jc_rms_ADC (rms cycle jitter of CK_ADC) | 20.45 ns | < 100 ns |
- | Je_rms_ADC (rms edge  jitter of CK_ADC) | 33.06 ns | NA |
- | Jc_rms_OUT (rms cycle jitter of CK_OUT) | 4.334 ns | NA |
- | Je_rms_OUT (rms edge  jitter of CK_OUT) | 32.07 ns | NA |
-
-</div>
-
-
 
 ### 5.3 PLL pre-sim. @ all-corner
 
@@ -296,33 +313,109 @@ $$
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-06-16-08-09_202510_onc18_CPPLL_ultra_low_lower (5) Project Report and Documents.png"/></div>
 
-图中可以看到，在 0 °C ~ 50°C @ TT/SS/FF 工艺角下，PLL 均能正常锁定和输出，输出频率符合预期，功耗和时钟抖动也满足要求。具体数据为：
+图中可以看到，在 0 °C ~ 50°C @ TT/SS/FF 工艺角下，PLL 均能正常锁定和输出，输出频率符合预期，功耗和时钟抖动也满足要求。
 
+
+
+将 PLL 的 all-corner (PVT) 前仿结果整理如下，方便参考：
 
 <div class='center'>
 
 | Parameter | Nominal | Min | Max | Spec. |
 |:-:|:-:|:-:|:-:|:-:|
- | IDD (total current consumption) <br> @ 40 fF (per channel)  | 332.9 nA | 329.3 nA | 417.8 nA | < 500 nA <br> @ no load |
- | Jc_rms_ADC (rms cycle jitter of CK_ADC) | 20.45 ns | 16.23 ns | 28.83 ns | < 100 ns |
- | Jc_rms_OUT (rms cycle jitter of CK_OUT) | 3.100 ns | 2.726 ns | 4.225 ns | NA |
+ | IDD (total current consumption) <br> @ 40 fF (per channel)   | 333.2 nA | 321.5 nA | 371.0 nA | < 500 nA <br> @ no load |
+ | Jc_rms_OUT (rms cycle jitter of CK_OUT)                      | 4.334 ns | 4.100 ns | 4.714 ns | NA |
+ | Je_rms_OUT (rms edge  jitter of CK_OUT)                      | 32.07 ns | 31.65 ns | 46.36 ns | NA |
+ | Jc_rms_ADC (rms cycle jitter of CK_ADC)                      | 20.45 ns | 18.88 ns | 23.40 ns | < 100 ns |
+ | Je_rms_ADC (rms edge  jitter of CK_ADC)                      | 33.06 ns | 32.38 ns | 44.99 ns | NA |
 
 </div>
 
 
-## 6. Conclusion
+## 6. Change `Big BUF` to `Level Shifter`
 
-本文档介绍了基于 ONC 180nm CMOS 工艺的 ultra-low-power CP-PLL 锁相环设计及其前仿结果。锁相环支持 32.768 kHz 参考时钟输入，提供四路输出时钟：一路 (称为 `CK_ADC`) 固定 98.304 kHz (X03) 作为 ADC 采样时钟，另一路 (称为 `CK_OUT`) 可配置为 98.304 kHz ~ 786.432 kHz (X03/X06/X12/X24) 四档频率；另外两路为缓冲输出 (`CK_ADC_BUF` 和 `CK_OUT_BUF`) 可驱动较大负载以满足测量需求，这两路输出可通过数字码 `EN_BUF` 启用或禁用。设计重点在于实现极低功耗 (< 500 nA @ no load) 的同时保证抖动性能 (`CK_ADC` 的 rms cycle jitter < 100 ns)，同时确保在宽 PVT 范围内的鲁棒性。
+
+
+一方面，我们需要将 digital LDO 和 PLL 合并到一个 cell；另一方面，前仿报告给甲方那边之后，甲方又提出 **"不需要 big BUF 将输出负载能力提升到 20 pF，而是在 `EN_BUF = 1` 时直接将输出从 1.25V-level 通过 level shifter 转到 vbat-level (3.3V)"** ，无奈只能重新修改我们的输出缓冲：将原来的 big BUF 改为 level shifter (1.25 V to vbat)，这样 `CK_ADC_BUF` 和 `CK_OUT_BUF` 就是 vbat-level 的时钟输出。 
+
+**注意 `CK_ADC_BUF` 和 `CK_OUT_BUF` 未经过超大缓冲器来提升带负载能力，驱动能力仍在 fF 级，不能直接带动 20 pF 负载。** 若要将其接到 PAD 用作测试，需要甲方这边自行添加较大的缓冲器 BUF (如果 PAD 前已经内置了 BUF 则无此问题)。
+
+
+
+修改后的原理图如下：
+
+<div class='center'>
+
+| schematic of `202510_PLL_withDigitalLDO` <br> (将 LDO 与 `PLL_v3` 合并到一个 cell) | schematic of `202510_PLL_BUF_output_v2` <br> (也即 `PLL_v3` 中使用的 BUF cell, big BUF 被换为了 level shifter) |
+|:-:|:-:|
+ | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-10-17-19-53_202510_onc18_CPPLL_ultra_low_lower (5) Project Report and Documents.png"/></div> | <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-10-17-19-46_202510_onc18_CPPLL_ultra_low_lower (5) Project Report and Documents.png"/></div> |
+
+
+</div>
+
+
+
+全面的仿真在前文已经有了，我们这里只需简单验证一下使用 level shifter 后系统能否正常工作 (保持性能不变)。仿真设置和前仿结果如下：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-10-16-34-51_202510_onc18_CPPLL_ultra_low_lower (docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report.png"/></div>
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-10-16-48-06_202510_onc18_CPPLL_ultra_low_lower (docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report.png"/></div>
+
+换为 level shifter 后，锁相环各项性能均与之前保持一致，几乎没有变化，满足需求方最新要求。
+
+
+## 7. Testbench Instructions
+
+### 7.1 testbench overview
+
+我们这边交付给需求方的 lib 称为 `MyLib_202510_PLL_onc18__EX_20260110`，表示在 2026.01.10 导出的版本。该 lib 共包含三个 testbench cell, 分别为：
+- `TB_PLL`： 单独对 PLL 进行仿真
+- `TB_PLL_withDigitalLDO`：数字 LDO 和 PLL 的联合仿真，此时两部分还未合并到一个 cell 中
+- `TB_TOP`： digital LDO 和 PLL 合并为一个 cell `202510_PLL_withDigitalLDO` 后，对整体进行仿真
+
+它们的原理图在 **5.0 testbench** 一节中已经展示过，这里不再重复给出。TB 打开后直接运行即可，仿真变量命名都比较直观，可根据情况自行调整，也可参考本文档前面提到的各项仿真设置。
+
+### 7.2 testbench explanations (updated on 2026.01.27)
+
+下面是仿真变量即设置的一些详细说明。
+
+先从需求方提到的 `TB_PLL_withDigitalLDO` 说起，这是数字 LDO 和 PLL 联合仿真的 testbench (两部分并未合并到一个 cell 中)，也就是 testbench schematic 中手动调用了 `vplus_gen_top` 和 `202510_PLL_v3` 两个 cell 进行仿真。`TB_PLL_withDigitalLDO` 的默认打开方式是 `ADE Assembler`，打开可以看到其中有多个仿真项 (每条都是一个 Explorer)，除一部分已废弃的之外，剩余几个只在 "高性能仿真模式设置" 上存在区别，如下图所示：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-27-23-31-14_202510_onc18_CPPLL_ultra_low_lower (docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report.png"/></div>
+
+然后在 ADE Assembler 视图，说明一下仿真变量的含义和设置：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-01-28-00-26-52_202510_onc18_CPPLL_ultra_low_lower (docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report.png"/></div>
+
+一般情况下，上述参数的值都不需要修改，直接运行仿真即可。
+
+至于 outputs 中的一系列输出表达式/值是什么意思，我们已在前文介绍仿真结果 (的图片中) 时给出过详细说明，这里不再赘述。
+
+
+
+
+
+## 8. Conclusion
+
+本文档介绍了基于 ONC 180nm CMOS 工艺的 ultra-low-power CP-PLL 锁相环设计及其前仿结果。锁相环支持 32.768 kHz 参考时钟输入，提供四路输出时钟：一路 (称为 `CK_ADC`) 固定 98.304 kHz (X03) 作为 ADC 采样时钟，另一路 (称为 `CK_OUT`) 可配置为 98.304 kHz ~ 786.432 kHz (X03/X06/X12/X24) 四档频率；另外两路为 `CK_ADC_BUF` 和 `CK_OUT_BUF`，分别为 `CK_ADC` 和 `CK_OUT` 经过 level shifter (1.25 V to vbat) 后转到 vbat-level 的输出时钟。
 
 
 尽管在 **1. PLL Overview and Interface Description** 一节中已经给出过锁相环的典型前仿性能，但这里还是再重复一次，方便总结和参考。锁相环设置为 **<span style='color:red'> `EN_BUF = 0, T<4:0> = <01111>, SL<1:0> = <11>` </span>** (CK_OUT = X24) 时的典型前仿性能如下：
 
 $$
 \begin{gather}
-I_{DD} = 296.5 \ \mathrm{nA} \,@\, \mathrm{no\ load},\ \ t_{lock} = 2.7 \ \mathrm{ms}  \\
+t_{lock} = 2.8 \ \mathrm{ms}  \\
+I_{DD} = 333.2 \ \mathrm{nA} \,@\, \mathrm{40\ fF\ (per\ ch)} = 277.9 \ \mathrm{nA} \,@\, \mathrm{no\ load} \\
 \mathrm{CK\_ADC:}\ \ J_{c,rms,ADC} = 20.45 \ \mathrm{ns},\ \ J_{e,rms,ADC} = 33.06 \ \mathrm{ns} \\
 \mathrm{CK\_OUT:}\ \ J_{c,rms,OUT} = 4.334 \ \mathrm{ns},\ \ J_{e,rms,OUT} = 32.07 \ \mathrm{ns}
 \end{gather}
 $$
 
 所设计的锁相环在所有 PVT (-20°C ~ 80°C, 1.20 V ~ 1.30 V, TT/SS/FF) 下均能正常锁定和输出，输出频率符合预期，功耗和时钟抖动也满足指标要求。
+
+
+
+## Update History
+
+- 2026.01.06: 完成前仿报告的最初版本
+- 2026.01.10: 将 big BUF 改为 level shifter，并更新前仿结果
+- 2026.01.13: 修正已发现的笔误或其它问题
+- 2026.01.27: 补充 testbench 的详细说明，包括仿真设置与变量含义

@@ -189,4 +189,8 @@ PLL是CDR的核心，但CDR面临着从数据流中直接恢复时钟的独特�
 具体笔记放在了这篇文章：[An Overview of PLL Architectures](<AnalogIC/An Overview of PLL Architectures.md>)
 
 
-## (xxx) 文献调研 - CDR 与 PAM4 调制
+
+## (2026.01.17) 文献调研 - CDR 与 PAM3 调制
+
+2026.01.17 完成 202510_CPPLL_ultra_low_power 项目后，准备进入新项目： A 56-Gbuad/s PAM3 CDR (Data Rate = 84 Gb/s, CK Rate = 14 GHz)，需要先打一下理论基础，主要是高速有线通信下的信号完整性、PAM3 调制与解调、CDR 等方面的知识。
+

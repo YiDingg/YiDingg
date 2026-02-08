@@ -352,7 +352,7 @@ DRC tips:
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-13-17-37-17_Basic Information of onc18 (ONC 180nm CMOS Process Library).png"/></div>
 
-如果之前不小心关闭了，只需将文件夹 `....../Work/AA_Workspace_onc18/proc_opt` 删除，然后重新打开 virtuoso 即可。
+如果之前不小心关闭了，只需在 `CIW > onc18 > Set Proc. Option Python` 处设置即可。或者将文件夹 `....../Work/AA_Workspace_onc18/proc_opt` 删除，然后重新打开 virtuoso 即可。
 
 当然，具体该如何设置，还是看甲方的要求，如果是自己的项目，自然可以根据实际情况进行调整。
 

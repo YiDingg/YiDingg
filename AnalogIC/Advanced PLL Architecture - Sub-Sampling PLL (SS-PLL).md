@@ -1,7 +1,8 @@
 # Advanced PLL Architecture - Sub-Sampling PLL (SS-PLL)
 
 > [!Note|style:callout|label:Infor]
-Initially published by YiDingg at 18:13 on 2025-12-24 in Beijing.
+> Initially published by YiDingg at 18:13 on 2025-12-24 in Beijing.
+> dingyi233@mails.ucas.ac.cn
 
 ## Introduction
 
@@ -449,7 +450,15 @@ CP-PLL 中，FD 直接将 VCO 输出频率除以 N, 相当于是一个从 RF 到
 
 与 [[1]](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2023/EECS-2023-36.pdf) 类似，参考文献 [[5]](https://www.research-collection.ethz.ch/entities/publication/5165a118-9ef5-4eb9-a292-8a3245360722) 是一本以时钟生成为核心的书籍，其中 page.31 ~ page.57 对比了 CP-PLL, SS-PLL 和 D-PLL (digital PLL) 三种架构的噪声特性，对 SS-PLL 噪声推导过程有疑惑的话也可以看看。
 
-
+如果想练手/复现一下 SS-PLL 的设计，除了开山论文 [[2]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5342373) JSSC'09 和后续工作 [[3]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5560323) VLSIC'10 外，我们再推荐几篇比较基础的论文：
+- [[6]](https://ieeexplore.ieee.org/document/9651530/) TVLSI'21
+    - 架构：经典 Dual-Path SS-PLL 架构，也即 SS-Loop + CP-Loop (FLL)
+    - 亮点：对比了五种不同 SSPD 结构对 LC-VCO 谐振腔负载扰动的影响，给出了 REF-spur 的详细理论公式 (论文采用 REF-spur 最好的第五种)
+    - 其它：给出了环路滤波器的详细参数，以及 FLL 是否成功达到预期频率的判定方法 (电路)，在 `FLL_EN = 0` 时关闭 `CP-Path` 进入纯 SS-PLL 模式
+- [[7]](https://hdl.handle.net/10356/170916) TMTT'23
+    - 架构：经典 Dual-Path SS-PLL 架构，也即 SS-Loop + CP-Loop (FLL)
+    - 亮点：在经典架构的基础上，额外增加了一条 "HPF + SSCP" 路径 (与原 SSCP 并联) 用于抑制 VCO 相位噪声，rms jitter 从 3.52 ps 降低到 2.63 ps (还行吧)
+    - 其它：无
 
 
 ## Reference
@@ -459,4 +468,6 @@ CP-PLL 中，FD 直接将 VCO 输出频率除以 N, 相当于是一个从 RF 到
 - [[3]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5560323) X. Gao, E. Klumperink, G. Socci, M. Bohsali, and B. Nauta, “A 2.2GHz sub-sampling PLL with 0.16psrms jitter and −125dBc/Hz in-band phase noise at 700µW loop-components power,” in 2010 Symposium on VLSI Circuits, June 2010, pp. 139–140. doi: 10.1109/VLSIC.2010.5560323.
 - [[4]](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2023/EECS-2023-36.pdf) Z. Wang, “Analog Generators for SerDes Clock Generation and Distribution,” UC Berkeley, 2021. Accessed: Dec. 24, 2025. [Online]. Available: https://www2.eecs.berkeley.edu/Pubs/TechRpts/2023/EECS-2023-36.pdf
 - [[5]](https://www.research-collection.ethz.ch/entities/publication/5165a118-9ef5-4eb9-a292-8a3245360722) L. Wu, “Design of Power-Efficient High-Purity Phase-locked Frequency Synthesis,” ETH Zurich, 2020, p. 190 p. doi: 10.3929/ETHZ-B-000454612.
+- [[6]](https://ieeexplore.ieee.org/document/9651530/) Z. Yang, Y. Chen, J. Yuan, P.-I. Mak, and R. P. Martins, “A 3.3-GHz Integer N-Type-II Sub-Sampling PLL Using a BFSK-Suppressed Push–Pull SS-PD and a Fast-Locking FLL Achieving −82.2-dBc REF Spur and −255-dB FOM,” IEEE Transactions on Very Large Scale Integration (VLSI) Systems, vol. 30, no. 2, pp. 238–242, Feb. 2022, doi: 10.1109/TVLSI.2021.3131219.
+- [[7]](https://hdl.handle.net/10356/170916) Y. Dong, C. C. Boon, Z. Liu, and K. Yang, “A dual-path subsampling PLL with ring VCO phase noise suppression,” IEEE Transactions on Microwave Theory and Techniques, vol. 72, no. 1, pp. 138–148, 2023, doi: 10.1109/TMTT.2023.3284279.
 

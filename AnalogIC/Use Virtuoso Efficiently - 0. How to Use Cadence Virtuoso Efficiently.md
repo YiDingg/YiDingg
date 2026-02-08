@@ -252,12 +252,12 @@ load("calibre.OA.skl");
 
 ; 其它设置
 ; editor="gedit" ; 设置 Cadence 中默认文本编辑器为 gedit (script 和 verilog-A 的编辑器), 可选的通常有 vim, gedit, emacs, atom
-ExportImageDialog->fileName->value = "/home/IC/a_Win_VM_shared/a_Misc/schematic.png" ; 设置 schematic 导出为 image 时的默认路径
+; ExportImageDialog->fileName->value = "/home/IC/a_Win_VM_shared/a_Misc/schematic.png" ; 设置 schematic 导出为 image 时的默认路径
 dbSetAutoSave(t 20) ; 设置自动保存时间, 单位是 second (秒), 但是这行好像没有什么作用
 hiResizeWindow(window(1) list(400:0 1800:1000)) ; 设置初始 CIW 窗口的大小和位置, 其中 400:150 代表窗口左下角坐标，1200:600 代表窗口右上角坐标
 schViewMenu->NetHighlights->checked=t ; 打开 shcematic 界面的 net highlight (鼠标放上去就会高亮对应网络)
 geNetNameDisplayOptionForm->drawOnTop->value= t ; layout pin names: draw on top
-geNetNameDisplayOptionForm->userColor->value= list(ptrnum@0x55f25f30 106 26 "yellow") ; layout pin name color: pink
+geNetNameDisplayOptionForm->userColor->value= list(ptrnum@0x55f25f30 106 26 "yellow") ; layout pin name color
 ```
 
 
@@ -315,6 +315,16 @@ envSetVal(list(
 )
 
 envSetVal("schematic" "createLabelFontStyle" 'cyclic "roman")
+
+envSetVal("layout" "dimmingOn" 'boolean t)
+envSetVal("layout" "dimmingIntensity" 'int 40)
+envSetVal("layout" "leGridType" 'cyclic "none")
+envSetVal("schematic" "schGridType" 'cyclic "none")
+
+
+schematic	schGridType	cyclic	"none"
+layout	dimmingOn	boolean	t
+layout	dimmingIntensity	int	40
 ```
 
 当然，我们也可以通过修改 `display.drf` 文件来改变某些颜色、线条设置，这里不多赘述。
@@ -950,6 +960,8 @@ startFinde(); 打开 "Cadence SKILL API Finder", 用于查找函数及其定义
 最常用的 schematic 和 layout 图片导出总结如下：
 
 ``` bash
+; 先复制并输入原理图部分，再复制并输入版图部分
+
 ; 原理图以白底黑字导出, 不带 dotting (已测试过无问题)
     name = "TEST";
     fileName = strcat("/home/dy2025/Desktop/Work/00_File_Library/Cadence_Data/", name , "_schematic.png");
@@ -978,6 +990,7 @@ startFinde(); 打开 "Cadence SKILL API Finder", 用于查找函数及其定义
     shell(strcat("xdg-open ", fileName)) ; 打开刚刚导出的 schematic 图片以进行预览
 
 ; 版图以白底彩色样式导出, 不带 dotting
+    ; name = "TEST"; 如有需要，在这里修改名字
     fileName = strcat("/home/dy2025/Desktop/Work/00_File_Library/Cadence_Data/", name , "_layout.png");
     ; 先修改 dotting 和 axes, 导出后再修改回来
     leHiEditDisplayOptions() ; 打开 display options 窗口
