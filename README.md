@@ -37,7 +37,7 @@ My Technology Stack:
 
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C212%20hrs%2050%20mins-blue?style=flat)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C217%20hrs%2032%20mins-blue?style=flat)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.71%20million%20lines%20of%20code-blue?style=flat)
 
@@ -66,11 +66,11 @@ Sunday                   215 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 25 hrs 53 mins      ███████████████████░░░░░░   74.87 % 
-V                        8 hrs 41 mins       ██████░░░░░░░░░░░░░░░░░░░   25.13 % 
+Markdown                 29 hrs 18 mins      ████████████████████░░░░░   81.36 % 
+V                        6 hrs 42 mins       █████░░░░░░░░░░░░░░░░░░░░   18.64 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               34 hrs 34 mins      █████████████████████████   100.00 % 
+GH.YiDingg               36 hrs              █████████████████████████   100.00 % 
 GH.UCAS-DigitalCircuitExp0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 % 
 ```
 
@@ -87,7 +87,7 @@ Verilog                  1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2026.03.07 18:53 UTC
+ Last Updated on 2026.03.08 18:55 UTC
 <!--END_SECTION:waka-->
 
 
