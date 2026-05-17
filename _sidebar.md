@@ -27,21 +27,26 @@
         - **3. Project Documents:**
 
 
-    - [A 56 Gbuad/s Quarter-Rate Reference-Less PAM3 CDR (84 Gb/s, 14 GHz) in TSMC 28nm Technology](<Projects/A 56-Gbuad PAM3 CDR (84 Gbps, 14 GHz) in TSMC 28nm Technology.md>)
+    - [A 56 GT/s Quarter-Rate Reference-Less PAM3 CDR (84 Gb/s, 14 GHz) in TSMC 28nm Technology](<Projects/A 56-GTs PAM3 CDR (84 Gbps, 14 GHz) in TSMC 28nm Technology.md>)
         - **1. Related Documents:**
         - [(old) Basics of CDR (Clock and Data Recovery)](<AnalogIC/Basics of Clock Data Recovery (CDR).md>)
         - [Razavi PLL - Chapter 13. Clock and Data Recovery Fundamentals](<AnalogIC/Razavi PLL - Chapter 13. Clock and Data Recovery Fundamentals.md>)
         - [Analog Design Examples from GitHub User HarshitSri-Analog](<AnalogIC/Analog Design Examples from GitHub User HarshitSri-Analog.md>)
         - [Razavi PLL - Chapter 14. Advanced Clock and Data Recovery Principles](<AnalogIC/Razavi PLL - Chapter 14. Advanced Clock and Data Recovery Principles.md>)
         - [Explore Practical Instances in Basic Libraries of Cadence Virtuoso](<AnalogIC/Explore Practical Instances in Basic Libraries of Cadence Virtuoso.md>)
+        - [Overview and Verification of CDR Phase and Frequency Detectors](<AnalogIC/Overview and Verification of CDR Phase and Frequency Detectors.md>)
+        - [Overview and Verification of D-Latches and D-Flipflops](<AnalogIC/Overview and Verification of D-Latches and D-Flipflops.md>)
         - [() Virtuoso Tutorials - 21. How to Generate PRBS (Pseudo-Random Binary Sequence) Signal in Virtuoso](<AnalogIC/Virtuoso Tutorials - 21. How to Generate PRBS (Pseudo-Random Binary Sequence) Signal in Virtuoso.md>)
         - [() Verilog-A Modeling for Commonly Used Modules of SerDes and Wireline](<AnalogIC/Verilog-A Modeling for Commonly Used Modules of SerDes and Wireline.md>)
         - [() Introduction to SerDes and High-Speed Data Communication](<AnalogIC/Introduction to SerDes and High-Speed Data Communication.md>)
         - [() Basics and Overview of Clock Data Recovery (CDR)](<AnalogIC/Basics and Overview of Clock Data Recovery (CDR).md>)
-        - [() High-Speed Logic Circuit - LVDS, LVPECL and CML](<AnalogIC/High-Speed Logic Circuit - LVDS, LVPECL and CML.md>)
         - **2. Project Records:**
+        - [(1) Preparatory Work](<AnalogICDesigns/202602_tsmcN28_CDR_PAM3_56GTs_quarterRate (1) Preparatory Work.md>)
+        - [(2) Design of Key Modules](<AnalogICDesigns/202602_tsmcN28_CDR_PAM3_56GTs_quarterRate (2) Design of Key Modules.md>)
+        - [(3) Adaptation and DFE Layout](<AnalogICDesigns/202602_tsmcN28_CDR_PAM3_56GTs_quarterRate (3) Adaptation and DFE Layout.md>)
+        - [(4) Counter, DAC and Logic Circuit](<AnalogICDesigns/202602_tsmcN28_CDR_PAM3_56GTs_quarterRate (4) Counter, DAC and Logic Circuit.md>)
         - **3. Project Documents:**
-        - [(0) Theoretical Basics and Project Preparations](<AnalogICDesigns/202602_tsmcN28_CDR_PAM3_56Gbuad (0) Theoretical Basics and Project Preparations.md>)
+        - [xxx](<AnalogICDesigns/202602_tsmcN28_CDR_PAM3_56Gbuad (0) Theoretical Basics and Project Preparations.md>)
 
 
     - [An Ultra-Low-Power CP-PLL in ONC 180nm Technology](<Projects/Design of An Ultra-Low-Power CP-PLL in ONC 180nm Technology.md>)
@@ -103,6 +108,7 @@
         - [Virtuoso Tutorials - 13. VCO and PLL Simulation (Periodical Steady-State and Phase Noise)](<AnalogIC/Virtuoso Tutorials - 13. VCO and PLL Simulation (Periodical Steady-State and Phase Noise).md>)
         - [PLL System-Level Simulation using LTspice](<AnalogIC/PLL System-Level Simulation using LTspice.md>)
         - [PLL Behavior-Level Simulation using Cadence IC618](<AnalogIC/PLL Behavior-Level Simulation using Cadence IC618.md>)
+        - [Loop Analysis of Typical Type-II CP-PLL](<AnalogIC/Loop Analysis of Typical Type-II CP-PLL.md>)
         - [202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N](<AnalogICDesigns/202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N.md>)
 
 
@@ -144,8 +150,8 @@
         - [[tsmcN65] 202509 LDO (1): basic LDO with 1.2V output](<AnalogICDesigns/202509_tsmcN65_LDO__basic_in-1d8-to-2d5_out-1d2 (1).md>)
         - [[tsmcN65] 202509 Op Amp: op amp for the LDO](<AnalogICDesigns/202509_tsmcN65_OpAmp__nulling-Miller.md>)
         - [[tsmcN28] 202508 PLL: 3rd-order type-II integer-N CP-PLL](<AnalogICDesigns/202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N.md>)
-        - [[tsmcN28] 202507 BGR: low-voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)<!-- 知乎已发理论 -->
-        - [[tsmcN28] 202507 Op Amp: op amp for the BGR in scientific_research_practice_1](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)<!-- 知乎已发理论、设计、版图 -->
+        - [[tsmcN28] 202507 BGR: low-voltage BGR (scientific_research_practice_1)](<AnalogICDesigns/202507_tsmcN28_BGR__scientific_research_practice_1.md>)<!--  -->
+        - [[tsmcN28] 202507 Op Amp: op amp for the BGR in scientific_research_practice_1](<AnalogICDesigns/202507_tsmcN28_OpAmp__nulling-Miller.md>)<!--  -->
         - [[tsmc18rf] 202506 Op Amp: twoStage_single_Nulling-Miller__80dB_50MHz_50Vus](AnalogICDesigns/202506_tsmc18rf_OpAmp__twoStage_single_Nulling-Miller__80dB_50MHz_50Vus.md)<!--  -->
         - [[tsmc18rf] 202506 Op Amp: oneStage_single_folded-cascode__80dB_50MHz_50Vus](AnalogICDesigns/202506_tsmc18rf_OpAmp__oneStage_single_folded-cascode__80dB_50MHz_50Vus.md)<!--  -->
 
@@ -173,8 +179,8 @@
         - [10. Using Tran Result as the DC Operation Point for AC Simulation](<AnalogIC/Virtuoso Tutorials - 10. Using Tran Result as the DC Operation Point for AC Simulation.md>)<!-- x -->
         - [11. Resolving Discrepancies Between DC and Transient Simulation Results](<AnalogIC/Virtuoso Tutorials - 11. Resolving Discrepancies Between DC and Transient Simulation Results.md>)<!-- x -->
         - [12. Behavior-Level Simulation using Verilog-A in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 12. Behavior-Level Simulation using Verilog-A in Cadence IC618.md>)<!-- x -->
-        - [13. Periodical Steady-State and Phase Noise Simulation (VCO and PLL)](<AnalogIC/Virtuoso Tutorials - 13. VCO and PLL Simulation (Periodical Steady-State and Phase Noise).md>)
-        - [14. Understanding Substrate, Well, Tap, and Guard Ring in Analog IC Layouts](<AnalogIC/Virtuoso Tutorials - 14. Understanding Substrate, Well, Tap, and Guard Ring in Analog IC Layouts.md>)
+        - [13. Periodical Steady-State and Phase Noise Simulation (VCO and PLL)](<AnalogIC/Virtuoso Tutorials - 13. VCO and PLL Simulation (Periodical Steady-State and Phase Noise).md>)<!--  -->
+        - [14. Understanding Substrate, Well, Tap, and Guard Ring in Analog IC Layouts](<AnalogIC/Virtuoso Tutorials - 14. Understanding Substrate, Well, Tap, and Guard Ring in Analog IC Layouts.md>)<!--  -->
         - [15. Several Methods for PEX and How to Speed Up Your Post-Simulation](<AnalogIC/Virtuoso Tutorials - 15. Several Methods for PEX and How to Speed Up Your Post-Simulation.md>)
         - [16. Using Config Sweep and CALIBREVIEW to Speed Up Your Post-Layout Simulation](<AnalogIC/Virtuoso Tutorials - 16. Using Config Sweep and CALIBREVIEW to Speed Up Your Post-Layout Simulation.md>)
         - [17. Creating Parameter Passing Symbol as The Standard PCell](<AnalogIC/Virtuoso Tutorials - 17. Creating Parameter Passing Symbol as The Standard PCell.md>)

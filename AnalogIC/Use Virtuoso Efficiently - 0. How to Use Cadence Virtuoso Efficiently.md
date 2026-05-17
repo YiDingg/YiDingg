@@ -1451,7 +1451,7 @@ export CDS_XVNC_OFFSET=9  # 端口号的个位 (本地的话无所谓, 随便写
 
 **<span style='color:red'> 这个问题告诉我们，尽量避免在同一个 workspace 下引入多个工艺库 (即便它们不同类)，以免产生冲突。 </span>** 建议每一个工艺库都有自己的 workspace.
 
-### is a invalid register number
+### 11. xxx is a invalid register number
 
 生成 mom cap 的版图时报错：
 
@@ -1462,3 +1462,51 @@ is a invalid register number, Need a valid register number from TSMC
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-13-22-22-27_Use Virtuoso Efficiently - 0. How to Use Cadence Virtuoso Efficiently.png"/></div>
 
 生成 mom cap 版图需要 licence, 找老师要到 licence 文件后，参考 []
+
+### 12. 版图边框大小与实际大小不符
+
+参考 [Community Forums > Custom IC SKILL > How to modify or manipulate bBox in layout](https://community.cadence.com/cadence_technology_forums/f/custom-ic-skill/14901/how-to-modify-or-manipulate-bbox-in-layout-virtuoso-ic-5141-usr4)
+- (1) Open a layout that has this problem
+- (2) Enter the following in ciw: `dbComputeBBox(geGetWindowCellView())`
+
+但是上面方法不管用，同一链接下又有人给出以下代码，但试过还是不行：
+
+``` bash
+procedure(myFixCellBBox(@optional (cv geGetEditCellView()) (quiet nil))
+  let((bbox akey textDisplays)
+    bbox = cv~>bBox
+    ; lowerLeft
+    akey = dbCreateRect(cv leGetEntryLayer() list(xCoord(lowerLeft(bbox))-5.0:
+      yCoord(lowerLeft(bbox))-5.0 lowerLeft(bbox)))
+    when(akey dbDeleteObject(akey) ) ; when
+    ; upperRight
+    akey = dbCreateRect(cv leGetEntryLayer() list(xCoord(upperRight(bbox))+5.0:
+      yCoord(upperRight(bbox))+5.0 upperRight(bbox)))
+    when(akey dbDeleteObject(akey) ) ; when
+    ;Fix textDisplay bounding boxes
+    textDisplays = setof(x cv~>shapes x~>objType=="textDisplay")
+    foreach(td textDisplays
+        schSetTextDisplayBBox(td nil) ;This also works in layout
+    )
+    dbComputeBBox(cv)
+    akey = dbCreateRect(cv leGetEntryLayer() cv~>bBox)
+    when(akey dbDeleteObject(akey) ) ; when
+    unless(quiet
+        printf("Now execute \"Fit All\" and see if your cell extents are fixed\n")
+    )
+    t
+  ) ; let
+)
+myFixCellBBox
+```
+
+最终在这篇问答 [EETOP > [求助] layout 版图经典 bug cell 边框问题](https://bbs.eetop.cn/forum.php?mod=viewthread&tid=850300&extra=page%3D1&page=2) 的 14 楼找到可行方法 (打开版图后在 CIW 输入下面代码)：
+
+``` bash
+foreach(st geGetEditCellView()~>steiners dbDeleteObject(st))
+```
+
+输入代码后重新保存版图，问题得到解决。
+
+
+

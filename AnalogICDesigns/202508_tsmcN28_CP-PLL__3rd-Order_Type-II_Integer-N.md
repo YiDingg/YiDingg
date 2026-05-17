@@ -148,7 +148,7 @@ tri_mac               : Standard Vt Tri State Inverter
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-17-18-48-53_202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N.png"/></div>
 
 
-tri (Tri State Inverter) 其实就是一个带 clock enable 的 inverter, 如下图 [(slides)](https://faculty-web.msoe.edu/johnsontimoj/Common/FILES/tristate_inverter.pdf):
+tri (Tri State Inverter) 其实就是一个带 enable input 的 inverter, 如下图 [(slides)](https://faculty-web.msoe.edu/johnsontimoj/Common/FILES/tristate_inverter.pdf):
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-08-17-14-07-52_202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N.png"/></div>
 

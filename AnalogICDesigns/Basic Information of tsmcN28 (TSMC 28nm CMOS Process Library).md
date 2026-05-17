@@ -2,7 +2,7 @@
 
 > [!Note|style:callout|label:Infor]
 > Initially published by YiDingg at 00:01 on 2025-06-25 in Beijing.
-
+> dingyi233@mails.ucas.ac.cn
 
 
 ## 1. PDK Docs
@@ -76,10 +76,10 @@
 
     - Mosfets macro device
 
-nch_18_dnw_mac           : 1.8V nominal VT NMOS in DNW transistor
-nch_18_dnw_macx          : 1.8V nominal VT NMOS in DNW transistor
-nch_18_mac               : 1.8V nominal VT NMOS transistor
-nch_18_macx              : 1.8V nominal VT NMOS transistor
+nch_18_dnw_mac           : 1.8V nominal VT NMOS in DNW transistor (4-terminal)
+nch_18_dnw_macx          : 1.8V nominal VT NMOS in DNW transistor (3-terminal, bulk connected to vss!)
+nch_18_mac               : 1.8V nominal VT NMOS transistorr (4-terminal)
+nch_18_macx              : 1.8V nominal VT NMOS transistorr (3-terminal, bulk connected to vss!)
 nch_18ud12_dnw_mac       : 1.8V under-drive 1.2V NMOS in DNW transistor
 nch_18ud12_dnw_macx      : 1.8V under-drive 1.2V NMOS in DNW transistor
 nch_18ud12_mac           : 1.8V under drive 1.2V nominal VT NMOS transistor
@@ -132,8 +132,8 @@ nch_lvt_dnw_mac          : core volt LOW VT NMOS in DNW transistor
 nch_lvt_dnw_macx         : core volt LOW VT NMOS in DNW transistor
 nch_lvt_mac              : core volt LOW VT NMOS transistor
 nch_lvt_macx             : core volt LOW VT NMOS transistor
-nch_mac                  : core volt standard VT NMOS transistor
-nch_macx                 : core volt standard VT NMOS transistor
+nch_mac                  : core volt standard VT NMOS transistorr (4-terminal)
+nch_macx                 : core volt standard VT NMOS transistorr (3-terminal, bulk connected to vss!)
 nch_na18_mac             : 1.8V NATIVE NMOS transistor
 nch_na18_macx            : 1.8V NATIVE NMOS transistor
 nch_na25_mac             : 2.5V NATIVE NMOS transistor
@@ -148,14 +148,14 @@ nch_ulvt_dnw_mac         : core volt Ultra_LOW VT NMOS in DNW transistor
 nch_ulvt_dnw_macx        : core volt Ultra_LOW VT NMOS in DNW transistor
 nch_ulvt_mac             : core volt Ultra LOW VT NMOS transistor
 nch_ulvt_macx            : core volt Ultra LOW VT NMOS transistor
-pch_18_mac               : 1.8V nominal VT PMOS transistor
-pch_18_macx              : 1.8V nominal VT PMOS transistor
+pch_18_mac               : 1.8V nominal VT PMOS transistorr (4-terminal)
+pch_18_macx              : 1.8V nominal VT PMOS transistorr (3-terminal, bulk connected to vdd!)
 pch_18ud12_mac           : 1.8V under drive 1.2V nominal VT PMOS transistor
 pch_18ud12_macx          : 1.8V under drive 1.2V nominal VT PMOS transistor
 pch_18ud15_mac           : 1.8V under drive 1.5V nominal VT PMOS transistor
 pch_18ud15_macx          : 1.8V under drive 1.5V nominal VT PMOS transistor
-pch_25_mac               : 2.5V nominal VT PMOS transistor
-pch_25_macx              : 2.5V nominal VT PMOS transistor
+pch_25_mac               : 2.5V nominal VT PMOS transistor (4-terminal)
+pch_25_macx              : 2.5V nominal VT PMOS transistor (3-terminal, bulk connected to vdd!)
 pch_25od33_mac           : 2.5V over drive 3.3V nominal VT PMOS transistor
 pch_25od33_macx          : 2.5V over drive 3.3V nominal VT PMOS transistor
 pch_25ud18_mac           : 2.5V under drive 1.8V nominal VT PMOS transistor
@@ -168,8 +168,8 @@ pch_hvt_mac              : core volt HIGH VT PMOS transistor
 pch_hvt_macx             : core volt HIGH VT PMOS transistor
 pch_lvt_mac              : core volt LOW VT PMOS transistor
 pch_lvt_macx             : core volt LOW VT PMOS transistor
-pch_mac                  : core volt standard VT PMOS transistor
-pch_macx                 : core volt standard VT PMOS transistor
+pch_mac                  : core volt standard VT PMOS transistor (4-terminal)
+pch_macx                 : core volt standard VT PMOS transistor (3-terminal, bulk connected to vdd!)
 pch_uhvt_mac             : core volt Ultra High VT PMOS transistor
 pch_uhvt_macx            : core volt Ultra High VT PMOS transistor
 pch_ulvt_mac             : core volt Ultra LOW VT PMOS transistor
@@ -525,11 +525,11 @@ parasitic_rc_3T      : Parasitic RC device, Please refer to parasitic_rc_UserGui
 ## 4. Main Devices
 
 下面是一些普通设计中常用的 devices:
-- MOSFET:
-    - nch_mac, pch_mac: core voltage standard VT NMOS/PMOS transistor
-    - nch_lvt_mac, pch_lvt_mac: core voltage low VT NMOS/PMOS transistor
-    - nch_hvt_mac, pch_hvt_mac: core voltage high VT NMOS
-    - nch_macx, pch_macx: core voltage standard VT NMOS/PMOS transistor, x 表示带有扩展模型，适合精密与中高速 (~ GHz) 设计
+- **MOSFET:**
+    - **nch_mac, pch_mac:** core voltage standard VT NMOS/PMOS transistor
+    - **nch_lvt_mac, pch_lvt_mac:** core voltage low VT NMOS/PMOS transistor
+    - **nch_hvt_mac, pch_hvt_mac:** core voltage high VT NMOS
+    - **nch_macx, pch_macx:** core voltage standard VT NMOS/PMOS transistor, x 表示三端器件，bulk 由表达式 (可修改) 连接到 vss!/vdd! 
 - Resistor: 
     - rnmg, rpmg (several tens of Ohms): N+/P+ metal gate resistor, 最常用 (例如模拟电路的分压偏置)
     - rupolym (several thousands of Ohms): P+ poly resistor without salicide, 高精度低电容电阻 (如 ADC 的参考电阻)
@@ -695,6 +695,31 @@ parasitic_rc_3T      : Parasitic RC device, Please refer to parasitic_rc_UserGui
 </div>
 </span>
 
+**<span style='color:red'> 模块级设计中可忽略的 DRC： </span>**
+
+``` bash
+模块级设计中可忽略的 DRC： 
+
+IO_CONNECT_CORE_NET_VOLTAGE_IS_CORE:WARNING1 { @ USE_IO_VOLTAGE_ON_CORE_TO_IO_NET option is off in this DRC run.
+    @ 1. It will use low voltage space rules to do DRC, as you do not assign the voltage marker & the net connects to IO MOS and core MOS simultaneousely
+    @ 2. If the designer knows some nets use high volatage,
+    @    please turn on USE_IO_VOLTAGE_ON_CORE_TO_IO_NET option to check high voltage space rules conservatively. 
+    @ 3. If you turn on USE_IO_VOLTAGE_ON_CORE_TO_IO_NET option, you might find some high voltage space violations are actually false errors
+    @    because these nets actually use low voltage. You can turn off the option.
+    @ 4. It is strongly recommended to assign volatage marker layer on the nets connect to IO MOS and core MOS simultaneousely. 
+    @ 5. This warning is just a reminder, not a gated item for tape-out.
+        COPY CHIPx 
+}
+
+DIODMY_L:WARNING { @ Each low leakage concern diode must be covered by DIODMY_L.
+	       @ If there's no low leakage diode concern cell in the chip, the violation can be ignored.
+  MERGE (CHIP NOT INTERACT (DIODMY_L INTERACT DIODMY))
+}
+```
+
+
+
+
 ## 7. Frequently Asked Qu.
 
 **问题 1: tsmc28n 工艺库中含有 Mosfets macro device 和 RF_Mosfets, 它们有什么区别，常规设计中应该用谁？用段落回答我，不要 list**
@@ -706,6 +731,7 @@ parasitic_rc_3T      : Parasitic RC device, Please refer to parasitic_rc_UserGui
 在常规设计中，如果电路工作频率较低 (如数字逻辑或低频模拟电路) ，应优先使用标准 MOSFETs, 因为它们面积更小、成本更低且设计流程成熟。然而，如果设计涉及高频或射频应用 (如 5G、Wi-Fi 或毫米波电路) ，则必须使用 RF_MOSFETs, 以确保性能指标 (如噪声、增益和线性度) 满足要求。选择错误的器件类型可能导致仿真结果与流片实测严重不符，因此在设计初期就应根据应用需求明确选用哪种器件。建议参考 TSMC 的 PDK 文档或与 Foundry 支持团队沟通，以确认具体器件的设计规范。
 
 ## 8. gm/Id Simulation 
+
 
 ### 8.1 summary of I_nor
 
@@ -744,8 +770,87 @@ But for PMOS: I_nor and length have a <span style='color:blue'> negative </span>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-19-26-26_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-19-27-03_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
 
+### 8.3 pch_mac (Vds = 225 mV)
+
+
+
 <!-- ### 8.3 using ADE XL
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-07-17-23-14-14_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
 
 ### 8.4 pch_mac (Vds = 225 mV) -->
+
+
+## 9. Logic Performance
+
+### 9.1 std. logic performance
+
+
+- 基本设置：
+    - **<span style='color:red'> VDD = 0.8 V </span>**
+    - nmos of INV = `nch_mac`
+    - pmos of INV = `pch_mac`
+    - corner = TT @ 27°C
+    - input signal = 1 GHz square wave (0 ~ VDD, trans time = 1 ps)
+    - time_end = 30 periods
+- 晶体管设置：
+    - `fl` from 30n to 1000n (10 steps)
+    - `ka` from 1.5 to 2.5 (3 steps)
+    - `fa` (finger aspect ratio) from 2 to 22 (5 steps)
+
+主要关注以下性能指标：
+- Gate Delay $t_{delay}$ (delay of single INV)
+- Current Consumption $I_{DD}$ (power of single INV)
+- Max. Transition Time $t_{trans}$ (max. rise/fall time of INV)
+
+
+将仿真所得结果导出到 MATLAB 处理并作图，效果如下：
+
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-02-15-22-04-49_Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).png"/></div>
+
+为方便参考，将最小单元及典型单元的性能总结在这里：
+- minimum INV: ka = 1.5, nmos W/L = 100n/30n (fn\*a = 1\*3.34)
+    - $t_{delay} = 10.5 \ \mathrm{ps}$
+- typical INV: ka = 2, nmos W/L = 300n/30n (fn\*a = 1\*10)
+- large INV: ka = 2.5, nmos W/L = 4800n/60n (fn\*a = 8\*10)
+- 格式 x (a ~ b) 表示 TT+27 (SS-40 ~ FF+130) 三个工艺角下的值，方便参考
+
+
+<div class='center'>
+
+| Parameter @ TT27 | minimum INV | typical INV | large INV |
+|:-:|:-:|:-:|:-:|
+ | ka = WP/WN   | 1.5           | 2             | 2.5           |
+ | nmos W/L     | 100n/30n      | 300n/30n      | 4800n/60n     |
+ | $I_{DD}$     | 0.334 uA/GHz  | 1.06 uA/GHz   | 22.8 uA/GHz   |
+ | $t_{delay}$  | 3.61 ps       | 3.93 ps       | 7.70 ps       |
+ | $t_{trans}$  | 2.62 ps       | 2.73 ps       | 3.62 ps       |
+
+</div>
+
+<!--
+Point	Corner	fl	ka	fa	fn	toplevel_4corners_mc.scs	unitDelay_n	IDD_singleINV	IDD_singleINV_ave (A)	unitDelay_ave (s)	OUT_riseTime (s)	OUT_fallTime (s)	OUT_riseTime (%)	OUT_fallTime (%)	total_aspectRatio
+            fl          ka  fa  fn                  IDD         t_delay     t_rise      t_fall      t_rise%      t_fall%     fn*ka
+19	TT+27	3.00E-08	1.5	3.4	1	top_tt			3.34E-07	3.61E-12	2.56E-12	2.62E-12	2.56E-01	2.62E-01	3.4
+67	TT+27	3.00E-08	2	10	1	top_tt			1.06E-06	3.93E-12	2.65E-12	2.73E-12	2.65E-01	2.73E-01	10
+214	TT+27	6.00E-08	2.5	10	8	top_tt			2.28E-05	7.70E-12	3.49E-12	3.62E-12	3.49E-01	3.62E-01	80
+-->
+
+<!-- <div class='center'>
+
+| Gate Delay $t_d$ (delay of single INV) | Current Consumption $I_{DD}$ (power of single INV) | Max. Transition Time (max. rise/fall time of INV) |
+|:-:|:-:|:-:|
+ |  |  |  |
+ |  |  |  |
+</div>
+ -->
+
+
+
+
+
+### 9.2 uhvt logic performance
+
+
+
+

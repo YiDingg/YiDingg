@@ -9,7 +9,7 @@
 
 在挺久之前 (半年前)，我们曾大致介绍过时钟数据恢复 (Clock Data Recovery, CDR) 的基本概念和工作原理，详见文章 [Basics of Clock Data Recovery (CDR)](<AnalogIC/Basics of Clock Data Recovery (CDR).md>)。但当时一方面对 PLL 和 frequency synthesizer 的理解还不够深入，另一方面对 CDR 的具体实现和设计挑战也没有全面的认识，因此内容比较浅显。
 
-最近做完 ultra-low-power (500 nA) sub-MHz CP-PLL 项目之后，终于开始正式向 CDR 和 Serdes 迈进。基于下面几篇 CDR 的前置文章，本文就来重新梳理一下 CDR 的基本概念、工作原理、常见架构和部分进阶内容，为后续的 CDR 设计项目 [A 56-Gbuad PAM3 CDR (84 Gbps, 14 GHz) in TSMC 28nm Technology](<A 56-Gbuad PAM3 CDR (84 Gbps, 14 GHz) in TSMC 28nm Technology>) 提供理论基础和参考：
+最近做完 ultra-low-power (500 nA) sub-MHz CP-PLL 项目之后，终于开始正式向 CDR 和 Serdes 迈进。基于下面几篇 CDR 的前置文章，本文就来重新梳理一下 CDR 的基本概念、工作原理、常见架构和部分进阶内容，为后续的 CDR 设计项目 [A 56 GT/s Quarter-Rate Reference-Less PAM3 CDR (84 Gb/s, 14 GHz) in TSMC 28nm Technology](<Projects/A 56-GTs PAM3 CDR (84 Gbps, 14 GHz) in TSMC 28nm Technology.md>) 提供理论基础和参考：
 - [Basics of Clock Data Recovery (CDR)](<AnalogIC/Basics of Clock Data Recovery (CDR).md>)
 - [Razavi PLL - Chapter 13. Clock and Data Recovery Fundamentals](<AnalogIC/Razavi PLL - Chapter 13. Clock and Data Recovery Fundamentals.md>)
 - [Razavi PLL - Chapter 14. Advanced Clock and Data Recovery Principles](<AnalogIC/Razavi PLL - Chapter 14. Advanced Clock and Data Recovery Principles.md>)

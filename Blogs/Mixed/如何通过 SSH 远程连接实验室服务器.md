@@ -175,6 +175,11 @@ vncserver -kill :21                         # 关闭端口 21
 vncserver -list                             # 查看已创建的 VNC 端口
 
 
+# 常用命令
+sar -u 1
+top -u dy2025
+
+
 # 将文件从服务器下载到本地 windows:
 scp -r dy2025@182.48.105.253:/home/library/TSMC/tsmc28n/1p9m6x1z1u/PDK_doc D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/tsmc28n_2v5/
 # 将本地 windows 文件发送到服务器

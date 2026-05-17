@@ -14,7 +14,7 @@ About Me:
 - 🔭 I'm currently studying EE (Electronic Engineering) at [UCAS](https://www.ucas.ac.cn/)
 - 📫 How to reach me: dingyi233@mails.ucas.ac.cn
 - ⚡ Fun fact: I used to be a semi-professional soccer player as a national level two athlete.
-- 🌱 I am currently learning about tranceivers, with a particular focus on key components such as VCO, PLL, and CDR.
+- 🌱 I am currently learning about tranceivers/SerDes.
 
 My Technology Stack: 
 - LaTex
@@ -26,7 +26,7 @@ My Technology Stack:
 - LTspice (ANALOG DEVICES)
 - Cadence Virtuoso
 - Analog IC Design (OPA, OTA, BGR, LDO, etc.)
-- Mixed-Signal IC Design (DAC, VCO, PLL, etc.)
+- Mixed-Signal IC Design (DAC, VCO, PLL, CDR, etc.)
 - Verilog, Verilog-A/AMS
 
 

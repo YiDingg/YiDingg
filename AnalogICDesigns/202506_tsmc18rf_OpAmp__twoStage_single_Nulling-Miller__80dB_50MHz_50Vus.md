@@ -50,6 +50,7 @@ Initially published by YiDingg at 10:32 on 2025-06-17 in Beijing.
 
 
 综合上面两条，我们有：
+
 $$
 \begin{gather}
 I_{SS1} = 100 \ \mathrm{uA},\quad  I_{SS2} = 400 \ \mathrm{uA},\\
