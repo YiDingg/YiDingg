@@ -1,40 +1,13 @@
-# R-2R DAC by YiDingg (using tsmcN28)
+# 2026.05 微波期末考试相关
 
-- Library name: `MyLib_tsmcN28_R2RDAC`
-- Top cells: as shown below
-- Email: dingyi233@mails.ucas.ac.cn
+- (1) 考试时间：2026.05.22 (周五) 晚上 19:20 ~ 21:00 (xx min)
+- (2) 考试形式：闭卷考试，纸质试卷
+- (3) 考试内容：涵盖课程的所有章节，重点在于基本概念理解和推导
+- (4) 题型分布：
+    - (a) 36 道判断题共 36 分，8 道简答题共 64 分 (每道判断题 1 分，每道简答题 8 分)
+    - (b) 其中判断题主要考察基本概念和定理的理解，简答题则侧重于概念解读和推导证明
+    - **(c) 所有题目均从 "题库" 中选取** ，判断题库共 88 题，简答题库共 75 题
+    - (d) 2026.05 期末考简答范围限定为 "22 题选 8 题"，序号范围 {5, 7, 11, 12, 18, 20, 27, 31, 33, 37, 40, 45, 48, 50, 54, 59, 60, 62, 70, 71, 72, 75}
+    - (e) 实验心得 (num.75) 必占一道简答题 (8 分)
 
-<span style='font-size:12px'> 
-<div class='center'>
 
-| Cell Name | Input Channel | Input Ports | Built-In Input Buffer | Built-In Output Cap | Recommended Operation Freq. |
-|:-|:-:|:-:|:-:|:-:|:-:|
- | Logic_std_2d0_200n_30n_DAC_R2R_4d7k_8bit | 1 channel | DIN\<7:0\>, DINB\<7:0\> | - | - | < 12 GHz |
- | Logic_std_2d0_200n_30n_DAC_R2R_4d7k_8bit_withBUF | 1 channel | DIN\<7:0\> | Yes | - | < 8 GHz |
- | Logic_std_2d0_200n_30n_DAC_R2R_4d7k_8bit_withBUF_VDD <br> (VREF = VDD) | 1 channel | DIN\<7:0\> | Yes | - | < 8 GHz |
- | Logic_std_2d0_200n_30n_DAC_R2R_4d7k_8bit_withBUF_CAP | 1 channel | DIN\<7:0\> | Yes | 300 fF | < 50 MHz |
- | Logic_std_2d0_200n_30n_DAC_R2R_4d7k_8bit_withBUF_CAPx2 | 1 channel | DIN\<7:0\> | Yes | 700 fF | < 10 MHz |
- | Logic_std_2d0_200n_30n_DAC_R2R_4d7k_8bit_withBUF_CAPx2_VDD | 1 channel | DIN\<7:0\> | Yes | 700 fF | < 10 MHz |
- | Logic_std_2d0_200n_30n_DAC_R2R_4d7k_8bit_withBUF_CAPx2_DNW | 1 channel | DIN\<7:0\> | Yes | 700 fF | < 10 MHz |
- | Logic_std_2d0_200n_30n_DAC_R2R_4d7k_8bit_withBUF_CAPx2_DNW_V <br> (VREF = VDD)| 1 channel | DIN\<7:0\> | Yes | 700 fF | < 10 MHz |
- | Logic_std_2d0_200n_30n_DAC_R2R_4d7k_withMN_8bit | 2 channel | DIN\<7:0\>, MN_DIN\<7:0\>, <br> MN_EN, MN_ENB | Yes | - | < 8 GHz |
-
-</div>
-</span>
-
-Notes: 
-- (1) DAC electronic characteristics:
-    - resolution = 8 bit
-    - output range = VSS ~ VREF
-    - at (TT, 50°C), the output resistance of all DACa is 10 kOhm (9.4 kOhm exactly)
-    - total **static current consumption** is less than $\frac{8 \times V_{REF}}{3 \times R}$ $= \frac{8 \times V_{REF}}{3 \times (4.7 \ \mathrm{kOhm})}$ $= 0.567 \times V_{REF}\ \mathrm{(mA)}$. For example, IDD_static < 567 uA @ VREF = VDD = 1.0V
-- (2) explanation of suffixes:
-    - `_withBUF`: with built-in buffer for the input ports, e.g., for DIN\<7:0\>
-    - `_CAP`: with built-in output capacitance to achieve a better stability and noise performance
-    - `_DNW`: with deep n-well (DNW)
-    - `_withMN`: with extra manual control input channel, one channel for the counter output and one for manual control
-    - `_VDD`: $V_{REF} = V_{DD}$ (VREF is internal connected to VDD), hence the output range is between VSS and VDD
-- (3) recommended solutions:
-    - when DAC provides a dc voltage from 0 ~ VDD, `Logic_std_2d0_200n_30n_DAC_R2R_4d7k_8bit_withBUF_CAPx2_DNW_V` is recommended. 
-    - when DAC operates at a high frequency (GHz level) providing a voltage from 0 ~ VDD, `Logic_std_2d0_200n_30n_DAC_R2R_4d7k_8bit_withBUF_VDD` is recommended. 
-    - when DAC operates at a very high frequency (> 8 GHz), `Logic_std_2d0_200n_30n_DAC_R2R_4d7k_8bit_withBUF` is recommended.

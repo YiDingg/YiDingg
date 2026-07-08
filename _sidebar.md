@@ -220,6 +220,7 @@
 
 
     - AMS IC Blogs (2026, 5 items)
+        - [Altium Designer 23 安装与使用教程](<AnalogIC/Altium Designer 23 安装与使用教程.md>)
         - [High-Speed Logic Circuit - LVDS, LVPECL and CML](<AnalogIC/High-Speed Logic Circuit - LVDS, LVPECL and CML.md>)
         - [Analog Design Examples from GitHub User HarshitSri-Analog](<AnalogIC/Analog Design Examples from GitHub User HarshitSri-Analog.md>)
         - [Basics and Overview of Clock Data Recovery (CDR)](<AnalogIC/Basics and Overview of Clock Data Recovery (CDR).md>)
@@ -270,8 +271,9 @@
         - [MOSFET's Terminal Resistance](<Electronics/[Razavi CMOS] MOSFET's Terminal Resistance.md>) <!--  -->
 
 
-    - Electronic Blogs (2026, 0 items) 
-        - [xxx](<>)
+    - Electronic Blogs (2026, 1 items) 
+        - [Altium Designer 23 安装与使用教程](<AnalogIC/Altium Designer 23 安装与使用教程.md>)
+
 
     - Electronic Blogs (2025, 78 items) 
         - [DPSE 数字信号处理实验 - 1. ADC 与 DAC 实验](<Electronics/DPSE 数字信号处理 - 1. ADC 与 DAC 实验.md>)

@@ -125,13 +125,13 @@ $$
 QB 驱动 M3 (NMOS) 是高开低关没错 (高电平开，低电平关)，但是 QA 驱动 M4 (PMOS) 却需要低电平才能开，因此需要通过 NOT gate (inverter) 将 QA 反相。这种操作，以及 charge pump 本身的特性决定了 CP 会存在很多非理想效应，最典型便是下面三条：
 
 
-- **(1) Delay difference between $\overline{\mathrm{Q_A}}$ and \mathrm{Q_B}.** x
+- **(1) Delay difference between $\overline{\mathrm{Q_A}}$ and $\mathrm{Q_B}$.**
 - **(2) mismatch between UP and DOWN currents.**
 - **(3) the finite capacitance seen at the drains of M1 and M2.**
 
 下面就来一一讨论这些非理想效应对锁相环系统的影响。
 
-**(1) Delay difference between $\overline{\mathrm{Q_A}}$ and \mathrm{Q_B}.** 
+**(1) Delay difference between $\overline{\mathrm{Q_A}}$ and $\mathrm{Q_B}$.** 
 
 如 Figure 16.44 (b) 所示，由于 NOT gate 的存在，$\overline{\mathrm{Q_A}}$ 在时域上落后于 $\mathrm{Q_B}$ 一个 NOT 门延迟时间 $T_D$. 这会导致即便在锁定状态下，振荡器的控制电压 $V_{cont}$ 也会出现周期性的 ripple (可以理解为毛刺)，影响锁相环的抖动性能 (jitter performance). 
 
