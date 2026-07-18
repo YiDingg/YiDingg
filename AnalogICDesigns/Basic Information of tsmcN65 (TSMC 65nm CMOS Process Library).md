@@ -7,10 +7,11 @@
 
 由于我们的虚拟机没有配置网络，只能先将打包好的工艺库文件夹传输到本地 windows, 然后再通过共享文件夹传输到虚拟机中。
 
-将 "练手" 服务器 `182.48.105.253` 的工艺库文件夹打包好：
+将 "练手" 服务器 `xxx.xx.xxx.xxx` 的工艺库文件夹打包好：
+
 
 ``` bash
-# 将 tsmcN65 工艺库复制到 dy2025 目录下
+# 将 tsmcN65 工艺库复制到 user 目录下
 cp -r /home/library/TSMC/tsmc65n/v1.0c_RF/ /home/dy2025/Cadence_Data/tsmcN65/
 cp -r /home/library/TSMC/tsmc65n/user_ref  /home/dy2025/Cadence_Data/tsmcN65/
 
@@ -22,7 +23,7 @@ tar -czvf /home/dy2025/Cadence_Data/tsmcN65.tar.gz /home/dy2025/Cadence_Data/tsm
 
 ``` bash
 # 将压缩包从服务器 username@111.11.111.111 下载到本地 windows
-scp dy2025@182.48.105.253:/home/dy2025/Cadence_Data/tsmcN65.tar.gz D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/
+scp user@xxx.xx.xxx.xxx:/home/dy2025/Cadence_Data/tsmcN65.tar.gz D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/
 # 回车后会让输入密码，输入完成再回车即可开始下载
 ```
 

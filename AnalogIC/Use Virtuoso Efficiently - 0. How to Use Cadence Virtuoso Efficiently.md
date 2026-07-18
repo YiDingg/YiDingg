@@ -957,10 +957,10 @@ startFinde(); 打开 "Cadence SKILL API Finder", 用于查找函数及其定义
     hiFormDone(geNetNameDisplayOptionForm)
 ```
 
-最常用的 schematic 和 layout 图片导出总结如下：
+最常用的 schematic 或 layout 图片导出总结如下：
 
 ``` bash
-; 先复制并输入原理图部分，再复制并输入版图部分
+; 输入原理图或版图导出代码前记得设置 name 和 fileName (保存路径)
 
 ; 原理图以白底黑字导出, 不带 dotting (已测试过无问题)
     name = "TEST";
@@ -990,7 +990,7 @@ startFinde(); 打开 "Cadence SKILL API Finder", 用于查找函数及其定义
     shell(strcat("xdg-open ", fileName)) ; 打开刚刚导出的 schematic 图片以进行预览
 
 ; 版图以白底彩色样式导出, 不带 dotting
-    ; name = "TEST"; 如有需要，在这里修改名字
+    name = "TEST"; 如有需要，在这里修改名字
     fileName = strcat("/home/dy2025/Desktop/Work/00_File_Library/Cadence_Data/", name , "_layout.png");
     ; 先修改 dotting 和 axes, 导出后再修改回来
     leHiEditDisplayOptions() ; 打开 display options 窗口

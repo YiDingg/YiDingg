@@ -54,7 +54,7 @@ Frequently used tools for my workflow:
 - EPUB to PDF (9pt or 10pt): [FreeConvert](https://www.freeconvert.com/epub-to-pdf)
 - IMG to EXCEL: [Baimiao](https://web.baimiaoapp.com/image-to-excel)
 - PFD Translation: [IFlyTranslate](https://www.iflytranslate.com/doc-translate)
-
+- AI for PPT: [TRAE](https://work.trae.cn/), [doubao](https://www.doubao.com/chat/)
 
 Other tools:
 - Text comparing tool: [diffing_tool](https://csacademy.com/app/diffing_tool/)

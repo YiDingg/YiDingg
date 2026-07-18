@@ -25,7 +25,7 @@
 
 ## 3. 迁移步骤
 
-在 MobaXterm 上连接组内的 104 服务器 `111.198.29.104` (需要管理员给你创建好用户名和端口号)，输入下面代码创建自己的端口：
+在 MobaXterm 上连接组内的 104 服务器 `xxx.xxx.xx.xxx` (需要管理员给你创建好用户名和端口号)，输入下面代码创建自己的端口：
 
 ``` bash
 # 创建一个 vnc 服务器, 分辨率 2560x1600, 颜色深度为 24 位
@@ -43,7 +43,7 @@ vncserver -geometry 2560x1600 -depth 24
 
 ``` bash
 # 把本地压缩包发送到 104 服务器
-scp D:\a_Win_VM_shared\Cadence_Data\Cadence_Migration_20251007.tar.gz dy2025@111.198.29.104:/home/dy2025/00_File_Library/
+scp D:\a_Win_VM_shared\Cadence_Data\Cadence_Migration_20251007.tar.gz dy2025@xxx.xxx.xx.xxx:/home/dy2025/00_File_Library/
 ```
 
 如果报错 `port 22: Connection refused`, 解决方案见这篇文章 [How to Fix "Ssh: Connect To Host 'Hostname' Port 22: Connection Timed Out"](https://www.geeksforgeeks.org/linux-unix/fix-ssh-connect-to-host-hostname-port-22-connection-timed-out/). 但这里我们并没有像文中一样解决，而是改为 MobaXterm 传输文件夹。
