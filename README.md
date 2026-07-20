@@ -37,7 +37,7 @@ My Technology Stack:
 
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C417%20hrs%207%20mins-blue?style=flat)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C424%20hrs%2014%20mins-blue?style=flat)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.72%20million%20lines%20of%20code-blue?style=flat)
 
@@ -66,12 +66,12 @@ Sunday                   217 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 1 hr 3 mins         █████████████░░░░░░░░░░░░   52.40 % 
-TeX                      57 mins             ████████████░░░░░░░░░░░░░   47.60 % 
+Markdown                 8 hrs 7 mins        ███████████████████████░░   90.92 % 
+TeX                      48 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   09.08 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               1 hr 3 mins         █████████████░░░░░░░░░░░░   52.40 % 
-GH.MiscReports           57 mins             ████████████░░░░░░░░░░░░░   47.60 % 
+GH.YiDingg               8 hrs 7 mins        ███████████████████████░░   90.92 % 
+GH.MiscReports           48 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   09.08 % 
 ```
 
 **I Mostly Code in TeX** 
@@ -87,7 +87,7 @@ Verilog                  1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2026.07.19 19:37 UTC
+ Last Updated on 2026.07.20 20:02 UTC
 <!--END_SECTION:waka-->
 
 
