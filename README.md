@@ -37,7 +37,7 @@ My Technology Stack:
 
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C432%20hrs%2038%20mins-blue?style=flat)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C435%20hrs%2011%20mins-blue?style=flat)
 
 ![AI Code Time](http://img.shields.io/badge/AI%20Code%20Time-39%20hrs%2054%20mins-blue?style=flat)
 
@@ -68,11 +68,14 @@ Sunday                   217 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 6 hrs 44 mins       ██████████████████████░░░   89.63 % 
-V                        46 mins             ███░░░░░░░░░░░░░░░░░░░░░░   10.37 % 
+Markdown                 6 hrs 37 mins       ████████████████████░░░░░   79.19 % 
+TeX                      57 mins             ███░░░░░░░░░░░░░░░░░░░░░░   11.49 % 
+V                        46 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   09.31 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               7 hrs 30 mins       █████████████████████████   100.00 % 
+GH.YiDingg               7 hrs 24 mins       ██████████████████████░░░   88.51 % 
+GH.MiscReports           57 mins             ███░░░░░░░░░░░░░░░░░░░░░░   11.47 % 
+GH.UCAS-NonlinearCircuitE0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.02 % 
 ```
 
 🤖 **AI Coding This Week** 
@@ -94,7 +97,7 @@ Verilog                  1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2026.08.11 19:31 UTC
+ Last Updated on 2026.08.12 19:33 UTC
 <!--END_SECTION:waka-->
 
 
