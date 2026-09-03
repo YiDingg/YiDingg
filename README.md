@@ -37,7 +37,7 @@ My Technology Stack:
 
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C479%20hrs%2016%20mins-blue?style=flat)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C481%20hrs%2027%20mins-blue?style=flat)
 
 ![AI Code Time](http://img.shields.io/badge/AI%20Code%20Time-39%20hrs%2054%20mins-blue?style=flat)
 
@@ -68,16 +68,16 @@ Sunday                   217 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 8 hrs 29 mins       ████████████░░░░░░░░░░░░░   48.70 % 
-V                        5 hrs 38 mins       ████████░░░░░░░░░░░░░░░░░   32.33 % 
-TeX                      2 hrs 34 mins       ████░░░░░░░░░░░░░░░░░░░░░   14.78 % 
-Bash                     43 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   04.17 % 
-Objective-C              0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.01 % 
+Markdown                 9 hrs 47 mins       ███████████████░░░░░░░░░░   59.40 % 
+V                        3 hrs 23 mins       █████░░░░░░░░░░░░░░░░░░░░   20.55 % 
+TeX                      2 hrs 34 mins       ████░░░░░░░░░░░░░░░░░░░░░   15.62 % 
+Bash                     43 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   04.41 % 
+Objective-C              0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.02 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               10 hrs 56 mins      ████████████████░░░░░░░░░   62.79 % 
-GH.MiscReports           5 hrs 17 mins       ████████░░░░░░░░░░░░░░░░░   30.33 % 
-Unknown Project          1 hr 12 mins        ██░░░░░░░░░░░░░░░░░░░░░░░   06.89 % 
+GH.YiDingg               8 hrs 57 mins       ██████████████░░░░░░░░░░░   54.31 % 
+GH.MiscReports           6 hrs 20 mins       ██████████░░░░░░░░░░░░░░░   38.41 % 
+Unknown Project          1 hr 12 mins        ██░░░░░░░░░░░░░░░░░░░░░░░   07.28 % 
 ```
 
 🤖 **AI Coding This Week** 
@@ -99,7 +99,7 @@ Verilog                  1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2026.09.02 21:10 UTC
+ Last Updated on 2026.09.03 21:10 UTC
 <!--END_SECTION:waka-->
 
 
