@@ -37,11 +37,53 @@ My Technology Stack:
 
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C488%20hrs%2040%20mins-blue?style=flat)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C490%20hrs%2014%20mins-blue?style=flat)
 
 ![AI Code Time](http://img.shields.io/badge/AI%20Code%20Time-39%20hrs%2054%20mins-blue?style=flat)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.72%20million%20lines%20of%20code-blue?style=flat)
+
+**I'm a Night 🦉** 
+
+```text
+🌞 Morning                88 commits          ██░░░░░░░░░░░░░░░░░░░░░░░   06.40 % 
+🌆 Daytime                450 commits         ████████░░░░░░░░░░░░░░░░░   32.73 % 
+🌃 Evening                443 commits         ████████░░░░░░░░░░░░░░░░░   32.22 % 
+🌙 Night                  394 commits         ███████░░░░░░░░░░░░░░░░░░   28.65 % 
+```
+📅 **I'm Most Productive on Friday** 
+
+```text
+Monday                   206 commits         ████░░░░░░░░░░░░░░░░░░░░░   14.98 % 
+Tuesday                  170 commits         ███░░░░░░░░░░░░░░░░░░░░░░   12.36 % 
+Wednesday                168 commits         ███░░░░░░░░░░░░░░░░░░░░░░   12.22 % 
+Thursday                 215 commits         ████░░░░░░░░░░░░░░░░░░░░░   15.64 % 
+Friday                   229 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.65 % 
+Saturday                 170 commits         ███░░░░░░░░░░░░░░░░░░░░░░   12.36 % 
+Sunday                   217 commits         ████░░░░░░░░░░░░░░░░░░░░░   15.78 % 
+```
+
+
+📊 **This Week I Spent My Time On** 
+
+```text
+💬 Programming Languages: 
+Markdown                 16 hrs 34 mins      ██████████████████░░░░░░░   72.16 % 
+TeX                      3 hrs 39 mins       ████░░░░░░░░░░░░░░░░░░░░░   15.93 % 
+V                        2 hrs               ██░░░░░░░░░░░░░░░░░░░░░░░   08.72 % 
+Bash                     43 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   03.17 % 
+Objective-C              0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.01 % 
+
+🐱‍💻 Projects: 
+GH.MiscReports           12 hrs 16 mins      █████████████░░░░░░░░░░░░   53.49 % 
+GH.YiDingg               10 hrs 40 mins      ████████████░░░░░░░░░░░░░   46.51 % 
+```
+
+🤖 **AI Coding This Week** 
+
+```text
+No AI Coding Activity Tracked This Week
+```
 
 **I Mostly Code in TeX** 
 
@@ -56,7 +98,7 @@ Verilog                  1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2026.09.04 20:53 UTC
+ Last Updated on 2026.09.05 20:31 UTC
 <!--END_SECTION:waka-->
 
 
