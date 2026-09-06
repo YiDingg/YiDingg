@@ -37,7 +37,7 @@ My Technology Stack:
 
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C490%20hrs%2014%20mins-blue?style=flat)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C491%20hrs%2048%20mins-blue?style=flat)
 
 ![AI Code Time](http://img.shields.io/badge/AI%20Code%20Time-39%20hrs%2054%20mins-blue?style=flat)
 
@@ -68,15 +68,15 @@ Sunday                   217 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 16 hrs 34 mins      ██████████████████░░░░░░░   72.16 % 
-TeX                      3 hrs 39 mins       ████░░░░░░░░░░░░░░░░░░░░░   15.93 % 
-V                        2 hrs               ██░░░░░░░░░░░░░░░░░░░░░░░   08.72 % 
-Bash                     43 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   03.17 % 
+Markdown                 15 hrs 52 mins      █████████████████░░░░░░░░   67.60 % 
+TeX                      4 hrs 52 mins       █████░░░░░░░░░░░░░░░░░░░░   20.77 % 
+V                        1 hr 59 mins        ██░░░░░░░░░░░░░░░░░░░░░░░   08.52 % 
+Bash                     43 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   03.10 % 
 Objective-C              0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.01 % 
 
 🐱‍💻 Projects: 
-GH.MiscReports           12 hrs 16 mins      █████████████░░░░░░░░░░░░   53.49 % 
-GH.YiDingg               10 hrs 40 mins      ████████████░░░░░░░░░░░░░   46.51 % 
+GH.MiscReports           13 hrs 47 mins      ███████████████░░░░░░░░░░   58.73 % 
+GH.YiDingg               9 hrs 41 mins       ██████████░░░░░░░░░░░░░░░   41.27 % 
 ```
 
 🤖 **AI Coding This Week** 
@@ -98,7 +98,7 @@ Verilog                  1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2026.09.05 20:31 UTC
+ Last Updated on 2026.09.06 20:33 UTC
 <!--END_SECTION:waka-->
 
 
