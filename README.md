@@ -68,12 +68,12 @@ Sunday                   217 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-TeX                      3 hrs 36 mins       ██████████████████░░░░░░░   72.74 % 
-Markdown                 1 hr 21 mins        ███████░░░░░░░░░░░░░░░░░░   27.26 % 
+TeX                      1 hr 47 mins        ██████████████████░░░░░░░   73.40 % 
+Markdown                 38 mins             ███████░░░░░░░░░░░░░░░░░░   26.60 % 
 
 🐱‍💻 Projects: 
-GH.MiscReports           3 hrs 36 mins       ██████████████████░░░░░░░   72.76 % 
-GH.YiDingg               1 hr 21 mins        ███████░░░░░░░░░░░░░░░░░░   27.24 % 
+GH.MiscReports           1 hr 47 mins        ██████████████████░░░░░░░   73.40 % 
+GH.YiDingg               38 mins             ███████░░░░░░░░░░░░░░░░░░   26.60 % 
 ```
 
 🤖 **AI Coding This Week** 
@@ -95,7 +95,7 @@ Verilog                  1 repo              ██░░░░░░░░░�
 
 
 
- Last Updated on 2026.09.16 21:29 UTC
+ Last Updated on 2026.09.17 21:32 UTC
 <!--END_SECTION:waka-->
 
 
