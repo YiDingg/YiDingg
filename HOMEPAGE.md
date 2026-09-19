@@ -57,7 +57,7 @@ Frequently used tools for my workflow:
 - AI for PPT: [TRAE](https://work.trae.cn/), [doubao](https://www.doubao.com/chat/)
 
 Other tools:
-- Text comparing tool: [diffing_tool](https://csacademy.com/app/diffing_tool/)
+- Text comparing tool: [diffing_tool (代码)](https://csacademy.com/app/diffing_tool/), [DiffChecker (文本)](https://www.diffchecker.com/zh-Hans/)
 - Title: use [Capitalize](https://capitalizemytitle.com/style/APA/) <span class='tinyscript'>or [Wawa](https://www.iamwawa.cn/daxiaoxie.html)</span> to capitalize your titles, and use [Rewriter](https://capitalizemytitle.com/ai-title-rewriter/) to rewrite your title.
 - Questionnaire survey (问卷调查): [aidaform](https://aidaform.com/)
 - Collection of e-books: 

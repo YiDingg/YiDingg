@@ -40,7 +40,8 @@
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-02-01-18-18_202509_tsmcN65_DAC_RDR_5bit.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-02-01-20-08_202509_tsmcN65_DAC_RDR_5bit.png"/></div>
 
-原理图和版图：
+原理示意、原理图和版图：
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-09-09-16-26-36_Design of A 5-Bit RDR DAC for Reference Generation in BB-PLLs.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-08-19-56-29_Design of A 5-Bit RDR DAC for Reference Generation in BB-PLLs.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-02-01-03-01_202509_tsmcN65_DAC_RDR_5bit.png"/></div>
 

@@ -45,8 +45,7 @@
         - [(2) Design of Key Modules](<AnalogICDesigns/202602_tsmcN28_CDR_PAM3_56GTs_quarterRate (2) Design of Key Modules.md>)
         - [(3) Adaptation and DFE Layout](<AnalogICDesigns/202602_tsmcN28_CDR_PAM3_56GTs_quarterRate (3) Adaptation and DFE Layout.md>)
         - [(4) Counter, DAC and Logic Circuit](<AnalogICDesigns/202602_tsmcN28_CDR_PAM3_56GTs_quarterRate (4) Counter, DAC and Logic Circuit.md>)
-        - **3. Project Documents:**
-        - [xxx](<AnalogICDesigns/202602_tsmcN28_CDR_PAM3_56Gbuad (0) Theoretical Basics and Project Preparations.md>)
+        - [(5) PCB Design and Measurement](<AnalogICDesigns/202602_tsmcN28_CDR_PAM3_56GTs_quarterRate (5) PCB, Measurement and Paper Writing.md>)
 
 
     - [An Ultra-Low-Power CP-PLL in ONC 180nm Technology](<Projects/Design of An Ultra-Low-Power CP-PLL in ONC 180nm Technology.md>)
@@ -94,7 +93,7 @@
             - [202509_tsmcN65_OTA_constantGm_adjustable](<AnalogICDesigns/202509_tsmcN65_OTA_constantGm_adjustable.md>)
             - [202509_tsmcN65_OTA_constantGm_adjustable__layout](<AnalogICDesigns/202509_tsmcN65_OTA_constantGm_adjustable__layout.md>)
         - [(3) DAC: Design of A 5-Bit RDR DAC for Reference Generation in BB-PLLs](<Projects/Design of A 5-Bit RDR DAC for Reference Generation in BB-PLLs.md>)
-
+            - [202509_tsmcN65_DAC_RDR_5bit](<AnalogICDesigns/202509_tsmcN65_DAC_RDR_5bit.md>)
 
     - [A Type-II Integer-N Charge Pump PLL](<Projects/Design of A Third-Order Type-II Integer-N CP-PLL.md>)
         - [Razavi CMOS - Chapter 13. Switched-Capacitor Circuits](<AnalogIC/Razavi CMOS - Chapter 13. Switched-Capacitor Circuits.md>)
@@ -110,7 +109,6 @@
         - [PLL Behavior-Level Simulation using Cadence IC618](<AnalogIC/PLL Behavior-Level Simulation using Cadence IC618.md>)
         - [Loop Analysis of Typical Type-II CP-PLL](<AnalogIC/Loop Analysis of Typical Type-II CP-PLL.md>)
         - [202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N](<AnalogICDesigns/202508_tsmcN28_CP-PLL__3rd-Order_Type-II_Integer-N.md>)
-
 
     - [Scientific Research Practice 1 (BGR)](<Projects/Scientific Research Practice 1 (Low-Voltage BGR).md>)
         - [Razavi CMOS - Chapter 12. Bandgap References](<AnalogIC/Razavi CMOS - Chapter 12. Bandgap References.md>)

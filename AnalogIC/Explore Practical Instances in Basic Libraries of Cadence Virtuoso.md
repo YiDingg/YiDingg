@@ -325,6 +325,9 @@ ahdlLib 是用于 AHDL (Analog Hardware Description Language) 设计的模块库
 
 ## Reference
 
-- [[1] Cadence Analog Library Reference Guide (Product Version 5.1.41 June 2004)](https://picture.iczhiku.com/resource/eetop/syITAhYDQiEIAxnm.pdf): `analogLib` 的主要参考资料
-- [[2] Cadence Verilog-A Language Reference (Product Version 5.1 January 2004)](https://picture.iczhiku.com/resource/eetop/wHKHWkFiYkuOICnN.pdf): `ahdlLib` 的主要参考资料
+- [[1] Cadence Analog Library Reference Guide (Product Version 5.1.41, June 2004)](https://picture.iczhiku.com/resource/eetop/syITAhYDQiEIAxnm.pdf): `analogLib` 的主要参考资料
+- [[2] Cadence Verilog-A Language Reference (Product Version 5.1, January 2004)](https://picture.iczhiku.com/resource/eetop/wHKHWkFiYkuOICnN.pdf): `ahdlLib` 的主要参考资料，备用链接为 [Cadence Verilog-A Language Reference (Product Version 13-1-1, April 2014)](https://wiki.eecs.yorku.ca/lab/emil/_media/mmsim13_11_480:veriaref.pdf)
+-
+
+
 

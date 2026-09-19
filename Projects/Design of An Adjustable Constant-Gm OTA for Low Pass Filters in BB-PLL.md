@@ -74,8 +74,9 @@
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-30-20-42-39_202509_tsmcN65_OTA_constantGm_adjustable__layout.png"/></div>
 
 
-原理图和版图：
+结构示意、原理图和版图：
 
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-09-14-19-31-11_Design of An Adjustable Constant-Gm OTA for Low Pass Filters in BB-PLL.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-30-20-08-22_202509_tsmcN65_OTA_constantGm_adjustable__layout.png"/></div>
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-30-18-18-21_202509_tsmcN65_OTA_constantGm_adjustable__layout.png"/></div>
