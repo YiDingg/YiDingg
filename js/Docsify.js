@@ -76,7 +76,7 @@
         return [].slice.call(n ? e.querySelectorAll(n) : v.querySelectorAll(e));
     }
     function w(e, n) {
-        return (e = v.createElement(e)), n && (e.innerHTML = n), e;
+        return (e = v.createElement(e)), n && (e.innerHTML = window.DOMPurify ? window.DOMPurify.sanitize(n) : n), e;
     }
     function r(e, n) {
         return e.appendChild(n);
