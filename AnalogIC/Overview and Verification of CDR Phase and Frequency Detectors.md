@@ -607,8 +607,6 @@ Bi-FD scheme @ quarter-rate mode:
 
 ## 4. Quarter-Rate PD
 
-
-
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-02-11-15-39-48_Overview and Verification of CDR Phase and Frequency-Detectors.png"/></div>
 
 >上图源自：[[7] Y. Wang, H. Xian, X. Li, F. Lai, W. Han, and X. Liu, “A 12.5Gbps dual loop quarter rate CDR using lock detecting technique in 55nm CMOS process,” in 2016 13th IEEE International Conference on Solid-State and Integrated Circuit Technology (ICSICT), Oct. 2016, pp. 1431–1433. doi: 10.1109/ICSICT.2016.7998760.](https://ieeexplore.ieee.org/document/7998760/)

@@ -76,8 +76,7 @@
 - [x] (2026.03.31 ~ 2026.04.01) 38. 搭建 offset sampler path 用于后续的 lock detection，搭建完成后合并为 dataPath_ADA_OFS，并进行仿真验证
 
 
-在环路中验证
-
+<!-- 在环路中验证
 - [] (2026.02.24 ~ 2026.02.25) 19. 用已有 DFF 模块搭建 4-bit counter，然后进一步搭建 quarter-rate bi-directional FD，配合 quarter-rate PD 放到 NRZ CDR loop 中进行仿真验证；
 
 - [] (2026.02.24 ~ 2026.02.24) 19. 基于已有的 PRBS Generator，给出带有 rms edge jitter 的 PRBS Generator 模型，以及带有 rms edge jitter 的 PRTS Generator (pseudo-random ternary sequence)，后续用于生成 jittered data 给 CDR loop 进行仿真；
@@ -98,12 +97,8 @@
 
 
 和 PRTS Generator (采用 PRBSn + NRZ-to-PAM3)
-
-
-
 - (2026.02.06 ~ 2026.02.06) 10. 用 verilog-a 搭建 8b/10b Encoder 和 Decoder 模块，用于后续的 NRZ 数据编码 (限制 max run length)；
-
-
+-->
 
 
 

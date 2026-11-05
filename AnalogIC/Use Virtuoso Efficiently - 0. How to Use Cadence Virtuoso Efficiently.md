@@ -1461,7 +1461,7 @@ is a invalid register number, Need a valid register number from TSMC
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-13-22-22-27_Use Virtuoso Efficiently - 0. How to Use Cadence Virtuoso Efficiently.png"/></div>
 
-生成 mom cap 版图需要 licence, 找老师要到 licence 文件后，参考 []
+生成 mom cap 版图需要 license, 找老师要到 license 文件后，参考 []
 
 ### 12. 版图边框大小与实际大小不符
 

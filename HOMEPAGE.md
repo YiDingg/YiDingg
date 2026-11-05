@@ -55,6 +55,7 @@ Frequently used tools for my workflow:
 - IMG to EXCEL: [Baimiao](https://web.baimiaoapp.com/image-to-excel)
 - PFD Translation: [IFlyTranslate](https://www.iflytranslate.com/doc-translate)
 - AI for PPT: [TRAE](https://work.trae.cn/), [doubao](https://www.doubao.com/chat/)
+- Video Merge: [tool.video](https://tools.video/zh-CN/video-merge)
 
 Other tools:
 - Text comparing tool: [diffing_tool (代码)](https://csacademy.com/app/diffing_tool/), [DiffChecker (文本)](https://www.diffchecker.com/zh-Hans/)
@@ -106,6 +107,7 @@ Go to [About Me](README.md) for more information.
 
 Here are some interesting educational or personal sites.
 
+- [kaixinspace](https://www.kaixinspace.com/)
 - [EEVBlog](https://www.eevblog.com/)
 - [Cambridge Notes](https://dec41.user.srcf.net/notes/)
 - [Douglas M. Gingrich](https://sites.ualberta.ca/~gingrich/)

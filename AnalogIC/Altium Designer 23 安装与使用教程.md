@@ -22,7 +22,7 @@
 
 
 
-## 2. 全流程操作教材
+## 2. 全流程操作教程
 
 - 参考官网教程完成一次完整设计：[Altium > Altium Designer 文档](https://www.altium.com/cn/documentation/altium-designer/tutorial)
 - 我们用的是破解版，在元件/封装这里没法直接下载 AD 官网提供的，这里就用到了开头提到的 “常用元器件库”：下面是几个常用的
@@ -37,6 +37,8 @@
     - 在布线时遇到两个问题：一个是设置了 Power 和 Signal 默认走线规则但没用，另一个是元件焊盘处总报 DRC 错误 (后来发现是快捷键 `W` 设置成了 `Line` 而非交互式布线，修改后即正常)
     - 又遇到一个问题是：过孔 via 尺寸不是 rule 中设置的默认尺寸但 min/max 限制正常存在 (走线时按数字 `2` 可添加规则预设过孔)
     - `Shift + W` 快速切换线宽，走线时按数字 `2` 可添加过孔并切换层
+
+
 
 大致设计流程如下：
 - 构建元件库：
@@ -91,7 +93,7 @@
 - `拖动 + L`: 元件在层之间快速切换
 - `Ctrl + Shift + 滚轮`: 快速切换当前显示层
 - `K`: 量尺 (默认是 `Ctrl + M`)
-- `Shift + C`: 清楚标记 (高亮、量尺)
+- `Shift + C`: 清除标记 (高亮、量尺)
 - `Ctrl + Shift + PgUp/PgDown`: 移动所选对象
 - `Shift + E/Q`: 切换上一层/下一层 (默认是 `+/-` 号, next/previous layer)
 - `Shift + W` 或 `G`: (拖拽/画线时) 切换吸附模式 (共三种) (默认 `Shift + E`)
@@ -110,7 +112,7 @@
 常用功能：
 - 板层: `D + K` 或 `Alt + D, K` 或 Design > Layer Stack Manager
 - 铺铜: `P + G` 或 `Alt + P, G` 或 Place > Polygon Pour
-- 重铺: `P + G + A`
+- 重铺: `T + G + A`
 - 泪滴: `T + E` 或 `Alt + T, E` 或 Tools > Teardrops (补/除)
 - DRC: `T + D` 或 `Alt + T, D` 或 Tools > Design Rule Check
 
@@ -130,6 +132,7 @@
     - 共面波导一：间距 4 mil --> 线宽 8.15 mil, 插损 1.785 dB/in @ 14 GHz <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-07-19-16-41-47_Altium Designer 23 安装与使用教程.png"/></div>
     - 共面波导二：间距 8 mil --> 线宽 14.89 mil, 插损 1.685 dB/in @ 14 GHz <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-07-19-16-49-21_Altium Designer 23 安装与使用教程.png"/></div>
     - 微带线：线宽 3.68 mil <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-07-19-16-46-40_Altium Designer 23 安装与使用教程.png"/></div>
+
 
 
 ## 5. 202602_CDR 测试 PCB 板

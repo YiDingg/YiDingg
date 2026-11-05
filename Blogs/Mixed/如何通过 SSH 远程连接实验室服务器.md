@@ -40,9 +40,13 @@ vncserver -geometry 1920x1080 -depth 24
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-24-18-27-46_如何通过 SSH 远程连接实验室服务器.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-24-18-26-42_如何通过 SSH 远程连接实验室服务器.png"/></div>
 
-这样便成功登录进来了。我们服务器的工艺库文件都放在了 `/home/library` 路径下，比如 `tsmc28n` (台积电 28nm CMOS) 的路径为 `/home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5` (111,100 items, totalling 4.3 GB)。
+这样便成功登录进来了。
+- 我们 253 服务器的工艺库文件都放在了 `/home/library` 路径下，比如 `tsmc28n` (台积电 28nm CMOS) 的路径为 `/home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5` (111,100 items, totalling 4.3 GB)
+- 而 104 服务器的工艺库文件在 `/data/library`，比如 `tsmc28n` (台积电 28nm CMOS) 的路径为 `/data/library/TSMC/tsmc28n/1p9m6x1z1u_2v5`
 
 
+其它：
+- [kaixinspace > 如何设置VNC双屏显示？](https://www.kaixinspace.com/how-to-set-up-vnc-for-dual-screen-display/)
 
 ## Step 3: 修改基本设置
 
@@ -75,10 +79,10 @@ tar -czvf test.tar /home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5/
 scp username@111.11.111.111:/home/dy2025/Cadence_Data/test.tar D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/  
 ```
 
-<!-- ``` bash
+<!--
 tar -czvf tsmc28n.tar /home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5/    # 将要传输的文件打包成压缩包; -z：使用 gzip 压缩 (压缩率高，速度较快)
 scp dy2025@182.48.105.253:/home/dy2025/Cadence_Data/tsmc28n.tar D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/  # 将压缩包从服务器下载到本地 windows
-``` -->
+-->
 
 
 如果报错 `Ensure the remote shell produces no output for non-interactive sessions.`, 大概是服务器主机上设置了 shell 初始化文件 `.cshrc` ，将此文件改名为 `ttt.cshrc` 即可暂时禁用，传输完成后再改回来即可。
@@ -105,16 +109,11 @@ scp dy2025@182.48.105.253:/home/dy2025/Cadence_Data/tsmc28n.tar D:/a_Win_VM_shar
 scp -r username@111.11.111.111:/home/dy2025/Workspace_T28 D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/  # 将压缩包从服务器下载到本地 windows, -r 表示递归
 ```
 
-<!-- ``` bash
-# 将压缩包从服务器下载到本地 windows, -r 表示递归
-scp -r dy2025@182.48.105.253:/home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5 D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/
-
-# 将压缩包从服务器下载到本地 windows, -r 表示递归
-scp -r dy2025@182.48.105.253:/home/library/TSMC/tsmc28n/1p9m6x1z1u/PDK_doc D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/tsmc28n_2v5/
-
-# 将本地文件发送到服务器
-scp D:\a_Win_VM_shared\Cadence_Data\202509_LDO_0923_1854.tar.gz dy2025@182.48.105.253:/home/dy2025/Cadence_Projects/
-``` -->
+<!-- 
+scp -r dy2025@182.48.105.253:/home/library/TSMC/tsmc28n/1p9m6x1z1u_2v5 D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/ # 将压缩包从服务器下载到本地 windows, -r 表示递归
+scp -r dy2025@182.48.105.253:/home/library/TSMC/tsmc28n/1p9m6x1z1u/PDK_doc D:/a_Win_VM_shared_2_largeFiles/Cadence_Process_Library_Backup/tsmc28n_2v5/ # 将压缩包从服务器下载到本地 windows, -r 表示递归
+scp D:\a_Win_VM_shared\Cadence_Data\202509_LDO_0923_1854.tar.gz dy2025@182.48.105.253:/home/dy2025/Cadence_Projects/ # 将本地文件发送到服务器
+-->
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-24-21-29-42_如何通过 SSH 远程连接实验室服务器.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-06-24-21-43-02_如何通过 SSH 远程连接实验室服务器.png"/></div>
@@ -167,6 +166,7 @@ getent group sudo                           # 显示所有 sudo 权限用户
 <!-- 
 scp D:\a_Win_VM_shared\Cadence_Data\MyLib_202509_DAC_tsmcN65 dy2025@182.48.105.253:/home/dy2025/Cadence_Projects/
 -->
+
 
 ``` bash
 # 创建端口
@@ -298,5 +298,4 @@ load(strcat(getShellEnvVar("PEAKHOME") "/cds/context/pkview.il"))
 ```
 
 - 重新打开 virtuoso, CIW 中显示 `PKV: initializing peakdesign done.` 即表示 peakview 加载成功。或者随便打开一个版图，可以在上方菜单栏中找到 `PKView` 一项，即为加载成功。
-
 

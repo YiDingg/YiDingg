@@ -34,6 +34,16 @@
 
 ``` bash
 0:(VAR("VDD")/12):(VAR("VDD")/2 - 10m), (VAR("VDD")/2 + 10m):(VAR("VDD")/12):VAR("VDD")
+
+PDK: tsmcN28
+Logic_std_2d0_200n_30n_TG_xNUM
+(using nch and pch)
+
+xNUM    Ron (Ohm)   Roff (Ohm)
+x2      1016        163.7M
+x4      483.2       53.51M
+x6      317.5       29.90M
+x8      236.6       20.19M
 ```
 
 

@@ -11,7 +11,7 @@
 ### 1.1 design reference
 
 本次设计是参考着之前 28nm 中已流片验证过的 9-bit R-2R DAC 进行的，参考电路及版图见下图：
-
+<div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2026-09-09-16-26-36_Design of A 5-Bit RDR DAC for Reference Generation in BB-PLLs.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-30-21-59-35_202509_tsmcN65_DAC_RDR_5bit.png"/></div>
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-09-30-22-00-06_202509_tsmcN65_DAC_RDR_5bit.png"/></div>
 
@@ -212,6 +212,9 @@ DRC 和 LVS 都完全通过，下面围上 NW 和最外围的保护 ring:
 新版 Calibre (2023) LVS 中 source.added 文件无法在 `LVS > input` 一栏添加，而是需要在 `Layout > Calibre > Setup > Netlist Export > Include Files` 中添加：
 
 <div class="center"><img src="https://imagebank-0.oss-cn-beijing.aliyuncs.com/VS-PicGo/2025-10-08-14-28-26_202509_tsmcN65_DAC_RDR_5bit.png"/></div>
+
+**2026.10.20 注：其实可以在 LVS > Database > Additional SPICE Files 中添加**
+
 
 诶？奇怪的是，这里并没有 dummy 电阻识别报错？按照导师的说法，他那边跑了 LVS 之后有下面这条报错：
 
