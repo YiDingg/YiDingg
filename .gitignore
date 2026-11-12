@@ -4,3 +4,6 @@
 *.pdf
 
 /misc/*
+
+
+_sidebar_v*.md
