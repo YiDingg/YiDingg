@@ -74,6 +74,7 @@
         - [202510_onc18_CPPLL (4) Pre-Layout Simulation and Layout Details](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (4) Pre-Simulation, Layout Details and Post-Simulation Results.md>)
         - [202510_onc18_CPPLL (5) Project Report and Documents](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (5) Project Report and Documents.md>)
         - **3. Project Documents:**
+        - [(docs-4) 2026.01.27 锁相环 testbench 使用说明](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (docs-4) 2026.01.27 锁相环 testbench 使用说明.md>)
         - [(docs-1) 2025.11.13 PLL 性能评估结果 (Digital 1.25V or 0.625V)](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (docs-1) 2025.11.13 PLL 性能评估结果 (Digital 1.25V or 0.625V).md>)
         - [(docs-2) 2025.12.19 电源上升纹波导致的输出频率波动问题](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (docs-2) 2025.12.19 电源上升纹波导致的输出频率波动问题.md>)
         - [(docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report](<AnalogICDesigns/202510_onc18_CPPLL_ultra_low_lower (docs-3) 2026.01.06 锁相环前仿报告 CP-PLL pre-layout simulation report.md>)
@@ -135,6 +136,7 @@
 
 - 📱 **Analog IC Designs** <!-- 新的 design 放在前面 -->
 
+    - [tsmcN12 (TSMC 12nm FinFET Process Library)](<AnalogICDesigns/Basic Information and Tutorials for tsmcN12 (TSMC 12nm FinFET Process Library).md>)
     - [onc18 (ONC 180nm CMOS Process Library)](<AnalogICDesigns/Basic Information of onc18 (ONC 180nm CMOS Process Library).md>)
     - [tsmcN65 (TSMC 65nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN65 (TSMC 65nm CMOS Process Library).md>)
     - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
@@ -165,6 +167,7 @@
 - 💡 **My Blogs**
 
     -  Virtuoso Tutorials
+        - [22. Detailed Explanations of Latch-Up and Fixing LUP DRC in tsmcN28](<AnalogIC/Virtuoso Tutorials - 22. Detailed Explanations of Latch-Up and Fixing LUP DRC in tsmcN28.md>)
         - [1. How to Install Cadence IC618](<AnalogIC/Virtuoso Tutorials - 1. How to Install Cadence IC618.md>)<!-- x -->
         - [2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso)](<AnalogIC/Virtuoso Tutorials - 2. Simulate CMOS Inverter in Cadence IC618 (Virtuoso).md>)<!-- x -->
         - [3. How to Add New Process Libraries in Cadence IC618](<AnalogIC/Virtuoso Tutorials - 3. How to Add New Process Libraries in Cadence IC618.md>)<!-- x -->
@@ -217,7 +220,9 @@
 
 
 
-    - AMS IC Blogs (2026, 5 items)
+    - AMS IC Blogs (2026, 8 items)
+        - [MOS 器件 TCAD 仿真及 SPICE 模型](<AnalogIC/MOS 器件 TCAD 仿真及 SPICE 模型.md>)
+        - [Quarters-II 安装与使用教程](<AnalogIC/Quarters-II 安装与使用教程.md>)
         - [Altium Designer 23 安装与使用教程](<AnalogIC/Altium Designer 23 安装与使用教程.md>)
         - [High-Speed Logic Circuit - LVDS, LVPECL and CML](<AnalogIC/High-Speed Logic Circuit - LVDS, LVPECL and CML.md>)
         - [Analog Design Examples from GitHub User HarshitSri-Analog](<AnalogIC/Analog Design Examples from GitHub User HarshitSri-Analog.md>)
@@ -248,6 +253,7 @@
         - [PLL Behavior-Level Simulation using Cadence IC618](<AnalogIC/PLL Behavior-Level Simulation using Cadence IC618.md>)
         - [PLL System-Level Simulation using LTspice](<AnalogIC/PLL System-Level Simulation using LTspice.md>)
         - [Prerequisite Digital Electronics Knowledge for Analog & Mixed-Signal (AMS) Circuits](<AnalogIC/Prerequisite Digital Electronics Knowledge for PLL.md>)<!--  -->
+        - [An Introduction to XCP (Cross-Coupled Pair)](<AnalogIC/An Introduction to XCP (Cross-Coupled Pair).md>)
         - [tsmcN28 (TSMC 28nm CMOS Process Library)](<AnalogICDesigns/Basic Information of tsmcN28 (TSMC 28nm CMOS Process Library).md>)
         - [The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation](<AnalogIC/The Unidentified Second-Pole in the Two-Stage Op Amp with Nulling-Miller Compensation.md>)
         - [Use ADE Assembler to Enhance Your Simulation Efficiency](<AnalogIC/ADE Assembler - 0. How to Use ADE Assembler to Enhance Your Simulation Efficiency.md>)
@@ -273,7 +279,7 @@
         - [Altium Designer 23 安装与使用教程](<AnalogIC/Altium Designer 23 安装与使用教程.md>)
 
 
-    - Electronic Blogs (2025, 78 items) 
+    - Electronic Blogs (2025, 79 items) 
         - [DPSE 数字信号处理实验 - 1. ADC 与 DAC 实验](<Electronics/DPSE 数字信号处理 - 1. ADC 与 DAC 实验.md>)
         - [DPSE 数字信号处理实验 - 0. 课程信息与准备](<Electronics/DPSE 数字信号处理 - 0. 课程信息与准备.md>)
         - [DCE 数字电路实验 - 实验 4. 频率计设计](<Electronics/DCE 数字电路实验 - 实验 4. 频率计设计.md>)
@@ -296,6 +302,7 @@
         - [Op Amp Measurement of Discrete uA741](<Electronics/Op Amp Measurement of Discrete uA741.md>)
         - [Modeling the Non-Idealities of Op Amp](<Electronics/Modeling the Non-Idealities of Op Amp.md>)
         - [Detailed Explanation of uA741](<Electronics/Detailed Explanation of uA741.md>)
+        - [BJT 常用镜像电流源汇总](<Electronics/BJT 常用镜像电流源汇总.md>)
         - [Exploring DIGILENT WaveForms](<Electronics/WaveForms Insight.md>)
         - [Razavi CMOS - Detailed Explanation of Cascode Op Amp](<Electronics/[Razavi CMOS] Detailed Explanation of Cascode Op Amp.md>)
         - [An Example of Negative FB Amp](<Electronics/An Example of Negative FB Amp.md>)<!--  -->
@@ -371,6 +378,9 @@
     - Mixed <!-- empty line is necessary to avoid the error -->
         - [Redmi 手机选型对比](<Blogs/Mixed/Redmi 手机选型对比.md>)
         - [如何通过 SSH 远程连接实验室服务器](<Blogs/Mixed/如何通过 SSH 远程连接实验室服务器.md>)
+        - [记录本地 Cadence 配置如何转移到服务器](<Blogs/Mixed/记录本地 Cadence 配置如何转移到服务器.md>)
+        - [CSGO 里的各种实用道具](<Blogs/Mixed/CSGO 里的各种实用道具.md>)
+        - [Zotero 如何只导出所选条目的 PDF 文件](<Blogs/Mixed/Zotero 如何只导出所选条目的 PDF 文件.md>)
         - [Markdown 转微信公众号或知乎](<Blogs/Mixed/Markdown 转微信公众号或知乎.md>)
         - [关于国科大本科部电子信息工程专业课程安排的一些思考](Blogs/Mixed/关于国科大本科部电子信息工程专业课程安排的一些思考.md)
         - [LTeX – grammar/spell checking](Blogs/Mixed/LTEX.md)
@@ -406,6 +416,7 @@
         - [ATandR(3): Drawing](<Blogs/ATandR/ATandR(3)-Drawing.md>)
         - [ATandR(4): Research Paper](<Blogs/ATandR/ATandR(4)-ResearchPaper.md>)
     - Fix Problem
+        - [拯救者笔记本禁用本机键盘方法](<Blogs/FixProblem/拯救者笔记本禁用本机键盘方法.md>)
         - [VSCode 突然变得很卡.md](<Blogs/FixProblem/VSCode 变得很卡.md>)
         - [英文输入法在复制后输入第一个字符为中文的解决方案](<Blogs/FixProblem/英文输入法在复制后输入第一个字符为中文的解决方案.md>)
         - [VSCode 中按键失灵](Blogs/FixProblem/KeypadFailureInVSCode.md)
@@ -583,6 +594,7 @@
 
 - 🗓️ **Monthly Summary**
 
+    - [2025.09](<MonthlySummary/Monthly Summary (2025.09).md>)
     - [2025.08](<MonthlySummary/Monthly Summary (2025.08).md>)
     - [2025.07](<MonthlySummary/Monthly Summary (2025.07).md>)
     - [2025.06](<MonthlySummary/Monthly Summary (2025.06).md>)
