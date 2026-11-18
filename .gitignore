@@ -7,3 +7,8 @@
 
 
 _sidebar_v*.md
+
+# 本地草稿与临时脚本
+/bash*.bash
+/markdown*.md
+/python*.py

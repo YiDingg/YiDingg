@@ -40,3 +40,9 @@
 1. 下载 [博客园 > 【开发工具】驱动安装二：USB Blaster驱动安装](https://www.cnblogs.com/xiaomagee/p/12699530.html) 里的 USB Blaster 驱动程序，备用链接 [123 云盘](https://1836240215.share.123pan.cn/123pan/0y0pTd-85aAh)
 2. 参考 [CSDN > Altera USB-blaster 驱动安装以及安装失败的解决办法](https://blog.csdn.net/lvzhshengh/article/details/115918262) 和 [百度经验 > Win10 怎么禁用驱动程序强制签名](https://jingyan.baidu.com/article/624e74594dbc8d34e8ba5aa6.html) 以 "禁用驱动程序强制签名" 模式重启电脑，然后仍按照常规方法 (本地路径) 选择刚刚步骤一里下载的驱动程序，安装即可。
 
+
+## 版本记录
+
+| 版本 | 日期 | 变更 |
+|---|---|---|
+| v2 | 2026-11-07 | 补充版本记录，重新导出 PDF |

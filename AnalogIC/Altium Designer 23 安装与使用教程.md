@@ -182,3 +182,10 @@
     - [npnp (https://www.bilibili.com/video/BV14jKP6zEPb)](https://www.bilibili.com/video/BV14jKP6zEPb): 原理图 + PCB + 3D + Description
 - 3D 模型下载：[3D Content Central (https://www.3dcontentcentral.cn/)](https://www.3dcontentcentral.cn/)
 
+
+## 版本记录
+
+| 版本 | 日期 | 变更 |
+|---|---|---|
+| v2 | 2026-11-07 | 补充版本记录，重新导出 PDF |
+| v3 | 2026-11-07 | 封面图改为图 7 (npnp 元件封装界面) |

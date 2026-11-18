@@ -38,3 +38,15 @@ nohup eog 图片.png >/tmp/eog.log 2>&1 &
 可用 `xwininfo -root -tree` 确认窗口已映射；宿主机侧用 PowerShell 截屏即可作为「已在虚拟机桌面显示」的凭证。
 
 **安全与边界**：该用户无免密 sudo，普通操作（跑仿真、传文件、读 license 状态）全部可自动完成，涉及改系统配置才需人工授权；虚拟机需保持开机、NAT 地址不变，关机改 vCPU/内存后再 `vmrun start` 即可恢复。
+
+
+
+
+## 3. 2026.11.08 TCAD 小作业
+
+详见：
+``` bash
+E:\aa_MyPersonalFiles\2026-11 TCAD 1108 小作业
+E:\aa_MyPersonalFiles\2026-11 TCAD 1108 小作业\README (2026-11 虚拟机 TCAD 小作业).txt
+
+```

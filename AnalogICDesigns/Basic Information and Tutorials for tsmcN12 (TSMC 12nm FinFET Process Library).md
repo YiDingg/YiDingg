@@ -6,26 +6,33 @@
 
 ## 1. 资料总览与学习指引
 
-### 1.0 我们整理后的资料
-
 2026-10 TSMC 12nm 教程：
 - 123 云盘：
 - 百度网盘：https://pan.baidu.com/s/1sxMXg_6bL5Y6n9AHII5gwA?pwd=8888
-- 注：123 云盘中我们仅分享整理后的、需要看的、需要用到的资料，其它原始资料以及尺寸较大的教学视频仅在百度网盘链接中有
+- 注：123 云盘中我们可能仅了分享整理后的、需要看的、需要用到的资料，其它原始资料以及尺寸较大的教学视频仅在百度网盘链接中有
 
 
 ``` bash
-
-
 通过网盘分享的文件：2026-10 TSMC 12nm 教程
 链接: https://pan.baidu.com/s/1sxMXg_6bL5Y6n9AHII5gwA?pwd=8888 提取码: 8888 
 --来自百度网盘超级会员v3的分享
 ```
 
 
+组里提供的资料 (主要来自张老师)：
+- FinFET 12nm 版图教程：
+    - 18 个 `.mp4` 教学视频：
+    - 一个示例 library `tsmc12nm.zip` (不是 PDK)：
+    - 三个教学文档
+        - `1-基础知识.docx`
+        - `2-器件基础知识.docx`
+        - `3-DRC规则经验.docx`
+- 12nm 56G SerDes IP GDS from Synopys (版图示例):
+    - `sb_txrx_aup3ple.gds.gz`：TOP TRX 版图
+    - `sb_cm_agp1p5e.gds.gz`：外围公共模块 (PLL, 基准, 偏置)
 
-### 1.1 版图教程
 
+## 2. T12 版图杂谈
 
 
 结合 `MyLib_tutorials_tsmcN12` 中的 cell `tutorial_layout_basic` 来看各层、晶体管各设置的作用/效果：
@@ -43,16 +50,11 @@
     - `nch/pch_svt_mac`: 16n/18n/20n/36n 以及 72n~240n 的任意值 (min step = 1nm)
     - `nch/pch_lvt_mac`: 
 
-### 1.x 其它原始资料
 
-组里提供的资料 (主要来自张老师)：
-- FinFET 12nm 版图教程：
-    - 18 个 `.mp4` 教学视频：
-    - 一个示例 library `tsmc12nm.zip` (不是 PDK)：
-    - 三个教学文档
-        - `1-基础知识.docx`
-        - `2-器件基础知识.docx`
-        - `3-DRC规则经验.docx`
-- 12nm 56G SerDes IP GDS from Synopys (版图示例):
-    - `sb_txrx_aup3ple.gds.gz`：TOP TRX 版图
-    - `sb_cm_agp1p5e.gds.gz`：外围公共模块 (PLL, 基准, 偏置)
+
+
+## 3. 版图详细教程
+
+
+
+
