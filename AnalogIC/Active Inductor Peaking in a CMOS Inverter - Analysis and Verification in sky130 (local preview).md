@@ -22,7 +22,7 @@
 
 <div class="center"><img src="assets/active-inductor-peaking/topology.svg"/></div>
 
-> 图 1 · 本文的被测电路 (DUT)。主反相器 20 µm / 10 µm, 支路小反相器 INV_pk 5 µm / 2.5 µm, L 均为 0.15 µm; $C_L$ = 60 fF, $C_q$ = 8 fF; $V_{DD}$ = 1.8 V, 输入共模取翻转点 0.845 V。
+> 图 1. 本文的被测电路 (DUT)。主反相器 20 µm / 10 µm, 支路小反相器 INV_pk 5 µm / 2.5 µm, L 均为 0.15 µm; $C_L$ = 60 fF, $C_q$ = 8 fF; $V_{DD}$ = 1.8 V, 输入共模取翻转点 0.845 V。
 
 主反相器把 in 反相到 out, 支路则从 out 出发: 经过一个传输门 (电阻记为 $R_{on}$) 到达节点 q, q 上挂 $C_q$, 再由小反相器 INV_pk 把信号送回 out。图上红色的虚线圈出这条支路。
 
@@ -96,7 +96,7 @@ $$
 
 <div class="center"><img src="assets/active-inductor-peaking/model_vs_sim.png"/></div>
 
-> 图 2 · 小信号模型 (虚线) 与 ngspice (细实线) 的对照, 参数取自工作点提取: $g_{m1}$ = 4.86 mS, $g_{ds1}$ = 0.41 mS, $g_{m2}$ = 1.06 mS, $g_{ds2}$ = 0.09 mS, $C_{L,eff}$ = 94 fF, $C_{q,eff}$ = 15 fF。(a) 归一化幅度; (b) 群延时; (c) −3 dB 带宽与峰化随 $R_{on}$ 的变化; (d) 阻尼比 ζ。阴影区为 ζ < 1/√2, 即会出现幅度峰。
+> 图 2. 小信号模型 (虚线) 与 ngspice (细实线) 的对照, 参数取自工作点提取: $g_{m1}$ = 4.86 mS, $g_{ds1}$ = 0.41 mS, $g_{m2}$ = 1.06 mS, $g_{ds2}$ = 0.09 mS, $C_{L,eff}$ = 94 fF, $C_{q,eff}$ = 15 fF。(a) 归一化幅度; (b) 群延时; (c) −3 dB 带宽与峰化随 $R_{on}$ 的变化; (d) 阻尼比 ζ。阴影区为 ζ < 1/√2, 即会出现幅度峰。
 
 模型在 1 MHz 到 30 GHz 之间和晶体管级仿真几乎重合, 说明二阶加零点的结构已经抓住了主要行为。偏差集中在大 $R_{on}$ 的深零点附近, 那里等效电容随偏置漂移得比较厉害。
 
@@ -142,7 +142,7 @@ $$\bar{t}=\frac{\int t\,h(t)\,dt}{\int h(t)\,dt}=\tau_g(0)$$
 
 <div class="center"><img src="assets/active-inductor-peaking/ac_vs_ron.png"/></div>
 
-> 图 3 · 扫 $R_{on}$ 的完整 AC 响应 (800 Ω 源)。四张图自上而下: 绝对幅度、归一化幅度、相位、群延时。$R_{on}$ 从 0 Ω 一路扫到 10 MΩ, 灰色虚线为支路断开 ($R=\infty$) 的对照。
+> 图 3. 扫 $R_{on}$ 的完整 AC 响应 (800 Ω 源)。四张图自上而下: 绝对幅度、归一化幅度、相位、群延时。$R_{on}$ 从 0 Ω 一路扫到 10 MΩ, 灰色虚线为支路断开 ($R=\infty$) 的对照。
 
 第四张图里, $R_{on}$ 越大低频群延时越负, 到后面能到 −10⁴ ps 量级 (纵轴是对数)。负群延时不是超光速, 它是窄带效应: 零点给相位加了一个正斜率, 使 $d\varphi/d\omega>0$; 对一个窄带调制的信号, 包络峰确实可以比输入更早出现 —— 峰化把低频成分延迟得久、高频成分延迟得短, 叠出来的峰自然前移。但对只看过零点的时钟信号, 这个负值没有意义, 过零点永远往后走, 所以 $t_{pd}>0$。
 
@@ -162,11 +162,11 @@ $$H(j\omega)\approx|H(\omega_0)|e^{j\varphi_0}\cdot e^{-j\tau_g(\omega-\omega_0)
 
 <div class="center"><img src="assets/active-inductor-peaking/eyes_nrz.png"/></div>
 
-> 图 4 · NRZ 折叠眼图, 2.5 / 3.5 / 5 GBd, $R_{on}$ 分别取 200 Ω、1 kΩ、2 kΩ、4 kΩ、8 kΩ。$R_{on}$ = 8 kΩ 那一列可以看到明显的振铃, 眼图上下沿被撑开。
+> 图 4. NRZ 折叠眼图, 2.5 / 3.5 / 5 GBd, $R_{on}$ 分别取 200 Ω、1 kΩ、2 kΩ、4 kΩ、8 kΩ。$R_{on}$ = 8 kΩ 那一列可以看到明显的振铃, 眼图上下沿被撑开。
 
 <div class="center"><img src="assets/active-inductor-peaking/eyes_pam4.png"/></div>
 
-> 图 5 · PAM4 折叠眼图, 2.5 GBd, $R_{on}$ = 1 / 2 / 4 kΩ。四个电平约 0.34 / 0.65 / 0.96 / 1.20 V, 内眼被限幅压窄。
+> 图 5. PAM4 折叠眼图, 2.5 GBd, $R_{on}$ = 1 / 2 / 4 kΩ。四个电平约 0.34 / 0.65 / 0.96 / 1.20 V, 内眼被限幅压窄。
 
 | 用例 | $R_{on}$ | 摆幅 | 定时抖动 DJ | 过冲 | 电平比 RL (min/max) | 最小眼 |
 |---|---|---|---|---|---|---|
@@ -189,7 +189,7 @@ $$\mathrm{RLM}=\frac{3\min(\Delta_i)}{\Delta_1+\Delta_2+\Delta_3}$$
 
 <div class="center"><img src="assets/active-inductor-peaking/amam_ampm.png"/></div>
 
-> 图 6 · 正弦激励下的 (a) 大信号增益与 (b) 相位随输入幅度的变化, 1 GHz 与 2.5 GHz, $R_{on}$ = 0 与 2 kΩ。
+> 图 6. 正弦激励下的 (a) 大信号增益与 (b) 相位随输入幅度的变化, 1 GHz 与 2.5 GHz, $R_{on}$ = 0 与 2 kΩ。
 
 1 GHz 的增益是 9.42 dB (无支路) 和 9.85 dB (2 kΩ), 320 mVpp 时压缩只有 0.53–0.59 dB, 300 mVpp 以内基本是线性的。AM-PM 全程小于 0.3° (1 GHz) 和 0.6° (2.5 GHz), 这个拓扑可以不做补偿。支路最直接的收益也在这里: 2.5 GHz 增益从 7.60 dB 抬到 9.38 dB, 多出 1.8 dB, 同时 AM-PM 从 −42.0° 收到 −33.0°。
 
@@ -199,7 +199,7 @@ $$\mathrm{RLM}=\frac{3\min(\Delta_i)}{\Delta_1+\Delta_2+\Delta_3}$$
 
 <div class="center"><img src="assets/active-inductor-peaking/corner.png"/></div>
 
-> 图 7 · (a) 归一化 AC 响应 (tt/ff/ss); (b) −3 dB 带宽; (c) 低频群延时。$C_q$ = 8 fF, $R_{on}$ = 2 kΩ (另含 ±30 % 漂移), 800 Ω 源。
+> 图 7. (a) 归一化 AC 响应 (tt/ff/ss); (b) −3 dB 带宽; (c) 低频群延时。$C_q$ = 8 fF, $R_{on}$ = 2 kΩ (另含 ±30 % 漂移), 800 Ω 源。
 
 | 角点 | $R_{on}$ | 低频增益 | $f_{-3dB}$ | 低频 GD | 2.5 GHz 增益 |
 |---|---|---|---|---|---|
@@ -217,7 +217,7 @@ $$\mathrm{RLM}=\frac{3\min(\Delta_i)}{\Delta_1+\Delta_2+\Delta_3}$$
 
 <div class="center"><img src="assets/active-inductor-peaking/delay_tpd.png"/></div>
 
-> 图 8 · 作为延时单元的传播延时 (1 GHz 方波, 300 mVpp, 800 Ω 源, $C_L$ = 60 fF)。(a) $t_{pd}$ 随 $C_{q,tot}$ 的变化, 蓝、红两条曲线分别对应 $R_{on}$ = 2 kΩ 与 8 kΩ, 横轴是标称 $C_q$ (取 0、2、4、8、16、32、64 fF) 加上 7.5 fF 寄生, 纵轴取上升沿与下降沿的平均; (b) 上升/下降沿延时差 $t_{pd,fall}-t_{pd,rise}$ 随 $C_{q,tot}$ 的变化, 同样是 $R_{on}$ = 2 kΩ 与 8 kΩ 两条曲线, 零线以上表示下降沿更慢; (c) 固定 $C_q$ = 8 fF, $t_{pd}$ 随 $R_{on}$ 的变化 (200 Ω、1 kΩ、2 kΩ、4 kΩ); (d) 标称点 ($R_{on}$ = 2 kΩ, $C_q$ = 8 fF) 的工艺角柱状图, tt / ff / ss。
+> 图 8. 作为延时单元的传播延时 (1 GHz 方波, 300 mVpp, 800 Ω 源, $C_L$ = 60 fF)。(a) $t_{pd}$ 随 $C_{q,tot}$ 的变化, 蓝、红两条曲线分别对应 $R_{on}$ = 2 kΩ 与 8 kΩ, 横轴是标称 $C_q$ (取 0、2、4、8、16、32、64 fF) 加上 7.5 fF 寄生, 纵轴取上升沿与下降沿的平均; (b) 上升/下降沿延时差 $t_{pd,fall}-t_{pd,rise}$ 随 $C_{q,tot}$ 的变化, 同样是 $R_{on}$ = 2 kΩ 与 8 kΩ 两条曲线, 零线以上表示下降沿更慢; (c) 固定 $C_q$ = 8 fF, $t_{pd}$ 随 $R_{on}$ 的变化 (200 Ω、1 kΩ、2 kΩ、4 kΩ); (d) 标称点 ($R_{on}$ = 2 kΩ, $C_q$ = 8 fF) 的工艺角柱状图, tt / ff / ss。
 
 | 条件 | $t_{pd,rise}$ | $t_{pd,fall}$ | 均值 | 沿差 |
 |---|---|---|---|---|
@@ -247,7 +247,7 @@ $R_{on}$ = 8 kΩ 时 $t_{pd}$ 对 $C_q$ 是非单调的, 先降到 32 ps 左右�
 
 <div class="center"><img src="assets/active-inductor-peaking/distortion.png"/></div>
 
-> 图 9 · 同一电路的三档峰化, 从左到右 $R_{on}$ = 2 / 4 / 8 kΩ。第一行: 幅度响应与群延时; 第二行: 300 mVpp 阶跃响应; 第三行: NRZ 5 GBd 眼图; 第四行: PAM4 2.5 GBd 眼图。
+> 图 9. 同一电路的三档峰化, 从左到右 $R_{on}$ = 2 / 4 / 8 kΩ。第一行: 幅度响应与群延时; 第二行: 300 mVpp 阶跃响应; 第三行: NRZ 5 GBd 眼图; 第四行: PAM4 2.5 GBd 眼图。
 
 幅度不平坦在时域留下的痕迹是过冲和振铃: 阶跃响应在 8 kΩ 时下冲 25 %, 眼图上下沿被撑开, 眼高虚高。它对应的事实是"某些频率成分被放大了"。
 
@@ -275,7 +275,7 @@ $$\varphi(\omega)=-\mathcal{H}\left\{\ln|H(\omega)|\right\}+\text{线性项}$$
 
 <div class="center"><img src="assets/active-inductor-peaking/separation.png"/></div>
 
-> 图 10 · 强制分离实验 ($R_{on}$ = 8 kΩ, NRZ 5 GBd, 线性 AC 模型)。四列依次为: 理想 (幅度平、相位线性)、只保留实测幅度、只保留实测相位、真实电路 (两者都保留)。
+> 图 10. 强制分离实验 ($R_{on}$ = 8 kΩ, NRZ 5 GBd, 线性 AC 模型)。四列依次为: 理想 (幅度平、相位线性)、只保留实测幅度、只保留实测相位、真实电路 (两者都保留)。
 
 | 变体 | 归一化波形范围 |
 |---|---|
