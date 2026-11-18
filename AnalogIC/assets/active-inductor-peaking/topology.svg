@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="500" viewBox="0 0 980 500" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#222"/>
+    </marker>
+  </defs>
+  <rect width="980" height="500" fill="#ffffff"/>
+
+  <!-- active peaking group -->
+  <rect x="330" y="62" width="540" height="214" rx="10" fill="none" stroke="#d62728" stroke-dasharray="6 5" stroke-width="1.6"/>
+  <text x="344" y="82" font-size="13" fill="#d62728">Active peaking</text>
+
+  <!-- source -->
+  <circle cx="58" cy="372" r="22" fill="none" stroke="#222" stroke-width="1.6"/>
+  <text x="58" y="367" font-size="12" text-anchor="middle">V</text>
+  <text x="58" y="382" font-size="9" text-anchor="middle">src</text>
+  <text x="58" y="416" font-size="12" text-anchor="middle">V_CM + ac</text>
+  <line x1="80" y1="372" x2="126" y2="372" stroke="#222" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- Rs -->
+  <rect x="128" y="360" width="58" height="24" fill="#fff" stroke="#222" stroke-width="1.6"/>
+  <text x="157" y="350" font-size="12" text-anchor="middle">R_S = 50 &#937;</text>
+  <line x1="186" y1="372" x2="300" y2="372" stroke="#222" stroke-width="1.6"/>
+  <circle cx="212" cy="372" r="3.5" fill="#222"/>
+  <text x="206" y="394" font-size="12" text-anchor="end">in</text>
+
+  <!-- main inverter -->
+  <polygon points="300,332 300,412 380,372" fill="#fff" stroke="#222" stroke-width="1.6"/>
+  <circle cx="390" cy="372" r="9" fill="#fff" stroke="#222" stroke-width="1.6"/>
+  <line x1="399" y1="372" x2="800" y2="372" stroke="#222" stroke-width="1.6"/>
+  <text x="340" y="320" font-size="12" text-anchor="middle">INV (main)</text>
+  <text x="340" y="435" font-size="11" text-anchor="middle" fill="#555">20 / 10 &#181;m, L = 0.15 &#181;m</text>
+
+  <!-- q node -->
+  <line x1="430" y1="180" x2="470" y2="180" stroke="#222" stroke-width="1.6"/>
+  <circle cx="430" cy="180" r="3.5" fill="#222"/>
+  <text x="416" y="172" font-size="12" text-anchor="end">q</text>
+
+  <!-- Cq -->
+  <line x1="430" y1="180" x2="430" y2="222" stroke="#222" stroke-width="1.6"/>
+  <line x1="408" y1="222" x2="452" y2="222" stroke="#222" stroke-width="2"/>
+  <line x1="408" y1="234" x2="452" y2="234" stroke="#222" stroke-width="2"/>
+  <line x1="430" y1="234" x2="430" y2="252" stroke="#222" stroke-width="1.6"/>
+  <line x1="412" y1="252" x2="448" y2="252" stroke="#222" stroke-width="2"/>
+  <text x="400" y="232" font-size="12" text-anchor="end">C_q = 8 fF</text>
+
+  <!-- INV_pk -->
+  <polygon points="470,140 470,220 550,180" fill="#fff" stroke="#222" stroke-width="1.6"/>
+  <circle cx="560" cy="180" r="9" fill="#fff" stroke="#222" stroke-width="1.6"/>
+  <line x1="569" y1="180" x2="800" y2="180" stroke="#222" stroke-width="1.6"/>
+  <text x="510" y="132" font-size="12" text-anchor="middle">INV_pk</text>
+  <text x="560" y="250" font-size="11" text-anchor="middle" fill="#555">5 / 2.5 &#181;m, L = 0.15 &#181;m</text>
+
+  <!-- R_on loop: q -> up -> right -> down to out -->
+  <line x1="430" y1="180" x2="430" y2="100" stroke="#222" stroke-width="1.6"/>
+  <line x1="430" y1="100" x2="598" y2="100" stroke="#222" stroke-width="1.6"/>
+  <rect x="598" y="86" width="74" height="28" fill="#fff" stroke="#222" stroke-width="1.6"/>
+  <text x="635" y="79" font-size="12" text-anchor="middle">R_on (TG)</text>
+  <line x1="672" y1="100" x2="800" y2="100" stroke="#222" stroke-width="1.6"/>
+  <line x1="800" y1="100" x2="800" y2="180" stroke="#222" stroke-width="1.6"/>
+  <circle cx="800" cy="100" r="3.5" fill="#222"/>
+
+  <!-- output rail -->
+  <line x1="800" y1="180" x2="800" y2="372" stroke="#222" stroke-width="1.6"/>
+  <circle cx="800" cy="180" r="3.5" fill="#222"/>
+  <circle cx="800" cy="372" r="3.5" fill="#222"/>
+  <line x1="800" y1="372" x2="890" y2="372" stroke="#222" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="886" y="360" font-size="12" text-anchor="end">out</text>
+
+  <!-- load cap -->
+  <line x1="800" y1="372" x2="800" y2="418" stroke="#222" stroke-width="1.6"/>
+  <line x1="778" y1="418" x2="822" y2="418" stroke="#222" stroke-width="2"/>
+  <line x1="778" y1="430" x2="822" y2="430" stroke="#222" stroke-width="2"/>
+  <line x1="800" y1="430" x2="800" y2="452" stroke="#222" stroke-width="1.6"/>
+  <line x1="782" y1="452" x2="818" y2="452" stroke="#222" stroke-width="2"/>
+  <text x="834" y="428" font-size="12">C_L = 60 fF</text>
+
+  <text x="24" y="28" font-size="15" font-weight="600" fill="#111">sky130 1.8 V CMOS inverter with an active-inductor peaking branch</text>
+  <text x="24" y="48" font-size="12" fill="#444">V_DD = 1.8 V, V_CM = 0.845 V (trip point), body ties: PMOS&#8594;VDD, NMOS&#8594;GND</text>
+  <text x="24" y="484" font-size="12" fill="#444">TG (R_on) and INV_pk both bridge out to node q: loop out &#8594; R_on &#8594; q &#8594; INV_pk &#8594; out.  AC 1 MHz-100 GHz (dec 60);  transient 20 ps edges, 0 &#8596; 1.8 V</text>
+</svg>

@@ -220,7 +220,8 @@
 
 
 
-    - AMS IC Blogs (2026, 8 items)
+    - AMS IC Blogs (2026, 9 items)
+        - [Active Inductor Peaking in a CMOS Inverter - Analysis and Verification in sky130](<AnalogIC/Active Inductor Peaking in a CMOS Inverter - Analysis and Verification in sky130.md>)
         - [MOS 器件 TCAD 仿真及 SPICE 模型](<AnalogIC/MOS 器件 TCAD 仿真及 SPICE 模型.md>)
         - [Quarters-II 安装与使用教程](<AnalogIC/Quarters-II 安装与使用教程.md>)
         - [Altium Designer 23 安装与使用教程](<AnalogIC/Altium Designer 23 安装与使用教程.md>)
