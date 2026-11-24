@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="880" viewBox="0 0 1400 880" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#222"/>
+    </marker>
+    <marker id="arL" markerWidth="9" markerHeight="9" refX="1" refY="3" orient="auto">
+      <path d="M8,0 L8,6 L0,3 z" fill="#222"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="880" fill="#ffffff"/>
+
+  <text x="30" y="34" font-size="17" font-weight="600" fill="#111">One-port equivalent of the active-inductor peaking branch</text>
+  <text x="30" y="55" font-size="12" fill="#444">Small signal, sky130 1.8 V tt.  The branch sits between the main inverter output "out" and AC ground.</text>
+
+  <!-- ================= panel (a) ================= -->
+  <rect x="20" y="72" width="640" height="788" rx="12" fill="#fcfcfc" stroke="#e0e0e0"/>
+  <text x="42" y="102" font-size="14" font-weight="600" fill="#111">(a) Branch as drawn: a two-terminal one-port at out</text>
+
+  <!-- out rail -->
+  <line x1="540" y1="200" x2="540" y2="560" stroke="#222" stroke-width="1.6"/>
+  <circle cx="540" cy="200" r="3.5" fill="#222"/>
+  <circle cx="540" cy="330" r="3.5" fill="#222"/>
+  <circle cx="540" cy="560" r="3.5" fill="#222"/>
+  <text x="556" y="196" font-size="13" fill="#111">out</text>
+
+  <!-- R_on top path: q -> up -> right -> box -> out -->
+  <line x1="330" y1="330" x2="330" y2="200" stroke="#222" stroke-width="1.6"/>
+  <line x1="330" y1="200" x2="410" y2="200" stroke="#222" stroke-width="1.6"/>
+  <rect x="410" y="186" width="74" height="28" fill="#fff" stroke="#222" stroke-width="1.6"/>
+  <line x1="484" y1="200" x2="540" y2="200" stroke="#222" stroke-width="1.6"/>
+  <circle cx="330" cy="330" r="3.5" fill="#222"/>
+  <text x="447" y="178" font-size="13" text-anchor="middle" fill="#111">R_on (TG)</text>
+  <text x="447" y="236" font-size="11" text-anchor="middle" fill="#b03030">0 &#8594; 10 M&#937;, the only knob</text>
+
+  <!-- Cq -->
+  <line x1="330" y1="330" x2="330" y2="388" stroke="#222" stroke-width="1.6"/>
+  <line x1="306" y1="388" x2="354" y2="388" stroke="#222" stroke-width="2"/>
+  <line x1="306" y1="400" x2="354" y2="400" stroke="#222" stroke-width="2"/>
+  <line x1="330" y1="400" x2="330" y2="424" stroke="#222" stroke-width="1.6"/>
+  <line x1="310" y1="424" x2="350" y2="424" stroke="#222" stroke-width="2"/>
+  <line x1="316" y1="432" x2="344" y2="432" stroke="#222" stroke-width="2"/>
+  <line x1="322" y1="440" x2="338" y2="440" stroke="#222" stroke-width="2"/>
+  <text x="296" y="384" font-size="12" text-anchor="end" fill="#111">C_q = 8 fF</text>
+  <text x="296" y="400" font-size="11" text-anchor="end" fill="#666">+ 7.5 fF gate</text>
+
+  <!-- INV_pk -->
+  <line x1="330" y1="330" x2="372" y2="330" stroke="#222" stroke-width="1.6"/>
+  <polygon points="372,288 372,372 454,330" fill="#fff" stroke="#222" stroke-width="1.6"/>
+  <circle cx="464" cy="330" r="9" fill="#fff" stroke="#222" stroke-width="1.6"/>
+  <line x1="473" y1="330" x2="540" y2="330" stroke="#222" stroke-width="1.6"/>
+  <text x="413" y="280" font-size="13" text-anchor="middle" fill="#111">INV_pk (inverting)</text>
+  <text x="413" y="394" font-size="12" text-anchor="middle" fill="#111">g_m2 = 1.056 mS</text>
+  <text x="413" y="411" font-size="11" text-anchor="middle" fill="#666">5 / 2.5 &#181;m</text>
+
+  <!-- one-port brace -->
+  <line x1="610" y1="200" x2="610" y2="560" stroke="#777" stroke-width="1.2" marker-start="url(#arL)" marker-end="url(#ar)"/>
+  <text transform="translate(636,380) rotate(90)" font-size="12" text-anchor="middle" fill="#555">Z_b = v_out / i_b</text>
+
+  <!-- notes -->
+  <text x="60" y="506" font-size="12" fill="#111">Loop: out &#8594; R_on &#8594; q &#8594; INV_pk &#8594; out</text>
+  <text x="60" y="530" font-size="12" fill="#555">DC: C_q is open, so v_q = v_out; INV_pk is a self-biased diode-connected stage.</text>
+  <text x="60" y="554" font-size="12" fill="#555">i_b is the current the branch draws from out; Y_b = i_b / v_out.</text>
+  <text x="60" y="590" font-size="12" fill="#b03030">R_on &gt; 1/g_m2 = 947 &#937; makes Im(Y_b) &lt; 0: the branch turns inductive.</text>
+  <text x="60" y="614" font-size="12" fill="#555">R_on &lt; 947 &#937;: L_eq is negative, the branch is capacitive and adds no peaking.</text>
+
+  <!-- parameter card -->
+  <rect x="60" y="648" width="540" height="178" rx="8" fill="#ffffff" stroke="#e3e3e3"/>
+  <text x="80" y="676" font-size="12" font-weight="600" fill="#111">Numbers used in the equivalence (sky130 tt, 1.8 V)</text>
+  <text x="80" y="702" font-size="12" fill="#333">g_m2 = 1.056 mS  &#8594;  R_b = 1/g_m2 = 947 &#937;</text>
+  <text x="80" y="726" font-size="12" fill="#333">C_q,eff = 15.5 fF (8 fF + 7.5 fF gate),  C_L,eff = 94 fF</text>
+  <text x="80" y="750" font-size="12" fill="#333">R_on = 8 k&#937;  &#8594;  L_eq = 104 nH,  f_tank = 1.61 GHz</text>
+  <text x="80" y="774" font-size="11" fill="#666">Only Z_b enters the main inverter's response; the loop can be replaced by (b).</text>
+  <text x="80" y="800" font-size="11" fill="#666">Gyrator view: C_q at the input of INV_pk is what becomes L; R_on sets how much L you get.</text>
+
+  <!-- ================= panel (b) ================= -->
+  <rect x="680" y="72" width="700" height="788" rx="12" fill="#fcfcfc" stroke="#e0e0e0"/>
+  <text x="702" y="102" font-size="14" font-weight="600" fill="#111">(b) Small-signal one-port equivalent at out</text>
+
+  <!-- rails -->
+  <line x1="740" y1="170" x2="1180" y2="170" stroke="#222" stroke-width="1.6"/>
+  <circle cx="740" cy="170" r="3.5" fill="#222"/>
+  <text x="742" y="158" font-size="13" fill="#111">out</text>
+  <line x1="760" y1="560" x2="1160" y2="560" stroke="#222" stroke-width="1.6"/>
+  <line x1="960" y1="560" x2="960" y2="582" stroke="#222" stroke-width="1.6"/>
+  <line x1="932" y1="582" x2="988" y2="582" stroke="#222" stroke-width="2"/>
+  <line x1="940" y1="590" x2="980" y2="590" stroke="#222" stroke-width="2"/>
+  <line x1="948" y1="598" x2="972" y2="598" stroke="#222" stroke-width="2"/>
+  <text x="1002" y="586" font-size="11" fill="#666">AC ground</text>
+
+  <!-- r_o1 -->
+  <line x1="800" y1="170" x2="800" y2="250" stroke="#222" stroke-width="1.6"/>
+  <rect x="788" y="250" width="24" height="60" fill="#fff" stroke="#222" stroke-width="1.6"/>
+  <line x1="800" y1="310" x2="800" y2="560" stroke="#222" stroke-width="1.6"/>
+  <circle cx="800" cy="170" r="3.5" fill="#222"/>
+  <text x="822" y="254" font-size="12" fill="#666">r_o1 = 1/(g_ds1+g_ds2)</text>
+  <text x="822" y="271" font-size="12" fill="#666">= 2.0 k&#937;</text>
+
+  <!-- C_L -->
+  <line x1="940" y1="170" x2="940" y2="292" stroke="#222" stroke-width="1.6"/>
+  <line x1="916" y1="292" x2="964" y2="292" stroke="#222" stroke-width="2"/>
+  <line x1="916" y1="304" x2="964" y2="304" stroke="#222" stroke-width="2"/>
+  <line x1="940" y1="304" x2="940" y2="560" stroke="#222" stroke-width="1.6"/>
+  <circle cx="940" cy="170" r="3.5" fill="#222"/>
+  <text x="972" y="292" font-size="12" fill="#666">C_L,eff = 94 fF</text>
+
+  <!-- series R_b + L_eq (the branch) -->
+  <line x1="1100" y1="170" x2="1100" y2="250" stroke="#1f4e9c" stroke-width="2"/>
+  <rect x="1088" y="250" width="24" height="60" fill="#fff" stroke="#1f4e9c" stroke-width="2"/>
+  <line x1="1100" y1="310" x2="1100" y2="360" stroke="#1f4e9c" stroke-width="2"/>
+  <path d="M1100,360 a11,11 0 0 1 0,22 a11,11 0 0 1 0,22 a11,11 0 0 1 0,22 a11,11 0 0 1 0,22"
+        fill="none" stroke="#1f4e9c" stroke-width="2"/>
+  <line x1="1100" y1="448" x2="1100" y2="560" stroke="#1f4e9c" stroke-width="2"/>
+  <circle cx="1100" cy="170" r="3.5" fill="#222"/>
+  <text x="1122" y="252" font-size="12" fill="#1f4e9c">R_b = 1/g_m2</text>
+  <text x="1122" y="269" font-size="12" fill="#1f4e9c">= 947 &#937; (const)</text>
+  <text x="1122" y="398" font-size="12" fill="#1f4e9c">L_eq(R_on)</text>
+  <text x="1122" y="415" font-size="12" fill="#1f4e9c">= C_q(g_m2 R_on &#8722; 1)/g_m2&#178;</text>
+  <text x="1122" y="432" font-size="11" fill="#1f4e9c">&#8733; C_q, and &#8733; R_on for large R_on</text>
+
+  <!-- separator -->
+  <line x1="700" y1="626" x2="1360" y2="626" stroke="#e2e2e2" stroke-width="1"/>
+
+  <!-- formulas -->
+  <text x="702" y="650" font-size="12" fill="#333">Exact admittance the branch presents at out:</text>
+  <text x="702" y="676" font-size="13" fill="#111">
+    <tspan font-style="italic">Y</tspan><tspan baseline-shift="sub" font-size="75%">b</tspan><tspan>(s) = (</tspan><tspan font-style="italic">g</tspan><tspan baseline-shift="sub" font-size="75%">m2</tspan><tspan> + s</tspan><tspan font-style="italic">C</tspan><tspan baseline-shift="sub" font-size="75%">q</tspan><tspan>) / (1 + s</tspan><tspan font-style="italic">R</tspan><tspan baseline-shift="sub" font-size="75%">on</tspan><tspan font-style="italic">C</tspan><tspan baseline-shift="sub" font-size="75%">q</tspan><tspan>) + </tspan><tspan font-style="italic">g</tspan><tspan baseline-shift="sub" font-size="75%">ds2</tspan>
+  </text>
+  <text x="702" y="710" font-size="12" fill="#333">Below the zero this is a series R-L (the inductor is what the branch becomes):</text>
+  <text x="702" y="736" font-size="13" fill="#111">
+    <tspan font-style="italic">Z</tspan><tspan baseline-shift="sub" font-size="75%">b</tspan><tspan> = 1/</tspan><tspan font-style="italic">Y</tspan><tspan baseline-shift="sub" font-size="75%">b</tspan><tspan> &#8776; </tspan><tspan font-style="italic">R</tspan><tspan baseline-shift="sub" font-size="75%">b</tspan><tspan> + s</tspan><tspan font-style="italic">L</tspan><tspan baseline-shift="sub" font-size="75%">eq</tspan>
+  </text>
+  <text x="702" y="766" font-size="13" fill="#111">
+    <tspan font-style="italic">R</tspan><tspan baseline-shift="sub" font-size="75%">b</tspan><tspan> = 1/</tspan><tspan font-style="italic">g</tspan><tspan baseline-shift="sub" font-size="75%">m2</tspan><tspan> = 947 &#937;   (independent of </tspan><tspan font-style="italic">R</tspan><tspan baseline-shift="sub" font-size="75%">on</tspan><tspan>)</tspan>
+  </text>
+  <text x="702" y="796" font-size="13" fill="#111">
+    <tspan font-style="italic">L</tspan><tspan baseline-shift="sub" font-size="75%">eq</tspan><tspan> = </tspan><tspan font-style="italic">C</tspan><tspan baseline-shift="sub" font-size="75%">q</tspan><tspan>(</tspan><tspan font-style="italic">g</tspan><tspan baseline-shift="sub" font-size="75%">m2</tspan><tspan font-style="italic">R</tspan><tspan baseline-shift="sub" font-size="75%">on</tspan><tspan> &#8722; 1)/</tspan><tspan font-style="italic">g</tspan><tspan baseline-shift="sub" font-size="75%">m2</tspan><tspan baseline-shift="super" font-size="75%">2</tspan><tspan>   &gt; 0 only for </tspan><tspan font-style="italic">R</tspan><tspan baseline-shift="sub" font-size="75%">on</tspan><tspan> &gt; 1/</tspan><tspan font-style="italic">g</tspan><tspan baseline-shift="sub" font-size="75%">m2</tspan>
+  </text>
+  <text x="702" y="826" font-size="13" fill="#111">
+    <tspan font-style="italic">f</tspan><tspan baseline-shift="sub" font-size="75%">tank</tspan><tspan> = 1/(2&#960;&#8730;(</tspan><tspan font-style="italic">L</tspan><tspan baseline-shift="sub" font-size="75%">eq</tspan><tspan font-style="italic">C</tspan><tspan baseline-shift="sub" font-size="75%">L</tspan><tspan>)),    </tspan><tspan font-style="italic">f</tspan><tspan baseline-shift="sub" font-size="75%">z</tspan><tspan> = 1/(2&#960;</tspan><tspan font-style="italic">R</tspan><tspan baseline-shift="sub" font-size="75%">on</tspan><tspan font-style="italic">C</tspan><tspan baseline-shift="sub" font-size="75%">q</tspan><tspan>)</tspan>
+  </text>
+  <text x="702" y="850" font-size="11.5" fill="#b03030">R_on &#8593; &#8594; L_eq &#8593; &#8594; f_tank &#8595; (&#8733; 1/&#8730;(R_on C_q) for large R_on).  At 8 k&#937;: 104 nH, 1.61 GHz.</text>
+</svg>
