@@ -37,11 +37,11 @@ My Technology Stack:
 
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C585%20hrs%2042%20mins-blue?style=flat)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C586%20hrs%2046%20mins-blue?style=flat)
 
 ![AI Code Time](http://img.shields.io/badge/AI%20Code%20Time-39%20hrs%2054%20mins-blue?style=flat)
 
-![Profile Views](http://img.shields.io/badge/Profile%20Views-1640-blue?style=flat)
+![Profile Views](http://img.shields.io/badge/Profile%20Views-1579-blue?style=flat)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.87%20million%20lines%20of%20code-blue?style=flat)
 
@@ -70,13 +70,15 @@ Sunday                   345 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 8 hrs 44 mins       █████████████████████████   99.07 % 
-Git Config               4 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.89 % 
-Text                     0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.04 % 
+Markdown                 8 hrs 55 mins       ███████████████████████░░   91.28 % 
+INI                      33 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   05.75 % 
+Bash                     11 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   01.92 % 
+Git Config               4 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.82 % 
+Other                    0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.16 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               8 hrs 27 mins       ████████████████████████░   95.78 % 
-Unknown Project          22 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   04.22 % 
+GH.YiDingg               9 hrs 32 mins       ████████████████████████░   97.47 % 
+Unknown Project          14 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.53 % 
 ```
 
 🤖 **AI Coding This Week** 
@@ -88,11 +90,11 @@ No AI Coding Activity Tracked This Week
 **I Mostly Code in TeX** 
 
 ```text
-TeX                      4 repos             ███████░░░░░░░░░░░░░░░░░░   28.57 % 
-C                        4 repos             ███████░░░░░░░░░░░░░░░░░░   28.57 % 
-MATLAB                   3 repos             █████░░░░░░░░░░░░░░░░░░░░   21.43 % 
-JavaScript               2 repos             ████░░░░░░░░░░░░░░░░░░░░░   14.29 % 
-Verilog                  1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
+TeX                      4 repos             ███████░░░░░░░░░░░░░░░░░░   26.67 % 
+C                        4 repos             ███████░░░░░░░░░░░░░░░░░░   26.67 % 
+MATLAB                   3 repos             █████░░░░░░░░░░░░░░░░░░░░   20.00 % 
+JavaScript               2 repos             ███░░░░░░░░░░░░░░░░░░░░░░   13.33 % 
+Verilog                  1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   06.67 % 
 ```
 
 
@@ -102,7 +104,7 @@ Verilog                  1 repo              ██░░░░░░░░░�
 ![Lines of Code chart](https://raw.githubusercontent.com/YiDingg/YiDingg/main/assets/bar_graph.png)
 
 
- Last Updated on 2026.11.25 02:38 UTC
+ Last Updated on 2026.11.26 01:53 UTC
 <!--END_SECTION:waka-->
 
 
