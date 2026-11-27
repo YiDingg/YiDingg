@@ -37,32 +37,32 @@ My Technology Stack:
 
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C586%20hrs%2046%20mins-blue?style=flat)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C587%20hrs%2047%20mins-blue?style=flat)
 
 ![AI Code Time](http://img.shields.io/badge/AI%20Code%20Time-39%20hrs%2054%20mins-blue?style=flat)
 
-![Profile Views](http://img.shields.io/badge/Profile%20Views-1579-blue?style=flat)
+![Profile Views](http://img.shields.io/badge/Profile%20Views-1483-blue?style=flat)
 
-![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.87%20million%20lines%20of%20code-blue?style=flat)
+![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.88%20million%20lines%20of%20code-blue?style=flat)
 
 **I'm a Night 🦉** 
 
 ```text
-🌞 Morning                131 commits         ██░░░░░░░░░░░░░░░░░░░░░░░   06.15 % 
-🌆 Daytime                658 commits         ████████░░░░░░░░░░░░░░░░░   30.88 % 
-🌃 Evening                670 commits         ████████░░░░░░░░░░░░░░░░░   31.44 % 
-🌙 Night                  672 commits         ████████░░░░░░░░░░░░░░░░░   31.53 % 
+🌞 Morning                131 commits         ██░░░░░░░░░░░░░░░░░░░░░░░   06.14 % 
+🌆 Daytime                659 commits         ████████░░░░░░░░░░░░░░░░░   30.91 % 
+🌃 Evening                670 commits         ████████░░░░░░░░░░░░░░░░░   31.43 % 
+🌙 Night                  672 commits         ████████░░░░░░░░░░░░░░░░░   31.52 % 
 ```
 📅 **I'm Most Productive on Thursday** 
 
 ```text
-Monday                   303 commits         ████░░░░░░░░░░░░░░░░░░░░░   14.22 % 
-Tuesday                  264 commits         ███░░░░░░░░░░░░░░░░░░░░░░   12.39 % 
-Wednesday                271 commits         ███░░░░░░░░░░░░░░░░░░░░░░   12.72 % 
-Thursday                 348 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.33 % 
+Monday                   303 commits         ████░░░░░░░░░░░░░░░░░░░░░   14.21 % 
+Tuesday                  264 commits         ███░░░░░░░░░░░░░░░░░░░░░░   12.38 % 
+Wednesday                271 commits         ███░░░░░░░░░░░░░░░░░░░░░░   12.71 % 
+Thursday                 349 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.37 % 
 Friday                   344 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.14 % 
 Saturday                 256 commits         ███░░░░░░░░░░░░░░░░░░░░░░   12.01 % 
-Sunday                   345 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.19 % 
+Sunday                   345 commits         ████░░░░░░░░░░░░░░░░░░░░░   16.18 % 
 ```
 
 
@@ -70,15 +70,15 @@ Sunday                   345 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 8 hrs 55 mins       ███████████████████████░░   91.28 % 
-INI                      33 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   05.75 % 
-Bash                     11 mins             ░░░░░░░░░░░░░░░░░░░░░░░░░   01.92 % 
-Git Config               4 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.82 % 
-Other                    0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.16 % 
+Markdown                 9 hrs 11 mins       ██████████████████████░░░   89.78 % 
+INI                      36 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   05.90 % 
+Bash                     20 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   03.31 % 
+Git Config               4 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.79 % 
+Other                    0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.15 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               9 hrs 32 mins       ████████████████████████░   97.47 % 
-Unknown Project          14 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.53 % 
+GH.YiDingg               9 hrs 58 mins       ████████████████████████░   97.58 % 
+Unknown Project          14 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.42 % 
 ```
 
 🤖 **AI Coding This Week** 
@@ -90,11 +90,11 @@ No AI Coding Activity Tracked This Week
 **I Mostly Code in TeX** 
 
 ```text
-TeX                      4 repos             ███████░░░░░░░░░░░░░░░░░░   26.67 % 
-C                        4 repos             ███████░░░░░░░░░░░░░░░░░░   26.67 % 
-MATLAB                   3 repos             █████░░░░░░░░░░░░░░░░░░░░   20.00 % 
-JavaScript               2 repos             ███░░░░░░░░░░░░░░░░░░░░░░   13.33 % 
-Verilog                  1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   06.67 % 
+TeX                      4 repos             ██████░░░░░░░░░░░░░░░░░░░   25.00 % 
+C                        4 repos             ██████░░░░░░░░░░░░░░░░░░░   25.00 % 
+MATLAB                   3 repos             █████░░░░░░░░░░░░░░░░░░░░   18.75 % 
+JavaScript               2 repos             ███░░░░░░░░░░░░░░░░░░░░░░   12.50 % 
+Verilog                  1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   06.25 % 
 ```
 
 
@@ -104,7 +104,7 @@ Verilog                  1 repo              ██░░░░░░░░░�
 ![Lines of Code chart](https://raw.githubusercontent.com/YiDingg/YiDingg/main/assets/bar_graph.png)
 
 
- Last Updated on 2026.11.26 01:53 UTC
+ Last Updated on 2026.11.27 01:50 UTC
 <!--END_SECTION:waka-->
 
 
