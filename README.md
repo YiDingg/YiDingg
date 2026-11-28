@@ -37,11 +37,11 @@ My Technology Stack:
 
 
 <!--START_SECTION:waka-->
-![Code Time](http://img.shields.io/badge/Code%20Time-2%2C587%20hrs%2047%20mins-blue?style=flat)
+![Code Time](http://img.shields.io/badge/Code%20Time-2%2C588%20hrs%2034%20mins-blue?style=flat)
 
 ![AI Code Time](http://img.shields.io/badge/AI%20Code%20Time-39%20hrs%2054%20mins-blue?style=flat)
 
-![Profile Views](http://img.shields.io/badge/Profile%20Views-1483-blue?style=flat)
+![Profile Views](http://img.shields.io/badge/Profile%20Views-1463-blue?style=flat)
 
 ![Lines of code](https://img.shields.io/badge/From%20Hello%20World%20I%27ve%20Written-3.88%20million%20lines%20of%20code-blue?style=flat)
 
@@ -70,15 +70,15 @@ Sunday                   345 commits         ████░░░░░░░�
 
 ```text
 💬 Programming Languages: 
-Markdown                 9 hrs 11 mins       ██████████████████████░░░   89.78 % 
-INI                      36 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   05.90 % 
-Bash                     20 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   03.31 % 
-Git Config               4 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.79 % 
-Other                    0 secs              ░░░░░░░░░░░░░░░░░░░░░░░░░   00.15 % 
+Markdown                 6 hrs 35 mins       ████████████████████░░░░░   81.47 % 
+INI                      36 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   07.46 % 
+Bash                     20 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   04.18 % 
+MATLAB                   17 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   03.53 % 
+Objective-C              10 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.08 % 
 
 🐱‍💻 Projects: 
-GH.YiDingg               9 hrs 58 mins       ████████████████████████░   97.58 % 
-Unknown Project          14 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   02.42 % 
+GH.YiDingg               7 hrs 50 mins       ████████████████████████░   96.94 % 
+Unknown Project          14 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   03.06 % 
 ```
 
 🤖 **AI Coding This Week** 
@@ -104,7 +104,7 @@ Verilog                  1 repo              ██░░░░░░░░░�
 ![Lines of Code chart](https://raw.githubusercontent.com/YiDingg/YiDingg/main/assets/bar_graph.png)
 
 
- Last Updated on 2026.11.27 01:50 UTC
+ Last Updated on 2026.11.28 01:32 UTC
 <!--END_SECTION:waka-->
 
 
